@@ -38,7 +38,7 @@ public sealed class ObjectPool : MonoBehaviour
             if (_instance != null)
                 return _instance;
 
-            _instance = Object.FindObjectOfType<ObjectPool>();
+            _instance = Object.FindFirstObjectByType<ObjectPool>();
             if (_instance != null)
                 return _instance;
 

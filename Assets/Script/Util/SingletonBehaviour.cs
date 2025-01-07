@@ -36,9 +36,8 @@ namespace Singleton
                 {
                     if (_instance == null)
                     {
-                        _instance = (T)FindObjectOfType(typeof(T));
-
-                        if (FindObjectsOfType(typeof(T)).Length > 1)
+                        _instance = (T)FindFirstObjectByType(typeof(T));
+                        if (FindFirstObjectByType(typeof(T)) != null)
                         {
                             //Debug.LogError("[Singleton] Something went really wrong " +
                             //    " - there should never be more than 1 singleton!" +

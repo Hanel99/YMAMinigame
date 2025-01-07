@@ -50,7 +50,7 @@ public class TestReporter : MonoBehaviour
 	{
 		Application.runInBackground = true;
 
-		reporter = FindObjectOfType(typeof(Reporter)) as Reporter;
+		reporter = FindFirstObjectByType(typeof(Reporter)) as Reporter;
 		Debug.Log("test long text sdf asdfg asdfg sdfgsdfg sdfg sfg" +
 				  "sdfgsdfg sdfg sdf gsdfg sfdg sf gsdfg sdfg asdfg " +
 				  "sdfgsdfg sdfg sdf gsdfg sfdg sf gsdfg sdfg asdfg " +
@@ -68,13 +68,15 @@ public class TestReporter : MonoBehaviour
 		style.normal.textColor = Color.white;
 		style.wordWrap = true;
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++)
+		{
 			Debug.Log("Test Collapsed log");
 			Debug.LogWarning("Test Collapsed Warning");
 			Debug.LogError("Test Collapsed Error");
 		}
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 10; i++)
+		{
 			Debug.Log("Test Collapsed log");
 			Debug.LogWarning("Test Collapsed Warning");
 			Debug.LogError("Test Collapsed Error");
@@ -98,7 +100,8 @@ public class TestReporter : MonoBehaviour
 
 	void threadLogTest()
 	{
-		for (int i = 0; i < threadLogTestCount; i++) {
+		for (int i = 0; i < threadLogTestCount; i++)
+		{
 			Debug.Log("Test Log from Thread");
 			Debug.LogWarning("Test Warning from Thread");
 			Debug.LogError("Test Error from Thread");
@@ -109,7 +112,8 @@ public class TestReporter : MonoBehaviour
 	void Update()
 	{
 		int drawn = 0;
-		while (currentLogTestCount < logTestCount && drawn < 10) {
+		while (currentLogTestCount < logTestCount && drawn < 10)
+		{
 			Debug.Log("Test Log " + currentLogTestCount);
 			Debug.LogError("Test LogError " + currentLogTestCount);
 			Debug.LogWarning("Test LogWarning " + currentLogTestCount);
@@ -118,7 +122,8 @@ public class TestReporter : MonoBehaviour
 		}
 
 		elapsed += Time.deltaTime;
-		if (elapsed >= 1) {
+		if (elapsed >= 1)
+		{
 			elapsed = 0;
 			Debug.Log("One Second Passed");
 		}
@@ -126,24 +131,28 @@ public class TestReporter : MonoBehaviour
 
 	void OnGUI()
 	{
-		if (reporter && !reporter.show) {
+		if (reporter && !reporter.show)
+		{
 			GUI.Label(rect1, "Draw circle on screen to show logs", style);
 			GUI.Label(rect2, "To use Reporter just create reporter from reporter menu at first scene your game start", style);
-			if (GUI.Button(rect3, "Load ReporterScene")) {
+			if (GUI.Button(rect3, "Load ReporterScene"))
+			{
 #if UNITY_CHANGE3
 				SceneManager.LoadScene("ReporterScene");
 #else
 				Application.LoadLevel("ReporterScene");
 #endif
 			}
-			if (GUI.Button(rect4, "Load test1")) {
+			if (GUI.Button(rect4, "Load test1"))
+			{
 #if UNITY_CHANGE3
 				SceneManager.LoadScene("test1");
 #else
 				Application.LoadLevel("test1");
 #endif
 			}
-			if (GUI.Button(rect5, "Load test2")) {
+			if (GUI.Button(rect5, "Load test2"))
+			{
 #if UNITY_CHANGE3
 				SceneManager.LoadScene("test2");
 #else

@@ -19,7 +19,7 @@ public class ReporterMessageReceiver : MonoBehaviour
 		if (Screen.width < 1000)
 			reporter.size = new Vector2(32, 32);
 		else
-			reporter.size = new Vector2(48, 48);
+			reporter.size = new Vector2(64, 64);
 
 		reporter.UserData = "Put user date here like his account to know which user is playing on this device";
 	}

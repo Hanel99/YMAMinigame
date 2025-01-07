@@ -23,7 +23,8 @@ public class SingletonMono<T> : MonoBehaviour where T : class, new()
 
     protected virtual void Awake()
     {
-        var check = GameObject.FindObjectsOfType(typeof(T));
+        // var check = GameObject.FindObjectsOfType(typeof(T));
+        var check = GameObject.FindObjectsByType(typeof(T), FindObjectsSortMode.None);
 
         if (check != null && check.Length > 1)
         {
