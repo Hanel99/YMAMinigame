@@ -31,5 +31,4 @@ public class GameSelectIcon : MonoBehaviour
 
         LobbyUIManager.instance.ShowGameSelectPopup(gameType);
     }
-
 }

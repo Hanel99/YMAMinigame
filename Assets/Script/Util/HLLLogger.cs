@@ -28,33 +28,33 @@ public enum LogColor
 
 public static class HLLogger
 {
-    public static void Log(string log, LogColor color = LogColor.none)
+    public static void Log(string log, LogColor color = LogColor.none, Transform tr = null)
     {
 #if !Live
         if (color == LogColor.none)
-            Debug.Log($"{log}");
+            Debug.Log($"{log}", tr);
         else
-            Debug.Log($"<color={color}>{log}</color>");
+            Debug.Log($"<color={color}>{log}</color>", tr);
 #endif
     }
 
-    public static void LogWarning(string log, LogColor color = LogColor.none)
+    public static void LogWarning(string log, LogColor color = LogColor.none, Transform tr = null)
     {
 #if !Live
         if (color == LogColor.none)
-            Debug.LogWarning($"{log}");
+            Debug.LogWarning($"{log}", tr);
         else
-            Debug.LogWarning($"<color={color}>{log}</color>");
+            Debug.LogWarning($"<color={color}>{log}</color>", tr);
 #endif
     }
 
-    public static void LogError(string log, LogColor color = LogColor.none)
+    public static void LogError(string log, LogColor color = LogColor.none, Transform tr = null)
     {
 #if !Live
         if (color == LogColor.none)
-            Debug.LogError($"{log}");
+            Debug.LogError($"{log}", tr);
         else
-            Debug.LogError($"<color={color}>{log}</color>");
+            Debug.LogError($"<color={color}>{log}</color>", tr);
 #endif
     }
 }
