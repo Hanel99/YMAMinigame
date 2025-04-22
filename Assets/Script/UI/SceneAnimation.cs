@@ -41,13 +41,5 @@ public class SceneAnimation : MonoBehaviour
             else
                 callback?.Invoke();
         });
-
-
-
     }
-
-
-
-
-
 }
