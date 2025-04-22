@@ -35,6 +35,7 @@ MonoBehaviour:
     - DOTween.Modules
     - DOTweenPro.Scripts
     - Hierarchy4.Runtime
+    - PlayFab
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
