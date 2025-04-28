@@ -98,68 +98,53 @@ MonoBehaviour:
     Grade: 0
     Number: 1
     ImageNumber: 1800
-  - Id: 18
+  - Id: 19
     Master: 18
     Grade: 0
     Number: 1
-    ImageNumber: 1900
-  - Id: 19
-    Master: 19
-    Grade: 0
-    Number: 1
     ImageNumber: 2000
-  - Id: 20
-    Master: 20
-    Grade: 0
-    Number: 1
-    ImageNumber: 2100
   - Id: 21
-    Master: 21
+    Master: 19
     Grade: 0
     Number: 1
     ImageNumber: 2200
   - Id: 23
-    Master: 22
+    Master: 20
     Grade: 0
     Number: 1
     ImageNumber: 2400
   - Id: 24
-    Master: 23
+    Master: 21
     Grade: 0
     Number: 1
     ImageNumber: 2500
-  - Id: 25
-    Master: 24
-    Grade: 0
-    Number: 1
-    ImageNumber: 2600
   - Id: 26
-    Master: 25
+    Master: 22
     Grade: 0
     Number: 1
     ImageNumber: 2700
   - Id: 27
-    Master: 26
+    Master: 23
     Grade: 0
     Number: 1
     ImageNumber: 2800
   - Id: 28
-    Master: 27
+    Master: 24
     Grade: 0
     Number: 1
     ImageNumber: 2900
   - Id: 29
-    Master: 28
+    Master: 25
     Grade: 0
     Number: 1
     ImageNumber: 3000
   - Id: 31
-    Master: 29
+    Master: 26
     Grade: 0
     Number: 1
     ImageNumber: 3200
   - Id: 32
-    Master: 30
+    Master: 27
     Grade: 0
     Number: 1
     ImageNumber: 3300
@@ -279,12 +264,12 @@ MonoBehaviour:
     Number: 2
     ImageNumber: 1802
   - Id: 57
-    Master: 22
+    Master: 20
     Grade: 1
     Number: 1
     ImageNumber: 2401
   - Id: 58
-    Master: 26
+    Master: 23
     Grade: 1
     Number: 1
     ImageNumber: 2801
@@ -294,27 +279,27 @@ MonoBehaviour:
     Number: 2
     ImageNumber: 1
   - Id: 60
-    Master: 26
+    Master: 23
     Grade: 3
     Number: 2
     ImageNumber: 2803
   - Id: 61
-    Master: 27
+    Master: 24
     Grade: 1
     Number: 1
     ImageNumber: 2901
   - Id: 62
-    Master: 27
+    Master: 24
     Grade: 3
     Number: 2
     ImageNumber: 2902
   - Id: 63
-    Master: 28
+    Master: 25
     Grade: 2
     Number: 1
     ImageNumber: 3001
   - Id: 64
-    Master: 28
+    Master: 25
     Grade: 4
     Number: 2
     ImageNumber: 3002
@@ -394,47 +379,42 @@ MonoBehaviour:
     Number: 4
     ImageNumber: 1803
   - Id: 81
-    Master: 19
+    Master: 18
     Grade: 0
     Number: 2
     ImageNumber: 2001
-  - Id: 82
-    Master: 20
-    Grade: 0
-    Number: 2
-    ImageNumber: 2101
   - Id: 83
-    Master: 21
+    Master: 19
     Grade: 0
     Number: 2
     ImageNumber: 2201
   - Id: 84
-    Master: 22
+    Master: 20
     Grade: 0
     Number: 3
     ImageNumber: 2402
   - Id: 85
-    Master: 25
+    Master: 22
     Grade: 0
     Number: 2
     ImageNumber: 2701
   - Id: 86
-    Master: 26
+    Master: 23
     Grade: 0
     Number: 4
     ImageNumber: 2804
   - Id: 87
-    Master: 27
+    Master: 24
     Grade: 0
     Number: 4
     ImageNumber: 2903
   - Id: 88
-    Master: 28
+    Master: 25
     Grade: 0
     Number: 4
     ImageNumber: 3003
   - Id: 89
-    Master: 30
+    Master: 27
     Grade: 0
     Number: 2
     ImageNumber: 3301
@@ -494,17 +474,17 @@ MonoBehaviour:
     Number: 0
     ImageNumber: 1804
   - Id: 102
-    Master: 25
+    Master: 22
     Grade: 1
     Number: 0
     ImageNumber: 2702
   - Id: 103
-    Master: 26
+    Master: 23
     Grade: 1
     Number: 0
     ImageNumber: 2802
   - Id: 104
-    Master: 28
+    Master: 25
     Grade: 1
     Number: 0
     ImageNumber: 3004
@@ -519,27 +499,27 @@ MonoBehaviour:
     Number: 0
     ImageNumber: 1705
   - Id: 107
-    Master: 19
+    Master: 18
     Grade: 2
     Number: 0
     ImageNumber: 2002
   - Id: 108
-    Master: 25
+    Master: 22
     Grade: 2
     Number: 0
     ImageNumber: 2703
   - Id: 109
-    Master: 26
+    Master: 23
     Grade: 2
     Number: 0
     ImageNumber: 2805
   - Id: 110
-    Master: 27
+    Master: 24
     Grade: 2
     Number: 0
     ImageNumber: 2904
   - Id: 111
-    Master: 29
+    Master: 26
     Grade: 2
     Number: 0
     ImageNumber: 3201
