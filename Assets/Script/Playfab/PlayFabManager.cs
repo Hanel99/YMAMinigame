@@ -5,6 +5,8 @@ using System;
 using System.Linq;
 using PlayFab;
 using PlayFab.ClientModels;
+using PlayFab.Json;
+using PlayFab.ProfilesModels;
 
 
 public class PlayFabManager : MonoBehaviour
@@ -80,7 +82,64 @@ public class PlayFabManager : MonoBehaviour
     }
 
 
+    public void GetAccountInfo()
+    {
+        var request = new GetAccountInfoRequest() { Username = SaveDataManager.instance.playerData.id };
+        PlayFabClientAPI.GetAccountInfo(request, (GetAccountInfoResult) =>
+        {
+            var s1 = GetAccountInfoResult.AccountInfo;
 
+
+
+        }, (PlayFabError) =>
+        {
+            Debug.LogWarning("GetUserData Failed");
+            Debug.LogError(PlayFabError.GenerateErrorReport());
+        });
+    }
+
+
+    public void SetDisplayName(string name)
+    {
+        var request = new UpdateUserTitleDisplayNameRequest { DisplayName = name };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, (UpdateUserTitleDisplayNameResult) => { }, (PlayFabError) => { });
+    }
+
+
+
+
+
+    public void GetUserData()
+    {
+        var request = new GetUserDataRequest();
+        PlayFabClientAPI.GetUserData(request, (result) =>
+        {
+            foreach (var data in result.Data)
+            {
+                HLLogger.Log($"{data.Key} : {data.Value.Value}");
+            }
+        }, (error) =>
+        {
+
+        });
+    }
+
+
+    public void SaveLevelAndExp(int level, int exp)
+    {
+        var request = new UpdateUserDataRequest
+        {
+            Data = new Dictionary<string, string>
+        {
+            { "Level", level.ToString() },
+            { "Exp", exp.ToString() }
+        }
+        };
+
+        PlayFabClientAPI.UpdateUserData(request,
+            result => Debug.Log("레벨과 경험치 저장 성공!"),
+            error => Debug.LogError($"저장 실패: {error.GenerateErrorReport()}"));
+    }
 
 
 

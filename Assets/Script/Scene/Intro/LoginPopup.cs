@@ -48,11 +48,13 @@ public class LoginPopup : PopupBase
 
         PlayFabManager.instance.IntroUserLoginProcess(idInputField.text, pwInputField.text, () =>
         {
-            if (autoLogin.isOn)
-            {
-                SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text);
-                SaveDataManager.instance.SavePlayerData();
-            }
+            SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text, autoLogin.isOn);
+            SaveDataManager.instance.SavePlayerData();
+
+            // PlayFabManager.instance.GetAccountInfo();
+            PlayFabManager.instance.GetUserData();
+            // PlayFabManager.instance.SaveLevelAndExp(4, 4);
+
             IntroController.instance.MoveNextIntroProcess();
             ShowPopup(false);
         }, (error) =>

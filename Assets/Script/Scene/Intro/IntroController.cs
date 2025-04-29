@@ -293,12 +293,9 @@ public class IntroController : MonoBehaviour
 
     private void PlayFabLoginProcess()
     {
-        var loginIDPWData = SaveDataManager.instance.GetIDPW();
-
-
-        if (string.IsNullOrEmpty(loginIDPWData.Item1) == false && string.IsNullOrEmpty(loginIDPWData.Item2) == false)
+        if (SaveDataManager.instance.playerData.autoLogin)
         {
-            // 기존 유저 로그인
+            var loginIDPWData = SaveDataManager.instance.GetIDPW();
             PlayFabManager.instance.IntroUserLoginProcess(loginIDPWData.Item1, loginIDPWData.Item2, () =>
             {
                 state++;

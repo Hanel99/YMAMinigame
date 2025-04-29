@@ -217,14 +217,14 @@ public class SaveDataManager : MonoBehaviour
 
 
 
-    public void SetIDPW(string id, string pw)
+    public void SetIDPW(string id, string pw, bool isAutoLogin)
     {
         _playerData.id = id;
         _playerData.pw = pw;
+        _playerData.autoLogin = isAutoLogin;
 
         SavePlayerData();
     }
-
     public (string, string) GetIDPW()
     {
         return (_playerData.id, _playerData.pw);

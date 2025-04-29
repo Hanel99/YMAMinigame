@@ -22,7 +22,7 @@ public class EasySaveEditor : Editor
         PlayerData playerData = new PlayerData();
         ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
 
-        SaveDataManager.instance.SetIDPW("", "");
+        SaveDataManager.instance.SetIDPW("", "", false);
         HLLogger.Log("Remove ID PW Complete");
     }
 

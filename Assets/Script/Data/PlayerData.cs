@@ -14,6 +14,7 @@ public class PlayerData
 
     public string id;
     public string pw;
+    public bool autoLogin;
 
 
     public string serverDataVersion;
@@ -37,6 +38,7 @@ public class PlayerData
         master = CardMaster.Other;
         id = "";
         pw = "";
+        autoLogin = false;
 
         serverDataVersion = "0";
         level = 1;
