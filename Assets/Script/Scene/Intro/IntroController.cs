@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class IntroController : MonoBehaviour
 {
@@ -77,6 +76,12 @@ public class IntroController : MonoBehaviour
                 StartCoroutine(nameof(ServerUpdateProcess));
 #endif
                 break;
+
+
+            case IntroState.PlayFabLogin:
+                PlayFabLoginProcess();
+                break;
+
 
             case IntroState.Complete:
                 StartCoroutine(nameof(CompleteProcess));
@@ -285,11 +290,41 @@ public class IntroController : MonoBehaviour
         StartIntroProcess();
     }
 
+
+    private void PlayFabLoginProcess()
+    {
+        var loginIDPWData = SaveDataManager.instance.GetIDPW();
+
+
+        if (string.IsNullOrEmpty(loginIDPWData.Item1) == false && string.IsNullOrEmpty(loginIDPWData.Item2) == false)
+        {
+            // 기존 유저 로그인
+            PlayFabManager.instance.IntroUserLoginProcess(loginIDPWData.Item1, loginIDPWData.Item2, () =>
+            {
+                state++;
+                StartIntroProcess();
+            }, (error) =>
+            {
+                IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, () => { IntroUIManager.instance.ShowLoginPopup(); });
+            });
+        }
+        else
+        {
+            // 로그인 창 열림
+            IntroUIManager.instance.ShowLoginPopup();
+        }
+    }
+
+    public void MoveNextIntroProcess()
+    {
+        state++;
+        StartIntroProcess();
+    }
+
+
     private void CompleteProcess()
     {
         IntroUIManager.instance.ShowCompleteDim(true);
-
-        IntroUIManager.instance.ShowLoginPopup();
     }
 
 

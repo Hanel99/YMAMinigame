@@ -51,6 +51,7 @@ public enum IntroState
     CheckMaintenance,
     LoadUserData,
     ServerUpdate,
+    PlayFabLogin,
     Complete,
 
     Error,

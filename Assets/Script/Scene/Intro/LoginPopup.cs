@@ -1,8 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class LoginPopup : PopupBase
@@ -39,8 +34,31 @@ public class LoginPopup : PopupBase
 
     public void OnClickLogin()
     {
-        //login process
+        if (idInputField.text.Length < 3)
+        {
+            IntroUIManager.instance.ShowCommonPopup("오류", "ID는 3자 이상 입력해주세요.", true, true, false, null, null);
+            return;
+        }
+        if (pwInputField.text.Length < 6)
+        {
+            IntroUIManager.instance.ShowCommonPopup("오류", "비밀번호는 6자 이상 입력해주세요.", true, true, false, null, null);
+            return;
+        }
 
+
+        PlayFabManager.instance.IntroUserLoginProcess(idInputField.text, pwInputField.text, () =>
+        {
+            if (autoLogin.isOn)
+            {
+                SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text);
+                SaveDataManager.instance.SavePlayerData();
+            }
+            IntroController.instance.MoveNextIntroProcess();
+            ShowPopup(false);
+        }, (error) =>
+        {
+            IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, null);
+        });
 
     }
 

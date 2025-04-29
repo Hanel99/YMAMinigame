@@ -12,6 +12,20 @@ public class EasySaveEditor : Editor
         HLLogger.Log("Remove Complete.");
     }
 
+
+    [MenuItem("SaveDataEditor/RemovePlayerIDPW")]
+    public static void RemovePlayerIDPWData()
+    {
+        if (ES3.KeyExists(StaticGameData.SAVE_PLAYER_DATA_KEY) == false)
+            HLLogger.Log("save date is null.");
+
+        PlayerData playerData = new PlayerData();
+        ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
+
+        SaveDataManager.instance.SetIDPW("", "");
+        HLLogger.Log("Remove ID PW Complete");
+    }
+
     [MenuItem("SaveDataEditor/ShowPlayerData")]
     public static void ShowPlayerData()
     {

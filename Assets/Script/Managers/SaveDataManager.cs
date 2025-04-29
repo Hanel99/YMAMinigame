@@ -225,6 +225,11 @@ public class SaveDataManager : MonoBehaviour
         SavePlayerData();
     }
 
+    public (string, string) GetIDPW()
+    {
+        return (_playerData.id, _playerData.pw);
+    }
+
 
 
     #endregion

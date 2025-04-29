@@ -84,6 +84,7 @@ public class IntroUIManager : MonoBehaviour
                 stateText.text = $"{LocalizeManager.instance.GetString($"intro.process.{state}")} {addText}";
                 break;
 
+            case IntroState.PlayFabLogin:
             case IntroState.Complete:
                 stateText.text = "";
                 break;
