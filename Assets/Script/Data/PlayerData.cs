@@ -12,6 +12,10 @@ public class PlayerData
     public LanguageType languageType;
     public CardMaster master;
 
+    public string id;
+    public string pw;
+
+
     public string serverDataVersion;
 
     public int level;
@@ -31,6 +35,8 @@ public class PlayerData
         name = $"Player{mid.ToString("D4")}";
         languageType = LanguageType.ko;
         master = CardMaster.Other;
+        id = "";
+        pw = "";
 
         serverDataVersion = "0";
         level = 1;

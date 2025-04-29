@@ -217,6 +217,15 @@ public class SaveDataManager : MonoBehaviour
 
 
 
+    public void SetIDPW(string id, string pw)
+    {
+        _playerData.id = id;
+        _playerData.pw = pw;
+
+        SavePlayerData();
+    }
+
+
 
     #endregion
 

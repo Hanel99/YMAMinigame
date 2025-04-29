@@ -106,4 +106,44 @@ public class IntroUIManager : MonoBehaviour
         sceneDim.ShowAnimation(showOpen, callback);
     }
 
+
+
+
+
+    public Transform popupRoot;
+    public List<GameObject> popupList = new();
+
+
+    public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null)
+    {
+        var popup = ShowPopup<CommonPopup>();
+        popup.GetComponent<CommonPopup>().ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
+        return popup.GetComponent<CommonPopup>();
+    }
+
+    public void ShowLoginPopup()
+    {
+        var popup = ShowPopup<LoginPopup>();
+        popup.GetComponent<LoginPopup>().ShowPopup();
+    }
+
+    public void ShowRegisterPopup()
+    {
+        var popup = ShowPopup<RegisterPopup>();
+        popup.GetComponent<RegisterPopup>().ShowPopup();
+    }
+
+    public GameObject ShowPopup<T>()
+    {
+        var popupName = typeof(T).Name;
+
+        var popup = ResourceManager.instance.GetPopup(popupName, popupRoot);
+        if (popup != null)
+        {
+            popupList.RemoveAll(x => x == null);
+            popupList.Add(popup);
+        }
+        return popup;
+    }
+
 }

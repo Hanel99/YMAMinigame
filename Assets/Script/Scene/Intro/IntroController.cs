@@ -288,6 +288,8 @@ public class IntroController : MonoBehaviour
     private void CompleteProcess()
     {
         IntroUIManager.instance.ShowCompleteDim(true);
+
+        IntroUIManager.instance.ShowLoginPopup();
     }
 
 
