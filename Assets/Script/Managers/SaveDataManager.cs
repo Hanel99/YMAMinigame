@@ -11,6 +11,15 @@ public class SaveDataManager : MonoBehaviour
     public PlayerData playerData => _playerData;
 
 
+    #region Convert
+
+    //playfab에 저장할 용도
+    public string JsonPlayerData => JsonUtility.ToJson(_playerData);
+    public PlayerData PlayerDataFromJson(string json) => JsonUtility.FromJson<PlayerData>(json);
+
+    #endregion
+
+
     private void Awake()
     {
         if (instance != null && instance != this)
@@ -279,5 +288,6 @@ public class SaveDataManager : MonoBehaviour
     }
 
     #endregion
+
 
 }

@@ -6,23 +6,23 @@ using System;
 [Serializable]
 public class PlayerData
 {
-    public DateTime savedTime;
-    public int mid;
-    public string name;
-    public LanguageType languageType;
-    public CardMaster master;
+    public DateTime savedTime = DateTime.Now;
+    public int mid = 0;
+    public string name = "";
+    public LanguageType languageType = LanguageType.ko;
+    public CardMaster master = CardMaster.Other;
 
-    public string id;
-    public string pw;
-    public bool autoLogin;
+    public string id = "";
+    public string pw = "";
+    public bool autoLogin = false;
 
 
-    public string serverDataVersion;
+    public string serverDataVersion = "0";
 
-    public int level;
-    public int exp;
-    public int coin;
-    public int mileage;
+    public int level = 1;
+    public int exp = 0;
+    public int coin = 0;
+    public int mileage = 0;
     public List<int> ownCardList = new();
     public List<string> usingRedeemCode = new();
 

@@ -125,20 +125,16 @@ public class PlayFabManager : MonoBehaviour
     }
 
 
-    public void SaveLevelAndExp(int level, int exp)
+    public void SavePlayerData()
     {
         var request = new UpdateUserDataRequest
         {
-            Data = new Dictionary<string, string>
-        {
-            { "Level", level.ToString() },
-            { "Exp", exp.ToString() }
-        }
+            Data = new Dictionary<string, string> { { "PlayerData", SaveDataManager.instance.JsonPlayerData }, }
         };
 
         PlayFabClientAPI.UpdateUserData(request,
-            result => Debug.Log("레벨과 경험치 저장 성공!"),
-            error => Debug.LogError($"저장 실패: {error.GenerateErrorReport()}"));
+            result => Debug.Log("Save Complete"),
+            error => Debug.LogError($"Failed: {error.GenerateErrorReport()}"));
     }
 
 
