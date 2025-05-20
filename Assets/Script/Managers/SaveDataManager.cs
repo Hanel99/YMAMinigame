@@ -35,6 +35,17 @@ public class SaveDataManager : MonoBehaviour
         _playerData = new PlayerData();
     }
 
+    private void OnApplicationQuit()
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != SceneName.IntroScene.ToString())
+            SavePlayerData(true);
+    }
+
+    private void OnApplicationPause(bool pause)
+    {
+        if (pause && UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != SceneName.IntroScene.ToString())
+            SavePlayerData(true);
+    }
 
 
 
@@ -228,15 +239,20 @@ public class SaveDataManager : MonoBehaviour
 
     public void SetIDPW(string id, string pw, bool isAutoLogin)
     {
-        _playerData.id = id;
-        _playerData.pw = pw;
+        _playerData.playFabLoginID = id;
+        _playerData.playFabLoginPW = pw;
         _playerData.autoLogin = isAutoLogin;
 
         SavePlayerData();
     }
     public (string, string) GetIDPW()
     {
-        return (_playerData.id, _playerData.pw);
+        return (_playerData.playFabLoginID, _playerData.playFabLoginPW);
+    }
+
+    public void SetPlayerName()
+    {
+        PlayFabManager.instance.SetDisplayName();
     }
 
 
@@ -251,11 +267,13 @@ public class SaveDataManager : MonoBehaviour
 
     #region SaveDataInDevice
 
-    public void SavePlayerData()
+    public void SavePlayerData(bool forceSave = false)
     {
         _playerData.savedTime = DateTime.Now;
         ES3.Save(StaticGameData.SAVE_PLAYER_DATA_KEY, _playerData);
         HLLogger.Log("Save Date Complete");
+
+        PlayFabManager.instance.SavePlayerData(forceSave);
     }
 
 
@@ -265,8 +283,6 @@ public class SaveDataManager : MonoBehaviour
         {
             HLLogger.Log("Load Date Complete");
             ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, _playerData);
-
-            StaticGameData.introData.isNewUser = false;
         }
         else
         {
@@ -275,12 +291,33 @@ public class SaveDataManager : MonoBehaviour
             _playerData.mid = UnityEngine.Random.Range(0, 10000);
             _playerData.name = $"Player{_playerData.mid.ToString("D4")}";
 
-            StaticGameData.introData.isNewUser = true;
             SavePlayerData();
         }
 
         return _playerData;
     }
+
+
+    public void SaveJsonPlayerData(string json)
+    {
+        var playFabData = PlayerDataFromJson(json);
+
+        // 로컬과 서버의 mid가 일치하고, 로컬 데이터의 레벨 또는 exp가 더 높으면 로컬 데이터 유지
+        if (playFabData.mid == _playerData.mid &&
+            (_playerData.level > playFabData.level ||
+            (_playerData.level == playFabData.level && _playerData.exp > playFabData.exp)))
+        {
+            // 로컬 데이터가 더 높으므로 아무것도 하지 않음(로컬 데이터 유지)
+        }
+        else
+        {
+            // 그 외의 경우 playFabData를 적용
+            _playerData = playFabData;
+            SavePlayerData();
+        }
+    }
+
+
 
     public void RemovePlayerData()
     {

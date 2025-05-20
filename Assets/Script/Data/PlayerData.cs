@@ -12,9 +12,10 @@ public class PlayerData
     public LanguageType languageType = LanguageType.ko;
     public CardMaster master = CardMaster.Other;
 
-    public string id = "";
-    public string pw = "";
+    public string playFabLoginID = "";
+    public string playFabLoginPW = "";
     public bool autoLogin = false;
+    public bool isNewUser = true;
 
 
     public string serverDataVersion = "0";
@@ -36,9 +37,10 @@ public class PlayerData
         name = $"Player{mid.ToString("D4")}";
         languageType = LanguageType.ko;
         master = CardMaster.Other;
-        id = "";
-        pw = "";
+        playFabLoginID = "";
+        playFabLoginPW = "";
         autoLogin = false;
+        isNewUser = true;
 
         serverDataVersion = "0";
         level = 1;

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 30682078}
   - component: {fileID: 30682079}
   - component: {fileID: 30682080}
+  - component: {fileID: 30682081}
   m_Layer: 0
   m_Name: DontDestroymanager
   m_TagString: Untagged
@@ -227,6 +228,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edc5d039d0db19d42a1a3cad723af7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &30682081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30682073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b09b8b3430eb08545909367bded57a6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -366,7 +379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  jaosn: '{"mid":728,"master":0,"id":"hanel","autoLogin":false,"serverDataVersion":"0","level":1,"exp":0,"coin":0,"mileage":0,"ownCardList":[],"usingRedeemCode":[]}'
 --- !u!1 &1039616326
 GameObject:
   m_ObjectHideFlags: 0

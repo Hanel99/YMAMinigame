@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9051853853183371390}
   - component: {fileID: 545309974990536254}
   - component: {fileID: 584698934340269950}
+  - component: {fileID: 2646177212787524895}
   m_Layer: 5
   m_Name: RegisterPopup
   m_TagString: Untagged
@@ -62,6 +63,18 @@ MonoBehaviour:
   isActBackKey: 1
   idInputField: {fileID: 2843226944247503843}
   pwInputField: {fileID: 1566270803241352444}
+--- !u!114 &2646177212787524895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163178896532509451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447c2e4b3678dc54b8369367c6374de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1277382238072062140
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5273371230269296149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -861,8 +874,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GachaResultPopup, Assembly-CSharp
+      - m_Target: {fileID: 584698934340269950}
+        m_TargetAssemblyTypeName: PopupBase, Assembly-CSharp
         m_MethodName: OnClickClose
         m_Mode: 1
         m_Arguments:

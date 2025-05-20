@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9051853853183371390}
   - component: {fileID: 545309974990536254}
   - component: {fileID: 9211520700222787652}
+  - component: {fileID: -7530519994023006784}
   m_Layer: 5
   m_Name: LoginPopup
   m_TagString: Untagged
@@ -63,6 +64,18 @@ MonoBehaviour:
   idInputField: {fileID: 2843226944247503843}
   pwInputField: {fileID: 1566270803241352444}
   autoLogin: {fileID: 1935212477399892215}
+--- !u!114 &-7530519994023006784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163178896532509451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 447c2e4b3678dc54b8369367c6374de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1277382238072062140
 GameObject:
   m_ObjectHideFlags: 0

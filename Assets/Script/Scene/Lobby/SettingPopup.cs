@@ -247,6 +247,8 @@ public class SettingPopup : PopupBase
         }
 
         // 리딤코드에 맞춰 수행
+
+        //TODO @@@ 왜 이따구로 만들었을까 추후수정필요
         switch (code)
         {
             case "getmile":

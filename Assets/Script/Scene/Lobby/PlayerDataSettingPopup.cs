@@ -79,6 +79,7 @@ public class PlayerDataSettingPopup : PopupBase
         SaveDataManager.instance.playerData.name = inputName.text;
         SaveDataManager.instance.playerData.master = (CardMaster)inputMaster.value;
         SaveDataManager.instance.playerData.languageType = (LanguageType)inputLanguage.value;
+        SaveDataManager.instance.SetPlayerName();
         SaveDataManager.instance.SavePlayerData();
 
         HLLogger.Log("@@@ Confirm Action");

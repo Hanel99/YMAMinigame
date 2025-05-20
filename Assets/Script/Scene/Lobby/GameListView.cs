@@ -155,9 +155,9 @@ public class GameListView : MonoBehaviour
 
     private void IntroDataProcess()
     {
-        if (StaticGameData.introData.isNewUser)
+        if (SaveDataManager.instance.playerData.isNewUser)
         {
-            StaticGameData.introData.isNewUser = false;
+            SaveDataManager.instance.playerData.isNewUser = false;
             CommonPopup popup = null;
             popup = LobbyUIManager.instance.ShowCommonPopup("환영합니다!", "연모아 게임에 오신걸 환영합니다!\n게임에서 사용하실 이름과 연모아에서 사용중인 이름을 선택해주세요.", false, true, false, null, () =>
             {

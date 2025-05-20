@@ -7,6 +7,7 @@ public class LoginPopup : PopupBase
     public InputField idInputField;
     public InputField pwInputField;
     public Toggle autoLogin;
+    private bool isConnecting = false;
 
 
 
@@ -27,6 +28,7 @@ public class LoginPopup : PopupBase
         }
         else
         {
+            isConnecting = true;
             _CloseWindow();
         }
     }
@@ -34,6 +36,9 @@ public class LoginPopup : PopupBase
 
     public void OnClickLogin()
     {
+        if (isConnecting)
+            return;
+
         if (idInputField.text.Length < 3)
         {
             IntroUIManager.instance.ShowCommonPopup("오류", "ID는 3자 이상 입력해주세요.", true, true, false, null, null);
@@ -45,20 +50,20 @@ public class LoginPopup : PopupBase
             return;
         }
 
-
+        isConnecting = true;
         PlayFabManager.instance.IntroUserLoginProcess(idInputField.text, pwInputField.text, () =>
         {
-            SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text, autoLogin.isOn);
-            SaveDataManager.instance.SavePlayerData();
+            PlayFabManager.instance.GetUserData(() =>
+            {
+                isConnecting = false;
+                SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text, autoLogin.isOn);
+                IntroController.instance.MoveNextIntroProcess();
+                ShowPopup(false);
+            });
 
-            // PlayFabManager.instance.GetAccountInfo();
-            PlayFabManager.instance.GetUserData();
-            // PlayFabManager.instance.SaveLevelAndExp(4, 4);
-
-            IntroController.instance.MoveNextIntroProcess();
-            ShowPopup(false);
         }, (error) =>
         {
+            isConnecting = false;
             IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, null);
         });
 

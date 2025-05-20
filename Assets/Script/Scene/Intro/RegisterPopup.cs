@@ -1,3 +1,5 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class RegisterPopup : PopupBase
@@ -6,6 +8,8 @@ public class RegisterPopup : PopupBase
 
     public InputField idInputField;
     public InputField pwInputField;
+
+    private bool isConnecting = false;
 
 
     protected override void OnAwake()
@@ -22,6 +26,7 @@ public class RegisterPopup : PopupBase
         }
         else
         {
+            isConnecting = true;
             _CloseWindow();
         }
     }
@@ -29,6 +34,10 @@ public class RegisterPopup : PopupBase
 
     public void OnClickRegister()
     {
+        if (isConnecting)
+            return;
+
+
         if (idInputField.text.Length < 3)
         {
             IntroUIManager.instance.ShowCommonPopup("오류", "ID는 3자 이상 입력해주세요.", true, true, false, null, null);
@@ -43,16 +52,19 @@ public class RegisterPopup : PopupBase
 
         // reguster process
 
+        isConnecting = true;
         PlayFabManager.instance.IntroUserRegisterProcess(idInputField.text, pwInputField.text, () =>
         {
             CommonPopup popup = null;
             popup = IntroUIManager.instance.ShowCommonPopup("성공", "회원가입이 완료되었습니다.", false, true, false, null, () =>
             {
+                isConnecting = false;
                 popup?.ShowPopup(false);
                 ShowPopup(false);
             });
         }, (error) =>
         {
+            isConnecting = false;
             IntroUIManager.instance.ShowCommonPopup("오류", $"회원가입에 실패했습니다.\n{error}", false, true, false, null, null);
         });
 

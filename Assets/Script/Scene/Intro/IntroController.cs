@@ -5,9 +5,8 @@ public class IntroController : MonoBehaviour
 {
     public class IntroData
     {
-        public bool isNewUser = false;
         public bool isFirstLogin = false;
-        public int firstLoginCoinAmount = 0;
+        public int firstLoginCoinAmount = 1400;
     }
 
 
