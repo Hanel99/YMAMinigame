@@ -1,0 +1,588 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sprite_CardImage
+  m_EditorClassIdentifier: 
+  m_GroupName: Sprite_CardImage
+  m_GUID: c7bcf25c0d226044c913a491318fdbf0
+  m_SerializeEntries:
+  - m_GUID: 00b2a3aaef5c9404eb940a3a4455c405
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2201.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0168f8ca75f90294a87a3dacbbd5b43d
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0105.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03dfb0ee7d2310042911c99145ba1d5b
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2902.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08f8fcc15c3fa33469fcf0f18a62faa1
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1703.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0a2b950ac520f4b47ae8811e6d0a18a5
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2402.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bfafdcb844362d4ab46d2471e96367a
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3300.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d15743c7d1a545459c0eced9ef70a35
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0700.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12950ee0eddd5f24c9b35124a00e1b91
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0200.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 163a89cac8c3aa84188365abaeb2f26e
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0903.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 198814e58140f4642a8ed93cb542074b
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1300.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a102154ad2176146b11d9b69f84cf64
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0302.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1ad1da6daaf47614d84d86480149a2b7
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0501.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1afee74b6c9e0d04b99f8b4ec7a50025
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0404.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c0c45553696b794c91e217b89ae0c22
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2803.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d09b0c02a416d6489662584cf9cccaa
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0109.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 24998af0a4ddb4e4abf8b73d2706087f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2900.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26e6a8070e90b904f8a8cc047769c494
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2300.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2b750fea8a683fa44a7249e69136142d
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1704.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e976a31605847a4490b74c4bac337b2
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0301.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f58f99691a6ca44fb473d3e39b958fd
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2100.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3026f311cf9d2f145b04c3e5dc3eeb96
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2000.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3121f93ae4c53314fa7882f62300f993
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0108.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32673c0be3522494fad57a7d766a839c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3201.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 32da5a05fc2f0ce41afe1ebde14c77bb
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0111.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 340ec7fbfafeadf4aaebe0325e74113e
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0405.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37295a4da205ad44fb4568fdd37b34ab
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1802.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 380bcb95f2abc294ca8bacff297a3caf
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2801.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38a10db2ee1299448b678498871ad1cc
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1502.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38be623773c03a143baf79c4b0c84d3d
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3100.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39f80e52be8845a44a7123a0c01c26f4
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1101.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b1ad68f423b6ef4592b15f4ff6b9458
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2901.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bdead29ec4eb7e4eb00c9035078ea15
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0101.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3be31b395426aba4eaa7733b1d0ded98
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3200.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ec6fd63f03576146b81f795b6e85aad
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2805.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 416bb4b85a5475c409f89d3f90c05878
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1504.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44c4b8de942e2a542964ce2e661dd7ec
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0800.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46a2a4db8262acb41bc0af17c5af4c9e
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0602.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48a6b413ac8959341a96ab04863916a8
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2600.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b4b459fc708bf14e9ffa2d4e048a842
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3003.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c3bdf06282943e4d95edcb59a80f385
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1700.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ec5ed6e3e90e24498fa0777e353c711
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3002.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50831b27fe6137d40aa209ff6d25b3e8
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1601.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54fe64a654de60749a0d31fefb883f56
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2802.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55e6b8c3c1e5a0648a09aa2e614b2eb1
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2804.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 560c01af787c23941be5ef14b893edd2
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2700.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57635263e5b60aa47891fef12b7bbc76
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1501.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e8141e93ece56e4b99235561c0b2a53
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3004.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61f103eca102f054bb7f71c4d1166eb6
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0201.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6b922b5ab8d2226419c8816bc47881f7
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3000.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d117fcd2e3c3ee459d717dfbfb95686
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0901.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d343e8da8a9925428347fb726fc1acb
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0502.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e490f75e6fda7c4ba93af986a6e5cdd
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1803.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75e8983950724de4c85f23e539ec3c14
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1600.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76e25063e994bea49b01b636ce5250dc
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0400.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77008c048973aa64daa8effa6fb04034
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1701.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 770099a495ba29648b3b589bcf2a218f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3301.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c30d2407fda474459b6e53a7086bd1d
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0107.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 856d1048b503e3240b76e9f91a0b3f90
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0601.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 860a06f0880595543a95c73ccf0cdee6
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1900.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8be356c5e5b55d94dbd06f6cbcaf9861
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1301.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9149e893b81ff2d41a1f9bf3e9c918c0
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2400.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 918146a830f9b9743be20cb4c68505d0
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2200.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9363471440fea744486103588adcbcdc
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0102.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 94990e67538141548aa4c0b2ee41f317
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0902.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 949ae881058c7d84994f4b94b5302765
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0500.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95944158ae19a864e944ce11e2bc3c1f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2904.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98d2735d15438af468cf9bff81b5af2a
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1401.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99b4ae9b47f7f8748bdbbd31c222784d
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1201.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e6db1de363e5f249addf49073e58cb6
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2001.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4c00fd96088fc54ab67007c27975d9f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0110.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a603202d4b04d33478b7c512fa6f2a47
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0900.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a69cf8962e86a674481de5288474c200
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2702.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8224834a94505b46961cf5a2ad47299
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1800.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa48e71030da7c147a2acb313132f65f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0403.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac462b64ce4a7ac4baae026a07efbd87
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0600.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af7c3b5ee7b68a34a9352316acbc8260
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2701.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b638f493ba08be94a810f02edaec3bba
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1705.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba8f991a472e4dc4ca860fe266cf6aaa
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2800.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be44a5eed19eed04a887f17dfcb09e19
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1400.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be8e2ce5652af5d4bb184faac12e8078
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0801.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: becf73befc60bd241825b9f58880f07f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/3001.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bedb42845f3a6c341a198acc22912df3
+    m_Address: Assets/AddressableResource/Sprite/CardImages/mask.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c088a541d40531040b20232b6b708458
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1000.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c277bb5c549cb4f40a6d74af4ec6a9f0
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0000.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2abe06a7672faf40b1b57f0add541b9
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1503.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5189d3d50c330a47b47dcfb2b34664f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0103.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c909e54ee7846074897172f124e031e4
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2903.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9805135034ab624ca665c96a2722a25
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0106.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc293bae83402c24980a9590673669b9
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1602.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce57568a89e9d124fa0f6b7227a02e0c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1801.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf11b8fcdbb5c604a8fa400c1352d54b
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2101.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1baf7e301934bb4d87c5b37b753444c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1202.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5bc132e6925e834194dedeccab553e2
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2500.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d5c9486ef5a4cb543ba361983188f9e3
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0701.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d96b4e0585871d6439774751af9f6b9c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0112.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db46e0cd3f91e3c44957b1e3f7fb1450
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2703.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db792cd63ecb14e459def994d6c3282c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0104.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dda84e3090fa6394db92d48d580ce79a
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1804.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddb120180f6a24c42a58e539e89615c8
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2401.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de296b05e6dfbfb4b82f9e4e7b23860a
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0300.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de3ad75d1a96e264e93b61cca25c16f4
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1001.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea349137a55dd3240b4ab2ff2e76ef7c
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1500.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eaa19b7b4203d1f40a6cc794e341c50e
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0401.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebe07b5f7c0f12942900d85c32e7a27f
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1702.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec580ef270cacf0418f4844c629cfe3e
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1200.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0eb6e434337e7340993ce1a5b9388a4
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1100.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1bbe38ab89c5274ab18c7d1db5b314a
+    m_Address: Assets/AddressableResource/Sprite/CardImages/2002.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8e494ec1e0d1a548b1f009a7ae053ca
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0303.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f961347e42b41ff42b4db109b64f4038
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0402.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0ea0fb67003854daa3b1998d3e2022
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0001.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb93935b4ea4f9b42b0caee12d35f9ac
+    m_Address: Assets/AddressableResource/Sprite/CardImages/0100.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fc1814159020fce478a2ea24f165423b
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1203.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fff7816af6d539843a9334434f53ab68
+    m_Address: Assets/AddressableResource/Sprite/CardImages/1402.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 25a20cddb53705448b7ed5d0b11f38c8, type: 2}
+    - {fileID: 11400000, guid: 240d3e537d21f274daa6778691b21ed0, type: 2}

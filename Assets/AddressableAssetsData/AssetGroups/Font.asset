@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Font
+  m_EditorClassIdentifier: 
+  m_GroupName: Font
+  m_GUID: 21ce41f4e2e99d748ac186bb9a603758
+  m_SerializeEntries:
+  - m_GUID: 052bc7e5cc79a534c84a688294c6e1a5
+    m_Address: Assets/AddressableResource/Font/ONEMobilePOP.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a50addd08f6c7540a59ebb06704a570
+    m_Address: Assets/AddressableResource/Font/SUIT-Bold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2084cdddb0b13e34aa581cfafd3c9191
+    m_Address: Assets/AddressableResource/Font/SUIT-ExtraBold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3c46f8a8ef22192499a5b69bee276571
+    m_Address: Assets/AddressableResource/Font/HakgyoansimUndongjangL.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ca1227b44d772d418588fa6e97aafa4
+    m_Address: Assets/AddressableResource/Font/SUIT-SemiBold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a1c15a866ccd2544a6a5f44e0a75452
+    m_Address: Assets/AddressableResource/Font/DungGeunMo.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6194de66d61b59f479b2c772779ecddb
+    m_Address: Assets/AddressableResource/Font/SUIT-Heavy.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 646bf6aa2e5d4d247b0adec19d7eb3a4
+    m_Address: Assets/AddressableResource/Font/SUIT-ExtraLight.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77292880d2b18b24a8d18f908d3bac31
+    m_Address: Assets/AddressableResource/Font/Cafe24SsurroundAir-v1.1.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88928f74dff4a4948b3567edf11b7939
+    m_Address: Assets/AddressableResource/Font/SUIT-Regular.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b34c0a8ddbd4814abbe583c42501b0f
+    m_Address: Assets/AddressableResource/Font/HakgyoansimRikodeoR.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f24a3de087f71f4db23c2d65e1bda7e
+    m_Address: Assets/AddressableResource/Font/SUIT-Thin.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae7ebdfa36e37b14f9088745e56ab331
+    m_Address: Assets/AddressableResource/Font/SUIT-Medium.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cda3726b9370a4043bb13d16cccae86d
+    m_Address: Assets/AddressableResource/Font/SUIT-Light.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f384d052dd2222d49a92a3a7f46a7ce6
+    m_Address: Assets/AddressableResource/Font/Cafe24Ssurround-v2.0.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: db7a8f1216716db4da3ca2a3ed8aaa09, type: 2}
+    - {fileID: 11400000, guid: c6b5e7b48287ea342b18f2e4b0c72aee, type: 2}

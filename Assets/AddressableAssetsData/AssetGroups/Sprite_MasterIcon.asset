@@ -1,0 +1,208 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Sprite_MasterIcon
+  m_EditorClassIdentifier: 
+  m_GroupName: Sprite_MasterIcon
+  m_GUID: 1a1ab88f7cac2eb459a37dbed876cf9e
+  m_SerializeEntries:
+  - m_GUID: 0eb52f5673b92f64e81a7ffd800a765d
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Zoey.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13d5186ec8dd73348b6a8662d99f8273
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Banana.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 14d0a4e1eefcda048838d59b7a37d530
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Yjyj.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 154577d2ab844b5449777ebb2975495c
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Name.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18fa7450e0ed792478c6a44e3b086fc1
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Sola.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2afeee75c99cae74aa86dfdcc5358c33
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Luo.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 301364fbdc032314889591c2135b7ae1
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Siroking.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34eb82d6b0fef2c42a117b61056e27ed
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Yobara.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a60d4fa923aca040b2a62d49db66a66
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Samsa2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 40d72d3c7b06abe4d88f1ef071785ba4
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Yulmu.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50a8f6fe7ff45744f868662b284d124f
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Kiwi.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53fd963b95452c14bb11c3066938b2ee
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Narae.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5620d765c681e9f4c8090ae93ee61bfe
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Judy.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b78dba407728454a9814884272e5796
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Hayu.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67e9f77b87d86b94ba9aea6c10c0d896
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Other2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 72550188d86542244a95b426a24391c9
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Kong.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 725d72eb4b6c5f64787a47cbcd13311e
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Jjamong.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76d3ca43292f53144a32dcf49271153e
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Ruby.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77013d16596822240978c2d22e09764a
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Nibel.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cf9814b8f01c7e4d812d7a00bb984fa
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Moon.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84e5f95c540c2ed40ae9bff3712fd73c
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Neemo.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d02c25a23cebf74a8a6a9f02000ef4b
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Gaejang.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9632716e731c5d84092252c040b93ac5
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Hanel.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b87c1bf6fcd5098478c5cb4ba33faae3
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Yoshi.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b8f137ff1d032314c863a64715f9a60b
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Seno.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c145775df275a014ba6594b964af2f79
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Samsa.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd7666b6bf5c8834fbdc83d6d4f5a637
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Bbada.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d019994bcccfbb14a85a77bdfd7815fc
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Vorrom.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0911ad962001b240ba70f1ba7464ab5
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Akusi.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6b8cf136a46ed349871bfda4913245e
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Hyunbin.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9bb843d5f0849649a8aadab51738eaa
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Dami.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd6df1c601746ce41b1d1b041b547223
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Gathree.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3da104e76f8c4540939e6af6e918144
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Lune.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f56e75edf85d00042962141cf0815c29
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Manta.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f590f04f261ba4349a2947bdc692d349
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/H.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: facda09d443f7c34b9ef62f90b168a59
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Walwaldog.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff4995ac057026446a7e6a6d76165314
+    m_Address: Assets/AddressableResource/Sprite/MasterIcons/Other.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 21e7d67131e966f4c80a5a89317c2df0, type: 2}
+    - {fileID: 11400000, guid: b6c4107ed18cbd943941f9919448426f, type: 2}
