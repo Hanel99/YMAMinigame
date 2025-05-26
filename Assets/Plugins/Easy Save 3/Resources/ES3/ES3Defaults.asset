@@ -42,6 +42,7 @@ MonoBehaviour:
     - DOTweenPro.Scripts
     - Hierarchy4.Runtime
     - PlayFab
+    - Sirenix.OdinInspector.Modules.Unity.Addressables
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

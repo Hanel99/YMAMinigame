@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YMAMatch2CardGame.unity
     guid: 85ed4ba9e0393fb43894293a1adaa813
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: a29d318d6a812684faf61d3968e13efe, type: 2}
+  m_UseUCBPForAssetBundles: 0
