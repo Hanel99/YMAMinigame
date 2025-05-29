@@ -83,22 +83,6 @@ public class PlayFabManager : MonoBehaviour
     }
 
 
-    public void GetAccountInfo()
-    {
-        var request = new GetAccountInfoRequest() { Username = SaveDataManager.instance.playerData.playFabLoginID };
-        PlayFabClientAPI.GetAccountInfo(request, (GetAccountInfoResult) =>
-        {
-            var s1 = GetAccountInfoResult.AccountInfo;
-
-
-
-        }, (PlayFabError) =>
-        {
-            Debug.LogWarning("GetUserData Failed");
-            Debug.LogError(PlayFabError.GenerateErrorReport());
-        });
-    }
-
 
     public void SetDisplayName()
     {
