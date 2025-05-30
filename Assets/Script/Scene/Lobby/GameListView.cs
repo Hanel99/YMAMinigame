@@ -98,12 +98,12 @@ public class GameListView : MonoBehaviour
                     break;
 
                 case "1":
-                    //DevTest만 입장 가능
-#if !DevTest
+                    //DEV만 입장 가능
+#if !DEV
                     popup = LobbyUIManager.instance.ShowCommonPopup("공지", $"서버 점검 중입니다.\nCode.{sheetData}", false, true, false, null, () =>
-                   {
-                       Application.Quit();
-                   });
+                    {
+                        Application.Quit();
+                    });
                     popup.isActBackKey = false;
 #endif
                     break;

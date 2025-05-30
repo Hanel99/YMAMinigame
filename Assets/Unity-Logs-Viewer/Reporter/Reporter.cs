@@ -1992,7 +1992,7 @@ public class Reporter : MonoBehaviour
 
 	void doShow()
 	{
-#if !DevTest
+#if !DEV
 		show = false;
 		return;
 #endif

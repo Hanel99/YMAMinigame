@@ -30,7 +30,7 @@ public static class HLLogger
 {
     public static void Log(string log, LogColor color = LogColor.none, Transform tr = null)
     {
-#if !Live
+#if !LIVE
         if (color == LogColor.none)
             Debug.Log($"{log}", tr);
         else
@@ -40,7 +40,7 @@ public static class HLLogger
 
     public static void LogWarning(string log, LogColor color = LogColor.none, Transform tr = null)
     {
-#if !Live
+#if !LIVE
         if (color == LogColor.none)
             Debug.LogWarning($"{log}", tr);
         else
@@ -50,7 +50,7 @@ public static class HLLogger
 
     public static void LogError(string log, LogColor color = LogColor.none, Transform tr = null)
     {
-#if !Live
+#if !LIVE
         if (color == LogColor.none)
             Debug.LogError($"{log}", tr);
         else

@@ -143,8 +143,8 @@ public class SettingPopup : PopupBase
                     break;
 
                 case "1":
-                    //DevTest만 입장 가능
-#if DevTest
+                    //DEV만 입장 가능
+#if DEV
                     StartCoroutine(nameof(UpdateServerData));
 #else
                     popup = LobbyUIManager.instance.ShowCommonPopup("공지", $"서버 점검 중입니다.\nCode.{sheetData}", false, true, false, null, () =>

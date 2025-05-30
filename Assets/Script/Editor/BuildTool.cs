@@ -14,7 +14,7 @@ using System.IO;
 
 public class BuildToolEditorWindow : OdinEditorWindow
 {
-    public enum EnvOption { Dev, Test, Real }
+    public enum EnvOption { Dev, Live }
     public enum PlatformOption { Android, Windows }
 
     [Title("\uD83E\uDDF1 Addressables + 앱 빌드 툴", TitleAlignment = TitleAlignments.Centered)]
@@ -110,6 +110,14 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
         SetDefineSymbol(env.ToString().ToUpper());
 
+
+        // 1. 현재 플랫폼과 다르면 에디터 전환
+        BuildTarget buildTarget = GetBuildTarget(platform);
+        if (EditorUserBuildSettings.activeBuildTarget != buildTarget)
+            EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(buildTarget), buildTarget);
+
+        // 2. Addressables 빌드 수행
+        AddressableAssetSettings.CleanPlayerContent();
         AddressableAssetSettings.BuildPlayerContent();
         Debug.Log($"✅ Addressables 빌드 완료: {platformStr}/{envStr}/{version}");
     }
@@ -120,7 +128,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
         var defines = PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.FromBuildTargetGroup(group));
 
         List<string> defineList = new List<string>(defines.Split(';'));
-        defineList.RemoveAll(s => s == "DEV" || s == "TEST" || s == "REAL");
+        defineList.RemoveAll(s => s == "DEV" || s == "LIVE");
         defineList.Add(symbol);
 
         NamedBuildTarget namedTarget = NamedBuildTarget.FromBuildTargetGroup(group);
@@ -243,14 +251,6 @@ public class BuildToolEditorWindow : OdinEditorWindow
     //     }
     // }
 
-    protected override void OnGUI()
-    {
-        // EditorGUILayout.HelpBox(
-        //     $"\uD83D\uDEE0️ 현재 세팅\n▶ 플랫폼: {Platform}\n▶ 환경: {Environment}\n▶ 버전: {Version}\n▶ Scripting Define: {Environment.ToString().ToUpper()}",
-        //     MessageType.Info);
-
-        // base.OnImGUI();
-    }
 
     [MenuItem("Tools/\uD83E\uDDF1 통합 빌드 툴 (Odin + SFTP)")]
     private static void OpenWindow()

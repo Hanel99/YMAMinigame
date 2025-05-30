@@ -45,7 +45,7 @@ public class IntroController : MonoBehaviour
                 break;
 
             case IntroState.CheckAppVersion:
-#if UNITY_EDITOR && DevTest
+#if UNITY_EDITOR && DEV
                 state++;
                 StartIntroProcess();
 #else
@@ -54,7 +54,7 @@ public class IntroController : MonoBehaviour
                 break;
 
             case IntroState.CheckMaintenance:
-#if UNITY_EDITOR && DevTest
+#if UNITY_EDITOR && DEV
                 state++;
                 StartIntroProcess();
 #else
@@ -67,7 +67,7 @@ public class IntroController : MonoBehaviour
                 break;
 
             case IntroState.ServerUpdate:
-#if UNITY_EDITOR && DevTest
+#if UNITY_EDITOR && DEV
                 state++;
                 StartIntroProcess();
                 // StartCoroutine(nameof(ServerUpdateProcess));
@@ -156,7 +156,7 @@ public class IntroController : MonoBehaviour
 
                 case "1":
                     //DevTest만 입장 가능
-#if DevTest
+#if DEV
                     state++;
                     StartIntroProcess();
 #else

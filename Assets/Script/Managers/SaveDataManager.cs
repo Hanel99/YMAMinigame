@@ -76,7 +76,7 @@ public class SaveDataManager : MonoBehaviour
 
     public void RemoveOwnCardList()
     {
-#if DevTest
+#if DEV
         _playerData.ownCardList.Clear();
         SavePlayerData();
 #endif

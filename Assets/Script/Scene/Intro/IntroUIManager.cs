@@ -45,8 +45,8 @@ public class IntroUIManager : MonoBehaviour
     {
         StringBuilder sb = new StringBuilder();
 
-#if DevTest
-        sb.Append("DevTest-");
+#if DEV
+        sb.Append("DEV-");
 #else
         sb.Append("Live-");
 #endif
