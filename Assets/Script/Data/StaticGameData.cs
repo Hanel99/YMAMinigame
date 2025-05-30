@@ -63,6 +63,19 @@ public static class StaticGameData
     };
 
 
+    // 어드레서블 레이블 이름 관리
+    public static class AddressLabels
+    {
+        public const string gameData = "game-data";
+        public const string cardImage = "card-image";
+        public const string gameImage = "game-image";
+        public const string masterImage = "master-image";
+        public const string otherImage = "other-image";
+        public const string popup = "popup";
+        public const string gamePrefab = "game-prefab";
+    }
+
+
 
     public static readonly int MAX_COIN_VALUE = 9999999;
     public static readonly int MAX_MILEAGE_VALUE = 999999;
