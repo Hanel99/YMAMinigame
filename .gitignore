@@ -77,9 +77,7 @@ Library
 UserSettings
 Keystore
 .utmp
-.codegpt
 
 *.csproj
 Assets/StreamingAssets/build_info
-
-.codegpt
+Assets/Build
