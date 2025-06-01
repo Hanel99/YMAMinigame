@@ -35,25 +35,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
     [ToggleLeft]
     public bool UploadToNAS = false;
 
-    [ShowIf("UploadToNAS")]
-    [LabelText("SFTP 호스트")]
-    public string SftpHost = "192.168.0.100";
 
-    [ShowIf("UploadToNAS")]
-    [LabelText("SFTP 포트")]
-    public int SftpPort = 22;
-
-    [ShowIf("UploadToNAS")]
-    [LabelText("SFTP 사용자명")]
-    public string SftpUser = "admin";
-
-    [ShowIf("UploadToNAS")]
-    [LabelText("SFTP 비밀번호")]
-    public string SftpPassword = "password";
-
-    [ShowIf("UploadToNAS")]
-    [LabelText("NAS 업로드 경로")]
-    public string SftpRemotePath = "/volume1/builds/";
 
     [Button("\uD83D\uDCE6 Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
@@ -204,52 +186,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
     private void UploadToNASWithSFTP(string folderPath)
     {
-        Debug.Log($"\uD83D\uDCE1 SFTP 업로드 시작: {folderPath} → {SftpRemotePath}");
 
-        // using (var sftp = new SftpClient(SftpHost, SftpPort, SftpUser, SftpPassword))
-        // {
-        //     try
-        //     {
-        //         sftp.Connect();
-
-        //         foreach (var file in Directory.GetFiles(folderPath, "*", SearchOption.AllDirectories))
-        //         {
-        //             string relativePath = file.Substring(folderPath.Length).TrimStart(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
-        //             string remotePath = Path.Combine(SftpRemotePath, relativePath).Replace("\\", "/");
-
-        //             string remoteDir = Path.GetDirectoryName(remotePath).Replace("\\", "/");
-        //             EnsureRemoteDirectory(sftp, remoteDir);
-
-        //             using (var fileStream = File.OpenRead(file))
-        //             {
-        //                 sftp.UploadFile(fileStream, remotePath, true);
-        //                 Debug.Log($"\uD83D\uDCC4 업로드 완료: {remotePath}");
-        //             }
-        //         }
-
-        //         sftp.Disconnect();
-        //         EditorUtility.DisplayDialog("\uD83D\uDCE1 NAS 업로드 완료", $"NAS 경로: {SftpRemotePath}", "확인");
-        //     }
-        //     catch (System.Exception ex)
-        //     {
-        //         Debug.LogError($"❌ SFTP 업로드 실패: {ex.Message}");
-        //         EditorUtility.DisplayDialog("❌ NAS 업로드 실패", ex.Message, "확인");
-        //     }
-        // }
     }
 
-    // private void EnsureRemoteDirectory(SftpClient client, string path)
-    // {
-    //     string[] parts = path.Split('/');
-    //     string current = "";
-    //     foreach (var part in parts)
-    //     {
-    //         if (string.IsNullOrEmpty(part)) continue;
-    //         current += "/" + part;
-    //         if (!client.Exists(current))
-    //             client.CreateDirectory(current);
-    //     }
-    // }
 
 
     [MenuItem("Tools/\uD83E\uDDF1 통합 빌드 툴 (Odin + SFTP)")]
