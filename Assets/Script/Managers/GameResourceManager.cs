@@ -40,12 +40,13 @@ public class GameResourceManager : MonoBehaviour
 
 
 
+    //@@@ TODO 리모트로 수정 후 인트로에서 이걸로 초반에 전부 다운로드 하는 기능 추가 필요.
     public async Task LoadAsync()
     {
         if (_isLoaded) return;
 
         // ScriptableObject
-        var dataList = await Addressables.LoadAssetsAsync<ScriptableObject>(StaticGameData.AddressLabels.data, null).Task;
+        var dataList = await Addressables.LoadAssetsAsync<ScriptableObject>(StaticGameData.AddressLabels.SOData, null).Task;
         foreach (var data in dataList)
         {
             switch (data)

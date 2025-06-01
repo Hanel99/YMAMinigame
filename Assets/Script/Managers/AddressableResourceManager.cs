@@ -39,11 +39,11 @@ public class AddressableResourceManager : MonoBehaviour
 
     public async void InitScriptableData()
     {
-        var configs = await LoadAllScriptableDataAsync("ScriptableConfig");
+        var scriptableDatas = await LoadAllScriptableDataAsync(StaticGameData.AddressLabels.SOData);
 
-        foreach (var config in configs)
+        foreach (var sData in scriptableDatas)
         {
-            switch (config)
+            switch (sData)
             {
                 case CardData data:
                     ResourceManager.instance.cardData = data;
@@ -58,7 +58,7 @@ public class AddressableResourceManager : MonoBehaviour
                     break;
 
                 default:
-                    Debug.LogWarning($"Unknown config type: {config.name}");
+                    Debug.LogWarning($"Unknown config type: {sData.name}");
                     break;
             }
         }

@@ -111,13 +111,36 @@ public class IntroController : MonoBehaviour
         StartIntroProcess();
     }
 
+    // private void InitManagersProcess()
+    // {
+    //     SaveDataManager.instance.Init();
+    //     AddressableResourceManager.instance.InitScriptableData();
+    //     GameResourceManager.instance.LoadAsync();
+
+    //     state++;
+    //     StartIntroProcess();
+    // }
+
+
+
     private void InitManagersProcess()
     {
         SaveDataManager.instance.Init();
+        AddressableResourceManager.instance.InitScriptableData();
+        StartCoroutine(WaitGameResourceLoadAsync());
+    }
+
+    private IEnumerator WaitGameResourceLoadAsync()
+    {
+        var loadTask = GameResourceManager.instance.LoadAsync();
+        while (!loadTask.IsCompleted)
+            yield return null;
 
         state++;
         StartIntroProcess();
     }
+
+
 
     private void CheckAppVersionProcess()
     {

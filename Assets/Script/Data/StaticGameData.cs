@@ -66,7 +66,7 @@ public static class StaticGameData
     // 어드레서블 레이블 이름 관리
     public static class AddressLabels
     {
-        public const string data = "data";
+        public const string SOData = "SOData";
 
 
         // public const string cardImage = "cardImage";

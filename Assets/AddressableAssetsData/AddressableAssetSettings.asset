@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0778b11e96af50148b159d93163ce48b
   m_currentHash:
     serializedVersion: 2
-    Hash: d02549e251e211719f35b8298699ad4c
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -60,6 +60,7 @@ MonoBehaviour:
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
   - {fileID: 11400000, guid: 643ff107c61d45f41a931fd0e0bcd809, type: 2}
+  - {fileID: 11400000, guid: b1f8938363996de4e8455f0f322a3990, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
@@ -113,14 +114,7 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - Default
-    - game-data
-    - card-image
-    - game-image
-    - master-image
-    - other-image
-    - popup
-    - game-prefab
-    - Font
+    - SOData
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 57eaff35bc7b180438742f173f23539c, type: 2}
