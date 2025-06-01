@@ -8,7 +8,7 @@ using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEditor.AddressableAssets.GUI;
 
-public class AddressableAssetAdder : OdinEditorWindow
+public class AddressableAssetAdderWindow : OdinEditorWindow
 {
     [Title("📁 Addressable 에셋 자동 등록기")]
 
@@ -107,9 +107,9 @@ public class AddressableAssetAdder : OdinEditorWindow
         Debug.Log($"✅ 어드레서블 등록 완료: {assetGuids.Length}개 에셋 (레이블: {labelToApply})");
     }
 
-    [MenuItem("Tools/Addressables/자동 등록 윈도우")]
+    [MenuItem("Tools/Util Window/어드레서블 에셋 등록 윈도우")]
     private static void OpenWindow()
     {
-        GetWindow<AddressableAssetAdder>("어드레서블 자동 등록");
+        GetWindow<AddressableAssetAdderWindow>("어드레서블 자동 등록");
     }
 }

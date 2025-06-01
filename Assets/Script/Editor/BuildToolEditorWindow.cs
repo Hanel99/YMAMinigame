@@ -191,7 +191,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
 
 
-    [MenuItem("Tools/\uD83E\uDDF1 통합 빌드 툴 (Odin + SFTP)")]
+    [MenuItem("Tools/Util Window/앱 에셋 통합 빌드 툴")]
     private static void OpenWindow()
     {
         GetWindow<BuildToolEditorWindow>("통합 빌드 툴");

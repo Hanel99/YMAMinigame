@@ -8,10 +8,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ResourceData", menuName = "Scriptable Object/ResourceData", order = int.MaxValue)]
 public class ResourceScriptableData : ScriptableObject
 {
-    [Header("- ExcelData")]
-    public CardData cardData;
-    public StringData stringData;
-    public LevelData levelData;
+    //! GameResourceManager로 리소스 데이터 옮기기!  
+    //! 데이터 다 옮기고 삭제 예정
+
+    // [Header("- ExcelData")]
+    // public CardData cardData;
+    // public StringData stringData;
+    // public LevelData levelData;
 
     [Header("- Sprite")]
     public List<Sprite> cardImages = new();
@@ -28,13 +31,13 @@ public class ResourceScriptableData : ScriptableObject
 
 #if UNITY_EDITOR
 
-    [Button(" Set Scriptable ExcelData ")]
-    public void SetScriptableExcelData()
-    {
-        cardData = Resources.Load<CardData>("Data/ScriptableData/CardData");
-        stringData = Resources.Load<StringData>("Data/ScriptableData/StringData");
-        levelData = Resources.Load<LevelData>("Data/ScriptableData/LevelData");
-    }
+    // [Button(" Set Scriptable ExcelData ")]
+    // public void SetScriptableExcelData()
+    // {
+    //     cardData = Resources.Load<CardData>("Data/ScriptableData/CardData");
+    //     stringData = Resources.Load<StringData>("Data/ScriptableData/StringData");
+    //     levelData = Resources.Load<LevelData>("Data/ScriptableData/LevelData");
+    // }
 
 
     [Button(" Set Sprites ")]

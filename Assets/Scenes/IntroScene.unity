@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 30682080}
   - component: {fileID: 30682081}
   - component: {fileID: 30682082}
+  - component: {fileID: 30682083}
   m_Layer: 0
   m_Name: DontDestroymanager
   m_TagString: Untagged
@@ -180,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourceScriptableData: {fileID: 11400000, guid: abd5c0ce8c8f9d94ab080121cce10175, type: 2}
+  cardData: {fileID: 0}
+  stringData: {fileID: 0}
+  levelData: {fileID: 0}
 --- !u!4 &30682077
 Transform:
   m_ObjectHideFlags: 0
@@ -255,6 +259,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dc432d3a5faad048a605f478ef759c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &30682083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30682073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2052b7000ee3163438494f346f38f608, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardData: {fileID: 0}
+  stringData: {fileID: 0}
+  levelData: {fileID: 0}
+  cardImages: []
+  gameImages: []
+  masterImages: []
+  cardPrefab: {fileID: 0}
+  popups: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

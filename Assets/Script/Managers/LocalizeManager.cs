@@ -22,7 +22,7 @@ public class LocalizeManager : MonoBehaviour
     public string GetString(string key)
     {
         if (stringData == null)
-            stringData = ResourceManager.instance.resourceScriptableData.stringData;
+            stringData = GameResourceManager.instance.stringData;
 
         var findStr = stringData.Data.Find(x => x.key == key);
 

@@ -66,13 +66,15 @@ public static class StaticGameData
     // 어드레서블 레이블 이름 관리
     public static class AddressLabels
     {
-        public const string gameData = "game-data";
-        public const string cardImage = "card-image";
-        public const string gameImage = "game-image";
-        public const string masterImage = "master-image";
-        public const string otherImage = "other-image";
-        public const string popup = "popup";
-        public const string gamePrefab = "game-prefab";
+        public const string data = "data";
+
+
+        // public const string cardImage = "cardImage";
+        // public const string gameIcon = "gameIcon";
+        // public const string masterImage = "masterImage";
+        // public const string otherImage = "otherImage";
+        // public const string popup = "popup";
+        // public const string gamePrefab = "gamePrefab";
     }
 
 

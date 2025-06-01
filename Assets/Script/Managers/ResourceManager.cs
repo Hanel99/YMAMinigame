@@ -5,9 +5,22 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+
+    //! GameResourceManager로 리소스 데이터 옮기기!  
+    //! 데이터 다 옮기고 삭제 예정
+
     public static ResourceManager instance { get; private set; }
 
     public ResourceScriptableData resourceScriptableData;
+
+
+
+    [Header("- ExcelData")]
+    public CardData cardData;
+    public StringData stringData;
+    public LevelData levelData;
+
+
 
     private void Awake()
     {
@@ -58,16 +71,16 @@ public class ResourceManager : MonoBehaviour
 
     public CardMetaData GetCardMetaData(int id)
     {
-        return resourceScriptableData.cardData.Data.Find(x => x.Id == id);
+        return cardData.Data.Find(x => x.Id == id);
     }
 
     public List<CardMetaData> GetCardMetaData(CardMaster master)
     {
-        return resourceScriptableData.cardData.Data.FindAll(x => x.Master == master);
+        return cardData.Data.FindAll(x => x.Master == master);
     }
     public List<CardMetaData> GetCardMetaData(CardGrade grade)
     {
-        return resourceScriptableData.cardData.Data.FindAll(x => x.Grade == grade);
+        return cardData.Data.FindAll(x => x.Grade == grade);
     }
 
     public List<int> GetCardIds(CardMaster master)
@@ -91,7 +104,7 @@ public class ResourceManager : MonoBehaviour
 
     public List<int> GetAllCardIds()
     {
-        var list = resourceScriptableData.cardData.Data;
+        var list = cardData.Data;
         List<int> ids = new();
         foreach (var card in list)
         {
@@ -102,19 +115,19 @@ public class ResourceManager : MonoBehaviour
 
     public int GetTotalCardCount()
     {
-        var list = resourceScriptableData.cardData.Data;
+        var list = cardData.Data;
         return list.Count;
     }
 
 
     public int GetLevelRequireExp(int level)
     {
-        return resourceScriptableData.levelData.Data.Find(x => x.level == level).exp;
+        return levelData.Data.Find(x => x.level == level).exp;
     }
 
     public int GetLevelUnlockValue(int level)
     {
-        return resourceScriptableData.levelData.Data.Find(x => x.level == level).unlock;
+        return levelData.Data.Find(x => x.level == level).unlock;
     }
 
 

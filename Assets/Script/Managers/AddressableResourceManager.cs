@@ -5,10 +5,11 @@ using System.Linq;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine;
+using System.Threading.Tasks;
 
-public class AddressableManager : MonoBehaviour
+public class AddressableResourceManager : MonoBehaviour
 {
-    public static AddressableManager instance { get; private set; }
+    public static AddressableResourceManager instance { get; private set; }
 
     private void Awake()
     {
@@ -20,17 +21,53 @@ public class AddressableManager : MonoBehaviour
     }
 
 
-    public void TestFunction()
-    {
-        AsyncOperationHandle handle = Addressables.LoadAssetAsync<Texture2D>("Cursor_Mining");
-        handle.Completed += (op) =>
-        {
-            Cursor.SetCursor(handle.Result as Texture2D, Vector2.zero, CursorMode.Auto);
-            Debug.Log("Complete");
-        };
+    #region ScriptableObject
 
-        Addressables.Release(handle);
+    public async Task<List<ScriptableObject>> LoadAllScriptableDataAsync(string label)
+    {
+        var handle = Addressables.LoadAssetsAsync<ScriptableObject>(label, null);
+        await handle.Task;
+
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            return new List<ScriptableObject>(handle.Result);
+        }
+
+        Debug.LogError($"Failed to load ScriptableObjects with label {label}");
+        return new List<ScriptableObject>();
     }
+
+    public async void InitScriptableData()
+    {
+        var configs = await LoadAllScriptableDataAsync("ScriptableConfig");
+
+        foreach (var config in configs)
+        {
+            switch (config)
+            {
+                case CardData data:
+                    ResourceManager.instance.cardData = data;
+                    break;
+
+                case LevelData data:
+                    ResourceManager.instance.levelData = data;
+                    break;
+
+                case StringData data:
+                    ResourceManager.instance.stringData = data;
+                    break;
+
+                default:
+                    Debug.LogWarning($"Unknown config type: {config.name}");
+                    break;
+            }
+        }
+    }
+
+
+
+    #endregion
+
 
 
 
