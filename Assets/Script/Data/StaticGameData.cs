@@ -67,14 +67,12 @@ public static class StaticGameData
     public static class AddressLabels
     {
         public const string SOData = "SOData";
+        public const string CardImage = "CardImage";
+        public const string GameImage = "GameImage";
+        public const string MasterIcon = "MasterIcon";
 
-
-        // public const string cardImage = "cardImage";
-        // public const string gameIcon = "gameIcon";
-        // public const string masterImage = "masterImage";
         // public const string otherImage = "otherImage";
         // public const string popup = "popup";
-        // public const string gamePrefab = "gamePrefab";
     }
 
 

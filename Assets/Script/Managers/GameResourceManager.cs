@@ -30,7 +30,6 @@ public class GameResourceManager : MonoBehaviour
     public List<Sprite> gameImages = new();
     public List<Sprite> masterImages = new();
 
-    public GameObject cardPrefab;
     public List<GameObject> popups = new();
 
 
@@ -58,16 +57,14 @@ public class GameResourceManager : MonoBehaviour
         }
 
         // Images
-        // cardImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.cardImage, null).Task);
-        // gameImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.gameIcon, null).Task);
-        // masterImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.masterImage, null).Task);
+        cardImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.CardImage, null).Task);
+        gameImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.GameImage, null).Task);
+        masterImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.MasterIcon, null).Task);
 
         // Prefabs
         // var popups = await Addressables.LoadAssetsAsync<GameObject>(StaticGameData.AddressLabels.popup, null).Task;
         // this.popups = new List<GameObject>(popups);
 
-        // var gamePrefabList = await Addressables.LoadAssetsAsync<GameObject>(StaticGameData.AddressLabels.gamePrefab, null).Task;
-        // cardPrefab = gamePrefabList.Count > 0 ? gamePrefabList[0] : null;
 
         _isLoaded = true;
     }

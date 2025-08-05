@@ -23,7 +23,7 @@ public class ResourceScriptableData : ScriptableObject
 
 
     [Header("- Prefabs")]
-    public GameObject cardPrefab;
+    // public GameObject cardPrefab;
     public List<GameObject> popups = new();
 
 
@@ -95,7 +95,7 @@ public class ResourceScriptableData : ScriptableObject
     [Button(" Set Prefabs ")]
     public void SetPrefabs()
     {
-        cardPrefab = null;
+        // cardPrefab = null;
         popups.Clear();
 
 
@@ -114,11 +114,11 @@ public class ResourceScriptableData : ScriptableObject
                 HLLogger.Log($"path ; {filePath}");
 
 
-                if (file.Name.Equals("Card.prefab"))
-                {
-                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);
-                    cardPrefab = prefab;
-                }
+                // if (file.Name.Equals("Card.prefab"))
+                // {
+                //     GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);
+                //     cardPrefab = prefab;
+                // }
                 if (file.Name.Contains("Popup.prefab"))
                 {
                     GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);

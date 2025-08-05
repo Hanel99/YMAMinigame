@@ -45,8 +45,8 @@ public class CollectionDetailPopup : PopupBase
 
     public void UpdateCardData()
     {
-        AddressableResourceManager.instance.LoadSprite("CardImages", cardData.ImageNumber.ToString("D4"), (sprite) => cardImage.sprite = sprite);
-        // cardImage.sprite = ResourceManager.instance.GetCardImage(cardData.ImageNumber);
+        // AddressableResourceManager.instance.LoadSprite("CardImages", cardData.ImageNumber.ToString("D4"), (sprite) => cardImage.sprite = sprite);
+        cardImage.sprite = GameResourceManager.instance.GetCardImage(cardData.ImageNumber);
 
         nameText.text = LocalizeManager.instance.GetString($"card.name.{cardData.Id}");
         numberText.text = $"No.{cardData.Id.ToString("D3")}";

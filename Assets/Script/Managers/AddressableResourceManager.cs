@@ -94,8 +94,9 @@ public class AddressableResourceManager : MonoBehaviour
     // 스프라이트 로드
     public void LoadSprite(string folder, string imageName, Action<Sprite> onComplete)
     {
-        string addressName = $"Assets/AddressableResource/Sprite/{folder}/{imageName}.png";
-        var temp = Addressables.LoadAssetAsync<Sprite>(addressName);
+        // string addressName = $"Assets/AddressableResource/Sprite/{folder}/{imageName}.png";
+        // var temp = Addressables.LoadAssetAsync<Sprite>(addressName);
+        var temp = Addressables.LoadAssetAsync<Sprite>(imageName);
         temp.Completed += handle =>
         {
             if (handle.Status == AsyncOperationStatus.Succeeded)
