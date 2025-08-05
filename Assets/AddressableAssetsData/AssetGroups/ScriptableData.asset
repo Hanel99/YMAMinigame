@@ -27,12 +27,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: abd5c0ce8c8f9d94ab080121cce10175
-    m_Address: ResourceData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SOData
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed40696817f983345806ad62a123cadb
     m_Address: LevelData
     m_ReadOnly: 0
