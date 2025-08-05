@@ -43,6 +43,11 @@ MonoBehaviour:
     - Hierarchy4.Runtime
     - PlayFab
     - Sirenix.OdinInspector.Modules.Unity.Addressables
+    - UniTask
+    - UniTask.Addressables
+    - UniTask.DOTween
+    - UniTask.Linq
+    - UniTask.TextMeshPro
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
