@@ -47,6 +47,7 @@ public enum IntroState
 {
     Ready,
     InitManagers,
+    ResourceLoad,
     CheckAppVersion,
     CheckMaintenance,
     LoadUserData,

@@ -3,7 +3,9 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-
+/// <summary>
+/// AddressableResourceManager에서 가져온 리소스를 관리. 데이터가 필요하면 여기서 가져와 쓰면 됨.
+/// </summary>
 public class GameResourceManager : MonoBehaviour
 {
     // 리소스매니저, 리소스 데이터 옮기기 완료 후 리네이밍 예정
@@ -45,16 +47,42 @@ public class GameResourceManager : MonoBehaviour
         if (_isLoaded) return;
 
         // ScriptableObject
-        var dataList = await Addressables.LoadAssetsAsync<ScriptableObject>(StaticGameData.AddressLabels.SOData, null).Task;
-        foreach (var data in dataList)
+        var scriptableDatas = await AddressableResourceManager.instance.LoadAllScriptableDataAsync(StaticGameData.AddressLabels.SOData);
+
+        foreach (var sData in scriptableDatas)
         {
-            switch (data)
+            switch (sData)
             {
-                case CardData cd: cardData = cd; break;
-                case StringData sd: stringData = sd; break;
-                case LevelData ld: levelData = ld; break;
+                case CardData data:
+                    GameResourceManager.instance.cardData = data;
+                    break;
+
+                case LevelData data:
+                    GameResourceManager.instance.levelData = data;
+                    break;
+
+                case StringData data:
+                    GameResourceManager.instance.stringData = data;
+                    break;
+
+                default:
+                    Debug.LogWarning($"Unknown config type: {sData.name}");
+                    break;
             }
         }
+
+
+
+        // var dataList = await Addressables.LoadAssetsAsync<ScriptableObject>(StaticGameData.AddressLabels.SOData, null).Task;
+        // foreach (var data in dataList)
+        // {
+        //     switch (data)
+        //     {
+        //         case CardData cd: cardData = cd; break;
+        //         case StringData sd: stringData = sd; break;
+        //         case LevelData ld: levelData = ld; break;
+        //     }
+        // }
 
         // Images
         cardImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.CardImage, null).Task);
@@ -69,6 +97,11 @@ public class GameResourceManager : MonoBehaviour
         _isLoaded = true;
     }
 
+
+    public async void InitScriptableData()
+    {
+
+    }
 
 
 

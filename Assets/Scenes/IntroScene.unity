@@ -271,13 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2052b7000ee3163438494f346f38f608, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardData: {fileID: 11400000, guid: 43cf86da9fb74744b901a8c597f146ea, type: 2}
-  stringData: {fileID: 11400000, guid: 0ae385544a61f214fa14e02a6d46e642, type: 2}
-  levelData: {fileID: 11400000, guid: ed40696817f983345806ad62a123cadb, type: 2}
+  cardData: {fileID: 0}
+  stringData: {fileID: 0}
+  levelData: {fileID: 0}
   cardImages: []
   gameImages: []
   masterImages: []
-  cardPrefab: {fileID: 0}
   popups: []
 --- !u!1 &519420028
 GameObject:

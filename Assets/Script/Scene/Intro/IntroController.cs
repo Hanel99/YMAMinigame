@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class IntroController : MonoBehaviour
 {
@@ -44,6 +45,12 @@ public class IntroController : MonoBehaviour
                 InitManagersProcess();
                 break;
 
+            case IntroState.ResourceLoad:
+                ResourceLoadProcess();
+                break;
+
+
+
             case IntroState.CheckAppVersion:
 #if UNITY_EDITOR && DEV
                 state++;
@@ -80,7 +87,6 @@ public class IntroController : MonoBehaviour
             case IntroState.PlayFabLogin:
                 PlayFabLoginProcess();
                 break;
-
 
             case IntroState.Complete:
                 StartCoroutine(nameof(CompleteProcess));
@@ -126,19 +132,33 @@ public class IntroController : MonoBehaviour
     private void InitManagersProcess()
     {
         SaveDataManager.instance.Init();
-        AddressableResourceManager.instance.InitScriptableData();
-        StartCoroutine(WaitGameResourceLoadAsync());
-    }
-
-    private IEnumerator WaitGameResourceLoadAsync()
-    {
-        var loadTask = GameResourceManager.instance.LoadAsync();
-        while (!loadTask.IsCompleted)
-            yield return null;
 
         state++;
         StartIntroProcess();
     }
+
+
+
+
+
+    private void ResourceLoadProcess()
+    {
+        IntroUIManager.instance.UpdateStateText(IntroState.ResourceLoad);
+        UniTask.Void(async () => await WaitGameResourceLoadAsync());
+    }
+
+    private async UniTask WaitGameResourceLoadAsync()
+    {
+        HLLogger.Log($"Game resources load start");
+
+        await GameResourceManager.instance.LoadAsync();
+
+        HLLogger.Log($"Game resources load complete");
+
+        state++;
+        StartIntroProcess();
+    }
+
 
 
 
@@ -333,6 +353,12 @@ public class IntroController : MonoBehaviour
             IntroUIManager.instance.ShowLoginPopup();
         }
     }
+
+
+
+
+
+
 
     public void MoveNextIntroProcess()
     {
