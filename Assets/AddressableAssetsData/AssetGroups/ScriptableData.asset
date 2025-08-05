@@ -15,20 +15,26 @@ MonoBehaviour:
   m_GroupName: ScriptableData
   m_GUID: 2c52957d86de5854a9e6d770fbc691ee
   m_SerializeEntries:
-  - m_GUID: 39a5231de97a1164a97fb659bd6d8ed3
-    m_Address: LevelData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SOData
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8052609e29044b74b9777cdd09b012de
+  - m_GUID: 0ae385544a61f214fa14e02a6d46e642
     m_Address: StringData
     m_ReadOnly: 0
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fdeb4cf5ef3082740aa408ebf04a9338
+  - m_GUID: 43cf86da9fb74744b901a8c597f146ea
     m_Address: CardData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abd5c0ce8c8f9d94ab080121cce10175
+    m_Address: ResourceData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed40696817f983345806ad62a123cadb
+    m_Address: LevelData
     m_ReadOnly: 0
     m_SerializedLabels:
     - SOData
