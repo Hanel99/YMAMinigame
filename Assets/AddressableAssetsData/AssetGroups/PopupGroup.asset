@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PopupGroup
+  m_EditorClassIdentifier: 
+  m_GroupName: PopupGroup
+  m_GUID: 93ad95fc6ff56e14b955c5fe95ae0fc0
+  m_SerializeEntries:
+  - m_GUID: 00153d050e625c94d902dd338dd14a03
+    m_Address: GachaResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 180ff9cfd6ddc6e4397d98ecd2051b0b
+    m_Address: SettingPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2aa66424c32fdc148bcbe63af4ecf62d
+    m_Address: LevelUpPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 380f274fd4291a746b4a9a8c4a4dd3c5
+    m_Address: CollectionDetailPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39372191d9bb57242b99e2aad134d57a
+    m_Address: CommonPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43543051c0f618a49aeaf478226c3cc3
+    m_Address: PausePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4954529b699800540be5a3fbb6b5822a
+    m_Address: CollectionPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5e01ee3def89b9d49b56ea20932336f1
+    m_Address: PlayerDataSettingPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6298b96c4a8104248a382a6c239a71b7
+    m_Address: GachaProbabilityPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e9b40fd8f7f5fb4fa00debd5af5bed0
+    m_Address: CardGameCheckCardPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71afe55210e8f80469115c45fd4ce9c3
+    m_Address: GameSelectPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 770d308c47ca58e4895819accf6ee3f9
+    m_Address: GachaPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbb16a2672bbeb84eafe16512dc8b7fc
+    m_Address: UserProfilePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9b27c5eaa3abb949879a4f024d40ce6
+    m_Address: LoginPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb51aa246ad03eb41b1f5c710b16c982
+    m_Address: CardGameResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef046d72573c9664da8e04e8805f88aa
+    m_Address: RegisterPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7b42186bfd9d0b64fb98e08c288dfeda, type: 2}
+    - {fileID: 11400000, guid: 0e6a6ca400a60b944ba9ff7865675019, type: 2}

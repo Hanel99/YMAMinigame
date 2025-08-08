@@ -70,6 +70,7 @@ public static class StaticGameData
         public const string CardImage = "CardImage";
         public const string GameImage = "GameImage";
         public const string MasterIcon = "MasterIcon";
+        public const string PopupGroup = "PopupGroup";
 
         // public const string otherImage = "otherImage";
         // public const string popup = "popup";

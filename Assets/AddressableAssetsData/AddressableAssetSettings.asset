@@ -62,6 +62,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 643ff107c61d45f41a931fd0e0bcd809, type: 2}
   - {fileID: 11400000, guid: b1f8938363996de4e8455f0f322a3990, type: 2}
   - {fileID: 11400000, guid: 93aeb977015ffd44fb91c76d01f2ccb5, type: 2}
+  - {fileID: 11400000, guid: 7fdf2e6af38ed9144b3fdc67a2bf18ae, type: 2}
   - {fileID: 11400000, guid: f1ba41dabae845e4aba6bd516b3d393b, type: 2}
   - {fileID: 11400000, guid: 42b4525c7b3aa3e44bc4738b575e1646, type: 2}
   m_BuildSettings:
@@ -121,6 +122,7 @@ MonoBehaviour:
     - CardImage
     - GameImage
     - MasterIcon
+    - PopupGroup
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 57eaff35bc7b180438742f173f23539c, type: 2}

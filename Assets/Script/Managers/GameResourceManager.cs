@@ -74,7 +74,7 @@ public class GameResourceManager : MonoBehaviour
         masterImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.MasterIcon);
 
         // Prefabs
-        // popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.popup);
+        popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.PopupGroup);
 
         _isLoaded = true;
     }
@@ -197,19 +197,32 @@ public class GameResourceManager : MonoBehaviour
 
     #region GetPopup
 
-    public GameObject GetPopup(string popupName, Transform parent)
+    public async Task<T> GetPopup<T>() where T : PopupBase
     {
+        string popupName = typeof(T).Name;
+
         var prefab = popups.Find(x => x.name.Equals(popupName));
         if (prefab == null)
         {
             HLLogger.LogWarning($"@@@ {popupName} is not in popupList");
+            var loadPopup = await AddressableResourceManager.instance.LoadPopupAsync<T>(popupName);
+            if (loadPopup == null)
+            {
+                HLLogger.LogError($"@@@ Failed to load popup: {popupName}");
+                return null;
+            }
+            return loadPopup;
+        }
+
+        // GameObject에서 요구하는 팝업 컴포넌트를 가져옴
+        var popup = prefab.GetComponent<T>();
+        if (popup == null)
+        {
+            HLLogger.LogError($"@@@ {popupName} does not have component of type {typeof(T).Name}");
             return null;
         }
 
-        var go = prefab.Spawn(parent);
-        go.transform.localScale = Vector3.one;
-
-        return go;
+        return popup;
     }
 
 

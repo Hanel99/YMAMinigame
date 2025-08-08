@@ -49,6 +49,7 @@ public class AddressableResourceManager : MonoBehaviour
 
 
 
+    //TODO @@@ 릴리즈 하니까 저장하기 전에 메모리에서 해제됨. 다른 방식으로 생각해보기
 
     // 개별 스프라이트 로드
     public async Task<Sprite> LoadSpriteAsync(string imageName)
@@ -62,7 +63,7 @@ public class AddressableResourceManager : MonoBehaviour
         else
             Debug.LogError($"Failed to load sprite: {imageName}");
 
-        Addressables.Release(handle);
+        // Addressables.Release(handle);
         return result;
     }
 
@@ -107,7 +108,7 @@ public class AddressableResourceManager : MonoBehaviour
         else
             Debug.LogError($"Failed to load sprites with label: {label}");
 
-        handle.Release();
+        // handle.Release();
         return result;
     }
 
@@ -131,8 +132,54 @@ public class AddressableResourceManager : MonoBehaviour
         else
             Debug.LogError($"Failed to load prefab: {address}");
 
-        Addressables.Release(handle);
+        // Addressables.Release(handle);
         return instance;
+    }
+
+    public async Task<List<GameObject>> LoadPrefabsByLabelAsync(string label)
+    {
+        var handle = Addressables.LoadAssetsAsync<GameObject>(label, null);
+        await handle.Task;
+
+        List<GameObject> result = null;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+            result = new List<GameObject>(handle.Result);
+        else
+            Debug.LogError($"Failed to load prefabs with label: {label}");
+
+        // handle.Release();
+        return result;
+    }
+
+
+    public async Task<GameObject> LoadPrefabByNameAsync(string label, string popupName)
+    {
+        // 해당 레이블에서 이름이 정확히 일치하는 오브젝트만 비동기로 로드
+        string address = $"{label}/{popupName}";
+        var handle = Addressables.LoadAssetAsync<GameObject>(address);
+        await handle.Task;
+
+        GameObject result = null;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            if (handle.Result != null)
+                result = handle.Result;
+            else
+                Debug.LogError($"Loaded object is not a PopupBase: {address}");
+        }
+        else
+        {
+            Debug.LogError($"Failed to load popup prefab: {address}");
+        }
+
+        // Addressables.Release(handle);
+        return result;
+    }
+
+    public async Task<T> LoadPopupAsync<T>(string popupName) where T : PopupBase
+    {
+        var popup = await LoadPrefabByNameAsync(StaticGameData.AddressLabels.PopupGroup, popupName);
+        return popup.GetComponent<T>();
     }
 
     #endregion
