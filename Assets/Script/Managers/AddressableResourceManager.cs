@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine;
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 
 
 /// <summary>
@@ -28,7 +28,7 @@ public class AddressableResourceManager : MonoBehaviour
     #region ScriptableObject
 
     // ScriptableObject 전체 로드
-    public async Task<List<ScriptableObject>> LoadAllScriptableDataAsync(string label)
+    public async UniTask<List<ScriptableObject>> LoadAllScriptableDataAsync(string label)
     {
         var handle = Addressables.LoadAssetsAsync<ScriptableObject>(label, null);
         await handle.Task;
@@ -52,7 +52,7 @@ public class AddressableResourceManager : MonoBehaviour
     //TODO @@@ 릴리즈 하니까 저장하기 전에 메모리에서 해제됨. 다른 방식으로 생각해보기
 
     // 개별 스프라이트 로드
-    public async Task<Sprite> LoadSpriteAsync(string imageName)
+    public async UniTask<Sprite> LoadSpriteAsync(string imageName)
     {
         var handle = Addressables.LoadAssetAsync<Sprite>(imageName);
         await handle.Task;
@@ -67,7 +67,7 @@ public class AddressableResourceManager : MonoBehaviour
         return result;
     }
 
-    public async Task<List<Sprite>> LoadSpritesByNamesAsync(List<string> imageNames)
+    public async UniTask<List<Sprite>> LoadSpritesByNamesAsync(List<string> imageNames)
     {
         var handles = new List<AsyncOperationHandle<Sprite>>();
         var sprites = new List<Sprite>();
@@ -97,7 +97,7 @@ public class AddressableResourceManager : MonoBehaviour
 
 
 
-    public async Task<List<Sprite>> LoadSpritesByLabelAsync(string label)
+    public async UniTask<List<Sprite>> LoadSpritesByLabelAsync(string label)
     {
         var handle = Addressables.LoadAssetsAsync<Sprite>(label, null);
         await handle.Task;
@@ -121,22 +121,22 @@ public class AddressableResourceManager : MonoBehaviour
     #region prefabs 
 
     // 프리팹 로드 및 인스턴스화
-    public async Task<GameObject> LoadPrefabAsync(string address, Transform parent)
+    public async UniTask<GameObject> LoadPrefabAsync(string name, Transform parent)
     {
-        var handle = Addressables.LoadAssetAsync<GameObject>(address);
+        var handle = Addressables.LoadAssetAsync<GameObject>(name);
         await handle.Task;
 
         GameObject instance = null;
         if (handle.Status == AsyncOperationStatus.Succeeded)
             instance = Instantiate(handle.Result, parent);
         else
-            Debug.LogError($"Failed to load prefab: {address}");
+            Debug.LogError($"Failed to load prefab: {name}");
 
         // Addressables.Release(handle);
         return instance;
     }
 
-    public async Task<List<GameObject>> LoadPrefabsByLabelAsync(string label)
+    public async UniTask<List<GameObject>> LoadPrefabsByLabelAsync(string label)
     {
         var handle = Addressables.LoadAssetsAsync<GameObject>(label, null);
         await handle.Task;
@@ -152,11 +152,10 @@ public class AddressableResourceManager : MonoBehaviour
     }
 
 
-    public async Task<GameObject> LoadPrefabByNameAsync(string label, string popupName)
+    public async UniTask<GameObject> LoadPrefabByNameAsync(string assetName)
     {
-        // 해당 레이블에서 이름이 정확히 일치하는 오브젝트만 비동기로 로드
-        string address = $"{label}/{popupName}";
-        var handle = Addressables.LoadAssetAsync<GameObject>(address);
+        // 해당 이름이 정확히 일치하는 오브젝트만 비동기로 로드
+        var handle = Addressables.LoadAssetAsync<GameObject>(assetName);
         await handle.Task;
 
         GameObject result = null;
@@ -165,22 +164,23 @@ public class AddressableResourceManager : MonoBehaviour
             if (handle.Result != null)
                 result = handle.Result;
             else
-                Debug.LogError($"Loaded object is not a PopupBase: {address}");
+                Debug.LogError($"Loaded object is not a PopupBase: {assetName}");
         }
         else
         {
-            Debug.LogError($"Failed to load popup prefab: {address}");
+            Debug.LogError($"Failed to load popup prefab: {assetName}");
         }
 
         // Addressables.Release(handle);
         return result;
     }
 
-    public async Task<T> LoadPopupAsync<T>(string popupName) where T : PopupBase
+    public async UniTask<T> LoadPopupAsync<T>(string popupName) where T : PopupBase
     {
-        var popup = await LoadPrefabByNameAsync(StaticGameData.AddressLabels.PopupGroup, popupName);
+        var popup = await LoadPrefabByNameAsync(popupName);
         return popup.GetComponent<T>();
     }
+
 
     #endregion
 

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 /// <summary>
 /// AddressableResourceManager에서 가져온 리소스를 관리. 데이터가 필요하면 여기서 가져와 쓰면 됨.
@@ -42,7 +41,7 @@ public class GameResourceManager : MonoBehaviour
 
 
     //@@@ TODO 리모트로 수정 후 인트로에서 이걸로 초반에 전부 다운로드 하는 기능 추가 필요.
-    public async Task LoadAsync()
+    public async UniTask LoadAsync()
     {
         if (_isLoaded) return;
 
@@ -197,7 +196,7 @@ public class GameResourceManager : MonoBehaviour
 
     #region GetPopup
 
-    public async Task<T> GetPopup<T>() where T : PopupBase
+    public T GetPopup<T>(Transform parent) where T : PopupBase
     {
         string popupName = typeof(T).Name;
 
@@ -205,13 +204,16 @@ public class GameResourceManager : MonoBehaviour
         if (prefab == null)
         {
             HLLogger.LogWarning($"@@@ {popupName} is not in popupList");
-            var loadPopup = await AddressableResourceManager.instance.LoadPopupAsync<T>(popupName);
-            if (loadPopup == null)
-            {
-                HLLogger.LogError($"@@@ Failed to load popup: {popupName}");
-                return null;
-            }
-            return loadPopup;
+            return null;
+
+            //TODO @@@ 없으면 어드레서블에서 로드 시도를 하고 싶었는데 비동기인지라 어싱크로 처리해야 해서 일단 주석처리
+            // var loadPopup = await AddressableResourceManager.instance.LoadPopupAsync<T>(popupName);
+            // if (loadPopup == null)
+            // {
+            //     HLLogger.LogError($"@@@ Failed to load popup: {popupName}");
+            //     return null;
+            // }
+            // popups.Add(loadPopup);
         }
 
         // GameObject에서 요구하는 팝업 컴포넌트를 가져옴
@@ -222,7 +224,10 @@ public class GameResourceManager : MonoBehaviour
             return null;
         }
 
-        return popup;
+        var go = prefab.Spawn(parent);
+        go.transform.localScale = Vector3.one;
+
+        return go.GetComponent<T>();
     }
 
 

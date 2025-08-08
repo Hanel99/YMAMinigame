@@ -154,7 +154,7 @@ public class GachaPopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
-        LobbyUIManager.instance.ShowGachaProbabilityPopup();
+        LobbyUIManager.instance.ShowPopup<GachaProbabilityPopup>();
     }
 
 

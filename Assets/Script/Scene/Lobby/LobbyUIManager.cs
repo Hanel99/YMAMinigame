@@ -8,7 +8,7 @@ public class LobbyUIManager : MonoBehaviour
     public static LobbyUIManager instance { get; private set; }
 
     public Transform popupRoot;
-    public List<GameObject> popupList = new();
+    public List<PopupBase> popupList = new();
     public SceneAnimation sceneDim;
 
 
@@ -20,75 +20,37 @@ public class LobbyUIManager : MonoBehaviour
 
     public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null)
     {
-        var popup = ShowPopup<CommonPopup>();
-        popup.GetComponent<CommonPopup>().ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
-        return popup.GetComponent<CommonPopup>();
+        var popup = _ShowPopup<CommonPopup>();
+        popup.ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
+        return popup;
     }
     public void ShowGameSelectPopup(GameType type)
     {
-        var popup = ShowPopup<GameSelectPopup>();
-        popup.GetComponent<GameSelectPopup>().ShowPopup(type);
-    }
-
-    public void ShowSettingPopup()
-    {
-        var popup = ShowPopup<SettingPopup>();
-        popup.GetComponent<SettingPopup>().ShowPopup();
-    }
-
-    public void ShowUserProfilePopup()
-    {
-        var popup = ShowPopup<UserProfilePopup>();
-        popup.GetComponent<UserProfilePopup>().ShowPopup();
-    }
-
-    public void ShowCollectionPopup()
-    {
-        var popup = ShowPopup<CollectionPopup>();
-        popup.GetComponent<CollectionPopup>().ShowPopup();
+        _ShowPopup<GameSelectPopup>().ShowPopup(type);
     }
 
     public void ShowCollectionDetailPopup(CardMetaData data)
     {
-        var popup = ShowPopup<CollectionDetailPopup>();
-        popup.GetComponent<CollectionDetailPopup>().ShowPopup(data);
-    }
-
-    public void ShowPlayerDataSettingPopup()
-    {
-        var popup = ShowPopup<PlayerDataSettingPopup>();
-        popup.GetComponent<PlayerDataSettingPopup>().ShowPopup();
-    }
-
-    public void ShowGachaPopup()
-    {
-        var popup = ShowPopup<GachaPopup>();
-        popup.GetComponent<GachaPopup>().ShowPopup();
+        _ShowPopup<CollectionDetailPopup>().ShowPopup(data);
     }
 
     public void ShowGachaResultPopup(List<int> cardIdList, List<int> newCardIdList)
     {
-        var popup = ShowPopup<GachaResultPopup>();
-        popup.GetComponent<GachaResultPopup>().ShowPopup(cardIdList, newCardIdList);
+        _ShowPopup<GachaResultPopup>().ShowPopup(cardIdList, newCardIdList);
     }
 
-    public void ShowGachaProbabilityPopup()
+
+    //매개변수 없는 팝업의 경우
+    public void ShowPopup<T>() where T : PopupBase
     {
-        var popup = ShowPopup<GachaProbabilityPopup>();
-        popup.GetComponent<GachaProbabilityPopup>().ShowPopup();
+        _ShowPopup<T>().ShowPopup(true);
     }
 
-    public void ShowLevelUpPopup()
-    {
-        var popup = ShowPopup<LevelUpPopup>();
-        popup.GetComponent<LevelUpPopup>().ShowPopup();
-    }
-
-    public GameObject ShowPopup<T>()
+    private T _ShowPopup<T>() where T : PopupBase
     {
         var popupName = typeof(T).Name;
 
-        var popup = ResourceManager.instance.GetPopup(popupName, popupRoot);
+        var popup = GameResourceManager.instance.GetPopup<T>(popupRoot);
         if (popup != null)
         {
             popupList.RemoveAll(x => x == null);
@@ -103,10 +65,9 @@ public class LobbyUIManager : MonoBehaviour
         {
             popupList.RemoveAll(x => x == null);
             var popup = popupList[popupList.Count - 1];
-            var popupBase = popup.GetComponent<PopupBase>();
 
-            if (popupBase.isActBackKey)
-                popupBase.OnClickClose();
+            if (popup.isActBackKey)
+                popup.OnClickClose();
         }
     }
 

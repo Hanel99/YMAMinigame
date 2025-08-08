@@ -49,7 +49,7 @@ public class GameListView : MonoBehaviour
 
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.L))
-            LobbyUIManager.instance.ShowLevelUpPopup();
+            LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
 
         // if (Input.GetKeyDown(KeyCode.U))
         //     UpdateUserProfileProcess();
@@ -161,7 +161,7 @@ public class GameListView : MonoBehaviour
             CommonPopup popup = null;
             popup = LobbyUIManager.instance.ShowCommonPopup("환영합니다!", "연모아 게임에 오신걸 환영합니다!\n게임에서 사용하실 이름과 연모아에서 사용중인 이름을 선택해주세요.", false, true, false, null, () =>
             {
-                LobbyUIManager.instance.ShowPlayerDataSettingPopup();
+                LobbyUIManager.instance.ShowPopup<PlayerDataSettingPopup>();
                 popup.ShowPopup(false);
             });
             popup.isActBackKey = false;
@@ -178,22 +178,22 @@ public class GameListView : MonoBehaviour
 
     public void OnClickSettingButton()
     {
-        LobbyUIManager.instance.ShowSettingPopup();
+        LobbyUIManager.instance.ShowPopup<SettingPopup>();
     }
 
     public void OnClickUserProfileButton()
     {
-        LobbyUIManager.instance.ShowUserProfilePopup();
+        LobbyUIManager.instance.ShowPopup<UserProfilePopup>();
     }
 
     public void OnClickGachaButton()
     {
-        LobbyUIManager.instance.ShowGachaPopup();
+        LobbyUIManager.instance.ShowPopup<GachaPopup>();
     }
 
     public void OnClickCollectionButton()
     {
-        LobbyUIManager.instance.ShowCollectionPopup();
+        LobbyUIManager.instance.ShowPopup<CollectionPopup>();
     }
 
     public void OnClickGameQuit()
