@@ -21,8 +21,14 @@ public class LocalizeManager : MonoBehaviour
 
     public string GetString(string key)
     {
-        if (stringData == null)
+        if (stringData == null && GameResourceManager.instance != null && GameResourceManager.instance.stringData != null)
             stringData = GameResourceManager.instance.stringData;
+
+        if (stringData == null)
+        {
+            HLLogger.LogError("StringData is null. Please load GameResourceManager first.");
+            return $"Missing String {key}";
+        }
 
         var findStr = stringData.Data.Find(x => x.key == key);
 

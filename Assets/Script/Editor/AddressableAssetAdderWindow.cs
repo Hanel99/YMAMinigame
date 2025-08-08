@@ -7,22 +7,27 @@ using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEditor.AddressableAssets.GUI;
+using System.IO;
+
 
 public class AddressableAssetAdderWindow : OdinEditorWindow
 {
     [Title("📁 Addressable 에셋 자동 등록기")]
-
+    [TabGroup("일반등록")] // 기존 기능
     [FolderPath(AbsolutePath = true)]
     [LabelText("에셋 폴더 경로 (Assets 하위)")]
     public string assetFolderPath = "Assets/MyAssets";
 
+    [TabGroup("일반등록")]
     [LabelText("어드레서블 그룹 이름")]
     public string groupName = "MyGroup";
 
+    [TabGroup("일반등록")]
     [ValueDropdown(nameof(GetAllAddressableLabels))]
     [LabelText("어드레서블 레이블")]
     public string label = "<새 레이블 입력>";
 
+    [TabGroup("일반등록")]
     [ShowIf("@label == \"<새 레이블 입력>\"")]
     [LabelText("새 레이블 이름")]
     public string newLabel = "NewLabel";
@@ -49,6 +54,7 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
         return labels;
     }
 
+    [TabGroup("일반등록")]
     [Button("어드레서블 등록", ButtonSizes.Large), GUIColor(0.2f, 0.7f, 1f)]
     public void RegisterAssetsToAddressables()
     {
@@ -90,6 +96,12 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
 
         string labelToApply = GetFinalLabel();
 
+        // 새 레이블이면 Addressables 설정에 추가
+        if (!settings.GetLabels().Contains(labelToApply))
+        {
+            settings.AddLabel(labelToApply);
+        }
+
         foreach (string guid in assetGuids)
         {
             string path = AssetDatabase.GUIDToAssetPath(guid);
@@ -105,6 +117,130 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
         AssetDatabase.SaveAssets();
         settings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, null, true);
         Debug.Log($"✅ 어드레서블 등록 완료: {assetGuids.Length}개 에셋 (레이블: {labelToApply})");
+    }
+
+
+
+    public List<GameObject> GetPrefabs(string prefabName)
+    {
+        List<GameObject> prefabs = new List<GameObject>();
+
+        DirectoryInfo di = new DirectoryInfo("Assets/Prefab/");
+        var prefabDirectories = di.GetDirectories();
+
+        foreach (var dir in prefabDirectories)
+        {
+            var fileInfos = dir.GetFiles("*.prefab");
+
+            foreach (FileInfo file in fileInfos)
+            {
+                if (file.Name.Contains("meta")) continue;
+                string filePath = $"{di}{dir.Name}/{file.Name}";
+                HLLogger.Log($"path ; {filePath}");
+
+                if (file.Name.Contains($"{prefabName}.prefab"))
+                {
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);
+                    prefabs.Add(prefab);
+                }
+            }
+        }
+
+        return prefabs;
+    }
+
+    // ------------------ 팝업 자동 등록 탭 ------------------
+    [Title("📁 Addressable 에셋 자동 등록기")]
+    [TabGroup("팝업자동등록")]
+    [FolderPath(AbsolutePath = true)]
+    [LabelText("팝업 프리팹 루트 폴더 (Assets 하위)")]
+    public string popupRootFolder = "Assets/Prefab/";
+
+    [TabGroup("팝업자동등록")]
+    [LabelText("팝업 그룹 이름")]
+    public string popupGroupName = "PopupGroup";
+
+    [TabGroup("팝업자동등록")]
+    [ValueDropdown(nameof(GetAllAddressableLabels))]
+    [LabelText("팝업 레이블")]
+    public string popupLabel = "<새 레이블 입력>";
+
+    [TabGroup("팝업자동등록")]
+    [ShowIf("@popupLabel == \"<새 레이블 입력>\"")]
+    [LabelText("새 팝업 레이블 이름")]
+    public string newPopupLabel = "PopupLabel";
+
+    [TabGroup("팝업자동등록")]
+    [Button("팝업 프리팹 Addressable 등록", ButtonSizes.Large), GUIColor(0.9f, 0.6f, 0.2f)]
+    public void RegisterPopupPrefabsToAddressables()
+    {
+        var settings = AddressableAssetSettingsDefaultObject.Settings;
+        if (settings == null)
+        {
+            Debug.LogError("Addressable Asset Settings가 설정되지 않았습니다.");
+            return;
+        }
+
+        if (string.IsNullOrEmpty(popupRootFolder))
+        {
+            Debug.LogError("팝업 프리팹 루트 폴더를 지정하세요.");
+            return;
+        }
+
+        string relativePath = popupRootFolder;
+        if (popupRootFolder.StartsWith(Application.dataPath))
+        {
+            relativePath = "Assets" + popupRootFolder.Substring(Application.dataPath.Length);
+        }
+
+        // 하위 폴더까지 popup이 포함된 프리팹만 찾기
+        List<string> popupPrefabGuids = new List<string>();
+        string[] allGuids = AssetDatabase.FindAssets("t:Prefab", new[] { relativePath });
+        foreach (var guid in allGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            if (Path.GetFileNameWithoutExtension(path).ToLower().Contains("popup"))
+            {
+                popupPrefabGuids.Add(guid);
+            }
+        }
+
+        if (popupPrefabGuids.Count == 0)
+        {
+            Debug.LogWarning("popup이 포함된 프리팹을 찾지 못했습니다: " + relativePath);
+            return;
+        }
+
+        AddressableAssetGroup group = settings.FindGroup(popupGroupName);
+        if (group == null)
+        {
+            group = settings.CreateGroup(popupGroupName, false, false, false, null,
+                typeof(BundledAssetGroupSchema), typeof(ContentUpdateGroupSchema));
+            var schema = group.GetSchema<BundledAssetGroupSchema>();
+            schema.BundleMode = BundledAssetGroupSchema.BundlePackingMode.PackTogether;
+        }
+
+        string labelToApply = popupLabel == "<새 레이블 입력>" ? newPopupLabel : popupLabel;
+
+        // 새 레이블이면 Addressables 설정에 추가
+        if (!settings.GetLabels().Contains(labelToApply))
+        {
+            settings.AddLabel(labelToApply);
+        }
+
+        foreach (string guid in popupPrefabGuids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            AddressableAssetEntry entry = settings.CreateOrMoveEntry(guid, group);
+            entry.address = Path.GetFileNameWithoutExtension(path);
+
+            if (!entry.labels.Contains(labelToApply))
+                entry.SetLabel(labelToApply, true);
+        }
+
+        AssetDatabase.SaveAssets();
+        settings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, null, true);
+        Debug.Log($"✅ 팝업 프리팹 Addressable 등록 완료: {popupPrefabGuids.Count}개 (레이블: {labelToApply})");
     }
 
     [MenuItem("Tools/Util Window/어드레서블 에셋 등록 윈도우")]

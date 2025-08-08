@@ -27,15 +27,14 @@ public class AddressableResourceManager : MonoBehaviour
 
     #region ScriptableObject
 
+    // ScriptableObject 전체 로드
     public async Task<List<ScriptableObject>> LoadAllScriptableDataAsync(string label)
     {
         var handle = Addressables.LoadAssetsAsync<ScriptableObject>(label, null);
         await handle.Task;
 
         if (handle.Status == AsyncOperationStatus.Succeeded)
-        {
             return new List<ScriptableObject>(handle.Result);
-        }
 
         Debug.LogError($"Failed to load ScriptableObjects with label {label}");
         return new List<ScriptableObject>();
@@ -52,18 +51,19 @@ public class AddressableResourceManager : MonoBehaviour
 
 
     // 개별 스프라이트 로드
-    public void LoadSprite(string imageName, Action<Sprite> onComplete)
+    public async Task<Sprite> LoadSpriteAsync(string imageName)
     {
-        var temp = Addressables.LoadAssetAsync<Sprite>(imageName);
-        temp.Completed += handle =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-                onComplete?.Invoke(handle.Result);
-            else
-                Debug.LogError($"Failed to load sprite: {imageName}");
-        };
+        var handle = Addressables.LoadAssetAsync<Sprite>(imageName);
+        await handle.Task;
 
-        temp.Release();
+        Sprite result = null;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+            result = handle.Result;
+        else
+            Debug.LogError($"Failed to load sprite: {imageName}");
+
+        Addressables.Release(handle);
+        return result;
     }
 
     public async Task<List<Sprite>> LoadSpritesByNamesAsync(List<string> imageNames)
@@ -86,7 +86,6 @@ public class AddressableResourceManager : MonoBehaviour
                 Debug.LogError($"Failed to load sprite: {handle.DebugName}");
         }
 
-        // 핸들 릴리즈
         foreach (var handle in handles)
         {
             Addressables.Release(handle);
@@ -97,17 +96,19 @@ public class AddressableResourceManager : MonoBehaviour
 
 
 
-    public async void LoadSpritesByLabel(string label, Action<List<Sprite>> onComplete)
+    public async Task<List<Sprite>> LoadSpritesByLabelAsync(string label)
     {
         var handle = Addressables.LoadAssetsAsync<Sprite>(label, null);
         await handle.Task;
 
+        List<Sprite> result = null;
         if (handle.Status == AsyncOperationStatus.Succeeded)
-            onComplete?.Invoke(new List<Sprite>(handle.Result));
+            result = new List<Sprite>(handle.Result);
         else
             Debug.LogError($"Failed to load sprites with label: {label}");
 
         handle.Release();
+        return result;
     }
 
     #endregion
@@ -119,23 +120,19 @@ public class AddressableResourceManager : MonoBehaviour
     #region prefabs 
 
     // 프리팹 로드 및 인스턴스화
-    public void LoadPrefab(string address, Transform parent, Action<GameObject> onComplete)
+    public async Task<GameObject> LoadPrefabAsync(string address, Transform parent)
     {
-        var temp = Addressables.LoadAssetAsync<GameObject>(address);
-        temp.Completed += handle =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                GameObject instance = Instantiate(handle.Result, parent);
-                onComplete?.Invoke(instance);
-            }
-            else
-            {
-                Debug.LogError($"Failed to load prefab: {address}");
-            }
-        };
+        var handle = Addressables.LoadAssetAsync<GameObject>(address);
+        await handle.Task;
 
-        temp.Release();
+        GameObject instance = null;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+            instance = Instantiate(handle.Result, parent);
+        else
+            Debug.LogError($"Failed to load prefab: {address}");
+
+        Addressables.Release(handle);
+        return instance;
     }
 
     #endregion

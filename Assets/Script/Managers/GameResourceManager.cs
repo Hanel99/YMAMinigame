@@ -54,56 +54,30 @@ public class GameResourceManager : MonoBehaviour
             switch (sData)
             {
                 case CardData data:
-                    GameResourceManager.instance.cardData = data;
+                    cardData = data;
                     break;
-
                 case LevelData data:
-                    GameResourceManager.instance.levelData = data;
+                    levelData = data;
                     break;
-
                 case StringData data:
-                    GameResourceManager.instance.stringData = data;
+                    stringData = data;
                     break;
-
                 default:
                     Debug.LogWarning($"Unknown config type: {sData.name}");
                     break;
             }
         }
 
-
-
-        // var dataList = await Addressables.LoadAssetsAsync<ScriptableObject>(StaticGameData.AddressLabels.SOData, null).Task;
-        // foreach (var data in dataList)
-        // {
-        //     switch (data)
-        //     {
-        //         case CardData cd: cardData = cd; break;
-        //         case StringData sd: stringData = sd; break;
-        //         case LevelData ld: levelData = ld; break;
-        //     }
-        // }
-
-        // Images
-        cardImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.CardImage, null).Task);
-        gameImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.GameImage, null).Task);
-        masterImages = new List<Sprite>(await Addressables.LoadAssetsAsync<Sprite>(StaticGameData.AddressLabels.MasterIcon, null).Task);
+        // Images - AddressableResourceManager를 통해 로드
+        cardImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.CardImage);
+        gameImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.GameImage);
+        masterImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.MasterIcon);
 
         // Prefabs
-        // var popups = await Addressables.LoadAssetsAsync<GameObject>(StaticGameData.AddressLabels.popup, null).Task;
-        // this.popups = new List<GameObject>(popups);
-
+        // popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.popup);
 
         _isLoaded = true;
     }
-
-
-    public async void InitScriptableData()
-    {
-
-    }
-
-
 
 
 

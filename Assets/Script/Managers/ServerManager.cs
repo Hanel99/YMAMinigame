@@ -7,6 +7,10 @@ using UnityEngine.Networking;
 
 public class ServerManager : MonoBehaviour
 {
+    //TODO @@@ url 분리해서 따로 관리하거나 시트 사용을 그냥 제거하기
+
+
+
     public static ServerManager instance { get; private set; }
 
     private string sheetURL = "https://docs.google.com/spreadsheets/d/1MiqVSvzW52aw-slBgJ6WbONVDFUbqfXJRNp5dkniHPs/export?format=tsv&range=";
