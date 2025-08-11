@@ -1,33 +1,68 @@
 using System;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
-
+using System.Security.Cryptography;
 
 static public class GameConfig
 {
-    // 암호화
-    private static readonly string s_strEncodeKey = "59a48a2bdc1c93e7ce673cc695f8cfff";
+    private static string AesKey;
+    private static string AesIV;
 
+    private static string defaultAesKey = "DefaultAesKey16Bytes";
+    private static string defaultAesIV = "DefaultAesIv16";
 
-    #region Key
-    public const string MID = "mid";
+    static GameConfig()
+    {
+        LoadAESKeyAndIV();
+    }
 
-    #endregion
+    static private void LoadAESKeyAndIV()
+    {
+        string filePath = Path.Combine(Application.dataPath, "Build/AESKeyConfig.json");
 
+        if (File.Exists(filePath))
+        {
+            string jsonData = File.ReadAllText(filePath);
+            AESKeyConfigData configData = JsonUtility.FromJson<AESKeyConfigData>(jsonData);
 
+            if (configData != null)
+            {
+                AesKey = configData.AesKey;
+                AesIV = configData.AesIV;
+            }
+            else
+            {
+                Debug.LogError("Failed to parse AESKeyConfig.json");
+                // Handle the error appropriately, e.g., use default keys or disable encryption
+                AesKey = defaultAesKey;
+                AesIV = defaultAesIV;
+            }
+        }
+        else
+        {
+            Debug.LogError("AESKeyConfig.json not found at " + filePath);
+            // Handle the error appropriately
+            AesKey = defaultAesKey;
+            AesIV = defaultAesIV;
+        }
+
+        if (AesKey == defaultAesKey || AesIV == defaultAesIV)
+        {
+            Debug.LogWarning("Using default AES Key and IV. This is not secure!");
+        }
+    }
     static public void Set(string strName, string strValue)
     {
-        string strEncodeName = EncodeMD5(strName);
-        string strEncodeValue = EncodeTripleDES(strValue);
+        string strEncodeName = EncodeSHA256(strName);
+        string strEncodeValue = EncryptAES(strValue);
         PlayerPrefs.SetString(strEncodeName, strEncodeValue);
     }
     static public void Set(string strName, int iValue)
     {
         Set(strName, iValue.ToString());
     }
+
     static public void Set(string strName, float fValue)
     {
         Set(strName, fValue.ToString());
@@ -60,18 +95,20 @@ static public class GameConfig
 
     static public void Delete(string strName)
     {
-        string strEncodeName = EncodeMD5(strName);
+        string strEncodeName = EncodeSHA256(strName);
         if (PlayerPrefs.HasKey(strEncodeName))
+        {
             PlayerPrefs.DeleteKey(strEncodeName);
+        }
     }
 
     static public bool Get(string strName, ref string strValue)
     {
-        string strEncodeName = EncodeMD5(strName);
+        string strEncodeName = EncodeSHA256(strName);
         if (PlayerPrefs.HasKey(strEncodeName))
         {
             string strEncodeValue = PlayerPrefs.GetString(strEncodeName);
-            strValue = DecodeTripleDES(strEncodeValue);
+            strValue = DecryptAES(strEncodeValue);
             return true;
         }
         return false;
@@ -216,116 +253,89 @@ static public class GameConfig
 
     static public bool HasKey(string strName)
     {
-        string strEncodeName = EncodeMD5(strName);
+        string strEncodeName = EncodeSHA256(strName);
         return PlayerPrefs.HasKey(strEncodeName);
     }
 
-    static public string EncodeMD5(string strValue)
+    static public string EncodeSHA256(string strValue)
     {
-        StringBuilder strBuilder = new StringBuilder();
-        MD5 md5Hash = MD5.Create();
-        byte[] hashData = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(strValue));
-        foreach (byte hashValue in hashData)
+        using (SHA256 sha256Hash = SHA256.Create())
         {
-            strBuilder.Append(hashValue.ToString());
-        }
-        return strBuilder.ToString();
-    }
-
-    public static string EncodeTripleDES(string strValue)
-    {
-        MD5 md5Hash = new MD5CryptoServiceProvider();
-        byte[] secret = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(s_strEncodeKey));
-
-        byte[] bytes = System.Text.Encoding.UTF8.GetBytes(strValue);
-
-        TripleDES des = new TripleDESCryptoServiceProvider();
-        des.Key = secret;
-        des.Mode = CipherMode.ECB;
-        ICryptoTransform xform = des.CreateEncryptor();
-        byte[] encrypted = xform.TransformFinalBlock(bytes, 0, bytes.Length);
-
-        return System.Convert.ToBase64String(encrypted);
-    }
-
-    public static string DecodeTripleDES(string strValue)
-    {
-        if (strValue.Length <= 0)
-            return "";
-
-        MD5 md5Hash = new MD5CryptoServiceProvider();
-        byte[] secret = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(s_strEncodeKey));
-
-        byte[] bytes = System.Convert.FromBase64String(strValue);
-        TripleDES des = new TripleDESCryptoServiceProvider();
-
-        des.Key = secret;
-        des.Mode = CipherMode.ECB;
-        ICryptoTransform xform = des.CreateDecryptor();
-        byte[] decrypted = xform.TransformFinalBlock(bytes, 0, bytes.Length);
-
-        return Encoding.UTF8.GetString(decrypted);
-    }
-
-    public static string EncodeTripleDES(string strValue, Encoding encodingType)
-    {
-        MD5 md5Hash = new MD5CryptoServiceProvider();
-        byte[] secret = md5Hash.ComputeHash(encodingType.GetBytes(s_strEncodeKey));
-
-        byte[] bytes = encodingType.GetBytes(strValue);
-
-        TripleDES des = new TripleDESCryptoServiceProvider();
-        des.Key = secret;
-        des.Mode = CipherMode.ECB;
-        ICryptoTransform xform = des.CreateEncryptor();
-        byte[] encrypted = xform.TransformFinalBlock(bytes, 0, bytes.Length);
-
-        return System.Convert.ToBase64String(encrypted);
-    }
-
-    public static string DecodeTripleDES(string strValue, Encoding encodingType)
-    {
-        MD5 md5Hash = new MD5CryptoServiceProvider();
-        byte[] secret = md5Hash.ComputeHash(encodingType.GetBytes(s_strEncodeKey));
-
-        byte[] bytes = System.Convert.FromBase64String(strValue);
-        TripleDES des = new TripleDESCryptoServiceProvider();
-
-        des.Key = secret;
-        des.Mode = CipherMode.ECB;
-        ICryptoTransform xform = des.CreateDecryptor();
-        byte[] decrypted = xform.TransformFinalBlock(bytes, 0, bytes.Length);
-
-        return encodingType.GetString(decrypted);
-    }
-
-    public static void SetClass<T>(string name, T instance)
-    {
-        using (var ms = new MemoryStream())
-        {
-            new BinaryFormatter().Serialize(ms, instance);
-            GameConfig.Set(name, System.Convert.ToBase64String(ms.ToArray()));
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(strValue));
+            StringBuilder builder = new StringBuilder();
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                builder.Append(bytes[i].ToString("x2"));
+            }
+            return builder.ToString();
         }
     }
 
-    public static T GetClass<T>(string name) where T : new()
+    public static string EncryptAES(string plainText)
     {
-        string getStr = string.Empty;
-        GameConfig.Get(name, ref getStr);
-        if (getStr == string.Empty)
-            return default(T);
-
-        byte[] bytes = System.Convert.FromBase64String(getStr);
-        using (var ms = new MemoryStream(bytes))
+        byte[] encrypted;
+        using (Aes aesAlg = Aes.Create())
         {
-            object obj = new BinaryFormatter().Deserialize(ms);
-            return (T)obj;
+            aesAlg.Key = Encoding.UTF8.GetBytes(AesKey);
+            aesAlg.IV = Encoding.UTF8.GetBytes(AesIV);
+            aesAlg.Mode = CipherMode.CBC; // Or CipherMode.CTR, but ensure proper IV handling
+            ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
+
+            using (MemoryStream msEncrypt = new MemoryStream())
+            {
+                using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                {
+                    using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(plainText);
+                    }
+                    encrypted = msEncrypt.ToArray();
+                }
+            }
         }
+        return Convert.ToBase64String(encrypted);
     }
 
+    public static string DecryptAES(string cipherText)
+    {
+        try
+        {
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            using (Aes aesAlg = Aes.Create())
+            {
+                aesAlg.Key = Encoding.UTF8.GetBytes(AesKey);
+                aesAlg.IV = Encoding.UTF8.GetBytes(AesIV);
+                aesAlg.Mode = CipherMode.CBC;
+                ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
+
+                using (MemoryStream msDecrypt = new MemoryStream(cipherBytes))
+                {
+                    using (CryptoStream csDecrypt = new CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read))
+                    {
+                        using (StreamReader srDecrypt = new StreamReader(csDecrypt))
+                        {
+                            return srDecrypt.ReadToEnd();
+                        }
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Decryption failed: " + e.Message);
+            return string.Empty; // Or handle the error as appropriate
+        }
+    }
 
     public static void Clear()
     {
         PlayerPrefs.DeleteAll();
     }
+}
+
+[System.Serializable]
+public class AESKeyConfigData
+{
+    public string AesKey;
+    public string AesIV;
 }
