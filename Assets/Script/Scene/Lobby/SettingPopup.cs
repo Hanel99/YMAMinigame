@@ -258,7 +258,7 @@ public class SettingPopup : PopupBase
                 SaveDataManager.instance.AddCoin(140000);
                 break;
             case "getallcard":
-                SaveDataManager.instance.AddOwnCardList(ResourceManager.instance.GetAllCardIds());
+                SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
                 break;
             case "devtestopen":
                 StaticGameData.showDevTestText = true;

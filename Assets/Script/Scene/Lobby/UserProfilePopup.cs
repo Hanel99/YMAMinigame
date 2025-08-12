@@ -42,7 +42,7 @@ public class UserProfilePopup : PopupBase
         userMaster.text = LocalizeManager.instance.GetString($"master.name.{SaveDataManager.instance.playerData.master}");
         userCoin.text = SaveDataManager.instance.playerData.coin.ToString();
         userMilage.text = SaveDataManager.instance.playerData.mileage.ToString();
-        userCardCount.text = $"{SaveDataManager.instance.playerData.ownCardList.Count} / {ResourceManager.instance.GetTotalCardCount()}";
+        userCardCount.text = $"{SaveDataManager.instance.playerData.ownCardList.Count} / {GameResourceManager.instance.GetTotalCardCount()}";
     }
 
     public void OnClickPlayerDataSettingButton()

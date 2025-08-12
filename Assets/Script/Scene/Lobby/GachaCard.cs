@@ -25,7 +25,7 @@ public class GachaCard : MonoBehaviour
 
     private void SetCardData(int id)
     {
-        cardMetaData = ResourceManager.instance.GetCardMetaData(id);
+        cardMetaData = GameResourceManager.instance.GetCardMetaData(id);
     }
 
     private void SetCardImage(bool showNew)
@@ -36,7 +36,7 @@ public class GachaCard : MonoBehaviour
             return;
         }
 
-        frontImage.sprite = ResourceManager.instance.GetCardImage(cardMetaData.ImageNumber);
+        frontImage.sprite = GameResourceManager.instance.GetCardImage(cardMetaData.ImageNumber);
         border.color = StaticGameData.GetGradeBorderColor(cardMetaData.Grade);
 
         newIcon.SetActive(showNew);

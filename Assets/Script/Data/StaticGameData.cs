@@ -164,7 +164,7 @@ public static class StaticGameData
     /// <returns></returns>
     public static List<int> GetAllRandomCardIdList(int count = 1)
     {
-        var list = ResourceManager.instance.GetAllCardIds();
+        var list = GameResourceManager.instance.GetAllCardIds();
         list.Shuffle();
 
         var selectCardIdList = list.GetRange(0, count);
@@ -188,7 +188,7 @@ public static class StaticGameData
     /// <returns></returns>
     public static List<int> GetRandomCardIdList(CardGrade grade, int count = 1)
     {
-        var list = ResourceManager.instance.GetCardIds(grade);
+        var list = GameResourceManager.instance.GetCardIds(grade);
         list.Shuffle();
 
         var selectCardIdList = list.GetRange(0, count);
@@ -205,7 +205,7 @@ public static class StaticGameData
 
     public static int GetRandomCardId(CardGrade grade)
     {
-        var list = ResourceManager.instance.GetCardIds(grade);
+        var list = GameResourceManager.instance.GetCardIds(grade);
         list.Shuffle();
 
         HLLogger.Log($"@@@ Select [{grade}] grade card : {list[0]}");

@@ -72,19 +72,19 @@ public class CollectionPopup : PopupBase
         {
             //all
             HLLogger.Log("@@@ get all card data");
-            viewCardIdList = ResourceManager.instance.GetAllCardIds();
+            viewCardIdList = GameResourceManager.instance.GetAllCardIds();
         }
         else if (filter.value >= 1 && filter.value <= 6)
         {
             //카드 등급
             HLLogger.Log($"@@@ get {(CardGrade)(filter.value - 1)} card data");
-            viewCardIdList = ResourceManager.instance.GetCardIds((CardGrade)(filter.value - 1));
+            viewCardIdList = GameResourceManager.instance.GetCardIds((CardGrade)(filter.value - 1));
         }
         else
         {
             //담당 캐릭터
             HLLogger.Log($"@@@ get {(CardMaster)(filter.value - 7)} card data");
-            viewCardIdList = ResourceManager.instance.GetCardIds((CardMaster)(filter.value - 7));
+            viewCardIdList = GameResourceManager.instance.GetCardIds((CardMaster)(filter.value - 7));
         }
     }
 

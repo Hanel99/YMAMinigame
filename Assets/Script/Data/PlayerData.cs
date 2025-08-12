@@ -27,7 +27,7 @@ public class PlayerData
     public List<int> ownCardList = new();
     public List<string> usingRedeemCode = new();
 
-    public int maxExp => ResourceManager.instance.GetLevelRequireExp(level);
+    public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
 
 
     public PlayerData()

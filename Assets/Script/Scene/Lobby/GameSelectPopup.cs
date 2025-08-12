@@ -50,7 +50,7 @@ public class GameSelectPopup : PopupBase
     public void SetGameData(GameType type)
     {
         gameType = type;
-        gameImage.sprite = ResourceManager.instance.GetGameImage(gameType);
+        gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
 
         titleText.text = LocalizeManager.instance.GetString($"game.name.{gameType.ToString()}");
         descText.text = LocalizeManager.instance.GetString($"game.desc.{gameType.ToString()}");

@@ -12,10 +12,8 @@ public class CardGameUIManager : MonoBehaviour
 {
     public static CardGameUIManager instance { get; private set; }
 
-
     public Transform popupRoot;
-    public List<GameObject> popupList = new();
-
+    public List<PopupBase> popupList = new();
 
     [Header("Root")]
     public CardGameInGameView inGamePopup;
@@ -52,8 +50,7 @@ public class CardGameUIManager : MonoBehaviour
 
     public void ShowResult(int touchCount, int earnCoinAmount, List<int> collectCardIdList)
     {
-        var popup = ShowPopup<CardGameResultPopup>();
-        popup.GetComponent<CardGameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList);
+        _ShowPopup<CardGameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList);
     }
 
     public void ShowCardCheckPopup(List<Card> selectCardList, Action callback = null)
@@ -64,36 +61,41 @@ public class CardGameUIManager : MonoBehaviour
 
     public void ShowNewCardPopup(List<int> newCardIdList)
     {
-        var popup = ShowPopup<GachaResultPopup>();
-        var resultPopup = popup.GetComponent<GachaResultPopup>();
-        resultPopup.SetTitle("New Card");
-        resultPopup.ShowPopup(newCardIdList, null);
+        var popup = _ShowPopup<GachaResultPopup>();
+        popup.SetTitle("New Card");
+        popup.ShowPopup(newCardIdList, null);
     }
 
     public void ShowNewCardDetailPopup(CardMetaData data)
     {
-        var popup = ShowPopup<CollectionDetailPopup>();
-        popup.GetComponent<CollectionDetailPopup>().ShowPopup(data);
+        _ShowPopup<CollectionDetailPopup>().ShowPopup(data);
     }
 
     public void ShowPausePopup()
     {
-        var popup = ShowPopup<PausePopup>();
-        popup.GetComponent<PausePopup>().ShowPopup();
+        _ShowPopup<PausePopup>().ShowPopup();
     }
 
     public void ShowLevelUpPopup()
     {
-        var popup = ShowPopup<LevelUpPopup>();
-        popup.GetComponent<LevelUpPopup>().ShowPopup();
+        _ShowPopup<LevelUpPopup>().ShowPopup();
     }
 
 
-    public GameObject ShowPopup<T>()
+
+
+
+    //매개변수 없는 팝업의 경우
+    public void ShowPopup<T>() where T : PopupBase
+    {
+        _ShowPopup<T>().ShowPopup(true);
+    }
+
+    private T _ShowPopup<T>() where T : PopupBase
     {
         var popupName = typeof(T).Name;
 
-        var popup = ResourceManager.instance.GetPopup(popupName, popupRoot);
+        var popup = GameResourceManager.instance.GetPopup<T>(popupRoot);
         if (popup != null)
         {
             popupList.RemoveAll(x => x == null);

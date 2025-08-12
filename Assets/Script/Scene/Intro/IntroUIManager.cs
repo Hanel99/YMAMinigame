@@ -20,6 +20,8 @@ public class IntroUIManager : MonoBehaviour
     public Text errorDimText;
     public SceneAnimation sceneDim;
 
+    public Transform popupRoot;
+    public List<PopupBase> popupList = new();
 
 
 
@@ -111,34 +113,35 @@ public class IntroUIManager : MonoBehaviour
 
 
 
-    public Transform popupRoot;
-    public List<GameObject> popupList = new();
-
-
     public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null)
     {
-        var popup = ShowPopup<CommonPopup>();
-        popup.GetComponent<CommonPopup>().ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
-        return popup.GetComponent<CommonPopup>();
+        var popup = _ShowPopup<CommonPopup>();
+        popup.ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
+        return popup;
     }
 
     public void ShowLoginPopup()
     {
-        var popup = ShowPopup<LoginPopup>();
-        popup.GetComponent<LoginPopup>().ShowPopup();
+        _ShowPopup<LoginPopup>().ShowPopup();
     }
 
     public void ShowRegisterPopup()
     {
-        var popup = ShowPopup<RegisterPopup>();
-        popup.GetComponent<RegisterPopup>().ShowPopup();
+        _ShowPopup<RegisterPopup>().ShowPopup();
     }
 
-    public GameObject ShowPopup<T>()
+
+    //매개변수 없는 팝업의 경우
+    public void ShowPopup<T>() where T : PopupBase
+    {
+        _ShowPopup<T>().ShowPopup(true);
+    }
+
+    private T _ShowPopup<T>() where T : PopupBase
     {
         var popupName = typeof(T).Name;
 
-        var popup = ResourceManager.instance.GetPopup(popupName, popupRoot);
+        var popup = GameResourceManager.instance.GetPopup<T>(popupRoot);
         if (popup != null)
         {
             popupList.RemoveAll(x => x == null);
@@ -146,5 +149,4 @@ public class IntroUIManager : MonoBehaviour
         }
         return popup;
     }
-
 }

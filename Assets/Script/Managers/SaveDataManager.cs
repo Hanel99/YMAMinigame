@@ -84,7 +84,7 @@ public class SaveDataManager : MonoBehaviour
 
     public void RemoveNotUseCardList()
     {
-        var allCardList = ResourceManager.instance.GetAllCardIds();
+        var allCardList = GameResourceManager.instance.GetAllCardIds();
         _playerData.ownCardList.Intersect(allCardList);
         SavePlayerData();
     }
@@ -103,7 +103,7 @@ public class SaveDataManager : MonoBehaviour
     /// <returns></returns>
     public List<int> GetOwnCardList(CardGrade grade)
     {
-        var list = ResourceManager.instance.GetCardIds(grade);
+        var list = GameResourceManager.instance.GetCardIds(grade);
         return list.Intersect(_playerData.ownCardList).ToList();
     }
 
@@ -114,12 +114,12 @@ public class SaveDataManager : MonoBehaviour
     /// <returns></returns>
     public List<int> GetNotOwnCardList(CardGrade grade)
     {
-        var list = ResourceManager.instance.GetCardIds(grade);
+        var list = GameResourceManager.instance.GetCardIds(grade);
         return list.Except(_playerData.ownCardList).ToList();
     }
     public List<int> GetNotOwnCardList()
     {
-        var list = ResourceManager.instance.GetAllCardIds();
+        var list = GameResourceManager.instance.GetAllCardIds();
         return list.Except(_playerData.ownCardList).ToList();
     }
     public List<int> GetNotOwnCardList(List<int> list)

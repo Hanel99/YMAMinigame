@@ -128,7 +128,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 30682077}
-  - component: {fileID: 30682076}
   - component: {fileID: 30682075}
   - component: {fileID: 30682074}
   - component: {fileID: 30682078}
@@ -168,22 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85be345939715354f96a3de1a478380d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &30682076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 30682073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e76b52a1580b847823338a487d471c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resourceScriptableData: {fileID: 11400000, guid: abd5c0ce8c8f9d94ab080121cce10175, type: 2}
-  cardData: {fileID: 11400000, guid: 43cf86da9fb74744b901a8c597f146ea, type: 2}
-  stringData: {fileID: 11400000, guid: 0ae385544a61f214fa14e02a6d46e642, type: 2}
-  levelData: {fileID: 11400000, guid: ed40696817f983345806ad62a123cadb, type: 2}
 --- !u!4 &30682077
 Transform:
   m_ObjectHideFlags: 0

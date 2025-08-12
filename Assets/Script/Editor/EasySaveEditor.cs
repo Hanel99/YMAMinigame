@@ -67,7 +67,7 @@ public class EasySaveEditor : Editor
         PlayerData playerData = new PlayerData();
         ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
 
-        SaveDataManager.instance.AddOwnCardList(ResourceManager.instance.GetAllCardIds());
+        SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
         HLLogger.Log("All All Card Complete");
     }
 

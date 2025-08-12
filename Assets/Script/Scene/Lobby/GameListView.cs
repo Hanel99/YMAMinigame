@@ -135,7 +135,7 @@ public class GameListView : MonoBehaviour
     {
         var playerData = SaveDataManager.instance.playerData;
 
-        userIcon.sprite = ResourceManager.instance.GetMasterIcon(playerData.master);
+        userIcon.sprite = GameResourceManager.instance.GetMasterIcon(playerData.master);
         userName.text = playerData.name;
         userLevel.text = playerData.level.ToString();
         if (playerData.maxExp < 0)

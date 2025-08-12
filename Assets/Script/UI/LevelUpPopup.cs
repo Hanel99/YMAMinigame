@@ -36,7 +36,7 @@ public class LevelUpPopup : PopupBase
     {
         targetLevel = SaveDataManager.instance.playerData.level;
 
-        int unlockContent = ResourceManager.instance.GetLevelUnlockValue(targetLevel);
+        int unlockContent = GameResourceManager.instance.GetLevelUnlockValue(targetLevel);
         unlockContentText.text = unlockContent == 0 ? "" : LocalizeManager.instance.GetString($"levelup.unlock.{unlockContent}");
     }
 
