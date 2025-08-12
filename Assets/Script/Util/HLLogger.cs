@@ -46,7 +46,7 @@ public static class HLLogger
     public static void LogWarning(string log, LogColor color = LogColor.yellow, Object context = null)
     {
 #if !LIVE
-        string formattedLog = $"<color={LogColor.none}><b>[Warning]</b></color> <color={color}>{log}</color>";
+        string formattedLog = $"<color=yellow><b>[Warning]</b></color> <color={color}>{log}</color>";
         Debug.LogWarning(formattedLog, context);
 #endif
     }
@@ -55,7 +55,7 @@ public static class HLLogger
     public static void LogError(string log, LogColor color = LogColor.red, Object context = null)
     {
 #if !LIVE
-        string formattedLog = $"<color={LogColor.red}><b>[Error]</b></color> <color={color}>{log}</color>";
+        string formattedLog = $"<color=red><b>[Error]</b></color> <color={color}>{log}</color>";
         Debug.LogError(formattedLog, context);
 #endif
     }

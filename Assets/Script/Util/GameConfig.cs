@@ -9,8 +9,10 @@ static public class GameConfig
     private static string AesKey;
     private static string AesIV;
 
-    private static string defaultAesKey = "DefaultAesKey16Bytes";
-    private static string defaultAesIV = "DefaultAesIv16";
+    // IMPORTANT: These are default keys for development only. 
+    // For production, you MUST generate and securely store your own random keys.
+    private static string defaultAesKey = "0123456789abcdef0123456789abcdef"; // 32 bytes for AES-256
+    private static string defaultAesIV = "0123456789abcdef"; // 16 bytes for AES
 
     static GameConfig()
     {
@@ -30,6 +32,8 @@ static public class GameConfig
             {
                 AesKey = configData.AesKey;
                 AesIV = configData.AesIV;
+
+                Debug.Log("Loaded AES Key and IV from AESKeyConfig.json");
             }
             else
             {
@@ -276,8 +280,8 @@ static public class GameConfig
         byte[] encrypted;
         using (Aes aesAlg = Aes.Create())
         {
-            aesAlg.Key = Encoding.UTF8.GetBytes(AesKey);
-            aesAlg.IV = Encoding.UTF8.GetBytes(AesIV);
+            aesAlg.Key = Convert.FromBase64String(AesKey);
+            aesAlg.IV = Convert.FromBase64String(AesIV);
             aesAlg.Mode = CipherMode.CBC; // Or CipherMode.CTR, but ensure proper IV handling
             ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
 
@@ -303,8 +307,8 @@ static public class GameConfig
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             using (Aes aesAlg = Aes.Create())
             {
-                aesAlg.Key = Encoding.UTF8.GetBytes(AesKey);
-                aesAlg.IV = Encoding.UTF8.GetBytes(AesIV);
+                aesAlg.Key = Convert.FromBase64String(AesKey);
+                aesAlg.IV = Convert.FromBase64String(AesIV);
                 aesAlg.Mode = CipherMode.CBC;
                 ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
 
