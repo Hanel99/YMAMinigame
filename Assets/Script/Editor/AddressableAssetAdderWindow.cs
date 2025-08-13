@@ -6,58 +6,39 @@ using System.Collections.Generic;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
-using UnityEditor.AddressableAssets.GUI;
 using System.IO;
-
 
 public class AddressableAssetAdderWindow : OdinEditorWindow
 {
-    [Title("📁 Addressable 에셋 자동 등록기")]
-    [TabGroup("일반등록")] // 기존 기능
+    // ========== 어드레서블 일반 등록 박스 ==========
+    [PropertySpace(SpaceAfter = 20)]
+    [BoxGroup("어드레서블 일반 등록")]
     [FolderPath(AbsolutePath = true)]
     [LabelText("에셋 폴더 경로 (Assets 하위)")]
     public string assetFolderPath = "Assets/MyAssets";
 
-    [TabGroup("일반등록")]
+    [BoxGroup("어드레서블 일반 등록")]
     [LabelText("어드레서블 그룹 이름")]
     public string groupName = "MyGroup";
 
-    [TabGroup("일반등록")]
+    [BoxGroup("어드레서블 일반 등록")]
     [ValueDropdown(nameof(GetAllAddressableLabels))]
     [LabelText("어드레서블 레이블")]
     public string label = "<새 레이블 입력>";
 
-    [TabGroup("일반등록")]
+    [BoxGroup("어드레서블 일반 등록")]
     [ShowIf("@label == \"<새 레이블 입력>\"")]
     [LabelText("새 레이블 이름")]
     public string newLabel = "NewLabel";
 
-    private string GetFinalLabel()
-    {
-        return label == "<새 레이블 입력>" ? newLabel : label;
-    }
 
-    private List<string> GetAllAddressableLabels()
-    {
-        var settings = AddressableAssetSettingsDefaultObject.Settings;
-        var labels = new List<string>();
-
-        if (settings != null)
-        {
-            foreach (var lbl in settings.GetLabels())
-            {
-                labels.Add(lbl);
-            }
-        }
-
-        labels.Add("<새 레이블 입력>");
-        return labels;
-    }
-
-    [TabGroup("일반등록")]
+    [BoxGroup("어드레서블 일반 등록")]
     [Button("어드레서블 등록", ButtonSizes.Large), GUIColor(0.2f, 0.7f, 1f)]
+    [PropertySpace(SpaceAfter = 20)]
+
     public void RegisterAssetsToAddressables()
     {
+        // ... 기존 코드 그대로
         var settings = AddressableAssetSettingsDefaultObject.Settings;
         if (settings == null)
         {
@@ -96,7 +77,6 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
 
         string labelToApply = GetFinalLabel();
 
-        // 새 레이블이면 Addressables 설정에 추가
         if (!settings.GetLabels().Contains(labelToApply))
         {
             settings.AddLabel(labelToApply);
@@ -119,61 +99,31 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
         Debug.Log($"✅ 어드레서블 등록 완료: {assetGuids.Length}개 에셋 (레이블: {labelToApply})");
     }
 
-
-
-    public List<GameObject> GetPrefabs(string prefabName)
-    {
-        List<GameObject> prefabs = new List<GameObject>();
-
-        DirectoryInfo di = new DirectoryInfo("Assets/Prefab/");
-        var prefabDirectories = di.GetDirectories();
-
-        foreach (var dir in prefabDirectories)
-        {
-            var fileInfos = dir.GetFiles("*.prefab");
-
-            foreach (FileInfo file in fileInfos)
-            {
-                if (file.Name.Contains("meta")) continue;
-                string filePath = $"{di}{dir.Name}/{file.Name}";
-                HLLogger.Log($"path ; {filePath}");
-
-                if (file.Name.Contains($"{prefabName}.prefab"))
-                {
-                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);
-                    prefabs.Add(prefab);
-                }
-            }
-        }
-
-        return prefabs;
-    }
-
-    // ------------------ 팝업 자동 등록 탭 ------------------
-    [Title("📁 Addressable 에셋 자동 등록기")]
-    [TabGroup("팝업자동등록")]
+    // ========== 팝업 자동 등록 박스 ==========
+    [BoxGroup("팝업 자동 등록")]
     [FolderPath(AbsolutePath = true)]
     [LabelText("팝업 프리팹 루트 폴더 (Assets 하위)")]
     public string popupRootFolder = "Assets/Prefab/";
 
-    [TabGroup("팝업자동등록")]
+    [BoxGroup("팝업 자동 등록")]
     [LabelText("팝업 그룹 이름")]
     public string popupGroupName = "PopupGroup";
 
-    [TabGroup("팝업자동등록")]
+    [BoxGroup("팝업 자동 등록")]
     [ValueDropdown(nameof(GetAllAddressableLabels))]
     [LabelText("팝업 레이블")]
     public string popupLabel = "<새 레이블 입력>";
 
-    [TabGroup("팝업자동등록")]
+    [BoxGroup("팝업 자동 등록")]
     [ShowIf("@popupLabel == \"<새 레이블 입력>\"")]
     [LabelText("새 팝업 레이블 이름")]
     public string newPopupLabel = "PopupLabel";
 
-    [TabGroup("팝업자동등록")]
+    [BoxGroup("팝업 자동 등록")]
     [Button("팝업 프리팹 Addressable 등록", ButtonSizes.Large), GUIColor(0.9f, 0.6f, 0.2f)]
     public void RegisterPopupPrefabsToAddressables()
     {
+        // ... 기존 코드 그대로
         var settings = AddressableAssetSettingsDefaultObject.Settings;
         if (settings == null)
         {
@@ -193,7 +143,6 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
             relativePath = "Assets" + popupRootFolder.Substring(Application.dataPath.Length);
         }
 
-        // 하위 폴더까지 popup이 포함된 프리팹만 찾기
         List<string> popupPrefabGuids = new List<string>();
         string[] allGuids = AssetDatabase.FindAssets("t:Prefab", new[] { relativePath });
         foreach (var guid in allGuids)
@@ -222,7 +171,6 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
 
         string labelToApply = popupLabel == "<새 레이블 입력>" ? newPopupLabel : popupLabel;
 
-        // 새 레이블이면 Addressables 설정에 추가
         if (!settings.GetLabels().Contains(labelToApply))
         {
             settings.AddLabel(labelToApply);
@@ -241,6 +189,57 @@ public class AddressableAssetAdderWindow : OdinEditorWindow
         AssetDatabase.SaveAssets();
         settings.SetDirty(AddressableAssetSettings.ModificationEvent.EntryMoved, null, true);
         Debug.Log($"✅ 팝업 프리팹 Addressable 등록 완료: {popupPrefabGuids.Count}개 (레이블: {labelToApply})");
+    }
+
+    // ========== 헬퍼 메서드들 ==========
+    private string GetFinalLabel()
+    {
+        return label == "<새 레이블 입력>" ? newLabel : label;
+    }
+
+    private List<string> GetAllAddressableLabels()
+    {
+        var settings = AddressableAssetSettingsDefaultObject.Settings;
+        var labels = new List<string>();
+
+        if (settings != null)
+        {
+            foreach (var lbl in settings.GetLabels())
+            {
+                labels.Add(lbl);
+            }
+        }
+
+        labels.Add("<새 레이블 입력>");
+        return labels;
+    }
+
+    public List<GameObject> GetPrefabs(string prefabName)
+    {
+        List<GameObject> prefabs = new List<GameObject>();
+
+        DirectoryInfo di = new DirectoryInfo("Assets/Prefab/");
+        var prefabDirectories = di.GetDirectories();
+
+        foreach (var dir in prefabDirectories)
+        {
+            var fileInfos = dir.GetFiles("*.prefab");
+
+            foreach (FileInfo file in fileInfos)
+            {
+                if (file.Name.Contains("meta")) continue;
+                string filePath = $"{di}{dir.Name}/{file.Name}";
+                HLLogger.Log($"path ; {filePath}");
+
+                if (file.Name.Contains($"{prefabName}.prefab"))
+                {
+                    GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(filePath);
+                    prefabs.Add(prefab);
+                }
+            }
+        }
+
+        return prefabs;
     }
 
     [MenuItem("Tools/Util Window/어드레서블 에셋 등록 윈도우")]

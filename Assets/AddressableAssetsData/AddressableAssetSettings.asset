@@ -98,6 +98,20 @@ MonoBehaviour:
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: f9ecf4acc1cf9fa44baa387230461c2a
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+    - m_InheritedParent: 
+      m_Id: ec9b53e990c83bc42b0a2b84b3a08371
+      m_ProfileName: RemoteNAS
+      m_Values:
+      - m_Id: 04c1ca496688c51418393988c3371ca7
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 1da8a5a7f94e66942ba412f7d39ce08a
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 6dee193ff84db2542b7ae6baba98d741
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: c2bc94b1b7f658d47a7fd15bac180a98
+        m_Value: 'ServerData/[BuildTarget]'
+      - m_Id: f9ecf4acc1cf9fa44baa387230461c2a
+        m_Value: 'https://yourcdn.com/addressables/[Platform]/[Env]/[AssetVersion] '
     m_ProfileEntryNames:
     - m_Id: 04c1ca496688c51418393988c3371ca7
       m_Name: Local.BuildPath
