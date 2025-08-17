@@ -1,0 +1,117 @@
+using System.Collections.Generic;
+using System.IO;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
+using UnityEngine.Networking;
+
+public class GeminiApiManager : MonoBehaviour
+{
+    private string apiKey;
+
+    private void Awake()
+    {
+        LoadApiKey();
+    }
+
+    private void LoadApiKey()
+    {
+        string path = Path.Combine(Application.dataPath, "Build/apikey.json");
+        if (File.Exists(path))
+        {
+            apiKey = JsonUtility.FromJson<ApiKeyWrapper>(File.ReadAllText(path)).apiKey;
+        }
+        else
+        {
+            Debug.LogError("API Key file not found!");
+        }
+    }
+
+    [System.Serializable]
+    private class ApiKeyWrapper
+    {
+        public string apiKey;
+    }
+
+    /// <summary>
+    /// 특정 키워드에 대한 10가지 힌트를 요청
+    /// </summary>
+    public async UniTask<List<string>> GetHintsForKeyword(string keyword)
+    {
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={apiKey}";
+
+        // 요청 데이터 간소화
+        var requestData = new
+        {
+            contents = new[]
+            {
+                new
+                {
+                    parts = new[]
+                    {
+                        new { text = $"키워드 '{keyword}'에 대해 맞추기 어려운 것부터 점점 쉬운 것까지 총 10개의 힌트를 순서대로 알려줘. 리스트 형식으로 출력해줘." }
+                    }
+                }
+            }
+        };
+
+        string json = JsonUtility.ToJson(requestData);
+        using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
+        {
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.downloadHandler = new DownloadHandlerBuffer();
+            request.SetRequestHeader("Content-Type", "application/json");
+
+            await request.SendWebRequest();
+
+            if (request.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError("Error: " + request.error);
+                return null;
+            }
+            else
+            {
+                string responseJson = request.downloadHandler.text;
+
+                // 응답 데이터 간소화
+                var response = JsonUtility.FromJson<GeminiResponse>(responseJson);
+
+                if (response.candidates != null && response.candidates.Length > 0)
+                {
+                    string fullText = response.candidates[0].content.parts[0].text;
+                    List<string> hints = new List<string>(fullText.Split('\n'));
+                    return hints;
+                }
+                else
+                {
+                    Debug.LogWarning("No candidates in response.");
+                    return null;
+                }
+            }
+        }
+    }
+
+    [System.Serializable]
+    private class GeminiResponse
+    {
+        public Candidate[] candidates;
+    }
+
+    [System.Serializable]
+    private class Candidate
+    {
+        public Content content;
+    }
+
+    [System.Serializable]
+    private class Content
+    {
+        public Part[] parts;
+    }
+
+    [System.Serializable]
+    private class Part
+    {
+        public string text;
+    }
+}

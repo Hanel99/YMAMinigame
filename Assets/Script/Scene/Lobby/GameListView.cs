@@ -63,15 +63,13 @@ public class GameListView : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         SaveDataManager.instance.RemoveNotUseCardList();
-        // CheckServerMaintenance();
-        //@@@ 필요한가?
 
         for (int i = 0; i < gameList.Count; ++i)
         {
-            if (i == (int)GameType.MatchCardGame)
-                gameList[0].SetGameData(GameType.MatchCardGame);
-            else
+            if (i >= (int)GameType.Count)
                 gameList[i].gameObject.SetActive(false);
+            else
+                gameList[i].SetGameData((GameType)i);
         }
 
         settingBtn.GetComponent<Button>().onClick.AddListener(OnClickSettingButton);
@@ -85,50 +83,6 @@ public class GameListView : MonoBehaviour
         LobbyUIManager.instance.ShowSceneMoveAnimation(true);
     }
 
-
-    private void CheckServerMaintenance()
-    {
-        ServerManager.instance.CheckServerMaintenance((sheetData) =>
-        {
-            CommonPopup popup = null;
-            switch (sheetData)
-            {
-                case "0":
-                    //이상 없음. 접속 가능
-                    break;
-
-                case "1":
-                    //DEV만 입장 가능
-#if !DEV
-                    popup = LobbyUIManager.instance.ShowCommonPopup("공지", $"서버 점검 중입니다.\nCode.{sheetData}", false, true, false, null, () =>
-                    {
-                        Application.Quit();
-                    });
-                    popup.isActBackKey = false;
-#endif
-                    break;
-
-                case "2":
-                    //Editor만 입장 가능
-#if !UNITY_EDITOR
-                    popup = LobbyUIManager.instance.ShowCommonPopup("공지", $"서버 점검 중입니다.\nCode.{sheetData}", false, true, false, null, () =>
-                    {
-                        Application.Quit();
-                    });
-                    popup.isActBackKey = false;
-#endif
-                    break;
-
-                default:
-                    popup = LobbyUIManager.instance.ShowCommonPopup("공지", $"서버 점검 중입니다.\nCode.{sheetData}", false, true, false, null, () =>
-                    {
-                        Application.Quit();
-                    });
-                    popup.isActBackKey = false;
-                    break;
-            }
-        });
-    }
 
 
     public void UpdateUserProfileProcess()

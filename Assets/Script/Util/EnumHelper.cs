@@ -10,6 +10,7 @@ public enum SceneName
     IntroScene,
     LobbyScene,
     YMAMatch2CardGame,
+    YMAFindAIWordGame,
 }
 
 
@@ -17,6 +18,7 @@ public enum SceneName
 public enum GameType
 {
     MatchCardGame = 0,
+    FindAIWord = 1,
 
     //WingTto, -> 윙또
     //CubeGame, -> 버튼 빨리 누르기

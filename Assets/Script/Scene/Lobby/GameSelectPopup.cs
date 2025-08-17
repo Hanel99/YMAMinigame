@@ -77,6 +77,10 @@ public class GameSelectPopup : PopupBase
                 SceneMoveManager.instance.MoveScene(SceneName.YMAMatch2CardGame);
                 break;
 
+            case GameType.FindAIWord:
+                SceneMoveManager.instance.MoveScene(SceneName.YMAFindAIWordGame);
+                break;
+
             default:
                 HLLogger.Log("@@@ gametype is error");
                 break;
