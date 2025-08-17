@@ -1,24 +1,16 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 
-
-public class CardGameUIManager : MonoBehaviour
+public class FindAIWordGameUIManager : MonoBehaviour
 {
-    public static CardGameUIManager instance { get; private set; }
+    public static FindAIWordGameUIManager instance { get; private set; }
 
     public Transform popupRoot;
     public List<PopupBase> popupList = new();
 
     [Header("Root")]
-    public CardGameInGameView inGamePopup;
-    public CardGameCheckCardPopup checkCardPopup;
-
     public Transform rootDim;
     public SceneAnimation sceneDim;
 
@@ -34,8 +26,6 @@ public class CardGameUIManager : MonoBehaviour
 
     public void ResetInGameUI()
     {
-        inGamePopup.gameObject.SetActive(true);
-        checkCardPopup.gameObject.SetActive(false);
         rootDim.gameObject.SetActive(true);
     }
     public void ShowRootDim(bool show)
@@ -52,38 +42,6 @@ public class CardGameUIManager : MonoBehaviour
     {
         _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList);
     }
-
-    public void ShowCardCheckPopup(List<Card> selectCardList, Action callback = null)
-    {
-        checkCardPopup.gameObject.SetActive(true);
-        checkCardPopup.StartCheckProcess(selectCardList, callback);
-    }
-
-    public void ShowNewCardPopup(List<int> newCardIdList)
-    {
-        var popup = _ShowPopup<GachaResultPopup>();
-        popup.SetTitle("New Card");
-        popup.ShowPopup(newCardIdList, null);
-    }
-
-    public void ShowNewCardDetailPopup(CardMetaData data)
-    {
-        _ShowPopup<CollectionDetailPopup>().ShowPopup(data);
-    }
-
-    public void ShowPausePopup()
-    {
-        _ShowPopup<PausePopup>().ShowPopup();
-    }
-
-    public void ShowLevelUpPopup()
-    {
-        _ShowPopup<LevelUpPopup>().ShowPopup();
-    }
-
-
-
-
 
     //매개변수 없는 팝업의 경우
     public void ShowPopup<T>() where T : PopupBase

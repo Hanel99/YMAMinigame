@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 
-public class CardGameResultPopup : PopupBase
+public class GameResultPopup : PopupBase
 {
-    public static CardGameResultPopup instance { get; private set; }
+    public static GameResultPopup instance { get; private set; }
 
     public Image resultDim;
     public Text tryCountText;

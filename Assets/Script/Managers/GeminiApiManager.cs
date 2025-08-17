@@ -6,10 +6,18 @@ using UnityEngine.Networking;
 
 public class GeminiApiManager : MonoBehaviour
 {
+    public static GeminiApiManager instance { get; private set; }
+
     private string apiKey;
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+            return;
+
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+
         LoadApiKey();
     }
 
