@@ -137,6 +137,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
         {
             EditorUtility.DisplayDialog("✅ 빌드 성공", $"경로: {buildPath}", "확인");
             Debug.Log($"✅ 앱 빌드 완료: {summary.totalSize / 1048576f:0.00} MB");
+
+            // 빌드 폴더 열기
+            EditorUtility.RevealInFinder(Path.GetDirectoryName(buildPath));
         }
         else
         {

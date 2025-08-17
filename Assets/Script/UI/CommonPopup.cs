@@ -35,7 +35,7 @@ public class CommonPopup : PopupBase
         SetCloseCallBack(closeCallback);
         this.OKCallback = OKCallback;
 
-        SetPopupSize();
+        // SetPopupSize();
         ShowPopup();
     }
 
