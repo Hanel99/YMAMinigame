@@ -4,6 +4,8 @@ using Cysharp.Threading.Tasks;
 
 public class FindAIWordGameManager : MonoBehaviour
 {
+    public static FindAIWordGameManager instance { get; private set; }
+
     private List<string> keywordTable = new List<string>
     {
         "사과", "축구", "비행기", "피카츄", "피아노"
@@ -12,6 +14,11 @@ public class FindAIWordGameManager : MonoBehaviour
     private string currentKeyword;
     private List<string> hints;
     private int currentHintIndex = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private async void Start()
     {
