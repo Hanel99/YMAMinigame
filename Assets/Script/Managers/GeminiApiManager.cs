@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.IO;
+using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -45,18 +46,18 @@ public class GeminiApiManager : MonoBehaviour
     /// </summary>
     public async UniTask<List<string>> GetHintsForKeyword(string keyword)
     {
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key={apiKey}";
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={apiKey}";
 
         // 요청 데이터 간소화
-        var requestData = new
+        var requestData = new GeminiRequest
         {
             contents = new[]
             {
-                new
+                new Content
                 {
                     parts = new[]
                     {
-                        new { text = $"키워드 '{keyword}'에 대해 맞추기 어려운 것부터 점점 쉬운 것까지 총 10개의 힌트를 순서대로 알려줘. 리스트 형식으로 출력해줘." }
+                        new Part { text = $"키워드 '{keyword}'에 대해 맞추기 어려운 것부터 점점 쉬운 것까지 총 10개의 힌트를 순서대로 알려줘. 키워드 단어에만 국한된 힌트를 만들어줘.답변은 힌트 문구 단 10문장으로만 리스트 형식으로 출력해줘. 10문장 외에 다른 문구는 삭제해서 반환해." }
                     }
                 }
             }
@@ -99,27 +100,80 @@ public class GeminiApiManager : MonoBehaviour
         }
     }
 
-    [System.Serializable]
-    private class GeminiResponse
+    // [Serializable]
+    // public class Part
+    // {
+    //     public string text;
+    // }
+
+    // [Serializable]
+    // public class Content
+    // {
+    //     public Part[] parts;
+    // }
+
+    [Serializable]
+    public class GeminiRequest
+    {
+        public Content[] contents;
+    }
+
+
+    [Serializable]
+    public class GeminiResponse
     {
         public Candidate[] candidates;
+        public PromptFeedback promptFeedback; // 있을 수도, 없을 수도
+        public string modelVersion;
+        public string responseId;
+        public UsageMetadata usageMetadata;
     }
 
-    [System.Serializable]
-    private class Candidate
+    [Serializable]
+    public class Candidate
     {
         public Content content;
+        public string finishReason;
+        public SafetyRating[] safetyRatings;
+        public int index;
     }
 
-    [System.Serializable]
-    private class Content
+    [Serializable]
+    public class Content
     {
+        public string role;
         public Part[] parts;
     }
 
-    [System.Serializable]
-    private class Part
+    [Serializable]
+    public class Part
     {
         public string text;
+        // 필요시 확장:
+        // public InlineData inline_data; // 이미지 등 바이너리 파트
+        // public FileData fileData;
+    }
+
+    [Serializable]
+    public class PromptFeedback
+    {
+        public string blockReason;            // 차단 시 사유
+        public SafetyRating[] safetyRatings;
+    }
+
+    [Serializable]
+    public class SafetyRating
+    {
+        public string category;               // 예: HARM_CATEGORY_HARASSMENT
+        public string probability;            // 예: LOW, MEDIUM...
+        public bool blocked;                  // 해당 카테고리로 차단 여부
+    }
+
+    [Serializable]
+    public class UsageMetadata
+    {
+        public int promptTokenCount;
+        public int candidatesTokenCount;
+        public int totalTokenCount;
     }
 }

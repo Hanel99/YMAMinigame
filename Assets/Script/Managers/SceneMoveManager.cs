@@ -44,6 +44,10 @@ public class SceneMoveManager : MonoBehaviour
             case SceneName.YMAMatch2CardGame:
                 CardGameUIManager.instance.ShowSceneMoveAnimation(false, () => SceneManager.LoadScene(sceneName.ToString()));
                 break;
+
+            case SceneName.YMAFindAIWordGame:
+                FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(false, () => SceneManager.LoadScene(sceneName.ToString()));
+                break;
         }
     }
 

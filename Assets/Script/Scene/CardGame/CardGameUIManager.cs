@@ -50,7 +50,7 @@ public class CardGameUIManager : MonoBehaviour
 
     public void ShowResult(int touchCount, int earnCoinAmount, List<int> collectCardIdList)
     {
-        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList);
+        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList, SceneName.YMAMatch2CardGame, () => ShowNewCardPopup(collectCardIdList));
     }
 
     public void ShowCardCheckPopup(List<Card> selectCardList, Action callback = null)

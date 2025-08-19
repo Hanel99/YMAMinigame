@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameResultPopup : PopupBase
 {
@@ -18,6 +19,8 @@ public class GameResultPopup : PopupBase
 
     //private
     private Coroutine cor;
+    private Action showNewCardAction;
+    private SceneName sceneName;
 
 
     protected override void OnAwake()
@@ -44,10 +47,12 @@ public class GameResultPopup : PopupBase
             StopCoroutine(cor);
     }
 
-    public void ShowPopup(int touchCount, int earnCoinAmount, List<int> collectCardIdList)
+    public void ShowPopup(int touchCount, int earnCoinAmount, List<int> collectCardIdList, SceneName sceneName, Action newCardAction = null)
     {
         HideResultObjects();
         ShowPopup();
+        showNewCardAction = newCardAction;
+        this.sceneName = sceneName;
         cor = StartCoroutine(co_resultProcess(touchCount, earnCoinAmount, collectCardIdList));
     }
 
@@ -75,8 +80,8 @@ public class GameResultPopup : PopupBase
         totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin}";
         yield return new WaitForSeconds(0.3f);
 
-        if (collectCardIdList == null || collectCardIdList.Count > 0)
-            CardGameUIManager.instance.ShowNewCardPopup(collectCardIdList);
+        if (collectCardIdList != null && collectCardIdList.Count > 0)
+            showNewCardAction?.Invoke();
 
         lobbyButton.SetActive(true);
         retryButton.SetActive(true);
@@ -94,7 +99,7 @@ public class GameResultPopup : PopupBase
 
     public void OnClickRetry()
     {
-        SceneMoveManager.instance.MoveScene(SceneName.YMAMatch2CardGame);
+        SceneMoveManager.instance.MoveScene(sceneName);
     }
 }
 

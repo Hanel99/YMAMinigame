@@ -150,11 +150,9 @@ public class IntroController : MonoBehaviour
     private async UniTask WaitGameResourceLoadAsync()
     {
         HLLogger.Log($"Game resources load start");
-
         await GameResourceManager.instance.LoadAsync();
 
         HLLogger.Log($"Game resources load complete");
-
         state++;
         StartIntroProcess();
     }

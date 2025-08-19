@@ -38,10 +38,21 @@ public class FindAIWordGameUIManager : MonoBehaviour
 
 
 
-    public void ShowResult(int touchCount, int earnCoinAmount, List<int> collectCardIdList)
+    public void ShowResult(int touchCount, int earnCoinAmount)
     {
-        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList);
+        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, null, SceneName.YMAFindAIWordGame);
     }
+
+    public void ShowPausePopup()
+    {
+        _ShowPopup<PausePopup>().ShowPopup();
+    }
+
+    public void ShowLevelUpPopup()
+    {
+        _ShowPopup<LevelUpPopup>().ShowPopup();
+    }
+
 
     //매개변수 없는 팝업의 경우
     public void ShowPopup<T>() where T : PopupBase

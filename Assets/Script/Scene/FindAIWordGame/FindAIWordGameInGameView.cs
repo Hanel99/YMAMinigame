@@ -6,11 +6,19 @@ public class FindAIWordGameInGameView : MonoBehaviour
 {
     public static FindAIWordGameInGameView instance { get; private set; }
     public Text tryCountText;
+    public Text hintText;
     public InputField answer;
 
     private void Awake()
     {
         instance = this;
+    }
+
+    public void InitUI()
+    {
+        tryCountText.text = "";
+        hintText.text = "";
+        answer.text = "";
     }
 
 
@@ -19,10 +27,20 @@ public class FindAIWordGameInGameView : MonoBehaviour
         tryCountText.text = $"시도 횟수 : {count}";
     }
 
+    public void UpdateHintText(string hint)
+    {
+        hintText.text = hint;
+    }
+
+    public void ResetAnswerField()
+    {
+        answer.text = "";
+    }
+
 
     public void OnClickPause()
     {
-        CardGameUIManager.instance.ShowPausePopup();
+        FindAIWordGameUIManager.instance.ShowPausePopup();
     }
 
     public void OnClickSubmit()
