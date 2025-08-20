@@ -81,8 +81,9 @@ public class GeminiApiManager : MonoBehaviour
             else
             {
                 string responseJson = request.downloadHandler.text;
+                HLLogger.Log(responseJson);
 
-                // 응답 데이터 간소화
+
                 var response = JsonUtility.FromJson<GeminiResponse>(responseJson);
 
                 if (response.candidates != null && response.candidates.Length > 0)
@@ -100,17 +101,6 @@ public class GeminiApiManager : MonoBehaviour
         }
     }
 
-    // [Serializable]
-    // public class Part
-    // {
-    //     public string text;
-    // }
-
-    // [Serializable]
-    // public class Content
-    // {
-    //     public Part[] parts;
-    // }
 
     [Serializable]
     public class GeminiRequest
@@ -123,10 +113,9 @@ public class GeminiApiManager : MonoBehaviour
     public class GeminiResponse
     {
         public Candidate[] candidates;
-        public PromptFeedback promptFeedback; // 있을 수도, 없을 수도
+        // public UsageMetadata usageMetadata;
         public string modelVersion;
         public string responseId;
-        public UsageMetadata usageMetadata;
     }
 
     [Serializable]
@@ -134,15 +123,15 @@ public class GeminiApiManager : MonoBehaviour
     {
         public Content content;
         public string finishReason;
-        public SafetyRating[] safetyRatings;
+        // public SafetyRating[] safetyRatings;
         public int index;
     }
 
     [Serializable]
     public class Content
     {
-        public string role;
         public Part[] parts;
+        public string role;
     }
 
     [Serializable]
@@ -154,26 +143,27 @@ public class GeminiApiManager : MonoBehaviour
         // public FileData fileData;
     }
 
-    [Serializable]
-    public class PromptFeedback
-    {
-        public string blockReason;            // 차단 시 사유
-        public SafetyRating[] safetyRatings;
-    }
+    // [Serializable]
+    // public class PromptFeedback
+    // {
+    //     public string blockReason;            // 차단 시 사유
+    //     public SafetyRating[] safetyRatings;
+    // }
 
-    [Serializable]
-    public class SafetyRating
-    {
-        public string category;               // 예: HARM_CATEGORY_HARASSMENT
-        public string probability;            // 예: LOW, MEDIUM...
-        public bool blocked;                  // 해당 카테고리로 차단 여부
-    }
+    // [Serializable]
+    // public class SafetyRating
+    // {
+    //     public string category;               // 예: HARM_CATEGORY_HARASSMENT
+    //     public string probability;            // 예: LOW, MEDIUM...
+    //     public bool blocked;                  // 해당 카테고리로 차단 여부
+    // }
 
-    [Serializable]
-    public class UsageMetadata
-    {
-        public int promptTokenCount;
-        public int candidatesTokenCount;
-        public int totalTokenCount;
-    }
+    // [Serializable]
+    // public class UsageMetadata
+    // {
+    //     public int promptTokenCount;
+    //     public int candidatesTokenCount;
+    //     public int totalTokenCount;
+    //     public int thoughtsTokenCount;
+    // }
 }

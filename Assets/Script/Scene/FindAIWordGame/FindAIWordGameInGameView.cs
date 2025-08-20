@@ -7,7 +7,8 @@ public class FindAIWordGameInGameView : MonoBehaviour
     public static FindAIWordGameInGameView instance { get; private set; }
     public Text tryCountText;
     public Text hintText;
-    public InputField answer;
+    public InputField answerField;
+    public Button answerButton;
 
     private void Awake()
     {
@@ -18,7 +19,8 @@ public class FindAIWordGameInGameView : MonoBehaviour
     {
         tryCountText.text = "";
         hintText.text = "";
-        answer.text = "";
+        answerField.text = "";
+        answerButton.interactable = false;
     }
 
 
@@ -34,7 +36,12 @@ public class FindAIWordGameInGameView : MonoBehaviour
 
     public void ResetAnswerField()
     {
-        answer.text = "";
+        answerField.text = "";
+    }
+
+    public void EnableAnswerButton(bool enable)
+    {
+        answerButton.interactable = enable;
     }
 
 
@@ -45,6 +52,6 @@ public class FindAIWordGameInGameView : MonoBehaviour
 
     public void OnClickSubmit()
     {
-        FindAIWordGameManager.instance.OnPlayerAnswer(answer.text);
+        FindAIWordGameManager.instance.OnPlayerAnswer(answerField.text);
     }
 }

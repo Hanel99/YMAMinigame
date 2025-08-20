@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using System.Threading;
+using System;
+using System.Text;
 
 public class FindAIWordGameManager : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class FindAIWordGameManager : MonoBehaviour
     private string currentKeyword;
     private List<string> hints;
     private int currentHintIndex = 0;
+
+    private CancellationTokenSource apiCts;
 
     private void Awake()
     {
@@ -51,29 +56,84 @@ public class FindAIWordGameManager : MonoBehaviour
 
     private async UniTask StartGameProcess()
     {
+        // 기존 작업 취소
+        apiCts?.Cancel();
+        apiCts = new CancellationTokenSource();
+
         FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(true);
 
-
         // 랜덤 키워드 선택
-        currentKeyword = keywordTable[Random.Range(0, keywordTable.Count)];
+        currentKeyword = keywordTable[UnityEngine.Random.Range(0, keywordTable.Count)];
         HLLogger.Log("정답 키워드 선택됨 (숨김): " + currentKeyword);
 
-        FindAIWordGameInGameView.instance.UpdateHintText("AI에게 힌트 받아오는 중...");
+        var textUpdateCts = new CancellationTokenSource();
+        UpdateLoadingText(textUpdateCts.Token);
 
-        // Gemini로부터 힌트 받아오기
-        hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword);
-
-        if (hints == null || hints.Count == 0)
+        try
         {
-            HLLogger.LogError("힌트를 불러오지 못했습니다.");
-            FindAIWordGameInGameView.instance.UpdateHintText("힌트를 받아오지 못했습니다.\n다른 게임을 이용해주세요.");
-            FindAIWordGameUIManager.instance.ShowPausePopup();
-            return;
-        }
-        HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
+            // Gemini로부터 힌트 받아오기
+            hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
+            textUpdateCts.Cancel();
 
-        currentHintIndex = 0;
-        ShowNextHint();
+            if (hints == null || hints.Count == 0)
+            {
+                HLLogger.LogError("힌트를 불러오지 못했습니다.");
+                FindAIWordGameInGameView.instance.UpdateHintText("힌트를 받아오지 못했습니다.\n다른 게임을 이용해주세요.");
+                FindAIWordGameUIManager.instance.ShowPausePopup();
+                return;
+            }
+
+            HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
+
+            currentHintIndex = 0;
+            ShowNextHint();
+        }
+
+        catch (OperationCanceledException)
+        {
+            HLLogger.Log("힌트 요청이 취소되었습니다.");
+            FindAIWordGameInGameView.instance.UpdateHintText("힌트 요청이 취소되었습니다.");
+        }
+        finally
+        {
+            apiCts.Dispose();
+            apiCts = null;
+        }
+    }
+
+    public void CancelHintRequest()
+    {
+        apiCts?.Cancel();
+    }
+
+    private async void UpdateLoadingText(CancellationToken token)
+    {
+        try
+        {
+            string baseText = "AI에게 힌트 받아오는 중";
+            string[] dots = { ".", "..", "..." };
+            StringBuilder sb = new StringBuilder(baseText);
+            int index = 0;
+
+            while (!token.IsCancellationRequested)
+            {
+                sb.Length = 0;
+                sb.Append(baseText);
+                sb.Append(dots[index]);
+                FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
+                index = (index + 1) % dots.Length;
+                await UniTask.Delay(500, cancellationToken: token); // 0.5초마다 갱신
+            }
+        }
+
+        catch (OperationCanceledException)
+        {
+            // 정상 취소 처리
+        }
+        finally
+        {
+
+        }
     }
 
     private async void ShowNextHint(int delayTime = 0)
@@ -82,6 +142,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
         if (currentHintIndex < hints.Count)
         {
+            FindAIWordGameInGameView.instance.EnableAnswerButton(true);
             HLLogger.Log($"힌트 {currentHintIndex + 1}: {hints[currentHintIndex]}");
             FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
             FindAIWordGameInGameView.instance.UpdateHintText(hints[currentHintIndex]);
@@ -96,6 +157,11 @@ public class FindAIWordGameManager : MonoBehaviour
 
     public void OnPlayerAnswer(string answer)
     {
+        // 빈칸인 경우 넘김
+        if (answer == string.Empty) return;
+
+        FindAIWordGameInGameView.instance.EnableAnswerButton(false);
+
         if (answer.Trim() == currentKeyword)
         {
             HLLogger.Log($"{answer.Trim()} - 정답!");
