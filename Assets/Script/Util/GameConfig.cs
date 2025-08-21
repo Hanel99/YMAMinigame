@@ -21,7 +21,7 @@ static public class GameConfig
 
     static private void LoadAESKeyAndIV()
     {
-        string filePath = Path.Combine(Application.dataPath, "Build/AESKeyConfig.json");
+        string filePath = Path.Combine(Application.dataPath, "Build/AppConfig.json");
 
         if (File.Exists(filePath))
         {
@@ -337,6 +337,8 @@ static public class GameConfig
     }
 }
 
+
+//TODO 클래스 통합필요
 [System.Serializable]
 public class AESKeyConfigData
 {

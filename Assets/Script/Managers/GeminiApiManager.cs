@@ -24,7 +24,7 @@ public class GeminiApiManager : MonoBehaviour
 
     private void LoadApiKey()
     {
-        string path = Path.Combine(Application.dataPath, "Build/apikey.json");
+        string path = Path.Combine(Application.dataPath, "Build/AppConfig.json");
         if (File.Exists(path))
         {
             apiKey = JsonUtility.FromJson<ApiKeyWrapper>(File.ReadAllText(path)).apiKey;

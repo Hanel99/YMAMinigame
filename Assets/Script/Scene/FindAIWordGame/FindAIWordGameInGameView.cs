@@ -52,6 +52,9 @@ public class FindAIWordGameInGameView : MonoBehaviour
 
     public void OnClickSubmit()
     {
+        if (answerButton.interactable == false)
+            return;
+
         FindAIWordGameManager.instance.OnPlayerAnswer(answerField.text);
     }
 }
