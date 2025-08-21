@@ -10,16 +10,12 @@ public class FindAIWordGameManager : MonoBehaviour
 {
     public static FindAIWordGameManager instance { get; private set; }
 
-    private List<string> keywordTable = new List<string>
-    {
-        "사과", "축구", "비행기", "피카츄", "피아노"
-    };
-
     private string currentKeyword;
     private List<string> hints;
     private int currentHintIndex = 0;
 
     private CancellationTokenSource apiCts;
+    private StringBuilder sb = new StringBuilder();
 
     private void Awake()
     {
@@ -29,6 +25,7 @@ public class FindAIWordGameManager : MonoBehaviour
     private async void Start()
     {
         FindAIWordGameInGameView.instance.InitUI();
+        sb.Clear();
         await StartGameProcess();
     }
 
@@ -42,6 +39,10 @@ public class FindAIWordGameManager : MonoBehaviour
                 FindAIWordGameUIManager.instance.CloseTopPopup();
             else
                 FindAIWordGameUIManager.instance.ShowPausePopup();
+        }
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            FindAIWordGameInGameView.instance.OnClickSubmit();
         }
 
 #if UNITY_EDITOR
@@ -63,7 +64,8 @@ public class FindAIWordGameManager : MonoBehaviour
         FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(true);
 
         // 랜덤 키워드 선택
-        currentKeyword = keywordTable[UnityEngine.Random.Range(0, keywordTable.Count)];
+        currentKeyword = LocalizeManager.instance.GetRandomAIWordString();
+
         HLLogger.Log("정답 키워드 선택됨 (숨김): " + currentKeyword);
 
         var textUpdateCts = new CancellationTokenSource();
@@ -143,9 +145,11 @@ public class FindAIWordGameManager : MonoBehaviour
         if (currentHintIndex < hints.Count)
         {
             FindAIWordGameInGameView.instance.EnableAnswerButton(true);
-            HLLogger.Log($"힌트 {currentHintIndex + 1}: {hints[currentHintIndex]}");
+            HLLogger.Log($"힌트 {currentHintIndex + 1} : {hints[currentHintIndex]}");
             FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
-            FindAIWordGameInGameView.instance.UpdateHintText(hints[currentHintIndex]);
+
+            sb.AppendLine(hints[currentHintIndex]);
+            FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
         }
         else
         {

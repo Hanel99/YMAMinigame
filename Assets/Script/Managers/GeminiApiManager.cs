@@ -81,7 +81,7 @@ public class GeminiApiManager : MonoBehaviour
             else
             {
                 string responseJson = request.downloadHandler.text;
-                HLLogger.Log(responseJson);
+                // HLLogger.Log(responseJson);
 
 
                 var response = JsonUtility.FromJson<GeminiResponse>(responseJson);
