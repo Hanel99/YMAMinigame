@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: HLDevTeam
   productName: YMAMinigame
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -165,7 +165,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.HLDevTeam.YMAMiniGame
-    Standalone: com.DefaultCompany.2DProject
+    Standalone: com.HLDevTeam.YMAMiniGame
   buildNumber:
     Standalone: 0
     VisionOS: 0
