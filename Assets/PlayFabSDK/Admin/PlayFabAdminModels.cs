@@ -2307,7 +2307,6 @@ namespace PlayFab.AdminModels
         UnableToConnectToDatabase,
         InternalServerError,
         InvalidReportDate,
-        ReportNotAvailable,
         DatabaseThroughputExceeded,
         InvalidGameTicket,
         ExpiredGameTicket,
@@ -2792,6 +2791,13 @@ namespace PlayFab.AdminModels
         VersionIncrementRateExceeded,
         InvalidSteamUsername,
         InvalidVersionResetForLinkedLeaderboard,
+        BattleNetNotEnabledForTitle,
+        ReportNotProcessed,
+        DataNotAvailable,
+        InvalidReportName,
+        ResourceNotModified,
+        StudioCreationLimitExceeded,
+        StudioDeletionInitiated,
         MatchmakingEntityInvalid,
         MatchmakingPlayerAttributesInvalid,
         MatchmakingQueueNotFound,
@@ -3071,6 +3077,7 @@ namespace PlayFab.AdminModels
         TrueSkillScenarioContainsActiveModel,
         TrueSkillInvalidConditionRank,
         TrueSkillTotalScenarioLimitExceeded,
+        TrueSkillInvalidConditionsList,
         GameSaveManifestNotFound,
         GameSaveManifestVersionAlreadyExists,
         GameSaveConflictUpdatingManifest,
@@ -3092,6 +3099,15 @@ namespace PlayFab.AdminModels
         GameSaveTitleDoesNotExist,
         GameSaveOperationNotAllowedForTitle,
         GameSaveManifestFilesLimitExceeded,
+        GameSaveManifestDescriptionUpdateNotAllowed,
+        GameSaveTitleConfigNotFound,
+        GameSaveTitleAlreadyOnboarded,
+        GameSaveServiceNotEnabledForTitle,
+        GameSaveServiceOnboardingPending,
+        GameSaveManifestNotEligibleAsConflictingVersion,
+        GameSaveServiceUnavailable,
+        GameSaveConflict,
+        GameSaveManifestNotEligibleForRollback,
         StateShareForbidden,
         StateShareTitleNotInFlight,
         StateShareStateNotFound,
@@ -3099,7 +3115,19 @@ namespace PlayFab.AdminModels
         StateShareStateRedemptionLimitExceeded,
         StateShareStateRedemptionLimitNotUpdated,
         StateShareCreatedStatesLimitExceeded,
-        StateShareIdMissingOrMalformed
+        StateShareIdMissingOrMalformed,
+        PlayerCreationDisabled,
+        AccountAlreadyExists,
+        TagInvalid,
+        TagTooLong,
+        StatisticColumnAggregationMismatch,
+        StatisticResetIntervalMismatch,
+        VersionConfigurationCannotBeSpecifiedForLinkedStat,
+        VersionConfigurationIsRequired,
+        InvalidEntityTypeForAggregation,
+        MultiLevelAggregationNotAllowed,
+        AggregationTypeNotAllowedForLinkedStat,
+        StoreMetricsRequestInvalidInput
     }
 
     [Serializable]
@@ -4562,7 +4590,8 @@ namespace PlayFab.AdminModels
         NintendoSwitchAccount,
         GooglePlayGames,
         XboxMobileStore,
-        King
+        King,
+        BattleNet
     }
 
     [Serializable]
@@ -7560,6 +7589,10 @@ namespace PlayFab.AdminModels
         /// </summary>
         public UserAppleIdInfo AppleAccountInfo;
         /// <summary>
+        /// Battle.net account information, if a Battle.net account has been linked
+        /// </summary>
+        public UserBattleNetInfo BattleNetAccountInfo;
+        /// <summary>
         /// Timestamp indicating when the user account was created
         /// </summary>
         public DateTime Created;
@@ -7661,6 +7694,19 @@ namespace PlayFab.AdminModels
         /// Apple subject ID
         /// </summary>
         public string AppleSubjectId;
+    }
+
+    [Serializable]
+    public class UserBattleNetInfo : PlayFabBaseModel
+    {
+        /// <summary>
+        /// Battle.net identifier
+        /// </summary>
+        public string BattleNetAccountId;
+        /// <summary>
+        /// Battle.net display name
+        /// </summary>
+        public string BattleNetBattleTag;
     }
 
     [Serializable]

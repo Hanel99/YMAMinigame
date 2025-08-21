@@ -333,6 +333,19 @@ namespace PlayFab.ClientModels
     }
 
     [Serializable]
+    public class BattleNetAccountPlayFabIdPair : PlayFabBaseModel
+    {
+        /// <summary>
+        /// Unique Battle.net account identifier for a user.
+        /// </summary>
+        public string BattleNetAccountId;
+        /// <summary>
+        /// Unique PlayFab identifier for a user, or null if no PlayFab account is linked to the Battle.net account identifier.
+        /// </summary>
+        public string PlayFabId;
+    }
+
+    [Serializable]
     public class CancelTradeRequest : PlayFabRequestCommon
     {
         /// <summary>
@@ -1977,7 +1990,7 @@ namespace PlayFab.ClientModels
     /// If any additional services are queried for the user's friends, those friends who also have a PlayFab account registered
     /// for the title will be returned in the results. For Facebook, user has to have logged into the title's Facebook app
     /// recently, and only friends who also plays this game will be included. Note: If the user authenticated with
-    /// AuthenticationToken when calling LoginWithFacebook, instead of AcessToken, an empty list will be returned. For Xbox
+    /// AuthenticationToken when calling LoginWithFacebook, instead of AccessToken, an empty list will be returned. For Xbox
     /// Live, user has to have logged into the Xbox Live recently, and only friends who also play this game will be included.
     /// </summary>
     [Serializable]
@@ -2526,11 +2539,33 @@ namespace PlayFab.ClientModels
     }
 
     [Serializable]
+    public class GetPlayFabIDsFromBattleNetAccountIdsRequest : PlayFabRequestCommon
+    {
+        /// <summary>
+        /// Array of unique Battle.net account identifiers for which the title needs to get PlayFab identifiers. The array cannot
+        /// exceed 10 in length.
+        /// </summary>
+        public List<string> BattleNetAccountIds;
+    }
+
+    /// <summary>
+    /// For Battle.net account identifiers which have not been linked to PlayFab accounts, null will be returned.
+    /// </summary>
+    [Serializable]
+    public class GetPlayFabIDsFromBattleNetAccountIdsResult : PlayFabResultCommon
+    {
+        /// <summary>
+        /// Mapping of Battle.net account identifiers to PlayFab identifiers.
+        /// </summary>
+        public List<BattleNetAccountPlayFabIdPair> Data;
+    }
+
+    [Serializable]
     public class GetPlayFabIDsFromFacebookIDsRequest : PlayFabRequestCommon
     {
         /// <summary>
-        /// Array of unique Facebook identifiers for which the title needs to get PlayFab identifiers. The array cannot exceed 2,000
-        /// in length.
+        /// Array of unique Facebook identifiers for which the title needs to get PlayFab identifiers. The array cannot exceed 25 in
+        /// length.
         /// </summary>
         public List<string> FacebookIDs;
     }
@@ -2574,7 +2609,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Game Center identifiers (the Player Identifier) for which the title needs to get PlayFab identifiers.
-        /// The array cannot exceed 2,000 in length.
+        /// The array cannot exceed 25 in length.
         /// </summary>
         public List<string> GameCenterIDs;
     }
@@ -2618,7 +2653,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Google identifiers (Google+ user IDs) for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> GoogleIDs;
     }
@@ -2640,7 +2675,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Google Play Games identifiers (Google+ user IDs) for which the title needs to get PlayFab identifiers.
-        /// The array cannot exceed 2,000 in length.
+        /// The array cannot exceed 25 in length.
         /// </summary>
         public List<string> GooglePlayGamesPlayerIDs;
     }
@@ -2662,7 +2697,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Kongregate identifiers (Kongregate's user_id) for which the title needs to get PlayFab identifiers. The
-        /// array cannot exceed 2,000 in length.
+        /// array cannot exceed 25 in length.
         /// </summary>
         public List<string> KongregateIDs;
     }
@@ -2684,7 +2719,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Nintendo Switch Account identifiers for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> NintendoAccountIds;
     }
@@ -2706,7 +2741,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Nintendo Switch Device identifiers for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> NintendoSwitchDeviceIds;
     }
@@ -2732,7 +2767,7 @@ namespace PlayFab.ClientModels
         public int? IssuerId;
         /// <summary>
         /// Array of unique PlayStation :tm: Network identifiers for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> PSNAccountIDs;
     }
@@ -2758,7 +2793,7 @@ namespace PlayFab.ClientModels
         public int? IssuerId;
         /// <summary>
         /// Array of unique PlayStation :tm: Network identifiers for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> PSNOnlineIDs;
     }
@@ -2780,7 +2815,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Steam identifiers (Steam profile IDs) for which the title needs to get PlayFab identifiers. The array
-        /// cannot exceed 2,000 in length.
+        /// cannot exceed 25 in length.
         /// </summary>
         public List<string> SteamStringIDs;
     }
@@ -2801,7 +2836,7 @@ namespace PlayFab.ClientModels
     public class GetPlayFabIDsFromSteamNamesRequest : PlayFabRequestCommon
     {
         /// <summary>
-        /// Array of unique Steam identifiers for which the title needs to get PlayFab identifiers. The array cannot exceed 2,000 in
+        /// Array of unique Steam identifiers for which the title needs to get PlayFab identifiers. The array cannot exceed 25 in
         /// length.
         /// </summary>
         public List<string> SteamNames;
@@ -2825,7 +2860,7 @@ namespace PlayFab.ClientModels
     {
         /// <summary>
         /// Array of unique Twitch identifiers (Twitch's _id) for which the title needs to get PlayFab identifiers. The array cannot
-        /// exceed 2,000 in length.
+        /// exceed 25 in length.
         /// </summary>
         public List<string> TwitchIds;
     }
@@ -2851,7 +2886,7 @@ namespace PlayFab.ClientModels
         public string Sandbox;
         /// <summary>
         /// Array of unique Xbox Live account identifiers for which the title needs to get PlayFab identifiers. The array cannot
-        /// exceed 2,000 in length.
+        /// exceed 25 in length.
         /// </summary>
         public List<string> XboxLiveAccountIDs;
     }
@@ -3444,6 +3479,23 @@ namespace PlayFab.ClientModels
     }
 
     [Serializable]
+    public class LinkBattleNetAccountRequest : PlayFabRequestCommon
+    {
+        /// <summary>
+        /// The optional custom tags associated with the request (e.g. build number, external trace identifiers, etc.).
+        /// </summary>
+        public Dictionary<string,string> CustomTags;
+        /// <summary>
+        /// If another user is already linked to a specific Battle.net account, unlink the other user and re-link.
+        /// </summary>
+        public bool? ForceLink;
+        /// <summary>
+        /// The JSON Web Token (JWT) returned by Battle.net after login
+        /// </summary>
+        public string IdentityToken;
+    }
+
+    [Serializable]
     public class LinkCustomIDRequest : PlayFabRequestCommon
     {
         /// <summary>
@@ -3502,6 +3554,10 @@ namespace PlayFab.ClientModels
         /// Unique identifier from Facebook for the user.
         /// </summary>
         public string AccessToken;
+        /// <summary>
+        /// Token used for limited login authentication.
+        /// </summary>
+        public string AuthenticationToken;
         /// <summary>
         /// The optional custom tags associated with the request (e.g. build number, external trace identifiers, etc.).
         /// </summary>
@@ -3952,7 +4008,8 @@ namespace PlayFab.ClientModels
         NintendoSwitchAccount,
         GooglePlayGames,
         XboxMobileStore,
-        King
+        King,
+        BattleNet
     }
 
     [Serializable]
@@ -4066,6 +4123,40 @@ namespace PlayFab.ClientModels
         /// The JSON Web token (JWT) returned by Apple after login. Represented as the identityToken field in the authorization
         /// credential payload. If you choose to ignore the expiration date for identity tokens, you will receive an NotAuthorized
         /// error if Apple rotates the signing key. In this case, users have to login to provide a fresh identity token.
+        /// </summary>
+        public string IdentityToken;
+        /// <summary>
+        /// Flags for which pieces of info to return for the user.
+        /// </summary>
+        public GetPlayerCombinedInfoRequestParams InfoRequestParameters;
+        /// <summary>
+        /// Player secret that is used to verify API request signatures (Enterprise Only).
+        /// </summary>
+        public string PlayerSecret;
+        /// <summary>
+        /// Unique identifier for the title, found in the Settings > Game Properties section of the PlayFab developer site when a
+        /// title has been selected.
+        /// </summary>
+        public string TitleId;
+    }
+
+    [Serializable]
+    public class LoginWithBattleNetRequest : PlayFabRequestCommon
+    {
+        /// <summary>
+        /// Automatically create a PlayFab account if one is not currently linked to this ID.
+        /// </summary>
+        public bool? CreateAccount;
+        /// <summary>
+        /// The optional custom tags associated with the request (e.g. build number, external trace identifiers, etc.).
+        /// </summary>
+        public Dictionary<string,string> CustomTags;
+        /// <summary>
+        /// Base64 encoded body that is encrypted with the Title's public RSA key (Enterprise Only).
+        /// </summary>
+        public string EncryptedRequest;
+        /// <summary>
+        /// The JSON Web Token (JWT) returned by Battle.net after login
         /// </summary>
         public string IdentityToken;
         /// <summary>
@@ -6367,6 +6458,15 @@ namespace PlayFab.ClientModels
     }
 
     [Serializable]
+    public class UnlinkBattleNetAccountRequest : PlayFabRequestCommon
+    {
+        /// <summary>
+        /// The optional custom tags associated with the request (e.g. build number, external trace identifiers, etc.).
+        /// </summary>
+        public Dictionary<string,string> CustomTags;
+    }
+
+    [Serializable]
     public class UnlinkCustomIDRequest : PlayFabRequestCommon
     {
         /// <summary>
@@ -6942,6 +7042,10 @@ namespace PlayFab.ClientModels
         /// </summary>
         public UserAppleIdInfo AppleAccountInfo;
         /// <summary>
+        /// Battle.net account information, if a Battle.net account has been linked
+        /// </summary>
+        public UserBattleNetInfo BattleNetAccountInfo;
+        /// <summary>
         /// Timestamp indicating when the user account was created
         /// </summary>
         public DateTime Created;
@@ -7043,6 +7147,19 @@ namespace PlayFab.ClientModels
         /// Apple subject ID
         /// </summary>
         public string AppleSubjectId;
+    }
+
+    [Serializable]
+    public class UserBattleNetInfo : PlayFabBaseModel
+    {
+        /// <summary>
+        /// Battle.net identifier
+        /// </summary>
+        public string BattleNetAccountId;
+        /// <summary>
+        /// Battle.net display name
+        /// </summary>
+        public string BattleNetBattleTag;
     }
 
     [Serializable]

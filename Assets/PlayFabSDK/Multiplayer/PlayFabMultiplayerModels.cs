@@ -111,6 +111,7 @@ namespace PlayFab.MultiplayerModels
         Dasv4,
         Dav4,
         Dadsv5,
+        Dadsv6,
         Eav4,
         Easv4,
         Ev4,
@@ -165,6 +166,10 @@ namespace PlayFab.MultiplayerModels
         Standard_D4ads_v5,
         Standard_D8ads_v5,
         Standard_D16ads_v5,
+        Standard_D2ads_v6,
+        Standard_D4ads_v6,
+        Standard_D8ads_v6,
+        Standard_D16ads_v6,
         Standard_E2a_v4,
         Standard_E4a_v4,
         Standard_E8a_v4,
@@ -4324,8 +4329,8 @@ namespace PlayFab.MultiplayerModels
         /// </summary>
         public List<string> PreferredRegions;
         /// <summary>
-        /// Data encoded as a string that is passed to the game server when requested. This can be used to to communicate
-        /// information such as game mode or map through the request flow.
+        /// Data encoded as a string that is passed to the game server when requested. This can be used to communicate information
+        /// such as game mode or map through the request flow. Maximum size is 8KB
         /// </summary>
         public string SessionCookie;
         /// <summary>
