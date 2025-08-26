@@ -9,7 +9,7 @@ public class GeminiApiManager : MonoBehaviour
 {
     public static GeminiApiManager instance { get; private set; }
 
-    private string apiKey;
+    private string geminiApiKey => ConfigManager.instance.Config.geminiApiKey;
 
     private void Awake()
     {
@@ -18,35 +18,21 @@ public class GeminiApiManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(this.gameObject);
-
-        LoadApiKey();
     }
 
-    private void LoadApiKey()
-    {
-        string path = Path.Combine(Application.dataPath, "Build/AppConfig.json");
-        if (File.Exists(path))
-        {
-            apiKey = JsonUtility.FromJson<ApiKeyWrapper>(File.ReadAllText(path)).apiKey;
-        }
-        else
-        {
-            Debug.LogError("API Key file not found!");
-        }
-    }
-
-    [System.Serializable]
-    private class ApiKeyWrapper
-    {
-        public string apiKey;
-    }
 
     /// <summary>
     /// 특정 키워드에 대한 10가지 힌트를 요청
     /// </summary>
     public async UniTask<List<string>> GetHintsForKeyword(string keyword)
     {
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={apiKey}";
+        if (geminiApiKey.Equals("DEFAULT_API_KEY"))
+        {
+            HLLogger.LogWarning("API key is not set.");
+            return null;
+        }
+
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={geminiApiKey}";
 
         // 요청 데이터 간소화
         var requestData = new GeminiRequest
@@ -71,11 +57,12 @@ public class GeminiApiManager : MonoBehaviour
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
 
+            HLLogger.Log($"api send start : {url}");
             await request.SendWebRequest();
 
             if (request.result != UnityWebRequest.Result.Success)
             {
-                Debug.LogError("Error: " + request.error);
+                HLLogger.LogError("Error: " + request.error);
                 return null;
             }
             else
@@ -94,7 +81,7 @@ public class GeminiApiManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogWarning("No candidates in response.");
+                    HLLogger.LogWarning("No candidates in response.");
                     return null;
                 }
             }

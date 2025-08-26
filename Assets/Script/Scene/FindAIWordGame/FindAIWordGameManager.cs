@@ -81,7 +81,8 @@ public class FindAIWordGameManager : MonoBehaviour
             {
                 HLLogger.LogError("힌트를 불러오지 못했습니다.");
                 FindAIWordGameInGameView.instance.UpdateHintText("힌트를 받아오지 못했습니다.\n다른 게임을 이용해주세요.");
-                FindAIWordGameUIManager.instance.ShowPausePopup();
+                await UniTask.Delay(1500);
+                SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
                 return;
             }
 

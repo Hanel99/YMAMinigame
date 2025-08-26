@@ -136,6 +136,8 @@ GameObject:
   - component: {fileID: 30682081}
   - component: {fileID: 30682082}
   - component: {fileID: 30682084}
+  - component: {fileID: 30682085}
+  - component: {fileID: 30682086}
   - component: {fileID: 30682083}
   m_Layer: 0
   m_Name: DontDestroymanager
@@ -272,6 +274,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74ade11df7bd050488dfa0ea18fe163b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &30682085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30682073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e277f2af8495494cabe1ab2fac7d42a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &30682086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30682073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26017f62a615c71418dd2f805f72e005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028

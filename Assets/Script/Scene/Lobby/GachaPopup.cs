@@ -69,8 +69,6 @@ public class GachaPopup : PopupBase
             return;
         }
 
-        HLLogger.Log("@@@ 1 확정 gacha");
-
         isOnProcess = true;
         MileageGachaProcess();
 
@@ -102,8 +100,6 @@ public class GachaPopup : PopupBase
     {
         if (isOnProcess || isOpenCloseAnimationActing) return;
 
-        HLLogger.Log("@@@ 1 gacha");
-
         isOnProcess = true;
         GachaProcess(1);
         SaveDataManager.instance.AddCoin(-StaticGameData.GachaPrice[0]);
@@ -115,8 +111,6 @@ public class GachaPopup : PopupBase
     public void OnClickPick10()
     {
         if (isOnProcess || isOpenCloseAnimationActing) return;
-
-        HLLogger.Log("@@@ 10 gacha");
 
         isOnProcess = true;
         GachaProcess(10);

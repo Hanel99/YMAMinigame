@@ -3,6 +3,7 @@ using UnityEditor;
 using System.Text;
 
 
+#if UNITY_EDITOR
 public class EasySaveEditor : Editor
 {
     [MenuItem("SaveDataEditor/RemovePlayerData")]
@@ -140,3 +141,4 @@ public class EasySaveEditor : Editor
         HLLogger.Log($"Add {exp} Exp complete");
     }
 }
+#endif

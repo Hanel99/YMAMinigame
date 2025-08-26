@@ -49,7 +49,6 @@ public class UserProfilePopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
-        HLLogger.Log("@@@ playerDataSettingBtn Action");
         LobbyUIManager.instance.ShowPopup<PlayerDataSettingPopup>();
     }
 }
