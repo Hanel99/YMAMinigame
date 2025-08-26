@@ -185,6 +185,31 @@ public enum PlayerState
 
 #region Sound
 
+public enum BGMType
+{
+    None,
+    Intro,
+    Lobby,
+    CardGame,
+    WordGame,
+
+    Count,
+}
+
+public enum SFXType
+{
+    None,
+    ClickOK,
+    ClockNo,
+    Congratulations,
+    GameOver,
+    GameStart,
+    GameResult,
+
+
+    Count,
+}
+
 #endregion
 
 

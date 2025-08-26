@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 30682085}
   - component: {fileID: 30682086}
   - component: {fileID: 30682083}
+  - component: {fileID: 30682087}
   m_Layer: 0
   m_Name: DontDestroymanager
   m_TagString: Untagged
@@ -300,6 +301,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26017f62a615c71418dd2f805f72e005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &30682087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30682073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6d6b1992c0ab644ebf7dd487d2eea1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSource: {fileID: 0}
+  sfxSource: {fileID: 0}
+  loopSfxSource: {fileID: 0}
+  bgmClips: []
+  sfxClips: []
+  bgmVolume: 0.5
+  sfxVolume: 0.8
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
