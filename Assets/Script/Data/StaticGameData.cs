@@ -71,6 +71,8 @@ public static class StaticGameData
         public const string GameImage = "GameImage";
         public const string MasterIcon = "MasterIcon";
         public const string PopupGroup = "PopupGroup";
+        public const string BGMGroup = "BGM";
+        public const string SFXGroup = "SFX";
 
         // public const string otherImage = "otherImage";
         // public const string popup = "popup";

@@ -265,6 +265,8 @@ MonoBehaviour:
   gameImages: []
   masterImages: []
   popups: []
+  BGMList: []
+  SFXList: []
 --- !u!114 &30682084
 MonoBehaviour:
   m_ObjectHideFlags: 0

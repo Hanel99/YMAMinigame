@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class SoundManager : MonoBehaviour
 {
@@ -11,19 +10,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioSource loopSfxSource;
 
-    [Header("BGM Clips")]
-    [SerializeField] private BGMClipData[] bgmClips;
-
-    [Header("SFX Clips")]
-    [SerializeField] private SFXClipData[] sfxClips;
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float bgmVolume = 0.5f;
     [Range(0f, 1f)] public float sfxVolume = 0.8f;
-
-    // BGM과 SFX 딕셔너리 (enum으로 접근하기 위함)
-    private Dictionary<BGMType, AudioClip> bgmDict = new Dictionary<BGMType, AudioClip>();
-    private Dictionary<SFXType, AudioClip> sfxDict = new Dictionary<SFXType, AudioClip>();
 
     // Inspector에서 설정하기 위한 직렬화 가능한 클래스들
     [System.Serializable]
@@ -81,49 +71,20 @@ public class SoundManager : MonoBehaviour
             loopSfxSource.playOnAwake = false;
         }
 
-        // 오디오 클립들을 딕셔너리에 저장
-        InitializeAudioDictionaries();
-
         // 볼륨 설정
         UpdateVolumes();
     }
 
-    private void InitializeAudioDictionaries()
+    private AudioClip GetBGM(BGMType type)
     {
-        // BGM 딕셔너리 초기화
-        bgmDict.Clear();
-        foreach (var bgmData in bgmClips)
-        {
-            if (bgmData.clip != null && bgmData.bgmType != BGMType.None)
-            {
-                if (bgmDict.ContainsKey(bgmData.bgmType))
-                {
-                    Debug.LogWarning($"Duplicate BGM type: {bgmData.bgmType}");
-                }
-                else
-                {
-                    bgmDict.Add(bgmData.bgmType, bgmData.clip);
-                }
-            }
-        }
-
-        // SFX 딕셔너리 초기화
-        sfxDict.Clear();
-        foreach (var sfxData in sfxClips)
-        {
-            if (sfxData.clip != null && sfxData.sfxType != SFXType.None)
-            {
-                if (sfxDict.ContainsKey(sfxData.sfxType))
-                {
-                    Debug.LogWarning($"Duplicate SFX type: {sfxData.sfxType}");
-                }
-                else
-                {
-                    sfxDict.Add(sfxData.sfxType, sfxData.clip);
-                }
-            }
-        }
+        return GameResourceManager.instance.GetBGM(type);
     }
+
+    private AudioClip GetSFX(SFXType type)
+    {
+        return GameResourceManager.instance.GetSFX(type);
+    }
+
 
     // 볼륨 업데이트
     public void UpdateVolumes()
@@ -140,9 +101,10 @@ public class SoundManager : MonoBehaviour
     {
         if (bgmType == BGMType.None) return;
 
-        if (bgmDict.ContainsKey(bgmType))
+        var bgmClip = GetBGM(bgmType);
+        if (bgmClip != null)
         {
-            bgmSource.clip = bgmDict[bgmType];
+            bgmSource.clip = bgmClip;
             bgmSource.Play();
         }
         else
@@ -172,20 +134,7 @@ public class SoundManager : MonoBehaviour
         StartCoroutine(FadeOutCoroutine(bgmSource, fadeTime));
     }
 
-    // 현재 재생 중인 BGM 타입 가져오기
-    public BGMType GetCurrentBGMType()
-    {
-        if (bgmSource.clip == null) return BGMType.None;
 
-        foreach (var kvp in bgmDict)
-        {
-            if (kvp.Value == bgmSource.clip)
-            {
-                return kvp.Key;
-            }
-        }
-        return BGMType.None;
-    }
 
     #endregion
 
@@ -196,9 +145,10 @@ public class SoundManager : MonoBehaviour
     {
         if (sfxType == SFXType.None) return;
 
-        if (sfxDict.ContainsKey(sfxType))
+        var sfxClip = GetSFX(sfxType);
+        if (sfxClip != null)
         {
-            sfxSource.PlayOneShot(sfxDict[sfxType]);
+            sfxSource.PlayOneShot(sfxClip);
         }
         else
         {
@@ -223,9 +173,10 @@ public class SoundManager : MonoBehaviour
     {
         if (sfxType == SFXType.None) return;
 
-        if (sfxDict.ContainsKey(sfxType))
+        var sfxClip = GetSFX(sfxType);
+        if (sfxClip != null)
         {
-            loopSfxSource.clip = sfxDict[sfxType];
+            loopSfxSource.clip = sfxClip;
             loopSfxSource.Play();
         }
         else
@@ -316,17 +267,6 @@ public class SoundManager : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
         sfxSource.volume = sfxVolume;
         loopSfxSource.volume = sfxVolume;
-    }
-
-    // 특정 타입의 클립이 등록되어 있는지 확인
-    public bool HasBGM(BGMType bgmType)
-    {
-        return bgmDict.ContainsKey(bgmType);
-    }
-
-    public bool HasSFX(SFXType sfxType)
-    {
-        return sfxDict.ContainsKey(sfxType);
     }
 
     #endregion

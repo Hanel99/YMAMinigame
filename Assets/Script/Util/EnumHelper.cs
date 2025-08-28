@@ -193,18 +193,25 @@ public enum BGMType
     CardGame,
     WordGame,
 
+    // Loading,
+    // Result,
+    // Other,
+    // Ending,
+
     Count,
 }
 
 public enum SFXType
 {
     None,
-    ClickOK,
-    ClockNo,
-    Congratulations,
-    GameOver,
-    GameStart,
-    GameResult,
+    BtnOK,
+    BtnNO,
+    Warning,
+
+    // Congratulations,
+    // GameOver,
+    // GameStart,
+    // GameResult,
 
 
     Count,
