@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86344ccf54e22f442a64ac456088d7e4
+    m_Address: MiniRPGWeaponLevelData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed40696817f983345806ad62a123cadb
     m_Address: LevelData
     m_ReadOnly: 0
