@@ -62,6 +62,7 @@ public class FindAIWordGameManager : MonoBehaviour
         apiCts = new CancellationTokenSource();
 
         FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(true);
+        SoundManager.instance.PlayBGM(BGMType.WordGame);
 
         // 랜덤 키워드 선택
         currentKeyword = LocalizeManager.instance.GetRandomAIWordString();

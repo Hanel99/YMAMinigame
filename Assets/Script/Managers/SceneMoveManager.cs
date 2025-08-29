@@ -20,6 +20,7 @@ public class SceneMoveManager : MonoBehaviour
 
     public void MoveScene(SceneName sceneName, bool showMoveAni = true)
     {
+        SoundManager.instance.FadeOutBGM(0.4f);
         if (showMoveAni == false)
         {
             // 애니메이션 스킵하고 바로 이동

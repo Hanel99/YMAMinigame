@@ -12,7 +12,7 @@ public class SoundManager : MonoBehaviour
 
 
     [Header("Volume Settings")]
-    [Range(0f, 1f)] public float bgmVolume = 0.5f;
+    [Range(0f, 1f)] public float bgmVolume = 0.3f;
     [Range(0f, 1f)] public float sfxVolume = 0.8f;
 
     // Inspector에서 설정하기 위한 직렬화 가능한 클래스들
@@ -97,7 +97,7 @@ public class SoundManager : MonoBehaviour
     #region BGM 관리
 
     // BGM 재생 (enum으로)
-    public void PlayBGM(BGMType bgmType)
+    public void PlayBGM(BGMType bgmType, float fadeTime = 1f)
     {
         if (bgmType == BGMType.None) return;
 
@@ -106,6 +106,11 @@ public class SoundManager : MonoBehaviour
         {
             bgmSource.clip = bgmClip;
             bgmSource.Play();
+            if (fadeTime > 0)
+            {
+                bgmSource.volume = 0;
+                FadeInBGM(fadeTime);
+            }
         }
         else
         {
@@ -113,19 +118,16 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // BGM 재생 (클립으로) - 기존 호환성 유지
-    public void PlayBGM(AudioClip clip)
-    {
-        if (clip == null) return;
-
-        bgmSource.clip = clip;
-        bgmSource.Play();
-    }
-
     // BGM 정지
     public void StopBGM()
     {
         bgmSource.Stop();
+    }
+
+    // BGM 페이드인
+    private void FadeInBGM(float fadeTime = 1f)
+    {
+        StartCoroutine(FadeInCoroutine(bgmSource, fadeTime));
     }
 
     // BGM 페이드아웃
@@ -156,14 +158,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    // 단발성 SFX 재생 (클립으로) - 기존 호환성 유지
-    public void PlaySFX(AudioClip clip)
-    {
-        if (clip == null) return;
-
-        sfxSource.PlayOneShot(clip);
-    }
-
     #endregion
 
     #region 루프 SFX 관리
@@ -183,15 +177,6 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning($"Loop SFX type '{sfxType}' not found!");
         }
-    }
-
-    // 루프 SFX 재생 (클립으로) - 기존 호환성 유지
-    public void PlayLoopSFX(AudioClip clip)
-    {
-        if (clip == null) return;
-
-        loopSfxSource.clip = clip;
-        loopSfxSource.Play();
     }
 
     // 루프 SFX 정지
@@ -237,6 +222,23 @@ public class SoundManager : MonoBehaviour
     #endregion
 
     #region 유틸리티
+
+
+    // 페이드인 코루틴
+    private IEnumerator FadeInCoroutine(AudioSource audioSource, float fadeTime)
+    {
+        float startVolume = 0;
+        float currentTime = 0;
+
+        while (currentTime < fadeTime)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(startVolume, bgmVolume, currentTime / fadeTime);
+            yield return null;
+        }
+
+        audioSource.volume = bgmVolume; // 볼륨 복원
+    }
 
     // 페이드아웃 코루틴
     private IEnumerator FadeOutCoroutine(AudioSource audioSource, float fadeTime)

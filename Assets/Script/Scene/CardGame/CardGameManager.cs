@@ -128,6 +128,7 @@ public class CardGameManager : MonoBehaviour
     {
         HLLogger.Log("@@@ Game Start");
         CardGameUIManager.instance.ShowRootDim(false);
+        SoundManager.instance.PlayBGM(BGMType.CardGame);
     }
 
     private bool IsGameFinish()
