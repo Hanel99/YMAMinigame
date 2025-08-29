@@ -116,6 +116,7 @@ public class PopupBase : MonoBehaviour
             gameObject.SetActive(true);
 
         OnAnimation(true);
+        SoundManager.instance.PlaySFX(SFXType.BtnOK);
     }
 
     protected virtual void _CloseWindow()
@@ -130,6 +131,7 @@ public class PopupBase : MonoBehaviour
     {
         if (isOpenCloseAnimationActing) return;
 
+        SoundManager.instance.PlaySFX(SFXType.BtnNO);
         ShowPopup(false);
     }
 

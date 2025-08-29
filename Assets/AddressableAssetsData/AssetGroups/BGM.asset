@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BGM
+  m_EditorClassIdentifier: 
+  m_GroupName: BGM
+  m_GUID: 380a0eb175fcafc48b65e58c94fe6e36
+  m_SerializeEntries:
+  - m_GUID: 220eb00872b15364484a57e0520aa828
+    m_Address: BGM_Other
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f19c67768737ed48969bbe5aef77716
+    m_Address: BGM_Loading
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4211097034b1ff748ab9b03476a37c59
+    m_Address: BGM_CardGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 595c9ad9353efeb409ee7b5eb56be635
+    m_Address: BGM_Intro
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bd011cf11516084f80ca7cff832d5b4
+    m_Address: BGM_Lobby3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ebbeff5e13a98d4bb3d160f66804c74
+    m_Address: BGM_Intro2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5fb896ee1cbe404393f7b084091592a
+    m_Address: BGM_Ending
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d7bff382d7de8aa4399c3aba1f368a09
+    m_Address: BGM_Result
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8b6098d42c3d4649ab8cfe8ed2d67ec
+    m_Address: BGM_Lobby2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8edc595342a357438dc5274e87e0c21
+    m_Address: BGM_Lobby
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a265cd98c3ec94a90caa25503070b4
+    m_Address: BGM_WordGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcb355a8f3b7fe34c8e51372d8d659c9
+    m_Address: BGM_Result2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 59686b5da98b6d64ea412bf90c938ab8, type: 2}
+    - {fileID: 11400000, guid: 9169b9a8fa5f774468bce0b5a55c73ce, type: 2}

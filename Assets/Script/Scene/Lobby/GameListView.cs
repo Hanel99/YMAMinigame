@@ -51,6 +51,20 @@ public class GameListView : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.L))
             LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
 
+        // if (Input.GetKeyDown(KeyCode.A))
+        //     SoundManager.instance.PlaySFX(SFXType.BtnOK);
+        // if (Input.GetKeyDown(KeyCode.S))
+        //     SoundManager.instance.PlayLoopSFX(SFXType.Warning);
+        // if (Input.GetKeyDown(KeyCode.D))
+        //     SoundManager.instance.StopLoopSFX();
+
+        // if (Input.GetKeyDown(KeyCode.Z))
+        //     SoundManager.instance.PlayBGM(BGMType.Lobby, 0f);
+        // if (Input.GetKeyDown(KeyCode.X))
+        //     SoundManager.instance.PlayBGM(BGMType.Lobby, 1f);
+        // if (Input.GetKeyDown(KeyCode.C))
+        //     SoundManager.instance.FadeOutBGM();
+
         // if (Input.GetKeyDown(KeyCode.U))
         //     UpdateUserProfileProcess();
 
@@ -81,6 +95,7 @@ public class GameListView : MonoBehaviour
         UpdateUserProfileProcess();
         IntroDataProcess();
         LobbyUIManager.instance.ShowSceneMoveAnimation(true);
+        SoundManager.instance.PlayBGM(BGMType.Lobby);
     }
 
 

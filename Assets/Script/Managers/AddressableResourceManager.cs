@@ -114,6 +114,25 @@ public class AddressableResourceManager : MonoBehaviour
 
     #endregion
 
+    #region sound
+
+    public async UniTask<List<AudioClip>> LoadAudioClipsByLabelAsync(string label)
+    {
+        var handle = Addressables.LoadAssetsAsync<AudioClip>(label, null);
+        await handle.Task;
+
+        List<AudioClip> result = null;
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+            result = new List<AudioClip>(handle.Result);
+        else
+            Debug.LogError($"Failed to load audio clips with label: {label}");
+
+        // handle.Release();
+        return result;
+    }
+
+    #endregion
+
 
 
 

@@ -265,6 +265,8 @@ MonoBehaviour:
   gameImages: []
   masterImages: []
   popups: []
+  BGMList: []
+  SFXList: []
 --- !u!114 &30682084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,9 +318,7 @@ MonoBehaviour:
   bgmSource: {fileID: 0}
   sfxSource: {fileID: 0}
   loopSfxSource: {fileID: 0}
-  bgmClips: []
-  sfxClips: []
-  bgmVolume: 0.5
+  bgmVolume: 0.3
   sfxVolume: 0.8
 --- !u!1 &519420028
 GameObject:

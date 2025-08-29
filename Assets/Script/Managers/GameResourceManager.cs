@@ -33,6 +33,9 @@ public class GameResourceManager : MonoBehaviour
 
     public List<GameObject> popups = new();
 
+    public List<AudioClip> BGMList = new();
+    public List<AudioClip> SFXList = new();
+
 
 
 
@@ -74,6 +77,8 @@ public class GameResourceManager : MonoBehaviour
 
         // Prefabs
         popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.PopupGroup);
+        BGMList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.BGMGroup);
+        SFXList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.SFXGroup);
 
         _isLoaded = true;
     }
@@ -189,6 +194,22 @@ public class GameResourceManager : MonoBehaviour
         return levelData.Data.Find(x => x.level == level).unlock;
     }
 
+
+    #endregion
+
+    #region GetSound
+
+    public AudioClip GetBGM(BGMType type)
+    {
+        string bgmName = $"BGM_{type}";
+        return BGMList.Find(x => x.name.Equals(bgmName));
+    }
+
+    public AudioClip GetSFX(SFXType type)
+    {
+        string sfxName = $"SFX_{type}";
+        return SFXList.Find(x => x.name.Equals(sfxName));
+    }
 
     #endregion
 

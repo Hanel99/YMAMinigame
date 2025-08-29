@@ -49,6 +49,11 @@ public class LevelUpPopup : PopupBase
             level.text = startValue.ToString();
         }, targetLevel, 1.5f).SetDelay(0.2f).SetEase(Ease.OutCubic);
 
+        level.transform.DOScale(1.5f, 0.2f).SetDelay(1.5f).SetEase(Ease.OutQuad).OnComplete(() =>
+        {
+            level.transform.DOScale(1f, 0.2f).SetEase(Ease.InQuad);
+        });
+
         unlockContentText.DOFade(1f, 1f).SetDelay(1f).From(0f).SetEase(Ease.OutCubic);
     }
 
