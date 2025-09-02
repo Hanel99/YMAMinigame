@@ -26,6 +26,7 @@ public class GameResourceManager : MonoBehaviour
     public CardData cardData;
     public StringData stringData;
     public LevelData levelData;
+    public TowerWeaponLevelData towerWeaponLevelData;
 
     public List<Sprite> cardImages = new();
     public List<Sprite> gameImages = new();
@@ -60,6 +61,9 @@ public class GameResourceManager : MonoBehaviour
                     break;
                 case LevelData data:
                     levelData = data;
+                    break;
+                case TowerWeaponLevelData data:
+                    towerWeaponLevelData = data;
                     break;
                 case StringData data:
                     stringData = data;
@@ -133,6 +137,7 @@ public class GameResourceManager : MonoBehaviour
 
     #region GetMetaData
 
+    // CardData
     public CardMetaData GetCardMetaData(int id)
     {
         return cardData.Data.Find(x => x.Id == id);
@@ -184,6 +189,8 @@ public class GameResourceManager : MonoBehaviour
     }
 
 
+
+    // levelData
     public int GetLevelRequireExp(int level)
     {
         return levelData.Data.Find(x => x.level == level).exp;
@@ -194,6 +201,17 @@ public class GameResourceManager : MonoBehaviour
         return levelData.Data.Find(x => x.level == level).unlock;
     }
 
+
+    // TowerData
+    public int GetTowerWeaponRequireCoin(int level)
+    {
+        return towerWeaponLevelData.Data.Find(x => x.level == level).requireCoin;
+    }
+
+    public TowerWeaponLevelMetaData GetTowerWeaponLevelMetaData(int level)
+    {
+        return towerWeaponLevelData.Data.Find(x => x.level == level);
+    }
 
     #endregion
 

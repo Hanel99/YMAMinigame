@@ -30,6 +30,12 @@ public class PlayerData
     public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
 
 
+    //TowerData
+    public int towerFloor = 1;
+    public TowerGameUserStatData towerGameUserStatData;
+    public TowerGameUserWeaponData towerGameUserWeaponData;
+
+
     public PlayerData()
     {
         savedTime = DateTime.Now;
@@ -49,5 +55,9 @@ public class PlayerData
         mileage = 0;
         ownCardList.Clear();
         usingRedeemCode.Clear();
+
+        towerFloor = 1;
+        towerGameUserStatData = new TowerGameUserStatData();
+        towerGameUserWeaponData = new TowerGameUserWeaponData();
     }
 }
