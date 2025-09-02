@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class MiniRPGWeaponLevelMetaData
+public class TowerWeaponLevelMetaData
 {
     public int level;
     public float up;

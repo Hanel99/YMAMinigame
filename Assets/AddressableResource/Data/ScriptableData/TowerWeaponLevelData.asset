@@ -10,702 +10,709 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98234b657e3836245b32757c4aa5892f, type: 3}
-  m_Name: MiniRPGWeaponLevelData
+  m_Name: TowerWeaponLevelData
   m_EditorClassIdentifier: 
   Data:
+  - level: 0
+    up: 10000
+    stay: 0
+    down: 0
+    atk: 0
+    criDmg: 0
+    requireCoin: 150
   - level: 1
     up: 9500
     stay: 500
     down: 0
     atk: 1
     criDmg: 0.01
-    requireCoin: 100
+    requireCoin: 152
   - level: 2
     up: 9000
     stay: 1000
     down: 0
     atk: 2
     criDmg: 0.015
-    requireCoin: 150
+    requireCoin: 154
   - level: 3
     up: 8500
     stay: 1500
     down: 0
     atk: 3
     criDmg: 0.02
-    requireCoin: 200
+    requireCoin: 156
   - level: 4
     up: 8000
     stay: 2000
     down: 0
     atk: 4
     criDmg: 0.025
-    requireCoin: 250
+    requireCoin: 158
   - level: 5
     up: 7500
     stay: 2500
     down: 0
     atk: 5
     criDmg: 0.03
-    requireCoin: 300
+    requireCoin: 160
   - level: 6
     up: 7000
     stay: 3000
     down: 0
     atk: 6
     criDmg: 0.035
-    requireCoin: 350
+    requireCoin: 162
   - level: 7
     up: 6500
     stay: 3500
     down: 0
     atk: 7
     criDmg: 0.04
-    requireCoin: 400
+    requireCoin: 164
   - level: 8
     up: 6000
     stay: 4000
     down: 0
     atk: 8
     criDmg: 0.045
-    requireCoin: 450
+    requireCoin: 166
   - level: 9
     up: 5500
     stay: 4500
     down: 0
     atk: 9
     criDmg: 0.05
-    requireCoin: 500
+    requireCoin: 168
   - level: 10
     up: 5000
     stay: 5000
     down: 0
     atk: 10
     criDmg: 0.055
-    requireCoin: 550
+    requireCoin: 170
   - level: 11
     up: 4800
     stay: 5200
     down: 0
     atk: 11
     criDmg: 0.06
-    requireCoin: 600
+    requireCoin: 172
   - level: 12
     up: 4600
     stay: 5400
     down: 0
     atk: 12
     criDmg: 0.065
-    requireCoin: 650
+    requireCoin: 174
   - level: 13
     up: 4400
     stay: 5600
     down: 0
     atk: 13
     criDmg: 0.07
-    requireCoin: 700
+    requireCoin: 176
   - level: 14
     up: 4200
     stay: 5800
     down: 0
     atk: 14
     criDmg: 0.075
-    requireCoin: 750
+    requireCoin: 178
   - level: 15
     up: 4000
     stay: 6000
     down: 0
     atk: 15
     criDmg: 0.08
-    requireCoin: 800
+    requireCoin: 180
   - level: 16
     up: 3800
     stay: 6200
     down: 0
     atk: 16
     criDmg: 0.085
-    requireCoin: 850
+    requireCoin: 182
   - level: 17
     up: 3600
     stay: 6400
     down: 0
     atk: 17
     criDmg: 0.09
-    requireCoin: 900
+    requireCoin: 184
   - level: 18
     up: 3400
     stay: 6600
     down: 0
     atk: 18
     criDmg: 0.095
-    requireCoin: 950
+    requireCoin: 186
   - level: 19
     up: 3200
     stay: 6800
     down: 0
     atk: 19
     criDmg: 0.1
-    requireCoin: 1000
+    requireCoin: 188
   - level: 20
     up: 3000
     stay: 7000
     down: 0
     atk: 20
     criDmg: 0.108
-    requireCoin: 1030
+    requireCoin: 190
   - level: 21
     up: 3000
     stay: 6980
     down: 20
     atk: 21
     criDmg: 0.116
-    requireCoin: 1060
+    requireCoin: 192
   - level: 22
     up: 3000
     stay: 6960
     down: 40
     atk: 22
     criDmg: 0.124
-    requireCoin: 1090
+    requireCoin: 194
   - level: 23
     up: 3000
     stay: 6940
     down: 60
     atk: 23
     criDmg: 0.132
-    requireCoin: 1120
+    requireCoin: 196
   - level: 24
     up: 3000
     stay: 6920
     down: 80
     atk: 24
     criDmg: 0.14
-    requireCoin: 1150
+    requireCoin: 198
   - level: 25
     up: 3000
     stay: 6900
     down: 100
     atk: 25
     criDmg: 0.148
-    requireCoin: 1180
+    requireCoin: 200
   - level: 26
     up: 3000
     stay: 6880
     down: 120
     atk: 26
     criDmg: 0.156
-    requireCoin: 1210
+    requireCoin: 202
   - level: 27
     up: 3000
     stay: 6860
     down: 140
     atk: 27
     criDmg: 0.164
-    requireCoin: 1240
+    requireCoin: 204
   - level: 28
     up: 3000
     stay: 6840
     down: 160
     atk: 28
     criDmg: 0.172
-    requireCoin: 1270
+    requireCoin: 206
   - level: 29
     up: 3000
     stay: 6820
     down: 180
     atk: 29
     criDmg: 0.18
-    requireCoin: 1300
+    requireCoin: 208
   - level: 30
     up: 3000
     stay: 6800
     down: 200
     atk: 30
     criDmg: 0.188
-    requireCoin: 1330
+    requireCoin: 210
   - level: 31
     up: 3000
     stay: 6780
     down: 220
     atk: 31
     criDmg: 0.196
-    requireCoin: 1360
+    requireCoin: 212
   - level: 32
     up: 3000
     stay: 6760
     down: 240
     atk: 32
     criDmg: 0.204
-    requireCoin: 1390
+    requireCoin: 214
   - level: 33
     up: 3000
     stay: 6740
     down: 260
     atk: 33
     criDmg: 0.212
-    requireCoin: 1420
+    requireCoin: 216
   - level: 34
     up: 3000
     stay: 6720
     down: 280
     atk: 34
     criDmg: 0.22
-    requireCoin: 1450
+    requireCoin: 218
   - level: 35
     up: 3000
     stay: 6700
     down: 300
     atk: 35
     criDmg: 0.228
-    requireCoin: 1480
+    requireCoin: 220
   - level: 36
     up: 3000
     stay: 6680
     down: 320
     atk: 36
     criDmg: 0.236
-    requireCoin: 1510
+    requireCoin: 222
   - level: 37
     up: 3000
     stay: 6660
     down: 340
     atk: 37
     criDmg: 0.244
-    requireCoin: 1540
+    requireCoin: 224
   - level: 38
     up: 3000
     stay: 6640
     down: 360
     atk: 38
     criDmg: 0.252
-    requireCoin: 1570
+    requireCoin: 226
   - level: 39
     up: 3000
     stay: 6620
     down: 380
     atk: 39
     criDmg: 0.26
-    requireCoin: 1600
+    requireCoin: 228
   - level: 40
     up: 2500
     stay: 7500
     down: 0
     atk: 40
     criDmg: 0.273
-    requireCoin: 1620
+    requireCoin: 320
   - level: 41
     up: 2500
     stay: 7450
     down: 50
     atk: 42
     criDmg: 0.286
-    requireCoin: 1640
+    requireCoin: 323
   - level: 42
     up: 2500
     stay: 7400
     down: 100
     atk: 44
     criDmg: 0.299
-    requireCoin: 1660
+    requireCoin: 326
   - level: 43
     up: 2500
     stay: 7350
     down: 150
     atk: 46
     criDmg: 0.312
-    requireCoin: 1680
+    requireCoin: 329
   - level: 44
     up: 2500
     stay: 7300
     down: 200
     atk: 48
     criDmg: 0.325
-    requireCoin: 1700
+    requireCoin: 332
   - level: 45
     up: 2500
     stay: 7250
     down: 250
     atk: 50
     criDmg: 0.338
-    requireCoin: 1720
+    requireCoin: 335
   - level: 46
     up: 2500
     stay: 7200
     down: 300
     atk: 52
     criDmg: 0.351
-    requireCoin: 1740
+    requireCoin: 338
   - level: 47
     up: 2500
     stay: 7150
     down: 350
     atk: 54
     criDmg: 0.364
-    requireCoin: 1760
+    requireCoin: 341
   - level: 48
     up: 2500
     stay: 7100
     down: 400
     atk: 56
     criDmg: 0.377
-    requireCoin: 1780
+    requireCoin: 344
   - level: 49
     up: 2500
     stay: 7050
     down: 450
     atk: 58
     criDmg: 0.39
-    requireCoin: 1800
+    requireCoin: 347
   - level: 50
     up: 2500
     stay: 7000
     down: 500
     atk: 60
     criDmg: 0.403
-    requireCoin: 1820
+    requireCoin: 350
   - level: 51
     up: 2500
     stay: 6950
     down: 550
     atk: 62
     criDmg: 0.416
-    requireCoin: 1840
+    requireCoin: 353
   - level: 52
     up: 2500
     stay: 6900
     down: 600
     atk: 64
     criDmg: 0.429
-    requireCoin: 1860
+    requireCoin: 356
   - level: 53
     up: 2500
     stay: 6850
     down: 650
     atk: 66
     criDmg: 0.442
-    requireCoin: 1880
+    requireCoin: 359
   - level: 54
     up: 2500
     stay: 6800
     down: 700
     atk: 68
     criDmg: 0.455
-    requireCoin: 1900
+    requireCoin: 362
   - level: 55
     up: 2500
     stay: 6750
     down: 750
     atk: 70
     criDmg: 0.468
-    requireCoin: 1920
+    requireCoin: 365
   - level: 56
     up: 2500
     stay: 6700
     down: 800
     atk: 72
     criDmg: 0.481
-    requireCoin: 1940
+    requireCoin: 368
   - level: 57
     up: 2500
     stay: 6650
     down: 850
     atk: 74
     criDmg: 0.494
-    requireCoin: 1960
+    requireCoin: 371
   - level: 58
     up: 2500
     stay: 6600
     down: 900
     atk: 76
     criDmg: 0.507
-    requireCoin: 1980
+    requireCoin: 374
   - level: 59
     up: 2500
     stay: 6550
     down: 950
     atk: 78
     criDmg: 0.52
-    requireCoin: 2000
+    requireCoin: 377
   - level: 60
     up: 2000
     stay: 8000
     down: 0
     atk: 80
     criDmg: 0.541
-    requireCoin: 2050
+    requireCoin: 490
   - level: 61
     up: 2000
     stay: 7900
     down: 100
     atk: 83
     criDmg: 0.562
-    requireCoin: 2100
+    requireCoin: 494
   - level: 62
     up: 2000
     stay: 7800
     down: 200
     atk: 86
     criDmg: 0.583
-    requireCoin: 2150
+    requireCoin: 498
   - level: 63
     up: 2000
     stay: 7700
     down: 300
     atk: 89
     criDmg: 0.604
-    requireCoin: 2200
+    requireCoin: 502
   - level: 64
     up: 2000
     stay: 7600
     down: 400
     atk: 92
     criDmg: 0.625
-    requireCoin: 2250
+    requireCoin: 506
   - level: 65
     up: 2000
     stay: 7500
     down: 500
     atk: 95
     criDmg: 0.646
-    requireCoin: 2300
+    requireCoin: 510
   - level: 66
     up: 2000
     stay: 7400
     down: 600
     atk: 98
     criDmg: 0.667
-    requireCoin: 2350
+    requireCoin: 514
   - level: 67
     up: 2000
     stay: 7300
     down: 700
     atk: 101
     criDmg: 0.688
-    requireCoin: 2400
+    requireCoin: 518
   - level: 68
     up: 2000
     stay: 7200
     down: 800
     atk: 104
     criDmg: 0.709
-    requireCoin: 2450
+    requireCoin: 522
   - level: 69
     up: 2000
     stay: 7100
     down: 900
     atk: 107
     criDmg: 0.73
-    requireCoin: 2500
+    requireCoin: 526
   - level: 70
     up: 2000
     stay: 7000
     down: 1000
     atk: 110
     criDmg: 0.751
-    requireCoin: 2550
+    requireCoin: 530
   - level: 71
     up: 2000
     stay: 6900
     down: 1100
     atk: 113
     criDmg: 0.772
-    requireCoin: 2600
+    requireCoin: 534
   - level: 72
     up: 2000
     stay: 6800
     down: 1200
     atk: 116
     criDmg: 0.793
-    requireCoin: 2650
+    requireCoin: 538
   - level: 73
     up: 2000
     stay: 6700
     down: 1300
     atk: 119
     criDmg: 0.814
-    requireCoin: 2700
+    requireCoin: 542
   - level: 74
     up: 2000
     stay: 6600
     down: 1400
     atk: 122
     criDmg: 0.835
-    requireCoin: 2750
+    requireCoin: 546
   - level: 75
     up: 2000
     stay: 6500
     down: 1500
     atk: 125
     criDmg: 0.856
-    requireCoin: 2800
+    requireCoin: 550
   - level: 76
     up: 2000
     stay: 6400
     down: 1600
     atk: 128
     criDmg: 0.877
-    requireCoin: 2850
+    requireCoin: 554
   - level: 77
     up: 2000
     stay: 6300
     down: 1700
     atk: 131
     criDmg: 0.898
-    requireCoin: 2900
+    requireCoin: 558
   - level: 78
     up: 2000
     stay: 6200
     down: 1800
     atk: 134
     criDmg: 0.919
-    requireCoin: 2950
+    requireCoin: 562
   - level: 79
     up: 2000
     stay: 6100
     down: 1900
     atk: 137
     criDmg: 0.94
-    requireCoin: 3000
+    requireCoin: 566
   - level: 80
     up: 1500
     stay: 8500
     down: 0
     atk: 140
     criDmg: 0.976
-    requireCoin: 3210
+    requireCoin: 700
   - level: 81
     up: 1500
     stay: 8290
     down: 210
     atk: 144
     criDmg: 1.012
-    requireCoin: 3420
+    requireCoin: 705
   - level: 82
     up: 1500
     stay: 8080
     down: 420
     atk: 148
     criDmg: 1.048
-    requireCoin: 3630
+    requireCoin: 710
   - level: 83
     up: 1500
     stay: 7870
     down: 630
     atk: 152
     criDmg: 1.084
-    requireCoin: 3840
+    requireCoin: 715
   - level: 84
     up: 1500
     stay: 7660
     down: 840
     atk: 156
     criDmg: 1.12
-    requireCoin: 4050
+    requireCoin: 720
   - level: 85
     up: 1500
     stay: 7450
     down: 1050
     atk: 160
     criDmg: 1.156
-    requireCoin: 4260
+    requireCoin: 725
   - level: 86
     up: 1500
     stay: 7240
     down: 1260
     atk: 164
     criDmg: 1.192
-    requireCoin: 4470
+    requireCoin: 730
   - level: 87
     up: 1500
     stay: 7030
     down: 1470
     atk: 168
     criDmg: 1.228
-    requireCoin: 4680
+    requireCoin: 735
   - level: 88
     up: 1500
     stay: 6820
     down: 1680
     atk: 172
     criDmg: 1.264
-    requireCoin: 4890
+    requireCoin: 740
   - level: 89
     up: 1500
     stay: 6610
     down: 1890
     atk: 176
     criDmg: 1.3
-    requireCoin: 5100
+    requireCoin: 745
   - level: 90
     up: 1500
     stay: 6400
     down: 2100
     atk: 180
     criDmg: 1.336
-    requireCoin: 5310
+    requireCoin: 750
   - level: 91
     up: 1500
     stay: 6190
     down: 2310
     atk: 184
     criDmg: 1.372
-    requireCoin: 5520
+    requireCoin: 755
   - level: 92
     up: 1500
     stay: 5980
     down: 2520
     atk: 188
     criDmg: 1.408
-    requireCoin: 5730
+    requireCoin: 760
   - level: 93
     up: 1500
     stay: 5770
     down: 2730
     atk: 192
     criDmg: 1.444
-    requireCoin: 5940
+    requireCoin: 765
   - level: 94
     up: 1500
     stay: 5560
     down: 2940
     atk: 196
     criDmg: 1.48
-    requireCoin: 6150
+    requireCoin: 770
   - level: 95
     up: 1500
     stay: 5350
     down: 3150
     atk: 200
     criDmg: 1.516
-    requireCoin: 6360
+    requireCoin: 775
   - level: 96
     up: 1500
     stay: 5140
     down: 3360
     atk: 204
     criDmg: 1.552
-    requireCoin: 6570
+    requireCoin: 780
   - level: 97
     up: 1500
     stay: 4930
     down: 3570
     atk: 208
     criDmg: 1.588
-    requireCoin: 6780
+    requireCoin: 785
   - level: 98
     up: 1500
     stay: 4720
     down: 3780
     atk: 212
     criDmg: 1.624
-    requireCoin: 6990
+    requireCoin: 790
   - level: 99
     up: 1500
     stay: 4510
     down: 3990
     atk: 216
     criDmg: 1.66
-    requireCoin: 7200
+    requireCoin: 795
   - level: 100
     up: -1
     stay: -1
