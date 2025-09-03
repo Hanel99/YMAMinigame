@@ -3,12 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 
 public class SaveDataManager : MonoBehaviour
 {
     public static SaveDataManager instance { get; private set; }
     private PlayerData _playerData;
     public PlayerData playerData => _playerData;
+
+    private CancellationTokenSource saveCts; // SavePlayerData 호출을 제어하는 CancellationTokenSource
 
 
     #region Convert
@@ -253,6 +257,91 @@ public class SaveDataManager : MonoBehaviour
     public void SetPlayerName()
     {
         PlayFabManager.instance.SetDisplayName();
+    }
+
+
+
+    #endregion
+
+
+
+
+    #region TowerGameDataLogic
+
+    public void SetTowerUserStatLevel(TowerUserStatType type, int level)
+    {
+        switch (type)
+        {
+            case TowerUserStatType.atk:
+                _playerData.towerGameUserStatLevelData.atkLevel = level;
+                break;
+            case TowerUserStatType.def:
+                _playerData.towerGameUserStatLevelData.defLevel = level;
+                break;
+            case TowerUserStatType.hp:
+                _playerData.towerGameUserStatLevelData.hpLevel = level;
+                break;
+            case TowerUserStatType.criRate:
+                _playerData.towerGameUserStatLevelData.criRateLevel = level;
+                break;
+            case TowerUserStatType.criDmg:
+                _playerData.towerGameUserStatLevelData.criDmgLevel = level;
+                break;
+        }
+
+        // SavePlayerData 호출 예약
+        ScheduleSavePlayerData();
+    }
+
+
+
+
+
+    public void SetTowerUserWeaponLevel(int level)
+    {
+        _playerData.towerGameUserWeaponData.weaponLevel = level;
+
+        ScheduleSavePlayerData();
+    }
+
+    public void AddTowerUserWeaponFailCount()
+    {
+        _playerData.towerGameUserWeaponData.failCount++;
+
+        ScheduleSavePlayerData();
+    }
+
+    public void SetTowerUserWeaponIsDown(bool value)
+    {
+        _playerData.towerGameUserWeaponData.isDown = value;
+
+        ScheduleSavePlayerData();
+    }
+
+
+    // 세이브데이터가 너무 많이 들어올 경우, 1초간 중복 메소드를 기다린 뒤 실행.
+    private void ScheduleSavePlayerData()
+    {
+        // 이전 작업 취소
+        saveCts?.Cancel();
+        saveCts = new CancellationTokenSource();
+
+        // 1초 대기 후 SavePlayerData 호출
+        WaitAndSavePlayerData(saveCts.Token).Forget();
+    }
+
+    private async UniTaskVoid WaitAndSavePlayerData(CancellationToken token)
+    {
+        try
+        {
+            await UniTask.Delay(1000, cancellationToken: token); // 1초 대기
+            SavePlayerData(); // SavePlayerData 호출
+        }
+        catch (OperationCanceledException)
+        {
+            // 작업이 취소된 경우 처리 (필요 시 추가 로직 작성 가능)
+            HLLogger.Log("SavePlayerData 호출이 취소되었습니다.");
+        }
     }
 
 

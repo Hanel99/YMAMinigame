@@ -5,19 +5,22 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TowerGamePopup : PopupBase
+public class TowerGameWeaponEnchantPopup : PopupBase
 {
-    public static TowerGamePopup instance { get; private set; }
 
+    public static TowerGameWeaponEnchantPopup instance { get; private set; }
+    public List<TowerGamePlayerStat> playerStatList;
 
-    public Text bossTitle;
-    public Image bossImage;
-    public Text bossDesc;
+    public GameObject statTab;
+    public GameObject weaponTab;
+
 
 
 
     //private
     private bool isOnProcess = false;
+
+    private bool isStatTab = true;
 
     private TowerGameUserStatLevelData towerGameUserStatLevelData;
     private TowerGameUserWeaponData towerGameUserWeaponData;
@@ -46,39 +49,44 @@ public class TowerGamePopup : PopupBase
 
     private void UpdateUI()
     {
-        bossTitle.text = "";
-        bossImage.sprite = null;
-        bossImage.SetNativeSize();
 
-        bossDesc.text = "";
     }
 
     private void UpdateGameData()
     {
         var level = SaveDataManager.instance.playerData.level;
-        var userMetaData = GameResourceManager.instance.GetTowerUserLevelMetaData(level);
+
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(level);
 
 
         towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         towerGameUserWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
+
+        for (TowerUserStatType type = TowerUserStatType.atk; type <= TowerUserStatType.criDmg; type++)
+        {
+            int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(type);
+            playerStatList[(int)type].UpdateUI(type, statLevel);
+        }
+
+        isStatTab = true;
+        statTab.SetActive(true);
+        weaponTab.SetActive(false);
     }
 
-    public void OnClickStartCombat()
+
+    public void OnClickStatEnchantTab()
     {
         if (isOpenCloseAnimationActing || isOnProcess) return;
-
-        isOnProcess = true;
-
-
-
+        SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.StatTab"));
+        statTab.SetActive(true);
+        weaponTab.SetActive(false);
     }
 
-
-    public void OnClickShowEnchantPopup()
+    public void OnClickWeaponEnchantTab()
     {
         if (isOpenCloseAnimationActing || isOnProcess) return;
-
-        LobbyUIManager.instance.ShowPopup<TowerGameWeaponEnchantPopup>();
+        SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
+        statTab.SetActive(false);
+        weaponTab.SetActive(true);
     }
 }

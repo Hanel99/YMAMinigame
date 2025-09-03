@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8dfd0089b4b1e441be772f2937471b2
+    m_Address: TowerUserLevelData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed40696817f983345806ad62a123cadb
     m_Address: LevelData
     m_ReadOnly: 0

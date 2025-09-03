@@ -261,6 +261,8 @@ MonoBehaviour:
   cardData: {fileID: 0}
   stringData: {fileID: 0}
   levelData: {fileID: 0}
+  towerWeaponLevelData: {fileID: 0}
+  towerUserLevelData: {fileID: 0}
   cardImages: []
   gameImages: []
   masterImages: []

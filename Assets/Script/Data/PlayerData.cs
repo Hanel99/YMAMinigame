@@ -32,7 +32,7 @@ public class PlayerData
 
     //TowerData
     public int towerFloor = 1;
-    public TowerGameUserStatData towerGameUserStatData;
+    public TowerGameUserStatLevelData towerGameUserStatLevelData;
     public TowerGameUserWeaponData towerGameUserWeaponData;
 
 
@@ -57,7 +57,7 @@ public class PlayerData
         usingRedeemCode.Clear();
 
         towerFloor = 1;
-        towerGameUserStatData = new TowerGameUserStatData();
+        towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
     }
 }

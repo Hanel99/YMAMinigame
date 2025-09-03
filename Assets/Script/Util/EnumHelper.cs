@@ -183,6 +183,23 @@ public enum PlayerState
 
 
 
+
+#region TowerGame
+
+public enum TowerUserStatType
+{
+    atk,
+    def,
+    hp,
+    criRate,
+    criDmg
+}
+
+
+#endregion
+
+
+
 #region Sound
 
 public enum BGMType
