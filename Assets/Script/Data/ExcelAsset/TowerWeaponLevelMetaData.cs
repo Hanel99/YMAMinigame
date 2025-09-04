@@ -4,10 +4,10 @@ using System;
 public class TowerWeaponLevelMetaData
 {
     public int level;
-    public float up;
-    public float stay;
-    public float down;
-    public float atk;
+    public int up;
+    public int stay;
+    public int down;
+    public int atk;
     public float criDmg;
     public int requireCoin;
 }

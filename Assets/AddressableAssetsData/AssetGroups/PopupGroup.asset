@@ -33,6 +33,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3387ac5b922abaf4c877666a9b2ab20b
+    m_Address: TowerGamePopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 380f274fd4291a746b4a9a8c4a4dd3c5
     m_Address: CollectionDetailPopup
     m_ReadOnly: 0
@@ -41,6 +47,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 39372191d9bb57242b99e2aad134d57a
     m_Address: CommonPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 426d713e11035ef46b9d9ebd8c4a47dd
+    m_Address: TowerGameWeaponEnchantPopup
     m_ReadOnly: 0
     m_SerializedLabels:
     - PopupGroup

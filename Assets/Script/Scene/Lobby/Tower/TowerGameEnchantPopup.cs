@@ -39,6 +39,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
             UpdateGameData();
             UpdateUI();
             _OpenUI();
+            OnClickStatEnchantTab();
             isOnProcess = false;
         }
         else
@@ -54,38 +55,33 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     private void UpdateGameData()
     {
-        var level = SaveDataManager.instance.playerData.level;
-
-        var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(level);
+        var playerLevel = SaveDataManager.instance.playerData.level;
+        var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(playerLevel);
 
 
         towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         towerGameUserWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
-
-        for (TowerUserStatType type = TowerUserStatType.atk; type <= TowerUserStatType.criDmg; type++)
-        {
-            int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(type);
-            playerStatList[(int)type].UpdateUI(type, statLevel);
-        }
-
-        isStatTab = true;
-        statTab.SetActive(true);
-        weaponTab.SetActive(false);
     }
 
 
     public void OnClickStatEnchantTab()
     {
-        if (isOpenCloseAnimationActing || isOnProcess) return;
+        for (TowerUserStatType type = TowerUserStatType.atk; type <= TowerUserStatType.criDmg; type++)
+        {
+            int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(type);
+            playerStatList[(int)type].UpdateUIData(type, statLevel);
+        }
+
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.StatTab"));
+        isStatTab = true;
         statTab.SetActive(true);
         weaponTab.SetActive(false);
     }
 
     public void OnClickWeaponEnchantTab()
     {
-        if (isOpenCloseAnimationActing || isOnProcess) return;
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
+        isStatTab = false;
         statTab.SetActive(false);
         weaponTab.SetActive(true);
     }

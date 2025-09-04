@@ -3,46 +3,46 @@ using UnityEngine.UI;
 
 public class TowerGamePlayerStat : MonoBehaviour
 {
-    public Text statName;
-    public Text statLevel;
-    public Text statValue;
-    public Text requireCoin;
+    public Text nameText;
+    public Text levelText;
+    public Text valueText;
+    public Text requireCoinText;
     public Button enchantButton;
 
     private TowerUserStatType statType;
-    private int level;
+    private int statLevel;
 
 
-    public void UpdateUI(TowerUserStatType type, int level)
+    public void UpdateUIData(TowerUserStatType type, int statLevel)
     {
         statType = type;
-        this.level = level;
+        this.statLevel = statLevel;
 
 
-        statName.text = LocalizeManager.instance.GetString($"Tower.StatType.{type}");
-        statLevel.text = level.ToString();
+        nameText.text = LocalizeManager.instance.GetString($"Tower.StatType.{type}");
+        this.levelText.text = statLevel.ToString();
 
         if (type == TowerUserStatType.criRate)
-            statValue.text = $"{(GetValue<float>(type) * 100).ToString("F1")}%";
+            valueText.text = $"{(GetValue<float>(type) * 100).ToString("F1")}%";
         else if (type == TowerUserStatType.criDmg)
-            statValue.text = $"x{1 + (GetValue<float>(type) * 100).ToString("F1")}%";
+            valueText.text = $"x{1 + (GetValue<float>(type) * 100).ToString("F1")}%";
         else
-            statValue.text = GetValue<int>(type).ToString();
+            valueText.text = GetValue<int>(type).ToString();
 
-        requireCoin.text = level >= 100 ? "MAX" : GameResourceManager.instance.GetTowerUserLevelRequireCoin(level).ToString();
-        enchantButton.interactable = level >= 100 || SaveDataManager.instance.playerData.coin < GameResourceManager.instance.GetTowerUserLevelRequireCoin(level);
+        requireCoinText.text = statLevel >= 100 ? "MAX" : GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel).ToString();
+        enchantButton.interactable = statLevel < 100 && SaveDataManager.instance.playerData.coin >= GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel);
     }
 
     public void OnClickEnchant()
     {
-        level++;
-        SaveDataManager.instance.SetTowerUserStatLevel(statType, level);
-        UpdateUI(statType, level);
+        statLevel++;
+        SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);
+        UpdateUIData(statType, statLevel);
     }
 
     private T GetValue<T>(TowerUserStatType type)
     {
-        return GameResourceManager.instance.GetTowerUserLevelStatValue<T>(type, level);
+        return GameResourceManager.instance.GetTowerUserLevelStatValue<T>(type, statLevel);
     }
 
 

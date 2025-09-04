@@ -311,6 +311,13 @@ public class SaveDataManager : MonoBehaviour
         ScheduleSavePlayerData();
     }
 
+    public void SetTowerUserWeaponFailCount(int value)
+    {
+        _playerData.towerGameUserWeaponData.failCount = value;
+
+        ScheduleSavePlayerData();
+    }
+
     public void SetTowerUserWeaponIsDown(bool value)
     {
         _playerData.towerGameUserWeaponData.isDown = value;
