@@ -49,6 +49,7 @@ public class FindAIWordGameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             HLLogger.Log($"force clear");
+
             FinishProcess(0);
         }
 #endif
@@ -188,14 +189,19 @@ public class FindAIWordGameManager : MonoBehaviour
 
     private async void FinishProcess(int delayTime = 3000)
     {
+        apiCts?.Cancel();
+        apiCts?.Dispose();
+        apiCts = null;
+
         // 3초 딜레이
         await UniTask.Delay(delayTime);
 
+        //1회만에 바로 맞춘경우 15000. 1회 틀릴때마다 500씩 감소. 최소 12000
         int earnCoinAmount = 0;
         if (delayTime < 3000) //강제 치트를 쓴 경우
-            earnCoinAmount = 3200;
+            earnCoinAmount = 30000;
         else
-            earnCoinAmount = (hints.Count - currentHintIndex) * 200 + 1200;
+            earnCoinAmount = (hints.Count - currentHintIndex) * 500 + 10000;
 
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);

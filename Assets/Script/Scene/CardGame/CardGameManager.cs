@@ -152,18 +152,17 @@ public class CardGameManager : MonoBehaviour
     private void CalcEarnCoinAmount()
     {
         /*
-        8회 1000
-        1회 추가될때마다 50씩 감소 950
+        8회 10000
+        1회 추가될때마다 500씩 감소 9500
         ...
-        최소 200   
+        24회 이상 2000 (최소)
         */
 
-        earnCoinAmount = 800;
+        earnCoinAmount = 10000;
         if (tryCount > 8)
-            earnCoinAmount -= tryCount * 50;
-        if (earnCoinAmount <= 0)
-            earnCoinAmount = 0;
-        earnCoinAmount += 200;
+            earnCoinAmount -= (tryCount - 8) * 500;
+        if (earnCoinAmount <= 2000)
+            earnCoinAmount = 2000;
     }
 
 
