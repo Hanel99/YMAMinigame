@@ -28,6 +28,7 @@ public class GameResourceManager : MonoBehaviour
     public LevelData levelData;
     public TowerWeaponLevelData towerWeaponLevelData;
     public TowerUserLevelData towerUserLevelData;
+    public TowerMonsterLevelData towerMonsterLevelData;
 
     public List<Sprite> cardImages = new();
     public List<Sprite> gameImages = new();
@@ -68,6 +69,9 @@ public class GameResourceManager : MonoBehaviour
                     break;
                 case TowerUserLevelData data:
                     towerUserLevelData = data;
+                    break;
+                case TowerMonsterLevelData data:
+                    towerMonsterLevelData = data;
                     break;
                 case StringData data:
                     stringData = data;
@@ -225,6 +229,11 @@ public class GameResourceManager : MonoBehaviour
     public T GetTowerUserLevelStatValue<T>(TowerUserStatType type, int level)
     {
         return (T)typeof(TowerUserLevelMetaData).GetField(type.ToString()).GetValue(GetTowerUserLevelMetaData(level));
+    }
+
+    public TowerMonsterLevelMetaData GetTowerMonsterLevelMetaData(int level)
+    {
+        return towerMonsterLevelData.Data.Find(x => x.level == level);
     }
 
     #endregion

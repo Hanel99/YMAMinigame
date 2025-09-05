@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d840db97a87ebd41980979d560cbfc2
+    m_Address: TowerMonsterLevelData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43cf86da9fb74744b901a8c597f146ea
     m_Address: CardData
     m_ReadOnly: 0
