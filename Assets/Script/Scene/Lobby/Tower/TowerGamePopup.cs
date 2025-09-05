@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
-using DG.Tweening;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class TowerGamePopup : PopupBase
@@ -55,9 +50,13 @@ public class TowerGamePopup : PopupBase
 
     private void UpdateGameData()
     {
+
         var level = SaveDataManager.instance.playerData.level;
-        var userMetaData = GameResourceManager.instance.GetTowerUserLevelMetaData(level);
+        var floor = SaveDataManager.instance.playerData.towerFloor;
+        var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(level);
+        var monsterMetaData = GameResourceManager.instance.GetTowerMonsterLevelMetaData(floor);
+        var userMetaData = GameResourceManager.instance.GetTowerUserLevelMetaData(level);
 
 
         towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
@@ -68,7 +67,7 @@ public class TowerGamePopup : PopupBase
     {
         if (isOpenCloseAnimationActing || isOnProcess) return;
 
-        isOnProcess = true;
+        // isOnProcess = true;
 
 
 
@@ -80,5 +79,12 @@ public class TowerGamePopup : PopupBase
         if (isOpenCloseAnimationActing || isOnProcess) return;
 
         LobbyUIManager.instance.ShowPopup<TowerGameWeaponEnchantPopup>();
+    }
+
+    public void OnClickShowDetailStatPopup()
+    {
+        if (isOpenCloseAnimationActing || isOnProcess) return;
+
+        LobbyUIManager.instance.ShowPopup<TowerGameDetailStatPopup>();
     }
 }

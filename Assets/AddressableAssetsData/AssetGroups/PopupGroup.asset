@@ -99,6 +99,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eed3519b2818d34f8af236164c0ebde
+    m_Address: TowerGameDetailStatPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbb16a2672bbeb84eafe16512dc8b7fc
     m_Address: UserProfilePopup
     m_ReadOnly: 0

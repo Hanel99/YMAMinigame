@@ -20,12 +20,12 @@ public class TowerGamePlayerStat : MonoBehaviour
 
 
         nameText.text = LocalizeManager.instance.GetString($"Tower.StatType.{type}");
-        this.levelText.text = statLevel.ToString();
+        this.levelText.text = $"Lv.{statLevel}";
 
         if (type == TowerUserStatType.criRate)
             valueText.text = $"{(GetValue<float>(type) * 100).ToString("F1")}%";
         else if (type == TowerUserStatType.criDmg)
-            valueText.text = $"x{1 + (GetValue<float>(type) * 100).ToString("F1")}%";
+            valueText.text = $"x{((1 + GetValue<float>(type)) * 100).ToString("F1")}%";
         else
             valueText.text = GetValue<int>(type).ToString();
 

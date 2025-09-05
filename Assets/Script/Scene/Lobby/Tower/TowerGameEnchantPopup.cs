@@ -1,25 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class TowerGameWeaponEnchantPopup : PopupBase
 {
-
     public static TowerGameWeaponEnchantPopup instance { get; private set; }
-    public List<TowerGamePlayerStat> playerStatList;
-
     public GameObject statTab;
-    public GameObject weaponTab;
-
+    public TowerGameWeaponStat weaponTab;
+    public List<TowerGamePlayerStat> playerStatList;
 
 
 
     //private
     private bool isOnProcess = false;
-
     private bool isStatTab = true;
 
     private TowerGameUserStatLevelData towerGameUserStatLevelData;
@@ -75,7 +67,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.StatTab"));
         isStatTab = true;
         statTab.SetActive(true);
-        weaponTab.SetActive(false);
+        weaponTab.gameObject.SetActive(false);
     }
 
     public void OnClickWeaponEnchantTab()
@@ -83,6 +75,6 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
         isStatTab = false;
         statTab.SetActive(false);
-        weaponTab.SetActive(true);
+        weaponTab.gameObject.SetActive(true);
     }
 }

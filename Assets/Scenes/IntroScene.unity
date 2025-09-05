@@ -263,6 +263,7 @@ MonoBehaviour:
   levelData: {fileID: 0}
   towerWeaponLevelData: {fileID: 0}
   towerUserLevelData: {fileID: 0}
+  towerMonsterLevelData: {fileID: 0}
   cardImages: []
   gameImages: []
   masterImages: []

@@ -9,11 +9,13 @@ public class TowerGameWeaponStat : MonoBehaviour
     public Text criDmgValueText;
     public Text requireCoinText;
 
+    public GameObject RankUpText;
     public Text RankUpRateText;
     public Text RankStayRateText;
     public Text RankDownRateText;
 
     public Button enchantButton;
+    public Text enchantText;
 
     //private
     private int weaponLevel;
@@ -30,9 +32,17 @@ public class TowerGameWeaponStat : MonoBehaviour
         weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponLevel);
         userWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
 
-        levelText.text = $"Lv.{weaponMetaData.level}";
-        atkValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.atk")}: {weaponMetaData.atk}";
-        criDmgValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.criDmg")}: {(weaponMetaData.criDmg * 100).ToString("F1")}%";
+        if (weaponLevel == 0)
+        {
+
+
+        }
+        else
+        {
+            levelText.text = $"Lv.{weaponMetaData.level}";
+            atkValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.atk")}: {weaponMetaData.atk}";
+            criDmgValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.criDmg")}: x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
+        }
 
         UpdateRateText();
 
@@ -42,6 +52,19 @@ public class TowerGameWeaponStat : MonoBehaviour
 
     private void UpdateRateText()
     {
+        if (weaponLevel == 0)
+        {
+            RankUpText.SetActive(false);
+            enchantText.text = "무기 구매";
+            return;
+        }
+        else if (weaponLevel >= 100)
+        {
+            RankUpText.SetActive(false);
+            enchantText.text = "강화";
+            return;
+        }
+
         int upValue = weaponMetaData.up + userWeaponData.failCount * 10;
         int stayValue = weaponMetaData.stay;
         int downValue = userWeaponData.isDown ? 0 : weaponMetaData.down;
@@ -51,6 +74,8 @@ public class TowerGameWeaponStat : MonoBehaviour
         float stayRate = (float)stayValue / total;
         float downRate = (float)downValue / total;
 
+        RankUpText.SetActive(true);
+        enchantText.text = "강화";
         RankUpRateText.text = $"{(upRate * 100).ToString("F1")}%";
         RankStayRateText.text = $"{(stayRate * 100).ToString("F1")}%";
         RankDownRateText.text = $"{(downRate * 100).ToString("F1")}%";
@@ -110,10 +135,5 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
-    }
-
-    private T GetValue<T>(TowerUserStatType type)
-    {
-        return GameResourceManager.instance.GetTowerUserLevelStatValue<T>(type, weaponLevel);
     }
 }

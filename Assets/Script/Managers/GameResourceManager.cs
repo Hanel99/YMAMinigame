@@ -231,9 +231,9 @@ public class GameResourceManager : MonoBehaviour
         return (T)typeof(TowerUserLevelMetaData).GetField(type.ToString()).GetValue(GetTowerUserLevelMetaData(level));
     }
 
-    public TowerMonsterLevelMetaData GetTowerMonsterLevelMetaData(int level)
+    public TowerMonsterLevelMetaData GetTowerMonsterLevelMetaData(int floor)
     {
-        return towerMonsterLevelData.Data.Find(x => x.level == level);
+        return towerMonsterLevelData.Data.Find(x => x.level == floor);
     }
 
     #endregion

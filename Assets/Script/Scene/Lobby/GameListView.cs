@@ -10,6 +10,7 @@ public class GameListView : MonoBehaviour
     public GameObject settingBtn;
     public GameObject userProfileBtn;
     public GameObject gachaBtn;
+    public GameObject towerBtn;
     public GameObject collectionBtn;
     public GameObject gameQuitBtn;
 
@@ -89,6 +90,7 @@ public class GameListView : MonoBehaviour
         settingBtn.GetComponent<Button>().onClick.AddListener(OnClickSettingButton);
         userProfileBtn.GetComponent<Button>().onClick.AddListener(OnClickUserProfileButton);
         gachaBtn.GetComponent<Button>().onClick.AddListener(OnClickGachaButton);
+        towerBtn.GetComponent<Button>().onClick.AddListener(OnClickTowerButton);
         collectionBtn.GetComponent<Button>().onClick.AddListener(OnClickCollectionButton);
         gameQuitBtn.GetComponent<Button>().onClick.AddListener(OnClickGameQuit);
 
@@ -158,6 +160,11 @@ public class GameListView : MonoBehaviour
     public void OnClickGachaButton()
     {
         LobbyUIManager.instance.ShowPopup<GachaPopup>();
+    }
+
+    public void OnClickTowerButton()
+    {
+        LobbyUIManager.instance.ShowPopup<TowerGamePopup>();
     }
 
     public void OnClickCollectionButton()
