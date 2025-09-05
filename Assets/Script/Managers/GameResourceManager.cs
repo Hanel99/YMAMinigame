@@ -123,6 +123,9 @@ public class GameResourceManager : MonoBehaviour
         string str = ((int)type).ToString("D2");
         Sprite sprite = gameImages.Find(x => x.name.Contains(str));
 
+        if (sprite == null)
+            sprite = gameImages[gameImages.Count - 1];
+
         return sprite;
     }
 
