@@ -76,14 +76,14 @@ public class TowerGamePopup : PopupBase
 
     public void OnClickShowEnchantPopup()
     {
-        if (isOpenCloseAnimationActing || isOnProcess) return;
+        if (isOpenCloseAnimationActing) return;
 
         LobbyUIManager.instance.ShowPopup<TowerGameWeaponEnchantPopup>();
     }
 
     public void OnClickShowDetailStatPopup()
     {
-        if (isOpenCloseAnimationActing || isOnProcess) return;
+        if (isOpenCloseAnimationActing) return;
 
         LobbyUIManager.instance.ShowPopup<TowerGameDetailStatPopup>();
     }

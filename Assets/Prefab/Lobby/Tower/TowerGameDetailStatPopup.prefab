@@ -915,12 +915,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActBackKey: 1
-  bossAtk: {fileID: 6104833004843719078}
-  bossDef: {fileID: 7031113754792786578}
-  bossHp: {fileID: 3277034134012956258}
-  bossCriRate: {fileID: 8882875540246330904}
-  bossCriDmg: {fileID: 5899004038684052245}
-  bossRewardCoin: {fileID: 8404579522950756630}
   playerAtk: {fileID: 3339535629179828593}
   playerDef: {fileID: 4557097816508800392}
   playerHp: {fileID: 1363456960206016929}
@@ -928,6 +922,12 @@ MonoBehaviour:
   playerCriDmg: {fileID: 4094671004022356353}
   weaponAtk: {fileID: 454485110846992247}
   weaponCriDmg: {fileID: 8586857400622198821}
+  bossAtk: {fileID: 6104833004843719078}
+  bossDef: {fileID: 7031113754792786578}
+  bossHp: {fileID: 3277034134012956258}
+  bossCriRate: {fileID: 8882875540246330904}
+  bossCriDmg: {fileID: 5899004038684052245}
+  bossRewardCoin: {fileID: 8404579522950756630}
 --- !u!1 &4565344517787687016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1913,14 +1913,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.33333334, b: 0.28627452, a: 1}
+  m_Color: {r: 0.7176471, g: 0.047058824, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1d64d5e4d66f9cf4c9777694325bc651, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1244d8844707234d9d8bfdf09dae052, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1974,7 +1974,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -1908717279666801736}
         m_TargetAssemblyTypeName: PopupBase, Assembly-CSharp
         m_MethodName: OnClickClose
         m_Mode: 1

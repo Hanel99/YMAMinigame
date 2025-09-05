@@ -17,6 +17,9 @@ public class TowerGameWeaponStat : MonoBehaviour
     public Button enchantButton;
     public Text enchantText;
 
+    public GameObject emptyText;
+    public GameObject weaponStatDetailGroup;
+
     //private
     private int weaponLevel;
     private TowerWeaponLevelMetaData weaponMetaData;
@@ -32,26 +35,20 @@ public class TowerGameWeaponStat : MonoBehaviour
         weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponLevel);
         userWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
 
-        if (weaponLevel == 0)
-        {
+        emptyText.SetActive(weaponLevel == 0);
+        weaponStatDetailGroup.SetActive(weaponLevel != 0);
+        UpdateDetailText();
+    }
 
-
-        }
-        else
-        {
-            levelText.text = $"Lv.{weaponMetaData.level}";
-            atkValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.atk")}: {weaponMetaData.atk}";
-            criDmgValueText.text = $"{LocalizeManager.instance.GetString("Tower.StatType.criDmg")}: x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
-        }
-
-        UpdateRateText();
+    private void UpdateDetailText()
+    {
+        levelText.text = $"Lv.{weaponMetaData.level}";
+        atkValueText.text = $"{weaponMetaData.atk}";
+        criDmgValueText.text = $"x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
 
         requireCoinText.text = weaponLevel >= 100 ? "MAX" : weaponMetaData.requireCoin.ToString();
         enchantButton.interactable = weaponLevel < 100 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
-    }
 
-    private void UpdateRateText()
-    {
         if (weaponLevel == 0)
         {
             RankUpText.SetActive(false);
@@ -76,14 +73,19 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         RankUpText.SetActive(true);
         enchantText.text = "강화";
-        RankUpRateText.text = $"{(upRate * 100).ToString("F1")}%";
-        RankStayRateText.text = $"{(stayRate * 100).ToString("F1")}%";
-        RankDownRateText.text = $"{(downRate * 100).ToString("F1")}%";
+        RankUpRateText.text = $"성공 : {(upRate * 100).ToString("F1")}%";
+        RankStayRateText.text = $"유지 : {(stayRate * 100).ToString("F1")}%";
+        RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F1")}%";
     }
 
     public void OnClickEnchant()
     {
+        if (weaponLevel >= 100 || SaveDataManager.instance.playerData.coin < weaponMetaData.requireCoin)
+            return;
+
+        SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin);
         WeaponEnchantProcess();
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
     }
 
     private void WeaponEnchantProcess()
@@ -115,6 +117,7 @@ public class TowerGameWeaponStat : MonoBehaviour
             sb.AppendLine($"rand: {rand} -> Success");
             SuccessProcess();
         }
+        UpdateUIData(weaponLevel);
         HLLogger.Log(sb.ToString());
     }
 

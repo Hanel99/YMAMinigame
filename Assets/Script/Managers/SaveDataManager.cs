@@ -332,6 +332,7 @@ public class SaveDataManager : MonoBehaviour
         // 이전 작업 취소
         saveCts?.Cancel();
         saveCts = new CancellationTokenSource();
+        HLLogger.Log("@@@ SavePlayerData 예약됨.");
 
         // 1초 대기 후 SavePlayerData 호출
         WaitAndSavePlayerData(saveCts.Token).Forget();

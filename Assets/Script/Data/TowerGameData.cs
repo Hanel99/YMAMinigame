@@ -7,11 +7,11 @@ using System;
 public class TowerGameUserStatLevelData
 {
     // 스탯 수치가 아닌 스탯의 레벨을 저장.
-    public int atkLevel { get; set; }
-    public int defLevel { get; set; }
-    public int hpLevel { get; set; }
-    public int criRateLevel { get; set; }
-    public int criDmgLevel { get; set; }
+    public int atkLevel;
+    public int defLevel;
+    public int hpLevel;
+    public int criRateLevel;
+    public int criDmgLevel;
 
     public TowerGameUserStatLevelData()
     {
@@ -40,9 +40,9 @@ public class TowerGameUserStatLevelData
 public class TowerGameUserWeaponData
 {
     // 무기 스탯이 아닌 무기 레벨을 저장
-    public int weaponLevel { get; set; }
-    public int failCount { get; set; }
-    public bool isDown { get; set; }
+    public int weaponLevel;
+    public int failCount;
+    public bool isDown;
 
 
     public TowerGameUserWeaponData()

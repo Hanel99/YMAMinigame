@@ -35,9 +35,14 @@ public class TowerGamePlayerStat : MonoBehaviour
 
     public void OnClickEnchant()
     {
+        if (statLevel >= 100 || SaveDataManager.instance.playerData.coin < GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel))
+            return;
+
+        SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel));
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);
         UpdateUIData(statType, statLevel);
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
     }
 
     private T GetValue<T>(TowerUserStatType type)

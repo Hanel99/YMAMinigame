@@ -179,7 +179,7 @@ public class PlayFabManager : MonoBehaviour
 
     IEnumerator Co_SavePlayerData(Action success, Action<string> failure)
     {
-        yield return new WaitForSeconds(3f); // 3초 대기
+        yield return new WaitForSeconds(2f); // 2초 대기
 
         saveCallCount = 0; // 저장 시 카운트 초기화
         SavePlayerDataProcess(success, failure);
@@ -190,10 +190,10 @@ public class PlayFabManager : MonoBehaviour
 
     private void SavePlayerDataProcess(Action success, Action<string> failure)
     {
-        success += () => HLLogger.Log("SavePlayerData Success", LogColor.silver);
-        failure += (str) => HLLogger.Log($"SavePlayerData Failed", LogColor.silver);
+        success += () => HLLogger.Log("PlayFab SavePlayerData Success", LogColor.silver);
+        failure += (str) => HLLogger.Log($"PlayFab SavePlayerData Failed", LogColor.silver);
 
-        HLLogger.LogWarning("@@@ Save PlayFab PlayerData Request Start", LogColor.silver);
+        HLLogger.Log("@@@ PlayFab Save Request Start", LogColor.silver);
 
         var request = new UpdateUserDataRequest
         {

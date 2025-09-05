@@ -1,17 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerGameWeaponEnchantPopup : PopupBase
 {
     public static TowerGameWeaponEnchantPopup instance { get; private set; }
     public GameObject statTab;
     public TowerGameWeaponStat weaponTab;
+    public Text ownCoinText;
     public List<TowerGamePlayerStat> playerStatList;
 
 
 
     //private
-    private bool isOnProcess = false;
     private bool isStatTab = true;
 
     private TowerGameUserStatLevelData towerGameUserStatLevelData;
@@ -32,7 +33,6 @@ public class TowerGameWeaponEnchantPopup : PopupBase
             UpdateUI();
             _OpenUI();
             OnClickStatEnchantTab();
-            isOnProcess = false;
         }
         else
         {
@@ -40,16 +40,14 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         }
     }
 
-    private void UpdateUI()
+    public void UpdateUI()
     {
-
+        ownCoinText.text = SaveDataManager.instance.playerData.coin.ToString();
     }
 
     private void UpdateGameData()
     {
         var playerLevel = SaveDataManager.instance.playerData.level;
-        var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(playerLevel);
-
 
         towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         towerGameUserWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
@@ -73,6 +71,8 @@ public class TowerGameWeaponEnchantPopup : PopupBase
     public void OnClickWeaponEnchantTab()
     {
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
+
+        weaponTab.UpdateUIData(towerGameUserWeaponData.weaponLevel);
         isStatTab = false;
         statTab.SetActive(false);
         weaponTab.gameObject.SetActive(true);

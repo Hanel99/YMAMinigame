@@ -56,8 +56,8 @@ public class TowerGameDetailStatPopup : PopupBase
         playerCriRate.text = $"{(GetValue<float>(TowerUserStatType.criRate, userStatData.criRateLevel) * 100).ToString("F1")}%";
         playerCriDmg.text = $"x{((1 + GetValue<float>(TowerUserStatType.criDmg, userStatData.criDmgLevel)) * 100).ToString("F1")}%";
 
-        weaponAtk.text = weaponMetaData.atk.ToString();
-        weaponCriDmg.text = $"x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
+        weaponAtk.text = $"+ {weaponMetaData.atk}";
+        weaponCriDmg.text = $"+ x{(weaponMetaData.criDmg * 100).ToString("F1")}%";
 
         bossAtk.text = monsterMetaData.atk.ToString();
         bossDef.text = monsterMetaData.def.ToString();
