@@ -340,8 +340,10 @@ public class IntroController : MonoBehaviour
             var loginIDPWData = SaveDataManager.instance.GetIDPW();
             PlayFabManager.instance.IntroUserLoginProcess(loginIDPWData.Item1, loginIDPWData.Item2, () =>
             {
-                state++;
-                StartIntroProcess();
+                PlayFabManager.instance.GetUserData(() =>
+                {
+                    MoveNextIntroProcess();
+                });
             }, (error) =>
             {
                 IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, () => { IntroUIManager.instance.ShowLoginPopup(); });

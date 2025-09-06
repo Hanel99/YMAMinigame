@@ -405,10 +405,12 @@ public class SaveDataManager : MonoBehaviour
             (_playerData.level == playFabData.level && _playerData.exp > playFabData.exp)))
         {
             // 로컬 데이터가 더 높으므로 아무것도 하지 않음(로컬 데이터 유지)
+            HLLogger.Log("Use Local PlayerData");
         }
         else
         {
             // 그 외의 경우 playFabData를 적용
+            HLLogger.Log("Use Server PlayFabData PlayerData");
             _playerData = playFabData;
             SavePlayerData();
         }

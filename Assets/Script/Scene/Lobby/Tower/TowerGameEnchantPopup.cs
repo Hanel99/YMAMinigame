@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
     public TowerGameWeaponStat weaponTab;
     public Text ownCoinText;
     public List<TowerGamePlayerStat> playerStatList;
+    public TowerGameEnchantResult enchantResult;
 
 
 
@@ -51,6 +53,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
         towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         towerGameUserWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
+        CloseEnchantResult();
     }
 
 
@@ -76,5 +79,17 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         isStatTab = false;
         statTab.SetActive(false);
         weaponTab.gameObject.SetActive(true);
+    }
+
+    public void ShowEnchantResult(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)
+    {
+        enchantResult.gameObject.SetActive(true);
+        enchantResult.ActResultAnimation(type, before, after, UIRefreshAction);
+    }
+
+    public void CloseEnchantResult()
+    {
+        enchantResult.gameObject.SetActive(false);
+        UpdateUI();
     }
 }

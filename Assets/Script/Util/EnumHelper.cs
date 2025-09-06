@@ -195,6 +195,14 @@ public enum TowerUserStatType
     criDmg
 }
 
+public enum TowerGameResultType
+{
+    stat,
+    up,
+    stay,
+    down,
+}
+
 
 #endregion
 

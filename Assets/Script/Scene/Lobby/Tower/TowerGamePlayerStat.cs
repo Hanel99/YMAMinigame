@@ -41,8 +41,8 @@ public class TowerGamePlayerStat : MonoBehaviour
         SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel));
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);
-        UpdateUIData(statType, statLevel);
-        TowerGameWeaponEnchantPopup.instance.UpdateUI();
+
+        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stat, $"Lv.{statLevel - 1}", $"-> Lv.{statLevel}", () => UpdateUIData(statType, statLevel));
     }
 
     private T GetValue<T>(TowerUserStatType type)

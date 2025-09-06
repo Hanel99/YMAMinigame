@@ -28,6 +28,7 @@ public class TowerGameWeaponStat : MonoBehaviour
     private StringBuilder sb = new StringBuilder();
 
 
+
     public void UpdateUIData(int weaponLevel)
     {
         this.weaponLevel = weaponLevel;
@@ -85,7 +86,6 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin);
         WeaponEnchantProcess();
-        TowerGameWeaponEnchantPopup.instance.UpdateUI();
     }
 
     private void WeaponEnchantProcess()
@@ -93,23 +93,33 @@ public class TowerGameWeaponStat : MonoBehaviour
         sb.Clear();
 
         int failCount = userWeaponData.failCount;
-        int downValue = userWeaponData.isDown ? 0 : weaponMetaData.down;
-        int total = weaponMetaData.up + weaponMetaData.stay + downValue + failCount * 10;
+        int stayValue = weaponMetaData.stay;
+        int downValue = weaponMetaData.down;
+        int total = weaponMetaData.up + stayValue + downValue + failCount * 10;
 
         int rand = Random.Range(0, total);
-        sb.AppendLine($"stay: {weaponMetaData.stay}, isDown? {userWeaponData.isDown}, down: {downValue}, up: {weaponMetaData.up} + failCount * 10: {failCount * 10} / total: {total}");
+        sb.AppendLine($"stay: {stayValue}, isDown? {userWeaponData.isDown}, down: {downValue}, up: {weaponMetaData.up} + failCount * 10: {failCount * 10} / total: {total}");
 
-        if (rand < weaponMetaData.stay)
+        if (rand < stayValue)
         {
             // 등급 유지
             sb.AppendLine($"rand: {rand} -> Stay");
             StayProcess();
         }
-        else if (rand < weaponMetaData.stay + downValue)
+        else if (rand < stayValue + downValue)
         {
-            // 등급 하락
-            sb.AppendLine($"rand: {rand} -> Down");
-            DownProcess();
+            if (userWeaponData.isDown)
+            {
+                // 이미 하락 상태면 등급 유지
+                sb.AppendLine($"rand: {rand} -> Stay (isDown)");
+                StayProcess();
+            }
+            else
+            {
+                // 등급 하락
+                sb.AppendLine($"rand: {rand} -> Down");
+                DownProcess();
+            }
         }
         else
         {
@@ -117,7 +127,7 @@ public class TowerGameWeaponStat : MonoBehaviour
             sb.AppendLine($"rand: {rand} -> Success");
             SuccessProcess();
         }
-        UpdateUIData(weaponLevel);
+        // UpdateUIData(weaponLevel);
         HLLogger.Log(sb.ToString());
     }
 
@@ -127,10 +137,12 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
+        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
     }
     private void StayProcess()
     {
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
+        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
     }
     private void DownProcess()
     {
@@ -138,5 +150,6 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
+        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
     }
 }
