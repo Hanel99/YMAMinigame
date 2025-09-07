@@ -1,7 +1,7 @@
 using System;
 
 [Serializable]
-public class TowerMonsterLevelMetaData
+public class TowerBossLevelMetaData
 {
     public int level;
     public int atk;

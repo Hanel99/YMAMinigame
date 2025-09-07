@@ -28,11 +28,12 @@ public class GameResourceManager : MonoBehaviour
     public LevelData levelData;
     public TowerWeaponLevelData towerWeaponLevelData;
     public TowerUserLevelData towerUserLevelData;
-    public TowerMonsterLevelData towerMonsterLevelData;
+    public TowerBossLevelData towerBossLevelData;
 
     public List<Sprite> cardImages = new();
     public List<Sprite> gameImages = new();
     public List<Sprite> masterImages = new();
+    public List<Sprite> towerBossImages = new();
 
     public List<GameObject> popups = new();
 
@@ -70,8 +71,8 @@ public class GameResourceManager : MonoBehaviour
                 case TowerUserLevelData data:
                     towerUserLevelData = data;
                     break;
-                case TowerMonsterLevelData data:
-                    towerMonsterLevelData = data;
+                case TowerBossLevelData data:
+                    towerBossLevelData = data;
                     break;
                 case StringData data:
                     stringData = data;
@@ -86,6 +87,7 @@ public class GameResourceManager : MonoBehaviour
         cardImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.CardImage);
         gameImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.GameImage);
         masterImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.MasterIcon);
+        towerBossImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.TowerBossImage);
 
         // Prefabs
         popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.PopupGroup);
@@ -135,6 +137,23 @@ public class GameResourceManager : MonoBehaviour
         Sprite sprite = masterImages.Find(x => x.name.Contains(str));
         if (sprite == null)
             sprite = masterImages.Find(x => x.name.Contains("Other"));
+
+        return sprite;
+    }
+
+    public Sprite GetTowerBossImage(int bossNumber, bool isWin = false, bool isLose = false)
+    {
+        Sprite sprite = null;
+        if (isWin)
+            sprite = towerBossImages.Find(x => x.name.Contains("Win"));
+        else if (isLose)
+            sprite = towerBossImages.Find(x => x.name.Contains("Lose"));
+        else
+        {
+            sprite = towerBossImages.Find(x => x.name.Contains(bossNumber.ToString("D2")));
+        }
+        if (sprite == null)
+            sprite = towerBossImages.Find(x => x.name.Contains("00"));
 
         return sprite;
     }
@@ -234,9 +253,9 @@ public class GameResourceManager : MonoBehaviour
         return (T)typeof(TowerUserLevelMetaData).GetField(type.ToString()).GetValue(GetTowerUserLevelMetaData(level));
     }
 
-    public TowerMonsterLevelMetaData GetTowerMonsterLevelMetaData(int floor)
+    public TowerBossLevelMetaData GettowerBossLevelMetaData(int floor)
     {
-        return towerMonsterLevelData.Data.Find(x => x.level == floor);
+        return towerBossLevelData.Data.Find(x => x.level == floor);
     }
 
     #endregion

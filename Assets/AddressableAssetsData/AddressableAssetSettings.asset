@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 0778b11e96af50148b159d93163ce48b
   m_currentHash:
     serializedVersion: 2
-    Hash: 9026b0c2908a6206988e8b4c644ec058
+    Hash: 00000000000000000000000000000000
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3b4ad63d7f1d6e24e897d21b47aeb8ab, type: 2}
   - {fileID: 11400000, guid: f1ba41dabae845e4aba6bd516b3d393b, type: 2}
   - {fileID: 11400000, guid: 42b4525c7b3aa3e44bc4738b575e1646, type: 2}
+  - {fileID: 11400000, guid: a19d0ccfabae63b4b8010c16ccd3eb64, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
@@ -141,6 +142,7 @@ MonoBehaviour:
     - PopupGroup
     - BGM
     - SFX
+    - TowerBoss
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 57eaff35bc7b180438742f173f23539c, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4c42d2f3e891a74aae1b3981786eca5, type: 3}
-  m_Name: TowerMonsterLevelData
+  m_Name: TowerBossLevelData
   m_EditorClassIdentifier: 
   Data:
   - level: 0

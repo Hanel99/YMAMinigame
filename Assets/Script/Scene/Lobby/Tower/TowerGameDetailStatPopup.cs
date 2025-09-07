@@ -48,11 +48,11 @@ public class TowerGameDetailStatPopup : PopupBase
         var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         var weaponStatData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponStatData.weaponLevel);
-        var monsterMetaData = GameResourceManager.instance.GetTowerMonsterLevelMetaData(floor);
+        var monsterMetaData = GameResourceManager.instance.GettowerBossLevelMetaData(floor);
 
-        playerAtk.text = playerLevel + GetValue<int>(TowerUserStatType.atk, userStatData.atkLevel).ToString();
-        playerDef.text = playerLevel + GetValue<int>(TowerUserStatType.def, userStatData.defLevel).ToString();
-        playerHp.text = playerLevel + GetValue<int>(TowerUserStatType.hp, userStatData.hpLevel).ToString();
+        playerAtk.text = $"{playerLevel + GetValue<int>(TowerUserStatType.atk, userStatData.atkLevel)}";
+        playerDef.text = $"{playerLevel + GetValue<int>(TowerUserStatType.def, userStatData.defLevel)}";
+        playerHp.text = $"{playerLevel + GetValue<int>(TowerUserStatType.hp, userStatData.hpLevel)}";
         playerCriRate.text = $"{(GetValue<float>(TowerUserStatType.criRate, userStatData.criRateLevel) * 100).ToString("F1")}%";
         playerCriDmg.text = $"x{((1 + GetValue<float>(TowerUserStatType.criDmg, userStatData.criDmgLevel)) * 100).ToString("F1")}%";
 

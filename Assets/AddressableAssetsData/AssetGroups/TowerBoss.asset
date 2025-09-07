@@ -10,50 +10,44 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: ScriptableData
+  m_Name: TowerBoss
   m_EditorClassIdentifier: 
-  m_GroupName: ScriptableData
-  m_GUID: 2c52957d86de5854a9e6d770fbc691ee
+  m_GroupName: TowerBoss
+  m_GUID: f56a678ad8a976244a4884f0562962e6
   m_SerializeEntries:
-  - m_GUID: 0ae385544a61f214fa14e02a6d46e642
-    m_Address: StringData
+  - m_GUID: 0756355914fa93d4dbfb1bc494c2021d
+    m_Address: boss01
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SOData
+    - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 43cf86da9fb74744b901a8c597f146ea
-    m_Address: CardData
+  - m_GUID: 58bca86e0e669a247986727e0c48b97f
+    m_Address: boss00
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SOData
+    - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 88c46c6c342defc41aaa8a6ca5407aee
-    m_Address: TowerWeaponLevelData
+  - m_GUID: 9fa96031013d3a449b2a9974f464e519
+    m_Address: boss02
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SOData
+    - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ce167d695ff84e344aa0c3e757aadce2
-    m_Address: TowerBossLevelData
+  - m_GUID: b704513adfbc89647b451d808f227ea6
+    m_Address: bossWin
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SOData
+    - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e8dfd0089b4b1e441be772f2937471b2
-    m_Address: TowerUserLevelData
+  - m_GUID: ef4a7f98d63b3d0459960d060828fca4
+    m_Address: bossLose
     m_ReadOnly: 0
     m_SerializedLabels:
-    - SOData
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ed40696817f983345806ad62a123cadb
-    m_Address: LevelData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SOData
+    - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 1b9c7561c9280b248b5695b8e434d63c, type: 2}
-    - {fileID: 11400000, guid: 6c619470e176aee47b79a09df7f23996, type: 2}
+    - {fileID: 11400000, guid: 0356149fde3b34c42a0a8e2536b8b751, type: 2}
+    - {fileID: 11400000, guid: 68e90701bd0a6944b9a4b01f6077e7cc, type: 2}

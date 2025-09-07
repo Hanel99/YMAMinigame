@@ -4,7 +4,6 @@ public class TowerGamePopup : PopupBase
 {
     public static TowerGamePopup instance { get; private set; }
 
-
     public Text bossTitle;
     public Image bossImage;
     public Text bossDesc;
@@ -12,7 +11,7 @@ public class TowerGamePopup : PopupBase
 
 
     //private
-    private bool isOnProcess = false;
+    private bool isOnCombat = false;
 
     private TowerGameUserStatLevelData towerGameUserStatLevelData;
     private TowerGameUserWeaponData towerGameUserWeaponData;
@@ -31,7 +30,7 @@ public class TowerGamePopup : PopupBase
             UpdateGameData();
             UpdateUI();
             _OpenUI();
-            isOnProcess = false;
+            isOnCombat = false;
         }
         else
         {
@@ -55,7 +54,7 @@ public class TowerGamePopup : PopupBase
         var floor = SaveDataManager.instance.playerData.towerFloor;
         var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(level);
-        var monsterMetaData = GameResourceManager.instance.GetTowerMonsterLevelMetaData(floor);
+        var monsterMetaData = GameResourceManager.instance.GettowerBossLevelMetaData(floor);
         var userMetaData = GameResourceManager.instance.GetTowerUserLevelMetaData(level);
 
 
@@ -65,7 +64,7 @@ public class TowerGamePopup : PopupBase
 
     public void OnClickStartCombat()
     {
-        if (isOpenCloseAnimationActing || isOnProcess) return;
+        if (isOpenCloseAnimationActing || isOnCombat) return;
 
         // isOnProcess = true;
 
@@ -86,5 +85,35 @@ public class TowerGamePopup : PopupBase
         if (isOpenCloseAnimationActing) return;
 
         LobbyUIManager.instance.ShowPopup<TowerGameDetailStatPopup>();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    private int GetRandomValue(int n)
+    {
+        // n=0일 때는 바로 반환
+        if (n == 0)
+            return (int)((uint)(n * 2654435761) % 3);
+
+        // 이전값과 현재값 계산
+        int prevValue = (int)((uint)((n - 1) * 2654435761) % 3);
+        int currValue = (int)((uint)(n * 2654435761) % 3);
+
+        // 연속되면 다른 값으로 변경
+        if (currValue == prevValue)
+        {
+            currValue = (currValue + 1 + (int)((uint)(n * 1234567) % 2)) % 3;
+        }
+
+        return currValue;
     }
 }

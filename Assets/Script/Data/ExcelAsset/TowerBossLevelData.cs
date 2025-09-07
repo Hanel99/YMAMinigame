@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [ExcelAsset(AssetPath = "AddressableResource/Data/ScriptableData")]
-public class TowerMonsterLevelData : ScriptableObject
+public class TowerBossLevelData : ScriptableObject
 {
-	public List<TowerMonsterLevelMetaData> Data; // Replace 'EntityType' to an actual type that is serializable.
+	public List<TowerBossLevelMetaData> Data; // Replace 'EntityType' to an actual type that is serializable.
 }
