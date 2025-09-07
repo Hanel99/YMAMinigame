@@ -48,7 +48,7 @@ public class TowerGameDetailStatPopup : PopupBase
         var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
         var weaponStatData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponStatData.weaponLevel);
-        var monsterMetaData = GameResourceManager.instance.GettowerBossLevelMetaData(floor);
+        var bossMetaData = GameResourceManager.instance.GetTowerBossLevelMetaData(floor);
 
         playerAtk.text = $"{playerLevel + GetValue<int>(TowerUserStatType.atk, userStatData.atkLevel)}";
         playerDef.text = $"{playerLevel + GetValue<int>(TowerUserStatType.def, userStatData.defLevel)}";
@@ -59,12 +59,12 @@ public class TowerGameDetailStatPopup : PopupBase
         weaponAtk.text = $"+ {weaponMetaData.atk}";
         weaponCriDmg.text = $"+ x{(weaponMetaData.criDmg * 100).ToString("F1")}%";
 
-        bossAtk.text = monsterMetaData.atk.ToString();
-        bossDef.text = monsterMetaData.def.ToString();
-        bossHp.text = monsterMetaData.hp.ToString();
-        bossCriRate.text = $"{(monsterMetaData.criRate * 100).ToString("F1")}%";
-        bossCriDmg.text = $"x{((1 + monsterMetaData.criDmg) * 100).ToString("F1")}%";
-        bossRewardCoin.text = monsterMetaData.rewardCoin.ToString();
+        bossAtk.text = bossMetaData.atk.ToString();
+        bossDef.text = bossMetaData.def.ToString();
+        bossHp.text = bossMetaData.hp.ToString();
+        bossCriRate.text = $"{(bossMetaData.criRate * 100).ToString("F1")}%";
+        bossCriDmg.text = $"x{((1 + bossMetaData.criDmg) * 100).ToString("F1")}%";
+        bossRewardCoin.text = bossMetaData.rewardCoin.ToString();
     }
 
     private T GetValue<T>(TowerUserStatType type, int level)

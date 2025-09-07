@@ -147,7 +147,7 @@ public class CardGameManager : MonoBehaviour
         CardGameUIManager.instance.ShowResult(tryCount, earnCoinAmount, newCardIDList);
 
         if (SaveDataManager.instance.AddExp(1))
-            DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowLevelUpPopup());
+            DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
     }
     private void CalcEarnCoinAmount()
     {

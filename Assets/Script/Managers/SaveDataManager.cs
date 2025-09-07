@@ -294,6 +294,12 @@ public class SaveDataManager : MonoBehaviour
     }
 
 
+    public void AddTowerFloor()
+    {
+        _playerData.towerFloor++;
+
+        ScheduleSavePlayerData();
+    }
 
 
 

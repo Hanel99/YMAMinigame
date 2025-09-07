@@ -20,6 +20,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0
     rewardCoin: 0
+    rewardExp: 0
   - level: 1
     atk: 1
     def: 1
@@ -27,6 +28,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 1000
+    rewardExp: 1
   - level: 2
     atk: 2
     def: 1
@@ -34,6 +36,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 2000
+    rewardExp: 1
   - level: 3
     atk: 2
     def: 2
@@ -41,6 +44,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 3000
+    rewardExp: 1
   - level: 4
     atk: 3
     def: 2
@@ -48,6 +52,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 4000
+    rewardExp: 1
   - level: 5
     atk: 3
     def: 3
@@ -55,6 +60,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 5000
+    rewardExp: 1
   - level: 6
     atk: 4
     def: 3
@@ -62,6 +68,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 6000
+    rewardExp: 1
   - level: 7
     atk: 4
     def: 4
@@ -69,6 +76,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 7000
+    rewardExp: 1
   - level: 8
     atk: 5
     def: 4
@@ -76,6 +84,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 8000
+    rewardExp: 2
   - level: 9
     atk: 5
     def: 5
@@ -83,6 +92,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 9000
+    rewardExp: 2
   - level: 10
     atk: 6
     def: 5
@@ -90,6 +100,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 10000
+    rewardExp: 2
   - level: 11
     atk: 6
     def: 6
@@ -97,6 +108,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 11000
+    rewardExp: 2
   - level: 12
     atk: 7
     def: 6
@@ -104,6 +116,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 12000
+    rewardExp: 2
   - level: 13
     atk: 7
     def: 7
@@ -111,6 +124,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 13000
+    rewardExp: 2
   - level: 14
     atk: 8
     def: 7
@@ -118,6 +132,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 14000
+    rewardExp: 2
   - level: 15
     atk: 8
     def: 8
@@ -125,6 +140,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 15000
+    rewardExp: 3
   - level: 16
     atk: 9
     def: 8
@@ -132,6 +148,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 16000
+    rewardExp: 3
   - level: 17
     atk: 9
     def: 9
@@ -139,6 +156,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 17000
+    rewardExp: 3
   - level: 18
     atk: 10
     def: 9
@@ -146,6 +164,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 18000
+    rewardExp: 3
   - level: 19
     atk: 10
     def: 10
@@ -153,6 +172,7 @@ MonoBehaviour:
     criRate: 0
     criDmg: 0.3
     rewardCoin: 19000
+    rewardExp: 3
   - level: 20
     atk: 11
     def: 10
@@ -160,6 +180,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 20000
+    rewardExp: 3
   - level: 21
     atk: 11
     def: 11
@@ -167,6 +188,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 21000
+    rewardExp: 3
   - level: 22
     atk: 12
     def: 11
@@ -174,6 +196,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 22000
+    rewardExp: 4
   - level: 23
     atk: 12
     def: 12
@@ -181,6 +204,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 23000
+    rewardExp: 4
   - level: 24
     atk: 13
     def: 12
@@ -188,6 +212,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 24000
+    rewardExp: 4
   - level: 25
     atk: 13
     def: 13
@@ -195,6 +220,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 25000
+    rewardExp: 4
   - level: 26
     atk: 14
     def: 13
@@ -202,6 +228,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 26000
+    rewardExp: 4
   - level: 27
     atk: 14
     def: 14
@@ -209,6 +236,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 27000
+    rewardExp: 4
   - level: 28
     atk: 15
     def: 14
@@ -216,6 +244,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 28000
+    rewardExp: 4
   - level: 29
     atk: 15
     def: 15
@@ -223,6 +252,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 29000
+    rewardExp: 5
   - level: 30
     atk: 16
     def: 15
@@ -230,6 +260,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 30000
+    rewardExp: 5
   - level: 31
     atk: 16
     def: 16
@@ -237,6 +268,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 31000
+    rewardExp: 5
   - level: 32
     atk: 17
     def: 16
@@ -244,6 +276,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 32000
+    rewardExp: 5
   - level: 33
     atk: 17
     def: 17
@@ -251,6 +284,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 33000
+    rewardExp: 5
   - level: 34
     atk: 18
     def: 17
@@ -258,6 +292,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 34000
+    rewardExp: 5
   - level: 35
     atk: 18
     def: 18
@@ -265,6 +300,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 35000
+    rewardExp: 5
   - level: 36
     atk: 19
     def: 18
@@ -272,6 +308,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 36000
+    rewardExp: 6
   - level: 37
     atk: 19
     def: 19
@@ -279,6 +316,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 37000
+    rewardExp: 6
   - level: 38
     atk: 20
     def: 19
@@ -286,6 +324,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 38000
+    rewardExp: 6
   - level: 39
     atk: 20
     def: 20
@@ -293,6 +332,7 @@ MonoBehaviour:
     criRate: 0.1
     criDmg: 0.4
     rewardCoin: 39000
+    rewardExp: 6
   - level: 40
     atk: 21
     def: 20
@@ -300,6 +340,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 40000
+    rewardExp: 6
   - level: 41
     atk: 22
     def: 21
@@ -307,6 +348,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 41000
+    rewardExp: 6
   - level: 42
     atk: 23
     def: 21
@@ -314,6 +356,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 42000
+    rewardExp: 6
   - level: 43
     atk: 24
     def: 22
@@ -321,6 +364,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 43000
+    rewardExp: 7
   - level: 44
     atk: 25
     def: 22
@@ -328,6 +372,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 44000
+    rewardExp: 7
   - level: 45
     atk: 26
     def: 23
@@ -335,6 +380,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 45000
+    rewardExp: 7
   - level: 46
     atk: 27
     def: 23
@@ -342,6 +388,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 46000
+    rewardExp: 7
   - level: 47
     atk: 28
     def: 24
@@ -349,6 +396,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 47000
+    rewardExp: 7
   - level: 48
     atk: 29
     def: 24
@@ -356,6 +404,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 48000
+    rewardExp: 7
   - level: 49
     atk: 30
     def: 25
@@ -363,6 +412,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 49000
+    rewardExp: 7
   - level: 50
     atk: 31
     def: 25
@@ -370,6 +420,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 75000
+    rewardExp: 8
   - level: 51
     atk: 32
     def: 26
@@ -377,6 +428,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 76500
+    rewardExp: 8
   - level: 52
     atk: 33
     def: 26
@@ -384,6 +436,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 78000
+    rewardExp: 8
   - level: 53
     atk: 34
     def: 27
@@ -391,6 +444,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 79500
+    rewardExp: 8
   - level: 54
     atk: 35
     def: 27
@@ -398,6 +452,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 81000
+    rewardExp: 8
   - level: 55
     atk: 36
     def: 28
@@ -405,6 +460,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 82500
+    rewardExp: 8
   - level: 56
     atk: 37
     def: 28
@@ -412,6 +468,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 84000
+    rewardExp: 8
   - level: 57
     atk: 38
     def: 29
@@ -419,6 +476,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 85500
+    rewardExp: 9
   - level: 58
     atk: 39
     def: 29
@@ -426,6 +484,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 87000
+    rewardExp: 9
   - level: 59
     atk: 40
     def: 30
@@ -433,6 +492,7 @@ MonoBehaviour:
     criRate: 0.2
     criDmg: 0.5
     rewardCoin: 88500
+    rewardExp: 9
   - level: 60
     atk: 41
     def: 30
@@ -440,6 +500,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.5
     rewardCoin: 90000
+    rewardExp: 9
   - level: 61
     atk: 42
     def: 31
@@ -447,6 +508,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 91500
+    rewardExp: 9
   - level: 62
     atk: 43
     def: 31
@@ -454,6 +516,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 93000
+    rewardExp: 9
   - level: 63
     atk: 44
     def: 32
@@ -461,6 +524,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 94500
+    rewardExp: 9
   - level: 64
     atk: 45
     def: 32
@@ -468,6 +532,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 96000
+    rewardExp: 10
   - level: 65
     atk: 46
     def: 33
@@ -475,6 +540,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 97500
+    rewardExp: 10
   - level: 66
     atk: 47
     def: 33
@@ -482,6 +548,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 99000
+    rewardExp: 10
   - level: 67
     atk: 48
     def: 34
@@ -489,6 +556,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 100500
+    rewardExp: 10
   - level: 68
     atk: 49
     def: 34
@@ -496,6 +564,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 102000
+    rewardExp: 10
   - level: 69
     atk: 50
     def: 35
@@ -503,6 +572,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 103500
+    rewardExp: 10
   - level: 70
     atk: 51
     def: 35
@@ -510,6 +580,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 105000
+    rewardExp: 10
   - level: 71
     atk: 52
     def: 36
@@ -517,6 +588,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 106500
+    rewardExp: 11
   - level: 72
     atk: 53
     def: 36
@@ -524,6 +596,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 108000
+    rewardExp: 11
   - level: 73
     atk: 54
     def: 37
@@ -531,6 +604,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 109500
+    rewardExp: 11
   - level: 74
     atk: 55
     def: 37
@@ -538,6 +612,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 111000
+    rewardExp: 11
   - level: 75
     atk: 56
     def: 38
@@ -545,6 +620,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 112500
+    rewardExp: 11
   - level: 76
     atk: 57
     def: 38
@@ -552,6 +628,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 114000
+    rewardExp: 11
   - level: 77
     atk: 58
     def: 39
@@ -559,6 +636,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 115500
+    rewardExp: 11
   - level: 78
     atk: 59
     def: 39
@@ -566,6 +644,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 117000
+    rewardExp: 12
   - level: 79
     atk: 60
     def: 40
@@ -573,6 +652,7 @@ MonoBehaviour:
     criRate: 0.3
     criDmg: 0.6
     rewardCoin: 118500
+    rewardExp: 12
   - level: 80
     atk: 61
     def: 40
@@ -580,6 +660,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 120000
+    rewardExp: 12
   - level: 81
     atk: 62
     def: 41
@@ -587,6 +668,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 121500
+    rewardExp: 12
   - level: 82
     atk: 63
     def: 41
@@ -594,6 +676,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 123000
+    rewardExp: 12
   - level: 83
     atk: 64
     def: 42
@@ -601,6 +684,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 124500
+    rewardExp: 12
   - level: 84
     atk: 65
     def: 42
@@ -608,6 +692,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 126000
+    rewardExp: 12
   - level: 85
     atk: 66
     def: 43
@@ -615,6 +700,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 127500
+    rewardExp: 13
   - level: 86
     atk: 67
     def: 43
@@ -622,6 +708,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 129000
+    rewardExp: 13
   - level: 87
     atk: 68
     def: 44
@@ -629,6 +716,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 130500
+    rewardExp: 13
   - level: 88
     atk: 69
     def: 44
@@ -636,6 +724,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 132000
+    rewardExp: 13
   - level: 89
     atk: 70
     def: 45
@@ -643,6 +732,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 133500
+    rewardExp: 13
   - level: 90
     atk: 71
     def: 45
@@ -650,6 +740,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 135000
+    rewardExp: 13
   - level: 91
     atk: 72
     def: 46
@@ -657,6 +748,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 136500
+    rewardExp: 13
   - level: 92
     atk: 73
     def: 46
@@ -664,6 +756,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 138000
+    rewardExp: 14
   - level: 93
     atk: 74
     def: 47
@@ -671,6 +764,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 139500
+    rewardExp: 14
   - level: 94
     atk: 75
     def: 47
@@ -678,6 +772,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 141000
+    rewardExp: 14
   - level: 95
     atk: 76
     def: 48
@@ -685,6 +780,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 142500
+    rewardExp: 14
   - level: 96
     atk: 77
     def: 48
@@ -692,6 +788,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 144000
+    rewardExp: 14
   - level: 97
     atk: 78
     def: 49
@@ -699,6 +796,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 145500
+    rewardExp: 14
   - level: 98
     atk: 79
     def: 49
@@ -706,6 +804,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 147000
+    rewardExp: 14
   - level: 99
     atk: 80
     def: 50
@@ -713,6 +812,7 @@ MonoBehaviour:
     criRate: 0.4
     criDmg: 0.7
     rewardCoin: 148500
+    rewardExp: 15
   - level: 100
     atk: 82
     def: 50
@@ -720,6 +820,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 200000
+    rewardExp: 15
   - level: 101
     atk: 84
     def: 51
@@ -727,6 +828,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 202000
+    rewardExp: 15
   - level: 102
     atk: 86
     def: 51
@@ -734,6 +836,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 204000
+    rewardExp: 15
   - level: 103
     atk: 88
     def: 52
@@ -741,6 +844,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 206000
+    rewardExp: 15
   - level: 104
     atk: 90
     def: 52
@@ -748,6 +852,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 208000
+    rewardExp: 15
   - level: 105
     atk: 92
     def: 53
@@ -755,6 +860,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 210000
+    rewardExp: 15
   - level: 106
     atk: 94
     def: 53
@@ -762,6 +868,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 212000
+    rewardExp: 16
   - level: 107
     atk: 96
     def: 54
@@ -769,6 +876,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 214000
+    rewardExp: 16
   - level: 108
     atk: 98
     def: 54
@@ -776,6 +884,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 216000
+    rewardExp: 16
   - level: 109
     atk: 100
     def: 55
@@ -783,6 +892,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 218000
+    rewardExp: 16
   - level: 110
     atk: 102
     def: 55
@@ -790,6 +900,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 220000
+    rewardExp: 16
   - level: 111
     atk: 104
     def: 56
@@ -797,6 +908,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 222000
+    rewardExp: 16
   - level: 112
     atk: 106
     def: 56
@@ -804,6 +916,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 224000
+    rewardExp: 16
   - level: 113
     atk: 108
     def: 57
@@ -811,6 +924,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 226000
+    rewardExp: 17
   - level: 114
     atk: 110
     def: 57
@@ -818,6 +932,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 228000
+    rewardExp: 17
   - level: 115
     atk: 112
     def: 58
@@ -825,6 +940,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 230000
+    rewardExp: 17
   - level: 116
     atk: 114
     def: 58
@@ -832,6 +948,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 232000
+    rewardExp: 17
   - level: 117
     atk: 116
     def: 59
@@ -839,6 +956,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 234000
+    rewardExp: 17
   - level: 118
     atk: 118
     def: 59
@@ -846,6 +964,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 236000
+    rewardExp: 17
   - level: 119
     atk: 120
     def: 60
@@ -853,6 +972,7 @@ MonoBehaviour:
     criRate: 0.5
     criDmg: 0.8
     rewardCoin: 238000
+    rewardExp: 17
   - level: 120
     atk: 122
     def: 60
@@ -860,6 +980,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 240000
+    rewardExp: 18
   - level: 121
     atk: 124
     def: 61
@@ -867,6 +988,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 242000
+    rewardExp: 18
   - level: 122
     atk: 126
     def: 61
@@ -874,6 +996,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 244000
+    rewardExp: 18
   - level: 123
     atk: 128
     def: 62
@@ -881,6 +1004,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 246000
+    rewardExp: 18
   - level: 124
     atk: 130
     def: 62
@@ -888,6 +1012,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 248000
+    rewardExp: 18
   - level: 125
     atk: 132
     def: 63
@@ -895,6 +1020,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 250000
+    rewardExp: 18
   - level: 126
     atk: 134
     def: 63
@@ -902,6 +1028,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 252000
+    rewardExp: 18
   - level: 127
     atk: 136
     def: 64
@@ -909,6 +1036,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 254000
+    rewardExp: 19
   - level: 128
     atk: 138
     def: 64
@@ -916,6 +1044,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 256000
+    rewardExp: 19
   - level: 129
     atk: 140
     def: 65
@@ -923,6 +1052,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 258000
+    rewardExp: 19
   - level: 130
     atk: 142
     def: 65
@@ -930,6 +1060,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 260000
+    rewardExp: 19
   - level: 131
     atk: 144
     def: 66
@@ -937,6 +1068,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 262000
+    rewardExp: 19
   - level: 132
     atk: 146
     def: 66
@@ -944,6 +1076,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 264000
+    rewardExp: 19
   - level: 133
     atk: 148
     def: 67
@@ -951,6 +1084,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 266000
+    rewardExp: 19
   - level: 134
     atk: 150
     def: 67
@@ -958,6 +1092,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 268000
+    rewardExp: 20
   - level: 135
     atk: 152
     def: 68
@@ -965,6 +1100,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 270000
+    rewardExp: 20
   - level: 136
     atk: 154
     def: 68
@@ -972,6 +1108,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 272000
+    rewardExp: 20
   - level: 137
     atk: 156
     def: 69
@@ -979,6 +1116,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 274000
+    rewardExp: 20
   - level: 138
     atk: 158
     def: 69
@@ -986,6 +1124,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 276000
+    rewardExp: 20
   - level: 139
     atk: 160
     def: 70
@@ -993,6 +1132,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 0.9
     rewardCoin: 278000
+    rewardExp: 20
   - level: 140
     atk: 162
     def: 70
@@ -1000,6 +1140,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 280000
+    rewardExp: 20
   - level: 141
     atk: 164
     def: 71
@@ -1007,6 +1148,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 282000
+    rewardExp: 21
   - level: 142
     atk: 166
     def: 71
@@ -1014,6 +1156,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 284000
+    rewardExp: 21
   - level: 143
     atk: 168
     def: 72
@@ -1021,6 +1164,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 286000
+    rewardExp: 21
   - level: 144
     atk: 170
     def: 72
@@ -1028,6 +1172,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 288000
+    rewardExp: 21
   - level: 145
     atk: 172
     def: 73
@@ -1035,6 +1180,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 290000
+    rewardExp: 21
   - level: 146
     atk: 174
     def: 73
@@ -1042,6 +1188,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 292000
+    rewardExp: 21
   - level: 147
     atk: 176
     def: 74
@@ -1049,6 +1196,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 294000
+    rewardExp: 21
   - level: 148
     atk: 178
     def: 74
@@ -1056,6 +1204,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 296000
+    rewardExp: 22
   - level: 149
     atk: 180
     def: 75
@@ -1063,6 +1212,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 298000
+    rewardExp: 22
   - level: 150
     atk: 182
     def: 75
@@ -1070,6 +1220,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 375000
+    rewardExp: 22
   - level: 151
     atk: 184
     def: 76
@@ -1077,6 +1228,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 377500
+    rewardExp: 22
   - level: 152
     atk: 186
     def: 76
@@ -1084,6 +1236,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 380000
+    rewardExp: 22
   - level: 153
     atk: 188
     def: 77
@@ -1091,6 +1244,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 382500
+    rewardExp: 22
   - level: 154
     atk: 190
     def: 77
@@ -1098,6 +1252,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 385000
+    rewardExp: 22
   - level: 155
     atk: 192
     def: 78
@@ -1105,6 +1260,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 387500
+    rewardExp: 23
   - level: 156
     atk: 194
     def: 78
@@ -1112,6 +1268,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 390000
+    rewardExp: 23
   - level: 157
     atk: 196
     def: 79
@@ -1119,6 +1276,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 392500
+    rewardExp: 23
   - level: 158
     atk: 198
     def: 79
@@ -1126,6 +1284,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 395000
+    rewardExp: 23
   - level: 159
     atk: 200
     def: 80
@@ -1133,6 +1292,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1
     rewardCoin: 397500
+    rewardExp: 23
   - level: 160
     atk: 202
     def: 80
@@ -1140,6 +1300,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 400000
+    rewardExp: 23
   - level: 161
     atk: 204
     def: 81
@@ -1147,6 +1308,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 402500
+    rewardExp: 23
   - level: 162
     atk: 206
     def: 81
@@ -1154,6 +1316,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 405000
+    rewardExp: 24
   - level: 163
     atk: 208
     def: 82
@@ -1161,6 +1324,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 407500
+    rewardExp: 24
   - level: 164
     atk: 210
     def: 82
@@ -1168,6 +1332,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 410000
+    rewardExp: 24
   - level: 165
     atk: 212
     def: 83
@@ -1175,6 +1340,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 412500
+    rewardExp: 24
   - level: 166
     atk: 214
     def: 83
@@ -1182,6 +1348,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 415000
+    rewardExp: 24
   - level: 167
     atk: 216
     def: 84
@@ -1189,6 +1356,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 417500
+    rewardExp: 24
   - level: 168
     atk: 218
     def: 84
@@ -1196,6 +1364,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 420000
+    rewardExp: 24
   - level: 169
     atk: 220
     def: 85
@@ -1203,6 +1372,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 422500
+    rewardExp: 25
   - level: 170
     atk: 222
     def: 85
@@ -1210,6 +1380,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 425000
+    rewardExp: 25
   - level: 171
     atk: 224
     def: 86
@@ -1217,6 +1388,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 427500
+    rewardExp: 25
   - level: 172
     atk: 226
     def: 86
@@ -1224,6 +1396,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 430000
+    rewardExp: 25
   - level: 173
     atk: 228
     def: 87
@@ -1231,6 +1404,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 432500
+    rewardExp: 25
   - level: 174
     atk: 230
     def: 87
@@ -1238,6 +1412,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 435000
+    rewardExp: 25
   - level: 175
     atk: 232
     def: 88
@@ -1245,6 +1420,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 437500
+    rewardExp: 25
   - level: 176
     atk: 234
     def: 88
@@ -1252,6 +1428,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 440000
+    rewardExp: 26
   - level: 177
     atk: 236
     def: 89
@@ -1259,6 +1436,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 442500
+    rewardExp: 26
   - level: 178
     atk: 238
     def: 89
@@ -1266,6 +1444,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 445000
+    rewardExp: 26
   - level: 179
     atk: 240
     def: 90
@@ -1273,6 +1452,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.1
     rewardCoin: 447500
+    rewardExp: 26
   - level: 180
     atk: 242
     def: 90
@@ -1280,6 +1460,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 450000
+    rewardExp: 26
   - level: 181
     atk: 244
     def: 91
@@ -1287,6 +1468,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 452500
+    rewardExp: 26
   - level: 182
     atk: 246
     def: 91
@@ -1294,6 +1476,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 455000
+    rewardExp: 26
   - level: 183
     atk: 248
     def: 92
@@ -1301,6 +1484,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 457500
+    rewardExp: 27
   - level: 184
     atk: 250
     def: 92
@@ -1308,6 +1492,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 460000
+    rewardExp: 27
   - level: 185
     atk: 252
     def: 93
@@ -1315,6 +1500,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 462500
+    rewardExp: 27
   - level: 186
     atk: 254
     def: 93
@@ -1322,6 +1508,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 465000
+    rewardExp: 27
   - level: 187
     atk: 256
     def: 94
@@ -1329,6 +1516,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 467500
+    rewardExp: 27
   - level: 188
     atk: 258
     def: 94
@@ -1336,6 +1524,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 470000
+    rewardExp: 27
   - level: 189
     atk: 260
     def: 95
@@ -1343,6 +1532,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 472500
+    rewardExp: 27
   - level: 190
     atk: 262
     def: 95
@@ -1350,6 +1540,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 475000
+    rewardExp: 28
   - level: 191
     atk: 264
     def: 96
@@ -1357,6 +1548,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 477500
+    rewardExp: 28
   - level: 192
     atk: 266
     def: 96
@@ -1364,6 +1556,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 480000
+    rewardExp: 28
   - level: 193
     atk: 268
     def: 97
@@ -1371,6 +1564,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 482500
+    rewardExp: 28
   - level: 194
     atk: 270
     def: 97
@@ -1378,6 +1572,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 485000
+    rewardExp: 28
   - level: 195
     atk: 272
     def: 98
@@ -1385,6 +1580,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 487500
+    rewardExp: 28
   - level: 196
     atk: 274
     def: 98
@@ -1392,6 +1588,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 490000
+    rewardExp: 28
   - level: 197
     atk: 276
     def: 99
@@ -1399,6 +1596,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 492500
+    rewardExp: 29
   - level: 198
     atk: 278
     def: 99
@@ -1406,6 +1604,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 495000
+    rewardExp: 29
   - level: 199
     atk: 280
     def: 100
@@ -1413,6 +1612,7 @@ MonoBehaviour:
     criRate: 0.6
     criDmg: 1.2
     rewardCoin: 497500
+    rewardExp: 29
   - level: 200
     atk: 283
     def: 101
@@ -1420,6 +1620,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 600000
+    rewardExp: 29
   - level: 201
     atk: 286
     def: 102
@@ -1427,6 +1628,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 603000
+    rewardExp: 29
   - level: 202
     atk: 289
     def: 103
@@ -1434,6 +1636,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 606000
+    rewardExp: 29
   - level: 203
     atk: 292
     def: 104
@@ -1441,6 +1644,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 609000
+    rewardExp: 29
   - level: 204
     atk: 295
     def: 105
@@ -1448,6 +1652,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 612000
+    rewardExp: 30
   - level: 205
     atk: 298
     def: 106
@@ -1455,6 +1660,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 615000
+    rewardExp: 30
   - level: 206
     atk: 301
     def: 107
@@ -1462,6 +1668,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 618000
+    rewardExp: 30
   - level: 207
     atk: 304
     def: 108
@@ -1469,6 +1676,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 621000
+    rewardExp: 30
   - level: 208
     atk: 307
     def: 109
@@ -1476,6 +1684,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 624000
+    rewardExp: 30
   - level: 209
     atk: 310
     def: 110
@@ -1483,6 +1692,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 627000
+    rewardExp: 30
   - level: 210
     atk: 313
     def: 111
@@ -1490,6 +1700,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 630000
+    rewardExp: 30
   - level: 211
     atk: 316
     def: 112
@@ -1497,6 +1708,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 633000
+    rewardExp: 31
   - level: 212
     atk: 319
     def: 113
@@ -1504,6 +1716,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 636000
+    rewardExp: 31
   - level: 213
     atk: 322
     def: 114
@@ -1511,6 +1724,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 639000
+    rewardExp: 31
   - level: 214
     atk: 325
     def: 115
@@ -1518,6 +1732,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 642000
+    rewardExp: 31
   - level: 215
     atk: 328
     def: 116
@@ -1525,6 +1740,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 645000
+    rewardExp: 31
   - level: 216
     atk: 331
     def: 117
@@ -1532,6 +1748,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 648000
+    rewardExp: 31
   - level: 217
     atk: 334
     def: 118
@@ -1539,6 +1756,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 651000
+    rewardExp: 31
   - level: 218
     atk: 337
     def: 119
@@ -1546,6 +1764,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 654000
+    rewardExp: 32
   - level: 219
     atk: 340
     def: 120
@@ -1553,6 +1772,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.4
     rewardCoin: 657000
+    rewardExp: 32
   - level: 220
     atk: 343
     def: 121
@@ -1560,6 +1780,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 660000
+    rewardExp: 32
   - level: 221
     atk: 346
     def: 122
@@ -1567,6 +1788,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 663000
+    rewardExp: 32
   - level: 222
     atk: 349
     def: 123
@@ -1574,6 +1796,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 666000
+    rewardExp: 32
   - level: 223
     atk: 352
     def: 124
@@ -1581,6 +1804,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 669000
+    rewardExp: 32
   - level: 224
     atk: 355
     def: 125
@@ -1588,6 +1812,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 672000
+    rewardExp: 32
   - level: 225
     atk: 358
     def: 126
@@ -1595,6 +1820,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 675000
+    rewardExp: 33
   - level: 226
     atk: 361
     def: 127
@@ -1602,6 +1828,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 678000
+    rewardExp: 33
   - level: 227
     atk: 364
     def: 128
@@ -1609,6 +1836,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 681000
+    rewardExp: 33
   - level: 228
     atk: 367
     def: 129
@@ -1616,6 +1844,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 684000
+    rewardExp: 33
   - level: 229
     atk: 370
     def: 130
@@ -1623,6 +1852,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 687000
+    rewardExp: 33
   - level: 230
     atk: 373
     def: 131
@@ -1630,6 +1860,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 690000
+    rewardExp: 33
   - level: 231
     atk: 376
     def: 132
@@ -1637,6 +1868,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 693000
+    rewardExp: 33
   - level: 232
     atk: 379
     def: 133
@@ -1644,6 +1876,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 696000
+    rewardExp: 34
   - level: 233
     atk: 382
     def: 134
@@ -1651,6 +1884,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 699000
+    rewardExp: 34
   - level: 234
     atk: 385
     def: 135
@@ -1658,6 +1892,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 702000
+    rewardExp: 34
   - level: 235
     atk: 388
     def: 136
@@ -1665,6 +1900,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 705000
+    rewardExp: 34
   - level: 236
     atk: 391
     def: 137
@@ -1672,6 +1908,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 708000
+    rewardExp: 34
   - level: 237
     atk: 394
     def: 138
@@ -1679,6 +1916,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 711000
+    rewardExp: 34
   - level: 238
     atk: 397
     def: 139
@@ -1686,6 +1924,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 714000
+    rewardExp: 34
   - level: 239
     atk: 400
     def: 140
@@ -1693,6 +1932,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.6
     rewardCoin: 717000
+    rewardExp: 35
   - level: 240
     atk: 403
     def: 141
@@ -1700,6 +1940,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 720000
+    rewardExp: 35
   - level: 241
     atk: 406
     def: 142
@@ -1707,6 +1948,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 723000
+    rewardExp: 35
   - level: 242
     atk: 409
     def: 143
@@ -1714,6 +1956,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 726000
+    rewardExp: 35
   - level: 243
     atk: 412
     def: 144
@@ -1721,6 +1964,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 729000
+    rewardExp: 35
   - level: 244
     atk: 415
     def: 145
@@ -1728,6 +1972,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 732000
+    rewardExp: 35
   - level: 245
     atk: 418
     def: 146
@@ -1735,6 +1980,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 735000
+    rewardExp: 35
   - level: 246
     atk: 421
     def: 147
@@ -1742,6 +1988,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 738000
+    rewardExp: 36
   - level: 247
     atk: 424
     def: 148
@@ -1749,6 +1996,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 741000
+    rewardExp: 36
   - level: 248
     atk: 427
     def: 149
@@ -1756,6 +2004,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 744000
+    rewardExp: 36
   - level: 249
     atk: 430
     def: 150
@@ -1763,6 +2012,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 747000
+    rewardExp: 36
   - level: 250
     atk: 434
     def: 150
@@ -1770,6 +2020,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 937500
+    rewardExp: 36
   - level: 251
     atk: 438
     def: 150
@@ -1777,6 +2028,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 941501
+    rewardExp: 36
   - level: 252
     atk: 442
     def: 150
@@ -1784,6 +2036,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 945504
+    rewardExp: 36
   - level: 253
     atk: 446
     def: 150
@@ -1791,6 +2044,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 949509
+    rewardExp: 37
   - level: 254
     atk: 450
     def: 150
@@ -1798,6 +2052,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 953516
+    rewardExp: 37
   - level: 255
     atk: 454
     def: 150
@@ -1805,6 +2060,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 957525
+    rewardExp: 37
   - level: 256
     atk: 458
     def: 150
@@ -1812,6 +2068,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 961536
+    rewardExp: 37
   - level: 257
     atk: 462
     def: 150
@@ -1819,6 +2076,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 965549
+    rewardExp: 37
   - level: 258
     atk: 466
     def: 150
@@ -1826,6 +2084,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 969564
+    rewardExp: 37
   - level: 259
     atk: 470
     def: 150
@@ -1833,6 +2092,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 1.8
     rewardCoin: 973581
+    rewardExp: 37
   - level: 260
     atk: 474
     def: 150
@@ -1840,6 +2100,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 977600
+    rewardExp: 38
   - level: 261
     atk: 478
     def: 150
@@ -1847,6 +2108,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 981621
+    rewardExp: 38
   - level: 262
     atk: 482
     def: 150
@@ -1854,6 +2116,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 985644
+    rewardExp: 38
   - level: 263
     atk: 486
     def: 150
@@ -1861,6 +2124,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 989669
+    rewardExp: 38
   - level: 264
     atk: 490
     def: 150
@@ -1868,6 +2132,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 993696
+    rewardExp: 38
   - level: 265
     atk: 494
     def: 150
@@ -1875,6 +2140,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 997725
+    rewardExp: 38
   - level: 266
     atk: 498
     def: 150
@@ -1882,6 +2148,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1001756
+    rewardExp: 38
   - level: 267
     atk: 502
     def: 150
@@ -1889,6 +2156,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1005789
+    rewardExp: 39
   - level: 268
     atk: 506
     def: 150
@@ -1896,6 +2164,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1009824
+    rewardExp: 39
   - level: 269
     atk: 510
     def: 150
@@ -1903,6 +2172,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1013861
+    rewardExp: 39
   - level: 270
     atk: 514
     def: 150
@@ -1910,6 +2180,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1017900
+    rewardExp: 39
   - level: 271
     atk: 518
     def: 150
@@ -1917,6 +2188,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1021941
+    rewardExp: 39
   - level: 272
     atk: 522
     def: 150
@@ -1924,6 +2196,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1025984
+    rewardExp: 39
   - level: 273
     atk: 526
     def: 150
@@ -1931,6 +2204,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1030029
+    rewardExp: 39
   - level: 274
     atk: 530
     def: 150
@@ -1938,6 +2212,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1034076
+    rewardExp: 40
   - level: 275
     atk: 534
     def: 150
@@ -1945,6 +2220,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1038125
+    rewardExp: 40
   - level: 276
     atk: 538
     def: 150
@@ -1952,6 +2228,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1042176
+    rewardExp: 40
   - level: 277
     atk: 542
     def: 150
@@ -1959,6 +2236,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1046229
+    rewardExp: 40
   - level: 278
     atk: 546
     def: 150
@@ -1966,6 +2244,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1050284
+    rewardExp: 40
   - level: 279
     atk: 550
     def: 150
@@ -1973,6 +2252,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2
     rewardCoin: 1054341
+    rewardExp: 40
   - level: 280
     atk: 554
     def: 150
@@ -1980,6 +2260,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1058400
+    rewardExp: 40
   - level: 281
     atk: 558
     def: 150
@@ -1987,6 +2268,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1062461
+    rewardExp: 41
   - level: 282
     atk: 562
     def: 150
@@ -1994,6 +2276,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1066524
+    rewardExp: 41
   - level: 283
     atk: 566
     def: 150
@@ -2001,6 +2284,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1070589
+    rewardExp: 41
   - level: 284
     atk: 570
     def: 150
@@ -2008,6 +2292,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1074656
+    rewardExp: 41
   - level: 285
     atk: 574
     def: 150
@@ -2015,6 +2300,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1078725
+    rewardExp: 41
   - level: 286
     atk: 578
     def: 150
@@ -2022,6 +2308,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1082796
+    rewardExp: 41
   - level: 287
     atk: 582
     def: 150
@@ -2029,6 +2316,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1086869
+    rewardExp: 41
   - level: 288
     atk: 586
     def: 150
@@ -2036,6 +2324,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1090944
+    rewardExp: 42
   - level: 289
     atk: 590
     def: 150
@@ -2043,6 +2332,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1095021
+    rewardExp: 42
   - level: 290
     atk: 594
     def: 150
@@ -2050,6 +2340,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1099100
+    rewardExp: 42
   - level: 291
     atk: 598
     def: 150
@@ -2057,6 +2348,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1103181
+    rewardExp: 42
   - level: 292
     atk: 602
     def: 150
@@ -2064,6 +2356,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1107264
+    rewardExp: 42
   - level: 293
     atk: 606
     def: 150
@@ -2071,6 +2364,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1111349
+    rewardExp: 42
   - level: 294
     atk: 610
     def: 150
@@ -2078,6 +2372,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1115436
+    rewardExp: 42
   - level: 295
     atk: 614
     def: 150
@@ -2085,6 +2380,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1119525
+    rewardExp: 43
   - level: 296
     atk: 618
     def: 150
@@ -2092,6 +2388,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1123616
+    rewardExp: 43
   - level: 297
     atk: 622
     def: 150
@@ -2099,6 +2396,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1127709
+    rewardExp: 43
   - level: 298
     atk: 626
     def: 150
@@ -2106,6 +2404,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1131804
+    rewardExp: 43
   - level: 299
     atk: 630
     def: 150
@@ -2113,6 +2412,7 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.2
     rewardCoin: 1135901
+    rewardExp: 43
   - level: 300
     atk: 634
     def: 150
@@ -2120,3 +2420,4 @@ MonoBehaviour:
     criRate: 0.8
     criDmg: 2.4
     rewardCoin: 1140000
+    rewardExp: 43

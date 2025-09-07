@@ -10,4 +10,5 @@ public class TowerBossLevelMetaData
     public float criRate;
     public float criDmg;
     public int rewardCoin;
+    public int rewardExp;
 }

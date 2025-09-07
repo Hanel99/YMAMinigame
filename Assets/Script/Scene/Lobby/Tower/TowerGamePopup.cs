@@ -13,8 +13,8 @@ public class TowerGamePopup : PopupBase
     //private
     private bool isOnCombat = false;
 
-    private TowerGameUserStatLevelData towerGameUserStatLevelData;
-    private TowerGameUserWeaponData towerGameUserWeaponData;
+    private PlayerData playerData;
+    private int floor;
 
 
     protected override void OnAwake()
@@ -27,10 +27,8 @@ public class TowerGamePopup : PopupBase
     {
         if (enable)
         {
-            UpdateGameData();
-            UpdateUI();
+            UpdatePopupData();
             _OpenUI();
-            isOnCombat = false;
         }
         else
         {
@@ -38,38 +36,60 @@ public class TowerGamePopup : PopupBase
         }
     }
 
-    private void UpdateUI()
-    {
-        bossTitle.text = "";
-        bossImage.sprite = null;
-        bossImage.SetNativeSize();
 
-        bossDesc.text = "";
+    public void UpdatePopupData()
+    {
+        UpdateGameData();
+        UpdateUI();
+        isOnCombat = false;
     }
+
 
     private void UpdateGameData()
     {
-
-        var level = SaveDataManager.instance.playerData.level;
-        var floor = SaveDataManager.instance.playerData.towerFloor;
-        var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
-        var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(level);
-        var monsterMetaData = GameResourceManager.instance.GettowerBossLevelMetaData(floor);
-        var userMetaData = GameResourceManager.instance.GetTowerUserLevelMetaData(level);
-
-
-        towerGameUserStatLevelData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;
-        towerGameUserWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
+        playerData = SaveDataManager.instance.playerData;
+        floor = SaveDataManager.instance.playerData.towerFloor;
     }
+
+    private void UpdateUI()
+    {
+        bossTitle.text = $"{floor} 층 보스";
+        bossImage.sprite = GameResourceManager.instance.GetTowerBossImage(GetRandomValue(floor), false, false);
+        bossImage.SetNativeSize();
+
+        bossDesc.text = "보스 설명 텍스트";
+    }
+
+    private int GetRandomValue(int n)
+    {
+        // n=0일 때는 바로 반환
+        if (n == 0)
+            return (int)((uint)(n * 2654435761) % 3);
+
+        // 이전값과 현재값 계산
+        int prevValue = (int)((uint)((n - 1) * 2654435761) % 3);
+        int currValue = (int)((uint)(n * 2654435761) % 3);
+
+        // 연속되면 다른 값으로 변경
+        if (currValue == prevValue)
+        {
+            currValue = (currValue + 1 + (int)((uint)(n * 1234567) % 2)) % 3;
+        }
+
+        return currValue;
+    }
+
+
+
+
+
 
     public void OnClickStartCombat()
     {
         if (isOpenCloseAnimationActing || isOnCombat) return;
 
-        // isOnProcess = true;
-
-
-
+        isOnCombat = true;
+        LobbyUIManager.instance.ShowPopup<TowerGameCombatPopup>();
     }
 
 
@@ -97,23 +117,4 @@ public class TowerGamePopup : PopupBase
 
 
 
-
-    private int GetRandomValue(int n)
-    {
-        // n=0일 때는 바로 반환
-        if (n == 0)
-            return (int)((uint)(n * 2654435761) % 3);
-
-        // 이전값과 현재값 계산
-        int prevValue = (int)((uint)((n - 1) * 2654435761) % 3);
-        int currValue = (int)((uint)(n * 2654435761) % 3);
-
-        // 연속되면 다른 값으로 변경
-        if (currValue == prevValue)
-        {
-            currValue = (currValue + 1 + (int)((uint)(n * 1234567) % 2)) % 3;
-        }
-
-        return currValue;
-    }
 }
