@@ -115,6 +115,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
             // 플레이어가 보스에게 공격
+            sb.AppendLine();
             sb.AppendLine($"{playerData.name}의 공격!").AppendLine();
             UpdateCombatText();
             await UniTask.Delay(delayTime);
@@ -153,6 +154,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
             // 보스가 플레이어에게 공격
+            sb.AppendLine();
             sb.AppendLine($"보스의 공격!").AppendLine();
             UpdateCombatText();
             await UniTask.Delay(delayTime);
@@ -197,12 +199,16 @@ public class TowerGameCombatPopup : PopupBase
         EndCombat(false);
     }
 
-    private void UpdateCombatText()
+    private async void UpdateCombatText()
     {
         combatText.text = sb.ToString(); // StringBuilder 내용을 UI에 반영
 
-        // Canvas.ForceUpdateCanvases(); // 즉시 레이아웃 업데이트
+        await UniTask.DelayFrame(1);
         scrollRect.verticalNormalizedPosition = 0f;
+        combatText.gameObject.SetActive(false);
+        combatText.gameObject.SetActive(true);
+
+        // Canvas.ForceUpdateCanvases(); // 즉시 레이아웃 업데이트
     }
 
     private bool IsAvoided(float avoidanceRate)

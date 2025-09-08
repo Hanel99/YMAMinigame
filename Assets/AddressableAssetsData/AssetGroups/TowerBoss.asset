@@ -21,14 +21,50 @@ MonoBehaviour:
     m_SerializedLabels:
     - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 149f17cae44f8aa4fb772db42f794148
+    m_Address: boss07
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 218252e8163f2d048b1cce7077175f64
+    m_Address: boss06
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 26718c508d908a4479253033f7e3072c
+    m_Address: boss03
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4553fbd926e14dd4782dc8e36f9f461b
+    m_Address: boss04
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 58bca86e0e669a247986727e0c48b97f
     m_Address: boss00
     m_ReadOnly: 0
     m_SerializedLabels:
     - TowerBoss
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e32e6c20ee73c443b44466eb07d7f4b
+    m_Address: boss05
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fa96031013d3a449b2a9974f464e519
     m_Address: boss02
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - TowerBoss
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4f12872e0d05734c8e16c46d1f2b2d7
+    m_Address: boss08
     m_ReadOnly: 0
     m_SerializedLabels:
     - TowerBoss

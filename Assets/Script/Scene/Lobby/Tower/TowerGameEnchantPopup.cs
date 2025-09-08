@@ -57,6 +57,11 @@ public class TowerGameWeaponEnchantPopup : PopupBase
     }
 
 
+    public void OnClickHowToPlay()
+    {
+        LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.Enchant.{(isStatTab ? "User" : "Weapon")}");
+    }
+
     public void OnClickStatEnchantTab()
     {
         for (TowerUserStatType type = TowerUserStatType.atk; type <= TowerUserStatType.criDmg; type++)
@@ -83,12 +88,14 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void ShowEnchantResult(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)
     {
+        isActBackKey = false;
         enchantResult.gameObject.SetActive(true);
         enchantResult.ActResultAnimation(type, before, after, UIRefreshAction);
     }
 
     public void CloseEnchantResult()
     {
+        isActBackKey = true;
         enchantResult.gameObject.SetActive(false);
         UpdateUI();
     }

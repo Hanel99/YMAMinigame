@@ -38,8 +38,6 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - Coffee.UIParticle
-    - DOTween.Modules
-    - DOTweenPro.Scripts
     - Hierarchy4.Runtime
     - PlayFab
     - Sirenix.OdinInspector.Modules.Unity.Addressables

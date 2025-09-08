@@ -38,6 +38,10 @@ public class LobbyUIManager : MonoBehaviour
     {
         _ShowPopup<GachaResultPopup>().ShowPopup(cardIdList, newCardIdList);
     }
+    public void ShowHowToPlayPopup(string descKey)
+    {
+        _ShowPopup<HowToPlayPopup>().ShowPopup(descKey);
+    }
 
 
     //매개변수 없는 팝업의 경우

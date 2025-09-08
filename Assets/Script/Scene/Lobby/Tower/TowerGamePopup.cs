@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine.UI;
 
 public class TowerGamePopup : PopupBase
@@ -53,27 +54,31 @@ public class TowerGamePopup : PopupBase
 
     private void UpdateUI()
     {
-        bossTitle.text = $"{floor} 층 보스";
-        bossImage.sprite = GameResourceManager.instance.GetTowerBossImage(GetRandomValue(floor), false, false);
+        int bossNumber = GetBossNumber(floor);
+        bossTitle.text = $"{floor} 층\n{LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}")}";
+        bossImage.sprite = GameResourceManager.instance.GetTowerBossImage(bossNumber, false, false);
         bossImage.SetNativeSize();
+        bossImage.transform.DOKill();
+        bossImage.transform.DOLocalMoveY(105f, 2f).From(115f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutSine);
 
-        bossDesc.text = "보스 설명 텍스트";
+        bossDesc.text = LocalizeManager.instance.GetString($"Tower.Boss.Desc.{bossNumber.ToString("D2")}");
     }
 
-    private int GetRandomValue(int n)
+    private int GetBossNumber(int n)
     {
+        int count = 9;
         // n=0일 때는 바로 반환
         if (n == 0)
-            return (int)((uint)(n * 2654435761) % 3);
+            return (int)((uint)(n * 2654435761) % count);
 
         // 이전값과 현재값 계산
-        int prevValue = (int)((uint)((n - 1) * 2654435761) % 3);
-        int currValue = (int)((uint)(n * 2654435761) % 3);
+        int prevValue = (int)((uint)((n - 1) * 2654435761) % count);
+        int currValue = (int)((uint)(n * 2654435761) % count);
 
         // 연속되면 다른 값으로 변경
         if (currValue == prevValue)
         {
-            currValue = (currValue + 1 + (int)((uint)(n * 1234567) % 2)) % 3;
+            currValue = (currValue + 1 + (int)((uint)(n * 1234567) % 2)) % count;
         }
 
         return currValue;
@@ -107,6 +112,10 @@ public class TowerGamePopup : PopupBase
         LobbyUIManager.instance.ShowPopup<TowerGameDetailStatPopup>();
     }
 
+    public void OnClickHowToPlay()
+    {
+        LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.InfinityTower");
+    }
 
 
 

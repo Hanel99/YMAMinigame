@@ -226,6 +226,48 @@ public class PlayFabManager : MonoBehaviour
         PlayFabClientAPI.UpdateUserData(request,
             result => success?.Invoke(),
             error => failure?.Invoke(error.GenerateErrorReport()));
+
+        UpdatePlayerLevelLeaderBoard();
+    }
+
+
+    #endregion
+
+
+
+    #region Leaderboard
+
+    // 레벨과 경험치를 Statistics에 업데이트
+    public void UpdatePlayerLevelLeaderBoard()
+    {
+        var request = new UpdatePlayerStatisticsRequest
+        {
+            Statistics = new List<StatisticUpdate>
+        {
+            new StatisticUpdate
+            {
+                StatisticName = "Level",
+                Value = SaveDataManager.instance.playerData.level
+            },
+            new StatisticUpdate
+            {
+                StatisticName = "Exp",
+                Value = SaveDataManager.instance.playerData.exp
+            }
+        }
+        };
+
+        PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderBoardUpdateSuccess, OnLeaderBoardUpdateError);
+    }
+
+    private void OnLeaderBoardUpdateSuccess(UpdatePlayerStatisticsResult result)
+    {
+        Debug.Log("Player statistics updated successfully!");
+    }
+
+    private void OnLeaderBoardUpdateError(PlayFabError error)
+    {
+        Debug.LogError("Stats update failed: " + error.GenerateErrorReport());
     }
 
 
