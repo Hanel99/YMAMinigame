@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using System.Linq;
 using PlayFab;
 using PlayFab.ClientModels;
-using PlayFab.Json;
-using PlayFab.ProfilesModels;
+using Cysharp.Threading.Tasks;
+using System.Threading;
+using System.Threading.Tasks;
 
 
 public class PlayFabManager : MonoBehaviour
@@ -247,12 +247,7 @@ public class PlayFabManager : MonoBehaviour
             new StatisticUpdate
             {
                 StatisticName = "Level",
-                Value = SaveDataManager.instance.playerData.level
-            },
-            new StatisticUpdate
-            {
-                StatisticName = "Exp",
-                Value = SaveDataManager.instance.playerData.exp
+                Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp
             }
         }
         };
@@ -268,6 +263,57 @@ public class PlayFabManager : MonoBehaviour
     private void OnLeaderBoardUpdateError(PlayFabError error)
     {
         Debug.LogError("Stats update failed: " + error.GenerateErrorReport());
+    }
+
+
+
+
+    public async UniTask<List<PlayerLeaderboardEntry>> GetLeaderboard(CancellationToken cancellationToken = default)
+    {
+        var tcs = new TaskCompletionSource<List<PlayerLeaderboardEntry>>();
+
+        var topRequest = new GetLeaderboardRequest
+        {
+            StatisticName = "Level",
+            StartPosition = 0,
+            MaxResultsCount = 10
+        };
+
+        PlayFabClientAPI.GetLeaderboard(topRequest,
+            result => tcs.SetResult(result.Leaderboard),
+            error => tcs.SetException(new System.Exception(error.GenerateErrorReport()))
+        );
+
+        return await tcs.Task;
+    }
+
+    public async UniTask<PlayerLeaderboardEntry> GetPlayerRanking(CancellationToken cancellationToken = default)
+    {
+        var tcs = new TaskCompletionSource<PlayerLeaderboardEntry>();
+
+        var playerRequest = new GetLeaderboardAroundPlayerRequest
+        {
+            StatisticName = "Level",
+            MaxResultsCount = 1
+        };
+
+        PlayFabClientAPI.GetLeaderboardAroundPlayer(playerRequest,
+            result =>
+            {
+                if (result.Leaderboard.Count > 0)
+                    tcs.SetResult(result.Leaderboard[0]);
+                else
+                    tcs.SetException(new System.Exception("플레이어 랭킹을 찾을 수 없습니다."));
+            },
+            error => tcs.SetException(new System.Exception(error.GenerateErrorReport()))
+        );
+
+        return await tcs.Task;
+    }
+
+    private void OnGetLeaderboardError(PlayFabError error)
+    {
+        Debug.LogError("Leaderboard request failed: " + error.GenerateErrorReport());
     }
 
 

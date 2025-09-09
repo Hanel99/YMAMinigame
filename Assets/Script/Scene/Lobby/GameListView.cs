@@ -171,7 +171,7 @@ public class GameListView : MonoBehaviour
 
     public void OnClickRankingButton()
     {
-        LobbyUIManager.instance.ShowPopup<CollectionPopup>();
+        LobbyUIManager.instance.ShowPopup<RankingPopup>();
     }
     public void OnClickCollectionButton()
     {

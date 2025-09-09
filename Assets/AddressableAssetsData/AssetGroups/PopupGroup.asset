@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 107c28b5d5828fd42a65344b917fe29c
+    m_Address: RankingPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 180ff9cfd6ddc6e4397d98ecd2051b0b
     m_Address: SettingPopup
     m_ReadOnly: 0
