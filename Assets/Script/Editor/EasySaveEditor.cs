@@ -86,8 +86,8 @@ public class EasySaveEditor : Editor
     }
 
 
-    [MenuItem("SaveDataEditor/(Do PlayScene) Add 100000 Coin")]
-    public static void Add100000Coin()
+    [MenuItem("SaveDataEditor/(Do PlayScene) Add 1000000 Coin")]
+    public static void Add1000000Coin()
     {
         if (ES3.KeyExists(StaticGameData.SAVE_PLAYER_DATA_KEY) == false)
             HLLogger.Log("save date is null.");
@@ -95,7 +95,7 @@ public class EasySaveEditor : Editor
         PlayerData playerData = new PlayerData();
         ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
 
-        SaveDataManager.instance.AddCoin(100000);
+        SaveDataManager.instance.AddCoin(1000000);
         HLLogger.Log("Add 100000 Coin Complete");
     }
 
