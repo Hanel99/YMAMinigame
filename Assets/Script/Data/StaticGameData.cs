@@ -21,6 +21,7 @@ public static class StaticGameData
     };
     public static int TotalRandomValue => RandomValue[RandomValue.Count() - 1];
 
+
     public static int[] GachaPrice = new int[]
     {
         150,  //1회

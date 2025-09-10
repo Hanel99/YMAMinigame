@@ -19,6 +19,7 @@ public class IntroUIManager : MonoBehaviour
     public Text versionText;
     public Text errorDimText;
     public SceneAnimation sceneDim;
+    public Button removeLoginDataButton;
 
     public Transform popupRoot;
     public List<PopupBase> popupList = new();
@@ -107,6 +108,11 @@ public class IntroUIManager : MonoBehaviour
     public void ShowSceneMoveAnimation(bool showOpen, Action callback = null)
     {
         sceneDim.ShowAnimation(showOpen, callback);
+    }
+
+    public void OnClickRemoveLoginDataButton()
+    {
+        ShowCommonPopup("로그인 정보 삭제", "로그인 정보를 초기화 하겠습니까?", false, true, true, null, () => { IntroController.instance.RemoveLoginData(); });
     }
 
 

@@ -429,6 +429,15 @@ public class SaveDataManager : MonoBehaviour
         ES3.DeleteKey(StaticGameData.SAVE_PLAYER_DATA_KEY);
     }
 
+    public void RemoveLoginData()
+    {
+        playerData.autoLogin = false;
+        playerData.playFabLoginID = "";
+        playerData.playFabLoginPW = "";
+
+        SavePlayerData(true);
+    }
+
     #endregion
 
 
