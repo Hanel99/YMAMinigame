@@ -46,6 +46,7 @@ MonoBehaviour:
     - UniTask.DOTween
     - UniTask.Linq
     - UniTask.TextMeshPro
+    - Unity.VisibleEnum.Runtime
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
