@@ -85,6 +85,7 @@ public static class StaticGameData
     public static readonly int MAX_COIN_VALUE = 9999999;
     public static readonly int MAX_MILEAGE_VALUE = 999999;
     public static readonly string SAVE_PLAYER_DATA_KEY = "YMASaveDataAlpha1";
+    public static readonly string SAVE_PLAYER_LOCAL_DATA_KEY = "YMALocalSaveData";
     public static readonly string SAVE_VERSION_DATA_KEY = "YMAGameVersion";
     private static readonly string DATETIME_FORMAT = "yyyy-MM-dd-HH-mm-ss";
 

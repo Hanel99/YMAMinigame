@@ -132,6 +132,7 @@ public class IntroController : MonoBehaviour
     private void InitManagersProcess()
     {
         SaveDataManager.instance.Init();
+        SoundManager.instance.InitializeSoundManager();
 
         state++;
         StartIntroProcess();
@@ -153,7 +154,6 @@ public class IntroController : MonoBehaviour
         await GameResourceManager.instance.LoadAsync();
 
         HLLogger.Log($"Game resources load complete");
-        SoundManager.instance.PlayBGM(BGMType.Intro);
         state++;
         StartIntroProcess();
     }
@@ -227,7 +227,12 @@ public class IntroController : MonoBehaviour
     private void LoadUserDataProcess()
     {
         SaveDataManager.instance.LoadPlayerData();
+        SaveDataManager.instance.LoadLocalPlayerData();
         StaticGameData.introData.isFirstLogin = SaveDataManager.instance.IsTodayFirstLogin();
+
+        // sound data update
+        SoundManager.instance.UpdateVolumes();
+        SoundManager.instance.PlayBGM(BGMType.Intro);
 
         state++;
         StartIntroProcess();

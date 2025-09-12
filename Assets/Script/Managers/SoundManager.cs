@@ -13,7 +13,9 @@ public class SoundManager : MonoBehaviour
 
     [Header("Volume Settings")]
     [Range(0f, 1f)] public float bgmVolume = 0.3f;
+    public bool isBgmMute = false;
     [Range(0f, 1f)] public float sfxVolume = 0.8f;
+    public bool isSfxMute = false;
 
     // Inspector에서 설정하기 위한 직렬화 가능한 클래스들
     [System.Serializable]
@@ -37,11 +39,10 @@ public class SoundManager : MonoBehaviour
             return;
 
         instance = this;
-        InitializeSoundManager();
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void InitializeSoundManager()
+    public void InitializeSoundManager()
     {
         // AudioSource가 할당되지 않은 경우 자동 생성
         if (bgmSource == null)
@@ -89,6 +90,11 @@ public class SoundManager : MonoBehaviour
     // 볼륨 업데이트
     public void UpdateVolumes()
     {
+        bgmVolume = SaveDataManager.instance.localPlayerData.bgmVolume;
+        sfxVolume = SaveDataManager.instance.localPlayerData.sfxVolume;
+        isBgmMute = SaveDataManager.instance.localPlayerData.isBgmMute;
+        isSfxMute = SaveDataManager.instance.localPlayerData.isSfxMute;
+
         bgmSource.volume = bgmVolume;
         sfxSource.volume = sfxVolume;
         loopSfxSource.volume = sfxVolume;
@@ -99,7 +105,7 @@ public class SoundManager : MonoBehaviour
     // BGM 재생 (enum으로)
     public void PlayBGM(BGMType bgmType, float fadeTime = 1f)
     {
-        if (bgmType == BGMType.None) return;
+        if (bgmType == BGMType.None || isBgmMute) return;
 
         var bgmClip = GetBGM(bgmType);
         if (bgmClip != null)
@@ -145,7 +151,7 @@ public class SoundManager : MonoBehaviour
     // 단발성 SFX 재생 (enum으로)
     public void PlaySFX(SFXType sfxType)
     {
-        if (sfxType == SFXType.None) return;
+        if (sfxType == SFXType.None || isSfxMute) return;
 
         var sfxClip = GetSFX(sfxType);
         if (sfxClip != null)
@@ -165,7 +171,7 @@ public class SoundManager : MonoBehaviour
     // 루프 SFX 재생 (enum으로)
     public void PlayLoopSFX(SFXType sfxType)
     {
-        if (sfxType == SFXType.None) return;
+        if (sfxType == SFXType.None || isSfxMute) return;
 
         var sfxClip = GetSFX(sfxType);
         if (sfxClip != null)
@@ -269,6 +275,15 @@ public class SoundManager : MonoBehaviour
         sfxVolume = Mathf.Clamp01(volume);
         sfxSource.volume = sfxVolume;
         loopSfxSource.volume = sfxVolume;
+    }
+
+    public void SaveSoundSettings()
+    {
+        SaveDataManager.instance.localPlayerData.bgmVolume = bgmVolume;
+        SaveDataManager.instance.localPlayerData.sfxVolume = sfxVolume;
+        SaveDataManager.instance.localPlayerData.isBgmMute = isBgmMute;
+        SaveDataManager.instance.localPlayerData.isSfxMute = isSfxMute;
+        SaveDataManager.instance.SaveLocalPlayerData();
     }
 
     #endregion

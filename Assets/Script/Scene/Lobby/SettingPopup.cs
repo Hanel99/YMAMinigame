@@ -54,6 +54,7 @@ public class SettingPopup : PopupBase
         }
         else
         {
+            SoundManager.instance.SaveSoundSettings();
             _CloseWindow();
         }
     }
@@ -62,8 +63,6 @@ public class SettingPopup : PopupBase
     private void SetData()
     {
         appVersionText.text = $"App Version - {Application.version}";
-        inputRedeem.text = "";
-        SetResolutionOption();
 
         //@@@ temp
         if (SaveDataManager.instance == null || SaveDataManager.instance.playerData == null)
@@ -71,23 +70,46 @@ public class SettingPopup : PopupBase
         else
             dataVersionText.text = $"Data Version - {SaveDataManager.instance.playerData.serverDataVersion}";
 
-        OnClickTab(SettingTab.Visual);
+        SetTab(SettingTab.Visual);
     }
 
-    public void OnClickTab(SettingTab tab)
+    [VisibleEnum(typeof(SettingTab))]
+    public void OnClickTab(int tabIndex)
+
+    {
+        if (isOpenCloseAnimationActing) return;
+
+        SettingTab tab = (SettingTab)tabIndex;
+        SetTab(tab);
+    }
+    private void SetTab(SettingTab tab)
     {
         if (tab == SettingTab.Visual)
         {
             VisualTab.SetActive(true);
             SoundTab.SetActive(false);
+
+            inputRedeem.text = "";
+            SetResolutionOption();
         }
         else if (tab == SettingTab.Sound)
         {
             VisualTab.SetActive(false);
             SoundTab.SetActive(true);
+
+            // 사운드 설정 초기화
+            bgmSlider.value = SoundManager.instance.bgmVolume;
+            bgmMuteToggle.isOn = SoundManager.instance.isBgmMute;
+
+            sfxSlider.value = SoundManager.instance.sfxVolume;
+            sfxMuteToggle.isOn = SoundManager.instance.isSfxMute;
         }
     }
 
+
+
+
+    #region Video Setting
 
     public void OnClickFullScreenToggle()
     {
@@ -113,7 +135,7 @@ public class SettingPopup : PopupBase
 #if !UNITY_EDITOR && UNITY_ANDROID
         //apk 빌드. 불필요. 아예 꺼버림
         fullScreen.gameObject.SetActive(false);
-        resolutionDropdown.gameObject.SetActive(false);
+        resolutionDropdown.gameObjsect.SetActive(false);
 #else
         //exe 빌드. 버튼과 드롭다운을 켬.
         fullScreen.gameObject.SetActive(true);
@@ -141,6 +163,90 @@ public class SettingPopup : PopupBase
         fullScreen.isOn = Screen.fullScreen;
 #endif
     }
+
+    public void OnClickRedeemCheck()
+    {
+        if (isOpenCloseAnimationActing) return;
+
+        string code = inputRedeem.text.ToLower();
+
+        // 코드에 들어있는지 확인
+        if (StaticGameData.RedeemCodes.Contains(code) == false)
+        {
+            LobbyUIManager.instance.ShowCommonPopup("실패", "잘못된 리딤 코드입니다.", true, true, false);
+            return;
+        }
+
+        // 쓴 리딤인지 우선 확인
+        if (SaveDataManager.instance.IsUseRedeemCode(code))
+        {
+            LobbyUIManager.instance.ShowCommonPopup("실패", $"이미 사용된 리딤 코드입니다.\n{inputRedeem.text}", true, true, false);
+            return;
+        }
+
+        // 리딤코드에 맞춰 수행
+
+        //TODO @@@ 왜 이따구로 만들었을까 추후수정필요
+        switch (code)
+        {
+            case "getmile":
+                SaveDataManager.instance.AddMilage(3000);
+                break;
+            case "getgold":
+                SaveDataManager.instance.AddCoin(140000);
+                break;
+            case "getallcard":
+                SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
+                break;
+            case "devtestopen":
+                StaticGameData.showDevTestText = true;
+                break;
+        }
+
+        SaveDataManager.instance.AddUsingRedeemCode(code);
+        LobbyUIManager.instance.ShowCommonPopup("성공", $"{inputRedeem.text}\n리딤 코드 입력이 완료되었습니다.", true, true, false);
+        inputRedeem.text = "";
+    }
+
+
+    #endregion
+
+
+
+
+    #region Sound Setting
+
+    public void OnBgmSliderChanged(Slider change)
+    {
+        HLLogger.Log($"@@@ BGM Volume Set : {change.value}");
+        SoundManager.instance.SetBGMVolume(change.value);
+    }
+
+    public void OnSfxSliderChanged(Slider change)
+    {
+        HLLogger.Log($"@@@ SFX Volume Set : {change.value}");
+        SoundManager.instance.SetSFXVolume(change.value);
+    }
+
+    public void OnBgmMuteToggle()
+    {
+        HLLogger.Log($"@@@ BGM Mute Set : {bgmMuteToggle.isOn}");
+        SoundManager.instance.isBgmMute = bgmMuteToggle.isOn;
+        if (SoundManager.instance.isBgmMute)
+            SoundManager.instance.StopBGM();
+        else
+            SoundManager.instance.PlayBGM(BGMType.Lobby);
+    }
+
+    public void OnSfxMuteToggle()
+    {
+        HLLogger.Log($"@@@ SFX Mute Set : {sfxMuteToggle.isOn}");
+        SoundManager.instance.isSfxMute = sfxMuteToggle.isOn;
+    }
+
+    #endregion
+
+
 
 
     public void OnClickRemoveData()
@@ -261,47 +367,5 @@ public class SettingPopup : PopupBase
         LobbyUIManager.instance.ShowCommonPopup("완료", "서버 데이터 업데이트가 완료되었습니다.", true, true, false);
     }
 
-    public void OnClickRedeemCheck()
-    {
-        if (isOpenCloseAnimationActing) return;
 
-        string code = inputRedeem.text.ToLower();
-
-        // 코드에 들어있는지 확인
-        if (StaticGameData.RedeemCodes.Contains(code) == false)
-        {
-            LobbyUIManager.instance.ShowCommonPopup("실패", "잘못된 리딤 코드입니다.", true, true, false);
-            return;
-        }
-
-        // 쓴 리딤인지 우선 확인
-        if (SaveDataManager.instance.IsUseRedeemCode(code))
-        {
-            LobbyUIManager.instance.ShowCommonPopup("실패", $"이미 사용된 리딤 코드입니다.\n{inputRedeem.text}", true, true, false);
-            return;
-        }
-
-        // 리딤코드에 맞춰 수행
-
-        //TODO @@@ 왜 이따구로 만들었을까 추후수정필요
-        switch (code)
-        {
-            case "getmile":
-                SaveDataManager.instance.AddMilage(3000);
-                break;
-            case "getgold":
-                SaveDataManager.instance.AddCoin(140000);
-                break;
-            case "getallcard":
-                SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
-                break;
-            case "devtestopen":
-                StaticGameData.showDevTestText = true;
-                break;
-        }
-
-        SaveDataManager.instance.AddUsingRedeemCode(code);
-        LobbyUIManager.instance.ShowCommonPopup("성공", $"{inputRedeem.text}\n리딤 코드 입력이 완료되었습니다.", true, true, false);
-        inputRedeem.text = "";
-    }
 }

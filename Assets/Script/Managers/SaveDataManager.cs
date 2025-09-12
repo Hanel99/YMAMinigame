@@ -11,6 +11,8 @@ public class SaveDataManager : MonoBehaviour
     public static SaveDataManager instance { get; private set; }
     private PlayerData _playerData;
     public PlayerData playerData => _playerData;
+    private LocalPlayerData _localPlayerData;
+    public LocalPlayerData localPlayerData => _localPlayerData;
 
     private CancellationTokenSource saveCts; // SavePlayerData 호출을 제어하는 CancellationTokenSource
 
@@ -37,6 +39,7 @@ public class SaveDataManager : MonoBehaviour
     public void Init()
     {
         _playerData = new PlayerData();
+        _localPlayerData = new LocalPlayerData();
     }
 
     private void OnApplicationQuit()
@@ -397,7 +400,28 @@ public class SaveDataManager : MonoBehaviour
             SavePlayerData();
         }
 
+
+
         return _playerData;
+    }
+
+    public LocalPlayerData LoadLocalPlayerData()
+    {
+        //local data load
+        if (ES3.KeyExists(StaticGameData.SAVE_PLAYER_LOCAL_DATA_KEY))
+        {
+            HLLogger.Log("Load Date Complete");
+            ES3.LoadInto(StaticGameData.SAVE_PLAYER_LOCAL_DATA_KEY, _localPlayerData);
+        }
+        else
+        {
+            HLLogger.Log("save date is null. create new playerData");
+            _localPlayerData = new LocalPlayerData();
+
+            SaveLocalPlayerData();
+        }
+
+        return _localPlayerData;
     }
 
 
@@ -427,6 +451,7 @@ public class SaveDataManager : MonoBehaviour
     public void RemovePlayerData()
     {
         ES3.DeleteKey(StaticGameData.SAVE_PLAYER_DATA_KEY);
+        ES3.DeleteKey(StaticGameData.SAVE_PLAYER_LOCAL_DATA_KEY);
     }
 
     public void RemoveLoginData()
@@ -436,6 +461,15 @@ public class SaveDataManager : MonoBehaviour
         playerData.playFabLoginPW = "";
 
         SavePlayerData(true);
+    }
+
+
+
+
+    public void SaveLocalPlayerData()
+    {
+        ES3.Save(StaticGameData.SAVE_PLAYER_LOCAL_DATA_KEY, _localPlayerData);
+        HLLogger.Log("Save Local Player Data Complete");
     }
 
     #endregion
