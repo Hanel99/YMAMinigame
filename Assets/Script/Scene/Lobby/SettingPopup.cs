@@ -7,18 +7,37 @@ using UnityEngine.UI;
 
 public class SettingPopup : PopupBase
 {
+    public enum SettingTab
+    {
+        None,
+        Visual,
+        Sound,
+    }
+
     public static SettingPopup instance { get; private set; }
     public Text appVersionText;
     public Text dataVersionText;
 
+    [Header("Tab Group")]
+    public GameObject VisualTab;
+    public GameObject SoundTab;
+
+
+    [Header("Visual Settings")]
     public Toggle fullScreen;
     public Dropdown resolutionDropdown;
     public InputField inputRedeem;
-
     private Resolution[] resolutions;
     private List<(int, int)> resolutionList = new List<(int, int)>();
-    private CommonPopup serverDataUpdatePopup = null;
 
+
+    [Header("Sound Setting")]
+    public Slider bgmSlider;
+    public Toggle bgmMuteToggle;
+    public Slider sfxSlider;
+    public Toggle sfxMuteToggle;
+
+    private CommonPopup serverDataUpdatePopup = null;
 
     protected override void OnAwake()
     {
@@ -51,6 +70,22 @@ public class SettingPopup : PopupBase
             dataVersionText.text = "server data is null";
         else
             dataVersionText.text = $"Data Version - {SaveDataManager.instance.playerData.serverDataVersion}";
+
+        OnClickTab(SettingTab.Visual);
+    }
+
+    public void OnClickTab(SettingTab tab)
+    {
+        if (tab == SettingTab.Visual)
+        {
+            VisualTab.SetActive(true);
+            SoundTab.SetActive(false);
+        }
+        else if (tab == SettingTab.Sound)
+        {
+            VisualTab.SetActive(false);
+            SoundTab.SetActive(true);
+        }
     }
 
 

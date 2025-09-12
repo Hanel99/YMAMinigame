@@ -11,6 +11,7 @@ public class TowerGameCombatPopup : PopupBase
     public ScrollRect scrollRect;
     public Text combatText;
     public Button speedButton;
+    public Text speedText;
     public Button retryButton;
     public Button confirmButton;
 
@@ -96,6 +97,7 @@ public class TowerGameCombatPopup : PopupBase
     {
         retryButton.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
+        SetTextSpeed();
         UpdateCombatText();
     }
 
@@ -288,16 +290,31 @@ public class TowerGameCombatPopup : PopupBase
     public void OnClickSpeedButton()
     {
         speedMode = (speedMode + 1) % 3;
+        SetTextSpeed();
+    }
 
-        delayTime = speedMode switch
-        {
-            0 => 800,
-            1 => 400,
-            2 => 200,
-            _ => 800
-        };
-
+    private void SetTextSpeed()
+    {
         HLLogger.Log($"Mode {speedMode} : {delayTime}ms");
+        switch (speedMode)
+        {
+            case 0:
+                delayTime = 800;
+                speedText.text = "x1";
+                break;
+            case 1:
+                delayTime = 400;
+                speedText.text = "x2";
+                break;
+            case 2:
+                delayTime = 100;
+                speedText.text = "x3";
+                break;
+            default:
+                delayTime = 800;
+                speedText.text = "x1";
+                break;
+        }
     }
 
     public void OnClickRetryButton()

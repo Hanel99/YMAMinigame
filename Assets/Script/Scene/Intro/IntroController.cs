@@ -145,8 +145,6 @@ public class IntroController : MonoBehaviour
     {
         IntroUIManager.instance.UpdateStateText(IntroState.ResourceLoad);
         UniTask.Void(async () => await WaitGameResourceLoadAsync());
-
-        SoundManager.instance.PlayBGM(BGMType.Intro);
     }
 
     private async UniTask WaitGameResourceLoadAsync()
@@ -155,6 +153,7 @@ public class IntroController : MonoBehaviour
         await GameResourceManager.instance.LoadAsync();
 
         HLLogger.Log($"Game resources load complete");
+        SoundManager.instance.PlayBGM(BGMType.Intro);
         state++;
         StartIntroProcess();
     }
