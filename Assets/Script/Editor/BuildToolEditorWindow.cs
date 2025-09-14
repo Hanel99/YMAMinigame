@@ -26,7 +26,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
     public PlatformOption Platform = PlatformOption.Android;
 
     [LabelText("에셋 번들 버전"), DelayedProperty]
-    public string Version = "v1.0.0";
+    public string AssetVersion = "v0.5.0";
+    [LabelText("앱 버전"), DelayedProperty]
+    public string AppVersion = "0.5.0";
 
     [FolderPath(AbsolutePath = true), LabelText("출력 폴더")]
     public string OutputPath = "Builds/";
@@ -40,13 +42,13 @@ public class BuildToolEditorWindow : OdinEditorWindow
     [Button("\uD83D\uDCE6 Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
     {
-        SetupAndBuildAddressables(Platform, Environment, Version);
+        SetupAndBuildAddressables(Platform, Environment, AssetVersion);
     }
 
     [Button("\uD83D\uDE80 앱 빌드 + Addressables 빌드", ButtonSizes.Large)]
     private void BuildFull()
     {
-        SetupAndBuildAddressables(Platform, Environment, Version);
+        SetupAndBuildAddressables(Platform, Environment, AssetVersion);
         string targetPath = BuildPlayerApp();
 
         if (UploadToNAS)
@@ -68,7 +70,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
                 EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(buildTarget), buildTarget);
 
             Debug.Log($"\uD83D\uDD04 빌드 대상 변경: {platform}");
-            SetupAndBuildAddressables(platform, Environment, Version);
+            SetupAndBuildAddressables(platform, Environment, AssetVersion);
         }
 
         EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(originalTarget), originalTarget);
@@ -122,6 +124,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
     {
         string buildPath = GetBuildPath();
 
+        // 앱 버전 설정
+        PlayerSettings.bundleVersion = AppVersion;
+
 #if UNITY_ANDROID
         string jsonPath = "D:/workspace/YMAMiniGames/YMAMinigame/Assets/Resources/Config/AppConfig.json";
         if (File.Exists(jsonPath))
@@ -166,7 +171,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
     private string GetBuildPath()
     {
-        string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), Version);
+        string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), AssetVersion);
         Directory.CreateDirectory(basePath);
 
         return Platform == PlatformOption.Android
