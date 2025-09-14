@@ -105,11 +105,11 @@ public class IntroController : MonoBehaviour
         Application.targetFrameRate = 60;
 
         IntroUIManager.instance.ShowCompleteDim(false);
-#if UNITY_EDITOR
-        StaticGameData.showDevTestText = true;
-#else
-        StaticGameData.showDevTestText = false;
-#endif
+        // #if UNITY_EDITOR
+        //         StaticGameData.showDevTestText = true;
+        // #else
+        //         StaticGameData.showDevTestText = false;
+        // #endif
         IntroUIManager.instance.ShowSceneMoveAnimation(true);
 
 

@@ -13,6 +13,7 @@ public class PlayFabManager : MonoBehaviour
 {
     public static PlayFabManager instance { get; private set; }
     public bool isConnecting { get; private set; } = false;
+    private bool isLoginSuccess = false;
 
     private void Awake()
     {
@@ -26,8 +27,9 @@ public class PlayFabManager : MonoBehaviour
 
     public void Start()
     {
+        isLoginSuccess = false;
         if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
-            PlayFabSettings.staticSettings.TitleId = "11EF8D";
+            PlayFabSettings.staticSettings.TitleId = ConfigManager.instance.Config.playFabTitleId;
     }
 
 
@@ -46,6 +48,7 @@ public class PlayFabManager : MonoBehaviour
         PlayFabClientAPI.RegisterPlayFabUser(request, result =>
         {
             Debug.Log("Register Success!");
+            isLoginSuccess = true;
             onSuccess?.Invoke();
         }, error =>
         {
@@ -67,6 +70,7 @@ public class PlayFabManager : MonoBehaviour
         PlayFabClientAPI.LoginWithPlayFab(request, result =>
         {
             Debug.Log("Login Success!");
+            isLoginSuccess = true;
             onSuccess?.Invoke();
         }, error =>
         {
@@ -193,6 +197,13 @@ public class PlayFabManager : MonoBehaviour
         success += () => HLLogger.Log("PlayFab SavePlayerData Success", LogColor.silver);
         failure += (str) => HLLogger.Log($"PlayFab SavePlayerData Failed", LogColor.silver);
 
+        if (isLoginSuccess == false)
+        {
+            HLLogger.Log("PlayFab Not Login State - SavePlayerData Skip", LogColor.silver);
+            success?.Invoke();
+            return;
+        }
+
         HLLogger.Log("@@@ PlayFab Save Request Start", LogColor.silver);
 
         var request = new UpdateUserDataRequest
@@ -246,7 +257,13 @@ public class PlayFabManager : MonoBehaviour
         {
             new StatisticUpdate
             {
+#if DEV
+                StatisticName = "LevelDev",
+#elif LIVE
+                StatisticName = "LevelLive",
+#else
                 StatisticName = "Level",
+#endif
                 Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp
             }
         }
@@ -274,7 +291,13 @@ public class PlayFabManager : MonoBehaviour
 
         var topRequest = new GetLeaderboardRequest
         {
+#if DEV
+            StatisticName = "LevelDev",
+#elif LIVE
+            StatisticName = "LevelLive",
+#else
             StatisticName = "Level",
+#endif
             StartPosition = 0,
             MaxResultsCount = 10
         };
@@ -293,7 +316,13 @@ public class PlayFabManager : MonoBehaviour
 
         var playerRequest = new GetLeaderboardAroundPlayerRequest
         {
+#if DEV
+            StatisticName = "LevelDev",
+#elif LIVE
+            StatisticName = "LevelLive",
+#else
             StatisticName = "Level",
+#endif
             MaxResultsCount = 1
         };
 

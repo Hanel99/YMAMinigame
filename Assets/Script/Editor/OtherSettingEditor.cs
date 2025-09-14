@@ -29,6 +29,7 @@ public class OtherSettingEditor : Editor
             var config = new GameConfig
             {
                 geminiApiKey = "DEFAULT_API_KEY",
+                playFabTitleId = "NONE",
                 aesKey = "0123456789abcdef0123456789abcdef",
                 aesIV = "0123456789abcdef"
             };

@@ -122,6 +122,20 @@ public class BuildToolEditorWindow : OdinEditorWindow
     {
         string buildPath = GetBuildPath();
 
+#if UNITY_ANDROID
+        string jsonPath = "D:/workspace/YMAMiniGames/YMAMinigame/Assets/Resources/Config/AppConfig.json";
+        if (File.Exists(jsonPath))
+        {
+            string jsonText = File.ReadAllText(jsonPath);
+            var jsonData = JsonUtility.FromJson<GameConfig>(jsonText);
+
+            PlayerSettings.Android.keystoreName = jsonData.keystorePath;
+            PlayerSettings.Android.keystorePass = jsonData.keystorePassword;
+            PlayerSettings.Android.keyaliasName = jsonData.keyAlias;
+            PlayerSettings.Android.keyaliasPass = jsonData.keyPassword;
+        }
+#endif
+
         BuildPlayerOptions buildOptions = new BuildPlayerOptions
         {
             scenes = GetEnabledScenes(),

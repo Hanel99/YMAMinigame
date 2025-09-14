@@ -41,7 +41,11 @@ public class Card : MonoBehaviour
     private void SetCardData(int id)
     {
         cardMetaData = GameResourceManager.instance.GetCardMetaData(id);
-        cardIdText.text = StaticGameData.showDevTestText ? cardMetaData.Id.ToString() : "";
+#if DEV
+        cardIdText.text = cardMetaData.Id.ToString();
+#else
+        cardIdText.text = "";
+#endif
     }
 
     private void SetCardImage()

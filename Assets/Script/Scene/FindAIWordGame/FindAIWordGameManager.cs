@@ -45,7 +45,7 @@ public class FindAIWordGameManager : MonoBehaviour
             FindAIWordGameInGameView.instance.OnClickSubmit();
         }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && DEV
         if (Input.GetKeyDown(KeyCode.C))
         {
             HLLogger.Log($"force clear");

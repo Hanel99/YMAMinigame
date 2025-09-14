@@ -20,8 +20,11 @@ public class GameSelectIcon : MonoBehaviour
 
         gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
 
-        //@@@ temp
-        tempGameId.text = StaticGameData.showDevTestText ? gameType.ToString() : "";
+#if DEV
+        tempGameId.text = gameType.ToString();
+#else
+        tempGameId.text = "";
+#endif
     }
 
 

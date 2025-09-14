@@ -96,7 +96,7 @@ public static class StaticGameData
         var now = DateTime.Now;
         return now > eventStartTime && now < eventEndTime;
     }
-    public static bool showDevTestText = false;
+    // public static bool showDevTestText = false;
 
 
 

@@ -10,6 +10,7 @@ public class EasySaveEditor : Editor
     public static void RemovePlayerData()
     {
         ES3.DeleteKey(StaticGameData.SAVE_PLAYER_DATA_KEY);
+        ES3.DeleteKey(StaticGameData.SAVE_PLAYER_OTHER_DATA_KEY);
         HLLogger.Log("Remove Complete.");
     }
 

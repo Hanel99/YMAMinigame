@@ -135,7 +135,7 @@ public class SettingPopup : PopupBase
 #if !UNITY_EDITOR && UNITY_ANDROID
         //apk 빌드. 불필요. 아예 꺼버림
         fullScreen.gameObject.SetActive(false);
-        resolutionDropdown.gameObjsect.SetActive(false);
+        resolutionDropdown.gameObject.SetActive(false);
 #else
         //exe 빌드. 버튼과 드롭다운을 켬.
         fullScreen.gameObject.SetActive(true);
@@ -198,9 +198,9 @@ public class SettingPopup : PopupBase
             case "getallcard":
                 SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
                 break;
-            case "devtestopen":
-                StaticGameData.showDevTestText = true;
-                break;
+                // case "devtestopen":
+                //     StaticGameData.showDevTestText = true;
+                //     break;
         }
 
         SaveDataManager.instance.AddUsingRedeemCode(code);

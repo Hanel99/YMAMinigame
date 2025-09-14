@@ -44,7 +44,7 @@ public class CardGameManager : MonoBehaviour
                 CardGameUIManager.instance.ShowPausePopup();
         }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && DEV
         if (Input.GetKeyDown(KeyCode.Comma))
         {
             if (Time.timeScale - 0.5f <= 0)

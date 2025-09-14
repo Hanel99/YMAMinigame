@@ -49,7 +49,7 @@ public class GameListView : MonoBehaviour
                 LobbyUIManager.instance.ShowClosePopup();
         }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR && DEV
         if (Input.GetKeyDown(KeyCode.L))
             LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
 
