@@ -290,11 +290,15 @@ public class TowerGameCombatPopup : PopupBase
     public void OnClickSpeedButton()
     {
         speedMode = (speedMode + 1) % 3;
+        SaveDataManager.instance.otherPlayerData.towerTextSpeed = speedMode;
+        SaveDataManager.instance.SaveOtherPlayerData();
         SetTextSpeed();
     }
 
     private void SetTextSpeed()
     {
+        speedMode = SaveDataManager.instance.otherPlayerData.towerTextSpeed;
+
         HLLogger.Log($"Mode {speedMode} : {delayTime}ms");
         switch (speedMode)
         {

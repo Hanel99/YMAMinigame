@@ -33,686 +33,686 @@ MonoBehaviour:
     hp: 22
     criRate: 0.114
     criDmg: 0.015
-    requireCoin: 202
+    requireCoin: 284
   - level: 3
     atk: 3
     def: 3
     hp: 24
     criRate: 0.121
     criDmg: 0.02
-    requireCoin: 205
+    requireCoin: 368
   - level: 4
     atk: 4
     def: 4
     hp: 26
     criRate: 0.128
     criDmg: 0.025
-    requireCoin: 209
+    requireCoin: 452
   - level: 5
     atk: 5
     def: 5
     hp: 28
     criRate: 0.135
     criDmg: 0.03
-    requireCoin: 214
+    requireCoin: 536
   - level: 6
     atk: 6
     def: 6
     hp: 30
     criRate: 0.142
     criDmg: 0.035
-    requireCoin: 220
+    requireCoin: 620
   - level: 7
     atk: 7
     def: 7
     hp: 32
     criRate: 0.149
     criDmg: 0.04
-    requireCoin: 227
+    requireCoin: 704
   - level: 8
     atk: 8
     def: 8
     hp: 34
     criRate: 0.156
     criDmg: 0.045
-    requireCoin: 235
+    requireCoin: 787
   - level: 9
     atk: 9
     def: 9
     hp: 36
     criRate: 0.163
     criDmg: 0.05
-    requireCoin: 244
+    requireCoin: 871
   - level: 10
     atk: 10
     def: 10
     hp: 39
     criRate: 0.17
     criDmg: 0.055
-    requireCoin: 254
+    requireCoin: 954
   - level: 11
     atk: 11
     def: 11
     hp: 42
     criRate: 0.177
     criDmg: 0.06
-    requireCoin: 265
+    requireCoin: 1037
   - level: 12
     atk: 12
     def: 12
     hp: 45
     criRate: 0.184
     criDmg: 0.065
-    requireCoin: 277
+    requireCoin: 1120
   - level: 13
     atk: 13
     def: 13
     hp: 48
     criRate: 0.191
     criDmg: 0.07
-    requireCoin: 290
+    requireCoin: 1203
   - level: 14
     atk: 14
     def: 14
     hp: 51
     criRate: 0.198
     criDmg: 0.075
-    requireCoin: 304
+    requireCoin: 1285
   - level: 15
     atk: 15
     def: 15
     hp: 54
     criRate: 0.205
     criDmg: 0.08
-    requireCoin: 319
+    requireCoin: 1368
   - level: 16
     atk: 16
     def: 16
     hp: 57
     criRate: 0.212
     criDmg: 0.085
-    requireCoin: 335
+    requireCoin: 1450
   - level: 17
     atk: 17
     def: 17
     hp: 60
     criRate: 0.219
     criDmg: 0.09
-    requireCoin: 352
+    requireCoin: 1531
   - level: 18
     atk: 18
     def: 18
     hp: 63
     criRate: 0.226
     criDmg: 0.095
-    requireCoin: 370
+    requireCoin: 1612
   - level: 19
     atk: 19
     def: 19
     hp: 66
     criRate: 0.233
     criDmg: 0.1
-    requireCoin: 389
+    requireCoin: 1693
   - level: 20
     atk: 20
     def: 20
     hp: 70
     criRate: 0.24
     criDmg: 0.108
-    requireCoin: 409
+    requireCoin: 1774
   - level: 21
     atk: 21
     def: 21
     hp: 74
     criRate: 0.247
     criDmg: 0.116
-    requireCoin: 430
+    requireCoin: 1854
   - level: 22
     atk: 22
     def: 22
     hp: 78
     criRate: 0.254
     criDmg: 0.124
-    requireCoin: 452
+    requireCoin: 1933
   - level: 23
     atk: 23
     def: 23
     hp: 82
     criRate: 0.261
     criDmg: 0.132
-    requireCoin: 475
+    requireCoin: 2013
   - level: 24
     atk: 24
     def: 24
     hp: 86
     criRate: 0.268
     criDmg: 0.14
-    requireCoin: 499
+    requireCoin: 2091
   - level: 25
     atk: 25
     def: 25
     hp: 90
     criRate: 0.275
     criDmg: 0.148
-    requireCoin: 524
+    requireCoin: 2170
   - level: 26
     atk: 26
     def: 26
     hp: 94
     criRate: 0.282
     criDmg: 0.156
-    requireCoin: 550
+    requireCoin: 2248
   - level: 27
     atk: 27
     def: 27
     hp: 98
     criRate: 0.289
     criDmg: 0.164
-    requireCoin: 577
+    requireCoin: 2325
   - level: 28
     atk: 28
     def: 28
     hp: 102
     criRate: 0.296
     criDmg: 0.172
-    requireCoin: 605
+    requireCoin: 2402
   - level: 29
     atk: 29
     def: 29
     hp: 106
     criRate: 0.303
     criDmg: 0.18
-    requireCoin: 634
+    requireCoin: 2478
   - level: 30
     atk: 30
     def: 30
     hp: 111
     criRate: 0.31
     criDmg: 0.188
-    requireCoin: 664
+    requireCoin: 2554
   - level: 31
     atk: 31
     def: 31
     hp: 116
     criRate: 0.317
     criDmg: 0.196
-    requireCoin: 695
+    requireCoin: 2629
   - level: 32
     atk: 32
     def: 32
     hp: 121
     criRate: 0.324
     criDmg: 0.204
-    requireCoin: 727
+    requireCoin: 2703
   - level: 33
     atk: 33
     def: 33
     hp: 126
     criRate: 0.331
     criDmg: 0.212
-    requireCoin: 760
+    requireCoin: 2777
   - level: 34
     atk: 34
     def: 34
     hp: 131
     criRate: 0.338
     criDmg: 0.22
-    requireCoin: 794
+    requireCoin: 2850
   - level: 35
     atk: 35
     def: 35
     hp: 136
     criRate: 0.345
     criDmg: 0.228
-    requireCoin: 829
+    requireCoin: 2922
   - level: 36
     atk: 36
     def: 36
     hp: 141
     criRate: 0.352
     criDmg: 0.236
-    requireCoin: 865
+    requireCoin: 2994
   - level: 37
     atk: 37
     def: 37
     hp: 146
     criRate: 0.359
     criDmg: 0.244
-    requireCoin: 902
+    requireCoin: 3065
   - level: 38
     atk: 38
     def: 38
     hp: 151
     criRate: 0.366
     criDmg: 0.252
-    requireCoin: 940
+    requireCoin: 3136
   - level: 39
     atk: 39
     def: 39
     hp: 156
     criRate: 0.373
     criDmg: 0.26
-    requireCoin: 979
+    requireCoin: 3205
   - level: 40
     atk: 40
     def: 40
     hp: 162
     criRate: 0.38
     criDmg: 0.273
-    requireCoin: 1019
+    requireCoin: 3274
   - level: 41
     atk: 42
     def: 42
     hp: 168
     criRate: 0.387
     criDmg: 0.286
-    requireCoin: 1060
+    requireCoin: 3342
   - level: 42
     atk: 44
     def: 44
     hp: 174
     criRate: 0.394
     criDmg: 0.299
-    requireCoin: 1102
+    requireCoin: 3410
   - level: 43
     atk: 46
     def: 46
     hp: 180
     criRate: 0.401
     criDmg: 0.312
-    requireCoin: 1145
+    requireCoin: 3476
   - level: 44
     atk: 48
     def: 48
     hp: 186
     criRate: 0.408
     criDmg: 0.325
-    requireCoin: 1189
+    requireCoin: 3542
   - level: 45
     atk: 50
     def: 50
     hp: 192
     criRate: 0.415
     criDmg: 0.338
-    requireCoin: 1234
+    requireCoin: 3607
   - level: 46
     atk: 52
     def: 52
     hp: 198
     criRate: 0.422
     criDmg: 0.351
-    requireCoin: 1280
+    requireCoin: 3671
   - level: 47
     atk: 54
     def: 54
     hp: 204
     criRate: 0.429
     criDmg: 0.364
-    requireCoin: 1327
+    requireCoin: 3734
   - level: 48
     atk: 56
     def: 56
     hp: 210
     criRate: 0.436
     criDmg: 0.377
-    requireCoin: 1375
+    requireCoin: 3796
   - level: 49
     atk: 58
     def: 58
     hp: 216
     criRate: 0.443
     criDmg: 0.39
-    requireCoin: 1424
+    requireCoin: 3857
   - level: 50
     atk: 60
     def: 60
     hp: 223
     criRate: 0.45
     criDmg: 0.403
-    requireCoin: 1474
+    requireCoin: 3918
   - level: 51
     atk: 62
     def: 62
     hp: 230
     criRate: 0.457
     criDmg: 0.416
-    requireCoin: 1525
+    requireCoin: 3977
   - level: 52
     atk: 64
     def: 64
     hp: 237
     criRate: 0.464
     criDmg: 0.429
-    requireCoin: 1577
+    requireCoin: 4036
   - level: 53
     atk: 66
     def: 66
     hp: 244
     criRate: 0.471
     criDmg: 0.442
-    requireCoin: 1630
+    requireCoin: 4093
   - level: 54
     atk: 68
     def: 68
     hp: 251
     criRate: 0.478
     criDmg: 0.455
-    requireCoin: 1684
+    requireCoin: 4150
   - level: 55
     atk: 70
     def: 70
     hp: 258
     criRate: 0.485
     criDmg: 0.468
-    requireCoin: 1739
+    requireCoin: 4205
   - level: 56
     atk: 72
     def: 72
     hp: 265
     criRate: 0.492
     criDmg: 0.481
-    requireCoin: 1795
+    requireCoin: 4260
   - level: 57
     atk: 74
     def: 74
     hp: 272
     criRate: 0.499
     criDmg: 0.494
-    requireCoin: 1852
+    requireCoin: 4314
   - level: 58
     atk: 76
     def: 76
     hp: 279
     criRate: 0.506
     criDmg: 0.507
-    requireCoin: 1910
+    requireCoin: 4366
   - level: 59
     atk: 78
     def: 78
     hp: 286
     criRate: 0.513
     criDmg: 0.52
-    requireCoin: 1969
+    requireCoin: 4418
   - level: 60
     atk: 80
     def: 80
     hp: 294
     criRate: 0.52
     criDmg: 0.541
-    requireCoin: 2029
+    requireCoin: 4468
   - level: 61
     atk: 83
     def: 83
     hp: 302
     criRate: 0.527
     criDmg: 0.562
-    requireCoin: 2090
+    requireCoin: 4517
   - level: 62
     atk: 86
     def: 86
     hp: 310
     criRate: 0.534
     criDmg: 0.583
-    requireCoin: 2152
+    requireCoin: 4565
   - level: 63
     atk: 89
     def: 89
     hp: 318
     criRate: 0.541
     criDmg: 0.604
-    requireCoin: 2215
+    requireCoin: 4613
   - level: 64
     atk: 92
     def: 92
     hp: 326
     criRate: 0.548
     criDmg: 0.625
-    requireCoin: 2279
+    requireCoin: 4659
   - level: 65
     atk: 95
     def: 95
     hp: 334
     criRate: 0.555
     criDmg: 0.646
-    requireCoin: 2344
+    requireCoin: 4704
   - level: 66
     atk: 98
     def: 98
     hp: 342
     criRate: 0.562
     criDmg: 0.667
-    requireCoin: 2410
+    requireCoin: 4747
   - level: 67
     atk: 101
     def: 101
     hp: 350
     criRate: 0.569
     criDmg: 0.688
-    requireCoin: 2477
+    requireCoin: 4790
   - level: 68
     atk: 104
     def: 104
     hp: 358
     criRate: 0.576
     criDmg: 0.709
-    requireCoin: 2545
+    requireCoin: 4831
   - level: 69
     atk: 107
     def: 107
     hp: 366
     criRate: 0.583
     criDmg: 0.73
-    requireCoin: 2614
+    requireCoin: 4872
   - level: 70
     atk: 110
     def: 110
     hp: 375
     criRate: 0.59
     criDmg: 0.751
-    requireCoin: 2684
+    requireCoin: 4911
   - level: 71
     atk: 113
     def: 113
     hp: 384
     criRate: 0.597
     criDmg: 0.772
-    requireCoin: 2755
+    requireCoin: 4949
   - level: 72
     atk: 116
     def: 116
     hp: 393
     criRate: 0.604
     criDmg: 0.793
-    requireCoin: 2827
+    requireCoin: 4986
   - level: 73
     atk: 119
     def: 119
     hp: 402
     criRate: 0.611
     criDmg: 0.814
-    requireCoin: 2900
+    requireCoin: 5021
   - level: 74
     atk: 122
     def: 122
     hp: 411
     criRate: 0.618
     criDmg: 0.835
-    requireCoin: 2974
+    requireCoin: 5055
   - level: 75
     atk: 125
     def: 125
     hp: 420
     criRate: 0.625
     criDmg: 0.856
-    requireCoin: 3049
+    requireCoin: 5088
   - level: 76
     atk: 128
     def: 128
     hp: 429
     criRate: 0.632
     criDmg: 0.877
-    requireCoin: 3125
+    requireCoin: 5120
   - level: 77
     atk: 131
     def: 131
     hp: 438
     criRate: 0.639
     criDmg: 0.898
-    requireCoin: 3202
+    requireCoin: 5151
   - level: 78
     atk: 134
     def: 134
     hp: 447
     criRate: 0.646
     criDmg: 0.919
-    requireCoin: 3280
+    requireCoin: 5180
   - level: 79
     atk: 137
     def: 137
     hp: 456
     criRate: 0.653
     criDmg: 0.94
-    requireCoin: 3359
+    requireCoin: 5209
   - level: 80
     atk: 140
     def: 140
     hp: 466
     criRate: 0.66
     criDmg: 0.976
-    requireCoin: 3439
+    requireCoin: 5235
   - level: 81
     atk: 144
     def: 144
     hp: 476
     criRate: 0.667
     criDmg: 1.012
-    requireCoin: 3520
+    requireCoin: 5261
   - level: 82
     atk: 148
     def: 148
     hp: 486
     criRate: 0.674
     criDmg: 1.048
-    requireCoin: 3602
+    requireCoin: 5285
   - level: 83
     atk: 152
     def: 152
     hp: 496
     criRate: 0.681
     criDmg: 1.084
-    requireCoin: 3685
+    requireCoin: 5308
   - level: 84
     atk: 156
     def: 156
     hp: 506
     criRate: 0.688
     criDmg: 1.12
-    requireCoin: 3769
+    requireCoin: 5330
   - level: 85
     atk: 160
     def: 160
     hp: 516
     criRate: 0.695
     criDmg: 1.156
-    requireCoin: 3854
+    requireCoin: 5351
   - level: 86
     atk: 164
     def: 164
     hp: 526
     criRate: 0.702
     criDmg: 1.192
-    requireCoin: 3940
+    requireCoin: 5370
   - level: 87
     atk: 168
     def: 168
     hp: 536
     criRate: 0.709
     criDmg: 1.228
-    requireCoin: 4027
+    requireCoin: 5388
   - level: 88
     atk: 172
     def: 172
     hp: 546
     criRate: 0.716
     criDmg: 1.264
-    requireCoin: 4115
+    requireCoin: 5404
   - level: 89
     atk: 176
     def: 176
     hp: 556
     criRate: 0.723
     criDmg: 1.3
-    requireCoin: 4204
+    requireCoin: 5419
   - level: 90
     atk: 180
     def: 180
     hp: 566
     criRate: 0.73
     criDmg: 1.336
-    requireCoin: 4294
+    requireCoin: 5433
   - level: 91
     atk: 184
     def: 184
     hp: 577
     criRate: 0.737
     criDmg: 1.372
-    requireCoin: 4385
+    requireCoin: 5446
   - level: 92
     atk: 188
     def: 188
     hp: 588
     criRate: 0.744
     criDmg: 1.408
-    requireCoin: 4477
+    requireCoin: 5457
   - level: 93
     atk: 192
     def: 192
     hp: 599
     criRate: 0.751
     criDmg: 1.444
-    requireCoin: 4570
+    requireCoin: 5467
   - level: 94
     atk: 196
     def: 196
     hp: 610
     criRate: 0.758
     criDmg: 1.48
-    requireCoin: 4664
+    requireCoin: 5476
   - level: 95
     atk: 200
     def: 200
     hp: 621
     criRate: 0.765
     criDmg: 1.516
-    requireCoin: 4759
+    requireCoin: 5483
   - level: 96
     atk: 204
     def: 204
     hp: 633
     criRate: 0.772
     criDmg: 1.552
-    requireCoin: 4855
+    requireCoin: 5489
   - level: 97
     atk: 208
     def: 208
     hp: 645
     criRate: 0.779
     criDmg: 1.588
-    requireCoin: 4952
+    requireCoin: 5494
   - level: 98
     atk: 212
     def: 212
     hp: 657
     criRate: 0.786
     criDmg: 1.624
-    requireCoin: 5050
+    requireCoin: 5497
   - level: 99
     atk: 216
     def: 216
     hp: 670
     criRate: 0.793
     criDmg: 1.66
-    requireCoin: 5149
+    requireCoin: 5499
   - level: 100
     atk: 250
     def: 250

@@ -227,7 +227,7 @@ public class IntroController : MonoBehaviour
     private void LoadUserDataProcess()
     {
         SaveDataManager.instance.LoadPlayerData();
-        SaveDataManager.instance.LoadLocalPlayerData();
+        SaveDataManager.instance.LoadOtherPlayerData();
         StaticGameData.introData.isFirstLogin = SaveDataManager.instance.IsTodayFirstLogin();
 
         // sound data update

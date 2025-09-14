@@ -90,10 +90,10 @@ public class SoundManager : MonoBehaviour
     // 볼륨 업데이트
     public void UpdateVolumes()
     {
-        bgmVolume = SaveDataManager.instance.localPlayerData.bgmVolume;
-        sfxVolume = SaveDataManager.instance.localPlayerData.sfxVolume;
-        isBgmMute = SaveDataManager.instance.localPlayerData.isBgmMute;
-        isSfxMute = SaveDataManager.instance.localPlayerData.isSfxMute;
+        bgmVolume = SaveDataManager.instance.otherPlayerData.bgmVolume;
+        sfxVolume = SaveDataManager.instance.otherPlayerData.sfxVolume;
+        isBgmMute = SaveDataManager.instance.otherPlayerData.isBgmMute;
+        isSfxMute = SaveDataManager.instance.otherPlayerData.isSfxMute;
 
         bgmSource.volume = bgmVolume;
         sfxSource.volume = sfxVolume;
@@ -279,11 +279,11 @@ public class SoundManager : MonoBehaviour
 
     public void SaveSoundSettings()
     {
-        SaveDataManager.instance.localPlayerData.bgmVolume = bgmVolume;
-        SaveDataManager.instance.localPlayerData.sfxVolume = sfxVolume;
-        SaveDataManager.instance.localPlayerData.isBgmMute = isBgmMute;
-        SaveDataManager.instance.localPlayerData.isSfxMute = isSfxMute;
-        SaveDataManager.instance.SaveLocalPlayerData();
+        SaveDataManager.instance.otherPlayerData.bgmVolume = bgmVolume;
+        SaveDataManager.instance.otherPlayerData.sfxVolume = sfxVolume;
+        SaveDataManager.instance.otherPlayerData.isBgmMute = isBgmMute;
+        SaveDataManager.instance.otherPlayerData.isSfxMute = isSfxMute;
+        SaveDataManager.instance.SaveOtherPlayerData();
     }
 
     #endregion
