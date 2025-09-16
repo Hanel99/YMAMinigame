@@ -58,9 +58,8 @@ public class IntroUIManager : MonoBehaviour
         versionText.text = sb.ToString();
     }
 
-    public void UpdateStateText(IntroState state, string addText = "")
+    public void UpdateStateText(IntroState state)
     {
-
         switch (state)
         {
             case IntroState.Ready:
@@ -71,23 +70,18 @@ public class IntroUIManager : MonoBehaviour
                 stateText.text = "매니저를 초기화 합니다.";
                 break;
 
-            case IntroState.CheckAppVersion:
-                stateText.text = "앱 버전 체크";
-                break;
-
-            case IntroState.CheckMaintenance:
-                stateText.text = "온라인 접속 확인";
+            case IntroState.ServerUpdate:
+                stateText.text = "서버 데이터를 업데이트 합니다.";
                 break;
 
             case IntroState.LoadUserData:
                 stateText.text = LocalizeManager.instance.GetString($"intro.process.{state}");
                 break;
 
-            case IntroState.ServerUpdate:
-                stateText.text = $"{LocalizeManager.instance.GetString($"intro.process.{state}")} {addText}";
+            case IntroState.PlayFabLogin:
+                stateText.text = "PlayFab 로그인";
                 break;
 
-            case IntroState.PlayFabLogin:
             case IntroState.Complete:
                 stateText.text = "";
                 break;

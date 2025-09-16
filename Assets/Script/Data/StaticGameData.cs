@@ -100,47 +100,19 @@ public static class StaticGameData
 
     public static IntroController.IntroData introData = new IntroController.IntroData();
 
-
-
-    public static void UpdateRandomValueFromServer(string sheetData)
+    public static void UpdateEventDateTimeFromServer(List<string> sheetData)
     {
-        var list = SplitSheetData(sheetData);
-        if (list.IsNullOrEmpty()) return;
+        if (sheetData.IsNullOrEmpty()) return;
 
-        List<int> intList = ConvertStringListToIntList(list);
-        if (intList.IsNullOrEmpty()) return;
-
-        RandomValue = intList.ToArray();
+        eventStartTime = DateTime.ParseExact(sheetData[0], DATETIME_FORMAT, null);
+        eventEndTime = DateTime.ParseExact(sheetData[1], DATETIME_FORMAT, null);
     }
 
-    public static void UpdateEventDateTimeFromServer(string sheetData)
+    public static void UpdateRedeemCodeFromServer(List<string> sheetData)
     {
-        var list = SplitSheetData(sheetData);
-        if (list.IsNullOrEmpty()) return;
+        if (sheetData.IsNullOrEmpty()) return;
 
-        eventStartTime = DateTime.ParseExact(list[0], DATETIME_FORMAT, null);
-        eventEndTime = DateTime.ParseExact(list[1], DATETIME_FORMAT, null);
-    }
-
-
-
-    public static void UpdateGachaPriceFromServer(string sheetData)
-    {
-        var list = SplitSheetData(sheetData);
-        if (list.IsNullOrEmpty()) return;
-
-        List<int> intList = ConvertStringListToIntList(list);
-        if (intList.IsNullOrEmpty()) return;
-
-        GachaPrice = intList.ToArray();
-    }
-
-    public static void UpdateRedeemCodeFromServer(string sheetData)
-    {
-        var list = SplitSheetData(sheetData);
-        if (list.IsNullOrEmpty()) return;
-
-        RedeemCodes = list.ToArray();
+        RedeemCodes = sheetData.ToArray();
     }
 
 
@@ -289,33 +261,5 @@ public static class StaticGameData
         }
 
         return dic;
-    }
-
-
-
-
-
-
-
-
-    //서버 데이터 분리하는 코드. 각 시트의 범위를 받아와서 각기 가공해서 사용.
-    //int로 가공하는건 자주 쓸거 같아 아래 공용코드 추가
-    public static List<string> SplitSheetData(string input)
-    {
-        // string[] splitArray = input.Split('\t');
-        // string[] splitArray = input.Split('\r\n');
-        string[] splitArray = Regex.Split(input, "\r\n|\r|\n|\t");
-        return splitArray.ToList();
-    }
-
-    public static List<int> ConvertStringListToIntList(List<string> stringList)
-    {
-        List<int> intList = new List<int>();
-        foreach (string str in stringList)
-        {
-            if (int.TryParse(str, out int number))
-                intList.Add(number);
-        }
-        return intList;
     }
 }

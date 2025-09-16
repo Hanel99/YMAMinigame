@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
+using System.Linq;
 
 public class IntroController : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class IntroController : MonoBehaviour
     private void StartIntroProcess()
     {
         IntroUIManager.instance.UpdateStateText(state);
+        HLLogger.Log($"Intro State : {state}");
         switch (state)
         {
             case IntroState.Ready:
@@ -49,38 +52,18 @@ public class IntroController : MonoBehaviour
                 ResourceLoadProcess();
                 break;
 
-
-
-            case IntroState.CheckAppVersion:
+            case IntroState.ServerUpdate:
 #if UNITY_EDITOR && DEV
-                state++;
-                StartIntroProcess();
+                // state++;
+                // StartIntroProcess();
+                StartCoroutine(nameof(ServerUpdateProcess));
 #else
-                CheckAppVersionProcess();
-#endif
-                break;
-
-            case IntroState.CheckMaintenance:
-#if UNITY_EDITOR && DEV
-                state++;
-                StartIntroProcess();
-#else
-                CheckMaintenanceProcess();
+                StartCoroutine(nameof(ServerUpdateProcess));
 #endif
                 break;
 
             case IntroState.LoadUserData:
                 LoadUserDataProcess();
-                break;
-
-            case IntroState.ServerUpdate:
-#if UNITY_EDITOR && DEV
-                state++;
-                StartIntroProcess();
-                // StartCoroutine(nameof(ServerUpdateProcess));
-#else
-                StartCoroutine(nameof(ServerUpdateProcess));
-#endif
                 break;
 
 
@@ -110,21 +93,9 @@ public class IntroController : MonoBehaviour
         // #endif
         IntroUIManager.instance.ShowSceneMoveAnimation(true);
 
-
         state++;
         StartIntroProcess();
     }
-
-    // private void InitManagersProcess()
-    // {
-    //     SaveDataManager.instance.Init();
-    //     AddressableResourceManager.instance.InitScriptableData();
-    //     GameResourceManager.instance.LoadAsync();
-
-    //     state++;
-    //     StartIntroProcess();
-    // }
-
 
 
     private void InitManagersProcess()
@@ -148,12 +119,8 @@ public class IntroController : MonoBehaviour
     }
 
 
-
-
-
     private void ResourceLoadProcess()
     {
-        IntroUIManager.instance.UpdateStateText(IntroState.ResourceLoad);
         UniTask.Void(async () => await WaitGameResourceLoadAsync());
     }
 
@@ -168,70 +135,114 @@ public class IntroController : MonoBehaviour
     }
 
 
-
-
-    private void CheckAppVersionProcess()
+    //시트 데이터를 한번에 받아와 통합 처리.
+    //서버 점검, 최소 앱 버전도 여기서 확인.
+    private IEnumerator ServerUpdateProcess()
     {
-        IntroUIManager.instance.UpdateStateText(IntroState.CheckAppVersion);
-        ServerManager.instance.SendSheetAPI(SheetRangeType.AppMinVersion, (sheetData) =>
-        {
-            System.Version appVersion = new System.Version(Application.version);
-            System.Version serverVersion = new System.Version(sheetData);
+        bool apiComplete = true;
+        bool isServerMaintenance = false;
+        bool isNeedAppUpdate = false;
 
-            if (appVersion >= serverVersion)
+        yield return null;
+
+        apiComplete = false;
+        ServerManager.instance.SendSheetAPI((sheetData) =>
+        {
+            var totalSheetData = ServerManager.instance.SplitSheetData(sheetData);
+
+            for (int i = 0; i < totalSheetData.Count; i++)
             {
-                //이상 없음. 접속 가능
-                state++;
-                StartIntroProcess();
+                var data = totalSheetData[i];
+                if (data.Count() == 0) continue;
+
+                var rangeType = (SheetRangeType)i;
+
+                switch (rangeType)
+                {
+                    case SheetRangeType.ServerVersion:
+                        if (SaveDataManager.instance.playerData.serverDataVersion.Equals(data[0]) == false)
+                            SaveDataManager.instance.playerData.serverDataVersion = data[0];
+
+                        IntroUIManager.instance.UpdateVersionText(data[0]);
+                        break;
+
+                    case SheetRangeType.EventDateTimeRange:
+                        StaticGameData.UpdateEventDateTimeFromServer(data);
+                        break;
+
+                    case SheetRangeType.ServerMaintenance:
+                        switch (data[0])
+                        {
+                            case "0":
+                                //이상 없음. 접속 가능
+                                break;
+
+                            case "1":
+                                //DevTest만 입장 가능
+#if !DEV
+                                IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{data[0]}");
+                                isServerMaintenance = true;
+#endif
+                                break;
+
+                            case "2":
+                                //Editor만 입장 가능
+#if !UNITY_EDITOR
+                                IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{data[0]}");
+                                isServerMaintenance = true;
+#endif
+                                break;
+
+                            case "3":
+                                //점검 테스트. 전부 접속 불가
+                                IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{data[0]}");
+                                isServerMaintenance = true;
+                                break;
+
+                            default:
+                                IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{data[0]}");
+                                isServerMaintenance = true;
+                                break;
+
+                        }
+                        break;
+
+                    case SheetRangeType.AppMinVersion:
+                        System.Version appVersion = new System.Version(Application.version);
+                        System.Version serverVersion = new System.Version(data[0]);
+
+                        if (appVersion < serverVersion)
+                        {
+                            IntroUIManager.instance.ShowErrorDim($"앱 업데이트가 있습니다.\n최신 버전 앱으로 업데이트 해 주세요.\n{appVersion}/{serverVersion}");
+                            isNeedAppUpdate = true;
+                        }
+                        break;
+
+                    case SheetRangeType.RedeemCodes:
+                        StaticGameData.UpdateRedeemCodeFromServer(data);
+                        break;
+
+                    default:
+                        HLLogger.LogError($"Unknown SheetRangeType : {rangeType}");
+                        break;
+                }
             }
-            else
-            {
-                IntroUIManager.instance.ShowErrorDim($"앱 업데이트가 있습니다.\n최신 버전 앱으로 업데이트 해 주세요.\n{appVersion}/{serverVersion}");
-            }
+            apiComplete = true;
+
         });
+        yield return new WaitUntil(() => apiComplete);
+
+        if (isServerMaintenance) HLLogger.LogWarning($"Server maintenance");
+        if (isNeedAppUpdate) HLLogger.LogWarning($"Need app update");
+
+        if (isServerMaintenance == false && isNeedAppUpdate == false)
+        {
+            state++;
+            StartIntroProcess();
+        }
     }
 
 
-    private void CheckMaintenanceProcess()
-    {
-        IntroUIManager.instance.UpdateStateText(IntroState.CheckMaintenance);
-        ServerManager.instance.SendSheetAPI(SheetRangeType.ServerMaintenance, (sheetData) =>
-        {
-            switch (sheetData)
-            {
-                case "0":
-                    //이상 없음. 접속 가능
-                    state++;
-                    StartIntroProcess();
-                    break;
-
-                case "1":
-                    //DevTest만 입장 가능
-#if DEV
-                    state++;
-                    StartIntroProcess();
-#else
-                    IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{sheetData}");
-#endif
-                    break;
-
-                case "2":
-                    //Editor만 입장 가능
-#if UNITY_EDITOR
-                    state++;
-                    StartIntroProcess();
-#else
-                    IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{sheetData}");
-#endif
-                    break;
-
-                default:
-                    IntroUIManager.instance.ShowErrorDim($"서버 점검 중입니다. Code.{sheetData}");
-                    break;
-
-            }
-        });
-    }
 
     private void LoadUserDataProcess()
     {
@@ -246,64 +257,6 @@ public class IntroController : MonoBehaviour
         state++;
         StartIntroProcess();
     }
-
-    private IEnumerator ServerUpdateProcess()
-    {
-        bool apiComplete = true;
-        yield return null;
-
-
-        //@ 1. 데이터 버전 체크
-        apiComplete = false;
-        IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "1");
-        ServerManager.instance.SendSheetAPI(SheetRangeType.DataVersion, (sheetData) =>
-        {
-            if (SaveDataManager.instance.playerData.serverDataVersion.Equals(sheetData) == false)
-                SaveDataManager.instance.playerData.serverDataVersion = sheetData;
-
-            IntroUIManager.instance.UpdateVersionText(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-        //@ 2. 이벤트 타임 검증
-        apiComplete = false;
-        IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "2");
-        ServerManager.instance.SendSheetAPI(SheetRangeType.EventDateTimeRange, (sheetData) =>
-        {
-            StaticGameData.UpdateEventDateTimeFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-
-        //@ 3. 리딤코드 최신화
-        apiComplete = false;
-        IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "3");
-        ServerManager.instance.SendSheetAPI(SheetRangeType.RedeemCodes, (sheetData) =>
-        {
-            StaticGameData.UpdateRedeemCodeFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-
-        //@ 00. 템플릿
-        // apiComplete = false;
-        // IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "00"); <-늘어날수록 숫자를 늘릴것.
-        // ServerManager.instance.SendSheetAPI(SheetRangeType.RandomValue, (sheetData) =>  <- 받아올 시트 종류를 지정
-        // {
-        //     StaticGameData.UpdateRandomValueFromServer(sheetData); <- 받아온 뒤 콜백으로 데이터 사용
-        //     apiComplete = true;
-        // });
-        // yield return new WaitUntil(() => apiComplete);
-
-
-
-        state++;
-        StartIntroProcess();
-    }
-
 
     private void PlayFabLoginProcess()
     {

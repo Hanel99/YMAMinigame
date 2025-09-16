@@ -49,11 +49,9 @@ public enum IntroState
 {
     Ready,
     InitManagers,
-    ResourceLoad,
-    CheckAppVersion,
-    CheckMaintenance,
-    LoadUserData,
     ServerUpdate,
+    ResourceLoad,
+    LoadUserData,
     PlayFabLogin,
     Complete,
 
@@ -68,7 +66,7 @@ public enum IntroState
 
 public enum SheetRangeType
 {
-    DataVersion,
+    ServerVersion,
     EventDateTimeRange,
     ServerMaintenance,
     AppMinVersion,

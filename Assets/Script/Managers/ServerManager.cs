@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Networking;
+using Sirenix.Utilities;
 
 public class ServerManager : MonoBehaviour
 {
@@ -20,14 +22,7 @@ public class ServerManager : MonoBehaviour
     private List<Coroutine> coroutines = new List<Coroutine>();
 
     //@@@ 시트 데이터
-    private List<string> sheetRangeList = new List<string>()
-    {
-        "B1",
-        "B3:B4",
-        "B19",
-        "E1",
-        "G14:G25",
-    };
+    private string sheetRange = "O1";
 
 
 
@@ -57,9 +52,9 @@ public class ServerManager : MonoBehaviour
 
 
 
-    public void SendSheetAPI(SheetRangeType rangeType, Action<string> callback = null)
+    public void SendSheetAPI(Action<string> callback = null)
     {
-        SendSheetAPI(sheetRangeList[(int)rangeType], callback);
+        SendSheetAPI(sheetRange, callback);
     }
 
 
@@ -97,11 +92,28 @@ public class ServerManager : MonoBehaviour
 
 
 
-    public void CheckServerMaintenance(Action<string> callback)
+    public List<List<string>> SplitSheetData(string input)
     {
-        SendSheetAPI(SheetRangeType.ServerMaintenance, (sheetData) =>
+        var result = new List<List<string>>();
+
+        var splitArray = input.Split("!e");
+        foreach (var item in splitArray)
         {
-            callback(sheetData);
-        });
+            var innerList = item.Split("!a").ToList();
+            result.Add(innerList);
+        }
+
+        return result;
+    }
+
+    public List<int> ConvertStringListToIntList(List<string> stringList)
+    {
+        List<int> intList = new List<int>();
+        foreach (string str in stringList)
+        {
+            if (int.TryParse(str, out int number))
+                intList.Add(number);
+        }
+        return intList;
     }
 }
