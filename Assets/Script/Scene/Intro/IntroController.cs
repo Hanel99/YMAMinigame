@@ -102,8 +102,6 @@ public class IntroController : MonoBehaviour
 
     private void ReadyProcess()
     {
-        Application.targetFrameRate = 60;
-
         IntroUIManager.instance.ShowCompleteDim(false);
         // #if UNITY_EDITOR
         //         StaticGameData.showDevTestText = true;
@@ -133,6 +131,17 @@ public class IntroController : MonoBehaviour
     {
         SaveDataManager.instance.Init();
         SoundManager.instance.InitializeSoundManager();
+
+        Application.targetFrameRate = StaticGameData.targetFrameRate;
+
+        //원래는 데이터 로드 프로세스에 해야하지만 사이즈 설정 기능상 초반에 먼저 로딩하도록 배치
+        SaveDataManager.instance.LoadOtherPlayerData();
+        var screenSizeData = SaveDataManager.instance.otherPlayerData;
+        FullScreenMode screenMode = screenSizeData.isFullScreen ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
+        RefreshRate refreshRate = new RefreshRate() { numerator = (uint)StaticGameData.targetFrameRate, denominator = 1 };
+
+        Screen.SetResolution(screenSizeData.resolutionWidth, screenSizeData.resolutionHeight, screenMode, refreshRate);
+        HLLogger.Log($"@@@ Resolution : {screenSizeData.resolutionWidth}/{screenSizeData.resolutionHeight} ({refreshRate.numerator} Hz)");
 
         state++;
         StartIntroProcess();
@@ -267,51 +276,10 @@ public class IntroController : MonoBehaviour
         });
         yield return new WaitUntil(() => apiComplete);
 
-        //@ 3. 카드 등급 랜덤 가중치 업데이트
+
+        //@ 3. 리딤코드 최신화
         apiComplete = false;
         IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "3");
-        ServerManager.instance.SendSheetAPI(SheetRangeType.RandomValue, (sheetData) =>
-        {
-            StaticGameData.UpdateRandomValueFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-
-        //@ 4. 오늘 첫 로그인인 경우 서버에서 지정한 로그인 보너스 코인 획득
-        if (StaticGameData.introData.isFirstLogin)
-        {
-            apiComplete = false;
-
-            IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "4");
-            ServerManager.instance.SendSheetAPI(SheetRangeType.TodayFirstLoginReward, (sheetData) =>
-            {
-                if (int.TryParse(sheetData, out int amount))
-                {
-                    SaveDataManager.instance.AddCoin(amount);
-                    StaticGameData.introData.firstLoginCoinAmount = amount;
-                }
-
-                apiComplete = true;
-            });
-            yield return new WaitUntil(() => apiComplete);
-        }
-
-
-        //@ 5. 가챠 가격 갱신
-        apiComplete = false;
-        IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "5");
-        ServerManager.instance.SendSheetAPI(SheetRangeType.GachaPrice, (sheetData) =>
-        {
-            StaticGameData.UpdateGachaPriceFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-
-        //@ 6. 리딤코드 최신화
-        apiComplete = false;
-        IntroUIManager.instance.UpdateStateText(IntroState.ServerUpdate, "6");
         ServerManager.instance.SendSheetAPI(SheetRangeType.RedeemCodes, (sheetData) =>
         {
             StaticGameData.UpdateRedeemCodeFromServer(sheetData);

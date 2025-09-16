@@ -24,13 +24,9 @@ public class ServerManager : MonoBehaviour
     {
         "B1",
         "B3:B4",
-        "B6:B11",
-        "B13",
-        "C15:C17",
         "B19",
         "E1",
         "G14:G25",
-
     };
 
 

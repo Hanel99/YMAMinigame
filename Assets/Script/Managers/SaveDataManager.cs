@@ -410,7 +410,7 @@ public class SaveDataManager : MonoBehaviour
         //local data load
         if (ES3.KeyExists(StaticGameData.SAVE_PLAYER_OTHER_DATA_KEY))
         {
-            HLLogger.Log("Load Date Complete");
+            HLLogger.Log("Load Other Date Complete");
             ES3.LoadInto(StaticGameData.SAVE_PLAYER_OTHER_DATA_KEY, _otherPlayerData);
         }
         else

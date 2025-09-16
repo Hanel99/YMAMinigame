@@ -27,8 +27,7 @@ public class SettingPopup : PopupBase
     public Toggle fullScreen;
     public Dropdown resolutionDropdown;
     public InputField inputRedeem;
-    private Resolution[] resolutions;
-    private List<(int, int)> resolutionList = new List<(int, int)>();
+    private List<Resolution> filteredResolutions = new List<Resolution>();
 
 
     [Header("Sound Setting")]
@@ -121,13 +120,18 @@ public class SettingPopup : PopupBase
 
     public void ResolutionDropdownChanged(Dropdown change)
     {
-        var resolutionData = resolutionList[change.value];
+        var resolutionData = filteredResolutions[change.value];
+        FullScreenMode screenMode = fullScreen.isOn ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
+        RefreshRate refreshRate = new RefreshRate() { numerator = (uint)StaticGameData.targetFrameRate, denominator = 1 };
 
-        var tempList = resolutions.ToList();
-        Resolution resolution = tempList.FindAll(x => x.width == resolutionData.Item1 && x.height == resolutionData.Item2).OrderByDescending(x => x.refreshRateRatio).First();
+        Screen.SetResolution(resolutionData.width, resolutionData.height, screenMode, refreshRate);
+        Application.targetFrameRate = StaticGameData.targetFrameRate;
+        SaveDataManager.instance.otherPlayerData.isFullScreen = fullScreen.isOn;
+        SaveDataManager.instance.otherPlayerData.resolutionWidth = resolutionData.width;
+        SaveDataManager.instance.otherPlayerData.resolutionHeight = resolutionData.height;
+        //저장은 닫을때 사운드 저장하면서 저장됨.
 
-        HLLogger.Log($"@@@ Resolution : {resolution.width}/{resolution.height} ({resolution.refreshRateRatio} Hz)");
-        Screen.SetResolution(resolution.width, resolution.height, fullScreen.isOn);
+        HLLogger.Log($"@@@ Resolution : {resolutionData.width}/{resolutionData.height} ({refreshRate.numerator} Hz)");
     }
 
     private void SetResolutionOption()
@@ -141,27 +145,39 @@ public class SettingPopup : PopupBase
         fullScreen.gameObject.SetActive(true);
         resolutionDropdown.gameObject.SetActive(true);
 
-        resolutions = Screen.resolutions;
-        resolutionList.Clear();
+        var resolutions = Screen.resolutions;
+        filteredResolutions.Clear();
         resolutionDropdown.ClearOptions();
 
-        HashSet<string> options = new HashSet<string>();
+        filteredResolutions = resolutions.GroupBy(r => new { r.width, r.height }).Select(g => g.First()).OrderByDescending(r => r.width * r.height).ToList();
 
-        for (int i = 0; i < resolutions.Length; i++)
+        List<string> resolutionOptions = new List<string>();
+
+        foreach (Resolution resolution in filteredResolutions)
         {
-            string option = $"{resolutions[i].width} x {resolutions[i].height}";
-            if (options.Contains(option) == false)
-            {
-                options.Add(option);
-                resolutionList.Add((resolutions[i].width, resolutions[i].height));
-            }
+            string option = resolution.width + " x " + resolution.height;
+            resolutionOptions.Add(option);
         }
 
-        resolutionDropdown.AddOptions(new List<string>(options));
+        resolutionDropdown.AddOptions(resolutionOptions);
         resolutionDropdown.RefreshShownValue();
+        SetCurrentResolutionAsDefault();
 
         fullScreen.isOn = Screen.fullScreen;
 #endif
+    }
+
+    void SetCurrentResolutionAsDefault()
+    {
+        for (int i = 0; i < filteredResolutions.Count; i++)
+        {
+            if (filteredResolutions[i].width == Screen.width &&
+                filteredResolutions[i].height == Screen.height)
+            {
+                resolutionDropdown.value = i;
+                break;
+            }
+        }
     }
 
     public void OnClickRedeemCheck()
@@ -187,21 +203,21 @@ public class SettingPopup : PopupBase
         // 리딤코드에 맞춰 수행
 
         //TODO @@@ 왜 이따구로 만들었을까 추후수정필요
-        switch (code)
-        {
-            case "getmile":
-                SaveDataManager.instance.AddMilage(3000);
-                break;
-            case "getgold":
-                SaveDataManager.instance.AddCoin(140000);
-                break;
-            case "getallcard":
-                SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
-                break;
-                // case "devtestopen":
-                //     StaticGameData.showDevTestText = true;
-                //     break;
-        }
+        // switch (code)
+        // {
+        // case "getmile":
+        //     SaveDataManager.instance.AddMilage(3000);
+        //     break;
+        // case "getgold":
+        //     SaveDataManager.instance.AddCoin(140000);
+        //     break;
+        // case "getallcard":
+        //     SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
+        //     break;
+        // case "devtestopen":
+        //     StaticGameData.showDevTestText = true;
+        //     break;
+        // }
 
         SaveDataManager.instance.AddUsingRedeemCode(code);
         LobbyUIManager.instance.ShowCommonPopup("성공", $"{inputRedeem.text}\n리딤 코드 입력이 완료되었습니다.", true, true, false);
@@ -341,24 +357,6 @@ public class SettingPopup : PopupBase
         ServerManager.instance.SendSheetAPI(SheetRangeType.EventDateTimeRange, (sheetData) =>
         {
             StaticGameData.UpdateEventDateTimeFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-        //@ 3. 카드 등급 랜덤 가중치 업데이트
-        apiComplete = false;
-        ServerManager.instance.SendSheetAPI(SheetRangeType.RandomValue, (sheetData) =>
-        {
-            StaticGameData.UpdateRandomValueFromServer(sheetData);
-            apiComplete = true;
-        });
-        yield return new WaitUntil(() => apiComplete);
-
-        //@ 5. 가챠 가격
-        apiComplete = false;
-        ServerManager.instance.SendSheetAPI(SheetRangeType.GachaPrice, (sheetData) =>
-        {
-            StaticGameData.UpdateGachaPriceFromServer(sheetData);
             apiComplete = true;
         });
         yield return new WaitUntil(() => apiComplete);

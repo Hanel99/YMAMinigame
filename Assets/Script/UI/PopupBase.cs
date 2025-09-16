@@ -94,6 +94,10 @@ public class PopupBase : MonoBehaviour
 
     private void OnDestroy()
     {
+        // 해당 오브젝트의 모든 DOTween 중지
+        transform.DOKill();
+        border.DOKill();
+        dim.DOKill();
         _OnDestroy();
     }
 

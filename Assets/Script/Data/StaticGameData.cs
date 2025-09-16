@@ -57,10 +57,8 @@ public static class StaticGameData
 
     public static string[] RedeemCodes = new string[]
     {
-        "getmile", // 200마일리지
-        "getgold", // 10000골드
-        "getallcard", //모든 카드 해금
-        "devtestopen", //데브테스트 기능 오픈
+        "GETCOIN1",
+        "GETMILE1",
     };
 
 
@@ -75,9 +73,6 @@ public static class StaticGameData
         public const string TowerBossImage = "TowerBoss";
         public const string BGMGroup = "BGM";
         public const string SFXGroup = "SFX";
-
-        // public const string otherImage = "otherImage";
-        // public const string popup = "popup";
     }
 
 
@@ -97,6 +92,7 @@ public static class StaticGameData
         return now > eventStartTime && now < eventEndTime;
     }
     // public static bool showDevTestText = false;
+    public static int targetFrameRate = 60;
 
 
 

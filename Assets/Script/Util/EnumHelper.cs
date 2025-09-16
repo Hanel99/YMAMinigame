@@ -70,9 +70,6 @@ public enum SheetRangeType
 {
     DataVersion,
     EventDateTimeRange,
-    RandomValue,
-    TodayFirstLoginReward,
-    GachaPrice,
     ServerMaintenance,
     AppMinVersion,
     RedeemCodes,

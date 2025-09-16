@@ -23,6 +23,11 @@ public class BorderBlink : MonoBehaviour
         StartAnimation();
     }
 
+    private void OnDestroy()
+    {
+        border.DOKill();
+    }
+
     public void StartAnimation()
     {
         border.DOKill();

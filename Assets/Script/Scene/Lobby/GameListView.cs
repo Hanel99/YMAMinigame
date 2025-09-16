@@ -77,7 +77,7 @@ public class GameListView : MonoBehaviour
 
     private void StartGameViewSettingProcess()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = StaticGameData.targetFrameRate;
         SaveDataManager.instance.RemoveNotUseCardList();
 
         for (int i = 0; i < gameList.Count; ++i)
@@ -142,6 +142,7 @@ public class GameListView : MonoBehaviour
         else if (StaticGameData.introData.isFirstLogin)
         {
             StaticGameData.introData.isFirstLogin = false;
+            SaveDataManager.instance.AddCoin(StaticGameData.introData.firstLoginCoinAmount);
             LobbyUIManager.instance.ShowCommonPopup("데일리 보너스", $"오늘 첫 로그인 기념으로\n{StaticGameData.introData.firstLoginCoinAmount} 골드를 드립니다.", true, true, false);
         }
     }
