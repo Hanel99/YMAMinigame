@@ -10,6 +10,8 @@ using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using System.Collections.Generic;
 using System.IO;
+using System;
+using System.Text;
 // using Renci.SshNet; // SSH.NET (SFTP)
 
 public class BuildToolEditorWindow : OdinEditorWindow
@@ -38,6 +40,17 @@ public class BuildToolEditorWindow : OdinEditorWindow
     public bool UploadToNAS = false;
 
 
+    // private
+    private const string BUILD_COUNT_KEY = "BuildCount";
+
+
+
+
+    [MenuItem("Tools/Util Window/앱 에셋 통합 빌드 툴")]
+    private static void OpenWindow()
+    {
+        GetWindow<BuildToolEditorWindow>("통합 빌드 툴");
+    }
 
     [Button("\uD83D\uDCE6 Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
@@ -56,25 +69,6 @@ public class BuildToolEditorWindow : OdinEditorWindow
             string folderToUpload = Path.GetDirectoryName(targetPath);
             UploadToNASWithSFTP(folderToUpload);
         }
-    }
-
-    [Button("\uD83D\uDD01 Addressables 다중 플랫폼 빌드", ButtonSizes.Large)]
-    private void BuildAddressablesForAllPlatforms()
-    {
-        var originalTarget = EditorUserBuildSettings.activeBuildTarget;
-
-        foreach (PlatformOption platform in System.Enum.GetValues(typeof(PlatformOption)))
-        {
-            BuildTarget buildTarget = GetBuildTarget(platform);
-            if (EditorUserBuildSettings.activeBuildTarget != buildTarget)
-                EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(buildTarget), buildTarget);
-
-            Debug.Log($"\uD83D\uDD04 빌드 대상 변경: {platform}");
-            SetupAndBuildAddressables(platform, Environment, AssetVersion);
-        }
-
-        EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(originalTarget), originalTarget);
-        Debug.Log("✅ Addressables 다중 플랫폼 빌드 완료");
     }
 
     private void SetupAndBuildAddressables(PlatformOption platform, EnvOption env, string version)
@@ -134,7 +128,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
             string jsonText = File.ReadAllText(jsonPath);
             var jsonData = JsonUtility.FromJson<GameConfig>(jsonText);
 
-            PlayerSettings.Android.keystoreName = jsonData.keystorePath;
+            // PlayerSettings.Android.keystoreName = jsonData.keystorePath;
             PlayerSettings.Android.keystorePass = jsonData.keystorePassword;
             PlayerSettings.Android.keyaliasName = jsonData.keyAlias;
             PlayerSettings.Android.keyaliasPass = jsonData.keyPassword;
@@ -149,11 +143,18 @@ public class BuildToolEditorWindow : OdinEditorWindow
             options = BuildOptions.None
         };
 
+#if UNITY_ANDROID
+        SetupAndroidSettings();
+#elif UNITY_STANDALONE_WIN
+        SetupWindowsSettings();
+#endif
+
         BuildReport report = BuildPipeline.BuildPlayer(buildOptions);
         BuildSummary summary = report.summary;
 
         if (summary.result == BuildResult.Succeeded)
         {
+            IncrementBuildCountForToday();
             EditorUtility.DisplayDialog("✅ 빌드 성공", $"경로: {buildPath}", "확인");
             Debug.Log($"✅ 앱 빌드 완료: {summary.totalSize / 1048576f:0.00} MB");
 
@@ -169,14 +170,71 @@ public class BuildToolEditorWindow : OdinEditorWindow
         return buildPath;
     }
 
+    private void SetupWindowsSettings()
+    {
+        // Windows 전용 설정
+        PlayerSettings.SetIl2CppCodeGeneration(NamedBuildTarget.Standalone, Il2CppCodeGeneration.OptimizeSpeed);
+        // PlayerSettings.SetApiCompatibilityLevel(NamedBuildTarget.Standalone, ApiCompatibilityLevel.NET_Standard_2_0);
+
+        // Windows 아키텍처
+        PlayerSettings.SetArchitecture(NamedBuildTarget.Standalone, 1); // x64
+
+        // 최적화 설정
+        PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.Standalone, ManagedStrippingLevel.Medium);
+
+        // 그래픽 설정
+        PlayerSettings.colorSpace = ColorSpace.Linear;
+        PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.StandaloneWindows64, false);
+        PlayerSettings.SetGraphicsAPIs(BuildTarget.StandaloneWindows64, new UnityEngine.Rendering.GraphicsDeviceType[]
+        {
+        UnityEngine.Rendering.GraphicsDeviceType.Direct3D11,
+        UnityEngine.Rendering.GraphicsDeviceType.Vulkan
+        });
+
+        Debug.Log("Windows settings applied");
+    }
+
+    private void SetupAndroidSettings()
+    {
+        // Android 필수 설정
+        PlayerSettings.SetIl2CppCodeGeneration(NamedBuildTarget.Android, Il2CppCodeGeneration.OptimizeSpeed);
+        // PlayerSettings.SetApiCompatibilityLevel(NamedBuildTarget.Android, ApiCompatibilityLevel.NET_Standard_2_0);
+
+        // Android 아키텍처 (ARM64 필수 - Google Play 요구사항)
+        PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+
+        // 최적화 설정
+        PlayerSettings.SetManagedStrippingLevel(NamedBuildTarget.Android, ManagedStrippingLevel.High);
+        PlayerSettings.stripEngineCode = true;
+
+        // Android 빌드 설정
+        EditorUserBuildSettings.buildAppBundle = false; // APK 빌드 (AAB를 원하면 true)
+        EditorUserBuildSettings.exportAsGoogleAndroidProject = false;
+        EditorUserBuildSettings.development = false;
+
+        // Android API 레벨 설정
+        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel23; // API 23 (Android 6.0)
+        PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto; // 최신 API 자동
+
+        // 그래픽 설정
+        PlayerSettings.colorSpace = ColorSpace.Linear;
+        PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
+        PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, new UnityEngine.Rendering.GraphicsDeviceType[]
+        {
+        UnityEngine.Rendering.GraphicsDeviceType.OpenGLES3,
+        UnityEngine.Rendering.GraphicsDeviceType.Vulkan
+        });
+
+        Debug.Log("Android settings applied");
+    }
+
+
     private string GetBuildPath()
     {
         string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), AssetVersion);
         Directory.CreateDirectory(basePath);
 
-        return Platform == PlatformOption.Android
-            ? Path.Combine(basePath, "App.apk")
-            : Path.Combine(basePath, "App.exe");
+        return Platform == PlatformOption.Android ? Path.Combine(basePath, GenerateBuildFileName("apk")) : Path.Combine(basePath, GenerateBuildFileName("exe"));
     }
 
     private string[] GetEnabledScenes()
@@ -211,13 +269,50 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
     }
 
-
-
-    [MenuItem("Tools/Util Window/앱 에셋 통합 빌드 툴")]
-    private static void OpenWindow()
+    // 빌드 파일명 생성 함수
+    private string GenerateBuildFileName(string extension)
     {
-        GetWindow<BuildToolEditorWindow>("통합 빌드 툴");
+        StringBuilder sb = new StringBuilder();
+
+#if DEV
+        sb.Append("DEV");
+#elif LIVE
+        sb.Append("LIVE");
+#endif
+
+        // 현재 날짜를 YYMMDD 형식으로 변환
+        sb.Append("_");
+        sb.Append(DateTime.Now.ToString("yyMMdd"));
+
+        // 빌드 카운트 가져오기
+        int buildCount = GetBuildCountForToday() + 1; // 다음 빌드 번호
+        sb.Append("_");
+        sb.Append(buildCount.ToString("D3")); // 3자리로 포맷팅
+
+        // 파일명 생성: 날짜_빌드카운트.확장자
+        string fileName = $"{sb}.{extension}";
+
+        return fileName;
     }
+
+    // 빌드 카운트 가져오기
+    private int GetBuildCountForToday()
+    {
+        string today = DateTime.Now.ToString("yyMMdd");
+        string key = $"{BUILD_COUNT_KEY}_{today}";
+        return EditorPrefs.GetInt(key, 0);
+    }
+
+    // 빌드 카운트 증가
+    private void IncrementBuildCountForToday()
+    {
+        string today = DateTime.Now.ToString("yyMMdd");
+        string key = $"{BUILD_COUNT_KEY}_{today}";
+        int currentCount = EditorPrefs.GetInt(key, 0);
+        EditorPrefs.SetInt(key, currentCount + 1);
+    }
+
+
 }
 
 #endif

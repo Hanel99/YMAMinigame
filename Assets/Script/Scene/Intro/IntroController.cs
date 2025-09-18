@@ -105,6 +105,7 @@ public class IntroController : MonoBehaviour
 
         Application.targetFrameRate = StaticGameData.targetFrameRate;
 
+#if UNITY_STANDALONE_WIN
         //원래는 데이터 로드 프로세스에 해야하지만 사이즈 설정 기능상 초반에 먼저 로딩하도록 배치
         SaveDataManager.instance.LoadOtherPlayerData();
         var screenSizeData = SaveDataManager.instance.otherPlayerData;
@@ -113,6 +114,7 @@ public class IntroController : MonoBehaviour
 
         Screen.SetResolution(screenSizeData.resolutionWidth, screenSizeData.resolutionHeight, screenMode, refreshRate);
         HLLogger.Log($"@@@ Resolution : {screenSizeData.resolutionWidth}/{screenSizeData.resolutionHeight} ({refreshRate.numerator} Hz)");
+#endif
 
         state++;
         StartIntroProcess();
