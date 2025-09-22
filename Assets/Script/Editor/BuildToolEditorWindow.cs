@@ -235,8 +235,10 @@ public class BuildToolEditorWindow : OdinEditorWindow
         string name = GenerateBuildFilePath();
         string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), AssetVersion, name);
         Directory.CreateDirectory(basePath);
-
-        return Platform == PlatformOption.Android ? Path.Combine(basePath, $"YMAMiniGame.apk") : Path.Combine(basePath, $"YMAMiniGame.exe");
+#if LIVE
+        name = "YMAMiniGame";
+#endif
+        return Platform == PlatformOption.Android ? Path.Combine(basePath, $"{name}.apk") : Path.Combine(basePath, $"{name}.exe");
     }
 
     private string[] GetEnabledScenes()
