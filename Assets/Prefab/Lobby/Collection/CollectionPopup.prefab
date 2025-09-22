@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 40
   m_Viewport: {fileID: 7163356092930292765}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -789,6 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0096a3d67dd07104ea1d8ed3b65b12ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isActBackKey: 1
   filter: {fileID: 3496487074125698589}
   cardPrefab: {fileID: 1321716365448166236}
   cardRoot: {fileID: 8658342247546662446}
