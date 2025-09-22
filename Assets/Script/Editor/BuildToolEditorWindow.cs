@@ -120,6 +120,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
         // 앱 버전 설정
         PlayerSettings.bundleVersion = AppVersion;
+        PlayerSettings.productName = "YMA Mini Game";
 
 #if UNITY_ANDROID
         string jsonPath = "D:/workspace/YMAMiniGames/YMAMinigame/Assets/Resources/Config/AppConfig.json";
@@ -231,10 +232,11 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
     private string GetBuildPath()
     {
-        string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), AssetVersion);
+        string name = GenerateBuildFilePath();
+        string basePath = Path.Combine(OutputPath, Platform.ToString().ToLower(), Environment.ToString().ToLower(), AssetVersion, name);
         Directory.CreateDirectory(basePath);
 
-        return Platform == PlatformOption.Android ? Path.Combine(basePath, GenerateBuildFileName("apk")) : Path.Combine(basePath, GenerateBuildFileName("exe"));
+        return Platform == PlatformOption.Android ? Path.Combine(basePath, $"YMAMiniGame.apk") : Path.Combine(basePath, $"YMAMiniGame.exe");
     }
 
     private string[] GetEnabledScenes()
@@ -270,7 +272,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
     }
 
     // 빌드 파일명 생성 함수
-    private string GenerateBuildFileName(string extension)
+    private string GenerateBuildFilePath()
     {
         StringBuilder sb = new StringBuilder();
 
@@ -289,10 +291,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
         sb.Append("_");
         sb.Append(buildCount.ToString("D3")); // 3자리로 포맷팅
 
-        // 파일명 생성: 날짜_빌드카운트.확장자
-        string fileName = $"{sb}.{extension}";
-
-        return fileName;
+        return sb.ToString();
     }
 
     // 빌드 카운트 가져오기
