@@ -8,6 +8,8 @@ public class RegisterPopup : PopupBase
 
     public InputField idInputField;
     public InputField pwInputField;
+    public Text processText;
+    public Button registerButton;
 
     private bool isConnecting = false;
 
@@ -22,6 +24,7 @@ public class RegisterPopup : PopupBase
     {
         if (enable)
         {
+            UIInit();
             _OpenUI();
         }
         else
@@ -29,6 +32,14 @@ public class RegisterPopup : PopupBase
             isConnecting = true;
             _CloseWindow();
         }
+    }
+
+    private void UIInit()
+    {
+        idInputField.text = "";
+        pwInputField.text = "";
+        registerButton.enabled = true;
+        processText.text = "";
     }
 
 
@@ -40,12 +51,12 @@ public class RegisterPopup : PopupBase
 
         if (idInputField.text.Length < 3)
         {
-            IntroUIManager.instance.ShowCommonPopup("오류", "ID는 3자 이상 입력해주세요.", true, true, false, null, null);
+            processText.text = "ID는 3자 이상 입력해주세요.";
             return;
         }
         if (pwInputField.text.Length < 6)
         {
-            IntroUIManager.instance.ShowCommonPopup("오류", "비밀번호는 6자 이상 입력해주세요.", true, true, false, null, null);
+            processText.text = "비밀번호는 6자 이상 입력해주세요.";
             return;
         }
 
@@ -53,6 +64,8 @@ public class RegisterPopup : PopupBase
         // reguster process
 
         isConnecting = true;
+        registerButton.enabled = false;
+        processText.text = "회원가입 진행 중...";
         PlayFabManager.instance.IntroUserRegisterProcess(idInputField.text, pwInputField.text, () =>
         {
             CommonPopup popup = null;
@@ -65,7 +78,11 @@ public class RegisterPopup : PopupBase
         }, (error) =>
         {
             isConnecting = false;
-            IntroUIManager.instance.ShowCommonPopup("오류", $"회원가입에 실패했습니다.\n{error}", false, true, false, null, null);
+            registerButton.enabled = true;
+            processText.text = "";
+
+            var text = PlayFabManager.instance.GetPlayFabErrorText(error.Error, error.GenerateErrorReport());
+            IntroUIManager.instance.ShowCommonPopup("오류", $"회원가입에 실패했습니다.\n\n{text}", false, true, false, null, null);
         });
 
     }

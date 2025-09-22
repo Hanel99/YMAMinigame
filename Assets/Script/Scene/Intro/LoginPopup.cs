@@ -7,6 +7,8 @@ public class LoginPopup : PopupBase
     public InputField idInputField;
     public InputField pwInputField;
     public Toggle autoLogin;
+    public Text processText;
+    public Button loginButton;
     private bool isConnecting = false;
 
 
@@ -23,6 +25,9 @@ public class LoginPopup : PopupBase
             idInputField.text = "";
             pwInputField.text = "";
             autoLogin.isOn = false;
+            processText.text = "";
+            loginButton.enabled = true;
+            isConnecting = false;
 
             _OpenUI();
         }
@@ -41,16 +46,18 @@ public class LoginPopup : PopupBase
 
         if (idInputField.text.Length < 3)
         {
-            IntroUIManager.instance.ShowCommonPopup("오류", "ID는 3자 이상 입력해주세요.", true, true, false, null, null);
+            processText.text = "ID는 3자 이상 입력해주세요.";
             return;
         }
         if (pwInputField.text.Length < 6)
         {
-            IntroUIManager.instance.ShowCommonPopup("오류", "비밀번호는 6자 이상 입력해주세요.", true, true, false, null, null);
+            processText.text = "비밀번호는 6자 이상 입력해주세요.";
             return;
         }
 
         isConnecting = true;
+        loginButton.enabled = false;
+        processText.text = "로그인 진행 중...";
         PlayFabManager.instance.IntroUserLoginProcess(idInputField.text, pwInputField.text, () =>
         {
             PlayFabManager.instance.GetUserData(() =>
@@ -64,7 +71,11 @@ public class LoginPopup : PopupBase
         }, (error) =>
         {
             isConnecting = false;
-            IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, null);
+            loginButton.enabled = true;
+            processText.text = "";
+
+            var text = PlayFabManager.instance.GetPlayFabErrorText(error.Error, error.GenerateErrorReport());
+            IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n\n{text}", false, true, false, null, null);
         });
 
     }

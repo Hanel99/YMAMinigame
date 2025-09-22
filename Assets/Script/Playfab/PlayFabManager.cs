@@ -35,7 +35,7 @@ public class PlayFabManager : MonoBehaviour
 
 
 
-    public void IntroUserRegisterProcess(string id, string pw, Action onSuccess, Action<string> onFailure)
+    public void IntroUserRegisterProcess(string id, string pw, Action onSuccess, Action<PlayFabError> onFailure)
     {
         var request = new RegisterPlayFabUserRequest
         {
@@ -55,11 +55,11 @@ public class PlayFabManager : MonoBehaviour
             Debug.LogWarning("Register Failed");
             Debug.LogError("Here's some debug information:");
             Debug.LogError(error.GenerateErrorReport());
-            onFailure?.Invoke(error.GenerateErrorReport());
+            onFailure?.Invoke(error);
         });
     }
 
-    public void IntroUserLoginProcess(string id, string pw, Action onSuccess, Action<string> onFailure)
+    public void IntroUserLoginProcess(string id, string pw, Action onSuccess, Action<PlayFabError> onFailure)
     {
         var request = new LoginWithPlayFabRequest
         {
@@ -82,7 +82,7 @@ public class PlayFabManager : MonoBehaviour
             Debug.LogWarning("Login Failed");
             Debug.LogError("Here's some debug information:");
             Debug.LogError(error.GenerateErrorReport());
-            onFailure?.Invoke(error.GenerateErrorReport());
+            onFailure?.Invoke(error);
         });
     }
 
@@ -239,6 +239,82 @@ public class PlayFabManager : MonoBehaviour
             error => failure?.Invoke(error.GenerateErrorReport()));
 
         UpdatePlayerLevelLeaderBoard();
+    }
+
+    public string GetPlayFabErrorText(PlayFabErrorCode errorCode, string message)
+    {
+        switch (errorCode)
+        {
+            // PlayFabErrorCode enum 참조 : https://learn.microsoft.com/ko-kr/gaming/playfab/api-references/global-api-method-error-codes
+            // register
+            case PlayFabErrorCode.InvalidEmailAddress:
+                return "유효하지 않은 이메일 주소입니다.";
+
+            case PlayFabErrorCode.InvalidUsername:
+                return "유효하지 않은 사용자명입니다.";
+
+            case PlayFabErrorCode.InvalidPassword:
+                return "잘못된 비밀번호입니다.";
+
+            case PlayFabErrorCode.EmailAddressNotAvailable:
+                return "이미 사용 중인 이메일 주소입니다.";
+
+            case PlayFabErrorCode.UsernameNotAvailable:
+                return "이미 사용 중인 사용자명입니다.";
+
+            case PlayFabErrorCode.AccountBanned:
+                return "차단된 계정입니다.";
+
+            case PlayFabErrorCode.ServiceUnavailable:
+                return "서비스를 일시적으로 사용할 수 없습니다. 잠시 후 다시 시도해주세요.";
+
+
+            // login
+            case PlayFabErrorCode.AccountNotFound:
+                return "존재하지 않는 계정입니다.";
+
+            case PlayFabErrorCode.InvalidUsernameOrPassword:
+                return "아이디 또는 비밀번호가 올바르지 않습니다.";
+
+            case PlayFabErrorCode.AccountDeleted:
+                return "삭제된 계정입니다.";
+
+            case PlayFabErrorCode.ExpiredAuthToken:
+                return "인증 토큰이 만료되었습니다. 다시 로그인해주세요.";
+
+            case PlayFabErrorCode.InvalidAuthToken:
+                return "유효하지 않은 인증 토큰입니다.";
+
+            case PlayFabErrorCode.AuthTokenDoesNotExist:
+                return "인증 토큰을 찾을 수 없습니다.";
+
+            case PlayFabErrorCode.NotAuthenticated:
+                return "인증되지 않은 사용자입니다.";
+
+            case PlayFabErrorCode.InternalServerError:
+                return "서버 내부 오류가 발생했습니다. 잠시 후 다시 시도해주세요.";
+
+            case PlayFabErrorCode.InvalidRequest:
+                return "잘못된 요청입니다.";
+
+            case PlayFabErrorCode.ConnectionError:
+                return "네트워크 연결을 확인해주세요.";
+
+            case PlayFabErrorCode.InvalidParams:
+                return "입력 정보가 올바르지 않습니다.";
+
+            case PlayFabErrorCode.PlayerSecretNotConfigured:
+                return "플레이어 시크릿이 설정되지 않았습니다.";
+
+            case PlayFabErrorCode.APIRequestsDisabledForTitle:
+                return "현재 API 요청이 비활성화되어 있습니다.";
+
+            case PlayFabErrorCode.InvalidTitleId:
+                return "유효하지 않은 타이틀 ID입니다.";
+
+            default:
+                return $"통신 중 오류가 발생했습니다: {message}";
+        }
     }
 
 
