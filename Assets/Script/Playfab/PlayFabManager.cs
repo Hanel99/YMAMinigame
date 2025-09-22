@@ -327,22 +327,32 @@ public class PlayFabManager : MonoBehaviour
     // 레벨과 경험치를 Statistics에 업데이트
     public void UpdatePlayerLevelLeaderBoard()
     {
+        string StatisticName = string.Empty;
+#if DEV
+        StatisticName = "LevelDev";
+#elif LIVE
+        StatisticName = "LevelLive";
+#else
+        StatisticName = "Level";
+#endif
+        var Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp;
+
+        UpdateLeaderBoard(StatisticName, Value);
+    }
+
+
+    public void UpdateLeaderBoard(string statisticName, int value)
+    {
         var request = new UpdatePlayerStatisticsRequest
         {
             Statistics = new List<StatisticUpdate>
-        {
-            new StatisticUpdate
             {
-#if DEV
-                StatisticName = "LevelDev",
-#elif LIVE
-                StatisticName = "LevelLive",
-#else
-                StatisticName = "Level",
-#endif
-                Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp
+                new StatisticUpdate
+                {
+                    StatisticName = statisticName,
+                    Value = value
+                }
             }
-        }
         };
 
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderBoardUpdateSuccess, OnLeaderBoardUpdateError);
@@ -360,20 +370,13 @@ public class PlayFabManager : MonoBehaviour
 
 
 
-
-    public async UniTask<List<PlayerLeaderboardEntry>> GetLeaderboard(CancellationToken cancellationToken = default)
+    public async UniTask<List<PlayerLeaderboardEntry>> GetLeaderboard(string statisticName)
     {
         var tcs = new TaskCompletionSource<List<PlayerLeaderboardEntry>>();
 
         var topRequest = new GetLeaderboardRequest
         {
-#if DEV
-            StatisticName = "LevelDev",
-#elif LIVE
-            StatisticName = "LevelLive",
-#else
-            StatisticName = "Level",
-#endif
+            StatisticName = statisticName,
             StartPosition = 0,
             MaxResultsCount = 10
         };
@@ -386,19 +389,14 @@ public class PlayFabManager : MonoBehaviour
         return await tcs.Task;
     }
 
-    public async UniTask<PlayerLeaderboardEntry> GetPlayerRanking(CancellationToken cancellationToken = default)
+
+    public async UniTask<PlayerLeaderboardEntry> GetPlayerRanking(string statisticName)
     {
         var tcs = new TaskCompletionSource<PlayerLeaderboardEntry>();
 
         var playerRequest = new GetLeaderboardAroundPlayerRequest
         {
-#if DEV
-            StatisticName = "LevelDev",
-#elif LIVE
-            StatisticName = "LevelLive",
-#else
-            StatisticName = "Level",
-#endif
+            StatisticName = statisticName,
             MaxResultsCount = 1
         };
 
@@ -408,17 +406,12 @@ public class PlayFabManager : MonoBehaviour
                 if (result.Leaderboard.Count > 0)
                     tcs.SetResult(result.Leaderboard[0]);
                 else
-                    tcs.SetException(new System.Exception("플레이어 랭킹을 찾을 수 없습니다."));
+                    tcs.SetException(new System.Exception("플레이어 데이터를 찾을 수 없습니다."));
             },
             error => tcs.SetException(new System.Exception(error.GenerateErrorReport()))
         );
 
         return await tcs.Task;
-    }
-
-    private void OnGetLeaderboardError(PlayFabError error)
-    {
-        Debug.LogError("Leaderboard request failed: " + error.GenerateErrorReport());
     }
 
 

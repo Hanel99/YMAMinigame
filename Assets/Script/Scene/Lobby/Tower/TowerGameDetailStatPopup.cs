@@ -4,6 +4,8 @@ using UnityEngine.UI;
 public class TowerGameDetailStatPopup : PopupBase
 {
     public static TowerGameDetailStatPopup instance { get; private set; }
+    public Text playerName;
+    public Text bossName;
 
     public Text playerAtk;
     public Text playerDef;
@@ -43,6 +45,10 @@ public class TowerGameDetailStatPopup : PopupBase
 
     private void UpdateUI()
     {
+        playerName.text = SaveDataManager.instance.playerData.name;
+        int bossNumber = TowerGamePopup.instance.GetBossNumber(SaveDataManager.instance.playerData.towerFloor);
+        bossName.text = LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}");
+
         var playerLevel = SaveDataManager.instance.playerData.level;
         var floor = SaveDataManager.instance.playerData.towerFloor;
         var userStatData = SaveDataManager.instance.playerData.towerGameUserStatLevelData;

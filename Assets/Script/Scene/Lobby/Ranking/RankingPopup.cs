@@ -20,8 +20,8 @@ public class RankingPopup : PopupBase
 
 
 
-    private List<PlayerLeaderboardEntry> topPlayers = new List<PlayerLeaderboardEntry>();
-    private PlayerLeaderboardEntry playerRank;
+    private List<PlayerLeaderboardEntry> topPlayerDataList = new List<PlayerLeaderboardEntry>();
+    private PlayerLeaderboardEntry myPlayerData;
 
     protected override void OnAwake()
     {
@@ -33,7 +33,7 @@ public class RankingPopup : PopupBase
     {
         if (enable)
         {
-            SetData();
+            OnClickLevelRankingTab();
             _OpenUI();
         }
         else
@@ -43,18 +43,67 @@ public class RankingPopup : PopupBase
     }
 
 
-    private async void SetData()
+
+
+    public void OnClickLevelRankingTab()
     {
+        string statisticName = string.Empty;
+#if DEV
+        statisticName = "LevelDev";
+#elif LIVE
+        statisticName = "LevelLive";
+#else
+        statisticName = "Level";
+#endif
+
+        SetRankingUI(statisticName);
+    }
+
+
+
+    public void OnClickTowerRankingTab()
+    {
+        string statisticName = string.Empty;
+#if DEV
+        statisticName = "TowerDev";
+#elif LIVE
+        statisticName = "TowerLive";
+#else
+        statisticName = "Tower";
+#endif
+
+        SetRankingUI(statisticName);
+    }
+
+
+
+    private async void SetRankingUI(string statisticName)
+    {
+        rankingGroup.SetActive(false);
+        playerRankUserData.gameObject.SetActive(false);
+        loadingText.SetActive(true);
+
+        if (statisticName == null)
+        {
+            Debug.LogError("statisticName is null");
+            return;
+        }
+
         try
         {
-            rankingGroup.SetActive(false);
-            playerRankUserData.gameObject.SetActive(false);
-            loadingText.SetActive(true);
+            (topPlayerDataList, myPlayerData) = await UniTask.WhenAll(PlayFabManager.instance.GetLeaderboard(statisticName), PlayFabManager.instance.GetPlayerRanking(statisticName));
 
-            (topPlayers, playerRank) = await UniTask.WhenAll(PlayFabManager.instance.GetLeaderboard(), PlayFabManager.instance.GetPlayerRanking());
+            if (statisticName.Contains("Level"))
+            {
+                UpdateLevelTopUI();
+                UpdateLevelMyUI();
+            }
+            else if (statisticName.Contains("Tower"))
+            {
+                // UpdateTowerTopUI();
+                // UpdateTowerMyUI();
+            }
 
-            UpdateTopRankingsUI();
-            UpdatePlayerRankUI();
 
             await UniTask.DelayFrame(1);
 
@@ -70,39 +119,46 @@ public class RankingPopup : PopupBase
 
 
 
-    void UpdateTopRankingsUI()
+
+
+    #region Level Ranking
+
+
+    void UpdateLevelTopUI()
     {
         for (int i = 0; i < rankUserDataList.Count(); i++)
         {
-            if (i > topPlayers.Count() - 1)
+            if (i > topPlayerDataList.Count() - 1)
             {
-                // rankUserDataList[i].gameObject.SetActive(false);
+                //데이터가 없음. 빈 데이터를 적용
                 rankUserDataList[i].UpdateData(i + 1, "", -1, -1);
                 continue;
             }
 
-            // rankUserDataList[i].gameObject.SetActive(true);
-            if (i == rankUserDataList.Count() - 1)
-            {
-                // 본인 데이터 
-                var level = topPlayers[i].StatValue / 10000;
-                var exp = topPlayers[i].StatValue % 10000;
-                rankUserDataList[i].UpdateData(topPlayers[i].Position + 1, topPlayers[i].DisplayName, level, exp);
-            }
-            else
-            {
-                // 1~10등 데이터
-                var level = topPlayers[i].StatValue / 10000;
-                var exp = topPlayers[i].StatValue % 10000;
-                rankUserDataList[i].UpdateData(topPlayers[i].Position + 1, topPlayers[i].DisplayName, level, exp);
-            }
+            // 1~10등 데이터
+            var level = topPlayerDataList[i].StatValue / 10000;
+            var exp = topPlayerDataList[i].StatValue % 10000;
+            rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, level, exp);
         }
     }
 
-    void UpdatePlayerRankUI()
+    void UpdateLevelMyUI()
     {
-        var level = playerRank.StatValue / 10000;
-        var exp = playerRank.StatValue % 10000;
-        playerRankUserData.UpdateData(playerRank.Position + 1, playerRank.DisplayName, level, exp);
+        // 본인 데이터
+        var level = myPlayerData.StatValue / 10000;
+        var exp = myPlayerData.StatValue % 10000;
+        playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, level, exp);
     }
+
+    #endregion
+
+    #region Tower Ranking
+
+    #endregion
+
+
+
+
+
+
 }

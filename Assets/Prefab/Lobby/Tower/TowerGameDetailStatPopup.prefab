@@ -341,7 +341,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -180, y: 210}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 220, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3891993487399728604
 CanvasRenderer:
@@ -375,9 +375,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: f36b846599c80944c852c2785cb9e7f0, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 52
+    m_MaxSize: 38
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -476,7 +476,7 @@ GameObject:
   - component: {fileID: 988505276512458170}
   - component: {fileID: 7348176941272641182}
   m_Layer: 5
-  m_Name: Monster
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -499,7 +499,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 180, y: 210}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 230, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &988505276512458170
 CanvasRenderer:
@@ -533,9 +533,9 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: f36b846599c80944c852c2785cb9e7f0, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
-    m_MaxSize: 52
+    m_MaxSize: 38
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -915,6 +915,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActBackKey: 1
+  playerName: {fileID: 5214826699734707475}
+  bossName: {fileID: 7348176941272641182}
   playerAtk: {fileID: 3339535629179828593}
   playerDef: {fileID: 4557097816508800392}
   playerHp: {fileID: 1363456960206016929}

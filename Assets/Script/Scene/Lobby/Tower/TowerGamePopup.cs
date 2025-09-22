@@ -64,7 +64,7 @@ public class TowerGamePopup : PopupBase
         bossDesc.text = LocalizeManager.instance.GetString($"Tower.Boss.Desc.{bossNumber.ToString("D2")}");
     }
 
-    private int GetBossNumber(int n)
+    public int GetBossNumber(int n)
     {
         int count = 9;
         // n=0일 때는 바로 반환

@@ -104,6 +104,8 @@ public class TowerGameCombatPopup : PopupBase
     public async void CombatProcess()
     {
         bool isCritical;
+        int bossNumber = TowerGamePopup.instance.GetBossNumber(playerData.towerFloor);
+        string bossName = LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}");
         await UniTask.Delay(1000);
 
         while (playerCombatData.hp > 0 && bossCombatData.hp > 0 && turnCount < 20)
@@ -128,7 +130,7 @@ public class TowerGameCombatPopup : PopupBase
                 if (isCritical)
                     sb.AppendLine($"{playerData.name} 혼신의 일격!");
                 else
-                    sb.AppendLine($"{playerData.name}이/가 보스를 공격!");
+                    sb.AppendLine($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
                 UpdateCombatText();
                 await UniTask.Delay(delayTime);
 
@@ -141,7 +143,7 @@ public class TowerGameCombatPopup : PopupBase
 
                 if (bossCombatData.hp <= 0)
                 {
-                    sb.AppendLine("보스를 처치했습니다!");
+                    sb.AppendLine().AppendLine($"{bossName.Eul_Reul()} 물리쳤습니다!");
                     UpdateCombatText();
                     EndCombat(true);
                     return;
@@ -149,7 +151,7 @@ public class TowerGameCombatPopup : PopupBase
             }
             else
             {
-                sb.AppendLine($"보스가 {playerData.name}의 공격을 회피했습니다!");
+                sb.AppendLine($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
                 UpdateCombatText();
                 await UniTask.Delay(delayTime);
             }
@@ -157,7 +159,7 @@ public class TowerGameCombatPopup : PopupBase
 
             // 보스가 플레이어에게 공격
             sb.AppendLine();
-            sb.AppendLine($"보스의 공격!").AppendLine();
+            sb.AppendLine($"{bossName}의 공격!").AppendLine();
             UpdateCombatText();
             await UniTask.Delay(delayTime);
 
@@ -165,9 +167,9 @@ public class TowerGameCombatPopup : PopupBase
             {
                 int damage = CalculateDamage(bossCombatData, playerCombatData, out isCritical);
                 if (isCritical)
-                    sb.AppendLine($"보스 혼신의 일격!");
+                    sb.AppendLine($"{bossName} 혼신의 일격!");
                 else
-                    sb.AppendLine($"보스가 {playerData.name}을/를 공격!");
+                    sb.AppendLine($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
                 UpdateCombatText();
                 await UniTask.Delay(delayTime);
 
@@ -180,7 +182,7 @@ public class TowerGameCombatPopup : PopupBase
 
                 if (playerCombatData.hp <= 0)
                 {
-                    sb.AppendLine($"{playerData.name}이/가 사망했습니다...");
+                    sb.AppendLine().AppendLine($"{playerData.name.E_Ga()} 쓰러졌습니다...");
                     UpdateCombatText();
                     EndCombat(false);
                     return;
@@ -188,13 +190,13 @@ public class TowerGameCombatPopup : PopupBase
             }
             else
             {
-                sb.AppendLine($"{playerData.name}이/가 보스의 공격을 회피했습니다!");
+                sb.AppendLine($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
                 UpdateCombatText();
                 await UniTask.Delay(delayTime);
             }
         }
 
-        sb.AppendLine($"{playerData.name}은/는 너무 길어진 전투에 지쳐버렸다...");
+        sb.AppendLine().AppendLine($"{playerData.name.En_Nun()} 너무 길어진 전투에 지쳐버렸다...");
         UpdateCombatText();
 
         await UniTask.Delay(delayTime);
@@ -209,8 +211,6 @@ public class TowerGameCombatPopup : PopupBase
         scrollRect.verticalNormalizedPosition = 0f;
         combatText.gameObject.SetActive(false);
         combatText.gameObject.SetActive(true);
-
-        // Canvas.ForceUpdateCanvases(); // 즉시 레이아웃 업데이트
     }
 
     private bool IsAvoided(float avoidanceRate)
