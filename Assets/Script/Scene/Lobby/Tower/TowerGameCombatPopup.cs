@@ -249,8 +249,8 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine($"{rewardCoin}코인, {rewardExp}경험치 획득!");
             UpdateCombatText();
 
-            SaveDataManager.instance.AddCoin(rewardCoin);
-            if (SaveDataManager.instance.AddExp(rewardExp))
+            SaveDataManager.instance.AddCoin(rewardCoin, false);
+            if (SaveDataManager.instance.AddExp(rewardExp, false))
             {
                 await UniTask.Delay(1000);
                 LobbyUIManager.instance.ShowPopup<LevelUpPopup>();

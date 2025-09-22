@@ -238,7 +238,7 @@ public class PlayFabManager : MonoBehaviour
             result => success?.Invoke(),
             error => failure?.Invoke(error.GenerateErrorReport()));
 
-        UpdatePlayerLevelLeaderBoard();
+        UpdateLeaderBoard();
     }
 
     public string GetPlayFabErrorText(PlayFabErrorCode errorCode, string message)
@@ -324,37 +324,39 @@ public class PlayFabManager : MonoBehaviour
 
     #region Leaderboard
 
-    // 레벨과 경험치를 Statistics에 업데이트
-    public void UpdatePlayerLevelLeaderBoard()
+    public void UpdateLeaderBoard()
     {
-        string StatisticName = string.Empty;
-#if DEV
-        StatisticName = "LevelDev";
-#elif LIVE
-        StatisticName = "LevelLive";
-#else
-        StatisticName = "Level";
-#endif
-        var Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp;
+        var request = new UpdatePlayerStatisticsRequest { Statistics = new List<StatisticUpdate>() };
 
-        UpdateLeaderBoard(StatisticName, Value);
+        // level, exp
+        var levelStat = new StatisticUpdate();
+#if DEV
+        levelStat.StatisticName = "LevelDev";
+#elif LIVE
+        levelStat.StatisticName = "LevelLive";
+#else
+        levelStat.StatisticName = "Level";
+#endif
+        levelStat.Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp;
+        request.Statistics.Add(levelStat);
+
+        // tower
+        var towerStat = new StatisticUpdate();
+#if DEV
+        towerStat.StatisticName = "TowerDev";
+#elif LIVE
+        towerStat.StatisticName = "TowerLive";
+#else
+        towerStat.StatisticName = "Tower";
+#endif
+        towerStat.Value = SaveDataManager.instance.playerData.towerFloor;
+        request.Statistics.Add(towerStat);
+
+        UpdateLeaderBoard(request);
     }
 
-
-    public void UpdateLeaderBoard(string statisticName, int value)
+    public void UpdateLeaderBoard(UpdatePlayerStatisticsRequest request)
     {
-        var request = new UpdatePlayerStatisticsRequest
-        {
-            Statistics = new List<StatisticUpdate>
-            {
-                new StatisticUpdate
-                {
-                    StatisticName = statisticName,
-                    Value = value
-                }
-            }
-        };
-
         PlayFabClientAPI.UpdatePlayerStatistics(request, OnLeaderBoardUpdateSuccess, OnLeaderBoardUpdateError);
     }
 

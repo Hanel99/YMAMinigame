@@ -9,6 +9,12 @@ using UnityEngine.UI;
 
 public class RankingPopup : PopupBase
 {
+    enum RankingType
+    {
+        Level,
+        Tower
+    }
+
     public static RankingPopup instance { get; private set; }
 
     public GameObject rankingGroup;
@@ -18,10 +24,15 @@ public class RankingPopup : PopupBase
     public List<RankUserData> rankUserDataList;
     public RankUserData playerRankUserData;
 
+    // Title Text
+    public Text levelText;
+    public Text expText;
+
 
 
     private List<PlayerLeaderboardEntry> topPlayerDataList = new List<PlayerLeaderboardEntry>();
     private PlayerLeaderboardEntry myPlayerData;
+    private RankingType currentRankingType = RankingType.Level;
 
     protected override void OnAwake()
     {
@@ -47,7 +58,11 @@ public class RankingPopup : PopupBase
 
     public void OnClickLevelRankingTab()
     {
+        currentRankingType = RankingType.Level;
         string statisticName = string.Empty;
+        levelText.text = "레벨";
+        expText.text = "경험치";
+
 #if DEV
         statisticName = "LevelDev";
 #elif LIVE
@@ -63,7 +78,11 @@ public class RankingPopup : PopupBase
 
     public void OnClickTowerRankingTab()
     {
+        currentRankingType = RankingType.Tower;
         string statisticName = string.Empty;
+        levelText.text = "층";
+        expText.text = "";
+
 #if DEV
         statisticName = "TowerDev";
 #elif LIVE
@@ -93,17 +112,8 @@ public class RankingPopup : PopupBase
         {
             (topPlayerDataList, myPlayerData) = await UniTask.WhenAll(PlayFabManager.instance.GetLeaderboard(statisticName), PlayFabManager.instance.GetPlayerRanking(statisticName));
 
-            if (statisticName.Contains("Level"))
-            {
-                UpdateLevelTopUI();
-                UpdateLevelMyUI();
-            }
-            else if (statisticName.Contains("Tower"))
-            {
-                // UpdateTowerTopUI();
-                // UpdateTowerMyUI();
-            }
-
+            UpdateLevelTopUI();
+            UpdateLevelMyUI();
 
             await UniTask.DelayFrame(1);
 
@@ -136,18 +146,33 @@ public class RankingPopup : PopupBase
             }
 
             // 1~10등 데이터
-            var level = topPlayerDataList[i].StatValue / 10000;
-            var exp = topPlayerDataList[i].StatValue % 10000;
-            rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, level, exp);
+            if (currentRankingType == RankingType.Level)
+            {
+                var level = topPlayerDataList[i].StatValue / 10000;
+                var exp = topPlayerDataList[i].StatValue % 10000;
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, level, exp);
+            }
+            else if (currentRankingType == RankingType.Tower)
+            {
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, myPlayerData.StatValue, -1);
+            }
         }
     }
 
     void UpdateLevelMyUI()
     {
         // 본인 데이터
-        var level = myPlayerData.StatValue / 10000;
-        var exp = myPlayerData.StatValue % 10000;
-        playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, level, exp);
+        if (currentRankingType == RankingType.Level)
+        {
+            var level = myPlayerData.StatValue / 10000;
+            var exp = myPlayerData.StatValue % 10000;
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, level, exp);
+        }
+        else if (currentRankingType == RankingType.Tower)
+        {
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, myPlayerData.StatValue, -1);
+        }
+
     }
 
     #endregion

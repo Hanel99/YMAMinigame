@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Unity.VisualScripting;
 
 public class SaveDataManager : MonoBehaviour
 {
@@ -141,7 +142,7 @@ public class SaveDataManager : MonoBehaviour
 
     #region playerDataLogic
 
-    public void AddCoin(int amount)
+    public void AddCoin(int amount, bool isSave = true)
     {
         _playerData.coin += amount;
 
@@ -150,7 +151,8 @@ public class SaveDataManager : MonoBehaviour
         if (_playerData.coin < 0)
             _playerData.coin = 0;
 
-        SavePlayerData();
+        if (isSave)
+            SavePlayerData();
     }
     public void SetCoin(int amount)
     {
@@ -210,7 +212,7 @@ public class SaveDataManager : MonoBehaviour
         HLLogger.Log($"Player Level Up! {_playerData.level}");
     }
 
-    public bool AddExp(int amount)
+    public bool AddExp(int amount, bool isSave = true)
     {
         bool isShowLevelUpPopup = false;
         bool needLevelUp = false;
@@ -238,7 +240,9 @@ public class SaveDataManager : MonoBehaviour
                 needLevelUp = _playerData.exp >= _playerData.maxExp;
             }
         }
-        SavePlayerData();
+
+        if (isSave)
+            SavePlayerData();
         return isShowLevelUpPopup;
     }
 

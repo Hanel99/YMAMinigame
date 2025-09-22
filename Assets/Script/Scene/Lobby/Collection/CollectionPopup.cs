@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +17,7 @@ public class CollectionPopup : PopupBase
     public List<CollectionCard> cardObjectList = new();
     public List<int> viewCardIdList = new();
     private List<string> dropdownList = new();
+    private CancellationTokenSource cardSpawnCTS;
 
 
     protected override void OnAwake()
@@ -27,13 +30,17 @@ public class CollectionPopup : PopupBase
     {
         if (enable)
         {
+            cardSpawnCTS?.Cancel();
+            cardSpawnCTS = new CancellationTokenSource();
+
             SetDropdownFilter();
             CalcViewCardIdList();
-            UpdateCardView();
+            UpdateCardView(cardSpawnCTS.Token).Forget();
             _OpenUI();
         }
         else
         {
+            cardSpawnCTS?.Cancel();
             _CloseWindow();
         }
     }
@@ -88,7 +95,7 @@ public class CollectionPopup : PopupBase
         }
     }
 
-    public void UpdateCardView()
+    public async UniTask UpdateCardView(CancellationToken token)
     {
         // 우선 null인데 삭제 안된 오브젝트 검사를 우선 실행
         cardObjectList.RemoveAll(x => x == null);
@@ -110,6 +117,9 @@ public class CollectionPopup : PopupBase
                 go.gameObject.SetActive(true);
 
                 cardObjectList.Add(go);
+
+                if (i % 5 == 4)
+                    await UniTask.Yield(PlayerLoopTiming.Update, token);
             }
         }
         else
@@ -124,6 +134,7 @@ public class CollectionPopup : PopupBase
                     cardObjectList[i].SetImage(viewCardIdList[i], SaveDataManager.instance.playerData.ownCardList.Contains(viewCardIdList[i]));
             }
         }
+
         cardRoot.gameObject.SetActive(false);
         cardRoot.gameObject.SetActive(true);
 
@@ -137,6 +148,6 @@ public class CollectionPopup : PopupBase
         HLLogger.Log($"@@@ changed value is {change.value}");
 
         CalcViewCardIdList();
-        UpdateCardView();
+        UpdateCardView(cardSpawnCTS.Token).Forget();
     }
 }

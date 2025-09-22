@@ -36,7 +36,6 @@ public class SettingPopup : PopupBase
     public Slider sfxSlider;
     public Toggle sfxMuteToggle;
 
-    private CommonPopup serverDataUpdatePopup = null;
 
     protected override void OnAwake()
     {
