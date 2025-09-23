@@ -122,6 +122,7 @@ public class CubeGameUIManager : MonoBehaviour
 
     public void UpdateCubeCountText(Dictionary<CubeState, int> countDic)
     {
+#if DEV
         StringBuilder sb = new StringBuilder();
         foreach (CubeState state in Enum.GetValues(typeof(CubeState)))
         {
@@ -133,6 +134,7 @@ public class CubeGameUIManager : MonoBehaviour
             sb.Append($"{state} : {count} / ");
         }
         devText.text = sb.ToString();
+#endif
     }
 
 }

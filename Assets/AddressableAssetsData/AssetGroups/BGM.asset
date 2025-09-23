@@ -81,6 +81,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e5a498a47dacb364f96e73e0bdeacc22
+    m_Address: BGM_CubeGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcb355a8f3b7fe34c8e51372d8d659c9
     m_Address: BGM_Result2
     m_ReadOnly: 0

@@ -45,6 +45,17 @@ public class CubeGameManager : MonoBehaviour
         {
             countDic.Add(state, 0);
         }
+        cubeList[0].SetKeyCode(KeyCode.Q);
+        // cubeList[1].SetKeyCode(KeyCode.W);
+        // cubeList[2].SetKeyCode(KeyCode.E);
+
+        // cubeList[3].SetKeyCode(KeyCode.A);
+        // cubeList[4].SetKeyCode(KeyCode.S);
+        // cubeList[5].SetKeyCode(KeyCode.D);
+
+        // cubeList[6].SetKeyCode(KeyCode.Z);
+        // cubeList[7].SetKeyCode(KeyCode.X);
+        // cubeList[8].SetKeyCode(KeyCode.C);
 
         StartProcess().Forget();
     }
@@ -52,6 +63,7 @@ public class CubeGameManager : MonoBehaviour
     private async UniTaskVoid StartProcess()
     {
         CubeGameUIManager.instance.ShowSceneMoveAnimation(true);
+        SoundManager.instance.PlayBGM(BGMType.CubeGame);
 
         leftTime = 60f;
         CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
@@ -87,6 +99,7 @@ public class CubeGameManager : MonoBehaviour
         if (_inGameState == InGameState.Play)
         {
             leftTime -= Time.deltaTime;
+            CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
 
             if (leftTime <= 0f)
             {
@@ -111,6 +124,14 @@ public class CubeGameManager : MonoBehaviour
             HLLogger.Log($"force clear");
             leftTime = 0f;
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (_inGameState == InGameState.Play)
+                _inGameState = InGameState.Pause;
+            else if (_inGameState == InGameState.Pause)
+                _inGameState = InGameState.Play;
+        }
 #endif
     }
 
@@ -132,9 +153,10 @@ public class CubeGameManager : MonoBehaviour
     {
         int earnCoinAmount = score * 10;
         int exp = Math.Max(1, score / 100);
+        HLLogger.Log($"coin : {earnCoinAmount}, exp : {exp}");
 
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
-        FindAIWordGameUIManager.instance.ShowResult(1, earnCoinAmount);
+        CubeGameUIManager.instance.ShowResult(1, earnCoinAmount);
         //TODO 전용 result 팝업 만들것
 
         if (SaveDataManager.instance.AddExp(exp))
@@ -171,6 +193,7 @@ public class CubeGameManager : MonoBehaviour
 
         score += addScore;
         score = Math.Max(0, score);
+        countDic[state]++;
 
         if (state == CubeState.Perfect)
             leftTime += 1f;
