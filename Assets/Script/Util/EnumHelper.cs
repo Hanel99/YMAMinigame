@@ -11,6 +11,7 @@ public enum SceneName
     LobbyScene,
     YMAMatch2CardGame,
     YMAFindAIWordGame,
+    YMACubeGame,
 }
 
 
@@ -19,9 +20,9 @@ public enum GameType
 {
     MatchCardGame = 0,
     FindAIWordGame = 1,
+    CubeGame = 2,
 
     //WingTto, -> 윙또
-    //CubeGame, -> 버튼 빨리 누르기
 
 
 
@@ -148,7 +149,7 @@ public enum CardMaster
 
 
 
-#region MatchCardGame
+#region CommonGame
 
 public enum InGameState
 {
@@ -157,22 +158,6 @@ public enum InGameState
     Pause,
     Finish,
 }
-
-public enum PlayerState
-{
-    Ready,
-
-    WaitChooseCard,
-    FlippingCard,
-
-    CheckResult,
-    GameOver,
-
-    //... 기타 등등
-}
-
-
-
 
 #endregion
 
@@ -196,6 +181,24 @@ public enum TowerGameResultType
     up,
     stay,
     down,
+}
+
+
+#endregion
+
+
+
+#region CubeGame
+
+public enum CubeState
+{
+    Perfect,
+    Great,
+    Good,
+    Bad,
+    Miss,
+    Idle,
+    Stop,
 }
 
 

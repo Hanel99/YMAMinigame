@@ -22,6 +22,7 @@ public class PausePopup : PopupBase
         }
         else
         {
+            ClosePauseProcess();
             _CloseWindow();
         }
     }
@@ -32,5 +33,18 @@ public class PausePopup : PopupBase
         if (isOpenCloseAnimationActing) return;
 
         SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
+    }
+
+    private void ClosePauseProcess()
+    {
+        SceneName currentSceneName = (SceneName)Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
+
+        switch (currentSceneName)
+        {
+            case SceneName.YMACubeGame:
+                CubeGameManager.instance.SetPause(false);
+                break;
+        }
+
     }
 }

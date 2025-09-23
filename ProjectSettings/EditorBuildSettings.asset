@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YMAFindAIWordGame.unity
     guid: 96b34a0eaea4f4447a37c8700bd481e0
+  - enabled: 1
+    path: Assets/Scenes/YMACubeGame.unity
+    guid: 28639dd20ae51e5498b9175f94fdd7ba
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: a29d318d6a812684faf61d3968e13efe, type: 2}
   m_UseUCBPForAssetBundles: 0
