@@ -22,11 +22,11 @@ public class FindAIWordGameManager : MonoBehaviour
         instance = this;
     }
 
-    private async void Start()
+    private void Start()
     {
         FindAIWordGameInGameView.instance.InitUI();
         sb.Clear();
-        await StartGameProcess();
+        StartGameProcess().Forget();
     }
 
 
@@ -50,7 +50,7 @@ public class FindAIWordGameManager : MonoBehaviour
         {
             HLLogger.Log($"force clear");
 
-            FinishProcess(0);
+            FinishProcess(0).Forget();
         }
 #endif
     }
@@ -71,7 +71,7 @@ public class FindAIWordGameManager : MonoBehaviour
         HLLogger.Log("정답 키워드 선택됨 (숨김): " + currentKeyword);
 
         var textUpdateCts = new CancellationTokenSource();
-        UpdateLoadingText(textUpdateCts.Token);
+        UpdateLoadingText(textUpdateCts.Token).Forget();
 
         try
         {
@@ -91,7 +91,7 @@ public class FindAIWordGameManager : MonoBehaviour
             HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
 
             currentHintIndex = 0;
-            ShowNextHint();
+            ShowNextHint().Forget();
         }
 
         catch (OperationCanceledException)
@@ -111,7 +111,7 @@ public class FindAIWordGameManager : MonoBehaviour
         apiCts?.Cancel();
     }
 
-    private async void UpdateLoadingText(CancellationToken token)
+    private async UniTask UpdateLoadingText(CancellationToken token)
     {
         try
         {
@@ -141,7 +141,7 @@ public class FindAIWordGameManager : MonoBehaviour
         }
     }
 
-    private async void ShowNextHint(int delayTime = 0)
+    private async UniTask ShowNextHint(int delayTime = 0)
     {
         await UniTask.Delay(delayTime);
 
@@ -158,7 +158,7 @@ public class FindAIWordGameManager : MonoBehaviour
         {
             HLLogger.Log("모든 힌트를 다 사용");
             FindAIWordGameInGameView.instance.UpdateHintText("실패!\n정답은 " + currentKeyword);
-            FinishProcess();
+            FinishProcess().Forget();
         }
     }
 
@@ -173,7 +173,7 @@ public class FindAIWordGameManager : MonoBehaviour
         {
             HLLogger.Log($"{answer.Trim()} - 정답!");
             FindAIWordGameInGameView.instance.UpdateHintText("정답!\n축하합니다!");
-            FinishProcess();
+            FinishProcess().Forget();
         }
         else
         {
@@ -182,12 +182,12 @@ public class FindAIWordGameManager : MonoBehaviour
             FindAIWordGameInGameView.instance.ResetAnswerField();
 
             currentHintIndex++;
-            ShowNextHint(1500);
+            ShowNextHint(1500).Forget();
         }
     }
 
 
-    private async void FinishProcess(int delayTime = 3000)
+    private async UniTask FinishProcess(int delayTime = 3000)
     {
         apiCts?.Cancel();
         apiCts?.Dispose();

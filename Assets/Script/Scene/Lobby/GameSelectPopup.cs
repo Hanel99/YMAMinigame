@@ -85,6 +85,11 @@ public class GameSelectPopup : PopupBase
                 SceneMoveManager.instance.MoveScene(SceneName.YMACubeGame);
                 break;
 
+            case GameType.WingTto:
+                LobbyUIManager.instance.ShowCommonPopup("알림", "개발중입니다.", true, true, false, null, null);
+                // SceneMoveManager.instance.MoveScene(SceneName.YMAWingTto);
+                break;
+
             default:
                 HLLogger.Log("@@@ gametype is error");
                 break;

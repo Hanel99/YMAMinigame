@@ -17,6 +17,9 @@ public class CubeGameManager : MonoBehaviour
     // private
     private int score;
     private float leftTime;
+    private int randomSeed;
+    private System.Random randomGenerator;
+
 
     private InGameState _inGameState;
     public InGameState inGameState => _inGameState;
@@ -40,6 +43,18 @@ public class CubeGameManager : MonoBehaviour
         leftTime = 0f;
         _inGameState = InGameState.Ready;
         countDic.Clear();
+
+        randomSeed = UnityEngine.Random.Range(0, 100000);
+        randomGenerator = new System.Random(randomSeed);
+        HLLogger.Log($"Random Seed: {randomSeed}");
+
+        StringBuilder sb = new();
+        for (int i = 0; i < 100; ++i)
+        {
+            sb.Append($"{randomGenerator.Next(0, 100)}");
+        }
+        HLLogger.Log($"Random test: {sb}");
+
 
         foreach (CubeState state in Enum.GetValues(typeof(CubeState)))
         {
@@ -191,12 +206,24 @@ public class CubeGameManager : MonoBehaviour
             _ => 0,
         };
 
+        float addTime = state switch
+        {
+            CubeState.Perfect => 2f,
+            CubeState.Great => 1f,
+            CubeState.Good => 0f,
+            CubeState.Bad => 0f,
+            CubeState.Miss => -1f,
+
+            _ => 0f,
+        };
+
         score += addScore;
         score = Math.Max(0, score);
-        countDic[state]++;
+        leftTime += addTime;
 
-        if (state == CubeState.Perfect)
-            leftTime += 1f;
+#if DEV
+        countDic[state]++;
+#endif
 
         CubeGameUIManager.instance.UpdateScoreText(score);
         CubeGameUIManager.instance.UpdateCubeCountText(countDic);
@@ -220,5 +247,42 @@ public class CubeGameManager : MonoBehaviour
         float miss = 1f;
 
         return (idle, good, great, perfect, bad, miss);
+    }
+
+    public int GetRandomInt(int min, int max)
+    {
+        return randomGenerator.Next(min, max);
+    }
+
+    public float GetRandomFloat(float min, float max)
+    {
+        return min + (float)randomGenerator.NextDouble() * (max - min);
+    }
+
+    public float GetRandomFloat()
+    {
+        return (float)randomGenerator.NextDouble();
+    }
+
+    public bool GetRandomBool()
+    {
+        return randomGenerator.Next(0, 2) == 1;
+    }
+
+    public Vector2 GetRandomVector2(float minX, float maxX, float minY, float maxY)
+    {
+        return new Vector2(
+            GetRandomFloat(minX, maxX),
+            GetRandomFloat(minY, maxY)
+        );
+    }
+
+    public Vector3 GetRandomVector3(float minX, float maxX, float minY, float maxY, float minZ, float maxZ)
+    {
+        return new Vector3(
+            GetRandomFloat(minX, maxX),
+            GetRandomFloat(minY, maxY),
+            GetRandomFloat(minZ, maxZ)
+        );
     }
 }

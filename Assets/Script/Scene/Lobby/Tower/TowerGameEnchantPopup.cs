@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -90,7 +91,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
     {
         isActBackKey = false;
         enchantResult.gameObject.SetActive(true);
-        enchantResult.ActResultAnimation(type, before, after, UIRefreshAction);
+        enchantResult.ActResultAnimation(type, before, after, UIRefreshAction).Forget();
     }
 
     public void CloseEnchantResult()

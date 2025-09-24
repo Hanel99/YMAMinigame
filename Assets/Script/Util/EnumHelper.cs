@@ -12,6 +12,7 @@ public enum SceneName
     YMAMatch2CardGame,
     YMAFindAIWordGame,
     YMACubeGame,
+    YMAWingTto,
 }
 
 
@@ -21,8 +22,7 @@ public enum GameType
     MatchCardGame = 0,
     FindAIWordGame = 1,
     CubeGame = 2,
-
-    //WingTto, -> 윙또
+    WingTto = 3,
 
 
 
@@ -216,6 +216,7 @@ public enum BGMType
     CardGame,
     WordGame,
     CubeGame,
+    WingTto,
 
     // Loading,
     // Result,

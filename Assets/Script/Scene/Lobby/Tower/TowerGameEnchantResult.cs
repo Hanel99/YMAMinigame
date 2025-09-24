@@ -15,7 +15,7 @@ public class TowerGameEnchantResult : MonoBehaviour
     public Text touchToCloseText;
     public Button closeButton;
 
-    public async void ActResultAnimation(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)
+    public async UniTask ActResultAnimation(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)
     {
         // 초기화
         beforeText.text = "";

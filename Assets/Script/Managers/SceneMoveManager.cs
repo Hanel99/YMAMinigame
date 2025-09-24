@@ -53,6 +53,10 @@ public class SceneMoveManager : MonoBehaviour
             case SceneName.YMACubeGame:
                 CubeGameUIManager.instance.ShowSceneMoveAnimation(false, () => SceneManager.LoadScene(sceneName.ToString()));
                 break;
+
+            case SceneName.YMAWingTto:
+                CubeGameUIManager.instance.ShowSceneMoveAnimation(false, () => SceneManager.LoadScene(sceneName.ToString()));
+                break;
         }
     }
 

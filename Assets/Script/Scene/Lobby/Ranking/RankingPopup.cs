@@ -71,7 +71,7 @@ public class RankingPopup : PopupBase
         statisticName = "Level";
 #endif
 
-        SetRankingUI(statisticName);
+        SetRankingUI(statisticName).Forget();
     }
 
 
@@ -91,12 +91,12 @@ public class RankingPopup : PopupBase
         statisticName = "Tower";
 #endif
 
-        SetRankingUI(statisticName);
+        SetRankingUI(statisticName).Forget();
     }
 
 
 
-    private async void SetRankingUI(string statisticName)
+    private async UniTask SetRankingUI(string statisticName)
     {
         rankingGroup.SetActive(false);
         playerRankUserData.gameObject.SetActive(false);

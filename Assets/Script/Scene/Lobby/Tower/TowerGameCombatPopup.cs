@@ -47,7 +47,7 @@ public class TowerGameCombatPopup : PopupBase
             SetCombatData();
             UpdateUI();
             _OpenUI();
-            CombatProcess();
+            CombatProcess().Forget();
         }
         else
         {
@@ -98,10 +98,10 @@ public class TowerGameCombatPopup : PopupBase
         retryButton.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
         SetTextSpeed();
-        UpdateCombatText();
+        UpdateCombatText().Forget();
     }
 
-    public async void CombatProcess()
+    public async UniTask CombatProcess()
     {
         bool isCritical;
         int bossNumber = TowerGamePopup.instance.GetBossNumber(playerData.towerFloor);
@@ -114,14 +114,14 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine($"{turnCount}번째 턴!");
-            UpdateCombatText();
+            UpdateCombatText().Forget();
             await UniTask.Delay(delayTime);
 
 
             // 플레이어가 보스에게 공격
             sb.AppendLine();
             sb.AppendLine($"{playerData.name}의 공격!").AppendLine();
-            UpdateCombatText();
+            UpdateCombatText().Forget();
             await UniTask.Delay(delayTime);
 
             if (!IsAvoided(bossCombatData.avoidance))
@@ -131,28 +131,28 @@ public class TowerGameCombatPopup : PopupBase
                     sb.AppendLine($"{playerData.name} 혼신의 일격!");
                 else
                     sb.AppendLine($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
 
                 bossCombatData.hp -= damage;
                 bossCombatData.hp = Mathf.Max(0, bossCombatData.hp);
 
                 sb.AppendLine($"{damage} 데미지를 입혔다! ({bossCombatData.hp}/{bossCombatData.maxHp})");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
 
                 if (bossCombatData.hp <= 0)
                 {
                     sb.AppendLine().AppendLine($"{bossName.Eul_Reul()} 물리쳤습니다!");
-                    UpdateCombatText();
-                    EndCombat(true);
+                    UpdateCombatText().Forget();
+                    EndCombat(true).Forget();
                     return;
                 }
             }
             else
             {
                 sb.AppendLine($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
             }
 
@@ -160,7 +160,7 @@ public class TowerGameCombatPopup : PopupBase
             // 보스가 플레이어에게 공격
             sb.AppendLine();
             sb.AppendLine($"{bossName}의 공격!").AppendLine();
-            UpdateCombatText();
+            UpdateCombatText().Forget();
             await UniTask.Delay(delayTime);
 
             if (!IsAvoided(playerCombatData.avoidance))
@@ -170,40 +170,40 @@ public class TowerGameCombatPopup : PopupBase
                     sb.AppendLine($"{bossName} 혼신의 일격!");
                 else
                     sb.AppendLine($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
 
                 playerCombatData.hp -= damage;
                 playerCombatData.hp = Mathf.Max(0, playerCombatData.hp);
 
                 sb.AppendLine($"{damage} 데미지를 입었다! ({playerCombatData.hp}/{playerCombatData.maxHp})");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
 
                 if (playerCombatData.hp <= 0)
                 {
                     sb.AppendLine().AppendLine($"{playerData.name.E_Ga()} 쓰러졌습니다...");
-                    UpdateCombatText();
-                    EndCombat(false);
+                    UpdateCombatText().Forget();
+                    EndCombat(false).Forget();
                     return;
                 }
             }
             else
             {
                 sb.AppendLine($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
-                UpdateCombatText();
+                UpdateCombatText().Forget();
                 await UniTask.Delay(delayTime);
             }
         }
 
         sb.AppendLine().AppendLine($"{playerData.name.En_Nun()} 너무 길어진 전투에 지쳐버렸다...");
-        UpdateCombatText();
+        UpdateCombatText().Forget();
 
         await UniTask.Delay(delayTime);
-        EndCombat(false);
+        EndCombat(false).Forget();
     }
 
-    private async void UpdateCombatText()
+    private async UniTask UpdateCombatText()
     {
         combatText.text = sb.ToString(); // StringBuilder 내용을 UI에 반영
 
@@ -239,7 +239,7 @@ public class TowerGameCombatPopup : PopupBase
         return Mathf.Max(1, rawDamage); // 최소 데미지는 1
     }
 
-    private async void EndCombat(bool playerWon)
+    private async UniTask EndCombat(bool playerWon)
     {
         if (playerWon)
         {
@@ -247,7 +247,7 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 승리했습니다!");
             sb.AppendLine($"{rewardCoin}코인, {rewardExp}경험치 획득!");
-            UpdateCombatText();
+            UpdateCombatText().Forget();
 
             SaveDataManager.instance.AddCoin(rewardCoin, false);
             if (SaveDataManager.instance.AddExp(rewardExp, false))
@@ -263,7 +263,7 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 패배했습니다...");
-            UpdateCombatText();
+            UpdateCombatText().Forget();
         }
 
         retryButton.interactable = !playerWon;
@@ -325,6 +325,6 @@ public class TowerGameCombatPopup : PopupBase
     {
         SetCombatData();
         UpdateUI();
-        CombatProcess();
+        CombatProcess().Forget();
     }
 }
