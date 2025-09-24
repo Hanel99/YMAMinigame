@@ -42,9 +42,23 @@ public class BuildToolEditorWindow : OdinEditorWindow
 
     // private
     private const string BUILD_COUNT_KEY = "BuildCount";
+    private const string ASSET_VERSION_KEY = "BuildTool_AssetVersion";
+    private const string APP_VERSION_KEY = "BuildTool_AppVersion";
 
 
+    protected override void Initialize()
+    {
+        base.Initialize();
+        AssetVersion = EditorPrefs.GetString(ASSET_VERSION_KEY, AssetVersion);
+        AppVersion = EditorPrefs.GetString(APP_VERSION_KEY, AppVersion);
+    }
 
+    protected override void OnDisable()
+    {
+        EditorPrefs.SetString(ASSET_VERSION_KEY, AssetVersion);
+        EditorPrefs.SetString(APP_VERSION_KEY, AppVersion);
+        base.OnDisable();
+    }
 
     [MenuItem("Tools/Util Window/앱 에셋 통합 빌드 툴")]
     private static void OpenWindow()
@@ -55,13 +69,13 @@ public class BuildToolEditorWindow : OdinEditorWindow
     [Button("\uD83D\uDCE6 Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
     {
-        SetupAndBuildAddressables(Platform, Environment, AssetVersion);
+        SetupAndBuildAddressables(Platform, Environment);
     }
 
     [Button("\uD83D\uDE80 앱 빌드 + Addressables 빌드", ButtonSizes.Large)]
     private void BuildFull()
     {
-        SetupAndBuildAddressables(Platform, Environment, AssetVersion);
+        SetupAndBuildAddressables(Platform, Environment);
         string targetPath = BuildPlayerApp();
 
         if (UploadToNAS)
@@ -71,7 +85,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
         }
     }
 
-    private void SetupAndBuildAddressables(PlatformOption platform, EnvOption env, string version)
+    private void SetupAndBuildAddressables(PlatformOption platform, EnvOption env)
     {
         string envStr = env.ToString().ToLower();
         string platformStr = platform.ToString().ToLower();
@@ -81,10 +95,13 @@ public class BuildToolEditorWindow : OdinEditorWindow
         string currentProfileId = settings.activeProfileId;
         string currentProfileName = profileSettings.GetProfileName(currentProfileId);
 
+        if (AssetVersion != string.Empty && AssetVersion != EditorPrefs.GetString(ASSET_VERSION_KEY, AssetVersion))
+            EditorPrefs.SetString(ASSET_VERSION_KEY, AssetVersion);
+        AssetVersion = EditorPrefs.GetString(ASSET_VERSION_KEY, AssetVersion);
 
         profileSettings.SetValue(currentProfileId, "Platform", platformStr);
         profileSettings.SetValue(currentProfileId, "Env", envStr);
-        profileSettings.SetValue(currentProfileId, "AssetVersion", version);
+        profileSettings.SetValue(currentProfileId, "AssetVersion", AssetVersion);
 
         SetDefineSymbol(env.ToString().ToUpper());
 
@@ -97,7 +114,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
         // 2. Addressables 빌드 수행
         AddressableAssetSettings.CleanPlayerContent();
         AddressableAssetSettings.BuildPlayerContent();
-        Debug.Log($"✅ Addressables 빌드 완료: {platformStr}/{envStr}/{version}");
+        Debug.Log($"✅ Addressables 빌드 완료: {platformStr}/{envStr}/{AssetVersion}");
     }
 
     private void SetDefineSymbol(string symbol)
@@ -119,6 +136,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
         string buildPath = GetBuildPath();
 
         // 앱 버전 설정
+        if (AppVersion != string.Empty && AppVersion != EditorPrefs.GetString(APP_VERSION_KEY, AppVersion))
+            EditorPrefs.SetString(APP_VERSION_KEY, AppVersion);
+        AppVersion = EditorPrefs.GetString(APP_VERSION_KEY, AppVersion);
         PlayerSettings.bundleVersion = AppVersion;
         PlayerSettings.productName = "YMA Mini Game";
 

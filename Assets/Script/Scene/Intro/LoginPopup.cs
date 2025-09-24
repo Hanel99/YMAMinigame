@@ -64,6 +64,7 @@ public class LoginPopup : PopupBase
             {
                 isConnecting = false;
                 SaveDataManager.instance.SetIDPW(idInputField.text, pwInputField.text, autoLogin.isOn);
+                IntroUIManager.instance.UpdateIDText(idInputField.text);
                 IntroController.instance.MoveNextIntroProcess();
                 ShowPopup(false);
             });

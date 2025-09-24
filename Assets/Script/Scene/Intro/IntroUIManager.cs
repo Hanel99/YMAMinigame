@@ -20,6 +20,7 @@ public class IntroUIManager : MonoBehaviour
     public Text errorDimText;
     public SceneAnimation sceneDim;
     public Button removeLoginDataButton;
+    public Text IDText;
 
     public Transform popupRoot;
     public List<PopupBase> popupList = new();
@@ -41,6 +42,12 @@ public class IntroUIManager : MonoBehaviour
     {
         errorDimText.text = errorText;
         errorDim.SetActive(true);
+    }
+
+    public void InitIntroText()
+    {
+        versionText.text = "";
+        IDText.text = "";
     }
 
 
@@ -90,6 +97,11 @@ public class IntroUIManager : MonoBehaviour
                 stateText.text = "";
                 break;
         }
+    }
+
+    public void UpdateIDText(string id)
+    {
+        IDText.text = $"ID : {id}";
     }
 
 

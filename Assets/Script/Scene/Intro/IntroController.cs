@@ -92,6 +92,7 @@ public class IntroController : MonoBehaviour
         //         StaticGameData.showDevTestText = false;
         // #endif
         IntroUIManager.instance.ShowSceneMoveAnimation(true);
+        IntroUIManager.instance.InitIntroText();
 
         state++;
         StartIntroProcess();
@@ -269,6 +270,7 @@ public class IntroController : MonoBehaviour
             {
                 PlayFabManager.instance.GetUserData(() =>
                 {
+                    IntroUIManager.instance.UpdateIDText(loginIDPWData.Item1);
                     MoveNextIntroProcess();
                 });
             }, (error) =>
