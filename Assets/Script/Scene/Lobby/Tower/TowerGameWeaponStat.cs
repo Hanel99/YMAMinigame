@@ -64,7 +64,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         }
 
         int upValue = weaponMetaData.up + userWeaponData.failCount * 10;
-        int stayValue = weaponMetaData.stay;
+        int stayValue = weaponMetaData.stay + (userWeaponData.isDown ? weaponMetaData.down : 0);
         int downValue = userWeaponData.isDown ? 0 : weaponMetaData.down;
         int total = upValue + stayValue + downValue;
 
@@ -84,7 +84,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         if (weaponLevel >= 100 || SaveDataManager.instance.playerData.coin < weaponMetaData.requireCoin)
             return;
 
-        SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin);
+        SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin, false);
         WeaponEnchantProcess();
     }
 
@@ -137,12 +137,22 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
+#if  UNITY_EDITOR && DEV
+        UpdateUIData(weaponLevel);
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
+#else
         TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
+#endif
     }
     private void StayProcess()
     {
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
+#if UNITY_EDITOR && DEV
+        UpdateUIData(weaponLevel);
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
+#else
         TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
+#endif
     }
     private void DownProcess()
     {
@@ -150,6 +160,11 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
+#if  UNITY_EDITOR && DEV
+        UpdateUIData(weaponLevel);
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
+#else
         TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
+#endif
     }
 }

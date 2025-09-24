@@ -42,9 +42,10 @@ public class TowerGamePlayerStat : MonoBehaviour
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);
 
-#if DEV
+#if UNITY_EDITOR && DEV
         UpdateUIData(statType, statLevel);
-#elif LIVE
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
+#else
         TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stat, $"Lv.{statLevel - 1}", $"-> Lv.{statLevel}", () => UpdateUIData(statType, statLevel));
 #endif
     }
