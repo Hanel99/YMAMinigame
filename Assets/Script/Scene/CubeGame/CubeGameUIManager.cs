@@ -20,6 +20,8 @@ public class CubeGameUIManager : MonoBehaviour
     public Text timerText;
     public Text scoreText;
     public Text devText; //dev용 터치 횟수 기록.
+    public GameObject dimObject;
+    public Text dimText;
 
 
 
@@ -40,9 +42,9 @@ public class CubeGameUIManager : MonoBehaviour
 
 
 
-    public void ShowResult(int touchCount, int earnCoinAmount)
+    public void ShowResult(int score, int earnCoinAmount, int exp)
     {
-        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, null, SceneName.YMACubeGame);
+        _ShowPopup<CubeGameResultPopup>().ShowPopup(score, earnCoinAmount, exp, SceneName.YMACubeGame);
     }
 
     public void ShowPausePopup()
@@ -117,7 +119,7 @@ public class CubeGameUIManager : MonoBehaviour
 
     public void UpdateScoreText(int score)
     {
-        scoreText.text = score.ToString();
+        scoreText.text = $"점수 : {score}";
     }
 
     public void UpdateCubeCountText(Dictionary<CubeState, int> countDic)
@@ -126,6 +128,8 @@ public class CubeGameUIManager : MonoBehaviour
         StringBuilder sb = new StringBuilder();
         foreach (CubeState state in Enum.GetValues(typeof(CubeState)))
         {
+            if (state == CubeState.Idle || state == CubeState.Stop) continue;
+
             int count = 0;
             if (countDic.ContainsKey(state))
             {
@@ -135,6 +139,12 @@ public class CubeGameUIManager : MonoBehaviour
         }
         devText.text = sb.ToString();
 #endif
+    }
+
+    public void ShowDim(bool show, string text = "")
+    {
+        dimText.text = text;
+        dimObject.SetActive(show);
     }
 
 }

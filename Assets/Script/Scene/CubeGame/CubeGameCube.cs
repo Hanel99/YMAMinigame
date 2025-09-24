@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,10 @@ public class CubeGameCube : MonoBehaviour
     public Text devText;
     public Text keyText;
     public KeyCode keyCode;
+    public Image guideBarL;
+    public Image guideBarR;
+    public Image guideBarU;
+    public Image guideBarD;
 
     private CubeState _state;
     public CubeState state => _state;
@@ -22,12 +27,19 @@ public class CubeGameCube : MonoBehaviour
     private float perfectTime = 1f;
     private float badTime = 1f;
     private float missTime = 1f;
+    private float barMoveTime = 0f;
     private CancellationTokenSource cts;
+    private Sequence barSequence;
 
 
 
     public void SetKeyCode(KeyCode code)
     {
+        guideBarL.gameObject.SetActive(false);
+        guideBarR.gameObject.SetActive(false);
+        guideBarU.gameObject.SetActive(false);
+        guideBarD.gameObject.SetActive(false);
+
         keyText.text = string.Empty;
 #if UNITY_STANDALONE_WIN
         keyCode = code;
@@ -48,6 +60,15 @@ public class CubeGameCube : MonoBehaviour
 #endif
     }
 
+    private void OnDestroy()
+    {
+        HLLogger.Log($"@@@ {gameObject.name} OnDestroy");
+        StopCube();
+
+        barSequence?.Kill(true);
+        barSequence = null;
+    }
+
 
     public void StartCube(float idle, float good, float great, float perfect, float bad, float miss)
     {
@@ -63,6 +84,10 @@ public class CubeGameCube : MonoBehaviour
         badTime = bad;
         missTime = miss;
 
+        barMoveTime = idleTime + goodTime + greatTime;
+
+        HLLogger.Log($"{name} - idle : {idle}, good : {good}, great : {great}, perfect : {perfect}, bad : {bad}, miss : {miss}");
+
         RunStateMachine(cts.Token).Forget();
     }
 
@@ -71,6 +96,15 @@ public class CubeGameCube : MonoBehaviour
         cts?.Cancel();
         cts?.Dispose();
         cts = null;
+
+        barSequence?.Kill();
+        barSequence = null;
+
+        guideBarL.gameObject.SetActive(false);
+        guideBarR.gameObject.SetActive(false);
+        guideBarU.gameObject.SetActive(false);
+        guideBarD.gameObject.SetActive(false);
+
         _state = CubeState.Idle;
         ApplyColor(_state);
     }
@@ -79,19 +113,36 @@ public class CubeGameCube : MonoBehaviour
     {
         try
         {
-            while (!token.IsCancellationRequested && CubeGameManager.instance.inGameState == InGameState.Play)
+            while (!token.IsCancellationRequested && CubeGameManager.instance?.inGameState == InGameState.Play && this != null)
             {
+#if DEV
+                barSequence?.Kill();
+                barSequence = DOTween.Sequence();
+
+                guideBarL.gameObject.SetActive(true);
+                guideBarR.gameObject.SetActive(true);
+                guideBarU.gameObject.SetActive(true);
+                guideBarD.gameObject.SetActive(true);
+
+                guideBarU.transform.localPosition = new Vector3(guideBarU.transform.localPosition.x, -75f, guideBarU.transform.localPosition.z);
+                guideBarD.transform.localPosition = new Vector3(guideBarD.transform.localPosition.x, 75f, guideBarD.transform.localPosition.z);
+
+                // L과 R이 좌우로 닫히는 연출
+                barSequence.Append(guideBarL.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(-75f))
+                        .Join(guideBarR.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(75f));
+
+                // L과 R 연출이 끝난 뒤 U와 D가 위아래로 움직이는 연출
+                barSequence.Append(guideBarU.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(-75f))
+                        .Join(guideBarD.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(75f));
+
+                barSequence.Play();
+#endif
+
+
                 // 한 사이클 실행
                 bool cycleCompleted = await RunSingleCycle(token);
-
                 if (!cycleCompleted) break; // 사이클이 취소된 경우
-
-                // Miss까지 완료된 경우 3초 대기 후 재시작
-                HLLogger.Log("@@@ miss lost...");
-                await UniTask.Delay(3000, cancellationToken: token);
-
-                HLLogger.Log("@@@ reStart");
-                // 자동 재시작 (OnClickCube 호출 제거)
+                // Miss까지 완료된 경우 자동 재시작 
             }
         }
         catch (OperationCanceledException)
@@ -121,9 +172,10 @@ public class CubeGameCube : MonoBehaviour
 
     private async UniTask SetState(CubeState newState, float duration, CancellationToken token)
     {
+        if (this == null || gameObject == null) return;
+
         _state = newState;
         ApplyColor(_state);
-        Debug.Log($"상태 변경: {newState} (유지 {duration}초)");
 
         try
         {
@@ -155,8 +207,6 @@ public class CubeGameCube : MonoBehaviour
 
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
             }
-
-            HLLogger.Log($"@@@ Finish {gameObject.name} State : {_state}");
         }
         catch (OperationCanceledException)
         {
@@ -217,17 +267,6 @@ public class CubeGameCube : MonoBehaviour
         // 새로운 사이클 시작
         cts = new CancellationTokenSource();
         RunStateMachine(cts.Token).Forget();
-    }
-
-    // 현재 상태 반환 (외부에서 상태 확인용)
-    public CubeState GetCurrentState() => _state;
-
-    // 큐브가 활성 상태인지 확인
-    public bool IsActive() => cts != null && !cts.Token.IsCancellationRequested;
-
-    private void OnDestroy()
-    {
-        StopCube();
     }
 
 

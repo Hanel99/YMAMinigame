@@ -123,6 +123,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca06eb8e0b2849d41b20b8d10eb988c5
+    m_Address: CubeGameResultPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbb16a2672bbeb84eafe16512dc8b7fc
     m_Address: UserProfilePopup
     m_ReadOnly: 0

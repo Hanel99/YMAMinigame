@@ -112,7 +112,10 @@ public static class StaticGameData
     {
         if (sheetData.IsNullOrEmpty()) return;
 
-        RedeemCodes = sheetData.ToArray();
+        var array = sheetData.ToArray();
+        array = array.Where(x => x != "").ToArray();
+
+        RedeemCodes = array;
     }
 
 

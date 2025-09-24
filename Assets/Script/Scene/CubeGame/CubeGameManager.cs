@@ -17,6 +17,7 @@ public class CubeGameManager : MonoBehaviour
     // private
     private int score;
     private float leftTime;
+    private float maxTime;
     private int randomSeed;
     private System.Random randomGenerator;
 
@@ -40,7 +41,8 @@ public class CubeGameManager : MonoBehaviour
     private void Start()
     {
         score = 0;
-        leftTime = 0f;
+        leftTime = 30f;
+        maxTime = 30f;
         _inGameState = InGameState.Ready;
         countDic.Clear();
 
@@ -48,29 +50,21 @@ public class CubeGameManager : MonoBehaviour
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
 
-        StringBuilder sb = new();
-        for (int i = 0; i < 100; ++i)
-        {
-            sb.Append($"{randomGenerator.Next(0, 100)}");
-        }
-        HLLogger.Log($"Random test: {sb}");
-
-
         foreach (CubeState state in Enum.GetValues(typeof(CubeState)))
         {
             countDic.Add(state, 0);
         }
         cubeList[0].SetKeyCode(KeyCode.Q);
-        // cubeList[1].SetKeyCode(KeyCode.W);
-        // cubeList[2].SetKeyCode(KeyCode.E);
+        cubeList[1].SetKeyCode(KeyCode.W);
+        cubeList[2].SetKeyCode(KeyCode.E);
 
-        // cubeList[3].SetKeyCode(KeyCode.A);
-        // cubeList[4].SetKeyCode(KeyCode.S);
-        // cubeList[5].SetKeyCode(KeyCode.D);
+        cubeList[3].SetKeyCode(KeyCode.A);
+        cubeList[4].SetKeyCode(KeyCode.S);
+        cubeList[5].SetKeyCode(KeyCode.D);
 
-        // cubeList[6].SetKeyCode(KeyCode.Z);
-        // cubeList[7].SetKeyCode(KeyCode.X);
-        // cubeList[8].SetKeyCode(KeyCode.C);
+        cubeList[6].SetKeyCode(KeyCode.Z);
+        cubeList[7].SetKeyCode(KeyCode.X);
+        cubeList[8].SetKeyCode(KeyCode.C);
 
         StartProcess().Forget();
     }
@@ -80,11 +74,13 @@ public class CubeGameManager : MonoBehaviour
         CubeGameUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.CubeGame);
 
-        leftTime = 60f;
         CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
         CubeGameUIManager.instance.UpdateScoreText(score);
         CubeGameUIManager.instance.UpdateCubeCountText(countDic);
-        await UniTask.Delay(3000);
+        CubeGameUIManager.instance.ShowDim(true, "준비!");
+        await UniTask.Delay(2000);
+        CubeGameUIManager.instance.ShowDim(false);
+
 
         _inGameState = InGameState.Play;
         foreach (var cube in cubeList)
@@ -96,7 +92,7 @@ public class CubeGameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (inGameState == InGameState.Play && Input.GetKeyDown(KeyCode.Escape))
         {
             if (CubeGameUIManager.instance.IsPopupOpen())
             {
@@ -121,7 +117,7 @@ public class CubeGameManager : MonoBehaviour
                 leftTime = 0f;
                 CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
                 _inGameState = InGameState.Finish;
-                TimeOverProcess();
+                TimeOverProcess().Forget();
             }
         }
 
@@ -151,14 +147,12 @@ public class CubeGameManager : MonoBehaviour
     }
 
 
-    private void TimeOverProcess()
+    private async UniTaskVoid TimeOverProcess()
     {
+        HLLogger.Log("Time Over");
+        CubeGameUIManager.instance.ShowDim(true, "게임 종료!");
         foreach (var cube in cubeList) cube.StopCube();
-        // UniTask.DelayFrame(2);
-        // foreach (var cube in cubeList) cube.StopCube();
-        // 안정을 위해 한번 더...
-
-        UniTask.WaitForSeconds(3000);
+        await UniTask.Delay(2000);
 
         FinishProcess();
     }
@@ -166,13 +160,16 @@ public class CubeGameManager : MonoBehaviour
 
     private void FinishProcess()
     {
-        int earnCoinAmount = score * 10;
-        int exp = Math.Max(1, score / 100);
-        HLLogger.Log($"coin : {earnCoinAmount}, exp : {exp}");
+        int exp = (int)Math.Pow(score / 2500f, 0.7f);
+        exp = Math.Max(1, exp);
+
+        int earnCoinAmount = (int)(30000 * (1 - Math.Exp(-score / 40000f)));
+        earnCoinAmount = Math.Max(1000, earnCoinAmount);
+
+        HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
-        CubeGameUIManager.instance.ShowResult(1, earnCoinAmount);
-        //TODO 전용 result 팝업 만들것
+        CubeGameUIManager.instance.ShowResult(score, earnCoinAmount, exp);
 
         if (SaveDataManager.instance.AddExp(exp))
         {
@@ -197,19 +194,19 @@ public class CubeGameManager : MonoBehaviour
         // 점수, 시간 처리.
         int addScore = state switch
         {
-            CubeState.Perfect => 3,
-            CubeState.Great => 2,
-            CubeState.Good => 1,
-            CubeState.Bad => 0,
-            CubeState.Miss => -1,
+            CubeState.Perfect => 500,
+            CubeState.Great => 300,
+            CubeState.Good => 100,
+            CubeState.Bad => -100,
+            CubeState.Miss => -200,
 
             _ => 0,
         };
 
         float addTime = state switch
         {
-            CubeState.Perfect => 2f,
-            CubeState.Great => 1f,
+            CubeState.Perfect => 0.5f,
+            CubeState.Great => 0f,
             CubeState.Good => 0f,
             CubeState.Bad => 0f,
             CubeState.Miss => -1f,
@@ -220,6 +217,7 @@ public class CubeGameManager : MonoBehaviour
         score += addScore;
         score = Math.Max(0, score);
         leftTime += addTime;
+        leftTime = Math.Min(maxTime, leftTime);
 
 #if DEV
         countDic[state]++;
@@ -230,8 +228,6 @@ public class CubeGameManager : MonoBehaviour
 
         if (_inGameState == InGameState.Play)
         {
-            HLLogger.Log("@@@ re start cube");
-
             (float idle, float good, float great, float perfect, float bad, float miss) = MakeStateTime();
             cube.StartCube(idle, good, great, perfect, bad, miss);
         }
@@ -239,50 +235,18 @@ public class CubeGameManager : MonoBehaviour
 
     private (float idle, float good, float great, float perfect, float bad, float miss) MakeStateTime()
     {
-        float idle = 1f;
-        float good = 1f;
-        float great = 1f;
-        float perfect = 1f;
-        float bad = 1f;
-        float miss = 1f;
+        float idle = GetRandomFloat(1f, 3f);
+        float good = GetRandomFloat(0.5f, 1.2f);
+        float great = GetRandomFloat(0.4f, 0.9f);
+        float perfect = GetRandomFloat(0.3f, 0.6f);
+        float bad = GetRandomFloat(0.4f, 0.9f);
+        float miss = GetRandomFloat(0.5f, 1.2f);
 
         return (idle, good, great, perfect, bad, miss);
-    }
-
-    public int GetRandomInt(int min, int max)
-    {
-        return randomGenerator.Next(min, max);
     }
 
     public float GetRandomFloat(float min, float max)
     {
         return min + (float)randomGenerator.NextDouble() * (max - min);
-    }
-
-    public float GetRandomFloat()
-    {
-        return (float)randomGenerator.NextDouble();
-    }
-
-    public bool GetRandomBool()
-    {
-        return randomGenerator.Next(0, 2) == 1;
-    }
-
-    public Vector2 GetRandomVector2(float minX, float maxX, float minY, float maxY)
-    {
-        return new Vector2(
-            GetRandomFloat(minX, maxX),
-            GetRandomFloat(minY, maxY)
-        );
-    }
-
-    public Vector3 GetRandomVector3(float minX, float maxX, float minY, float maxY, float minZ, float maxZ)
-    {
-        return new Vector3(
-            GetRandomFloat(minX, maxX),
-            GetRandomFloat(minY, maxY),
-            GetRandomFloat(minZ, maxZ)
-        );
     }
 }

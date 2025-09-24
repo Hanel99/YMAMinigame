@@ -183,7 +183,7 @@ public class SettingPopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
-        string code = inputRedeem.text.ToLower();
+        string code = inputRedeem.text.ToUpper();
 
         // 코드에 들어있는지 확인
         if (StaticGameData.RedeemCodes.Contains(code) == false)
@@ -233,13 +233,11 @@ public class SettingPopup : PopupBase
 
     public void OnBgmSliderChanged(Slider change)
     {
-        HLLogger.Log($"@@@ BGM Volume Set : {change.value}");
         SoundManager.instance.SetBGMVolume(change.value);
     }
 
     public void OnSfxSliderChanged(Slider change)
     {
-        HLLogger.Log($"@@@ SFX Volume Set : {change.value}");
         SoundManager.instance.SetSFXVolume(change.value);
     }
 
