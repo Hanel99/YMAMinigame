@@ -20,8 +20,6 @@ public class CubeGameResultPopup : PopupBase
 
     //private
     private Coroutine cor;
-    private Action showNewCardAction;
-    private SceneName sceneName;
 
 
     protected override void OnAwake()
@@ -48,12 +46,10 @@ public class CubeGameResultPopup : PopupBase
             StopCoroutine(cor);
     }
 
-    public void ShowPopup(int score, int earnCoinAmount, int exp, SceneName sceneName, Action newCardAction = null)
+    public void ShowPopup(int score, int earnCoinAmount, int exp)
     {
         HideResultObjects();
         ShowPopup();
-        showNewCardAction = newCardAction;
-        this.sceneName = sceneName;
         cor = StartCoroutine(co_resultProcess(score, earnCoinAmount, exp));
     }
 
@@ -101,7 +97,7 @@ public class CubeGameResultPopup : PopupBase
 
     public void OnClickRetry()
     {
-        SceneMoveManager.instance.MoveScene(sceneName);
+        SceneMoveManager.instance.MoveScene(SceneName.YMACubeGame);
     }
 }
 

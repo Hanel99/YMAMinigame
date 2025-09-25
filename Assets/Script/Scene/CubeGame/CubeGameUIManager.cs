@@ -44,7 +44,7 @@ public class CubeGameUIManager : MonoBehaviour
 
     public void ShowResult(int score, int earnCoinAmount, int exp)
     {
-        _ShowPopup<CubeGameResultPopup>().ShowPopup(score, earnCoinAmount, exp, SceneName.YMACubeGame);
+        _ShowPopup<CubeGameResultPopup>().ShowPopup(score, earnCoinAmount, exp);
     }
 
     public void ShowPausePopup()

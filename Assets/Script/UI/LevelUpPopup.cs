@@ -47,14 +47,14 @@ public class LevelUpPopup : PopupBase
         {
             startValue = x;
             level.text = startValue.ToString();
-        }, targetLevel, 1.5f).SetDelay(0.2f).SetEase(Ease.OutCubic);
+        }, targetLevel, 1.3f).SetDelay(0.2f).SetEase(Ease.OutCubic);
 
-        level.transform.DOScale(1.5f, 0.2f).SetDelay(1.5f).SetEase(Ease.OutQuad).OnComplete(() =>
+        level.transform.DOScale(1.5f, 0.2f).SetDelay(1.6f).SetEase(Ease.OutQuad).OnComplete(() =>
         {
             level.transform.DOScale(1f, 0.2f).SetEase(Ease.InQuad);
         });
 
-        unlockContentText.DOFade(1f, 1f).SetDelay(1f).From(0f).SetEase(Ease.OutCubic);
+        unlockContentText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic);
     }
 
 

@@ -154,11 +154,11 @@ public class CubeGameManager : MonoBehaviour
         foreach (var cube in cubeList) cube.StopCube();
         await UniTask.Delay(2000);
 
-        FinishProcess();
+        FinishProcess().Forget();
     }
 
 
-    private void FinishProcess()
+    private async UniTaskVoid FinishProcess()
     {
         int exp = (int)Math.Pow(score / 2500f, 0.7f);
         exp = Math.Max(1, exp);
@@ -173,7 +173,8 @@ public class CubeGameManager : MonoBehaviour
 
         if (SaveDataManager.instance.AddExp(exp))
         {
-            DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowLevelUpPopup());
+            await UniTask.Delay(1500);
+            CubeGameUIManager.instance.ShowLevelUpPopup();
         }
     }
 

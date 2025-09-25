@@ -54,9 +54,9 @@ public class IntroController : MonoBehaviour
 
             case IntroState.ServerUpdate:
 #if UNITY_EDITOR && DEV
-                // state++;
-                // StartIntroProcess();
-                StartCoroutine(nameof(ServerUpdateProcess));
+                state++;
+                StartIntroProcess();
+                // StartCoroutine(nameof(ServerUpdateProcess));
 #else
                 StartCoroutine(nameof(ServerUpdateProcess));
 #endif
