@@ -154,7 +154,7 @@ public class RankingPopup : PopupBase
             }
             else if (currentRankingType == RankingType.Tower)
             {
-                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, myPlayerData.StatValue, -1);
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, topPlayerDataList[i].StatValue, -1);
             }
         }
     }
