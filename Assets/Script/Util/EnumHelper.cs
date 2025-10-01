@@ -205,6 +205,32 @@ public enum CubeState
 #endregion
 
 
+#region CubeGame
+
+public enum WingTtoObjectType
+{
+    Border,
+    GimBap,
+    Stone,
+
+}
+
+public enum WingTtoPlayerState
+{
+    Ready,
+    Pause,
+    Fly,
+    SpeedUp,
+    Die,
+
+}
+
+#endregion
+
+
+
+
+
 
 #region Sound
 

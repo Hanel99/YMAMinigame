@@ -24,6 +24,7 @@ public class WingTtoGameManager : MonoBehaviour
     private Queue<Action> UpdateActionQueue = new();
 
 
+    public WingTtoPlayer player;
 
 
 
@@ -47,12 +48,18 @@ public class WingTtoGameManager : MonoBehaviour
     private async UniTaskVoid StartProcess()
     {
         WingTtoGameUIManager.instance.ShowSceneMoveAnimation(true);
-        SoundManager.instance.PlayBGM(BGMType.CubeGame);
-        await UniTask.Delay(2000);
-        WingTtoGameUIManager.instance.ShowDim(false);
+        // SoundManager.instance.PlayBGM(BGMType.WingTto);
 
+        string dimText = "이 게임은 가로로 플레이 하는 게임입니다.";
+#if UNITY_ANDROID
+        dimText += "\n\n화면을 가로로 잡고 플레이 해 주세요";
+#endif
+        WingTtoGameUIManager.instance.ShowDim(false, dimText);
 
+        await UniTask.Delay(1000);
         _inGameState = InGameState.Play;
+        player.StartProcess();
+        HLLogger.Log("game start");
     }
 
     void Update()
@@ -69,6 +76,15 @@ public class WingTtoGameManager : MonoBehaviour
                 WingTtoGameUIManager.instance.ShowPausePopup();
                 SetPause(true);
             }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //@@@ test
+            WingTtoObjectPool pool = WingTtoObjectPool.instance;
+
+            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Stone, Vector3.zero);
         }
 
 
@@ -100,6 +116,7 @@ public class WingTtoGameManager : MonoBehaviour
         }
 #endif
     }
+
 
 
     private async UniTaskVoid TimeOverProcess()

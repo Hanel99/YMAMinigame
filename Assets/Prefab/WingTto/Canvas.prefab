@@ -950,7 +950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4581535477163232534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1182,7 +1182,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC815\uB2F5!\n\uAC8C\uC784 \uD074\uB9AC\uC5B4!"
+  m_Text: "\uC774 \uAC8C\uC784\uC740 \uAC00\uB85C\uB85C \uD50C\uB808\uC774 \uD558\uB294
+    \uAC8C\uC784\uC785\uB2C8\uB2E4.\n\n\uD654\uBA74\uC744 \uAC00\uB85C\uB85C \uC7A1\uACE0
+    \uD50C\uB808\uC774 \uD574 \uC8FC\uC138\uC694"
 --- !u!1 &6572581955202129363
 GameObject:
   m_ObjectHideFlags: 0
