@@ -210,7 +210,7 @@ public enum CubeState
 public enum WingTtoObjectType
 {
     Border,
-    GimBap,
+    Gimbab,
     Stone,
 
 }
@@ -221,6 +221,7 @@ public enum WingTtoPlayerState
     Pause,
     Fly,
     SpeedUp,
+    Crash,
     Die,
 
 }

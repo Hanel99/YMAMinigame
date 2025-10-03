@@ -27,6 +27,10 @@ public class WingTtoGameManager : MonoBehaviour
     public WingTtoPlayer player;
 
 
+    //private
+    private WingTtoObjectPool pool => WingTtoObjectPool.instance;
+
+
 
     private void Awake()
     {
@@ -82,9 +86,12 @@ public class WingTtoGameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             //@@@ test
-            WingTtoObjectPool pool = WingTtoObjectPool.instance;
-
-            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Stone, Vector3.zero);
+            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Stone);
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            //@@@ test
+            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Gimbab);
         }
 
 

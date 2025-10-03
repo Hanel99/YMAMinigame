@@ -7,10 +7,12 @@ public class WingTtoObject : MonoBehaviour
     public WingTtoObjectType objectType;
     public Image image;
 
-    [Header("Movement Settings")]
-    [SerializeField] private float normalSpeed = 5f;
-    [SerializeField] private float specialSpeed = 10f;
-    // [SerializeField] private float despawnXPosition = -10f;
+
+
+
+
+    private float normalSpeed = 5f;
+    private float specialSpeed = 10f;
 
     private float currentSpeed;
     private bool isMoving = false;
@@ -25,8 +27,6 @@ public class WingTtoObject : MonoBehaviour
         objectType = type;
 
         HLLogger.Log($"@@@ WingTtoObject Init {name}");
-
-
     }
 
     private void Update()
@@ -38,12 +38,6 @@ public class WingTtoObject : MonoBehaviour
 
         // 왼쪽으로 이동
         transform.position += Vector3.left * currentSpeed * Time.deltaTime;
-
-        // 특정 좌표를 넘으면 자동 소멸
-        // if (transform.position.x < despawnXPosition)
-        // {
-        //     ReturnToPool();
-        // }
     }
 
     // 오브젝트 활성화 및 이동 시작
@@ -72,22 +66,6 @@ public class WingTtoObject : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    // 플레이어와 충돌 처리
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        HLLogger.Log("trigger enter 2d");
-
-        if (other.CompareTag("WingTtoBorder"))
-        {
-            ReturnToPool();
-        }
-
-        if (other.CompareTag("WingTtoPlayer"))
-        {
-            HandlePlayerCollision(other.gameObject);
-            ReturnToPool();
-        }
-    }
 
     public void HandlePlayerCollision(GameObject player)
     {

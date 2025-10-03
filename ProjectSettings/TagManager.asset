@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - WingTtoBorder
-  - WingTtoObject
   - WingTtoPlayer
+  - WingTtoGimbab
+  - WingTtoStone
+  - WingTtoObject
   layers:
   - Default
   - TransparentFX

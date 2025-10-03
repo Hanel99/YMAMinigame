@@ -4,17 +4,20 @@ public class WingTtoPlayer : MonoBehaviour
 {
     public WingTtoPlayerState playerState;
 
-
     public int hp = 0;
+
+
+
+
 
     [Header("Movement Settings")]
     private float upwardAcceleration = 35f;   // 상승 가속도
     private float fallAcceleration = 35f;     // 낙하 가속도
-    private float maxUpSpeed = 7f;
-    private float maxDownSpeed = 7f;
+    private float maxUpSpeed = 5f;
+    private float maxDownSpeed = 5f;
 
     [Header("Natural Movement")]
-    private float releaseFloatDuration = 0.1f; // 놓았을 때 여운 시간
+    private float releaseFloatDuration = 0.15f; // 놓았을 때 여운 시간
     private float releaseFloatStrength = 0.1f; // 놓았을 때 여운 강도
 
     private Rigidbody2D rb;
@@ -51,6 +54,13 @@ public class WingTtoPlayer : MonoBehaviour
         if (playerState == WingTtoPlayerState.Fly)
             HandleMovement();
     }
+
+
+
+
+    #region 상하 움직임 처리
+
+
 
     void HandleMovement()
     {
@@ -102,4 +112,38 @@ public class WingTtoPlayer : MonoBehaviour
     {
 
     }
+
+    #endregion
+
+
+
+    #region 충돌 처리
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        HLLogger.Log($"{other.name} coming");
+
+        if (other.CompareTag("WingTtoGimbab"))
+        {
+            // HP 회복
+            WingTtoObjectPool.instance.ReturnObject(other);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        HLLogger.Log($"{collision.gameObject.name} coming");
+
+        if (collision.gameObject.CompareTag("WingTtoStone"))
+        {
+            // 데미지 처리
+            WingTtoObjectPool.instance.ReturnObject(collision);
+        }
+    }
+
+
+    #endregion
+
+
 }

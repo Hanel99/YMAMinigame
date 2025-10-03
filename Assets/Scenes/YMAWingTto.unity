@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 1303866467}
   m_Layer: 0
   m_Name: borderTop
-  m_TagString: WingTtoBorder
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1163,9 +1163,10 @@ GameObject:
   - component: {fileID: 1807670180}
   - component: {fileID: 1807670182}
   - component: {fileID: 1807670181}
+  - component: {fileID: 1807670183}
   m_Layer: 0
   m_Name: borderLeft
-  m_TagString: WingTtoBorder
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,6 +1287,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1807670183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807670179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e83f85555bda484db90f813f7ad4523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1852043780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,6 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e086bc67d14384392fae39034f4090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnPosition: {fileID: 813658930}
   poolSettings:
   - type: 2
     prefab: {fileID: 3466380166059231089, guid: b220359a6ee2291408ce5ae261f56263, type: 3}
@@ -1664,7 +1678,7 @@ GameObject:
   - component: {fileID: 8939854012583553241}
   m_Layer: 0
   m_Name: borderBottom
-  m_TagString: WingTtoBorder
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1754,10 +1768,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerState: 0
   hp: 0
-  upwardForce: 10
-  downwardForce: 10
-  maxUpSpeed: 10
-  maxDownSpeed: 10
 --- !u!58 &8514901223810310721
 CircleCollider2D:
   m_ObjectHideFlags: 0

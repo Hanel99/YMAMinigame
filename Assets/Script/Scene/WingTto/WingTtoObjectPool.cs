@@ -12,13 +12,16 @@ public class WingTtoObjectPool : MonoBehaviour
         public int initialPoolSize;
     }
     public static WingTtoObjectPool instance;
+    public Transform spawnPosition;
 
 
     [SerializeField] private List<PoolSettings> poolSettings = new List<PoolSettings>();
 
-    public Dictionary<WingTtoObjectType, Queue<WingTtoObject>> poolDictionary;
-    public Dictionary<WingTtoObjectType, GameObject> prefabDictionary;
-    public Dictionary<WingTtoObjectType, Transform> parentDictionary;
+    private Dictionary<WingTtoObjectType, Queue<WingTtoObject>> poolDictionary;
+    private Dictionary<WingTtoObjectType, GameObject> prefabDictionary;
+    private Dictionary<WingTtoObjectType, Transform> parentDictionary;
+    private int spawnCount = 0;
+
 
     private void Awake()
     {
@@ -61,6 +64,8 @@ public class WingTtoObjectPool : MonoBehaviour
     private WingTtoObject CreateNewObject(WingTtoObjectType type, Transform parent)
     {
         GameObject obj = Instantiate(prefabDictionary[type], parent);
+        obj.name = $"{type}_{spawnCount++}";
+
         WingTtoObject wingTtoObj = obj.GetComponent<WingTtoObject>();
 
         if (wingTtoObj == null)
@@ -75,13 +80,20 @@ public class WingTtoObjectPool : MonoBehaviour
     }
 
     // 오브젝트 가져오기
-    public WingTtoObject GetObject(WingTtoObjectType type, Vector3 position)
+    public WingTtoObject GetObject(WingTtoObjectType type, Vector3? position = null)
     {
         if (!poolDictionary.ContainsKey(type))
         {
             Debug.LogWarning($"Pool for type {type} does not exist!");
             return null;
         }
+        Vector3 pos = Vector3.zero;
+        float y = WingTtoGameManager.instance.GetRandomFloat(-4.0f, 4.0f);
+        if (position == null)
+            pos = spawnPosition.position;
+        else
+            pos = position.Value;
+        pos.y = y;
 
         WingTtoObject obj;
 
@@ -97,11 +109,8 @@ public class WingTtoObjectPool : MonoBehaviour
             Debug.Log($"Pool expanded: {type}");
         }
 
-        obj.transform.position = position;
         obj.SetData(type);
-        obj.gameObject.SetActive(true);
-        obj.Activate(position);
-
+        obj.Activate(pos);
 
         HLLogger.Log($"@@@ Spawn Object {obj.name}");
 
@@ -109,6 +118,26 @@ public class WingTtoObjectPool : MonoBehaviour
     }
 
     // 오브젝트를 풀로 반환
+    public void ReturnObject(Collider2D collider2D)
+    {
+        if (collider2D == null) return;
+
+        WingTtoObject obj = collider2D.gameObject.GetComponent<WingTtoObject>();
+        if (obj == null) return;
+
+        ReturnObject(obj);
+    }
+
+    public void ReturnObject(Collision2D collision)
+    {
+        if (collision == null) return;
+
+        WingTtoObject obj = collision.gameObject.GetComponent<WingTtoObject>();
+        if (obj == null) return;
+
+        ReturnObject(obj);
+    }
+
     public void ReturnObject(WingTtoObject obj)
     {
         if (obj == null) return;
