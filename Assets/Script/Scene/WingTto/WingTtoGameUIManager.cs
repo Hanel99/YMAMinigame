@@ -17,7 +17,13 @@ public class WingTtoGameUIManager : MonoBehaviour
     public SceneAnimation sceneDim;
 
     [Header("InGame")]
-    public Text scoreText;
+    public Text distanceText;
+
+
+
+    //private
+    WingTtoGameManager gameManager => WingTtoGameManager.instance;
+
 
 
 
@@ -112,6 +118,13 @@ public class WingTtoGameUIManager : MonoBehaviour
 
 
         _ShowPopup<PausePopup>().ShowPopup();
+        gameManager.SetPause(true);
+
+    }
+
+    void Update()
+    {
+        distanceText.text = "Distance: " + gameManager.GetFormattedDistance();
     }
 
 }

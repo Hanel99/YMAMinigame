@@ -11,12 +11,15 @@ public class WingTtoObject : MonoBehaviour
 
 
 
+
+
+    private float currentSpeed;
     private float normalSpeed = 5f;
     private float specialSpeed = 10f;
 
-    private float currentSpeed;
     private bool isMoving = false;
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
+    private WingTtoGameManager gameManager => WingTtoGameManager.instance;
 
     // 플레이어 충돌 이벤트
     public event Action<WingTtoObject, GameObject> OnPlayerCollision;
@@ -25,8 +28,20 @@ public class WingTtoObject : MonoBehaviour
     public void SetData(WingTtoObjectType type)
     {
         objectType = type;
+        UpdateSpeed();
 
         HLLogger.Log($"@@@ WingTtoObject Init {name}");
+    }
+
+    public void SetPause(bool pause)
+    {
+        isMoving = !pause;
+    }
+
+    public void UpdateSpeed()
+    {
+        normalSpeed = gameManager.normalSpeed;
+        specialSpeed = gameManager.specialSpeed;
     }
 
     private void Update()

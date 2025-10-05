@@ -212,6 +212,7 @@ public enum WingTtoObjectType
     Border,
     Gimbab,
     Stone,
+    Wall,
 
 }
 

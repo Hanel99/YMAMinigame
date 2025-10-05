@@ -80,19 +80,17 @@ public class WingTtoObjectPool : MonoBehaviour
     }
 
     // 오브젝트 가져오기
-    public WingTtoObject GetObject(WingTtoObjectType type, Vector3? position = null)
+    public WingTtoObject GetObject(WingTtoObjectType type, float? from = null, float? to = null)
     {
         if (!poolDictionary.ContainsKey(type))
         {
             Debug.LogWarning($"Pool for type {type} does not exist!");
             return null;
         }
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = spawnPosition.position;
         float y = WingTtoGameManager.instance.GetRandomFloat(-4.0f, 4.0f);
-        if (position == null)
-            pos = spawnPosition.position;
-        else
-            pos = position.Value;
+        if (from != null && to != null)
+            y = WingTtoGameManager.instance.GetRandomFloat(from.Value, to.Value);
         pos.y = y;
 
         WingTtoObject obj;
@@ -114,6 +112,7 @@ public class WingTtoObjectPool : MonoBehaviour
 
         HLLogger.Log($"@@@ Spawn Object {obj.name}");
 
+        WingTtoGameManager.instance.AddSpawnObject(obj);
         return obj;
     }
 
@@ -143,6 +142,7 @@ public class WingTtoObjectPool : MonoBehaviour
         if (obj == null) return;
 
         obj.OnReturnToPool();
+        WingTtoGameManager.instance.RemoveSpawnObject(obj);
 
         if (poolDictionary.ContainsKey(obj.objectType))
         {

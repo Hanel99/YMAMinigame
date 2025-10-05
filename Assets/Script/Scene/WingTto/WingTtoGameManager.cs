@@ -29,7 +29,22 @@ public class WingTtoGameManager : MonoBehaviour
 
     //private
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
+    private List<WingTtoObject> spawnObjectList = new();
 
+
+
+
+    //object 움직임 속도
+    private float _normalSpeed = 6f;
+    private float _specialSpeed = 9f;
+    public float normalSpeed => _normalSpeed;
+    public float specialSpeed => _specialSpeed;
+
+
+    // 날아간 거리 계산
+    private float distanceMultiplier = 3.33f;
+    private float currentDistance = 0f;
+    private float startTime;
 
 
     private void Awake()
@@ -62,6 +77,7 @@ public class WingTtoGameManager : MonoBehaviour
 
         await UniTask.Delay(1000);
         _inGameState = InGameState.Play;
+        startTime = Time.time;
         player.StartProcess();
         HLLogger.Log("game start");
     }
@@ -93,11 +109,17 @@ public class WingTtoGameManager : MonoBehaviour
             //@@@ test
             WingTtoObject obj = pool.GetObject(WingTtoObjectType.Gimbab);
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            //@@@ test
+            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Wall);
+        }
 
 
         if (_inGameState == InGameState.Play)
         {
-
+            UpdateDistance(Time.deltaTime);
+            RandomSpawnObject(Time.deltaTime);
         }
 
         if (UpdateActionQueue.Count > 0)
@@ -165,11 +187,69 @@ public class WingTtoGameManager : MonoBehaviour
 
 
 
+    #region Calc Distance
+
+    private void UpdateDistance(float deltaTime)
+    {
+        currentDistance += deltaTime * (Input.GetMouseButton(1) ? specialSpeed : normalSpeed) * distanceMultiplier;
+    }
+
+    public string GetFormattedDistance()
+    {
+        return $"{currentDistance:0f}m";
+    }
+
+    // 정수 거리 반환
+    public int GetDistance()
+    {
+        return Mathf.FloorToInt(currentDistance);
+    }
+
+    #endregion
+
+
+
+
+    #region Spawn Process
+
+    float temp = 10f;
+    private void RandomSpawnObject(float deltaTime)
+    {
+        temp -= deltaTime;
+        if (temp <= 0)
+        {
+            temp = 10f;
+            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Wall);
+        }
+    }
+
+    public void AddSpawnObject(WingTtoObject obj)
+    {
+        spawnObjectList.Add(obj);
+    }
+
+    public void RemoveSpawnObject(WingTtoObject obj)
+    {
+        spawnObjectList.Remove(obj);
+    }
+
+
+
+
+    #endregion
+
+
+
 
 
     public void SetPause(bool isPause)
     {
         _inGameState = isPause ? InGameState.Pause : InGameState.Play;
+
+        foreach (WingTtoObject obj in spawnObjectList)
+        {
+            obj?.SetPause(isPause);
+        }
     }
 
 

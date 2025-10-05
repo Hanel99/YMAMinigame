@@ -10,6 +10,7 @@ public class WingTtoPlayer : MonoBehaviour
 
 
 
+
     [Header("Movement Settings")]
     private float upwardAcceleration = 35f;   // 상승 가속도
     private float fallAcceleration = 35f;     // 낙하 가속도
