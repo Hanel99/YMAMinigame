@@ -16,7 +16,6 @@ public class WingTtoObject : MonoBehaviour
     private float speedUpMultiplier = 1.5f;
     private float currentSpeed;
     private float normalSpeed = 6f;
-    private float maxSpeed = 15f;
 
     private bool isMoving = false;
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
@@ -40,7 +39,6 @@ public class WingTtoObject : MonoBehaviour
     public void UpdateSpeed()
     {
         normalSpeed = gameManager.normalSpeed;
-        maxSpeed = gameManager.maxSpeed;
     }
 
     private void Update()
@@ -49,7 +47,6 @@ public class WingTtoObject : MonoBehaviour
 
         // 속도 결정 (우클릭 여부에 따라)
         currentSpeed = normalSpeed * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
-        currentSpeed = Mathf.Min(maxSpeed, currentSpeed);
 
         // 왼쪽으로 이동
         transform.position += Vector3.left * currentSpeed * Time.deltaTime;

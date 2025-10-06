@@ -37,10 +37,7 @@ public class WingTtoGameManager : MonoBehaviour
     //object 움직임 속도
     private float speedUpMultiplier = 1.5f;
     private float _normalSpeed = 6f;
-    private float _maxSpeed = 15f;
-
     public float normalSpeed => _normalSpeed;
-    public float maxSpeed => _maxSpeed;
 
 
     // 날아간 거리 계산
@@ -198,8 +195,6 @@ public class WingTtoGameManager : MonoBehaviour
     private void UpdateDistance(float deltaTime)
     {
         tempSpeed = normalSpeed * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
-        tempSpeed = Mathf.Min(maxSpeed, tempSpeed);
-
         currentDistance += deltaTime * tempSpeed * distanceMultiplier;
 
         if (currentPhase < phaseBorder.Length && currentDistance >= phaseBorder[currentPhase])
@@ -242,9 +237,9 @@ public class WingTtoGameManager : MonoBehaviour
     float calcWallTime = 7f;
     float calcGimbabTime = 4f;
     float calcStoneTime = 1f;
-    float spawnWallTime = 0.2f;
-    float spawnGimbabTime = 19f;
-    float spawnStoneTime = 1.6f;
+    float spawnWallTime = 0.15f;
+    float spawnGimbabTime = 29f;
+    float spawnStoneTime = 1.4f;
 
     float topWallPositionY = 9.5f;
     float wallDistance = 9.5f;
@@ -262,7 +257,7 @@ public class WingTtoGameManager : MonoBehaviour
         {
             calcWallTime = spawnWallTime;
 
-            wallDistance -= 0.002f;
+            wallDistance -= 0.0025f;
             wallDistance = Mathf.Max(wallDistance, 6.2f);
             topWallPositionY += GetRandomFloat(-0.5f, 0.5f);
             // topWallPositionY = Mathf.Clamp(topWallPositionY, maxBottomPosition, maxTopPosition);
@@ -274,7 +269,7 @@ public class WingTtoGameManager : MonoBehaviour
         }
         if (calcGimbabTime <= 0)
         {
-            if (wallDistance < 6.9f) // 포션 지급 중지(난이도 상승)
+            if (wallDistance < 6.7f) // 포션 지급 중지(난이도 상승)
                 return;
             calcGimbabTime = spawnGimbabTime;
             float safeTop = topWallPositionY - 6f;
@@ -284,7 +279,7 @@ public class WingTtoGameManager : MonoBehaviour
         }
         if (calcStoneTime <= 0)
         {
-            if (wallDistance < 7.4f) //안전지역 없음
+            if (wallDistance < 7.1f) //안전지역 없음
                 return;
 
             calcStoneTime = spawnStoneTime;
