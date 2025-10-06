@@ -57,6 +57,7 @@ public class WingTtoGameManager : MonoBehaviour
         _inGameState = InGameState.Ready;
 
         randomSeed = UnityEngine.Random.Range(0, 100000);
+        randomSeed = 0;
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
 

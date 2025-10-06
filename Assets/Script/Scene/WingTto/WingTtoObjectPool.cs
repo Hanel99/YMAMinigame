@@ -88,10 +88,10 @@ public class WingTtoObjectPool : MonoBehaviour
             return null;
         }
         Vector3 pos = spawnPosition.position;
-        float y = WingTtoGameManager.instance.GetRandomFloat(-4.0f, 4.0f);
         if (from != null && to != null)
-            y = WingTtoGameManager.instance.GetRandomFloat(from.Value, to.Value);
-        pos.y = y;
+            pos.y = WingTtoGameManager.instance.GetRandomFloat(from.Value, to.Value);
+        else
+            pos.y = WingTtoGameManager.instance.GetRandomFloat(-4.0f, 4.0f);
 
         WingTtoObject obj;
 
