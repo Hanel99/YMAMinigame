@@ -110,8 +110,6 @@ public class WingTtoObjectPool : MonoBehaviour
         obj.SetData(type);
         obj.Activate(pos);
 
-        HLLogger.Log($"@@@ Spawn Object {obj.name}");
-
         WingTtoGameManager.instance.AddSpawnObject(obj);
         return obj;
     }

@@ -221,7 +221,7 @@ public enum WingTtoPlayerState
     Ready,
     Pause,
     Fly,
-    SpeedUp,
+    Invincible,
     Crash,
     Die,
 

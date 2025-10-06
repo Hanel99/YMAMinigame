@@ -13,9 +13,10 @@ public class WingTtoObject : MonoBehaviour
 
 
 
+    private float speedUpMultiplier = 1.5f;
     private float currentSpeed;
-    private float normalSpeed = 5f;
-    private float specialSpeed = 10f;
+    private float normalSpeed = 6f;
+    private float maxSpeed = 15f;
 
     private bool isMoving = false;
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
@@ -29,8 +30,6 @@ public class WingTtoObject : MonoBehaviour
     {
         objectType = type;
         UpdateSpeed();
-
-        HLLogger.Log($"@@@ WingTtoObject Init {name}");
     }
 
     public void SetPause(bool pause)
@@ -41,7 +40,7 @@ public class WingTtoObject : MonoBehaviour
     public void UpdateSpeed()
     {
         normalSpeed = gameManager.normalSpeed;
-        specialSpeed = gameManager.specialSpeed;
+        maxSpeed = gameManager.maxSpeed;
     }
 
     private void Update()
@@ -49,7 +48,8 @@ public class WingTtoObject : MonoBehaviour
         if (!isMoving) return;
 
         // 속도 결정 (우클릭 여부에 따라)
-        currentSpeed = Input.GetMouseButton(1) ? specialSpeed : normalSpeed;
+        currentSpeed = normalSpeed * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        currentSpeed = Mathf.Min(maxSpeed, currentSpeed);
 
         // 왼쪽으로 이동
         transform.position += Vector3.left * currentSpeed * Time.deltaTime;
@@ -75,7 +75,6 @@ public class WingTtoObject : MonoBehaviour
     // 오브젝트가 풀로 반환될 때 초기화
     public void OnReturnToPool()
     {
-        HLLogger.Log($"@@@ OnReturnToPool {name}");
         isMoving = false;
         currentSpeed = normalSpeed;
         gameObject.SetActive(false);
@@ -91,17 +90,5 @@ public class WingTtoObject : MonoBehaviour
         // 충돌 후 오브젝트 반환
         ReturnToPool();
     }
-
-    // Inspector에서 설정값 변경을 위한 public 메서드
-    public void SetSpeeds(float normal, float special)
-    {
-        normalSpeed = normal;
-        specialSpeed = special;
-    }
-
-    // public void SetDespawnPosition(float xPosition)
-    // {
-    //     despawnXPosition = xPosition;
-    // }
 
 }

@@ -1,13 +1,19 @@
+using System;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WingTtoPlayer : MonoBehaviour
 {
-    public WingTtoPlayerState playerState;
+    [Header("playerData")]
+    private int hp = 100;
+    private int maxHp = 100;
 
-    public int hp = 0;
-
-
-
+    [Header("UI")]
+    public SpriteRenderer playerIcon;
+    public Text hpText;
+    public Slider hpSlider;
 
 
 
@@ -21,12 +27,17 @@ public class WingTtoPlayer : MonoBehaviour
     private float releaseFloatDuration = 0.15f; // 놓았을 때 여운 시간
     private float releaseFloatStrength = 0.1f; // 놓았을 때 여운 강도
 
+
     private Rigidbody2D rb;
     private float currentVerticalVelocity;
 
     private bool wasClickingLastFrame;
     private float floatTimer;
     private float velocityAtRelease;
+
+    [Header("other")]
+    private float crashTime = 2f;
+    private WingTtoPlayerState playerState;
 
     void Start()
     {
@@ -43,6 +54,7 @@ public class WingTtoPlayer : MonoBehaviour
 
         wasClickingLastFrame = false;
         currentVerticalVelocity = 0;
+        UpdateHPUI(0);
     }
 
     public void StartProcess()
@@ -50,9 +62,23 @@ public class WingTtoPlayer : MonoBehaviour
         playerState = WingTtoPlayerState.Fly;
     }
 
+    public void SetPause(bool pause)
+    {
+        if (pause)
+        {
+            playerState = WingTtoPlayerState.Pause;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+        else
+        {
+            playerState = WingTtoPlayerState.Fly;
+        }
+    }
+
     void Update()
     {
-        if (playerState == WingTtoPlayerState.Fly)
+        if (playerState == WingTtoPlayerState.Fly || playerState == WingTtoPlayerState.Invincible)
             HandleMovement();
     }
 
@@ -60,8 +86,6 @@ public class WingTtoPlayer : MonoBehaviour
 
 
     #region 상하 움직임 처리
-
-
 
     void HandleMovement()
     {
@@ -109,11 +133,6 @@ public class WingTtoPlayer : MonoBehaviour
         wasClickingLastFrame = isClicking;
     }
 
-    public void OnClickMoveUp()
-    {
-
-    }
-
     #endregion
 
 
@@ -123,24 +142,83 @@ public class WingTtoPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        HLLogger.Log($"{other.name} coming");
-
-        if (other.CompareTag("WingTtoGimbab"))
+        if (other.CompareTag("WingTtoGimbab") && playerState == WingTtoPlayerState.Fly)
         {
             // HP 회복
+            UpdateHPUI(50);
             WingTtoObjectPool.instance.ReturnObject(other);
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        HLLogger.Log($"{collision.gameObject.name} coming");
-
-        if (collision.gameObject.CompareTag("WingTtoStone"))
+        if (collision.gameObject.CompareTag("WingTtoStone") && playerState == WingTtoPlayerState.Fly)
         {
-            // 데미지 처리
-            WingTtoObjectPool.instance.ReturnObject(collision);
+            CrashProcess().Forget();
         }
+    }
+
+
+    private async UniTaskVoid CrashProcess()
+    {
+        HLLogger.Log("CrashProcess");
+
+        playerState = WingTtoPlayerState.Crash;
+        WingTtoGameManager.instance.SetPause(true);
+
+        UpdateHPUI(-25);
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+
+        Color originalColor = playerIcon.color;
+        Color alphaColor = playerIcon.color;
+        alphaColor = Color.red * 0.5f;
+        alphaColor.a = 0.7f;
+        playerIcon.color = alphaColor;
+
+        this.gameObject.layer = LayerMask.NameToLayer("WingTtoInvincible");
+
+        await UniTask.WaitForSeconds(0.3f);
+
+        if (hp <= 0)
+        {
+            WingTtoGameManager.instance.SetGameOver();
+            return;
+        }
+        transform.localPosition = new Vector3(-7f, transform.localPosition.y, transform.localPosition.z);
+        playerIcon.DOColor(originalColor, crashTime).From(alphaColor).SetEase(Ease.InCubic);
+        playerState = WingTtoPlayerState.Invincible;
+        WingTtoGameManager.instance.SetPause(false);
+        await UniTask.Delay(TimeSpan.FromSeconds(crashTime));
+
+        this.gameObject.layer = LayerMask.NameToLayer("Default");
+        playerState = WingTtoPlayerState.Fly;
+    }
+
+
+
+#if UNITY_EDITOR && DEV
+    public void CollisionOnOff(bool isOn)
+    {
+        this.gameObject.layer = LayerMask.NameToLayer(isOn ? "WingTtoInvincible" : "Default");
+    }
+#endif
+
+    #endregion
+
+
+
+
+    #region  UI
+
+    private void UpdateHPUI(int value)
+    {
+        hp += value;
+        hp = Math.Min(maxHp, hp);
+
+        float barValue = 0.01f * hp;
+        hpSlider.value = barValue;
+        hpText.text = $"{barValue * 100}%";
     }
 
 

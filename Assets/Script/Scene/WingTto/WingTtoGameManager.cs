@@ -35,14 +35,16 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     //object 움직임 속도
+    private float speedUpMultiplier = 1.5f;
     private float _normalSpeed = 6f;
-    private float _specialSpeed = 9f;
+    private float _maxSpeed = 15f;
+
     public float normalSpeed => _normalSpeed;
-    public float specialSpeed => _specialSpeed;
+    public float maxSpeed => _maxSpeed;
 
 
     // 날아간 거리 계산
-    private float distanceMultiplier = 3.33f;
+    private float distanceMultiplier = 0.9f;
     private float currentDistance = 0f;
     private float startTime;
 
@@ -99,23 +101,6 @@ public class WingTtoGameManager : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //@@@ test
-            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Stone);
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            //@@@ test
-            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Gimbab);
-        }
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            //@@@ test
-            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Wall);
-        }
-
-
         if (_inGameState == InGameState.Play)
         {
             UpdateDistance(Time.deltaTime);
@@ -134,23 +119,39 @@ public class WingTtoGameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.C))
         {
             HLLogger.Log($"force clear");
+            SetGameOver();
         }
 
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (_inGameState == InGameState.Play)
-                _inGameState = InGameState.Pause;
+                SetPause(true);
             else if (_inGameState == InGameState.Pause)
-                _inGameState = InGameState.Play;
+                SetPause(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            player.CollisionOnOff(true);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            player.CollisionOnOff(false);
         }
 #endif
     }
 
 
 
-    private async UniTaskVoid TimeOverProcess()
+    public void SetGameOver()
     {
-        HLLogger.Log("Time Over");
+        SetPause(true);
+        GameOverProcess().Forget();
+    }
+
+    private async UniTaskVoid GameOverProcess()
+    {
+        HLLogger.Log("Game Over");
         WingTtoGameUIManager.instance.ShowDim(true, "게임 종료!");
         await UniTask.Delay(2000);
 
@@ -161,15 +162,15 @@ public class WingTtoGameManager : MonoBehaviour
     private async UniTaskVoid FinishProcess()
     {
         //TODO 계산식 변경 필요
-        int exp = (int)Math.Pow(score / 2500f, 0.7f);
-        exp = Math.Max(1, exp);
+        // int exp = (int)Math.Pow(score / 2500f, 0.7f);
+        // exp = Math.Max(1, exp);
 
-        int earnCoinAmount = (int)(30000 * (1 - Math.Exp(-score / 40000f)));
-        earnCoinAmount = Math.Max(1000, earnCoinAmount);
+        // int earnCoinAmount = (int)(30000 * (1 - Math.Exp(-score / 40000f)));
+        // earnCoinAmount = Math.Max(1000, earnCoinAmount);
 
         //@@@ 임시
-        exp = 0;
-        earnCoinAmount = 0;
+        int exp = 0;
+        int earnCoinAmount = 0;
 
         HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
@@ -189,20 +190,46 @@ public class WingTtoGameManager : MonoBehaviour
 
     #region Calc Distance
 
+    float tempSpeed = 0f;
+    int currentPhase = 0;
+    private float[] phaseBorder = { 100f, 250f, 500f, 750f, 1000f, 1500f, 2000f };
+    private float[] phaseSpeed = { 7f, 8f, 9f, 10f, 11f, 12f, 13f };
+
     private void UpdateDistance(float deltaTime)
     {
-        currentDistance += deltaTime * (Input.GetMouseButton(1) ? specialSpeed : normalSpeed) * distanceMultiplier;
+        tempSpeed = normalSpeed * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        tempSpeed = Mathf.Min(maxSpeed, tempSpeed);
+
+        currentDistance += deltaTime * tempSpeed * distanceMultiplier;
+
+        if (currentPhase < phaseBorder.Length && currentDistance >= phaseBorder[currentPhase])
+        {
+            AdvancePhase();
+        }
     }
 
     public string GetFormattedDistance()
     {
-        return $"{currentDistance:0f}m";
+        return $"{currentDistance:F1}m";
     }
 
     // 정수 거리 반환
     public int GetDistance()
     {
         return Mathf.FloorToInt(currentDistance);
+    }
+
+
+    void AdvancePhase()
+    {
+        currentPhase++;
+        _normalSpeed = phaseSpeed[currentPhase - 1];
+        foreach (WingTtoObject obj in spawnObjectList)
+        {
+            obj?.UpdateSpeed();
+        }
+
+        Debug.Log($"Phase {currentPhase} 진입!  -> normalSpeed : {_normalSpeed}");
     }
 
     #endregion
@@ -212,15 +239,61 @@ public class WingTtoGameManager : MonoBehaviour
 
     #region Spawn Process
 
-    float temp = 10f;
+    float calcWallTime = 7f;
+    float calcGimbabTime = 4f;
+    float calcStoneTime = 1f;
+    float spawnWallTime = 0.2f;
+    float spawnGimbabTime = 19f;
+    float spawnStoneTime = 1.6f;
+
+    float topWallPositionY = 9.5f;
+    float wallDistance = 9.5f;
+    float maxTopPosition = 9.5f;
+    float maxBottomPosition = 5f;
+
     private void RandomSpawnObject(float deltaTime)
     {
-        temp -= deltaTime;
-        if (temp <= 0)
+        calcWallTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        calcGimbabTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        calcStoneTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+
+
+        if (calcWallTime <= 0)
         {
-            temp = 10f;
-            WingTtoObject obj = pool.GetObject(WingTtoObjectType.Wall);
+            calcWallTime = spawnWallTime;
+
+            wallDistance -= 0.002f;
+            wallDistance = Mathf.Max(wallDistance, 6.2f);
+            topWallPositionY += GetRandomFloat(-0.5f, 0.5f);
+            // topWallPositionY = Mathf.Clamp(topWallPositionY, maxBottomPosition, maxTopPosition);
+            topWallPositionY = Mathf.Clamp(topWallPositionY, Mathf.Max(maxBottomPosition, -10f + wallDistance * 2), maxTopPosition);
+
+
+            pool.GetObject(WingTtoObjectType.Wall, topWallPositionY, topWallPositionY);
+            pool.GetObject(WingTtoObjectType.Wall, topWallPositionY - wallDistance * 2, topWallPositionY - wallDistance * 2);
         }
+        if (calcGimbabTime <= 0)
+        {
+            if (wallDistance < 6.9f) // 포션 지급 중지(난이도 상승)
+                return;
+            calcGimbabTime = spawnGimbabTime;
+            float safeTop = topWallPositionY - 6f;
+            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+
+            pool.GetObject(WingTtoObjectType.Gimbab, safeBottom, safeTop);
+        }
+        if (calcStoneTime <= 0)
+        {
+            if (wallDistance < 7.4f) //안전지역 없음
+                return;
+
+            calcStoneTime = spawnStoneTime;
+            float safeTop = topWallPositionY - 6f;
+            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+
+            pool.GetObject(WingTtoObjectType.Stone, safeBottom, safeTop);
+        }
+
     }
 
     public void AddSpawnObject(WingTtoObject obj)
@@ -250,6 +323,7 @@ public class WingTtoGameManager : MonoBehaviour
         {
             obj?.SetPause(isPause);
         }
+        player.SetPause(isPause);
     }
 
 
