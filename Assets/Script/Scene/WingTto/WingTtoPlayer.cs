@@ -89,17 +89,50 @@ public class WingTtoPlayer : MonoBehaviour
 
     void HandleMovement()
     {
-        bool isClicking = Input.GetMouseButton(0);
+        bool isClickLeft = false;
+
+        // PC - 마우스 입력
+        if (Input.GetMouseButton(0))
+        {
+            isClickLeft = true;
+        }
+
+        // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began ||
+                touch.phase == TouchPhase.Stationary ||
+                touch.phase == TouchPhase.Moved)
+            {
+                // 화면 절반 기준으로 좌우 구분
+                float screenHalfWidth = Screen.width / 2f;
+
+                if (touch.position.x < screenHalfWidth)
+                {
+                    // 왼쪽 화면 
+                    isClickLeft = true;
+                }
+                // else
+                // {
+                //     // 오른쪽 화면 - 빠르게
+                //     targetSpeedMultiplier = fastSpeedMultiplier;
+                // }
+            }
+        }
+
+
 
         // 클릭을 뗐을 때
-        if (!isClicking && wasClickingLastFrame)
+        if (!isClickLeft && wasClickingLastFrame)
         {
             floatTimer = releaseFloatDuration;
             velocityAtRelease = currentVerticalVelocity;
         }
 
         // 클릭 중 - 부드럽게 가속하며 상승
-        if (isClicking)
+        if (isClickLeft)
         {
             floatTimer = 0;
             currentVerticalVelocity += upwardAcceleration * Time.deltaTime;
@@ -130,7 +163,7 @@ public class WingTtoPlayer : MonoBehaviour
 
         rb.linearVelocity = new Vector2(0, currentVerticalVelocity);
 
-        wasClickingLastFrame = isClicking;
+        wasClickingLastFrame = isClickLeft;
     }
 
     #endregion

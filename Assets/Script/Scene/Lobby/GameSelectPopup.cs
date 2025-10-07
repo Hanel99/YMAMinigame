@@ -86,8 +86,7 @@ public class GameSelectPopup : PopupBase
                 break;
 
             case GameType.WingTto:
-                LobbyUIManager.instance.ShowCommonPopup("알림", "개발중입니다.", true, true, false, null, null);
-                // SceneMoveManager.instance.MoveScene(SceneName.YMAWingTto);
+                SceneMoveManager.instance.MoveScene(SceneName.YMAWingTto);
                 break;
 
             default:

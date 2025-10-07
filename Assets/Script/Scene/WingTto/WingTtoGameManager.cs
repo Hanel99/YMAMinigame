@@ -35,6 +35,7 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     //object 움직임 속도
+    private bool isClickRight = false;
     private float speedUpMultiplier = 1.5f;
     private float _normalSpeed = 6f;
     public float normalSpeed => _normalSpeed;
@@ -58,6 +59,8 @@ public class WingTtoGameManager : MonoBehaviour
 
         randomSeed = UnityEngine.Random.Range(0, 100000);
         randomSeed = 0;
+        //@@@ 임시 설정
+
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
 
@@ -101,6 +104,33 @@ public class WingTtoGameManager : MonoBehaviour
 
         if (_inGameState == InGameState.Play)
         {
+            // PC - 마우스 입력
+            if (Input.GetMouseButton(1))
+            {
+                isClickRight = true;
+            }
+
+            // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began ||
+                    touch.phase == TouchPhase.Stationary ||
+                    touch.phase == TouchPhase.Moved)
+                {
+                    // 화면 절반 기준으로 좌우 구분
+                    float screenHalfWidth = Screen.width / 2f;
+
+                    if (touch.position.x > screenHalfWidth)
+                    {
+                        // 오른쪽 화면 
+                        isClickRight = true;
+                    }
+                }
+            }
+
+
             UpdateDistance(Time.deltaTime);
             RandomSpawnObject(Time.deltaTime);
         }
@@ -195,7 +225,7 @@ public class WingTtoGameManager : MonoBehaviour
 
     private void UpdateDistance(float deltaTime)
     {
-        tempSpeed = normalSpeed * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        tempSpeed = normalSpeed * (isClickRight ? speedUpMultiplier : 1f);
         currentDistance += deltaTime * tempSpeed * distanceMultiplier;
 
         if (currentPhase < phaseBorder.Length && currentDistance >= phaseBorder[currentPhase])
@@ -249,9 +279,9 @@ public class WingTtoGameManager : MonoBehaviour
 
     private void RandomSpawnObject(float deltaTime)
     {
-        calcWallTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
-        calcGimbabTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
-        calcStoneTime -= deltaTime * (Input.GetMouseButton(1) ? speedUpMultiplier : 1f);
+        calcWallTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
+        calcGimbabTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
+        calcStoneTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
 
 
         if (calcWallTime <= 0)
