@@ -19,9 +19,13 @@ public class WingTtoGameUIManager : MonoBehaviour
     [Header("InGame")]
     public GameObject inGameDim;
     public Text dimText;
+    public GameObject startButton;
+
     public Text distanceText;
     public Text getSetText;
-
+    public Text currentSpeedText;
+    public Text earnCoinText;
+    public Text earnExpText;
 
 
     //private
@@ -110,16 +114,46 @@ public class WingTtoGameUIManager : MonoBehaviour
 
 
     // InGame UI Logic
-    public void ShowDim(bool show, string dimText = "")
+    public void ShowDim(bool show, string dimText = "", bool showStartButton = false)
     {
         inGameDim.SetActive(show);
         this.dimText.text = dimText;
+        startButton.SetActive(showStartButton);
     }
 
-    public void SetGetSetText(string Text)
+    public void InitUI()
+    {
+        inGameDim.SetActive(false);
+        dimText.text = "";
+        distanceText.text = "";
+        getSetText.text = "";
+
+        currentSpeedText.text = "";
+        earnCoinText.text = "";
+        earnExpText.text = "";
+    }
+
+
+    public void UpdateGetSetText(string Text)
     {
         getSetText.text = Text;
     }
+
+    public void UpdateSpeedText(float value)
+    {
+        currentSpeedText.text = $"Speed : {value:F0}";
+    }
+
+    public void UpdateCoinText(int value)
+    {
+        earnCoinText.text = $"Coin : {value}";
+    }
+
+    public void UpdateExpText(int value)
+    {
+        earnExpText.text = $"Exp : {value}";
+    }
+
 
 
     public void OnClickPause()
@@ -132,7 +166,7 @@ public class WingTtoGameUIManager : MonoBehaviour
 
     void Update()
     {
-        distanceText.text = "Distance: " + gameManager.GetFormattedDistance();
+        distanceText.text = gameManager.GetFormattedDistance();
     }
 
 }

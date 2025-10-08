@@ -8,6 +8,9 @@ TagManager:
   - WingTtoGimbab
   - WingTtoStone
   - WingTtoObject
+  - WingTtoSpeedUp
+  - WingTtoCoin
+  - WingTtoExp
   layers:
   - Default
   - TransparentFX

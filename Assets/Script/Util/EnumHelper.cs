@@ -213,6 +213,9 @@ public enum WingTtoObjectType
     Border,
     Gimbab,
     Stone,
+    SpeedUp,
+    Coin,
+    Exp,
     Wall,
 
 }

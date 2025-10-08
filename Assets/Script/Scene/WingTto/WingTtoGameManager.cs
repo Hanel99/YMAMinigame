@@ -25,6 +25,11 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     public WingTtoPlayer player;
+    private bool isFlyPressed = false;
+    private bool isSpeedPressed = false;
+
+    public bool IsFlyPressed => isFlyPressed;
+    public bool IsSpeedPressed => isSpeedPressed;
 
 
     //private
@@ -35,7 +40,7 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     //object 움직임 속도
-    private bool isClickRight = false;
+
     private float speedUpMultiplier = 1.5f;
     private float _normalSpeed = 6f;
     public float normalSpeed => _normalSpeed;
@@ -75,7 +80,9 @@ public class WingTtoGameManager : MonoBehaviour
 #if UNITY_ANDROID
         dimText += "\n\n화면을 가로로 잡고 플레이 해 주세요";
 #endif
-        WingTtoGameUIManager.instance.ShowDim(false, dimText);
+
+        WingTtoGameUIManager.instance.InitUI();
+        WingTtoGameUIManager.instance.ShowDim(true, dimText, true);
     }
 
     public void OnClickStartButton()
@@ -89,15 +96,16 @@ public class WingTtoGameManager : MonoBehaviour
         _inGameState = InGameState.GetSet;
         player.StartProcess();
 
-        WingTtoGameUIManager.instance.SetGetSetText("3");
+        WingTtoGameUIManager.instance.ShowDim(false);
+        WingTtoGameUIManager.instance.UpdateGetSetText("3");
         await UniTask.Delay(600);
-        WingTtoGameUIManager.instance.SetGetSetText("2");
+        WingTtoGameUIManager.instance.UpdateGetSetText("2");
         await UniTask.Delay(600);
-        WingTtoGameUIManager.instance.SetGetSetText("1");
+        WingTtoGameUIManager.instance.UpdateGetSetText("1");
         await UniTask.Delay(600);
-        WingTtoGameUIManager.instance.SetGetSetText("GO!!");
+        WingTtoGameUIManager.instance.UpdateGetSetText("GO!!");
         await UniTask.Delay(600);
-        WingTtoGameUIManager.instance.SetGetSetText("");
+        WingTtoGameUIManager.instance.UpdateGetSetText("");
 
         _inGameState = InGameState.Play;
         HLLogger.Log("game start");
@@ -105,6 +113,8 @@ public class WingTtoGameManager : MonoBehaviour
 
     void Update()
     {
+        CheckClickTouch();
+
         if (inGameState == InGameState.Play && Input.GetKeyDown(KeyCode.Escape))
         {
             if (WingTtoGameUIManager.instance.IsPopupOpen())
@@ -119,42 +129,10 @@ public class WingTtoGameManager : MonoBehaviour
             }
         }
 
-
-        if (_inGameState == InGameState.Play && _inGameState == InGameState.GetSet)
-        {
-            // PC - 마우스 입력
-            if (Input.GetMouseButton(1))
-            {
-                isClickRight = true;
-            }
-
-            // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
-            if (Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began ||
-                    touch.phase == TouchPhase.Stationary ||
-                    touch.phase == TouchPhase.Moved)
-                {
-                    // 화면 절반 기준으로 좌우 구분
-                    float screenHalfWidth = Screen.width / 2f;
-
-                    if (touch.position.x > screenHalfWidth)
-                    {
-                        // 오른쪽 화면 
-                        isClickRight = true;
-                    }
-                }
-            }
-        }
-
         if (UpdateActionQueue.Count > 0)
         {
             UpdateActionQueue.Dequeue().Invoke();
         }
-
-
 
 #if UNITY_EDITOR && DEV
         // c를 사용할 수 있어서 이 게임만 ctrl과 조합.
@@ -181,6 +159,84 @@ public class WingTtoGameManager : MonoBehaviour
             player.CollisionOnOff(false);
         }
 #endif
+    }
+
+    void CheckClickTouch()
+    {
+        if (_inGameState == InGameState.Play || _inGameState == InGameState.GetSet)
+        {
+            // PC - 마우스 입력
+#if UNITY_EDITOR || UNITY_STANDALONE
+
+            isFlyPressed = Input.GetMouseButton(0);
+            isSpeedPressed = Input.GetMouseButton(1);
+
+#else
+
+            // 모바일 - 터치 입력
+            bool leftTouching = false;
+            bool rightTouching = false;
+            float screenHalfWidth = Screen.width / 2f;
+
+            // 모든 터치 확인 (멀티터치)
+            for (int i = 0; i < Input.touchCount; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+
+                // 활성 터치만 확인
+                if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
+                {
+                    if (touch.position.x < screenHalfWidth)
+                    {
+                        leftTouching = true;
+                    }
+                    else
+                    {
+                        rightTouching = true;
+                    }
+                }
+
+                // 터치 종료
+                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+                {
+                    if (touch.position.x < screenHalfWidth)
+                    {
+                        leftTouching = false;
+                    }
+                    else
+                    {
+                        isSpeedPressed = false;
+                    }
+                }
+            }
+
+            // 이전 프레임과 비교해서 상태 변화 감지
+            if (leftTouching && !isFlyPressed)
+            {
+                // 왼쪽이 새로 눌림 (이미 Began에서 처리했지만 안전장치)
+            }
+            else if (!leftTouching && isFlyPressed)
+            {
+                // 왼쪽이 떼짐 (모든 왼쪽 터치가 사라짐)
+                leftTouching = false;
+            }
+
+            if (rightTouching && !isSpeedPressed)
+            {
+                // 오른쪽이 새로 눌림
+            }
+            else if (!rightTouching && isSpeedPressed)
+            {
+                // 오른쪽이 떼짐 (모든 오른쪽 터치가 사라짐)
+                isSpeedPressed = false;
+            }
+
+            // 실시간 상태 업데이트
+            isFlyPressed = leftTouching;
+            isSpeedPressed = rightTouching;
+
+#endif
+        }
     }
 
     void FixedUpdate()
@@ -242,19 +298,11 @@ public class WingTtoGameManager : MonoBehaviour
     #region Calc Distance
 
     float tempSpeed = 0f;
-    int currentPhase = 0;
-    private float[] phaseBorder = { 100f, 250f, 500f, 750f, 1000f, 1500f, 2000f };
-    private float[] phaseSpeed = { 7f, 8f, 9f, 10f, 11f, 12f, 13f };
 
     private void UpdateDistance(float deltaTime)
     {
-        tempSpeed = normalSpeed * (isClickRight ? speedUpMultiplier : 1f);
+        tempSpeed = normalSpeed * (isSpeedPressed ? speedUpMultiplier : 1f);
         currentDistance += deltaTime * tempSpeed * distanceMultiplier;
-
-        if (currentPhase < phaseBorder.Length && currentDistance >= phaseBorder[currentPhase])
-        {
-            AdvancePhase();
-        }
     }
 
     public string GetFormattedDistance()
@@ -262,24 +310,18 @@ public class WingTtoGameManager : MonoBehaviour
         return $"{currentDistance:F1}m";
     }
 
-    // 정수 거리 반환
-    public int GetDistance()
+    public void AddSpeed(int value)
     {
-        return Mathf.FloorToInt(currentDistance);
-    }
-
-
-    void AdvancePhase()
-    {
-        currentPhase++;
-        _normalSpeed = phaseSpeed[currentPhase - 1];
+        _normalSpeed += value;
         foreach (WingTtoObject obj in spawnObjectList)
         {
             obj?.UpdateSpeed();
         }
 
-        Debug.Log($"Phase {currentPhase} 진입!  -> normalSpeed : {_normalSpeed}");
+        WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
+        Debug.Log($"Speed UP! -> normalSpeed : {_normalSpeed}");
     }
+
 
     #endregion
 
@@ -288,12 +330,19 @@ public class WingTtoGameManager : MonoBehaviour
 
     #region Spawn Process
 
-    float calcWallTime = 10f;
-    float calcGimbabTime = 7f;
-    float calcStoneTime = 4f;
+    float calcWallTime = 20f;
+    float calcGimbabTime = 15f;
+    float calcStoneTime = 1f;
+    float calcSpeedUpTime = 3f;
+    float calcCoinTime = 4f;
+    float calcExpTime = 5f;
+
     float spawnWallTime = 0.15f;
     float spawnGimbabTime = 29f;
     float spawnStoneTime = 1.4f;
+    float spawnSpeedUpTime = 21f;
+    float spawnCoinTime = 8f;
+    float spawnExpTime = 24f;
 
     float topWallPositionY = 9.5f;
     float wallDistance = 9.5f;
@@ -302,9 +351,12 @@ public class WingTtoGameManager : MonoBehaviour
 
     private void RandomSpawnObject(float deltaTime)
     {
-        calcWallTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
-        calcGimbabTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
-        calcStoneTime -= deltaTime * (isClickRight ? speedUpMultiplier : 1f);
+        calcWallTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        calcGimbabTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        calcStoneTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        calcSpeedUpTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        calcCoinTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        calcExpTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
 
 
         if (calcWallTime <= 0)
@@ -323,24 +375,51 @@ public class WingTtoGameManager : MonoBehaviour
         }
         if (calcGimbabTime <= 0)
         {
-            if (wallDistance < 6.7f) // 포션 지급 중지(난이도 상승)
-                return;
             calcGimbabTime = spawnGimbabTime;
             float safeTop = topWallPositionY - 6f;
             float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
 
-            pool.GetObject(WingTtoObjectType.Gimbab, safeBottom, safeTop);
+            if (wallDistance >= 6.7f) // 포션 지급 중지(난이도 상승)
+                pool.GetObject(WingTtoObjectType.Gimbab, safeBottom, safeTop);
         }
         if (calcStoneTime <= 0)
         {
-            if (wallDistance < 7.1f) //안전지역 없음
-                return;
-
             calcStoneTime = spawnStoneTime;
             float safeTop = topWallPositionY - 6f;
             float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
 
-            pool.GetObject(WingTtoObjectType.Stone, safeBottom, safeTop);
+            if (wallDistance >= 7.1f) //안전지역 없음
+                pool.GetObject(WingTtoObjectType.Stone, safeBottom, safeTop);
+        }
+
+        if (calcSpeedUpTime <= 0)
+        {
+            calcSpeedUpTime = spawnSpeedUpTime;
+            float safeTop = topWallPositionY - 6f;
+            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+
+            if (GetRandomBool(80, 20)) // 80%확률로 생성
+                pool.GetObject(WingTtoObjectType.SpeedUp, safeBottom, safeTop);
+        }
+
+        if (calcCoinTime <= 0)
+        {
+            calcCoinTime = spawnCoinTime;
+            float safeTop = topWallPositionY - 6f;
+            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+
+            if (GetRandomBool(70, 30)) // 80%확률로 생성
+                pool.GetObject(WingTtoObjectType.Coin, safeBottom, safeTop);
+        }
+
+        if (calcExpTime <= 0)
+        {
+            calcExpTime = spawnExpTime;
+            float safeTop = topWallPositionY - 6f;
+            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+
+            if (GetRandomBool(50, 50)) // 50%확률로 생성
+                pool.GetObject(WingTtoObjectType.Exp, safeBottom, safeTop);
         }
 
     }
@@ -380,5 +459,14 @@ public class WingTtoGameManager : MonoBehaviour
     public float GetRandomFloat(float min, float max)
     {
         return min + (float)randomGenerator.NextDouble() * (max - min);
+    }
+
+    public bool GetRandomBool(int success, int fail)
+    {
+        int total = success + fail;
+        bool result = randomGenerator.Next(0, total) < success;
+        HLLogger.Log($"Spawn? success : {success} / fail : {fail} / result : {result}");
+
+        return result;
     }
 }

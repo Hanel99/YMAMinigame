@@ -1422,9 +1422,18 @@ MonoBehaviour:
   - type: 1
     prefab: {fileID: 6180526705228934085, guid: 7abbc13800a6dc746ab512db1cafd834, type: 3}
     initialPoolSize: 2
-  - type: 3
+  - type: 6
     prefab: {fileID: 7804438054938999518, guid: e20412ca5f05e8f47a84c3dd92b5c371, type: 3}
     initialPoolSize: 80
+  - type: 3
+    prefab: {fileID: 3466380166059231089, guid: 722666ffb585d084abff966ba3a270f2, type: 3}
+    initialPoolSize: 2
+  - type: 4
+    prefab: {fileID: 3466380166059231089, guid: 7bd439db49a01144e996fd29f354cc75, type: 3}
+    initialPoolSize: 2
+  - type: 5
+    prefab: {fileID: 3466380166059231089, guid: 0505e6b9955186d4aafbb5ed383d2657, type: 3}
+    initialPoolSize: 2
 --- !u!1001 &2078638666
 PrefabInstance:
   m_ObjectHideFlags: 0

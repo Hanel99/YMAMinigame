@@ -9,6 +9,8 @@ public class WingTtoPlayer : MonoBehaviour
     [Header("playerData")]
     private int hp = 100;
     private int maxHp = 100;
+    private int earnCoin = 0;
+    private int earnExp = 0;
 
     [Header("UI")]
     public SpriteRenderer playerIcon;
@@ -38,6 +40,8 @@ public class WingTtoPlayer : MonoBehaviour
     [Header("other")]
     private float crashTime = 2f;
     private WingTtoPlayerState playerState;
+    private WingTtoGameManager gameManager => WingTtoGameManager.instance;
+
 
     void Start()
     {
@@ -77,7 +81,7 @@ public class WingTtoPlayer : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (playerState == WingTtoPlayerState.Fly || playerState == WingTtoPlayerState.Invincible)
             HandleMovement();
@@ -90,50 +94,50 @@ public class WingTtoPlayer : MonoBehaviour
 
     void HandleMovement()
     {
-        bool isClickLeft = false;
+        // bool isClickLeft = false;
 
-        // PC - 마우스 입력
-        if (Input.GetMouseButton(0))
-        {
-            isClickLeft = true;
-        }
+        // // PC - 마우스 입력
+        // if (Input.GetMouseButton(0))
+        // {
+        //     isClickLeft = true;
+        // }
 
-        // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
+        // // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
+        // if (Input.touchCount > 0)
+        // {
+        //     Touch touch = Input.GetTouch(0);
 
-            if (touch.phase == TouchPhase.Began ||
-                touch.phase == TouchPhase.Stationary ||
-                touch.phase == TouchPhase.Moved)
-            {
-                // 화면 절반 기준으로 좌우 구분
-                float screenHalfWidth = Screen.width / 2f;
+        //     if (touch.phase == TouchPhase.Began ||
+        //         touch.phase == TouchPhase.Stationary ||
+        //         touch.phase == TouchPhase.Moved)
+        //     {
+        //         // 화면 절반 기준으로 좌우 구분
+        //         float screenHalfWidth = Screen.width / 2f;
 
-                if (touch.position.x < screenHalfWidth)
-                {
-                    // 왼쪽 화면 
-                    isClickLeft = true;
-                }
-                // else
-                // {
-                //     // 오른쪽 화면 - 빠르게
-                //     targetSpeedMultiplier = fastSpeedMultiplier;
-                // }
-            }
-        }
+        //         if (touch.position.x < screenHalfWidth)
+        //         {
+        //             // 왼쪽 화면 
+        //             isClickLeft = true;
+        //         }
+        //         // else
+        //         // {
+        //         //     // 오른쪽 화면 - 빠르게
+        //         //     targetSpeedMultiplier = fastSpeedMultiplier;
+        //         // }
+        //     }
+        // }
 
 
 
         // 클릭을 뗐을 때
-        if (!isClickLeft && wasClickingLastFrame)
+        if (!gameManager.IsFlyPressed && wasClickingLastFrame)
         {
             floatTimer = releaseFloatDuration;
             velocityAtRelease = currentVerticalVelocity;
         }
 
         // 클릭 중 - 부드럽게 가속하며 상승
-        if (isClickLeft)
+        if (gameManager.IsFlyPressed)
         {
             floatTimer = 0;
             currentVerticalVelocity += upwardAcceleration * Time.deltaTime;
@@ -164,7 +168,7 @@ public class WingTtoPlayer : MonoBehaviour
 
         rb.linearVelocity = new Vector2(0, currentVerticalVelocity);
 
-        wasClickingLastFrame = isClickLeft;
+        wasClickingLastFrame = gameManager.IsFlyPressed;
     }
 
     #endregion
@@ -176,11 +180,32 @@ public class WingTtoPlayer : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("WingTtoGimbab") && playerState == WingTtoPlayerState.Fly)
+        if (playerState == WingTtoPlayerState.Fly || playerState == WingTtoPlayerState.Invincible)
         {
-            // HP 회복
-            UpdateHPUI(50);
+            if (other.CompareTag("WingTtoGimbab"))
+            {
+                // HP 회복
+                UpdateHPUI(50);
+            }
+            else if (other.CompareTag("WingTtoSpeedUp"))
+            {
+                gameManager.AddSpeed(1);
+                HLLogger.Log("Speed up");
+            }
+            else if (other.CompareTag("WingTtoCoin"))
+            {
+                earnCoin += 100;
+                WingTtoGameUIManager.instance.UpdateCoinText(earnCoin);
+                HLLogger.Log("earn Coin");
+            }
+            else if (other.CompareTag("WingTtoExp"))
+            {
+                earnExp += 1;
+                WingTtoGameUIManager.instance.UpdateCoinText(earnExp);
+                HLLogger.Log("earn Exp");
+            }
             WingTtoObjectPool.instance.ReturnObject(other);
+
         }
     }
 

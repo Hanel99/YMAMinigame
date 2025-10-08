@@ -75,6 +75,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9292c96bf4f8724c806207cc1053b8b
+    m_Address: BGM_WingTto
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e5a265cd98c3ec94a90caa25503070b4
     m_Address: BGM_WordGame
     m_ReadOnly: 0

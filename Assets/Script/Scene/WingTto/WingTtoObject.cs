@@ -14,7 +14,6 @@ public class WingTtoObject : MonoBehaviour
     private float currentSpeedSmooth = 0f;
 
     private bool isMoving = false;
-    private bool isClickRight = false;
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
     private WingTtoGameManager gameManager => WingTtoGameManager.instance;
 
@@ -38,44 +37,16 @@ public class WingTtoObject : MonoBehaviour
         normalSpeed = gameManager.normalSpeed;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!isMoving) return;
 
 
-        // PC - 마우스 입력
-        if (Input.GetMouseButton(1))
-        {
-            isClickRight = true;
-        }
-
-        // 모바일 - 터치 입력 (마우스 입력 덮어쓰기)
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began ||
-                touch.phase == TouchPhase.Stationary ||
-                touch.phase == TouchPhase.Moved)
-            {
-                // 화면 절반 기준으로 좌우 구분
-                float screenHalfWidth = Screen.width / 2f;
-
-                if (touch.position.x > screenHalfWidth)
-                {
-                    // 오른쪽 화면 
-                    isClickRight = true;
-                }
-            }
-        }
-
-
-
         // 속도 결정 (우클릭 여부에 따라)
-        currentSpeed = normalSpeed * (isClickRight ? speedUpMultiplier : 1f);
+        currentSpeed = normalSpeed * (gameManager.IsSpeedPressed ? speedUpMultiplier : 1f);
 
         // 목표 속도 설정
-        targetSpeed = normalSpeed * (isClickRight ? speedUpMultiplier : 1f);
+        targetSpeed = normalSpeed * (gameManager.IsSpeedPressed ? speedUpMultiplier : 1f);
 
         // 부드럽게 보간 (0.1f 값을 조절해서 블렌딩 속도 변경)
         currentSpeedSmooth = Mathf.Lerp(currentSpeedSmooth, targetSpeed, Time.deltaTime * 8f);

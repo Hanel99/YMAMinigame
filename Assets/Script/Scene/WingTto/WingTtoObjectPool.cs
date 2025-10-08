@@ -120,9 +120,10 @@ public class WingTtoObjectPool : MonoBehaviour
         if (collider2D == null) return;
 
         WingTtoObject obj = collider2D.gameObject.GetComponent<WingTtoObject>();
-        if (obj == null) return;
-
-        ReturnObject(obj);
+        if (obj != null)
+            ReturnObject(obj);
+        else
+            Destroy(collider2D.gameObject);
     }
 
     public void ReturnObject(Collision2D collision)
