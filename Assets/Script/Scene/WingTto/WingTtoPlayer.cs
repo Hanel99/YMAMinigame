@@ -41,6 +41,7 @@ public class WingTtoPlayer : MonoBehaviour
 
     void Start()
     {
+        playerIcon.sprite = GameResourceManager.instance.GetMasterIcon(SaveDataManager.instance.playerData.master);
         playerState = WingTtoPlayerState.Ready;
         rb = GetComponent<Rigidbody2D>();
 

@@ -17,7 +17,10 @@ public class WingTtoGameUIManager : MonoBehaviour
     public SceneAnimation sceneDim;
 
     [Header("InGame")]
+    public GameObject inGameDim;
+    public Text dimText;
     public Text distanceText;
+    public Text getSetText;
 
 
 
@@ -109,17 +112,22 @@ public class WingTtoGameUIManager : MonoBehaviour
     // InGame UI Logic
     public void ShowDim(bool show, string dimText = "")
     {
-
-
+        inGameDim.SetActive(show);
+        this.dimText.text = dimText;
     }
+
+    public void SetGetSetText(string Text)
+    {
+        getSetText.text = Text;
+    }
+
+
     public void OnClickPause()
     {
         //TODO 인게임 pause 처리
 
-
         _ShowPopup<PausePopup>().ShowPopup();
         gameManager.SetPause(true);
-
     }
 
     void Update()

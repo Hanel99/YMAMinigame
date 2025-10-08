@@ -154,6 +154,7 @@ public enum CardMaster
 public enum InGameState
 {
     Ready,
+    GetSet,
     Play,
     Pause,
     Finish,
@@ -260,6 +261,12 @@ public enum SFXType
     BtnOK,
     BtnNO,
     Warning,
+    Coin,
+    Explosion,
+    TowerAvoid,
+    TowerHit,
+    TowerResult,
+    Victory,
 
     // Congratulations,
     // GameOver,

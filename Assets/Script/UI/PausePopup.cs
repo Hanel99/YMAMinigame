@@ -44,6 +44,10 @@ public class PausePopup : PopupBase
             case SceneName.YMACubeGame:
                 CubeGameManager.instance.SetPause(false);
                 break;
+
+            case SceneName.YMAWingTto:
+                WingTtoGameManager.instance.SetPause(false);
+                break;
         }
 
     }

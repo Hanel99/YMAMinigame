@@ -44,7 +44,6 @@ public class WingTtoGameManager : MonoBehaviour
     // 날아간 거리 계산
     private float distanceMultiplier = 0.9f;
     private float currentDistance = 0f;
-    private float startTime;
 
 
     private void Awake()
@@ -64,24 +63,43 @@ public class WingTtoGameManager : MonoBehaviour
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
 
-        StartProcess().Forget();
+        StartProcess();
     }
 
-    private async UniTaskVoid StartProcess()
+    private void StartProcess()
     {
         WingTtoGameUIManager.instance.ShowSceneMoveAnimation(true);
-        // SoundManager.instance.PlayBGM(BGMType.WingTto);
+        SoundManager.instance.PlayBGM(BGMType.WingTto);
 
         string dimText = "이 게임은 가로로 플레이 하는 게임입니다.";
 #if UNITY_ANDROID
         dimText += "\n\n화면을 가로로 잡고 플레이 해 주세요";
 #endif
         WingTtoGameUIManager.instance.ShowDim(false, dimText);
+    }
 
-        await UniTask.Delay(1000);
-        _inGameState = InGameState.Play;
-        startTime = Time.time;
+    public void OnClickStartButton()
+    {
+        ClickStartProcess().Forget();
+    }
+
+    public async UniTaskVoid ClickStartProcess()
+    {
+        HLLogger.Log("getset...");
+        _inGameState = InGameState.GetSet;
         player.StartProcess();
+
+        WingTtoGameUIManager.instance.SetGetSetText("3");
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.SetGetSetText("2");
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.SetGetSetText("1");
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.SetGetSetText("GO!!");
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.SetGetSetText("");
+
+        _inGameState = InGameState.Play;
         HLLogger.Log("game start");
     }
 
@@ -102,7 +120,7 @@ public class WingTtoGameManager : MonoBehaviour
         }
 
 
-        if (_inGameState == InGameState.Play)
+        if (_inGameState == InGameState.Play && _inGameState == InGameState.GetSet)
         {
             // PC - 마우스 입력
             if (Input.GetMouseButton(1))
@@ -129,10 +147,6 @@ public class WingTtoGameManager : MonoBehaviour
                     }
                 }
             }
-
-
-            UpdateDistance(Time.deltaTime);
-            RandomSpawnObject(Time.deltaTime);
         }
 
         if (UpdateActionQueue.Count > 0)
@@ -167,6 +181,15 @@ public class WingTtoGameManager : MonoBehaviour
             player.CollisionOnOff(false);
         }
 #endif
+    }
+
+    void FixedUpdate()
+    {
+        if (_inGameState == InGameState.Play)
+        {
+            UpdateDistance(Time.deltaTime);
+            RandomSpawnObject(Time.deltaTime);
+        }
     }
 
 
@@ -265,9 +288,9 @@ public class WingTtoGameManager : MonoBehaviour
 
     #region Spawn Process
 
-    float calcWallTime = 7f;
-    float calcGimbabTime = 4f;
-    float calcStoneTime = 1f;
+    float calcWallTime = 10f;
+    float calcGimbabTime = 7f;
+    float calcStoneTime = 4f;
     float spawnWallTime = 0.15f;
     float spawnGimbabTime = 29f;
     float spawnStoneTime = 1.4f;
