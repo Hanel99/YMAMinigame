@@ -25,6 +25,8 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     public WingTtoPlayer player;
+    public List<WingTtoGameBGMove> bgList;
+
     private bool isFlyPressed = false;
     private bool isSpeedPressed = false;
 
@@ -42,12 +44,13 @@ public class WingTtoGameManager : MonoBehaviour
     //object 움직임 속도
 
     private float speedUpMultiplier = 1.5f;
+    private float _originalSpeed = 6f;
     private float _normalSpeed = 6f;
     public float normalSpeed => _normalSpeed;
 
 
     // 날아간 거리 계산
-    private float distanceMultiplier = 0.9f;
+    private float distanceMultiplier = 1.6f;
     private float currentDistance = 0f;
 
 
@@ -109,6 +112,9 @@ public class WingTtoGameManager : MonoBehaviour
 
         _inGameState = InGameState.Play;
         HLLogger.Log("game start");
+        WingTtoGameUIManager.instance.UpdateExpText(0);
+        WingTtoGameUIManager.instance.UpdateCoinText(0);
+        WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
     }
 
     void Update()
@@ -157,6 +163,21 @@ public class WingTtoGameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             player.CollisionOnOff(false);
+        }
+
+
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            AddSpeed(1);
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            AddSpeed(-1);
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            player.UpdateHPUI(100);
         }
 #endif
     }
@@ -307,7 +328,7 @@ public class WingTtoGameManager : MonoBehaviour
 
     public string GetFormattedDistance()
     {
-        return $"{currentDistance:F1}m";
+        return $"{currentDistance:F0}m";
     }
 
     public void AddSpeed(int value)
@@ -316,6 +337,10 @@ public class WingTtoGameManager : MonoBehaviour
         foreach (WingTtoObject obj in spawnObjectList)
         {
             obj?.UpdateSpeed();
+        }
+        foreach (var bg in bgList)
+        {
+            bg?.UpdateSpeed(_normalSpeed / _originalSpeed);
         }
 
         WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
@@ -451,6 +476,11 @@ public class WingTtoGameManager : MonoBehaviour
         {
             obj?.SetPause(isPause);
         }
+        foreach (var bg in bgList)
+        {
+            bg?.SetPause(isPause);
+        }
+
         player.SetPause(isPause);
     }
 

@@ -158,8 +158,6 @@ public class WingTtoGameUIManager : MonoBehaviour
 
     public void OnClickPause()
     {
-        //TODO 인게임 pause 처리
-
         _ShowPopup<PausePopup>().ShowPopup();
         gameManager.SetPause(true);
     }

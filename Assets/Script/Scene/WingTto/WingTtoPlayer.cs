@@ -201,7 +201,7 @@ public class WingTtoPlayer : MonoBehaviour
             else if (other.CompareTag("WingTtoExp"))
             {
                 earnExp += 1;
-                WingTtoGameUIManager.instance.UpdateCoinText(earnExp);
+                WingTtoGameUIManager.instance.UpdateExpText(earnExp);
                 HLLogger.Log("earn Exp");
             }
             WingTtoObjectPool.instance.ReturnObject(other);
@@ -270,7 +270,7 @@ public class WingTtoPlayer : MonoBehaviour
 
     #region  UI
 
-    private void UpdateHPUI(int value)
+    public void UpdateHPUI(int value)
     {
         hp += value;
         hp = Math.Min(maxHp, hp);
