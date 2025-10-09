@@ -14,7 +14,6 @@ public class WingTtoGameManager : MonoBehaviour
 
 
     // private
-    private int score;
     private int randomSeed;
     private System.Random randomGenerator;
 
@@ -61,12 +60,8 @@ public class WingTtoGameManager : MonoBehaviour
 
     private void Start()
     {
-        score = 0;
         _inGameState = InGameState.Ready;
-
         randomSeed = UnityEngine.Random.Range(0, 100000);
-        randomSeed = 0;
-        //@@@ 임시 설정
 
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
@@ -297,10 +292,10 @@ public class WingTtoGameManager : MonoBehaviour
         // earnCoinAmount = Math.Max(1000, earnCoinAmount);
 
         //@@@ 임시
-        int exp = 0;
-        int earnCoinAmount = 0;
+        int exp = 1 + player.EarnExp;
+        int earnCoinAmount = 1000 + player.EarnCoin;
 
-        HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
+        HLLogger.Log($"distance : {currentDistance} / coin : {earnCoinAmount} / exp : {exp}");
 
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
 
@@ -366,8 +361,8 @@ public class WingTtoGameManager : MonoBehaviour
     float spawnGimbabTime = 29f;
     float spawnStoneTime = 1.4f;
     float spawnSpeedUpTime = 21f;
-    float spawnCoinTime = 8f;
-    float spawnExpTime = 24f;
+    float spawnCoinTime = 12f;
+    float spawnExpTime = 27f;
 
     float topWallPositionY = 9.5f;
     float wallDistance = 9.5f;
@@ -391,7 +386,6 @@ public class WingTtoGameManager : MonoBehaviour
             wallDistance -= 0.0025f;
             wallDistance = Mathf.Max(wallDistance, 6.2f);
             topWallPositionY += GetRandomFloat(-0.5f, 0.5f);
-            // topWallPositionY = Mathf.Clamp(topWallPositionY, maxBottomPosition, maxTopPosition);
             topWallPositionY = Mathf.Clamp(topWallPositionY, Mathf.Max(maxBottomPosition, -10f + wallDistance * 2), maxTopPosition);
 
 
@@ -404,7 +398,7 @@ public class WingTtoGameManager : MonoBehaviour
             float safeTop = topWallPositionY - 6f;
             float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
 
-            if (wallDistance >= 6.7f) // 포션 지급 중지(난이도 상승)
+            if (wallDistance >= 6.5f) // 포션 지급 중지(난이도 상승)
                 pool.GetObject(WingTtoObjectType.Gimbab, safeBottom, safeTop);
         }
         if (calcStoneTime <= 0)
@@ -433,7 +427,7 @@ public class WingTtoGameManager : MonoBehaviour
             float safeTop = topWallPositionY - 6f;
             float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
 
-            if (GetRandomBool(70, 30)) // 80%확률로 생성
+            if (GetRandomBool(70, 30)) // 70%확률로 생성
                 pool.GetObject(WingTtoObjectType.Coin, safeBottom, safeTop);
         }
 
@@ -495,7 +489,7 @@ public class WingTtoGameManager : MonoBehaviour
     {
         int total = success + fail;
         bool result = randomGenerator.Next(0, total) < success;
-        HLLogger.Log($"Spawn? success : {success} / fail : {fail} / result : {result}");
+        // HLLogger.Log($"Spawn? success : {success} / fail : {fail} / result : {result}");
 
         return result;
     }
