@@ -19,6 +19,7 @@ public class WingTtoGameUIManager : MonoBehaviour
     [Header("InGame")]
     public GameObject inGameDim;
     public Text dimText;
+    public Text tutorialText;
     public GameObject startButton;
 
     public Text distanceText;
@@ -51,9 +52,9 @@ public class WingTtoGameUIManager : MonoBehaviour
 
 
 
-    public void ShowResult()
+    public void ShowResult(float distance, int coin, int exp, int totalCoin, int totalExp)
     {
-        _ShowPopup<GameResultPopup>().ShowPopup(0, 0, null, SceneName.YMAWingTto);
+        _ShowPopup<WingTtoGameResultPopup>().ShowPopup(distance, coin, exp, totalCoin, totalExp);
     }
 
     public void ShowPausePopup()
@@ -114,11 +115,42 @@ public class WingTtoGameUIManager : MonoBehaviour
 
 
     // InGame UI Logic
-    public void ShowDim(bool show, string dimText = "", bool showStartButton = false)
+    public void ShowDim(bool show, string dtext = "", bool showStartButton = false)
     {
         inGameDim.SetActive(show);
-        this.dimText.text = dimText;
+        tutorialText.gameObject.SetActive(false);
+        this.dimText.text = dtext;
+        this.dimText.gameObject.SetActive(!string.IsNullOrEmpty(dtext));
         startButton.SetActive(showStartButton);
+    }
+
+    public void UpdateTutorialText(int step)
+    {
+        switch (step)
+        {
+            case 0:
+                //없음
+                break;
+            case 1:
+                dimText.gameObject.SetActive(false);
+                SetTutorialText();
+                tutorialText.gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    void SetTutorialText()
+    {
+        StringBuilder sb = new();
+
+
+#if UNITY_ANDROID
+        sb.Append("왼쪽 화면 터치로 상승, 오른쪽 화면 터치로 가속합니다.");
+#else
+        sb.Append("마우스 좌클릭으로 상승, 우클릭으로 가속합니다.");
+#endif
+        sb.Append($"\n\n 각종 아이템을 획득하고, 벽을 피해 멀리까지 날아가세요");
+        tutorialText.text = sb.ToString();
     }
 
     public void InitUI()
@@ -141,17 +173,17 @@ public class WingTtoGameUIManager : MonoBehaviour
 
     public void UpdateSpeedText(float value)
     {
-        currentSpeedText.text = $"Speed : {value:F0}";
+        currentSpeedText.text = $"{value:F0}";
     }
 
     public void UpdateCoinText(int value)
     {
-        earnCoinText.text = $"Coin : {value}";
+        earnCoinText.text = $"{value}";
     }
 
     public void UpdateExpText(int value)
     {
-        earnExpText.text = $"Exp : {value}";
+        earnExpText.text = $"{value}";
     }
 
 

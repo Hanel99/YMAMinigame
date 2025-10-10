@@ -266,7 +266,11 @@ public class SaveDataManager : MonoBehaviour
         PlayFabManager.instance.SetDisplayName();
     }
 
-
+    public void SetWingTtoHighScore(float score)
+    {
+        if (_playerData.wingTtoHighScore < score)
+            _playerData.wingTtoHighScore = score;
+    }
 
     #endregion
 

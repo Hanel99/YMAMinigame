@@ -12,9 +12,9 @@ public class SoundManager : MonoBehaviour
 
 
     [Header("Volume Settings")]
-    [Range(0f, 1f)] public float bgmVolume = 0.2f;
+    [Range(0f, 1f)] public float bgmVolume = 0.5f;
     public bool isBgmMute = false;
-    [Range(0f, 1f)] public float sfxVolume = 0.2f;
+    [Range(0f, 1f)] public float sfxVolume = 0.3f;
     public bool isSfxMute = false;
 
     // Inspector에서 설정하기 위한 직렬화 가능한 클래스들

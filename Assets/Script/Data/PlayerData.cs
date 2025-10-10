@@ -35,6 +35,9 @@ public class PlayerData
     public TowerGameUserStatLevelData towerGameUserStatLevelData;
     public TowerGameUserWeaponData towerGameUserWeaponData;
 
+    //WingTtoData
+    public float wingTtoHighScore;
+
 
     public PlayerData()
     {
@@ -59,5 +62,7 @@ public class PlayerData
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
+
+        wingTtoHighScore = 0f;
     }
 }

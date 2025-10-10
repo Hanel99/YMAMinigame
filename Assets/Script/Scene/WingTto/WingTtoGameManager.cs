@@ -36,6 +36,7 @@ public class WingTtoGameManager : MonoBehaviour
     //private
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
     private List<WingTtoObject> spawnObjectList = new();
+    private int tutorialStep = 0;
 
 
 
@@ -85,7 +86,13 @@ public class WingTtoGameManager : MonoBehaviour
 
     public void OnClickStartButton()
     {
-        ClickStartProcess().Forget();
+        if (tutorialStep < 1)
+        {
+            tutorialStep++;
+            WingTtoGameUIManager.instance.UpdateTutorialText(tutorialStep);
+        }
+        else
+            ClickStartProcess().Forget();
     }
 
     public async UniTaskVoid ClickStartProcess()
@@ -309,23 +316,15 @@ public class WingTtoGameManager : MonoBehaviour
 
     private async UniTaskVoid FinishProcess()
     {
-        //TODO 계산식 변경 필요
-        // int exp = (int)Math.Pow(score / 2500f, 0.7f);
-        // exp = Math.Max(1, exp);
-
-        // int earnCoinAmount = (int)(30000 * (1 - Math.Exp(-score / 40000f)));
-        // earnCoinAmount = Math.Max(1000, earnCoinAmount);
-
-        //@@@ 임시
         int exp = 1 + player.EarnExp;
-        int earnCoinAmount = 1000 + player.EarnCoin;
+        int earnCoinAmount = 1000 + player.EarnCoin + (int)(Mathf.Floor(currentDistance / 1000) * 1000);
 
         HLLogger.Log($"distance : {currentDistance} / coin : {earnCoinAmount} / exp : {exp}");
 
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
+        SaveDataManager.instance.SetWingTtoHighScore(currentDistance);
 
-        //@@@ 임시
-        WingTtoGameUIManager.instance.ShowResult();
+        WingTtoGameUIManager.instance.ShowResult(currentDistance, player.EarnCoin, player.EarnExp, earnCoinAmount, exp);
 
         if (SaveDataManager.instance.AddExp(exp))
         {
