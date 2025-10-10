@@ -15,62 +15,68 @@ MonoBehaviour:
   m_GroupName: BGM
   m_GUID: 380a0eb175fcafc48b65e58c94fe6e36
   m_SerializeEntries:
-  - m_GUID: 220eb00872b15364484a57e0520aa828
-    m_Address: BGM_Other
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2f19c67768737ed48969bbe5aef77716
-    m_Address: BGM_Loading
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4211097034b1ff748ab9b03476a37c59
-    m_Address: BGM_CardGame
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 595c9ad9353efeb409ee7b5eb56be635
+  - m_GUID: 02635b6d0bd2fe142bc70624a8ab8b0e
     m_Address: BGM_Intro
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8bd011cf11516084f80ca7cff832d5b4
-    m_Address: BGM_Lobby3
+  - m_GUID: 228b6c53ee7049b4f8b84e925cd92896
+    m_Address: BGM_Other
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8ebbeff5e13a98d4bb3d160f66804c74
-    m_Address: BGM_Intro2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a5fb896ee1cbe404393f7b084091592a
-    m_Address: BGM_Ending
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d7bff382d7de8aa4399c3aba1f368a09
+  - m_GUID: 276350928198d1748981f8065d6ffa9a
     m_Address: BGM_Result
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d8b6098d42c3d4649ab8cfe8ed2d67ec
+  - m_GUID: 599b209710ae61141a1d349f7505bc0a
+    m_Address: BGM_Loading
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ac8007a496d3be419aafc61226413ee
     m_Address: BGM_Lobby2
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: d8edc595342a357438dc5274e87e0c21
-    m_Address: BGM_Lobby
+  - m_GUID: 6b85c29a10e46d0469623c151df50baa
+    m_Address: BGM_CardGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7727f50108449a14dbbec8079a80335e
+    m_Address: BGM_WordGame
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ad642834ec3daf8448ff382c93df9437
+    m_Address: BGM_Result2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3f2f4f58c073374ba9cf12241bbcafc
+    m_Address: BGM_Intro2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7739077a73916542993a753f7305fa4
+    m_Address: BGM_Ending
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c998481c8e1cb4e488431a11296d3491
+    m_Address: BGM_Lobby3
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
@@ -81,20 +87,14 @@ MonoBehaviour:
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e5a265cd98c3ec94a90caa25503070b4
-    m_Address: BGM_WordGame
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - BGM
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e5a498a47dacb364f96e73e0bdeacc22
     m_Address: BGM_CubeGame
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fcb355a8f3b7fe34c8e51372d8d659c9
-    m_Address: BGM_Result2
+  - m_GUID: f5d51989c7b92324597820ab77caf7e2
+    m_Address: BGM_Lobby
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM

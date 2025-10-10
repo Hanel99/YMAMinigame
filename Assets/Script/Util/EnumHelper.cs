@@ -270,6 +270,13 @@ public enum SFXType
     TowerHit,
     TowerResult,
     Victory,
+    Crash,
+    WingTtoCoin,
+    WingTtoExp,
+    WingTtoSpeedUp,
+    WingTtoGimbab,
+    Ready,
+    Go,
 
     // Congratulations,
     // GameOver,

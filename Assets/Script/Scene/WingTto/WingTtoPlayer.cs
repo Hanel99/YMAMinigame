@@ -153,6 +153,7 @@ public class WingTtoPlayer : MonoBehaviour
             {
                 // HP 회복
                 UpdateHPUI(50);
+                SoundManager.instance.PlaySFX(SFXType.WingTtoGimbab);
             }
             else if (other.CompareTag("WingTtoSpeedUp"))
             {
@@ -163,12 +164,14 @@ public class WingTtoPlayer : MonoBehaviour
             {
                 earnCoin += 1500;
                 WingTtoGameUIManager.instance.UpdateCoinText(earnCoin);
+                SoundManager.instance.PlaySFX(SFXType.WingTtoCoin);
                 HLLogger.Log("earn Coin");
             }
             else if (other.CompareTag("WingTtoExp"))
             {
                 earnExp += 1;
                 WingTtoGameUIManager.instance.UpdateExpText(earnExp);
+                SoundManager.instance.PlaySFX(SFXType.WingTtoExp);
                 HLLogger.Log("earn Exp");
             }
             WingTtoObjectPool.instance.ReturnObject(other);
@@ -193,6 +196,7 @@ public class WingTtoPlayer : MonoBehaviour
         WingTtoGameManager.instance.SetPause(true);
 
         UpdateHPUI(-25);
+        SoundManager.instance.PlaySFX(SFXType.Crash);
         rb.linearVelocity = Vector2.zero;
         rb.angularVelocity = 0f;
 

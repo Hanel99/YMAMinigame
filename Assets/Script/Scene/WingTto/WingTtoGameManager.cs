@@ -96,12 +96,16 @@ public class WingTtoGameManager : MonoBehaviour
 
         WingTtoGameUIManager.instance.ShowDim(false);
         WingTtoGameUIManager.instance.UpdateGetSetText("3");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
         await UniTask.Delay(600);
         WingTtoGameUIManager.instance.UpdateGetSetText("2");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
         await UniTask.Delay(600);
         WingTtoGameUIManager.instance.UpdateGetSetText("1");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
         await UniTask.Delay(600);
         WingTtoGameUIManager.instance.UpdateGetSetText("GO!!");
+        SoundManager.instance.PlaySFX(SFXType.Go);
         await UniTask.Delay(600);
         WingTtoGameUIManager.instance.UpdateGetSetText("");
 
@@ -183,6 +187,27 @@ public class WingTtoGameManager : MonoBehaviour
         {
             // PC - 마우스 입력
 #if UNITY_EDITOR || UNITY_STANDALONE
+
+            // // 왼쪽 마우스 버튼 누름
+            // if (Input.GetMouseButtonDown(0))
+            // {
+            // }
+
+            // // 왼쪽 마우스 버튼 뗌
+            // if (Input.GetMouseButtonUp(0))
+            // {
+            // }
+
+            // // 오른쪽 마우스 버튼 누름
+            // if (Input.GetMouseButtonDown(1))
+            // {
+            // }
+
+            // // 오른쪽 마우스 버튼 뗌
+            // if (Input.GetMouseButtonUp(1))
+            // {
+            // }
+
 
             isFlyPressed = Input.GetMouseButton(0);
             isSpeedPressed = Input.GetMouseButton(1);
@@ -339,6 +364,7 @@ public class WingTtoGameManager : MonoBehaviour
         }
 
         WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
+        SoundManager.instance.PlaySFX(SFXType.WingTtoSpeedUp);
         Debug.Log($"Speed UP! -> normalSpeed : {_normalSpeed}");
     }
 
@@ -460,7 +486,24 @@ public class WingTtoGameManager : MonoBehaviour
 
 
 
+    public async UniTaskVoid PausePopupCloseAction()
+    {
+        WingTtoGameUIManager.instance.UpdateGetSetText("3");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.UpdateGetSetText("2");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.UpdateGetSetText("1");
+        SoundManager.instance.PlaySFX(SFXType.Ready);
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.UpdateGetSetText("GO!!");
+        SoundManager.instance.PlaySFX(SFXType.Go);
+        await UniTask.Delay(600);
+        WingTtoGameUIManager.instance.UpdateGetSetText("");
 
+        SetPause(false);
+    }
 
     public void SetPause(bool isPause)
     {

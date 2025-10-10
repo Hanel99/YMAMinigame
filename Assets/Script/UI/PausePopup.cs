@@ -46,7 +46,7 @@ public class PausePopup : PopupBase
                 break;
 
             case SceneName.YMAWingTto:
-                WingTtoGameManager.instance.SetPause(false);
+                WingTtoGameManager.instance.PausePopupCloseAction().Forget();
                 break;
         }
 

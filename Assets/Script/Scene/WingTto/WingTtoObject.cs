@@ -4,7 +4,6 @@ using UnityEngine;
 public class WingTtoObject : MonoBehaviour
 {
     public WingTtoObjectType objectType;
-    public SpriteRenderer image;
 
 
     private float speedUpMultiplier = 1.5f;
@@ -79,6 +78,7 @@ public class WingTtoObject : MonoBehaviour
     {
         isMoving = false;
         currentSpeed = normalSpeed;
+        currentSpeedSmooth = normalSpeed;
         gameObject.SetActive(false);
     }
 
