@@ -12,7 +12,8 @@ public class RankingPopup : PopupBase
     enum RankingType
     {
         Level,
-        Tower
+        Tower,
+        WingTto
     }
 
     public static RankingPopup instance { get; private set; }
@@ -27,6 +28,7 @@ public class RankingPopup : PopupBase
     // Title Text
     public Text levelText;
     public Text expText;
+    public Text singleText;
 
 
 
@@ -62,6 +64,7 @@ public class RankingPopup : PopupBase
         string statisticName = string.Empty;
         levelText.text = "레벨";
         expText.text = "경험치";
+        singleText.text = "";
 
 #if DEV
         statisticName = "LevelDev";
@@ -80,8 +83,9 @@ public class RankingPopup : PopupBase
     {
         currentRankingType = RankingType.Tower;
         string statisticName = string.Empty;
-        levelText.text = "층";
+        levelText.text = "";
         expText.text = "";
+        singleText.text = "층";
 
 #if DEV
         statisticName = "TowerDev";
@@ -89,6 +93,25 @@ public class RankingPopup : PopupBase
         statisticName = "TowerLive";
 #else
         statisticName = "Tower";
+#endif
+
+        SetRankingUI(statisticName).Forget();
+    }
+
+    public void OnClickTowerWingTtoTab()
+    {
+        currentRankingType = RankingType.WingTto;
+        string statisticName = string.Empty;
+        levelText.text = "";
+        expText.text = "";
+        singleText.text = "미터";
+
+#if DEV
+        statisticName = "WingTtoDev";
+#elif LIVE
+        statisticName = "WingTtoLive";
+#else
+        statisticName = "WingTto";
 #endif
 
         SetRankingUI(statisticName).Forget();
@@ -141,7 +164,7 @@ public class RankingPopup : PopupBase
             if (i > topPlayerDataList.Count() - 1)
             {
                 //데이터가 없음. 빈 데이터를 적용
-                rankUserDataList[i].UpdateData(i + 1, "", -1, -1);
+                rankUserDataList[i].UpdateData(i + 1, "", -1, -1, -1);
                 continue;
             }
 
@@ -150,11 +173,16 @@ public class RankingPopup : PopupBase
             {
                 var level = topPlayerDataList[i].StatValue / 10000;
                 var exp = topPlayerDataList[i].StatValue % 10000;
-                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, level, exp);
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, level, exp, -1);
             }
             else if (currentRankingType == RankingType.Tower)
             {
-                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, topPlayerDataList[i].StatValue, -1);
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, -1, -1, topPlayerDataList[i].StatValue);
+            }
+            else if (currentRankingType == RankingType.WingTto)
+            {
+                float meter = 0.01f * topPlayerDataList[i].StatValue;
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, -1, -1, meter, "m");
             }
         }
     }
@@ -166,11 +194,16 @@ public class RankingPopup : PopupBase
         {
             var level = myPlayerData.StatValue / 10000;
             var exp = myPlayerData.StatValue % 10000;
-            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, level, exp);
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, level, exp, -1);
         }
         else if (currentRankingType == RankingType.Tower)
         {
-            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, myPlayerData.StatValue, -1);
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, -1, -1, myPlayerData.StatValue);
+        }
+        else if (currentRankingType == RankingType.WingTto)
+        {
+            float meter = 0.01f * myPlayerData.StatValue;
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, -1, -1, meter, "m");
         }
 
     }

@@ -206,15 +206,17 @@ public class WingTtoGameManager : MonoBehaviour
             // {
             // }
 
-            // // 오른쪽 마우스 버튼 누름
-            // if (Input.GetMouseButtonDown(1))
-            // {
-            // }
+            // 오른쪽 마우스 버튼 누름
+            if (Input.GetMouseButtonDown(1))
+            {
+                player.TiltForward();
+            }
 
-            // // 오른쪽 마우스 버튼 뗌
-            // if (Input.GetMouseButtonUp(1))
-            // {
-            // }
+            // 오른쪽 마우스 버튼 뗌
+            if (Input.GetMouseButtonUp(1))
+            {
+                player.ReturnToNormal();
+            }
 
 
             isFlyPressed = Input.GetMouseButton(0);
@@ -237,52 +239,41 @@ public class WingTtoGameManager : MonoBehaviour
                 {
                     if (touch.position.x > screenHalfWidth)
                     {
-                        leftTouching = true;
-                    }
-                    else
-                    {
                         rightTouching = true;
                     }
-                }
-
-                // 터치 종료
-                if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
-                {
-                    if (touch.position.x > screenHalfWidth)
-                    {
-                        leftTouching = false;
-                    }
                     else
                     {
-                        isSpeedPressed = false;
+                        leftTouching = true;
                     }
                 }
             }
 
             // 이전 프레임과 비교해서 상태 변화 감지
-            if (leftTouching && !isFlyPressed)
-            {
-                // 왼쪽이 새로 눌림 (이미 Began에서 처리했지만 안전장치)
-            }
-            else if (!leftTouching && isFlyPressed)
-            {
-                // 왼쪽이 떼짐 (모든 왼쪽 터치가 사라짐)
-                leftTouching = false;
-            }
+            // 오른쪽 터치 상태 변화
+            // if (rightTouching && !isFlyPressed)
+            // {
+            //     // 오른쪽이 새로 눌림                
+            // }
+            // else if (!rightTouching && isFlyPressed)
+            // {
+            //     // 오른쪽 터치가 전부 없어짐                
+            // }
 
-            if (rightTouching && !isSpeedPressed)
+            // 왼쪽 터치 상태 변화
+            if (leftTouching && !isSpeedPressed)
             {
-                // 오른쪽이 새로 눌림
+                // 왼쪽이 새로 눌림
+                player.TiltForward();
             }
-            else if (!rightTouching && isSpeedPressed)
+            else if (!leftTouching && isSpeedPressed)
             {
-                // 오른쪽이 떼짐 (모든 오른쪽 터치가 사라짐)
-                isSpeedPressed = false;
+                // 왼쪽 터치가 전부 없어짐
+                player.ReturnToNormal();
             }
 
             // 실시간 상태 업데이트
-            isFlyPressed = leftTouching;
-            isSpeedPressed = rightTouching;
+            isFlyPressed = rightTouching;
+            isSpeedPressed = leftTouching;
 
 #endif
         }

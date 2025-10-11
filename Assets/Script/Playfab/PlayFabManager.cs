@@ -352,6 +352,18 @@ public class PlayFabManager : MonoBehaviour
         towerStat.Value = SaveDataManager.instance.playerData.towerFloor;
         request.Statistics.Add(towerStat);
 
+        // wingtto
+        var wingttoStat = new StatisticUpdate();
+#if DEV
+        wingttoStat.StatisticName = "WingTtoDev";
+#elif LIVE
+        wingttoStat.StatisticName = "WingTtoLive";
+#else
+        wingttoStat.StatisticName = "WingTto";
+#endif
+        wingttoStat.Value = (int)(SaveDataManager.instance.playerData.wingTtoHighScore * 100);
+        request.Statistics.Add(wingttoStat);
+
         UpdateLeaderBoard(request);
     }
 

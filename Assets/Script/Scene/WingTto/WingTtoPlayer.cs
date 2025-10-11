@@ -252,6 +252,39 @@ public class WingTtoPlayer : MonoBehaviour
     }
 
 
+    private Tweener rotationTween;
+    private float normalRotation = 0f;      // 정자세 각도
+    private float tiltRotation = -45f;      // 기울인 각도 (앞으로 기울임)
+    private float tiltDuration = 0.3f;      // 기울이는 시간
+    private float returnDuration = 0.4f;    // 돌아오는 시간
+
+    // 가속 버튼을 눌렀을 때
+    public void TiltForward()
+    {
+        HLLogger.Log("TiltForward");
+
+        // 기존 트윈이 있으면 중단
+        rotationTween?.Kill();
+
+        // 현재 각도에서 45도로 부드럽게 회전
+        rotationTween = playerIcon.transform.DORotate(new Vector3(0, 0, tiltRotation), tiltDuration)
+            .SetEase(Ease.OutQuad);
+    }
+
+    // 가속 버튼을 뗐을 때
+    public void ReturnToNormal()
+    {
+        HLLogger.Log("ReturnToNormal");
+
+        // 기존 트윈이 있으면 중단
+        rotationTween?.Kill();
+
+        // 현재 각도에서 정자세로 부드럽게 회전
+        rotationTween = playerIcon.transform.DORotate(new Vector3(0, 0, normalRotation), returnDuration)
+            .SetEase(Ease.OutBack); // 살짝 튕기는 느낌
+    }
+
+
     #endregion
 
 

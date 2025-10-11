@@ -66,13 +66,26 @@ public class BuildToolEditorWindow : OdinEditorWindow
         GetWindow<BuildToolEditorWindow>("통합 빌드 툴");
     }
 
-    [Button("\uD83D\uDCE6 Addressables만 빌드", ButtonSizes.Large)]
+    [Button("Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
     {
         SetupAndBuildAddressables(Platform, Environment);
     }
 
-    [Button("\uD83D\uDE80 앱 빌드 + Addressables 빌드", ButtonSizes.Large)]
+    [Button("앱 빌드", ButtonSizes.Large)]
+    private void BuildAppOnly()
+    {
+        string targetPath = BuildPlayerApp();
+
+        if (UploadToNAS)
+        {
+            string folderToUpload = Path.GetDirectoryName(targetPath);
+            UploadToNASWithSFTP(folderToUpload);
+        }
+    }
+
+
+    [Button("앱 빌드 + Addressables 빌드", ButtonSizes.Large)]
     private void BuildFull()
     {
         SetupAndBuildAddressables(Platform, Environment);
