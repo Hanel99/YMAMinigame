@@ -170,6 +170,9 @@ public class BuildToolEditorWindow : OdinEditorWindow
         SetupWindowsSettings();
 #endif
 
+        AssetDatabase.SaveAssets();
+
+
         BuildReport report = BuildPipeline.BuildPlayer(buildOptions);
         BuildSummary summary = report.summary;
 

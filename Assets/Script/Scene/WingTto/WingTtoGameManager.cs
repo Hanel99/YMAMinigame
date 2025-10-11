@@ -121,6 +121,7 @@ public class WingTtoGameManager : MonoBehaviour
         WingTtoGameUIManager.instance.UpdateExpText(0);
         WingTtoGameUIManager.instance.UpdateCoinText(0);
         WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
+        WingTtoGameUIManager.instance.FadeGuideUI();
     }
 
     void Update()
@@ -234,7 +235,7 @@ public class WingTtoGameManager : MonoBehaviour
                 // 활성 터치만 확인
                 if (touch.phase != TouchPhase.Ended && touch.phase != TouchPhase.Canceled)
                 {
-                    if (touch.position.x < screenHalfWidth)
+                    if (touch.position.x > screenHalfWidth)
                     {
                         leftTouching = true;
                     }
@@ -247,7 +248,7 @@ public class WingTtoGameManager : MonoBehaviour
                 // 터치 종료
                 if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
                 {
-                    if (touch.position.x < screenHalfWidth)
+                    if (touch.position.x > screenHalfWidth)
                     {
                         leftTouching = false;
                     }

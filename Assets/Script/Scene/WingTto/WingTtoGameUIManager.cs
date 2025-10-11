@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,9 @@ public class WingTtoGameUIManager : MonoBehaviour
     public Text dimText;
     public Text tutorialText;
     public GameObject startButton;
+    public CanvasGroup bottomGuide;
+    public Text bottomGuideLeftText;
+    public Text bottomGuideRightText;
 
     public Text distanceText;
     public Text getSetText;
@@ -145,7 +149,7 @@ public class WingTtoGameUIManager : MonoBehaviour
 
 
 #if UNITY_ANDROID
-        sb.Append("왼쪽 화면 터치로 상승, 오른쪽 화면 터치로 가속합니다.");
+        sb.Append("오른쪽 화면 터치로 상승, 왼쪽 화면 터치로 가속합니다.");
 #else
         sb.Append("마우스 좌클릭으로 상승, 우클릭으로 가속합니다.");
 #endif
@@ -184,6 +188,21 @@ public class WingTtoGameUIManager : MonoBehaviour
     public void UpdateExpText(int value)
     {
         earnExpText.text = $"{value}";
+    }
+
+    public void FadeGuideUI()
+    {
+#if UNITY_ANDROID
+        bottomGuideLeftText.text = "왼쪽 터치로\n속도 증가";
+        bottomGuideRightText.text = "오른쪽 터치로\n상승";
+#else
+        bottomGuideLeftText.text = "좌클릭으로\n상승";
+        bottomGuideRightText.text = "우클릭으로\n속도 증가";
+#endif
+
+        bottomGuide.alpha = 1;
+        bottomGuide.gameObject.SetActive(true);
+        bottomGuide.DOFade(0f, 3f).SetEase(Ease.Linear).From(1f).SetDelay(5f);
     }
 
 

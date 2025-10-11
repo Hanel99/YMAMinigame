@@ -120,7 +120,7 @@ public class SettingPopup : PopupBase
     public void ResolutionDropdownChanged(Dropdown change)
     {
         var resolutionData = filteredResolutions[change.value];
-        FullScreenMode screenMode = fullScreen.isOn ? FullScreenMode.ExclusiveFullScreen : FullScreenMode.Windowed;
+        FullScreenMode screenMode = fullScreen.isOn ? FullScreenMode.FullScreenWindow : FullScreenMode.Windowed;
         RefreshRate refreshRate = new RefreshRate() { numerator = (uint)StaticGameData.targetFrameRate, denominator = 1 };
 
         Screen.SetResolution(resolutionData.width, resolutionData.height, screenMode, refreshRate);
@@ -130,7 +130,7 @@ public class SettingPopup : PopupBase
         SaveDataManager.instance.otherPlayerData.resolutionHeight = resolutionData.height;
         //저장은 닫을때 사운드 저장하면서 저장됨.
 
-        HLLogger.Log($"@@@ Resolution : {resolutionData.width}/{resolutionData.height} ({refreshRate.numerator} Hz)");
+        HLLogger.Log($"@@@ Resolution : {resolutionData.width}/{resolutionData.height} ({refreshRate.numerator} Hz) / FS? {fullScreen.isOn}");
     }
 
     private void SetResolutionOption()

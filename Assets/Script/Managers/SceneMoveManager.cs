@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneMoveManager : MonoBehaviour
 {
     public static SceneMoveManager instance { get; private set; }
+    private ScreenOrientation screenOrientation = ScreenOrientation.Portrait;
 
 
     private void Awake()
@@ -34,42 +36,46 @@ public class SceneMoveManager : MonoBehaviour
         switch (currentSceneName)
         {
             case SceneName.IntroScene:
-                IntroUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                IntroUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
 
             case SceneName.LobbyScene:
-                LobbyUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                LobbyUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
 
             case SceneName.YMAMatch2CardGame:
-                CardGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                CardGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
 
             case SceneName.YMAFindAIWordGame:
-                FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
 
             case SceneName.YMACubeGame:
-                CubeGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                CubeGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
 
             case SceneName.YMAWingTto:
-                WingTtoGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName));
+                WingTtoGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
         }
     }
 
-    private void SetScreenRotate(SceneName name)
+    private bool SetScreenRotate(SceneName name)
     {
         if (name == SceneName.YMAWingTto)
-            SetLandscape();
+            return SetLandscape();
         else
-            SetPortrait();
+            return SetPortrait();
     }
 
-    private void AnimationCompleteProcess(SceneName sceneName)
+    private async UniTaskVoid AnimationCompleteProcess(SceneName sceneName)
     {
-        SetScreenRotate(sceneName);
+#if UNITY_ANDROID
+        if (SetScreenRotate(sceneName))
+            await UniTask.WaitForSeconds(1f);
+#endif
+
         SceneManager.LoadScene(sceneName.ToString());
     }
 
@@ -78,9 +84,16 @@ public class SceneMoveManager : MonoBehaviour
 
 
     // 가로 화면으로 고정
-    public void SetLandscape()
+    public bool SetLandscape()
     {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
+        bool isRotate = false;
+        if (screenOrientation != ScreenOrientation.LandscapeLeft)
+        {
+            screenOrientation = ScreenOrientation.LandscapeLeft;
+            Screen.orientation = screenOrientation;
+            isRotate = true;
+        }
+        return isRotate;
 
         // 또는 자동 회전 허용
         // Screen.orientation = ScreenOrientation.AutoRotation;
@@ -91,9 +104,17 @@ public class SceneMoveManager : MonoBehaviour
     }
 
     // 세로 화면으로 고정
-    public void SetPortrait()
+    public bool SetPortrait()
     {
-        Screen.orientation = ScreenOrientation.Portrait;
+        bool isRotate = false;
+        if (screenOrientation != ScreenOrientation.Portrait)
+        {
+            screenOrientation = ScreenOrientation.Portrait;
+            Screen.orientation = screenOrientation;
+            isRotate = true;
+        }
+        return isRotate;
+
         // 또는 자동 회전 허용
         // Screen.orientation = ScreenOrientation.AutoRotation;
         // Screen.autorotateToPortrait = true;

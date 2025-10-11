@@ -111,6 +111,6 @@ public class WingTtoGameResultPopup : PopupBase
 
     public void OnClickRetry()
     {
-        SceneMoveManager.instance.MoveScene(SceneName.YMACubeGame);
+        SceneMoveManager.instance.MoveScene(SceneName.YMAWingTto);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraAspectController : MonoBehaviour
 {
-    float targetAspect = 2340f / 1080f; // 원하는 화면 비율
+    float targetAspect = 16f / 9f; // 원하는 화면 비율
 
     void Start()
     {
@@ -12,7 +12,7 @@ public class CameraAspectController : MonoBehaviour
 
         if (scaleHeight < 1.0f)
         {
-            // 세로가 상대적으로 길 때 - 상하를 크롭
+            // 레터박스 (위아래 검은 바)
             Rect rect = camera.rect;
             rect.width = 1.0f;
             rect.height = scaleHeight;
@@ -22,12 +22,12 @@ public class CameraAspectController : MonoBehaviour
         }
         else
         {
-            // 가로가 상대적으로 길 때 - 좌우를 크롭
-            float scaleWidth = 1.0f / scaleHeight;
+            // 필러박스 (좌우 검은 바)
+            float scalewidth = 1.0f / scaleHeight;
             Rect rect = camera.rect;
-            rect.width = scaleWidth;
+            rect.width = scalewidth;
             rect.height = 1.0f;
-            rect.x = (1.0f - scaleWidth) / 2.0f;
+            rect.x = (1.0f - scalewidth) / 2.0f;
             rect.y = 0;
             camera.rect = rect;
         }
