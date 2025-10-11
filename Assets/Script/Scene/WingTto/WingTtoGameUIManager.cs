@@ -209,6 +209,8 @@ public class WingTtoGameUIManager : MonoBehaviour
 
     public void OnClickPause()
     {
+        if (gameManager.inGameState != InGameState.Play) return;
+
         _ShowPopup<PausePopup>().ShowPopup();
         gameManager.SetPause(true);
     }
