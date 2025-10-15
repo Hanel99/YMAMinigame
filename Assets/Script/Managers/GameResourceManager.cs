@@ -241,9 +241,20 @@ public class GameResourceManager : MonoBehaviour
         return towerUserLevelData.Data.Find(x => x.level == level);
     }
 
-    public int GetTowerUserLevelRequireCoin(int level)
+    public int GetTowerUserLevelRequireCoin(TowerUserStatType type, int level)
     {
-        return towerUserLevelData.Data.Find(x => x.level == level).requireCoin;
+        var levelData = towerUserLevelData.Data.Find(x => x.level == level);
+        int value = (type) switch
+        {
+            TowerUserStatType.atk => levelData.atkRequireCoin,
+            TowerUserStatType.def => levelData.defRequireCoin,
+            TowerUserStatType.hp => levelData.hpRequireCoin,
+            TowerUserStatType.criRate => levelData.criRateRequireCoin,
+            TowerUserStatType.criDmg => levelData.criDmgRequireCoin,
+            _ => -1,
+        };
+
+        return value;
     }
 
     public T GetTowerUserLevelStatValue<T>(TowerUserStatType type, int level)

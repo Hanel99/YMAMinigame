@@ -1,3 +1,4 @@
+// using System;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,6 +20,7 @@ public class TowerGameWeaponStat : MonoBehaviour
 
     public GameObject emptyText;
     public GameObject weaponStatDetailGroup;
+    public Toggle skipToggle;
 
     //private
     private int weaponLevel;
@@ -38,6 +40,7 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         emptyText.SetActive(weaponLevel == 0);
         weaponStatDetailGroup.SetActive(weaponLevel != 0);
+        skipToggle.isOn = SaveDataManager.instance.otherPlayerData.isTowerSkip;
         UpdateDetailText();
     }
 
@@ -47,8 +50,8 @@ public class TowerGameWeaponStat : MonoBehaviour
         atkValueText.text = $"{weaponMetaData.atk}";
         criDmgValueText.text = $"x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
 
-        requireCoinText.text = weaponLevel >= 100 ? "MAX" : weaponMetaData.requireCoin.ToString();
-        enchantButton.interactable = weaponLevel < 100 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
+        requireCoinText.text = weaponMetaData.requireCoin <= 0 ? "MAX" : weaponMetaData.requireCoin.ToString();
+        enchantButton.interactable = weaponMetaData.requireCoin > 0 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
 
         if (weaponLevel == 0)
         {
@@ -56,7 +59,7 @@ public class TowerGameWeaponStat : MonoBehaviour
             enchantText.text = "무기 구매";
             return;
         }
-        else if (weaponLevel >= 100)
+        else if (weaponMetaData.requireCoin <= 0)
         {
             RankUpText.SetActive(false);
             enchantText.text = "강화";
@@ -74,18 +77,25 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         RankUpText.SetActive(true);
         enchantText.text = "강화";
-        RankUpRateText.text = $"성공 : {(upRate * 100).ToString("F1")}%";
-        RankStayRateText.text = $"유지 : {(stayRate * 100).ToString("F1")}%";
-        RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F1")}%";
+        RankUpRateText.text = $"성공 : {(upRate * 100).ToString("F2")}%";
+        RankStayRateText.text = $"유지 : {(stayRate * 100).ToString("F2")}%";
+        RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F2")}%";
     }
 
     public void OnClickEnchant()
     {
-        if (weaponLevel >= 100 || SaveDataManager.instance.playerData.coin < weaponMetaData.requireCoin)
+        if (weaponMetaData.requireCoin <= 0 || SaveDataManager.instance.playerData.coin < weaponMetaData.requireCoin)
             return;
 
         SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin, false);
         WeaponEnchantProcess();
+    }
+
+    public void OnSkipToggle()
+    {
+        HLLogger.Log($"@@@ skipToggle Set : {skipToggle.isOn}");
+        SaveDataManager.instance.otherPlayerData.isTowerSkip = skipToggle.isOn;
+        SaveDataManager.instance.SaveOtherPlayerData();
     }
 
     private void WeaponEnchantProcess()
@@ -137,22 +147,12 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
-#if  UNITY_EDITOR && DEV
-        UpdateUIData(weaponLevel);
-        TowerGameWeaponEnchantPopup.instance.UpdateUI();
-#else
-        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
-#endif
+        ShowResult(TowerGameResultType.up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
     }
     private void StayProcess()
     {
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
-#if UNITY_EDITOR && DEV
-        UpdateUIData(weaponLevel);
-        TowerGameWeaponEnchantPopup.instance.UpdateUI();
-#else
-        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
-#endif
+        ShowResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
     }
     private void DownProcess()
     {
@@ -160,11 +160,19 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
-#if  UNITY_EDITOR && DEV
-        UpdateUIData(weaponLevel);
-        TowerGameWeaponEnchantPopup.instance.UpdateUI();
-#else
-        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
-#endif
+        ShowResult(TowerGameResultType.down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
+    }
+
+    private void ShowResult(TowerGameResultType type, string before, string after, System.Action callback)
+    {
+        if (skipToggle.isOn)
+        {
+            UpdateUIData(weaponLevel);
+            TowerGameWeaponEnchantPopup.instance.UpdateUI();
+        }
+        else
+        {
+            TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(type, before, after, callback);
+        }
     }
 }

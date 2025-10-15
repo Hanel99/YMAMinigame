@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,8 +78,26 @@ public class GameListView : MonoBehaviour
 
     private void StartGameViewSettingProcess()
     {
+        //@@@ 0.6.5 스탯 데이터 하드리셋 대응
+        if (SaveDataManager.instance.playerData.recentAppVersion != Application.version)
+        {
+            SaveDataManager.instance.playerData.recentAppVersion = Application.version;
+            if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
+                SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
+            if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
+                SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+        }
+
+        SaveDataManager.instance.playerData.recentAppVersion = Application.version;
         Application.targetFrameRate = StaticGameData.targetFrameRate;
         SaveDataManager.instance.RemoveNotUseCardList();
+
+        if (SaveDataManager.instance.playerData.geminiHints2 != null && SaveDataManager.instance.playerData.geminiHints2.Count < 5)
+        {
+            int loopCount = 5 - SaveDataManager.instance.playerData.geminiHints2.Count;
+            for (int i = 0; i < loopCount; ++i)
+                GeminiApiManager.instance.SaveHintsPreload().Forget();
+        }
 
         for (int i = 0; i < gameList.Count; ++i)
         {

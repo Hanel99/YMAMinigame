@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cysharp.Threading.Tasks;
 using System.Linq;
+using System.Text;
 
 public class IntroController : MonoBehaviour
 {
@@ -157,14 +158,18 @@ public class IntroController : MonoBehaviour
             {
                 var data = totalSheetData[i];
                 if (data.Count() == 0) continue;
+                if (i >= (int)SheetRangeType.Count)
+                {
+                    HLLogger.LogWarning($"not use data : {i} / {data.Count()}");
+                    continue;
+                }
 
                 var rangeType = (SheetRangeType)i;
 
                 switch (rangeType)
                 {
                     case SheetRangeType.ServerVersion:
-                        if (SaveDataManager.instance.playerData.serverDataVersion.Equals(data[0]) == false)
-                            SaveDataManager.instance.playerData.serverDataVersion = data[0];
+                        SaveDataManager.instance.playerData.serverDataVersion = data[0];
 
                         IntroUIManager.instance.UpdateVersionText(data[0]);
                         break;
@@ -225,8 +230,12 @@ public class IntroController : MonoBehaviour
                         StaticGameData.UpdateRedeemCodeFromServer(data);
                         break;
 
+                    case SheetRangeType.GameSeed:
+                        StaticGameData.UpdateGameSeedFromServer(data[0]);
+                        break;
+
                     default:
-                        HLLogger.LogError($"Unknown SheetRangeType : {rangeType}");
+                        HLLogger.LogWarning($"Unknown SheetRangeType : {rangeType}");
                         break;
                 }
             }
@@ -251,6 +260,7 @@ public class IntroController : MonoBehaviour
     {
         SaveDataManager.instance.LoadPlayerData();
         SaveDataManager.instance.LoadOtherPlayerData();
+
         StaticGameData.introData.isFirstLogin = SaveDataManager.instance.IsTodayFirstLogin();
 
         // sound data update

@@ -19,6 +19,7 @@ public class PlayerData
 
 
     public string serverDataVersion = "0";
+    public string recentAppVersion = "0";
 
     public int level = 1;
     public int exp = 0;
@@ -38,6 +39,13 @@ public class PlayerData
     //WingTtoData
     public float wingTtoHighScore;
 
+    // gemini Data
+    public List<StringListPair> geminiHints2;
+
+
+    //server switch
+    public bool useServerData;
+
 
     public PlayerData()
     {
@@ -52,6 +60,7 @@ public class PlayerData
         isNewUser = true;
 
         serverDataVersion = "0";
+        recentAppVersion = "0";
         level = 1;
         exp = 0;
         coin = 0;
@@ -62,7 +71,24 @@ public class PlayerData
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
-
+        geminiHints2 = new();
         wingTtoHighScore = 0f;
+
+        // server switch
+        useServerData = false;
+    }
+}
+
+
+[System.Serializable]
+public class StringListPair
+{
+    public string key;
+    public List<string> value;
+
+    public StringListPair(string key, List<string> value)
+    {
+        this.key = key;
+        this.value = value;
     }
 }

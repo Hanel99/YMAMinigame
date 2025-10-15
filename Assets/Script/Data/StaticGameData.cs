@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using Sirenix.Utilities;
 using UnityEngine;
 
@@ -12,11 +10,11 @@ public static class StaticGameData
 {
     public static int[] RandomValue = new int[]
     {
-        100, // Black
-        270, // Gold
-        570, // Silver
-        1370, // SuperRare
-        2920, // Rare
+        10, // Black
+        90, // Gold
+        260, // Silver
+        500, // SuperRare
+        1000, // Rare
         10000, // Normal
     };
     public static int TotalRandomValue => RandomValue[RandomValue.Count() - 1];
@@ -24,9 +22,9 @@ public static class StaticGameData
 
     public static int[] GachaPrice = new int[]
     {
-        150,  //1회
-        1400,  //10회
-        150, //1 미획득확정
+        550,  //1회
+        5000,  //10회
+        300, //1 미획득확정
     };
 
     public static Color GetGradeBorderColor(CardGrade grade)
@@ -77,7 +75,7 @@ public static class StaticGameData
 
 
 
-    public static readonly int MAX_COIN_VALUE = 9999999;
+    public static readonly int MAX_COIN_VALUE = 99999999;
     public static readonly int MAX_MILEAGE_VALUE = 999999;
     public static readonly string SAVE_PLAYER_DATA_KEY = "YMASaveDataAlpha1";
     public static readonly string SAVE_PLAYER_OTHER_DATA_KEY = "YMALocalSaveData";
@@ -93,6 +91,7 @@ public static class StaticGameData
     }
     // public static bool showDevTestText = false;
     public static int targetFrameRate = 60;
+    public static int serverGameSeed = 0;
 
 
 
@@ -117,6 +116,20 @@ public static class StaticGameData
 
         RedeemCodes = array;
     }
+
+    public static void UpdateGameSeedFromServer(string seed)
+    {
+        if (string.IsNullOrEmpty(seed)) return;
+        if (!int.TryParse(seed, out int result))
+        {
+            HLLogger.LogWarning($"not int parse : {seed}");
+            return;
+        }
+
+        serverGameSeed = result;
+        HLLogger.Log($"@@@ Update Game Seed : {serverGameSeed}");
+    }
+
 
 
     #endregion

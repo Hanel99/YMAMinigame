@@ -72,6 +72,9 @@ public enum SheetRangeType
     ServerMaintenance,
     AppMinVersion,
     RedeemCodes,
+    GameSeed,
+
+    Count,
 }
 
 

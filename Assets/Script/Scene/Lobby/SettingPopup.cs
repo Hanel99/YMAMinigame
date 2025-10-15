@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,18 @@ public class SettingPopup : PopupBase
         if (SaveDataManager.instance == null || SaveDataManager.instance.playerData == null)
             dataVersionText.text = "server data is null";
         else
-            dataVersionText.text = $"Data Version - {SaveDataManager.instance.playerData.serverDataVersion}";
+        {
+            StringBuilder sb = new StringBuilder();
+
+#if DEV
+            sb.Append("DEV-");
+#else
+            sb.Append("Live-");
+#endif
+            sb.Append($"Ver.{SaveDataManager.instance.playerData.serverDataVersion}");
+
+            dataVersionText.text = $"Data Version - {sb}";
+        }
 
         SetTab(SettingTab.Visual);
     }

@@ -43,7 +43,7 @@ MonoBehaviour:
     hp: 20
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 520
+    rewardCoin: 510
     rewardExp: 1
   - level: 4
     atk: 4
@@ -51,7 +51,7 @@ MonoBehaviour:
     hp: 25
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 540
+    rewardCoin: 520
     rewardExp: 1
   - level: 5
     atk: 5
@@ -59,7 +59,7 @@ MonoBehaviour:
     hp: 30
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 560
+    rewardCoin: 530
     rewardExp: 1
   - level: 6
     atk: 6
@@ -67,7 +67,7 @@ MonoBehaviour:
     hp: 35
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 590
+    rewardCoin: 550
     rewardExp: 1
   - level: 7
     atk: 7
@@ -75,7 +75,7 @@ MonoBehaviour:
     hp: 40
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 630
+    rewardCoin: 570
     rewardExp: 1
   - level: 8
     atk: 8
@@ -83,7 +83,7 @@ MonoBehaviour:
     hp: 45
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 670
+    rewardCoin: 590
     rewardExp: 1
   - level: 9
     atk: 9
@@ -91,7 +91,7 @@ MonoBehaviour:
     hp: 50
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 720
+    rewardCoin: 610
     rewardExp: 1
   - level: 10
     atk: 10
@@ -99,7 +99,7 @@ MonoBehaviour:
     hp: 54
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 780
+    rewardCoin: 640
     rewardExp: 1
   - level: 11
     atk: 11
@@ -107,7 +107,7 @@ MonoBehaviour:
     hp: 58
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 840
+    rewardCoin: 670
     rewardExp: 1
   - level: 12
     atk: 12
@@ -115,7 +115,7 @@ MonoBehaviour:
     hp: 62
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 910
+    rewardCoin: 710
     rewardExp: 1
   - level: 13
     atk: 13
@@ -123,7 +123,7 @@ MonoBehaviour:
     hp: 66
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 990
+    rewardCoin: 750
     rewardExp: 1
   - level: 14
     atk: 14
@@ -131,7 +131,7 @@ MonoBehaviour:
     hp: 70
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1070
+    rewardCoin: 790
     rewardExp: 1
   - level: 15
     atk: 15
@@ -139,7 +139,7 @@ MonoBehaviour:
     hp: 74
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1160
+    rewardCoin: 830
     rewardExp: 1
   - level: 16
     atk: 16
@@ -147,7 +147,7 @@ MonoBehaviour:
     hp: 78
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1260
+    rewardCoin: 880
     rewardExp: 1
   - level: 17
     atk: 17
@@ -155,7 +155,7 @@ MonoBehaviour:
     hp: 82
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1360
+    rewardCoin: 930
     rewardExp: 1
   - level: 18
     atk: 18
@@ -163,7 +163,7 @@ MonoBehaviour:
     hp: 86
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1470
+    rewardCoin: 990
     rewardExp: 1
   - level: 19
     atk: 19
@@ -171,7 +171,7 @@ MonoBehaviour:
     hp: 90
     criRate: 0
     criDmg: 0.3
-    rewardCoin: 1590
+    rewardCoin: 1050
     rewardExp: 1
   - level: 20
     atk: 20
@@ -179,7 +179,7 @@ MonoBehaviour:
     hp: 94
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 1710
+    rewardCoin: 1110
     rewardExp: 1
   - level: 21
     atk: 21
@@ -187,7 +187,7 @@ MonoBehaviour:
     hp: 97
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 1850
+    rewardCoin: 1170
     rewardExp: 1
   - level: 22
     atk: 22
@@ -195,7 +195,7 @@ MonoBehaviour:
     hp: 100
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 1980
+    rewardCoin: 1240
     rewardExp: 1
   - level: 23
     atk: 23
@@ -203,7 +203,7 @@ MonoBehaviour:
     hp: 103
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2130
+    rewardCoin: 1310
     rewardExp: 1
   - level: 24
     atk: 24
@@ -211,7 +211,7 @@ MonoBehaviour:
     hp: 106
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2280
+    rewardCoin: 1390
     rewardExp: 1
   - level: 25
     atk: 25
@@ -219,7 +219,7 @@ MonoBehaviour:
     hp: 109
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2430
+    rewardCoin: 1470
     rewardExp: 1
   - level: 26
     atk: 26
@@ -227,7 +227,7 @@ MonoBehaviour:
     hp: 112
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2600
+    rewardCoin: 1550
     rewardExp: 1
   - level: 27
     atk: 27
@@ -235,7 +235,7 @@ MonoBehaviour:
     hp: 115
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2770
+    rewardCoin: 1640
     rewardExp: 1
   - level: 28
     atk: 28
@@ -243,7 +243,7 @@ MonoBehaviour:
     hp: 118
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 2950
+    rewardCoin: 1720
     rewardExp: 1
   - level: 29
     atk: 29
@@ -251,7 +251,7 @@ MonoBehaviour:
     hp: 121
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 3130
+    rewardCoin: 1820
     rewardExp: 1
   - level: 30
     atk: 30
@@ -259,7 +259,7 @@ MonoBehaviour:
     hp: 124
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 3320
+    rewardCoin: 1910
     rewardExp: 1
   - level: 31
     atk: 31
@@ -267,7 +267,7 @@ MonoBehaviour:
     hp: 127
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 3520
+    rewardCoin: 2010
     rewardExp: 1
   - level: 32
     atk: 32
@@ -275,7 +275,7 @@ MonoBehaviour:
     hp: 130
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 3720
+    rewardCoin: 2110
     rewardExp: 1
   - level: 33
     atk: 33
@@ -283,7 +283,7 @@ MonoBehaviour:
     hp: 133
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 3940
+    rewardCoin: 2220
     rewardExp: 1
   - level: 34
     atk: 34
@@ -291,7 +291,7 @@ MonoBehaviour:
     hp: 136
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 4150
+    rewardCoin: 2330
     rewardExp: 1
   - level: 35
     atk: 35
@@ -299,7 +299,7 @@ MonoBehaviour:
     hp: 139
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 4380
+    rewardCoin: 2440
     rewardExp: 1
   - level: 36
     atk: 36
@@ -307,7 +307,7 @@ MonoBehaviour:
     hp: 142
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 4610
+    rewardCoin: 2550
     rewardExp: 1
   - level: 37
     atk: 37
@@ -315,7 +315,7 @@ MonoBehaviour:
     hp: 145
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 4850
+    rewardCoin: 2670
     rewardExp: 1
   - level: 38
     atk: 38
@@ -323,7 +323,7 @@ MonoBehaviour:
     hp: 148
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 5090
+    rewardCoin: 2790
     rewardExp: 1
   - level: 39
     atk: 39
@@ -331,7 +331,7 @@ MonoBehaviour:
     hp: 151
     criRate: 0.1
     criDmg: 0.4
-    rewardCoin: 5340
+    rewardCoin: 2920
     rewardExp: 1
   - level: 40
     atk: 41
@@ -339,7 +339,7 @@ MonoBehaviour:
     hp: 153
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 5600
+    rewardCoin: 3050
     rewardExp: 1
   - level: 41
     atk: 43
@@ -347,7 +347,7 @@ MonoBehaviour:
     hp: 155
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 5870
+    rewardCoin: 3180
     rewardExp: 1
   - level: 42
     atk: 45
@@ -355,7 +355,7 @@ MonoBehaviour:
     hp: 157
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 6140
+    rewardCoin: 3320
     rewardExp: 1
   - level: 43
     atk: 47
@@ -363,7 +363,7 @@ MonoBehaviour:
     hp: 159
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 6410
+    rewardCoin: 3450
     rewardExp: 1
   - level: 44
     atk: 49
@@ -371,7 +371,7 @@ MonoBehaviour:
     hp: 161
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 6700
+    rewardCoin: 3600
     rewardExp: 1
   - level: 45
     atk: 51
@@ -379,7 +379,7 @@ MonoBehaviour:
     hp: 163
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 6990
+    rewardCoin: 3740
     rewardExp: 1
   - level: 46
     atk: 53
@@ -387,7 +387,7 @@ MonoBehaviour:
     hp: 165
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 7290
+    rewardCoin: 3890
     rewardExp: 1
   - level: 47
     atk: 55
@@ -395,7 +395,7 @@ MonoBehaviour:
     hp: 167
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 7590
+    rewardCoin: 4040
     rewardExp: 1
   - level: 48
     atk: 57
@@ -403,7 +403,7 @@ MonoBehaviour:
     hp: 169
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 7910
+    rewardCoin: 4200
     rewardExp: 1
   - level: 49
     atk: 59
@@ -411,7 +411,7 @@ MonoBehaviour:
     hp: 171
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 8220
+    rewardCoin: 4360
     rewardExp: 1
   - level: 50
     atk: 61
@@ -419,7 +419,7 @@ MonoBehaviour:
     hp: 173
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 8550
+    rewardCoin: 4520
     rewardExp: 2
   - level: 51
     atk: 63
@@ -427,7 +427,7 @@ MonoBehaviour:
     hp: 175
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 8880
+    rewardCoin: 4690
     rewardExp: 2
   - level: 52
     atk: 65
@@ -435,7 +435,7 @@ MonoBehaviour:
     hp: 177
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 9220
+    rewardCoin: 4850
     rewardExp: 2
   - level: 53
     atk: 67
@@ -443,7 +443,7 @@ MonoBehaviour:
     hp: 179
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 9560
+    rewardCoin: 5030
     rewardExp: 2
   - level: 54
     atk: 69
@@ -451,7 +451,7 @@ MonoBehaviour:
     hp: 181
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 9920
+    rewardCoin: 5200
     rewardExp: 2
   - level: 55
     atk: 71
@@ -459,7 +459,7 @@ MonoBehaviour:
     hp: 183
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 10270
+    rewardCoin: 5380
     rewardExp: 2
   - level: 56
     atk: 73
@@ -467,7 +467,7 @@ MonoBehaviour:
     hp: 185
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 10640
+    rewardCoin: 5560
     rewardExp: 2
   - level: 57
     atk: 75
@@ -475,7 +475,7 @@ MonoBehaviour:
     hp: 187
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 11010
+    rewardCoin: 5750
     rewardExp: 2
   - level: 58
     atk: 77
@@ -483,7 +483,7 @@ MonoBehaviour:
     hp: 189
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 11390
+    rewardCoin: 5940
     rewardExp: 2
   - level: 59
     atk: 79
@@ -491,7 +491,7 @@ MonoBehaviour:
     hp: 191
     criRate: 0.2
     criDmg: 0.5
-    rewardCoin: 11770
+    rewardCoin: 6130
     rewardExp: 2
   - level: 60
     atk: 81
@@ -499,7 +499,7 @@ MonoBehaviour:
     hp: 196
     criRate: 0.3
     criDmg: 0.5
-    rewardCoin: 12170
+    rewardCoin: 6330
     rewardExp: 2
   - level: 61
     atk: 83
@@ -507,7 +507,7 @@ MonoBehaviour:
     hp: 201
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 12570
+    rewardCoin: 6530
     rewardExp: 2
   - level: 62
     atk: 85
@@ -515,7 +515,7 @@ MonoBehaviour:
     hp: 206
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 12970
+    rewardCoin: 6730
     rewardExp: 2
   - level: 63
     atk: 87
@@ -523,7 +523,7 @@ MonoBehaviour:
     hp: 211
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 13380
+    rewardCoin: 6930
     rewardExp: 2
   - level: 64
     atk: 89
@@ -531,7 +531,7 @@ MonoBehaviour:
     hp: 216
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 13800
+    rewardCoin: 7140
     rewardExp: 2
   - level: 65
     atk: 91
@@ -539,7 +539,7 @@ MonoBehaviour:
     hp: 221
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 14230
+    rewardCoin: 7350
     rewardExp: 2
   - level: 66
     atk: 93
@@ -547,7 +547,7 @@ MonoBehaviour:
     hp: 226
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 14660
+    rewardCoin: 7570
     rewardExp: 2
   - level: 67
     atk: 95
@@ -555,7 +555,7 @@ MonoBehaviour:
     hp: 231
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 15100
+    rewardCoin: 7790
     rewardExp: 2
   - level: 68
     atk: 97
@@ -563,7 +563,7 @@ MonoBehaviour:
     hp: 236
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 15540
+    rewardCoin: 8010
     rewardExp: 2
   - level: 69
     atk: 99
@@ -571,7 +571,7 @@ MonoBehaviour:
     hp: 241
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 16000
+    rewardCoin: 8240
     rewardExp: 2
   - level: 70
     atk: 101
@@ -579,7 +579,7 @@ MonoBehaviour:
     hp: 246
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 16450
+    rewardCoin: 8470
     rewardExp: 2
   - level: 71
     atk: 103
@@ -587,7 +587,7 @@ MonoBehaviour:
     hp: 251
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 16920
+    rewardCoin: 8700
     rewardExp: 2
   - level: 72
     atk: 105
@@ -595,7 +595,7 @@ MonoBehaviour:
     hp: 256
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 17390
+    rewardCoin: 8930
     rewardExp: 2
   - level: 73
     atk: 107
@@ -603,7 +603,7 @@ MonoBehaviour:
     hp: 261
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 17870
+    rewardCoin: 9170
     rewardExp: 2
   - level: 74
     atk: 109
@@ -611,7 +611,7 @@ MonoBehaviour:
     hp: 266
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 18360
+    rewardCoin: 9420
     rewardExp: 2
   - level: 75
     atk: 111
@@ -619,7 +619,7 @@ MonoBehaviour:
     hp: 271
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 18850
+    rewardCoin: 9660
     rewardExp: 2
   - level: 76
     atk: 113
@@ -627,7 +627,7 @@ MonoBehaviour:
     hp: 276
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 19350
+    rewardCoin: 9910
     rewardExp: 2
   - level: 77
     atk: 115
@@ -635,7 +635,7 @@ MonoBehaviour:
     hp: 281
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 19860
+    rewardCoin: 10160
     rewardExp: 2
   - level: 78
     atk: 117
@@ -643,7 +643,7 @@ MonoBehaviour:
     hp: 286
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 20370
+    rewardCoin: 10420
     rewardExp: 2
   - level: 79
     atk: 119
@@ -651,7 +651,7 @@ MonoBehaviour:
     hp: 291
     criRate: 0.3
     criDmg: 0.6
-    rewardCoin: 20890
+    rewardCoin: 10680
     rewardExp: 2
   - level: 80
     atk: 122
@@ -659,7 +659,7 @@ MonoBehaviour:
     hp: 295
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 21410
+    rewardCoin: 10940
     rewardExp: 2
   - level: 81
     atk: 125
@@ -667,7 +667,7 @@ MonoBehaviour:
     hp: 299
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 21950
+    rewardCoin: 11210
     rewardExp: 2
   - level: 82
     atk: 128
@@ -675,7 +675,7 @@ MonoBehaviour:
     hp: 303
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 22480
+    rewardCoin: 11480
     rewardExp: 2
   - level: 83
     atk: 131
@@ -683,7 +683,7 @@ MonoBehaviour:
     hp: 307
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 23030
+    rewardCoin: 11750
     rewardExp: 2
   - level: 84
     atk: 134
@@ -691,7 +691,7 @@ MonoBehaviour:
     hp: 311
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 23580
+    rewardCoin: 12030
     rewardExp: 2
   - level: 85
     atk: 137
@@ -699,7 +699,7 @@ MonoBehaviour:
     hp: 315
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 24140
+    rewardCoin: 12300
     rewardExp: 2
   - level: 86
     atk: 140
@@ -707,7 +707,7 @@ MonoBehaviour:
     hp: 319
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 24710
+    rewardCoin: 12590
     rewardExp: 2
   - level: 87
     atk: 143
@@ -715,7 +715,7 @@ MonoBehaviour:
     hp: 323
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 25280
+    rewardCoin: 12870
     rewardExp: 2
   - level: 88
     atk: 146
@@ -723,7 +723,7 @@ MonoBehaviour:
     hp: 327
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 25860
+    rewardCoin: 13160
     rewardExp: 2
   - level: 89
     atk: 149
@@ -731,7 +731,7 @@ MonoBehaviour:
     hp: 331
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 26450
+    rewardCoin: 13450
     rewardExp: 2
   - level: 90
     atk: 152
@@ -739,7 +739,7 @@ MonoBehaviour:
     hp: 335
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 27040
+    rewardCoin: 13750
     rewardExp: 2
   - level: 91
     atk: 155
@@ -747,7 +747,7 @@ MonoBehaviour:
     hp: 339
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 27640
+    rewardCoin: 14050
     rewardExp: 2
   - level: 92
     atk: 158
@@ -755,7 +755,7 @@ MonoBehaviour:
     hp: 343
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 28250
+    rewardCoin: 14350
     rewardExp: 2
   - level: 93
     atk: 161
@@ -763,7 +763,7 @@ MonoBehaviour:
     hp: 347
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 28860
+    rewardCoin: 14660
     rewardExp: 2
   - level: 94
     atk: 164
@@ -771,7 +771,7 @@ MonoBehaviour:
     hp: 351
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 29480
+    rewardCoin: 14970
     rewardExp: 2
   - level: 95
     atk: 167
@@ -779,7 +779,7 @@ MonoBehaviour:
     hp: 355
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 30110
+    rewardCoin: 15280
     rewardExp: 2
   - level: 96
     atk: 170
@@ -787,7 +787,7 @@ MonoBehaviour:
     hp: 359
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 30740
+    rewardCoin: 15600
     rewardExp: 2
   - level: 97
     atk: 173
@@ -795,7 +795,7 @@ MonoBehaviour:
     hp: 363
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 31380
+    rewardCoin: 15920
     rewardExp: 2
   - level: 98
     atk: 176
@@ -803,7 +803,7 @@ MonoBehaviour:
     hp: 367
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 32030
+    rewardCoin: 16240
     rewardExp: 2
   - level: 99
     atk: 179
@@ -811,7 +811,7 @@ MonoBehaviour:
     hp: 371
     criRate: 0.4
     criDmg: 0.7
-    rewardCoin: 32680
+    rewardCoin: 16570
     rewardExp: 2
   - level: 100
     atk: 184
@@ -819,7 +819,7 @@ MonoBehaviour:
     hp: 374
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 33340
+    rewardCoin: 16890
     rewardExp: 3
   - level: 101
     atk: 189
@@ -827,7 +827,7 @@ MonoBehaviour:
     hp: 377
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 34010
+    rewardCoin: 17230
     rewardExp: 3
   - level: 102
     atk: 194
@@ -835,7 +835,7 @@ MonoBehaviour:
     hp: 380
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 34680
+    rewardCoin: 17560
     rewardExp: 3
   - level: 103
     atk: 199
@@ -843,7 +843,7 @@ MonoBehaviour:
     hp: 383
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 35360
+    rewardCoin: 17900
     rewardExp: 3
   - level: 104
     atk: 204
@@ -851,7 +851,7 @@ MonoBehaviour:
     hp: 386
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 36050
+    rewardCoin: 18250
     rewardExp: 3
   - level: 105
     atk: 209
@@ -859,7 +859,7 @@ MonoBehaviour:
     hp: 389
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 36740
+    rewardCoin: 18590
     rewardExp: 3
   - level: 106
     atk: 214
@@ -867,7 +867,7 @@ MonoBehaviour:
     hp: 392
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 37440
+    rewardCoin: 18940
     rewardExp: 3
   - level: 107
     atk: 219
@@ -875,7 +875,7 @@ MonoBehaviour:
     hp: 395
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 38150
+    rewardCoin: 19290
     rewardExp: 3
   - level: 108
     atk: 224
@@ -883,7 +883,7 @@ MonoBehaviour:
     hp: 398
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 38860
+    rewardCoin: 19650
     rewardExp: 3
   - level: 109
     atk: 229
@@ -891,7 +891,7 @@ MonoBehaviour:
     hp: 401
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 39580
+    rewardCoin: 20010
     rewardExp: 3
   - level: 110
     atk: 234
@@ -899,7 +899,7 @@ MonoBehaviour:
     hp: 404
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 40310
+    rewardCoin: 20370
     rewardExp: 3
   - level: 111
     atk: 238
@@ -907,7 +907,7 @@ MonoBehaviour:
     hp: 407
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 41040
+    rewardCoin: 20740
     rewardExp: 3
   - level: 112
     atk: 242
@@ -915,7 +915,7 @@ MonoBehaviour:
     hp: 410
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 41780
+    rewardCoin: 21110
     rewardExp: 3
   - level: 113
     atk: 246
@@ -923,7 +923,7 @@ MonoBehaviour:
     hp: 413
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 42530
+    rewardCoin: 21480
     rewardExp: 3
   - level: 114
     atk: 250
@@ -931,7 +931,7 @@ MonoBehaviour:
     hp: 416
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 43280
+    rewardCoin: 21860
     rewardExp: 3
   - level: 115
     atk: 254
@@ -939,7 +939,7 @@ MonoBehaviour:
     hp: 419
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 44040
+    rewardCoin: 22240
     rewardExp: 3
   - level: 116
     atk: 258
@@ -947,7 +947,7 @@ MonoBehaviour:
     hp: 422
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 44810
+    rewardCoin: 22620
     rewardExp: 3
   - level: 117
     atk: 262
@@ -955,7 +955,7 @@ MonoBehaviour:
     hp: 425
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 45580
+    rewardCoin: 23010
     rewardExp: 3
   - level: 118
     atk: 266
@@ -963,7 +963,7 @@ MonoBehaviour:
     hp: 428
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 46360
+    rewardCoin: 23400
     rewardExp: 3
   - level: 119
     atk: 270
@@ -971,7 +971,7 @@ MonoBehaviour:
     hp: 431
     criRate: 0.5
     criDmg: 0.8
-    rewardCoin: 47150
+    rewardCoin: 23790
     rewardExp: 3
   - level: 120
     atk: 273
@@ -979,7 +979,7 @@ MonoBehaviour:
     hp: 433
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 47950
+    rewardCoin: 24190
     rewardExp: 3
   - level: 121
     atk: 276
@@ -987,7 +987,7 @@ MonoBehaviour:
     hp: 435
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 48750
+    rewardCoin: 24590
     rewardExp: 3
   - level: 122
     atk: 279
@@ -995,7 +995,7 @@ MonoBehaviour:
     hp: 437
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 49550
+    rewardCoin: 24990
     rewardExp: 3
   - level: 123
     atk: 282
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     hp: 439
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 50370
+    rewardCoin: 25390
     rewardExp: 3
   - level: 124
     atk: 285
@@ -1011,7 +1011,7 @@ MonoBehaviour:
     hp: 441
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 51190
+    rewardCoin: 25800
     rewardExp: 3
   - level: 125
     atk: 288
@@ -1019,7 +1019,7 @@ MonoBehaviour:
     hp: 443
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 52020
+    rewardCoin: 26220
     rewardExp: 3
   - level: 126
     atk: 291
@@ -1027,7 +1027,7 @@ MonoBehaviour:
     hp: 445
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 52850
+    rewardCoin: 26630
     rewardExp: 3
   - level: 127
     atk: 294
@@ -1035,7 +1035,7 @@ MonoBehaviour:
     hp: 447
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 53690
+    rewardCoin: 27050
     rewardExp: 3
   - level: 128
     atk: 297
@@ -1043,7 +1043,7 @@ MonoBehaviour:
     hp: 449
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 54540
+    rewardCoin: 27480
     rewardExp: 3
   - level: 129
     atk: 300
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     hp: 451
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 55390
+    rewardCoin: 27900
     rewardExp: 3
   - level: 130
     atk: 302
@@ -1059,7 +1059,7 @@ MonoBehaviour:
     hp: 453
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 56250
+    rewardCoin: 28330
     rewardExp: 3
   - level: 131
     atk: 304
@@ -1067,7 +1067,7 @@ MonoBehaviour:
     hp: 455
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 57120
+    rewardCoin: 28770
     rewardExp: 3
   - level: 132
     atk: 306
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     hp: 457
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 58000
+    rewardCoin: 29200
     rewardExp: 3
   - level: 133
     atk: 308
@@ -1083,7 +1083,7 @@ MonoBehaviour:
     hp: 459
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 58880
+    rewardCoin: 29640
     rewardExp: 3
   - level: 134
     atk: 310
@@ -1091,7 +1091,7 @@ MonoBehaviour:
     hp: 461
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 59760
+    rewardCoin: 30090
     rewardExp: 3
   - level: 135
     atk: 312
@@ -1099,7 +1099,7 @@ MonoBehaviour:
     hp: 463
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 60660
+    rewardCoin: 30530
     rewardExp: 3
   - level: 136
     atk: 314
@@ -1107,7 +1107,7 @@ MonoBehaviour:
     hp: 465
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 61560
+    rewardCoin: 30980
     rewardExp: 3
   - level: 137
     atk: 316
@@ -1115,7 +1115,7 @@ MonoBehaviour:
     hp: 467
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 62470
+    rewardCoin: 31430
     rewardExp: 3
   - level: 138
     atk: 318
@@ -1123,7 +1123,7 @@ MonoBehaviour:
     hp: 469
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 63380
+    rewardCoin: 31890
     rewardExp: 3
   - level: 139
     atk: 320
@@ -1131,7 +1131,7 @@ MonoBehaviour:
     hp: 471
     criRate: 0.6
     criDmg: 0.9
-    rewardCoin: 64300
+    rewardCoin: 32350
     rewardExp: 3
   - level: 140
     atk: 321
@@ -1139,7 +1139,7 @@ MonoBehaviour:
     hp: 473
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 65230
+    rewardCoin: 32810
     rewardExp: 3
   - level: 141
     atk: 322
@@ -1147,7 +1147,7 @@ MonoBehaviour:
     hp: 475
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 66170
+    rewardCoin: 33280
     rewardExp: 3
   - level: 142
     atk: 323
@@ -1155,7 +1155,7 @@ MonoBehaviour:
     hp: 477
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 67110
+    rewardCoin: 33750
     rewardExp: 3
   - level: 143
     atk: 324
@@ -1163,7 +1163,7 @@ MonoBehaviour:
     hp: 479
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 68060
+    rewardCoin: 34220
     rewardExp: 3
   - level: 144
     atk: 325
@@ -1171,7 +1171,7 @@ MonoBehaviour:
     hp: 481
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 69010
+    rewardCoin: 34700
     rewardExp: 3
   - level: 145
     atk: 326
@@ -1179,7 +1179,7 @@ MonoBehaviour:
     hp: 483
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 69970
+    rewardCoin: 35180
     rewardExp: 3
   - level: 146
     atk: 327
@@ -1187,7 +1187,7 @@ MonoBehaviour:
     hp: 485
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 70940
+    rewardCoin: 35660
     rewardExp: 3
   - level: 147
     atk: 328
@@ -1195,7 +1195,7 @@ MonoBehaviour:
     hp: 487
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 71920
+    rewardCoin: 36150
     rewardExp: 3
   - level: 148
     atk: 329
@@ -1203,7 +1203,7 @@ MonoBehaviour:
     hp: 489
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 72900
+    rewardCoin: 36640
     rewardExp: 3
   - level: 149
     atk: 330
@@ -1211,7 +1211,7 @@ MonoBehaviour:
     hp: 491
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 73890
+    rewardCoin: 37130
     rewardExp: 3
   - level: 150
     atk: 331
@@ -1219,399 +1219,399 @@ MonoBehaviour:
     hp: 493
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 74880
+    rewardCoin: 37630
     rewardExp: 4
   - level: 151
     atk: 332
-    def: 150
+    def: 151
     hp: 495
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 75880
+    rewardCoin: 38130
     rewardExp: 4
   - level: 152
     atk: 333
-    def: 150
+    def: 152
     hp: 497
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 76890
+    rewardCoin: 38630
     rewardExp: 4
   - level: 153
     atk: 334
-    def: 150
+    def: 153
     hp: 499
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 77910
+    rewardCoin: 39140
     rewardExp: 4
   - level: 154
     atk: 335
-    def: 150
+    def: 154
     hp: 501
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 78930
+    rewardCoin: 39650
     rewardExp: 4
   - level: 155
     atk: 336
-    def: 150
+    def: 155
     hp: 503
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 79960
+    rewardCoin: 40160
     rewardExp: 4
   - level: 156
     atk: 337
-    def: 150
+    def: 156
     hp: 505
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 80990
+    rewardCoin: 40680
     rewardExp: 4
   - level: 157
     atk: 338
-    def: 150
+    def: 157
     hp: 507
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 82030
+    rewardCoin: 41200
     rewardExp: 4
   - level: 158
     atk: 339
-    def: 150
+    def: 158
     hp: 509
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 83080
+    rewardCoin: 41720
     rewardExp: 4
   - level: 159
     atk: 340
-    def: 150
+    def: 159
     hp: 511
     criRate: 0.6
     criDmg: 1
-    rewardCoin: 84140
+    rewardCoin: 42250
     rewardExp: 4
   - level: 160
     atk: 341
-    def: 150
+    def: 160
     hp: 513
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 85200
+    rewardCoin: 42780
     rewardExp: 5
   - level: 161
     atk: 346
-    def: 150
+    def: 161
     hp: 515
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 86270
+    rewardCoin: 43310
     rewardExp: 5
   - level: 162
     atk: 351
-    def: 150
+    def: 162
     hp: 517
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 87340
+    rewardCoin: 43850
     rewardExp: 5
   - level: 163
     atk: 356
-    def: 150
+    def: 163
     hp: 519
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 88420
+    rewardCoin: 44390
     rewardExp: 5
   - level: 164
     atk: 361
-    def: 150
+    def: 164
     hp: 521
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 89510
+    rewardCoin: 44930
     rewardExp: 5
   - level: 165
     atk: 366
-    def: 150
+    def: 165
     hp: 523
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 90610
+    rewardCoin: 45480
     rewardExp: 5
   - level: 166
     atk: 371
-    def: 150
+    def: 166
     hp: 525
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 91710
+    rewardCoin: 46030
     rewardExp: 5
   - level: 167
     atk: 376
-    def: 150
+    def: 167
     hp: 527
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 92820
+    rewardCoin: 46590
     rewardExp: 5
   - level: 168
     atk: 381
-    def: 150
+    def: 168
     hp: 529
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 93940
+    rewardCoin: 47140
     rewardExp: 5
   - level: 169
     atk: 386
-    def: 150
+    def: 169
     hp: 531
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 95060
+    rewardCoin: 47700
     rewardExp: 5
   - level: 170
     atk: 390
-    def: 150
+    def: 170
     hp: 533
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 96190
+    rewardCoin: 48270
     rewardExp: 6
   - level: 171
     atk: 394
-    def: 150
+    def: 171
     hp: 535
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 97320
+    rewardCoin: 48830
     rewardExp: 6
   - level: 172
     atk: 398
-    def: 150
+    def: 172
     hp: 537
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 98460
+    rewardCoin: 49400
     rewardExp: 6
   - level: 173
     atk: 402
-    def: 150
+    def: 173
     hp: 539
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 99610
+    rewardCoin: 49980
     rewardExp: 6
   - level: 174
     atk: 406
-    def: 150
+    def: 174
     hp: 541
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 100770
+    rewardCoin: 50550
     rewardExp: 6
   - level: 175
     atk: 410
-    def: 150
+    def: 175
     hp: 543
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 101930
+    rewardCoin: 51130
     rewardExp: 6
   - level: 176
     atk: 414
-    def: 150
+    def: 176
     hp: 545
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 103100
+    rewardCoin: 51720
     rewardExp: 6
   - level: 177
     atk: 418
-    def: 150
+    def: 177
     hp: 547
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 104280
+    rewardCoin: 52300
     rewardExp: 6
   - level: 178
     atk: 422
-    def: 150
+    def: 178
     hp: 549
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 105460
+    rewardCoin: 52890
     rewardExp: 6
   - level: 179
     atk: 426
-    def: 150
+    def: 179
     hp: 551
     criRate: 0.6
     criDmg: 1.1
-    rewardCoin: 106650
+    rewardCoin: 53490
     rewardExp: 6
   - level: 180
     atk: 429
-    def: 150
+    def: 180
     hp: 553
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 107840
+    rewardCoin: 54090
     rewardExp: 7
   - level: 181
     atk: 432
-    def: 150
+    def: 181
     hp: 555
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 109050
+    rewardCoin: 54690
     rewardExp: 7
   - level: 182
     atk: 435
-    def: 150
+    def: 182
     hp: 557
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 110260
+    rewardCoin: 55290
     rewardExp: 7
   - level: 183
     atk: 438
-    def: 150
+    def: 183
     hp: 559
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 111470
+    rewardCoin: 55900
     rewardExp: 7
   - level: 184
     atk: 441
-    def: 150
+    def: 184
     hp: 561
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 112700
+    rewardCoin: 56510
     rewardExp: 7
   - level: 185
     atk: 444
-    def: 150
+    def: 185
     hp: 563
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 113930
+    rewardCoin: 57120
     rewardExp: 7
   - level: 186
     atk: 447
-    def: 150
+    def: 186
     hp: 565
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 115160
+    rewardCoin: 57740
     rewardExp: 7
   - level: 187
     atk: 450
-    def: 150
+    def: 187
     hp: 567
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 116400
+    rewardCoin: 58360
     rewardExp: 7
   - level: 188
     atk: 453
-    def: 150
+    def: 188
     hp: 569
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 117650
+    rewardCoin: 58980
     rewardExp: 7
   - level: 189
     atk: 456
-    def: 150
+    def: 189
     hp: 571
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 118910
+    rewardCoin: 59610
     rewardExp: 7
   - level: 190
     atk: 458
-    def: 150
+    def: 190
     hp: 573
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 120170
+    rewardCoin: 60240
     rewardExp: 8
   - level: 191
     atk: 460
-    def: 150
+    def: 191
     hp: 575
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 121440
+    rewardCoin: 60870
     rewardExp: 8
   - level: 192
     atk: 462
-    def: 150
+    def: 192
     hp: 577
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 122720
+    rewardCoin: 61510
     rewardExp: 8
   - level: 193
     atk: 464
-    def: 150
+    def: 193
     hp: 579
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 124000
+    rewardCoin: 62150
     rewardExp: 8
   - level: 194
     atk: 466
-    def: 150
+    def: 194
     hp: 581
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 125290
+    rewardCoin: 62790
     rewardExp: 8
   - level: 195
     atk: 468
-    def: 150
+    def: 195
     hp: 583
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 126590
+    rewardCoin: 63440
     rewardExp: 8
   - level: 196
     atk: 470
-    def: 150
+    def: 196
     hp: 585
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 127890
+    rewardCoin: 64090
     rewardExp: 8
   - level: 197
     atk: 472
-    def: 150
+    def: 197
     hp: 587
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 129200
+    rewardCoin: 64750
     rewardExp: 8
   - level: 198
     atk: 474
-    def: 150
+    def: 198
     hp: 589
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 130520
+    rewardCoin: 65400
     rewardExp: 8
   - level: 199
     atk: 476
-    def: 150
+    def: 199
     hp: 591
     criRate: 0.6
     criDmg: 1.2
-    rewardCoin: 131840
+    rewardCoin: 66060
     rewardExp: 8
   - level: 200
     atk: 477
@@ -1619,399 +1619,399 @@ MonoBehaviour:
     hp: 594
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 133170
+    rewardCoin: 66730
     rewardExp: 9
   - level: 201
     atk: 478
-    def: 200
+    def: 201
     hp: 597
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 134510
+    rewardCoin: 67390
     rewardExp: 9
   - level: 202
     atk: 479
-    def: 200
+    def: 202
     hp: 600
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 135850
+    rewardCoin: 68070
     rewardExp: 9
   - level: 203
     atk: 480
-    def: 200
+    def: 203
     hp: 603
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 137200
+    rewardCoin: 68740
     rewardExp: 9
   - level: 204
     atk: 481
-    def: 200
+    def: 204
     hp: 606
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 138560
+    rewardCoin: 69420
     rewardExp: 9
   - level: 205
     atk: 482
-    def: 200
+    def: 205
     hp: 609
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 139920
+    rewardCoin: 70100
     rewardExp: 9
   - level: 206
     atk: 483
-    def: 200
+    def: 206
     hp: 612
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 141290
+    rewardCoin: 70780
     rewardExp: 9
   - level: 207
     atk: 484
-    def: 200
+    def: 207
     hp: 615
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 142670
+    rewardCoin: 71470
     rewardExp: 9
   - level: 208
     atk: 485
-    def: 200
+    def: 208
     hp: 618
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 144050
+    rewardCoin: 72160
     rewardExp: 9
   - level: 209
     atk: 486
-    def: 200
+    def: 209
     hp: 621
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 145440
+    rewardCoin: 72850
     rewardExp: 9
   - level: 210
     atk: 487
-    def: 200
+    def: 210
     hp: 624
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 146840
+    rewardCoin: 73550
     rewardExp: 10
   - level: 211
     atk: 488
-    def: 200
+    def: 211
     hp: 627
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 148240
+    rewardCoin: 74250
     rewardExp: 10
   - level: 212
     atk: 489
-    def: 200
+    def: 212
     hp: 630
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 149650
+    rewardCoin: 74950
     rewardExp: 10
   - level: 213
     atk: 490
-    def: 200
+    def: 213
     hp: 633
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 151070
+    rewardCoin: 75660
     rewardExp: 10
   - level: 214
     atk: 491
-    def: 200
+    def: 214
     hp: 636
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 152490
+    rewardCoin: 76370
     rewardExp: 10
   - level: 215
     atk: 492
-    def: 200
+    def: 215
     hp: 639
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 153930
+    rewardCoin: 77090
     rewardExp: 10
   - level: 216
     atk: 493
-    def: 200
+    def: 216
     hp: 642
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 155360
+    rewardCoin: 77800
     rewardExp: 10
   - level: 217
     atk: 494
-    def: 200
+    def: 217
     hp: 645
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 156810
+    rewardCoin: 78530
     rewardExp: 10
   - level: 218
     atk: 495
-    def: 200
+    def: 218
     hp: 648
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 158260
+    rewardCoin: 79250
     rewardExp: 10
   - level: 219
     atk: 496
-    def: 200
+    def: 219
     hp: 651
     criRate: 0.7
     criDmg: 1.4
-    rewardCoin: 159710
+    rewardCoin: 79980
     rewardExp: 10
   - level: 220
     atk: 497
-    def: 200
+    def: 220
     hp: 654
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 161180
+    rewardCoin: 80710
     rewardExp: 11
   - level: 221
     atk: 498
-    def: 200
+    def: 221
     hp: 657
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 162650
+    rewardCoin: 81440
     rewardExp: 11
   - level: 222
     atk: 499
-    def: 200
+    def: 222
     hp: 660
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 164130
+    rewardCoin: 82180
     rewardExp: 11
   - level: 223
     atk: 500
-    def: 200
+    def: 223
     hp: 663
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 165610
+    rewardCoin: 82920
     rewardExp: 11
   - level: 224
     atk: 501
-    def: 200
+    def: 224
     hp: 666
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 167100
+    rewardCoin: 83660
     rewardExp: 11
   - level: 225
     atk: 502
-    def: 200
+    def: 225
     hp: 669
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 168600
+    rewardCoin: 84410
     rewardExp: 11
   - level: 226
     atk: 503
-    def: 200
+    def: 226
     hp: 672
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 170100
+    rewardCoin: 85160
     rewardExp: 11
   - level: 227
     atk: 504
-    def: 200
+    def: 227
     hp: 675
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 171610
+    rewardCoin: 85920
     rewardExp: 11
   - level: 228
     atk: 505
-    def: 200
+    def: 228
     hp: 678
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 173130
+    rewardCoin: 86670
     rewardExp: 11
   - level: 229
     atk: 506
-    def: 200
+    def: 229
     hp: 681
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 174660
+    rewardCoin: 87430
     rewardExp: 11
   - level: 230
     atk: 507
-    def: 200
+    def: 230
     hp: 684
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 176190
+    rewardCoin: 88200
     rewardExp: 12
   - level: 231
     atk: 508
-    def: 200
+    def: 231
     hp: 687
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 177720
+    rewardCoin: 88970
     rewardExp: 12
   - level: 232
     atk: 509
-    def: 200
+    def: 232
     hp: 690
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 179270
+    rewardCoin: 89740
     rewardExp: 12
   - level: 233
     atk: 510
-    def: 200
+    def: 233
     hp: 693
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 180820
+    rewardCoin: 90510
     rewardExp: 12
   - level: 234
     atk: 511
-    def: 200
+    def: 234
     hp: 696
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 182380
+    rewardCoin: 91290
     rewardExp: 12
   - level: 235
     atk: 512
-    def: 200
+    def: 235
     hp: 699
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 183940
+    rewardCoin: 92070
     rewardExp: 12
   - level: 236
     atk: 513
-    def: 200
+    def: 236
     hp: 702
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 185510
+    rewardCoin: 92850
     rewardExp: 12
   - level: 237
     atk: 514
-    def: 200
+    def: 237
     hp: 705
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 187090
+    rewardCoin: 93640
     rewardExp: 12
   - level: 238
     atk: 515
-    def: 200
+    def: 238
     hp: 708
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 188680
+    rewardCoin: 94430
     rewardExp: 12
   - level: 239
     atk: 516
-    def: 200
+    def: 239
     hp: 711
     criRate: 0.7
     criDmg: 1.6
-    rewardCoin: 190270
+    rewardCoin: 95230
     rewardExp: 12
   - level: 240
     atk: 517
-    def: 200
+    def: 240
     hp: 714
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 191860
+    rewardCoin: 96030
     rewardExp: 13
   - level: 241
     atk: 518
-    def: 200
+    def: 241
     hp: 717
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 193470
+    rewardCoin: 96830
     rewardExp: 13
   - level: 242
     atk: 519
-    def: 200
+    def: 242
     hp: 720
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 195080
+    rewardCoin: 97630
     rewardExp: 13
   - level: 243
     atk: 520
-    def: 200
+    def: 243
     hp: 723
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 196700
+    rewardCoin: 98440
     rewardExp: 13
   - level: 244
     atk: 521
-    def: 200
+    def: 244
     hp: 726
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 198320
+    rewardCoin: 99250
     rewardExp: 13
   - level: 245
     atk: 522
-    def: 200
+    def: 245
     hp: 729
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 199960
+    rewardCoin: 100060
     rewardExp: 13
   - level: 246
     atk: 523
-    def: 200
+    def: 246
     hp: 732
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 201590
+    rewardCoin: 100880
     rewardExp: 13
   - level: 247
     atk: 524
-    def: 200
+    def: 247
     hp: 735
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 203240
+    rewardCoin: 101700
     rewardExp: 13
   - level: 248
     atk: 525
-    def: 200
+    def: 248
     hp: 738
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 204890
+    rewardCoin: 102530
     rewardExp: 13
   - level: 249
     atk: 526
-    def: 200
+    def: 249
     hp: 741
     criRate: 0.7
     criDmg: 1.8
-    rewardCoin: 206550
+    rewardCoin: 103350
     rewardExp: 13
   - level: 250
     atk: 528
@@ -2019,399 +2019,399 @@ MonoBehaviour:
     hp: 745
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 208210
+    rewardCoin: 104190
     rewardExp: 14
   - level: 251
     atk: 530
-    def: 250
+    def: 251
     hp: 749
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 209880
+    rewardCoin: 105020
     rewardExp: 14
   - level: 252
     atk: 532
-    def: 250
+    def: 252
     hp: 753
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 211560
+    rewardCoin: 105860
     rewardExp: 14
   - level: 253
     atk: 534
-    def: 250
+    def: 253
     hp: 757
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 213250
+    rewardCoin: 106700
     rewardExp: 14
   - level: 254
     atk: 536
-    def: 250
+    def: 254
     hp: 761
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 214940
+    rewardCoin: 107540
     rewardExp: 14
   - level: 255
     atk: 538
-    def: 250
+    def: 255
     hp: 765
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 216640
+    rewardCoin: 108390
     rewardExp: 14
   - level: 256
     atk: 540
-    def: 250
+    def: 256
     hp: 769
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 218340
+    rewardCoin: 109240
     rewardExp: 14
   - level: 257
     atk: 542
-    def: 250
+    def: 257
     hp: 773
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 220060
+    rewardCoin: 110100
     rewardExp: 14
   - level: 258
     atk: 544
-    def: 250
+    def: 258
     hp: 777
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 221770
+    rewardCoin: 110950
     rewardExp: 14
   - level: 259
     atk: 546
-    def: 250
+    def: 259
     hp: 781
     criRate: 0.8
     criDmg: 1.8
-    rewardCoin: 223500
+    rewardCoin: 111820
     rewardExp: 14
   - level: 260
     atk: 548
-    def: 250
+    def: 260
     hp: 785
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 225230
+    rewardCoin: 112680
     rewardExp: 15
   - level: 261
     atk: 550
-    def: 250
+    def: 261
     hp: 789
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 226970
+    rewardCoin: 113550
     rewardExp: 15
   - level: 262
     atk: 552
-    def: 250
+    def: 262
     hp: 793
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 228720
+    rewardCoin: 114420
     rewardExp: 15
   - level: 263
     atk: 554
-    def: 250
+    def: 263
     hp: 797
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 230470
+    rewardCoin: 115290
     rewardExp: 15
   - level: 264
     atk: 556
-    def: 250
+    def: 264
     hp: 801
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 232230
+    rewardCoin: 116170
     rewardExp: 15
   - level: 265
     atk: 558
-    def: 250
+    def: 265
     hp: 805
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 233990
+    rewardCoin: 117050
     rewardExp: 15
   - level: 266
     atk: 560
-    def: 250
+    def: 266
     hp: 809
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 235760
+    rewardCoin: 117940
     rewardExp: 15
   - level: 267
     atk: 562
-    def: 250
+    def: 267
     hp: 813
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 237540
+    rewardCoin: 118830
     rewardExp: 15
   - level: 268
     atk: 564
-    def: 250
+    def: 268
     hp: 817
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 239330
+    rewardCoin: 119720
     rewardExp: 15
   - level: 269
     atk: 566
-    def: 250
+    def: 269
     hp: 821
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 241120
+    rewardCoin: 120610
     rewardExp: 15
   - level: 270
     atk: 568
-    def: 250
+    def: 270
     hp: 825
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 242920
+    rewardCoin: 121510
     rewardExp: 16
   - level: 271
     atk: 570
-    def: 250
+    def: 271
     hp: 829
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 244730
+    rewardCoin: 122410
     rewardExp: 16
   - level: 272
     atk: 572
-    def: 250
+    def: 272
     hp: 833
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 246540
+    rewardCoin: 123320
     rewardExp: 16
   - level: 273
     atk: 574
-    def: 250
+    def: 273
     hp: 837
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 248360
+    rewardCoin: 124220
     rewardExp: 16
   - level: 274
     atk: 576
-    def: 250
+    def: 274
     hp: 841
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 250180
+    rewardCoin: 125140
     rewardExp: 16
   - level: 275
     atk: 578
-    def: 250
+    def: 275
     hp: 845
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 252020
+    rewardCoin: 126050
     rewardExp: 16
   - level: 276
     atk: 580
-    def: 250
+    def: 276
     hp: 849
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 253850
+    rewardCoin: 126970
     rewardExp: 16
   - level: 277
     atk: 582
-    def: 250
+    def: 277
     hp: 853
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 255700
+    rewardCoin: 127890
     rewardExp: 16
   - level: 278
     atk: 584
-    def: 250
+    def: 278
     hp: 857
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 257550
+    rewardCoin: 128810
     rewardExp: 16
   - level: 279
     atk: 586
-    def: 250
+    def: 279
     hp: 861
     criRate: 0.8
     criDmg: 2
-    rewardCoin: 259410
+    rewardCoin: 129740
     rewardExp: 16
   - level: 280
     atk: 588
-    def: 250
+    def: 280
     hp: 865
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 261280
+    rewardCoin: 130670
     rewardExp: 17
   - level: 281
     atk: 590
-    def: 250
+    def: 281
     hp: 869
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 263150
+    rewardCoin: 131610
     rewardExp: 17
   - level: 282
     atk: 592
-    def: 250
+    def: 282
     hp: 873
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 265030
+    rewardCoin: 132550
     rewardExp: 17
   - level: 283
     atk: 594
-    def: 250
+    def: 283
     hp: 877
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 266920
+    rewardCoin: 133490
     rewardExp: 17
   - level: 284
     atk: 596
-    def: 250
+    def: 284
     hp: 881
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 268810
+    rewardCoin: 134430
     rewardExp: 17
   - level: 285
     atk: 598
-    def: 250
+    def: 285
     hp: 885
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 270710
+    rewardCoin: 135380
     rewardExp: 17
   - level: 286
     atk: 600
-    def: 250
+    def: 286
     hp: 889
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 272610
+    rewardCoin: 136330
     rewardExp: 17
   - level: 287
     atk: 602
-    def: 250
+    def: 287
     hp: 893
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 274530
+    rewardCoin: 137290
     rewardExp: 17
   - level: 288
     atk: 604
-    def: 250
+    def: 288
     hp: 897
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 276450
+    rewardCoin: 138250
     rewardExp: 17
   - level: 289
     atk: 606
-    def: 250
+    def: 289
     hp: 901
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 278370
+    rewardCoin: 139210
     rewardExp: 17
   - level: 290
     atk: 608
-    def: 250
+    def: 290
     hp: 905
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 280310
+    rewardCoin: 140170
     rewardExp: 18
   - level: 291
     atk: 610
-    def: 250
+    def: 291
     hp: 909
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 282250
+    rewardCoin: 141140
     rewardExp: 18
   - level: 292
     atk: 612
-    def: 250
+    def: 292
     hp: 913
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 284190
+    rewardCoin: 142110
     rewardExp: 18
   - level: 293
     atk: 614
-    def: 250
+    def: 293
     hp: 917
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 286150
+    rewardCoin: 143090
     rewardExp: 18
   - level: 294
     atk: 616
-    def: 250
+    def: 294
     hp: 921
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 288110
+    rewardCoin: 144070
     rewardExp: 18
   - level: 295
     atk: 618
-    def: 250
+    def: 295
     hp: 925
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 290070
+    rewardCoin: 145050
     rewardExp: 18
   - level: 296
     atk: 620
-    def: 250
+    def: 296
     hp: 929
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 292050
+    rewardCoin: 146030
     rewardExp: 18
   - level: 297
     atk: 622
-    def: 250
+    def: 297
     hp: 933
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 294030
+    rewardCoin: 147020
     rewardExp: 18
   - level: 298
     atk: 624
-    def: 250
+    def: 298
     hp: 937
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 296010
+    rewardCoin: 148010
     rewardExp: 18
   - level: 299
     atk: 626
-    def: 250
+    def: 299
     hp: 941
     criRate: 0.8
     criDmg: 2.2
-    rewardCoin: 298010
+    rewardCoin: 149010
     rewardExp: 18
   - level: 300
     atk: 650
@@ -2419,5 +2419,5613 @@ MonoBehaviour:
     hp: 1000
     criRate: 0.8
     criDmg: 2.4
-    rewardCoin: 300000
+    rewardCoin: 150000
     rewardExp: 19
+  - level: 301
+    atk: 651
+    def: 301
+    hp: 1006
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 302
+    atk: 652
+    def: 302
+    hp: 1012
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 303
+    atk: 653
+    def: 303
+    hp: 1018
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 304
+    atk: 654
+    def: 304
+    hp: 1024
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 305
+    atk: 655
+    def: 305
+    hp: 1030
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 306
+    atk: 656
+    def: 306
+    hp: 1036
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 307
+    atk: 657
+    def: 307
+    hp: 1042
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 308
+    atk: 658
+    def: 308
+    hp: 1048
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 309
+    atk: 659
+    def: 309
+    hp: 1054
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 19
+  - level: 310
+    atk: 660
+    def: 310
+    hp: 1060
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 311
+    atk: 661
+    def: 311
+    hp: 1066
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 312
+    atk: 662
+    def: 312
+    hp: 1072
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 313
+    atk: 663
+    def: 313
+    hp: 1078
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 314
+    atk: 664
+    def: 314
+    hp: 1084
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 315
+    atk: 665
+    def: 315
+    hp: 1090
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 316
+    atk: 666
+    def: 316
+    hp: 1096
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 317
+    atk: 667
+    def: 317
+    hp: 1102
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 318
+    atk: 668
+    def: 318
+    hp: 1108
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 319
+    atk: 669
+    def: 319
+    hp: 1114
+    criRate: 0.8
+    criDmg: 2.4
+    rewardCoin: 150000
+    rewardExp: 20
+  - level: 320
+    atk: 670
+    def: 320
+    hp: 1120
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 321
+    atk: 671
+    def: 321
+    hp: 1126
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 322
+    atk: 672
+    def: 322
+    hp: 1132
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 323
+    atk: 673
+    def: 323
+    hp: 1138
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 324
+    atk: 674
+    def: 324
+    hp: 1144
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 325
+    atk: 675
+    def: 325
+    hp: 1150
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 326
+    atk: 676
+    def: 326
+    hp: 1156
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 327
+    atk: 677
+    def: 327
+    hp: 1162
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 328
+    atk: 678
+    def: 328
+    hp: 1168
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 329
+    atk: 679
+    def: 329
+    hp: 1174
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 21
+  - level: 330
+    atk: 680
+    def: 330
+    hp: 1180
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 331
+    atk: 681
+    def: 331
+    hp: 1186
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 332
+    atk: 682
+    def: 332
+    hp: 1192
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 333
+    atk: 683
+    def: 333
+    hp: 1198
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 334
+    atk: 684
+    def: 334
+    hp: 1204
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 335
+    atk: 685
+    def: 335
+    hp: 1210
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 336
+    atk: 686
+    def: 336
+    hp: 1216
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 337
+    atk: 687
+    def: 337
+    hp: 1222
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 338
+    atk: 688
+    def: 338
+    hp: 1228
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 339
+    atk: 689
+    def: 339
+    hp: 1234
+    criRate: 0.8
+    criDmg: 2.6
+    rewardCoin: 150000
+    rewardExp: 22
+  - level: 340
+    atk: 690
+    def: 340
+    hp: 1240
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 341
+    atk: 691
+    def: 341
+    hp: 1246
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 342
+    atk: 692
+    def: 342
+    hp: 1252
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 343
+    atk: 693
+    def: 343
+    hp: 1258
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 344
+    atk: 694
+    def: 344
+    hp: 1264
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 345
+    atk: 695
+    def: 345
+    hp: 1270
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 346
+    atk: 696
+    def: 346
+    hp: 1276
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 347
+    atk: 697
+    def: 347
+    hp: 1282
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 348
+    atk: 698
+    def: 348
+    hp: 1288
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 349
+    atk: 699
+    def: 349
+    hp: 1294
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 23
+  - level: 350
+    atk: 700
+    def: 350
+    hp: 1300
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 351
+    atk: 701
+    def: 351
+    hp: 1306
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 352
+    atk: 702
+    def: 352
+    hp: 1312
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 353
+    atk: 703
+    def: 353
+    hp: 1318
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 354
+    atk: 704
+    def: 354
+    hp: 1324
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 355
+    atk: 705
+    def: 355
+    hp: 1330
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 356
+    atk: 706
+    def: 356
+    hp: 1336
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 357
+    atk: 707
+    def: 357
+    hp: 1342
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 358
+    atk: 708
+    def: 358
+    hp: 1348
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 359
+    atk: 709
+    def: 359
+    hp: 1354
+    criRate: 0.8
+    criDmg: 2.8
+    rewardCoin: 150000
+    rewardExp: 24
+  - level: 360
+    atk: 710
+    def: 360
+    hp: 1360
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 361
+    atk: 711
+    def: 361
+    hp: 1366
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 362
+    atk: 712
+    def: 362
+    hp: 1372
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 363
+    atk: 713
+    def: 363
+    hp: 1378
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 364
+    atk: 714
+    def: 364
+    hp: 1384
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 365
+    atk: 715
+    def: 365
+    hp: 1390
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 366
+    atk: 716
+    def: 366
+    hp: 1396
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 367
+    atk: 717
+    def: 367
+    hp: 1402
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 368
+    atk: 718
+    def: 368
+    hp: 1408
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 369
+    atk: 719
+    def: 369
+    hp: 1414
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 370
+    atk: 720
+    def: 370
+    hp: 1420
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 371
+    atk: 721
+    def: 371
+    hp: 1426
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 372
+    atk: 722
+    def: 372
+    hp: 1432
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 373
+    atk: 723
+    def: 373
+    hp: 1438
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 374
+    atk: 724
+    def: 374
+    hp: 1444
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 375
+    atk: 725
+    def: 375
+    hp: 1450
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 376
+    atk: 726
+    def: 376
+    hp: 1456
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 377
+    atk: 727
+    def: 377
+    hp: 1462
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 378
+    atk: 728
+    def: 378
+    hp: 1468
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 379
+    atk: 729
+    def: 379
+    hp: 1474
+    criRate: 0.8
+    criDmg: 3
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 380
+    atk: 730
+    def: 380
+    hp: 1480
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 381
+    atk: 731
+    def: 381
+    hp: 1486
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 382
+    atk: 732
+    def: 382
+    hp: 1492
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 383
+    atk: 733
+    def: 383
+    hp: 1498
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 384
+    atk: 734
+    def: 384
+    hp: 1504
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 385
+    atk: 735
+    def: 385
+    hp: 1510
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 386
+    atk: 736
+    def: 386
+    hp: 1516
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 387
+    atk: 737
+    def: 387
+    hp: 1522
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 388
+    atk: 738
+    def: 388
+    hp: 1528
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 389
+    atk: 739
+    def: 389
+    hp: 1534
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 390
+    atk: 740
+    def: 390
+    hp: 1540
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 391
+    atk: 741
+    def: 391
+    hp: 1546
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 392
+    atk: 742
+    def: 392
+    hp: 1552
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 393
+    atk: 743
+    def: 393
+    hp: 1558
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 394
+    atk: 744
+    def: 394
+    hp: 1564
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 395
+    atk: 745
+    def: 395
+    hp: 1570
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 396
+    atk: 746
+    def: 396
+    hp: 1576
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 397
+    atk: 747
+    def: 397
+    hp: 1582
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 398
+    atk: 748
+    def: 398
+    hp: 1588
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 399
+    atk: 749
+    def: 399
+    hp: 1594
+    criRate: 0.8
+    criDmg: 3.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 400
+    atk: 750
+    def: 400
+    hp: 1600
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 401
+    atk: 751
+    def: 401
+    hp: 1606
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 402
+    atk: 752
+    def: 402
+    hp: 1612
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 403
+    atk: 753
+    def: 403
+    hp: 1618
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 404
+    atk: 754
+    def: 404
+    hp: 1624
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 405
+    atk: 755
+    def: 405
+    hp: 1630
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 406
+    atk: 756
+    def: 406
+    hp: 1636
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 407
+    atk: 757
+    def: 407
+    hp: 1642
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 408
+    atk: 758
+    def: 408
+    hp: 1648
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 409
+    atk: 759
+    def: 409
+    hp: 1654
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 410
+    atk: 760
+    def: 410
+    hp: 1660
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 411
+    atk: 761
+    def: 411
+    hp: 1666
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 412
+    atk: 762
+    def: 412
+    hp: 1672
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 413
+    atk: 763
+    def: 413
+    hp: 1678
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 414
+    atk: 764
+    def: 414
+    hp: 1684
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 415
+    atk: 765
+    def: 415
+    hp: 1690
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 416
+    atk: 766
+    def: 416
+    hp: 1696
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 417
+    atk: 767
+    def: 417
+    hp: 1702
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 418
+    atk: 768
+    def: 418
+    hp: 1708
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 419
+    atk: 769
+    def: 419
+    hp: 1714
+    criRate: 0.9
+    criDmg: 3.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 420
+    atk: 770
+    def: 420
+    hp: 1720
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 421
+    atk: 771
+    def: 421
+    hp: 1726
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 422
+    atk: 772
+    def: 422
+    hp: 1732
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 423
+    atk: 773
+    def: 423
+    hp: 1738
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 424
+    atk: 774
+    def: 424
+    hp: 1744
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 425
+    atk: 775
+    def: 425
+    hp: 1750
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 426
+    atk: 776
+    def: 426
+    hp: 1756
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 427
+    atk: 777
+    def: 427
+    hp: 1762
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 428
+    atk: 778
+    def: 428
+    hp: 1768
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 429
+    atk: 779
+    def: 429
+    hp: 1774
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 430
+    atk: 780
+    def: 430
+    hp: 1780
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 431
+    atk: 781
+    def: 431
+    hp: 1786
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 432
+    atk: 782
+    def: 432
+    hp: 1792
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 433
+    atk: 783
+    def: 433
+    hp: 1798
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 434
+    atk: 784
+    def: 434
+    hp: 1804
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 435
+    atk: 785
+    def: 435
+    hp: 1810
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 436
+    atk: 786
+    def: 436
+    hp: 1816
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 437
+    atk: 787
+    def: 437
+    hp: 1822
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 438
+    atk: 788
+    def: 438
+    hp: 1828
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 439
+    atk: 789
+    def: 439
+    hp: 1834
+    criRate: 0.9
+    criDmg: 3.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 440
+    atk: 790
+    def: 440
+    hp: 1840
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 441
+    atk: 791
+    def: 441
+    hp: 1846
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 442
+    atk: 792
+    def: 442
+    hp: 1852
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 443
+    atk: 793
+    def: 443
+    hp: 1858
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 444
+    atk: 794
+    def: 444
+    hp: 1864
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 445
+    atk: 795
+    def: 445
+    hp: 1870
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 446
+    atk: 796
+    def: 446
+    hp: 1876
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 447
+    atk: 797
+    def: 447
+    hp: 1882
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 448
+    atk: 798
+    def: 448
+    hp: 1888
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 449
+    atk: 799
+    def: 449
+    hp: 1894
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 450
+    atk: 800
+    def: 450
+    hp: 1900
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 451
+    atk: 801
+    def: 451
+    hp: 1906
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 452
+    atk: 802
+    def: 452
+    hp: 1912
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 453
+    atk: 803
+    def: 453
+    hp: 1918
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 454
+    atk: 804
+    def: 454
+    hp: 1924
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 455
+    atk: 805
+    def: 455
+    hp: 1930
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 456
+    atk: 806
+    def: 456
+    hp: 1936
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 457
+    atk: 807
+    def: 457
+    hp: 1942
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 458
+    atk: 808
+    def: 458
+    hp: 1948
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 459
+    atk: 809
+    def: 459
+    hp: 1954
+    criRate: 0.9
+    criDmg: 3.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 460
+    atk: 810
+    def: 460
+    hp: 1960
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 461
+    atk: 811
+    def: 461
+    hp: 1966
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 462
+    atk: 812
+    def: 462
+    hp: 1972
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 463
+    atk: 813
+    def: 463
+    hp: 1978
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 464
+    atk: 814
+    def: 464
+    hp: 1984
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 465
+    atk: 815
+    def: 465
+    hp: 1990
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 466
+    atk: 816
+    def: 466
+    hp: 1996
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 467
+    atk: 817
+    def: 467
+    hp: 2002
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 468
+    atk: 818
+    def: 468
+    hp: 2009
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 469
+    atk: 819
+    def: 469
+    hp: 2016
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 470
+    atk: 820
+    def: 470
+    hp: 2023
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 471
+    atk: 821
+    def: 471
+    hp: 2030
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 472
+    atk: 822
+    def: 472
+    hp: 2037
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 473
+    atk: 823
+    def: 473
+    hp: 2044
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 474
+    atk: 824
+    def: 474
+    hp: 2051
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 475
+    atk: 825
+    def: 475
+    hp: 2058
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 476
+    atk: 826
+    def: 476
+    hp: 2065
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 477
+    atk: 827
+    def: 477
+    hp: 2072
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 478
+    atk: 828
+    def: 478
+    hp: 2079
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 479
+    atk: 829
+    def: 479
+    hp: 2086
+    criRate: 0.9
+    criDmg: 4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 480
+    atk: 830
+    def: 480
+    hp: 2093
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 481
+    atk: 831
+    def: 481
+    hp: 2100
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 482
+    atk: 832
+    def: 482
+    hp: 2107
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 483
+    atk: 833
+    def: 483
+    hp: 2114
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 484
+    atk: 834
+    def: 484
+    hp: 2121
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 485
+    atk: 835
+    def: 485
+    hp: 2128
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 486
+    atk: 836
+    def: 486
+    hp: 2135
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 487
+    atk: 837
+    def: 487
+    hp: 2142
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 488
+    atk: 838
+    def: 488
+    hp: 2149
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 489
+    atk: 839
+    def: 489
+    hp: 2156
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 490
+    atk: 840
+    def: 490
+    hp: 2163
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 491
+    atk: 841
+    def: 491
+    hp: 2170
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 492
+    atk: 842
+    def: 492
+    hp: 2177
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 493
+    atk: 843
+    def: 493
+    hp: 2184
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 494
+    atk: 844
+    def: 494
+    hp: 2191
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 495
+    atk: 845
+    def: 495
+    hp: 2198
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 496
+    atk: 846
+    def: 496
+    hp: 2205
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 497
+    atk: 847
+    def: 497
+    hp: 2212
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 498
+    atk: 848
+    def: 498
+    hp: 2219
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 499
+    atk: 849
+    def: 499
+    hp: 2226
+    criRate: 0.9
+    criDmg: 4.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 500
+    atk: 850
+    def: 500
+    hp: 2233
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 501
+    atk: 851
+    def: 501
+    hp: 2240
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 502
+    atk: 852
+    def: 502
+    hp: 2247
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 503
+    atk: 853
+    def: 503
+    hp: 2254
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 504
+    atk: 854
+    def: 504
+    hp: 2261
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 505
+    atk: 855
+    def: 505
+    hp: 2268
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 506
+    atk: 856
+    def: 506
+    hp: 2275
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 507
+    atk: 857
+    def: 507
+    hp: 2282
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 508
+    atk: 858
+    def: 508
+    hp: 2289
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 509
+    atk: 859
+    def: 509
+    hp: 2296
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 510
+    atk: 860
+    def: 510
+    hp: 2303
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 511
+    atk: 861
+    def: 511
+    hp: 2310
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 512
+    atk: 862
+    def: 512
+    hp: 2317
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 513
+    atk: 863
+    def: 513
+    hp: 2324
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 514
+    atk: 864
+    def: 514
+    hp: 2331
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 515
+    atk: 865
+    def: 515
+    hp: 2338
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 516
+    atk: 866
+    def: 516
+    hp: 2345
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 517
+    atk: 867
+    def: 517
+    hp: 2352
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 518
+    atk: 868
+    def: 518
+    hp: 2359
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 519
+    atk: 869
+    def: 519
+    hp: 2366
+    criRate: 1
+    criDmg: 4.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 520
+    atk: 870
+    def: 520
+    hp: 2373
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 521
+    atk: 871
+    def: 521
+    hp: 2380
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 522
+    atk: 872
+    def: 522
+    hp: 2387
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 523
+    atk: 873
+    def: 523
+    hp: 2394
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 524
+    atk: 874
+    def: 524
+    hp: 2401
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 525
+    atk: 875
+    def: 525
+    hp: 2408
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 526
+    atk: 876
+    def: 526
+    hp: 2415
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 527
+    atk: 877
+    def: 527
+    hp: 2422
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 528
+    atk: 878
+    def: 528
+    hp: 2429
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 529
+    atk: 879
+    def: 529
+    hp: 2436
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 530
+    atk: 880
+    def: 530
+    hp: 2443
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 531
+    atk: 881
+    def: 531
+    hp: 2450
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 532
+    atk: 882
+    def: 532
+    hp: 2457
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 533
+    atk: 883
+    def: 533
+    hp: 2464
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 534
+    atk: 884
+    def: 534
+    hp: 2471
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 535
+    atk: 885
+    def: 535
+    hp: 2478
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 536
+    atk: 886
+    def: 536
+    hp: 2485
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 537
+    atk: 887
+    def: 537
+    hp: 2492
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 538
+    atk: 888
+    def: 538
+    hp: 2499
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 539
+    atk: 889
+    def: 539
+    hp: 2506
+    criRate: 1
+    criDmg: 4.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 540
+    atk: 890
+    def: 540
+    hp: 2513
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 541
+    atk: 891
+    def: 541
+    hp: 2520
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 542
+    atk: 892
+    def: 542
+    hp: 2527
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 543
+    atk: 893
+    def: 543
+    hp: 2534
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 544
+    atk: 894
+    def: 544
+    hp: 2541
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 545
+    atk: 895
+    def: 545
+    hp: 2548
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 546
+    atk: 896
+    def: 546
+    hp: 2555
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 547
+    atk: 897
+    def: 547
+    hp: 2562
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 548
+    atk: 898
+    def: 548
+    hp: 2569
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 549
+    atk: 899
+    def: 549
+    hp: 2576
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 550
+    atk: 900
+    def: 550
+    hp: 2583
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 551
+    atk: 901
+    def: 551
+    hp: 2590
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 552
+    atk: 902
+    def: 552
+    hp: 2597
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 553
+    atk: 903
+    def: 553
+    hp: 2604
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 554
+    atk: 904
+    def: 554
+    hp: 2611
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 555
+    atk: 905
+    def: 555
+    hp: 2618
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 556
+    atk: 906
+    def: 556
+    hp: 2625
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 557
+    atk: 907
+    def: 557
+    hp: 2632
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 558
+    atk: 908
+    def: 558
+    hp: 2639
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 559
+    atk: 909
+    def: 559
+    hp: 2646
+    criRate: 1
+    criDmg: 4.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 560
+    atk: 910
+    def: 560
+    hp: 2653
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 561
+    atk: 911
+    def: 561
+    hp: 2660
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 562
+    atk: 912
+    def: 562
+    hp: 2667
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 563
+    atk: 913
+    def: 563
+    hp: 2674
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 564
+    atk: 914
+    def: 564
+    hp: 2681
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 565
+    atk: 915
+    def: 565
+    hp: 2688
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 566
+    atk: 916
+    def: 566
+    hp: 2695
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 567
+    atk: 917
+    def: 567
+    hp: 2702
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 568
+    atk: 918
+    def: 568
+    hp: 2709
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 569
+    atk: 919
+    def: 569
+    hp: 2716
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 570
+    atk: 920
+    def: 570
+    hp: 2723
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 571
+    atk: 921
+    def: 571
+    hp: 2730
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 572
+    atk: 922
+    def: 572
+    hp: 2737
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 573
+    atk: 923
+    def: 573
+    hp: 2744
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 574
+    atk: 924
+    def: 574
+    hp: 2751
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 575
+    atk: 925
+    def: 575
+    hp: 2758
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 576
+    atk: 926
+    def: 576
+    hp: 2765
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 577
+    atk: 927
+    def: 577
+    hp: 2772
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 578
+    atk: 928
+    def: 578
+    hp: 2779
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 579
+    atk: 929
+    def: 579
+    hp: 2786
+    criRate: 1
+    criDmg: 5
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 580
+    atk: 930
+    def: 580
+    hp: 2793
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 581
+    atk: 931
+    def: 581
+    hp: 2800
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 582
+    atk: 932
+    def: 582
+    hp: 2807
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 583
+    atk: 933
+    def: 583
+    hp: 2814
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 584
+    atk: 934
+    def: 584
+    hp: 2821
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 585
+    atk: 935
+    def: 585
+    hp: 2828
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 586
+    atk: 936
+    def: 586
+    hp: 2835
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 587
+    atk: 937
+    def: 587
+    hp: 2842
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 588
+    atk: 938
+    def: 588
+    hp: 2849
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 589
+    atk: 939
+    def: 589
+    hp: 2856
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 590
+    atk: 940
+    def: 590
+    hp: 2863
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 591
+    atk: 941
+    def: 591
+    hp: 2870
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 592
+    atk: 942
+    def: 592
+    hp: 2877
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 593
+    atk: 943
+    def: 593
+    hp: 2884
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 594
+    atk: 944
+    def: 594
+    hp: 2891
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 595
+    atk: 945
+    def: 595
+    hp: 2898
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 596
+    atk: 946
+    def: 596
+    hp: 2905
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 597
+    atk: 947
+    def: 597
+    hp: 2912
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 598
+    atk: 948
+    def: 598
+    hp: 2919
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 599
+    atk: 949
+    def: 599
+    hp: 2926
+    criRate: 1
+    criDmg: 5.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 600
+    atk: 950
+    def: 600
+    hp: 2933
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 601
+    atk: 951
+    def: 601
+    hp: 2940
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 602
+    atk: 952
+    def: 602
+    hp: 2947
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 603
+    atk: 953
+    def: 603
+    hp: 2954
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 604
+    atk: 954
+    def: 604
+    hp: 2961
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 605
+    atk: 955
+    def: 605
+    hp: 2968
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 606
+    atk: 956
+    def: 606
+    hp: 2975
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 607
+    atk: 957
+    def: 607
+    hp: 2982
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 608
+    atk: 958
+    def: 608
+    hp: 2989
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 609
+    atk: 959
+    def: 609
+    hp: 2996
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 610
+    atk: 960
+    def: 610
+    hp: 3003
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 611
+    atk: 961
+    def: 611
+    hp: 3011
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 612
+    atk: 962
+    def: 612
+    hp: 3019
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 613
+    atk: 963
+    def: 613
+    hp: 3027
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 614
+    atk: 964
+    def: 614
+    hp: 3035
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 615
+    atk: 965
+    def: 615
+    hp: 3043
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 616
+    atk: 966
+    def: 616
+    hp: 3051
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 617
+    atk: 967
+    def: 617
+    hp: 3059
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 618
+    atk: 968
+    def: 618
+    hp: 3067
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 619
+    atk: 969
+    def: 619
+    hp: 3075
+    criRate: 1
+    criDmg: 5.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 620
+    atk: 970
+    def: 620
+    hp: 3083
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 621
+    atk: 971
+    def: 621
+    hp: 3091
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 622
+    atk: 972
+    def: 622
+    hp: 3099
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 623
+    atk: 973
+    def: 623
+    hp: 3107
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 624
+    atk: 974
+    def: 624
+    hp: 3115
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 625
+    atk: 975
+    def: 625
+    hp: 3123
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 626
+    atk: 976
+    def: 626
+    hp: 3131
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 627
+    atk: 977
+    def: 627
+    hp: 3139
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 628
+    atk: 978
+    def: 628
+    hp: 3147
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 629
+    atk: 979
+    def: 629
+    hp: 3155
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 630
+    atk: 980
+    def: 630
+    hp: 3163
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 631
+    atk: 981
+    def: 631
+    hp: 3171
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 632
+    atk: 982
+    def: 632
+    hp: 3179
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 633
+    atk: 983
+    def: 633
+    hp: 3187
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 634
+    atk: 984
+    def: 634
+    hp: 3195
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 635
+    atk: 985
+    def: 635
+    hp: 3203
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 636
+    atk: 986
+    def: 636
+    hp: 3211
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 637
+    atk: 987
+    def: 637
+    hp: 3219
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 638
+    atk: 988
+    def: 638
+    hp: 3227
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 639
+    atk: 989
+    def: 639
+    hp: 3235
+    criRate: 1
+    criDmg: 5.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 640
+    atk: 990
+    def: 640
+    hp: 3243
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 641
+    atk: 991
+    def: 641
+    hp: 3251
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 642
+    atk: 992
+    def: 642
+    hp: 3259
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 643
+    atk: 993
+    def: 643
+    hp: 3267
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 644
+    atk: 994
+    def: 644
+    hp: 3275
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 645
+    atk: 995
+    def: 645
+    hp: 3283
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 646
+    atk: 996
+    def: 646
+    hp: 3291
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 647
+    atk: 997
+    def: 647
+    hp: 3299
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 648
+    atk: 998
+    def: 648
+    hp: 3307
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 649
+    atk: 999
+    def: 649
+    hp: 3315
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 650
+    atk: 1000
+    def: 650
+    hp: 3323
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 651
+    atk: 1001
+    def: 651
+    hp: 3331
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 652
+    atk: 1002
+    def: 652
+    hp: 3339
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 653
+    atk: 1003
+    def: 653
+    hp: 3347
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 654
+    atk: 1004
+    def: 654
+    hp: 3355
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 655
+    atk: 1005
+    def: 655
+    hp: 3363
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 656
+    atk: 1006
+    def: 656
+    hp: 3371
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 657
+    atk: 1007
+    def: 657
+    hp: 3379
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 658
+    atk: 1008
+    def: 658
+    hp: 3387
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 659
+    atk: 1009
+    def: 659
+    hp: 3395
+    criRate: 1
+    criDmg: 5.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 660
+    atk: 1010
+    def: 660
+    hp: 3403
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 661
+    atk: 1011
+    def: 661
+    hp: 3411
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 662
+    atk: 1012
+    def: 662
+    hp: 3419
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 663
+    atk: 1013
+    def: 663
+    hp: 3427
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 664
+    atk: 1014
+    def: 664
+    hp: 3435
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 665
+    atk: 1015
+    def: 665
+    hp: 3443
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 666
+    atk: 1016
+    def: 666
+    hp: 3451
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 667
+    atk: 1017
+    def: 667
+    hp: 3459
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 668
+    atk: 1018
+    def: 668
+    hp: 3467
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 669
+    atk: 1019
+    def: 669
+    hp: 3475
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 670
+    atk: 1020
+    def: 670
+    hp: 3483
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 671
+    atk: 1021
+    def: 671
+    hp: 3491
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 672
+    atk: 1022
+    def: 672
+    hp: 3499
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 673
+    atk: 1023
+    def: 673
+    hp: 3507
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 674
+    atk: 1024
+    def: 674
+    hp: 3515
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 675
+    atk: 1025
+    def: 675
+    hp: 3523
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 676
+    atk: 1026
+    def: 676
+    hp: 3531
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 677
+    atk: 1027
+    def: 677
+    hp: 3539
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 678
+    atk: 1028
+    def: 678
+    hp: 3547
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 679
+    atk: 1029
+    def: 679
+    hp: 3555
+    criRate: 1
+    criDmg: 6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 680
+    atk: 1030
+    def: 680
+    hp: 3563
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 681
+    atk: 1031
+    def: 681
+    hp: 3571
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 682
+    atk: 1032
+    def: 682
+    hp: 3579
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 683
+    atk: 1033
+    def: 683
+    hp: 3587
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 684
+    atk: 1034
+    def: 684
+    hp: 3595
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 685
+    atk: 1035
+    def: 685
+    hp: 3603
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 686
+    atk: 1036
+    def: 686
+    hp: 3611
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 687
+    atk: 1037
+    def: 687
+    hp: 3619
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 688
+    atk: 1038
+    def: 688
+    hp: 3627
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 689
+    atk: 1039
+    def: 689
+    hp: 3635
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 690
+    atk: 1040
+    def: 690
+    hp: 3643
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 691
+    atk: 1041
+    def: 691
+    hp: 3651
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 692
+    atk: 1042
+    def: 692
+    hp: 3659
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 693
+    atk: 1043
+    def: 693
+    hp: 3667
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 694
+    atk: 1044
+    def: 694
+    hp: 3675
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 695
+    atk: 1045
+    def: 695
+    hp: 3683
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 696
+    atk: 1046
+    def: 696
+    hp: 3691
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 697
+    atk: 1047
+    def: 697
+    hp: 3699
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 698
+    atk: 1048
+    def: 698
+    hp: 3707
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 699
+    atk: 1049
+    def: 699
+    hp: 3715
+    criRate: 1
+    criDmg: 6.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 700
+    atk: 1050
+    def: 700
+    hp: 3723
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 701
+    atk: 1051
+    def: 701
+    hp: 3731
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 702
+    atk: 1052
+    def: 702
+    hp: 3739
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 703
+    atk: 1053
+    def: 703
+    hp: 3747
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 704
+    atk: 1054
+    def: 704
+    hp: 3755
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 705
+    atk: 1055
+    def: 705
+    hp: 3763
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 706
+    atk: 1056
+    def: 706
+    hp: 3771
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 707
+    atk: 1057
+    def: 707
+    hp: 3779
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 708
+    atk: 1058
+    def: 708
+    hp: 3787
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 709
+    atk: 1059
+    def: 709
+    hp: 3795
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 710
+    atk: 1060
+    def: 710
+    hp: 3803
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 711
+    atk: 1061
+    def: 711
+    hp: 3811
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 712
+    atk: 1062
+    def: 712
+    hp: 3819
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 713
+    atk: 1063
+    def: 713
+    hp: 3827
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 714
+    atk: 1064
+    def: 714
+    hp: 3835
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 715
+    atk: 1065
+    def: 715
+    hp: 3843
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 716
+    atk: 1066
+    def: 716
+    hp: 3851
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 717
+    atk: 1067
+    def: 717
+    hp: 3859
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 718
+    atk: 1068
+    def: 718
+    hp: 3867
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 719
+    atk: 1069
+    def: 719
+    hp: 3875
+    criRate: 1
+    criDmg: 6.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 720
+    atk: 1070
+    def: 720
+    hp: 3883
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 721
+    atk: 1071
+    def: 721
+    hp: 3891
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 722
+    atk: 1072
+    def: 722
+    hp: 3899
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 723
+    atk: 1073
+    def: 723
+    hp: 3907
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 724
+    atk: 1074
+    def: 724
+    hp: 3915
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 725
+    atk: 1075
+    def: 725
+    hp: 3923
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 726
+    atk: 1076
+    def: 726
+    hp: 3931
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 727
+    atk: 1077
+    def: 727
+    hp: 3939
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 728
+    atk: 1078
+    def: 728
+    hp: 3947
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 729
+    atk: 1079
+    def: 729
+    hp: 3955
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 730
+    atk: 1080
+    def: 730
+    hp: 3963
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 731
+    atk: 1081
+    def: 731
+    hp: 3971
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 732
+    atk: 1082
+    def: 732
+    hp: 3979
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 733
+    atk: 1083
+    def: 733
+    hp: 3987
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 734
+    atk: 1084
+    def: 734
+    hp: 3995
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 735
+    atk: 1085
+    def: 735
+    hp: 4003
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 736
+    atk: 1086
+    def: 736
+    hp: 4012
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 737
+    atk: 1087
+    def: 737
+    hp: 4021
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 738
+    atk: 1088
+    def: 738
+    hp: 4030
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 739
+    atk: 1089
+    def: 739
+    hp: 4039
+    criRate: 1
+    criDmg: 6.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 740
+    atk: 1090
+    def: 740
+    hp: 4048
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 741
+    atk: 1091
+    def: 741
+    hp: 4057
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 742
+    atk: 1092
+    def: 742
+    hp: 4066
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 743
+    atk: 1093
+    def: 743
+    hp: 4075
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 744
+    atk: 1094
+    def: 744
+    hp: 4084
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 745
+    atk: 1095
+    def: 745
+    hp: 4093
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 746
+    atk: 1096
+    def: 746
+    hp: 4102
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 747
+    atk: 1097
+    def: 747
+    hp: 4111
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 748
+    atk: 1098
+    def: 748
+    hp: 4120
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 749
+    atk: 1099
+    def: 749
+    hp: 4129
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 750
+    atk: 1100
+    def: 750
+    hp: 4138
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 751
+    atk: 1101
+    def: 751
+    hp: 4147
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 752
+    atk: 1102
+    def: 752
+    hp: 4156
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 753
+    atk: 1103
+    def: 753
+    hp: 4165
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 754
+    atk: 1104
+    def: 754
+    hp: 4174
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 755
+    atk: 1105
+    def: 755
+    hp: 4183
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 756
+    atk: 1106
+    def: 756
+    hp: 4192
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 757
+    atk: 1107
+    def: 757
+    hp: 4201
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 758
+    atk: 1108
+    def: 758
+    hp: 4210
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 759
+    atk: 1109
+    def: 759
+    hp: 4219
+    criRate: 1
+    criDmg: 6.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 760
+    atk: 1110
+    def: 760
+    hp: 4228
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 761
+    atk: 1111
+    def: 761
+    hp: 4237
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 762
+    atk: 1112
+    def: 762
+    hp: 4246
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 763
+    atk: 1113
+    def: 763
+    hp: 4255
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 764
+    atk: 1114
+    def: 764
+    hp: 4264
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 765
+    atk: 1115
+    def: 765
+    hp: 4273
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 766
+    atk: 1116
+    def: 766
+    hp: 4282
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 767
+    atk: 1117
+    def: 767
+    hp: 4291
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 768
+    atk: 1118
+    def: 768
+    hp: 4300
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 769
+    atk: 1119
+    def: 769
+    hp: 4309
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 770
+    atk: 1120
+    def: 770
+    hp: 4318
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 771
+    atk: 1121
+    def: 771
+    hp: 4327
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 772
+    atk: 1122
+    def: 772
+    hp: 4336
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 773
+    atk: 1123
+    def: 773
+    hp: 4345
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 774
+    atk: 1124
+    def: 774
+    hp: 4354
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 775
+    atk: 1125
+    def: 775
+    hp: 4363
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 776
+    atk: 1126
+    def: 776
+    hp: 4372
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 777
+    atk: 1127
+    def: 777
+    hp: 4381
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 778
+    atk: 1128
+    def: 778
+    hp: 4390
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 779
+    atk: 1129
+    def: 779
+    hp: 4399
+    criRate: 1
+    criDmg: 7
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 780
+    atk: 1130
+    def: 780
+    hp: 4408
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 781
+    atk: 1131
+    def: 781
+    hp: 4417
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 782
+    atk: 1132
+    def: 782
+    hp: 4426
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 783
+    atk: 1133
+    def: 783
+    hp: 4435
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 784
+    atk: 1134
+    def: 784
+    hp: 4444
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 785
+    atk: 1135
+    def: 785
+    hp: 4453
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 786
+    atk: 1136
+    def: 786
+    hp: 4462
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 787
+    atk: 1137
+    def: 787
+    hp: 4471
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 788
+    atk: 1138
+    def: 788
+    hp: 4480
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 789
+    atk: 1139
+    def: 789
+    hp: 4489
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 790
+    atk: 1140
+    def: 790
+    hp: 4498
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 791
+    atk: 1141
+    def: 791
+    hp: 4507
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 792
+    atk: 1142
+    def: 792
+    hp: 4516
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 793
+    atk: 1143
+    def: 793
+    hp: 4525
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 794
+    atk: 1144
+    def: 794
+    hp: 4534
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 795
+    atk: 1145
+    def: 795
+    hp: 4543
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 796
+    atk: 1146
+    def: 796
+    hp: 4552
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 797
+    atk: 1147
+    def: 797
+    hp: 4561
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 798
+    atk: 1148
+    def: 798
+    hp: 4570
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 799
+    atk: 1149
+    def: 799
+    hp: 4579
+    criRate: 1
+    criDmg: 7.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 800
+    atk: 1150
+    def: 800
+    hp: 4588
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 801
+    atk: 1151
+    def: 801
+    hp: 4597
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 802
+    atk: 1152
+    def: 802
+    hp: 4606
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 803
+    atk: 1153
+    def: 803
+    hp: 4615
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 804
+    atk: 1154
+    def: 804
+    hp: 4624
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 805
+    atk: 1155
+    def: 805
+    hp: 4633
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 806
+    atk: 1156
+    def: 806
+    hp: 4642
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 807
+    atk: 1157
+    def: 807
+    hp: 4651
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 808
+    atk: 1158
+    def: 808
+    hp: 4660
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 809
+    atk: 1159
+    def: 809
+    hp: 4669
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 810
+    atk: 1160
+    def: 810
+    hp: 4678
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 811
+    atk: 1161
+    def: 811
+    hp: 4687
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 812
+    atk: 1162
+    def: 812
+    hp: 4696
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 813
+    atk: 1163
+    def: 813
+    hp: 4705
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 814
+    atk: 1164
+    def: 814
+    hp: 4714
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 815
+    atk: 1165
+    def: 815
+    hp: 4723
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 816
+    atk: 1166
+    def: 816
+    hp: 4732
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 817
+    atk: 1167
+    def: 817
+    hp: 4741
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 818
+    atk: 1168
+    def: 818
+    hp: 4750
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 819
+    atk: 1169
+    def: 819
+    hp: 4759
+    criRate: 1
+    criDmg: 7.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 820
+    atk: 1170
+    def: 820
+    hp: 4768
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 821
+    atk: 1171
+    def: 821
+    hp: 4777
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 822
+    atk: 1172
+    def: 822
+    hp: 4786
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 823
+    atk: 1173
+    def: 823
+    hp: 4795
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 824
+    atk: 1174
+    def: 824
+    hp: 4804
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 825
+    atk: 1175
+    def: 825
+    hp: 4813
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 826
+    atk: 1176
+    def: 826
+    hp: 4822
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 827
+    atk: 1177
+    def: 827
+    hp: 4831
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 828
+    atk: 1178
+    def: 828
+    hp: 4840
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 829
+    atk: 1179
+    def: 829
+    hp: 4849
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 830
+    atk: 1180
+    def: 830
+    hp: 4858
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 831
+    atk: 1181
+    def: 831
+    hp: 4867
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 832
+    atk: 1182
+    def: 832
+    hp: 4876
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 833
+    atk: 1183
+    def: 833
+    hp: 4885
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 834
+    atk: 1184
+    def: 834
+    hp: 4894
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 835
+    atk: 1185
+    def: 835
+    hp: 4903
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 836
+    atk: 1186
+    def: 836
+    hp: 4912
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 837
+    atk: 1187
+    def: 837
+    hp: 4921
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 838
+    atk: 1188
+    def: 838
+    hp: 4930
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 839
+    atk: 1189
+    def: 839
+    hp: 4939
+    criRate: 1
+    criDmg: 7.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 840
+    atk: 1190
+    def: 840
+    hp: 4948
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 841
+    atk: 1191
+    def: 841
+    hp: 4957
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 842
+    atk: 1192
+    def: 842
+    hp: 4966
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 843
+    atk: 1193
+    def: 843
+    hp: 4975
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 844
+    atk: 1194
+    def: 844
+    hp: 4984
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 845
+    atk: 1195
+    def: 845
+    hp: 4993
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 846
+    atk: 1196
+    def: 846
+    hp: 5002
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 847
+    atk: 1197
+    def: 847
+    hp: 5012
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 848
+    atk: 1198
+    def: 848
+    hp: 5022
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 849
+    atk: 1199
+    def: 849
+    hp: 5032
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 850
+    atk: 1200
+    def: 850
+    hp: 5042
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 851
+    atk: 1201
+    def: 851
+    hp: 5052
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 852
+    atk: 1202
+    def: 852
+    hp: 5062
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 853
+    atk: 1203
+    def: 853
+    hp: 5072
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 854
+    atk: 1204
+    def: 854
+    hp: 5082
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 855
+    atk: 1205
+    def: 855
+    hp: 5092
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 856
+    atk: 1206
+    def: 856
+    hp: 5102
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 857
+    atk: 1207
+    def: 857
+    hp: 5112
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 858
+    atk: 1208
+    def: 858
+    hp: 5122
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 859
+    atk: 1209
+    def: 859
+    hp: 5132
+    criRate: 1
+    criDmg: 7.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 860
+    atk: 1210
+    def: 860
+    hp: 5142
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 861
+    atk: 1211
+    def: 861
+    hp: 5152
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 862
+    atk: 1212
+    def: 862
+    hp: 5162
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 863
+    atk: 1213
+    def: 863
+    hp: 5172
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 864
+    atk: 1214
+    def: 864
+    hp: 5182
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 865
+    atk: 1215
+    def: 865
+    hp: 5192
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 866
+    atk: 1216
+    def: 866
+    hp: 5202
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 867
+    atk: 1217
+    def: 867
+    hp: 5212
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 868
+    atk: 1218
+    def: 868
+    hp: 5222
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 869
+    atk: 1219
+    def: 869
+    hp: 5232
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 870
+    atk: 1220
+    def: 870
+    hp: 5242
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 871
+    atk: 1221
+    def: 871
+    hp: 5252
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 872
+    atk: 1222
+    def: 872
+    hp: 5262
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 873
+    atk: 1223
+    def: 873
+    hp: 5272
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 874
+    atk: 1224
+    def: 874
+    hp: 5282
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 875
+    atk: 1225
+    def: 875
+    hp: 5292
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 876
+    atk: 1226
+    def: 876
+    hp: 5302
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 877
+    atk: 1227
+    def: 877
+    hp: 5312
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 878
+    atk: 1228
+    def: 878
+    hp: 5322
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 879
+    atk: 1229
+    def: 879
+    hp: 5332
+    criRate: 1
+    criDmg: 8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 880
+    atk: 1230
+    def: 880
+    hp: 5342
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 881
+    atk: 1231
+    def: 881
+    hp: 5352
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 882
+    atk: 1232
+    def: 882
+    hp: 5362
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 883
+    atk: 1233
+    def: 883
+    hp: 5372
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 884
+    atk: 1234
+    def: 884
+    hp: 5382
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 885
+    atk: 1235
+    def: 885
+    hp: 5392
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 886
+    atk: 1236
+    def: 886
+    hp: 5402
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 887
+    atk: 1237
+    def: 887
+    hp: 5412
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 888
+    atk: 1238
+    def: 888
+    hp: 5422
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 889
+    atk: 1239
+    def: 889
+    hp: 5432
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 890
+    atk: 1240
+    def: 890
+    hp: 5442
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 891
+    atk: 1241
+    def: 891
+    hp: 5452
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 892
+    atk: 1242
+    def: 892
+    hp: 5462
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 893
+    atk: 1243
+    def: 893
+    hp: 5472
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 894
+    atk: 1244
+    def: 894
+    hp: 5482
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 895
+    atk: 1245
+    def: 895
+    hp: 5492
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 896
+    atk: 1246
+    def: 896
+    hp: 5502
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 897
+    atk: 1247
+    def: 897
+    hp: 5512
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 898
+    atk: 1248
+    def: 898
+    hp: 5522
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 899
+    atk: 1249
+    def: 899
+    hp: 5532
+    criRate: 1
+    criDmg: 8.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 900
+    atk: 1250
+    def: 900
+    hp: 5542
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 901
+    atk: 1251
+    def: 901
+    hp: 5552
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 902
+    atk: 1252
+    def: 902
+    hp: 5562
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 903
+    atk: 1253
+    def: 903
+    hp: 5572
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 904
+    atk: 1254
+    def: 904
+    hp: 5582
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 905
+    atk: 1255
+    def: 905
+    hp: 5592
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 906
+    atk: 1256
+    def: 906
+    hp: 5602
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 907
+    atk: 1257
+    def: 907
+    hp: 5612
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 908
+    atk: 1258
+    def: 908
+    hp: 5622
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 909
+    atk: 1259
+    def: 909
+    hp: 5632
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 910
+    atk: 1260
+    def: 910
+    hp: 5642
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 911
+    atk: 1261
+    def: 911
+    hp: 5652
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 912
+    atk: 1262
+    def: 912
+    hp: 5662
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 913
+    atk: 1263
+    def: 913
+    hp: 5672
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 914
+    atk: 1264
+    def: 914
+    hp: 5682
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 915
+    atk: 1265
+    def: 915
+    hp: 5692
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 916
+    atk: 1266
+    def: 916
+    hp: 5702
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 917
+    atk: 1267
+    def: 917
+    hp: 5712
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 918
+    atk: 1268
+    def: 918
+    hp: 5722
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 919
+    atk: 1269
+    def: 919
+    hp: 5732
+    criRate: 1
+    criDmg: 8.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 920
+    atk: 1270
+    def: 920
+    hp: 5742
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 921
+    atk: 1271
+    def: 921
+    hp: 5752
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 922
+    atk: 1272
+    def: 922
+    hp: 5762
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 923
+    atk: 1273
+    def: 923
+    hp: 5772
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 924
+    atk: 1274
+    def: 924
+    hp: 5782
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 925
+    atk: 1275
+    def: 925
+    hp: 5792
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 926
+    atk: 1276
+    def: 926
+    hp: 5802
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 927
+    atk: 1277
+    def: 927
+    hp: 5812
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 928
+    atk: 1278
+    def: 928
+    hp: 5822
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 929
+    atk: 1279
+    def: 929
+    hp: 5832
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 930
+    atk: 1280
+    def: 930
+    hp: 5842
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 931
+    atk: 1281
+    def: 931
+    hp: 5852
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 932
+    atk: 1282
+    def: 932
+    hp: 5862
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 933
+    atk: 1283
+    def: 933
+    hp: 5872
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 934
+    atk: 1284
+    def: 934
+    hp: 5882
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 935
+    atk: 1285
+    def: 935
+    hp: 5892
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 936
+    atk: 1286
+    def: 936
+    hp: 5902
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 937
+    atk: 1287
+    def: 937
+    hp: 5912
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 938
+    atk: 1288
+    def: 938
+    hp: 5922
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 939
+    atk: 1289
+    def: 939
+    hp: 5932
+    criRate: 1
+    criDmg: 8.6
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 940
+    atk: 1290
+    def: 940
+    hp: 5942
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 941
+    atk: 1291
+    def: 941
+    hp: 5952
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 942
+    atk: 1292
+    def: 942
+    hp: 5962
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 943
+    atk: 1293
+    def: 943
+    hp: 5972
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 944
+    atk: 1294
+    def: 944
+    hp: 5982
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 945
+    atk: 1295
+    def: 945
+    hp: 5992
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 946
+    atk: 1296
+    def: 946
+    hp: 6002
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 947
+    atk: 1297
+    def: 947
+    hp: 6013
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 948
+    atk: 1298
+    def: 948
+    hp: 6024
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 949
+    atk: 1299
+    def: 949
+    hp: 6035
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 950
+    atk: 1300
+    def: 950
+    hp: 6046
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 951
+    atk: 1301
+    def: 951
+    hp: 6057
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 952
+    atk: 1302
+    def: 952
+    hp: 6068
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 953
+    atk: 1303
+    def: 953
+    hp: 6079
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 954
+    atk: 1304
+    def: 954
+    hp: 6090
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 955
+    atk: 1305
+    def: 955
+    hp: 6101
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 956
+    atk: 1306
+    def: 956
+    hp: 6112
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 957
+    atk: 1307
+    def: 957
+    hp: 6123
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 958
+    atk: 1308
+    def: 958
+    hp: 6134
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 959
+    atk: 1309
+    def: 959
+    hp: 6145
+    criRate: 1
+    criDmg: 8.8
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 960
+    atk: 1310
+    def: 960
+    hp: 6156
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 961
+    atk: 1311
+    def: 961
+    hp: 6167
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 962
+    atk: 1312
+    def: 962
+    hp: 6178
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 963
+    atk: 1313
+    def: 963
+    hp: 6189
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 964
+    atk: 1314
+    def: 964
+    hp: 6200
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 965
+    atk: 1315
+    def: 965
+    hp: 6211
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 966
+    atk: 1316
+    def: 966
+    hp: 6222
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 967
+    atk: 1317
+    def: 967
+    hp: 6233
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 968
+    atk: 1318
+    def: 968
+    hp: 6244
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 969
+    atk: 1319
+    def: 969
+    hp: 6255
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 970
+    atk: 1320
+    def: 970
+    hp: 6266
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 971
+    atk: 1321
+    def: 971
+    hp: 6277
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 972
+    atk: 1322
+    def: 972
+    hp: 6288
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 973
+    atk: 1323
+    def: 973
+    hp: 6299
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 974
+    atk: 1324
+    def: 974
+    hp: 6310
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 975
+    atk: 1325
+    def: 975
+    hp: 6321
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 976
+    atk: 1326
+    def: 976
+    hp: 6332
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 977
+    atk: 1327
+    def: 977
+    hp: 6343
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 978
+    atk: 1328
+    def: 978
+    hp: 6354
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 979
+    atk: 1329
+    def: 979
+    hp: 6365
+    criRate: 1
+    criDmg: 9
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 980
+    atk: 1330
+    def: 980
+    hp: 6376
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 981
+    atk: 1331
+    def: 981
+    hp: 6387
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 982
+    atk: 1332
+    def: 982
+    hp: 6398
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 983
+    atk: 1333
+    def: 983
+    hp: 6409
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 984
+    atk: 1334
+    def: 984
+    hp: 6420
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 985
+    atk: 1335
+    def: 985
+    hp: 6431
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 986
+    atk: 1336
+    def: 986
+    hp: 6442
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 987
+    atk: 1337
+    def: 987
+    hp: 6453
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 988
+    atk: 1338
+    def: 988
+    hp: 6464
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 989
+    atk: 1339
+    def: 989
+    hp: 6475
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 990
+    atk: 1340
+    def: 990
+    hp: 6486
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 991
+    atk: 1341
+    def: 991
+    hp: 6497
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 992
+    atk: 1342
+    def: 992
+    hp: 6508
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 993
+    atk: 1343
+    def: 993
+    hp: 6519
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 994
+    atk: 1344
+    def: 994
+    hp: 6530
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 995
+    atk: 1345
+    def: 995
+    hp: 6541
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 996
+    atk: 1346
+    def: 996
+    hp: 6552
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 997
+    atk: 1347
+    def: 997
+    hp: 6563
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 998
+    atk: 1348
+    def: 998
+    hp: 6574
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 999
+    atk: 1349
+    def: 999
+    hp: 6585
+    criRate: 1
+    criDmg: 9.2
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 1000
+    atk: 1350
+    def: 1000
+    hp: 6596
+    criRate: 1
+    criDmg: 9.4
+    rewardCoin: 150000
+    rewardExp: 25
+  - level: 1001
+    atk: -1
+    def: -1
+    hp: -1
+    criRate: 0
+    criDmg: 0
+    rewardCoin: -1
+    rewardExp: -1

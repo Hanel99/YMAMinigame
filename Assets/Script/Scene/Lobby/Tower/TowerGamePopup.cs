@@ -15,6 +15,7 @@ public class TowerGamePopup : PopupBase
     private bool isOnCombat = false;
 
     private PlayerData playerData;
+    private TowerBossLevelMetaData bossMetaData;
     private int floor;
 
 
@@ -54,8 +55,22 @@ public class TowerGamePopup : PopupBase
 
     private void UpdateUI()
     {
+        bossMetaData = GameResourceManager.instance.GetTowerBossLevelMetaData(floor);
+
+        if (bossMetaData == null || bossMetaData.atk < 0)
+        {
+            bossTitle.text = $"{floor} 층";
+            bossImage.sprite = null;
+            bossImage.gameObject.SetActive(false);
+            bossImage.transform.DOKill();
+
+            bossDesc.text = LocalizeManager.instance.GetString("Tower.game.Desc.empty");
+            return;
+        }
+
         int bossNumber = GetBossNumber(floor);
         bossTitle.text = $"{floor} 층\n{LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}")}";
+        bossImage.gameObject.SetActive(true);
         bossImage.sprite = GameResourceManager.instance.GetTowerBossImage(bossNumber, false, false);
         bossImage.SetNativeSize();
         bossImage.transform.DOKill();
@@ -93,8 +108,15 @@ public class TowerGamePopup : PopupBase
     {
         if (isOpenCloseAnimationActing || isOnCombat) return;
 
-        isOnCombat = true;
-        LobbyUIManager.instance.ShowPopup<TowerGameCombatPopup>();
+        if (bossMetaData == null || bossMetaData.atk < 0)
+        {
+            LobbyUIManager.instance.ShowCommonPopup("알림", LocalizeManager.instance.GetString("Tower.game.Desc.empty"), true, true, false, null, null);
+        }
+        else
+        {
+            isOnCombat = true;
+            LobbyUIManager.instance.ShowPopup<TowerGameCombatPopup>();
+        }
     }
 
 
@@ -116,14 +138,5 @@ public class TowerGamePopup : PopupBase
     {
         LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.InfinityTower");
     }
-
-
-
-
-
-
-
-
-
 
 }

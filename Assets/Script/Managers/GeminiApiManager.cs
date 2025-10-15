@@ -4,6 +4,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Threading.Tasks;
 
 public class GeminiApiManager : MonoBehaviour
 {
@@ -68,9 +69,6 @@ public class GeminiApiManager : MonoBehaviour
             else
             {
                 string responseJson = request.downloadHandler.text;
-                // HLLogger.Log(responseJson);
-
-
                 var response = JsonUtility.FromJson<GeminiResponse>(responseJson);
 
                 if (response.candidates != null && response.candidates.Length > 0)
@@ -86,6 +84,25 @@ public class GeminiApiManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public async UniTask<List<string>> SaveHintsPreload()
+    {
+        HLLogger.Log("@@@ GEMINI 힌트 프리로드 요청");
+
+        string answer = LocalizeManager.instance.GetRandomAIWordString();
+        var hints = await GetHintsForKeyword(answer);
+
+        if (hints == null || hints.Count == 0)
+        {
+            HLLogger.LogError("힌트를 불러오지 못했습니다.");
+            return null;
+        }
+
+        HLLogger.Log("@@@ GEMINI 힌트 프리로드 완료!");
+        SaveDataManager.instance.playerData.geminiHints2.Add(new StringListPair(answer, hints));
+        SaveDataManager.instance.SavePlayerData();
+        return hints;
     }
 
 

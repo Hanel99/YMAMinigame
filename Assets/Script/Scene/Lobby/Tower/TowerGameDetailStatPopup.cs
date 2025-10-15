@@ -65,12 +65,25 @@ public class TowerGameDetailStatPopup : PopupBase
         weaponAtk.text = $"+ {weaponMetaData.atk}";
         weaponCriDmg.text = $"+ x{(weaponMetaData.criDmg * 100).ToString("F1")}%";
 
-        bossAtk.text = bossMetaData.atk.ToString();
-        bossDef.text = bossMetaData.def.ToString();
-        bossHp.text = bossMetaData.hp.ToString();
-        bossCriRate.text = $"{(bossMetaData.criRate * 100).ToString("F1")}%";
-        bossCriDmg.text = $"x{((1 + bossMetaData.criDmg) * 100).ToString("F1")}%";
-        bossRewardCoin.text = bossMetaData.rewardCoin.ToString();
+        if (bossMetaData == null || bossMetaData.atk < 0)
+        {
+            bossName.text = "";
+            bossAtk.text = "";
+            bossDef.text = "";
+            bossHp.text = "";
+            bossCriRate.text = "";
+            bossCriDmg.text = "";
+            bossRewardCoin.text = "";
+        }
+        else
+        {
+            bossAtk.text = bossMetaData.atk.ToString();
+            bossDef.text = bossMetaData.def.ToString();
+            bossHp.text = bossMetaData.hp.ToString();
+            bossCriRate.text = $"{(bossMetaData.criRate * 100).ToString("F1")}%";
+            bossCriDmg.text = $"x{((1 + bossMetaData.criDmg) * 100).ToString("F1")}%";
+            bossRewardCoin.text = bossMetaData.rewardCoin.ToString();
+        }
     }
 
     private T GetValue<T>(TowerUserStatType type, int level)

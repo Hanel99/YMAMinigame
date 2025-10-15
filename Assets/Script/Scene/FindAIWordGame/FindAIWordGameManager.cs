@@ -65,18 +65,32 @@ public class FindAIWordGameManager : MonoBehaviour
         FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.WordGame);
 
-        // 랜덤 키워드 선택
-        currentKeyword = LocalizeManager.instance.GetRandomAIWordString();
-
-        HLLogger.Log("정답 키워드 선택됨 (숨김): " + currentKeyword);
-
         var textUpdateCts = new CancellationTokenSource();
         UpdateLoadingText(textUpdateCts.Token).Forget();
 
         try
         {
-            // Gemini로부터 힌트 받아오기
-            hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
+            if (SaveDataManager.instance.playerData.geminiHints2.Count > 0)
+            {
+                var gameHint = SaveDataManager.instance.playerData.geminiHints2[0];
+
+                hints = gameHint.value;
+                currentKeyword = gameHint.key;
+
+                SaveDataManager.instance.playerData.geminiHints2.Remove(gameHint);
+
+                HLLogger.Log("저장된 정답 : " + currentKeyword);
+                HLLogger.Log($"바로 불러온 힌트들:\n{string.Join("\n", hints)}");
+            }
+            else
+            {
+                // Gemini로부터 힌트 받아오기
+                currentKeyword = LocalizeManager.instance.GetRandomAIWordString();
+                HLLogger.Log("지금 선택된 정답 : " + currentKeyword);
+                hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
+                HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
+            }
+
             textUpdateCts.Cancel();
 
             if (hints == null || hints.Count == 0)
@@ -88,10 +102,11 @@ public class FindAIWordGameManager : MonoBehaviour
                 return;
             }
 
-            HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
-
             currentHintIndex = 0;
             ShowNextHint().Forget();
+
+            // 다음 데이터 미리 로딩
+            GeminiApiManager.instance.SaveHintsPreload().Forget();
         }
 
         catch (OperationCanceledException)

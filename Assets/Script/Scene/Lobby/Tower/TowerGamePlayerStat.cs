@@ -9,15 +9,14 @@ public class TowerGamePlayerStat : MonoBehaviour
     public Text requireCoinText;
     public Button enchantButton;
 
+
     private TowerUserStatType statType;
     private int statLevel;
-
-
+    private int requireCoin;
     public void UpdateUIData(TowerUserStatType type, int statLevel)
     {
         statType = type;
         this.statLevel = statLevel;
-
 
         nameText.text = LocalizeManager.instance.GetString($"Tower.StatType.{type}");
         this.levelText.text = $"Lv.{statLevel}";
@@ -29,25 +28,39 @@ public class TowerGamePlayerStat : MonoBehaviour
         else
             valueText.text = GetValue<int>(type).ToString();
 
-        requireCoinText.text = statLevel >= 100 ? "MAX" : GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel).ToString();
-        enchantButton.interactable = statLevel < 100 && SaveDataManager.instance.playerData.coin >= GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel);
+        requireCoin = GameResourceManager.instance.GetTowerUserLevelRequireCoin(type, statLevel);
+
+        requireCoinText.text = requireCoin <= 0 ? "MAX" : requireCoin.ToString();
+        enchantButton.interactable = requireCoin > 0 && SaveDataManager.instance.playerData.coin >= requireCoin;
     }
+
+    public void UpdateButtonInteractable()
+    {
+        enchantButton.interactable = requireCoin > 0 && SaveDataManager.instance.playerData.coin >= requireCoin;
+    }
+
 
     public void OnClickEnchant()
     {
-        if (statLevel >= 100 || SaveDataManager.instance.playerData.coin < GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel))
+        requireCoin = GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel);
+        if (requireCoin <= 0 || SaveDataManager.instance.playerData.coin < requireCoin)
             return;
 
-        SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statLevel), false);
+        SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel), false);
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);
 
-#if UNITY_EDITOR && DEV
         UpdateUIData(statType, statLevel);
         TowerGameWeaponEnchantPopup.instance.UpdateUI();
-#else
-        TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stat, $"Lv.{statLevel - 1}", $"-> Lv.{statLevel}", () => UpdateUIData(statType, statLevel));
-#endif
+        //TODO 강화 파티클
+
+
+        // #if UNITY_EDITOR && DEV
+        //         UpdateUIData(statType, statLevel);
+        //         TowerGameWeaponEnchantPopup.instance.UpdateUI();
+        // #else
+        //         TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(TowerGameResultType.stat, $"Lv.{statLevel - 1}", $"-> Lv.{statLevel}", () => UpdateUIData(statType, statLevel));
+        // #endif
     }
 
     private T GetValue<T>(TowerUserStatType type)
