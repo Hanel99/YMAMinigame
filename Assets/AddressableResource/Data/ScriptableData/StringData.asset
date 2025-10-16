@@ -2099,3 +2099,32 @@ MonoBehaviour:
     ko: "\uC774 \uCE35\uC5D0\uB294 \uC544\uBB34\uB3C4 \uC5C6\uC2B5\uB2C8\uB2E4."
     jp: 
     en: 
+  - key: playerNameSetting.Error0
+    ko: "\uC785\uB825\uB41C \uB0B4\uC6A9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error1
+    ko: "\uBCC0\uACBD\uB41C \uB0B4\uC6A9\uC774 \uC5C6\uC2B5\uB2C8\uB2E4."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error2
+    ko: "3\uAE00\uC790 \uC774\uC0C1 \uC785\uB825\uD558\uC138\uC694."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error3
+    ko: "12\uAE00\uC790 \uC774\uD558\uB85C \uC785\uB825\uD558\uC138\uC694."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error4
+    ko: "\uD2B9\uC218\uBB38\uC790\uC640 \uB744\uC5B4\uC4F0\uAE30\uB294 \uC785\uB825\uD558\uC2E4
+      \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error5
+    ko: "\uB744\uC5B4\uC4F0\uAE30\uB294 \uC785\uB825\uD558\uC2E4 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+    jp: 
+    en: 
+  - key: playerNameSetting.Error6
+    ko: "\uD2B9\uC218\uBB38\uC790\uB294 \uC785\uB825\uD558\uC2E4 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4."
+    jp: 
+    en: 

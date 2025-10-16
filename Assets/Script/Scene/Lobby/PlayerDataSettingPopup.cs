@@ -76,6 +76,17 @@ public class PlayerDataSettingPopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
+        var error = CheckValidation(inputName.text);
+        if (error != ValidationError.Success)
+        {
+            string msg = LocalizeManager.instance.GetString($"playerNameSetting.{error.ToString()}");
+
+            LobbyUIManager.instance.ShowCommonPopup("경고", msg, true, true, false, null, null);
+            HLLogger.Log($"@@@ Invalid Input : {error}");
+            return;
+        }
+
+
         SaveDataManager.instance.playerData.name = inputName.text;
         SaveDataManager.instance.playerData.master = (CardMaster)inputMaster.value;
         SaveDataManager.instance.playerData.languageType = (LanguageType)inputLanguage.value;
@@ -93,7 +104,7 @@ public class PlayerDataSettingPopup : PopupBase
     {
         Error0,     // 입력된 내용이 없습니다.
         Error1,     // 변경된 내용이 없습니다.
-        Error2,     // 너무 짧습니다.
+        Error2,     // 3글자 이상 입력하세요.
         Error3,     // 12글자 이하로 입력하세요.
         Error4,     // 특수문자와 띄어쓰기는 입력하실 수 없습니다.
         Error5,     // 띄어쓰기는 입력하실 수 없습니다.
@@ -101,6 +112,7 @@ public class PlayerDataSettingPopup : PopupBase
 
         Success,
     }
+
     public ValidationError CheckValidation(string value)
     {
         //HLLogger.Log($"value = [ {value} ]", LogColor.cyan);
@@ -113,9 +125,9 @@ public class PlayerDataSettingPopup : PopupBase
         if (SaveDataManager.instance.playerData.name.Equals(value))
             return ValidationError.Error1;
 
-        //? ############ 입력 제한 - 4 ~ 24 byte (2 ~ 12자) ############
+        //? ############ 입력 제한 - 6 ~ 24 byte (3 ~ 12자) ############
         int bytecount = Encoding.Unicode.GetByteCount(value);
-        int minByte = 4, maxByte = 24;
+        int minByte = 6, maxByte = 24;
         if (bytecount < minByte)
             return ValidationError.Error2;
         else if (bytecount > maxByte)

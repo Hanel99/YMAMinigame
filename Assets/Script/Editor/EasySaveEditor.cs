@@ -28,6 +28,20 @@ public class EasySaveEditor : Editor
         HLLogger.Log("Remove ID PW Complete");
     }
 
+    [MenuItem("SaveDataEditor/SetPlayerLevel1")]
+    public static void SetPlayerLevel1()
+    {
+        if (ES3.KeyExists(StaticGameData.SAVE_PLAYER_DATA_KEY) == false)
+            HLLogger.Log("save date is null.");
+
+        PlayerData playerData = new PlayerData();
+        ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
+
+        playerData.level = 1;
+        ES3.Save(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
+        HLLogger.Log("Set Player Level to 1 Complete");
+    }
+
     [MenuItem("SaveDataEditor/ShowPlayerData")]
     public static void ShowPlayerData()
     {

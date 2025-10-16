@@ -125,6 +125,14 @@ public class PlayFabManager : MonoBehaviour
         var request = new GetUserDataRequest();
         PlayFabClientAPI.GetUserData(request, (result) =>
         {
+            if (result.Data.ContainsKey("useServerData"))
+            {
+                HLLogger.Log($"Get useServerData : {result.Data["useServerData"].Value}");
+                HLLogger.Log($"use serverData? : {result.Data["useServerData"].Value.Equals("True")}");
+
+                StaticGameData.useServerData = result.Data["useServerData"].Value.Equals("True");
+            }
+
             if (result.Data.ContainsKey("PlayerData"))
             {
                 var jsonData = result.Data["PlayerData"].Value;
@@ -224,13 +232,12 @@ public class PlayFabManager : MonoBehaviour
                 // { "playFabLoginPW", SaveDataManager.instance.playerData.playFabLoginPW },
 
                 { "serverDataVersion", SaveDataManager.instance.playerData.serverDataVersion },
+                { "useServerData", SaveDataManager.instance.playerData.useServerData.ToString() },
                 { "level", SaveDataManager.instance.playerData.level.ToString() },
                 { "exp", SaveDataManager.instance.playerData.exp.ToString() },
                 { "coin", SaveDataManager.instance.playerData.coin.ToString() },
-                { "mileage", SaveDataManager.instance.playerData.mileage.ToString() },
-                { "ownCardList", string.Join(",", SaveDataManager.instance.playerData.ownCardList) },
-                { "usingRedeemCode", string.Join(",", SaveDataManager.instance.playerData.usingRedeemCode) },
-
+                { "towerFloor", SaveDataManager.instance.playerData.towerFloor.ToString() },
+                { "wingTtoHighScore", SaveDataManager.instance.playerData.wingTtoHighScore.ToString() },
                 }
         };
 

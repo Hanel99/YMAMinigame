@@ -218,12 +218,21 @@ public class SaveDataManager : MonoBehaviour
         bool needLevelUp = false;
         _playerData.exp += amount;
 
+        if (_playerData.maxExp < 0)
+        {
+            //max level
+            _playerData.exp = 0;
+            if (isSave)
+                SavePlayerData();
+            return false;
+        }
+
         HLLogger.Log($"Add {amount} Player Exp -> {_playerData.exp}/{_playerData.maxExp}");
 
         if (_playerData.maxExp >= 0 && _playerData.exp >= _playerData.maxExp)
             isShowLevelUpPopup = needLevelUp = true;
 
-        while (needLevelUp)
+        while (needLevelUp && _playerData.maxExp >= 0)
         {
             _playerData.exp -= _playerData.maxExp;
             AddLevel();
@@ -240,6 +249,9 @@ public class SaveDataManager : MonoBehaviour
                 needLevelUp = _playerData.exp >= _playerData.maxExp;
             }
         }
+
+        if (_playerData.maxExp < 0)
+            _playerData.exp = 0;
 
         if (isSave)
             SavePlayerData();
@@ -435,13 +447,19 @@ public class SaveDataManager : MonoBehaviour
 
     public void SaveJsonPlayerData(string json)
     {
-        var playFabData = PlayerDataFromJson(json);
-
-        // 로컬과 서버의 mid가 일치하고, 로컬 데이터의 레벨 또는 exp가 더 높으면 로컬 데이터 유지
-        if (playFabData.mid == _playerData.mid &&
-            (_playerData.level > playFabData.level ||
-            (_playerData.level == playFabData.level && _playerData.exp > playFabData.exp)))
+        var serverData = PlayerDataFromJson(json);
+        if (StaticGameData.useServerData)
         {
+            HLLogger.Log("Force Use Server PlayerData");
+            _playerData = serverData;
+            SavePlayerData();
+            return;
+        }
+        else if (serverData.mid == _playerData.mid &&
+            (_playerData.level > serverData.level ||
+            (_playerData.level == serverData.level && _playerData.exp > serverData.exp)))
+        {
+            // 로컬과 서버의 mid가 일치하고, 로컬 데이터의 레벨 또는 exp가 더 높으면 로컬 데이터 유지
             // 로컬 데이터가 더 높으므로 아무것도 하지 않음(로컬 데이터 유지)
             HLLogger.Log("Use Local PlayerData");
         }
@@ -449,7 +467,7 @@ public class SaveDataManager : MonoBehaviour
         {
             // 그 외의 경우 playFabData를 적용
             HLLogger.Log("Use Server PlayFabData PlayerData");
-            _playerData = playFabData;
+            _playerData = serverData;
             SavePlayerData();
         }
     }

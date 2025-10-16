@@ -51,8 +51,16 @@ public class GameListView : MonoBehaviour
         }
 
 #if UNITY_EDITOR && DEV
-        if (Input.GetKeyDown(KeyCode.L))
-            LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
+        // if (Input.GetKeyDown(KeyCode.L))
+        // {
+        //     if (SaveDataManager.instance.AddExp(100, true))
+        //     {
+        //         LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
+        //     }
+        //     UpdateUserProfileProcess();
+        // }
+
+
 
         // if (Input.GetKeyDown(KeyCode.A))
         //     SoundManager.instance.PlaySFX(SFXType.BtnOK);
