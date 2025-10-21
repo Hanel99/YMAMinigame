@@ -91,6 +91,7 @@ public static class StaticGameData
     }
     // public static bool showDevTestText = false;
     public static int targetFrameRate = 60;
+    public static bool useServerSeed = false;
     public static int serverGameSeed = 0;
     public static bool useServerData = false;
 

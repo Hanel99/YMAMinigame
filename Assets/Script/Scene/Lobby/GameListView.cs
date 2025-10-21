@@ -99,6 +99,7 @@ public class GameListView : MonoBehaviour
         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
         Application.targetFrameRate = StaticGameData.targetFrameRate;
         SaveDataManager.instance.RemoveNotUseCardList();
+        StaticGameData.useServerSeed = false;
 
         if (SaveDataManager.instance.playerData.geminiHints2 != null && SaveDataManager.instance.playerData.geminiHints2.Count < 5)
         {

@@ -196,12 +196,13 @@ public enum TowerGameResultType
 
 public enum CubeState
 {
+    TooFast,
+    Fast,
     Perfect,
-    Great,
-    Good,
-    Bad,
-    Miss,
-    Idle,
+    Slow,
+    TooSlow,
+
+    Wait,
     Stop,
 }
 

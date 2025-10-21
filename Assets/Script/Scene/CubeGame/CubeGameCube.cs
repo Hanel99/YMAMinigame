@@ -21,12 +21,12 @@ public class CubeGameCube : MonoBehaviour
 
 
     //private
-    private float idleTime = 1f;
-    private float goodTime = 1f;
-    private float greatTime = 1f;
+    private float waitTime = 1f;
+    private float tooFastTime = 1f;
+    private float fastTime = 1f;
     private float perfectTime = 1f;
-    private float badTime = 1f;
-    private float missTime = 1f;
+    private float slowTime = 1f;
+    private float tooSlowTime = 1f;
     private float barMoveTime = 0f;
     private CancellationTokenSource cts;
     private Sequence barSequence;
@@ -70,23 +70,23 @@ public class CubeGameCube : MonoBehaviour
     }
 
 
-    public void StartCube(float idle, float good, float great, float perfect, float bad, float miss)
+    public void StartCube(float wait, float tooFast, float fast, float perfect, float slow, float tooSlow)
     {
         // 이전 실행 중인 토큰 취소
         cts?.Cancel();
         cts?.Dispose();
         cts = new CancellationTokenSource();
 
-        idleTime = idle;
-        goodTime = good;
-        greatTime = great;
+        waitTime = wait;
+        tooFastTime = tooFast;
+        fastTime = fast;
         perfectTime = perfect;
-        badTime = bad;
-        missTime = miss;
+        slowTime = slow;
+        tooSlowTime = tooSlow;
 
-        barMoveTime = idleTime + goodTime + greatTime;
+        barMoveTime = tooFastTime + fastTime;
 
-        HLLogger.Log($"{name} - idle : {idle}, good : {good}, great : {great}, perfect : {perfect}, bad : {bad}, miss : {miss}");
+        HLLogger.Log($"{name} - wait : {wait}, tooFast : {tooFast}, fast : {fast}, perfect : {perfect}, slow : {slow}, tooSlow : {tooSlow}");
 
         RunStateMachine(cts.Token).Forget();
     }
@@ -105,7 +105,7 @@ public class CubeGameCube : MonoBehaviour
         guideBarU.gameObject.SetActive(false);
         guideBarD.gameObject.SetActive(false);
 
-        _state = CubeState.Idle;
+        _state = CubeState.Wait;
         ApplyColor(_state);
     }
 
@@ -124,16 +124,18 @@ public class CubeGameCube : MonoBehaviour
                 guideBarU.gameObject.SetActive(true);
                 guideBarD.gameObject.SetActive(true);
 
-                guideBarU.transform.localPosition = new Vector3(guideBarU.transform.localPosition.x, -75f, guideBarU.transform.localPosition.z);
-                guideBarD.transform.localPosition = new Vector3(guideBarD.transform.localPosition.x, 75f, guideBarD.transform.localPosition.z);
+                guideBarU.transform.localPosition = new Vector3(guideBarU.transform.localPosition.x, -100f, guideBarU.transform.localPosition.z);
+                guideBarD.transform.localPosition = new Vector3(guideBarD.transform.localPosition.x, 100f, guideBarD.transform.localPosition.z);
+
+                barSequence.AppendInterval(waitTime);
 
                 // L과 R이 좌우로 닫히는 연출
-                barSequence.Append(guideBarL.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(-75f))
-                        .Join(guideBarR.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(75f));
+                barSequence.Append(guideBarL.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(-100f))
+                        .Join(guideBarR.transform.DOLocalMoveX(0, barMoveTime).SetEase(Ease.InQuad).From(100f));
 
                 // L과 R 연출이 끝난 뒤 U와 D가 위아래로 움직이는 연출
-                barSequence.Append(guideBarU.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(-75f))
-                        .Join(guideBarD.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(75f));
+                barSequence.Append(guideBarU.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(-100f))
+                        .Join(guideBarD.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(100f));
 
                 barSequence.Play();
 #endif
@@ -155,12 +157,12 @@ public class CubeGameCube : MonoBehaviour
     {
         try
         {
-            await SetState(CubeState.Idle, idleTime, token);
-            await SetState(CubeState.Good, goodTime, token);
-            await SetState(CubeState.Great, greatTime, token);
+            await SetState(CubeState.Wait, waitTime, token);
+            await SetState(CubeState.TooFast, tooFastTime, token);
+            await SetState(CubeState.Fast, fastTime, token);
             await SetState(CubeState.Perfect, perfectTime, token);
-            await SetState(CubeState.Bad, badTime, token);
-            await SetState(CubeState.Miss, missTime, token);
+            await SetState(CubeState.Slow, slowTime, token);
+            await SetState(CubeState.TooSlow, tooSlowTime, token);
 
             return true; // 사이클 완료
         }
@@ -222,31 +224,37 @@ public class CubeGameCube : MonoBehaviour
 
         switch (state)
         {
-            case CubeState.Idle:
+            case CubeState.Wait:
                 image.color = new Color(1f, 1f, 1f, 0.3f); // 흰색 반투명
                 break;
-            case CubeState.Good:
-                image.color = new Color(1f, 0.5f, 0f, 1f); // 주황
+
+            case CubeState.TooFast:
+                image.color = new Color32(94, 19, 19, 255);   // #8B1E1E (아주빠름 - 더 어두운 붉은색)
                 break;
-            case CubeState.Great:
-                image.color = Color.green; // 초록
+
+            case CubeState.Fast:
+                image.color = new Color32(198, 40, 40, 255);   // #C62828 (빠름 - 살짝 어두운 붉은색)
                 break;
+
             case CubeState.Perfect:
-                image.color = Color.blue; // 파랑
+                image.color = new Color32(0, 230, 118, 255);   // #00E676 (정확 - 형광초록/시원한 느낌)
                 break;
-            case CubeState.Bad:
-                image.color = new Color(1f, 0.4f, 0.7f, 1f); // 분홍
+
+            case CubeState.Slow:
+                image.color = new Color32(25, 118, 210, 255);  // #1976D2 (느림 - 살짝 어두운 푸른색)
                 break;
-            case CubeState.Miss:
-                image.color = Color.red; // 빨강
+
+            case CubeState.TooSlow:
+                image.color = new Color32(11, 53, 118, 255);   // #0D47A1 (아주느림 - 진한 남색)
                 break;
         }
+
     }
 
     public void OnClickCube()
     {
         // 조건 수정: Idle 상태에서는 클릭 무시
-        if (_state == CubeState.Idle)
+        if (_state == CubeState.Wait)
             return;
 
         HLLogger.Log($"@@@ OnClickCube - Current State: {_state}");

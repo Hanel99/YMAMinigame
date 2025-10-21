@@ -47,6 +47,9 @@ public class CubeGameManager : MonoBehaviour
         countDic.Clear();
 
         randomSeed = UnityEngine.Random.Range(0, 100000);
+        if (StaticGameData.useServerSeed)
+            randomSeed = StaticGameData.serverGameSeed;
+
         randomGenerator = new System.Random(randomSeed);
         HLLogger.Log($"Random Seed: {randomSeed}");
 
@@ -77,6 +80,7 @@ public class CubeGameManager : MonoBehaviour
         CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
         CubeGameUIManager.instance.UpdateScoreText(score);
         CubeGameUIManager.instance.UpdateCubeCountText(countDic);
+        CubeGameUIManager.instance.InitCountUI();
         CubeGameUIManager.instance.ShowDim(true, "준비!");
         await UniTask.Delay(2000);
         CubeGameUIManager.instance.ShowDim(false);
@@ -85,8 +89,8 @@ public class CubeGameManager : MonoBehaviour
         _inGameState = InGameState.Play;
         foreach (var cube in cubeList)
         {
-            (float idle, float good, float great, float perfect, float bad, float miss) = MakeStateTime();
-            cube.StartCube(idle, good, great, perfect, bad, miss);
+            (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) = MakeStateTime();
+            cube.StartCube(wait, tooFast, fast, perfect, slow, tooSlow);
         }
     }
 
@@ -195,22 +199,22 @@ public class CubeGameManager : MonoBehaviour
         // 점수, 시간 처리.
         int addScore = state switch
         {
-            CubeState.Perfect => 500,
-            CubeState.Great => 300,
-            CubeState.Good => 100,
-            CubeState.Bad => -100,
-            CubeState.Miss => -200,
+            CubeState.TooFast => -100,
+            CubeState.Fast => 100,
+            CubeState.Perfect => 300,
+            CubeState.Slow => 100,
+            CubeState.TooSlow => -100,
 
             _ => 0,
         };
 
         float addTime = state switch
         {
+            CubeState.TooFast => -0.5f,
+            CubeState.Fast => 0f,
             CubeState.Perfect => 0.5f,
-            CubeState.Great => 0f,
-            CubeState.Good => 0f,
-            CubeState.Bad => 0f,
-            CubeState.Miss => -1f,
+            CubeState.Slow => 0f,
+            CubeState.TooSlow => -0.5f,
 
             _ => 0f,
         };
@@ -219,31 +223,27 @@ public class CubeGameManager : MonoBehaviour
         score = Math.Max(0, score);
         leftTime += addTime;
         leftTime = Math.Min(maxTime, leftTime);
-
-#if DEV
         countDic[state]++;
-#endif
 
         CubeGameUIManager.instance.UpdateScoreText(score);
-        CubeGameUIManager.instance.UpdateCubeCountText(countDic);
+        CubeGameUIManager.instance.UpdateCubeCountText(state, countDic[state]);
 
         if (_inGameState == InGameState.Play)
         {
-            (float idle, float good, float great, float perfect, float bad, float miss) = MakeStateTime();
-            cube.StartCube(idle, good, great, perfect, bad, miss);
+            (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) = MakeStateTime();
+            cube.StartCube(wait, tooFast, fast, perfect, slow, tooSlow);
         }
     }
 
-    private (float idle, float good, float great, float perfect, float bad, float miss) MakeStateTime()
+    private (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) MakeStateTime()
     {
-        float idle = GetRandomFloat(1f, 3f);
-        float good = GetRandomFloat(0.5f, 1.2f);
-        float great = GetRandomFloat(0.4f, 0.9f);
-        float perfect = GetRandomFloat(0.3f, 0.6f);
-        float bad = GetRandomFloat(0.4f, 0.9f);
-        float miss = GetRandomFloat(0.5f, 1.2f);
+        float wait = GetRandomFloat(0.5f, 3.5f);
 
-        return (idle, good, great, perfect, bad, miss);
+        float too = GetRandomFloat(0.3f, 0.6f);
+        float middle = GetRandomFloat(0.4f, 0.6f);
+        float perfect = GetRandomFloat(0.5f, 0.6f);
+
+        return (wait, too, middle, perfect, middle, too);
     }
 
     public float GetRandomFloat(float min, float max)

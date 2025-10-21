@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,9 @@ public class CubeGameUIManager : MonoBehaviour
     [Header("InGame")]
     public Text timerText;
     public Text scoreText;
-    public Text devText; //dev용 터치 횟수 기록.
+
+    public List<CubeGameCountUI> cubeGameCountUIList = new();
+    private Dictionary<CubeState, CubeGameCountUI> cubeGameCountUIDic = new();
     public GameObject dimObject;
     public Text dimText;
 
@@ -104,7 +107,7 @@ public class CubeGameUIManager : MonoBehaviour
 
 
 
-    // InGame UI Logic
+    // InGame UI Logic    
 
     public void OnClickPauseButton()
     {
@@ -124,21 +127,31 @@ public class CubeGameUIManager : MonoBehaviour
 
     public void UpdateCubeCountText(Dictionary<CubeState, int> countDic)
     {
-#if DEV
-        StringBuilder sb = new StringBuilder();
         foreach (CubeState state in Enum.GetValues(typeof(CubeState)))
         {
-            if (state == CubeState.Idle || state == CubeState.Stop) continue;
+            if (state == CubeState.Wait || state == CubeState.Stop) continue;
 
-            int count = 0;
             if (countDic.ContainsKey(state))
-            {
-                count = countDic[state];
-            }
-            sb.Append($"{state} : {count} / ");
+                UpdateCubeCountText(state, countDic[state]);
         }
-        devText.text = sb.ToString();
-#endif
+    }
+
+    public void UpdateCubeCountText(CubeState state, int count)
+    {
+        if (state == CubeState.Wait || state == CubeState.Stop)
+            return;
+
+        if (cubeGameCountUIDic.ContainsKey(state))
+            cubeGameCountUIDic[state].UpdateCountText(count);
+    }
+
+    public void InitCountUI()
+    {
+        foreach (var ui in cubeGameCountUIList)
+        {
+            ui.InitUI(ui.state);
+            cubeGameCountUIDic[ui.state] = ui;
+        }
     }
 
     public void ShowDim(bool show, string text = "")

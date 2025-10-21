@@ -16,6 +16,7 @@ public class GameSelectPopup : PopupBase
 
 
     private GameType gameType;
+    private LongPressButton gameImageButton;
 
 
 
@@ -34,6 +35,7 @@ public class GameSelectPopup : PopupBase
         }
         else
         {
+            StaticGameData.useServerSeed = false;
             _CloseWindow();
         }
     }
@@ -51,6 +53,13 @@ public class GameSelectPopup : PopupBase
     {
         gameType = type;
         gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
+        gameImageButton = gameImage.GetComponent<LongPressButton>();
+        gameImageButton.SetLongPressTime(5f);
+        gameImageButton.SetLongPressAction(() =>
+        {
+            StaticGameData.useServerSeed = true;
+            HLLogger.Log($"@@@ Long Press! {StaticGameData.useServerSeed}, {StaticGameData.serverGameSeed}");
+        });
 
         titleText.text = LocalizeManager.instance.GetString($"game.name.{gameType.ToString()}");
         descText.text = LocalizeManager.instance.GetString($"game.desc.{gameType.ToString()}");
