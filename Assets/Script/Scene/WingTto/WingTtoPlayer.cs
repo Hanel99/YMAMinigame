@@ -158,21 +158,18 @@ public class WingTtoPlayer : MonoBehaviour
             else if (other.CompareTag("WingTtoSpeedUp"))
             {
                 gameManager.AddSpeed(1);
-                HLLogger.Log("Speed up");
             }
             else if (other.CompareTag("WingTtoCoin"))
             {
                 earnCoin += 1500;
                 WingTtoGameUIManager.instance.UpdateCoinText(earnCoin);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoCoin);
-                HLLogger.Log("earn Coin");
             }
             else if (other.CompareTag("WingTtoExp"))
             {
                 earnExp += 1;
                 WingTtoGameUIManager.instance.UpdateExpText(earnExp);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoExp);
-                HLLogger.Log("earn Exp");
             }
             WingTtoObjectPool.instance.ReturnObject(other);
 
@@ -190,8 +187,6 @@ public class WingTtoPlayer : MonoBehaviour
 
     private async UniTaskVoid CrashProcess()
     {
-        HLLogger.Log("CrashProcess");
-
         playerState = WingTtoPlayerState.Crash;
         WingTtoGameManager.instance.SetPause(true);
 
@@ -261,8 +256,6 @@ public class WingTtoPlayer : MonoBehaviour
     // 가속 버튼을 눌렀을 때
     public void TiltForward()
     {
-        HLLogger.Log("TiltForward");
-
         // 기존 트윈이 있으면 중단
         rotationTween?.Kill();
 
@@ -274,8 +267,6 @@ public class WingTtoPlayer : MonoBehaviour
     // 가속 버튼을 뗐을 때
     public void ReturnToNormal()
     {
-        HLLogger.Log("ReturnToNormal");
-
         // 기존 트윈이 있으면 중단
         rotationTween?.Kill();
 

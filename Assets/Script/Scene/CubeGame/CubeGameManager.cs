@@ -153,7 +153,6 @@ public class CubeGameManager : MonoBehaviour
 
     private async UniTaskVoid TimeOverProcess()
     {
-        HLLogger.Log("Time Over");
         CubeGameUIManager.instance.ShowDim(true, "게임 종료!");
         foreach (var cube in cubeList) cube.StopCube();
         await UniTask.Delay(2000);

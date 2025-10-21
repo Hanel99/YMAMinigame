@@ -79,9 +79,7 @@ public class Card : MonoBehaviour
     {
         if (_isShow) return;
 
-        HLLogger.Log($"@@@ click card : {this.gameObject.name} / {cardMetaData.Id}");
         ShowCardImage(true);
-
         CardGameManager.instance.CardClickProcess(this);
     }
 

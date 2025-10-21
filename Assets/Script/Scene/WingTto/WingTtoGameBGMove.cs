@@ -55,7 +55,6 @@ public class WingTtoGameBGMove : MonoBehaviour
     public void UpdateSpeed(float value)
     {
         calcSpeed = originalScrollSpeed * value;
-        HLLogger.Log($"bg CalcSpeed {calcSpeed}");
     }
 
     public void SetPause(bool isPause)

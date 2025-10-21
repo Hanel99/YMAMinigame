@@ -78,17 +78,12 @@ public class FindAIWordGameManager : MonoBehaviour
                 currentKeyword = gameHint.key;
 
                 SaveDataManager.instance.playerData.geminiHints2.Remove(gameHint);
-
-                HLLogger.Log("저장된 정답 : " + currentKeyword);
-                HLLogger.Log($"바로 불러온 힌트들:\n{string.Join("\n", hints)}");
             }
             else
             {
                 // Gemini로부터 힌트 받아오기
                 currentKeyword = LocalizeManager.instance.GetRandomAIWordString();
-                HLLogger.Log("지금 선택된 정답 : " + currentKeyword);
                 hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
-                HLLogger.Log($"받은 힌트들:\n{string.Join("\n", hints)}");
             }
 
             textUpdateCts.Cancel();
@@ -163,7 +158,6 @@ public class FindAIWordGameManager : MonoBehaviour
         if (currentHintIndex < hints.Count)
         {
             FindAIWordGameInGameView.instance.EnableAnswerButton(true);
-            HLLogger.Log($"힌트 {currentHintIndex + 1} : {hints[currentHintIndex]}");
             FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
 
             sb.AppendLine(hints[currentHintIndex]);
@@ -171,7 +165,6 @@ public class FindAIWordGameManager : MonoBehaviour
         }
         else
         {
-            HLLogger.Log("모든 힌트를 다 사용");
             FindAIWordGameInGameView.instance.UpdateHintText("실패!\n정답은 " + currentKeyword);
             FinishProcess().Forget();
         }
@@ -186,13 +179,11 @@ public class FindAIWordGameManager : MonoBehaviour
 
         if (answer.Trim() == currentKeyword)
         {
-            HLLogger.Log($"{answer.Trim()} - 정답!");
             FindAIWordGameInGameView.instance.UpdateHintText("정답!\n축하합니다!");
             FinishProcess().Forget();
         }
         else
         {
-            HLLogger.Log($"{answer.Trim()} - 오답");
             FindAIWordGameInGameView.instance.UpdateHintText("오답!");
             FindAIWordGameInGameView.instance.ResetAnswerField();
 

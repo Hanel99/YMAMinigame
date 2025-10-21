@@ -62,7 +62,6 @@ public class CubeGameCube : MonoBehaviour
 
     private void OnDestroy()
     {
-        HLLogger.Log($"@@@ {gameObject.name} OnDestroy");
         StopCube();
 
         barSequence?.Kill(true);
@@ -85,8 +84,6 @@ public class CubeGameCube : MonoBehaviour
         tooSlowTime = tooSlow;
 
         barMoveTime = tooFastTime + fastTime;
-
-        HLLogger.Log($"{name} - wait : {wait}, tooFast : {tooFast}, fast : {fast}, perfect : {perfect}, slow : {slow}, tooSlow : {tooSlow}");
 
         RunStateMachine(cts.Token).Forget();
     }
@@ -256,8 +253,6 @@ public class CubeGameCube : MonoBehaviour
         // 조건 수정: Idle 상태에서는 클릭 무시
         if (_state == CubeState.Wait)
             return;
-
-        HLLogger.Log($"@@@ OnClickCube - Current State: {_state}");
 
         // 게임 매니저에 클릭 처리 요청
         CubeGameManager.instance.CubeClickProcess(this, _state);

@@ -99,7 +99,6 @@ public class WingTtoGameManager : MonoBehaviour
 
     public async UniTaskVoid ClickStartProcess()
     {
-        HLLogger.Log("getset...");
         _inGameState = InGameState.GetSet;
         player.StartProcess();
 
@@ -119,7 +118,6 @@ public class WingTtoGameManager : MonoBehaviour
         WingTtoGameUIManager.instance.UpdateGetSetText("");
 
         _inGameState = InGameState.Play;
-        HLLogger.Log("game start");
         WingTtoGameUIManager.instance.UpdateExpText(0);
         WingTtoGameUIManager.instance.UpdateCoinText(0);
         WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
@@ -525,7 +523,6 @@ public class WingTtoGameManager : MonoBehaviour
     {
         int total = success + fail;
         bool result = randomGenerator.Next(0, total) < success;
-        // HLLogger.Log($"Spawn? success : {success} / fail : {fail} / result : {result}");
 
         return result;
     }

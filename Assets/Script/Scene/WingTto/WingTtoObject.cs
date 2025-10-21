@@ -87,7 +87,6 @@ public class WingTtoObject : MonoBehaviour
     {
         // 이벤트 발생
         OnPlayerCollision?.Invoke(this, player);
-        HLLogger.Log("HandlePlayerCollision");
 
         // 충돌 후 오브젝트 반환
         ReturnToPool();

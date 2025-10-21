@@ -68,10 +68,8 @@ public class LocalizeManager : MonoBehaviour
         var aiWords = stringData.Data.FindAll(x => x.key.StartsWith("AIWord.Key."));
         if (aiWords.Count == 0)
         {
-            HLLogger.LogWarning($"@@@ No AI words found.");
             return $"Missing String";
         }
-        HLLogger.Log($"@@@ Found {aiWords.Count} AI words.");
 
         var randomWord = aiWords[Random.Range(0, aiWords.Count)];
         return GetString(randomWord.key);
