@@ -33,7 +33,7 @@ public class GeminiApiManager : MonoBehaviour
             return null;
         }
 
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={geminiApiKey}";
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
 
         // 요청 데이터 간소화
         var requestData = new GeminiRequest

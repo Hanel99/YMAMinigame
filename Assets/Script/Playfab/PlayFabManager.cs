@@ -159,7 +159,7 @@ public class PlayFabManager : MonoBehaviour
     private int saveCallCount = 0;
 
     // SavePlayerData를 호출하면 3초간 대기 후 저장, 중복 호출 시 기존 대기 취소
-    public void SavePlayerData(bool forceSave = false)
+    public void SavePlayerData(bool forceSave = false, Action callback = null)
     {
         saveCallCount++;
 
@@ -174,14 +174,14 @@ public class PlayFabManager : MonoBehaviour
             // 10회 이상 호출 또는 강제 시작 시 즉시 저장
             saveCallCount = 0;
             SavePlayerDataProcess(
-                () => { savePlayerDataCoroutine = null; },
+                () => { callback?.Invoke(); savePlayerDataCoroutine = null; },
                 (err) => { savePlayerDataCoroutine = null; }
             );
         }
         else
         {
             savePlayerDataCoroutine = StartCoroutine(Co_SavePlayerData(
-                () => { savePlayerDataCoroutine = null; },
+                () => { callback?.Invoke(); savePlayerDataCoroutine = null; },
                 (err) => { savePlayerDataCoroutine = null; }
             ));
         }

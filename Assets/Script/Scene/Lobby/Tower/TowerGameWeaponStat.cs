@@ -42,6 +42,8 @@ public class TowerGameWeaponStat : MonoBehaviour
         weaponStatDetailGroup.SetActive(weaponLevel != 0);
         skipToggle.isOn = SaveDataManager.instance.otherPlayerData.isTowerSkip;
         UpdateDetailText();
+
+        enchantButton.GetComponent<LongPressButton>().SetLongPressAction(OnClickEnchant);
     }
 
     private void UpdateDetailText()

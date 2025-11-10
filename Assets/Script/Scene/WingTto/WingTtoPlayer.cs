@@ -161,7 +161,7 @@ public class WingTtoPlayer : MonoBehaviour
             }
             else if (other.CompareTag("WingTtoCoin"))
             {
-                earnCoin += 1500;
+                earnCoin += 5500;
                 WingTtoGameUIManager.instance.UpdateCoinText(earnCoin);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoCoin);
             }

@@ -163,11 +163,8 @@ public class CubeGameManager : MonoBehaviour
 
     private async UniTaskVoid FinishProcess()
     {
-        int exp = (int)Math.Pow(score / 2500f, 0.7f);
-        exp = Math.Max(1, exp);
-
-        int earnCoinAmount = (int)(30000 * (1 - Math.Exp(-score / 40000f)));
-        earnCoinAmount = Math.Max(1000, earnCoinAmount);
+        int exp = (int)Math.Max(1f, score / 10000f + 1.5f * Math.Log(score / 500f + 1f, 5.5f));
+        int earnCoinAmount = (int)Math.Max(1000f, score * 3f / 4f + 26000f * Math.Log(score / 60000f + 1f, 1.5f));
 
         HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
@@ -236,11 +233,18 @@ public class CubeGameManager : MonoBehaviour
 
     private (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) MakeStateTime()
     {
+        float perfectAdjust = 0f;
+
+        if (countDic.ContainsKey(CubeState.Perfect))
+        {
+            perfectAdjust = Math.Min(0.25f, countDic[CubeState.Perfect] * 0.001f);
+        }
+
         float wait = GetRandomFloat(0.5f, 3.5f);
 
-        float too = GetRandomFloat(0.3f, 0.6f);
-        float middle = GetRandomFloat(0.4f, 0.6f);
-        float perfect = GetRandomFloat(0.5f, 0.6f);
+        float too = GetRandomFloat(0.4f, 0.7f - perfectAdjust);
+        float middle = GetRandomFloat(0.3f, 0.7f - perfectAdjust);
+        float perfect = GetRandomFloat(0.2f, 0.6f - perfectAdjust);
 
         return (wait, too, middle, perfect, middle, too);
     }

@@ -10,11 +10,11 @@ public static class StaticGameData
 {
     public static int[] RandomValue = new int[]
     {
-        10, // Black
-        90, // Gold
-        260, // Silver
-        500, // SuperRare
-        1000, // Rare
+        30, // Black
+        130, // Gold
+        480, // Silver
+        1380, // SuperRare
+        2880, // Rare
         10000, // Normal
     };
     public static int TotalRandomValue => RandomValue[RandomValue.Count() - 1];
@@ -22,9 +22,9 @@ public static class StaticGameData
 
     public static int[] GachaPrice = new int[]
     {
-        550,  //1회
-        5000,  //10회
-        300, //1 미획득확정
+        450,  //1회
+        4000,  //10회
+        200, //1 미획득확정
     };
 
     public static Color GetGradeBorderColor(CardGrade grade)

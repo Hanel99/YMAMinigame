@@ -207,7 +207,7 @@ public class FindAIWordGameManager : MonoBehaviour
         if (delayTime < 3000) //강제 치트를 쓴 경우
             earnCoinAmount = 30000;
         else
-            earnCoinAmount = (hints.Count - currentHintIndex) * 500 + 10000;
+            earnCoinAmount = (hints.Count - currentHintIndex) * 1000 + 10000;
 
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);

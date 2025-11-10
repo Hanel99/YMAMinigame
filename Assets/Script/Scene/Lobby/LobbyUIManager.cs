@@ -86,7 +86,7 @@ public class LobbyUIManager : MonoBehaviour
         ShowCommonPopup("게임 종료", "게임을 종료하시겠습니까?", true, true, true, null,
         () =>
         {
-            Application.Quit();
+            PlayFabManager.instance.SavePlayerData(true, () => Application.Quit());
         });
     }
 

@@ -32,6 +32,8 @@ public class TowerGamePlayerStat : MonoBehaviour
 
         requireCoinText.text = requireCoin <= 0 ? "MAX" : requireCoin.ToString();
         enchantButton.interactable = requireCoin > 0 && SaveDataManager.instance.playerData.coin >= requireCoin;
+
+        enchantButton.GetComponent<LongPressButton>().SetLongPressAction(OnClickEnchant);
     }
 
     public void UpdateButtonInteractable()

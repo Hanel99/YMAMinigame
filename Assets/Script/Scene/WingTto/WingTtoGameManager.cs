@@ -309,7 +309,8 @@ public class WingTtoGameManager : MonoBehaviour
     private async UniTaskVoid FinishProcess()
     {
         int exp = 1 + player.EarnExp;
-        int earnCoinAmount = 1000 + player.EarnCoin + (int)(Mathf.Floor(currentDistance / 100) * 100);
+        int earnCoinAmount = player.EarnCoin + (int)Math.Max(1000f, currentDistance + 97000f * Math.Pow(currentDistance / 2900f, 1.5f));
+
 
         HLLogger.Log($"distance : {currentDistance} / coin : {earnCoinAmount} / exp : {exp}");
 
