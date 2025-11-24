@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "YMAMinigame.sln"
+    "dotnet.defaultSolution": "YMAMinigame.slnx"
 }
