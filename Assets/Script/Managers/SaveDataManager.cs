@@ -143,24 +143,31 @@ public class SaveDataManager : MonoBehaviour
 
     #region CollectionWordDataLogic
 
-    public void AddOwnWordList(int index)
-    {
-        List<int> wordList = new List<int>() { index };
-        AddOwnWordList(wordList);
-    }
+    // public void AddOwnWordList(int index)
+    // {
+    //     List<int> wordList = new List<int>() { index };
+    //     AddOwnWordList(wordList);
+    // }
 
-    public void AddOwnWordList(List<int> wordList)
+    // public void AddOwnWordList(List<int> wordList)
+    // {
+    //     foreach (var id in wordList)
+    //     {
+    //         if (_playerData.ownWordList.Contains(id) == false)
+    //             _playerData.ownWordList.Add(id);
+    //     }
+    //     _playerData.ownWordList.Sort();
+    //     SavePlayerData();
+    // }
+
+    public void AddOwnWord(int index)
     {
-        foreach (var id in wordList)
-        {
-            if (_playerData.ownWordList.Contains(id) == false)
-                _playerData.ownWordList.Add(id);
-        }
+        if (_playerData.ownWordList.Contains(index) == false)
+            _playerData.ownWordList.Add(index);
+
         _playerData.ownWordList.Sort();
         SavePlayerData();
     }
-
-
     public bool IsOwnWord(int index)
     {
         return _playerData.ownWordList.Contains(index);

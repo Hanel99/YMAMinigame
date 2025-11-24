@@ -125,7 +125,7 @@ public class CollectionPopup : PopupBase
         {
             // 이미 있는 카드에 데이터 우선 셋팅
             for (int i = 0; i < cardObjectList.Count; ++i)
-                cardObjectList[i].SetImage(viewCardIdList[i], SaveDataManager.instance.playerData.ownCardList.Contains(viewCardIdList[i]));
+                cardObjectList[i].SetImage(viewCardIdList[i], SaveDataManager.instance.IsOwnCard(viewCardIdList[i]));
 
             // 추가 카드 생성 및 데이터 셋팅
             int startCount = cardObjectList.Count;
@@ -133,12 +133,12 @@ public class CollectionPopup : PopupBase
             {
                 var go = cardPrefab.Spawn(cardRoot);
                 go.transform.localScale = Vector3.one * 0.2f;
-                go.SetImage(viewCardIdList[i], SaveDataManager.instance.playerData.ownCardList.Contains(viewCardIdList[i]));
+                go.SetImage(viewCardIdList[i], SaveDataManager.instance.IsOwnCard(viewCardIdList[i]));
                 go.gameObject.SetActive(true);
 
                 cardObjectList.Add(go);
 
-                if (i % 5 == 4)
+                if (i % 10 == 9)
                     await UniTask.Yield(PlayerLoopTiming.Update, token);
             }
         }
@@ -151,7 +151,7 @@ public class CollectionPopup : PopupBase
                     // 불필요 카드 제거
                     cardObjectList[i].Recycle();
                 else
-                    cardObjectList[i].SetImage(viewCardIdList[i], SaveDataManager.instance.playerData.ownCardList.Contains(viewCardIdList[i]));
+                    cardObjectList[i].SetImage(viewCardIdList[i], SaveDataManager.instance.IsOwnCard(viewCardIdList[i]));
             }
         }
 
@@ -190,22 +190,39 @@ public class CollectionPopup : PopupBase
         // 우선 null인데 삭제 안된 오브젝트 검사를 우선 실행
         wordObjectList.RemoveAll(x => x == null);
 
-        for (int i = 0; i < wordObjectList.Count; ++i)
-            wordObjectList[i].SetData(i, SaveDataManager.instance.playerData.ownWordList.Contains(i));
-
-        // 추가 오브젝트 생성 및 데이터 셋팅
-        int startCount = wordObjectList.Count;
-        for (int i = startCount; i < viewWordIdList.Count; ++i)
+        // 표시 카드 개수가 ui에 배치된 카드 수보다 많은 경우
+        if (viewWordIdList.Count > wordObjectList.Count)
         {
-            var go = wordPrefab.Spawn(wordRoot);
-            go.transform.localScale = Vector3.one * 0.2f;
-            go.SetData(i, SaveDataManager.instance.playerData.ownWordList.Contains(i));
-            go.gameObject.SetActive(true);
+            // 이미 있는 카드에 데이터 우선 셋팅
+            for (int i = 0; i < wordObjectList.Count; ++i)
+                wordObjectList[i].SetData(i, SaveDataManager.instance.IsOwnWord(i));
 
-            wordObjectList.Add(go);
+            // 추가 카드 생성 및 데이터 셋팅
+            int startCount = wordObjectList.Count;
+            for (int i = startCount; i < viewWordIdList.Count; ++i)
+            {
+                var go = wordPrefab.Spawn(wordRoot);
+                go.transform.localScale = Vector3.one;
+                go.SetData(i, SaveDataManager.instance.IsOwnWord(i));
+                go.gameObject.SetActive(true);
 
-            if (i % 5 == 4)
-                await UniTask.Yield(PlayerLoopTiming.Update, token);
+                wordObjectList.Add(go);
+
+                if (i % 20 == 19)
+                    await UniTask.Yield(PlayerLoopTiming.Update, token);
+            }
+        }
+        else
+        {
+            // ui에 배치된 카드보다 표시 카드 개수가 적음.
+            for (int i = 0; i < wordObjectList.Count; ++i)
+            {
+                if (i >= viewWordIdList.Count)
+                    // 불필요 카드 제거
+                    wordObjectList[i].Recycle();
+                else
+                    wordObjectList[i].SetData(i, SaveDataManager.instance.IsOwnWord(i));
+            }
         }
 
         wordRoot.gameObject.SetActive(false);

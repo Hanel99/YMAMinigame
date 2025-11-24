@@ -37,7 +37,8 @@ public class BorderBlink : MonoBehaviour
 
     private void OnEnable()
     {
-        StartAnimation();
+        if (border != null)
+            StartAnimation();
     }
 
     private void OnDisable()

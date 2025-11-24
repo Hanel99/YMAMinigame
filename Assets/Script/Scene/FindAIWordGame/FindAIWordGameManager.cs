@@ -10,6 +10,7 @@ public class FindAIWordGameManager : MonoBehaviour
 {
     public static FindAIWordGameManager instance { get; private set; }
 
+    private int wordIndex;
     private string currentKeyword;
     private List<string> hints;
     private int currentHintIndex = 0;
@@ -76,6 +77,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
                 hints = gameHint.value;
                 currentKeyword = gameHint.key;
+                wordIndex = gameHint.index;
 
                 SaveDataManager.instance.playerData.geminiHints2.Remove(gameHint);
             }
@@ -84,6 +86,7 @@ public class FindAIWordGameManager : MonoBehaviour
                 // Gemini로부터 힌트 받아오기
                 int index = -1;
                 (index, currentKeyword) = LocalizeManager.instance.GetRandomAIWordString();
+                wordIndex = index;
                 hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
             }
 
@@ -210,7 +213,9 @@ public class FindAIWordGameManager : MonoBehaviour
         else
             earnCoinAmount = (hints.Count - currentHintIndex) * 1000 + 10000;
 
+        SaveDataManager.instance.AddOwnWord(wordIndex);
         SaveDataManager.instance.AddCoin(earnCoinAmount);
+
         FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);
 
         if (SaveDataManager.instance.AddExp(1))

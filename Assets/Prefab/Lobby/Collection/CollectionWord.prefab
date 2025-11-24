@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a65376f3d37a1498078eb2db7dfc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderBlink: {fileID: 8095956427455902474}
+  border: {fileID: 8597437785555426304}
   indexText: {fileID: 1138696705750721960}
   wordText: {fileID: 5752402255621262722}
 --- !u!1 &5315525928524342170
@@ -282,7 +282,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2107195281813059980
 RectTransform:
   m_ObjectHideFlags: 0
