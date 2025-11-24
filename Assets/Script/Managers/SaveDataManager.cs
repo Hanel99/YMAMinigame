@@ -59,7 +59,7 @@ public class SaveDataManager : MonoBehaviour
 
 
 
-    #region CardDataLogic
+    #region CollectionWordDataLogic
 
 
 
@@ -135,6 +135,36 @@ public class SaveDataManager : MonoBehaviour
         return list.Except(_playerData.ownCardList).ToList();
     }
 
+
+    #endregion
+
+
+
+
+    #region CollectionWordDataLogic
+
+    public void AddOwnWordList(int index)
+    {
+        List<int> wordList = new List<int>() { index };
+        AddOwnWordList(wordList);
+    }
+
+    public void AddOwnWordList(List<int> wordList)
+    {
+        foreach (var id in wordList)
+        {
+            if (_playerData.ownWordList.Contains(id) == false)
+                _playerData.ownWordList.Add(id);
+        }
+        _playerData.ownWordList.Sort();
+        SavePlayerData();
+    }
+
+
+    public bool IsOwnWord(int index)
+    {
+        return _playerData.ownWordList.Contains(index);
+    }
 
     #endregion
 
@@ -452,6 +482,8 @@ public class SaveDataManager : MonoBehaviour
         {
             HLLogger.Log("Force Use Server PlayerData");
             _playerData = serverData;
+            _playerData.serverDataVersion = StaticGameData.serverVersion;
+
             SavePlayerData();
             return;
         }

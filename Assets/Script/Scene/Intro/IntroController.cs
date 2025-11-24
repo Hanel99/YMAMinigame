@@ -170,6 +170,7 @@ public class IntroController : MonoBehaviour
                 {
                     case SheetRangeType.ServerVersion:
                         SaveDataManager.instance.playerData.serverDataVersion = data[0];
+                        StaticGameData.serverVersion = data[0];
 
                         IntroUIManager.instance.UpdateVersionText(data[0]);
                         break;

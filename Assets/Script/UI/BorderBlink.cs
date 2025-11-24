@@ -20,7 +20,8 @@ public class BorderBlink : MonoBehaviour
             border = borderObject.GetComponent<Image>();
         }
 
-        StartAnimation();
+        if (this.isActiveAndEnabled)
+            StartAnimation();
     }
 
     private void OnDestroy()
@@ -32,6 +33,16 @@ public class BorderBlink : MonoBehaviour
     {
         border.DOKill();
         border.DOFade(1, borderAniDuration).From(borderAniFrom).SetEase(borderAniEase).SetLoops(-1, LoopType.Yoyo);
+    }
+
+    private void OnEnable()
+    {
+        StartAnimation();
+    }
+
+    private void OnDisable()
+    {
+        border.DOKill();
     }
 
 }

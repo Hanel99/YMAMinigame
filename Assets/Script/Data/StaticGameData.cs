@@ -90,9 +90,10 @@ public static class StaticGameData
         return now > eventStartTime && now < eventEndTime;
     }
     // public static bool showDevTestText = false;
-    public static int targetFrameRate = 60;
+    public static readonly int targetFrameRate = 60;
     public static bool useServerSeed = false;
     public static int serverGameSeed = 0;
+    public static string serverVersion = "0";
     public static bool useServerData = false;
 
 

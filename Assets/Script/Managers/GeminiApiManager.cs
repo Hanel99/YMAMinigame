@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
+using Sirenix.Serialization;
 
 public class GeminiApiManager : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class GeminiApiManager : MonoBehaviour
         }
 
         string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
+        // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-pro:generateContent?key={geminiApiKey}";
 
         // 요청 데이터 간소화
         var requestData = new GeminiRequest
@@ -90,7 +92,7 @@ public class GeminiApiManager : MonoBehaviour
     {
         HLLogger.Log("@@@ GEMINI 힌트 프리로드 요청");
 
-        string answer = LocalizeManager.instance.GetRandomAIWordString();
+        (int index, string answer) = LocalizeManager.instance.GetRandomAIWordString();
         var hints = await GetHintsForKeyword(answer);
 
         if (hints == null || hints.Count == 0)
@@ -100,7 +102,7 @@ public class GeminiApiManager : MonoBehaviour
         }
 
         HLLogger.Log("@@@ GEMINI 힌트 프리로드 완료!");
-        SaveDataManager.instance.playerData.geminiHints2.Add(new StringListPair(answer, hints));
+        SaveDataManager.instance.playerData.geminiHints2.Add(new GeminiHint(index, answer, hints));
         SaveDataManager.instance.SavePlayerData();
         return hints;
     }

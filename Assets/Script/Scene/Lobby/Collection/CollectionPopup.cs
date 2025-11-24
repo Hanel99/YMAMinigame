@@ -8,16 +8,29 @@ using UnityEngine.UI;
 public class CollectionPopup : PopupBase
 {
     public static CollectionPopup instance { get; private set; }
+    public GameObject cardGroup;
+    public GameObject wordGroup;
 
+
+    // Card
     public Dropdown filter;
     public CollectionCard cardPrefab;
     public Transform cardRoot;
-
 
     public List<CollectionCard> cardObjectList = new();
     public List<int> viewCardIdList = new();
     private List<string> dropdownList = new();
     private CancellationTokenSource cardSpawnCTS;
+
+
+
+    // Word
+    public CollectionWord wordPrefab;
+    public Transform wordRoot;
+
+    public List<CollectionWord> wordObjectList = new();
+    public List<string> viewWordIdList = new();
+    private CancellationTokenSource wordSpawnCTS;
 
 
     protected override void OnAwake()
@@ -32,18 +45,25 @@ public class CollectionPopup : PopupBase
         {
             cardSpawnCTS?.Cancel();
             cardSpawnCTS = new CancellationTokenSource();
+            wordSpawnCTS?.Cancel();
+            wordSpawnCTS = new CancellationTokenSource();
 
-            SetDropdownFilter();
-            CalcViewCardIdList();
-            UpdateCardView(cardSpawnCTS.Token).Forget();
+            OnClickCardTab();
+
             _OpenUI();
         }
         else
         {
             cardSpawnCTS?.Cancel();
+            wordSpawnCTS?.Cancel();
             _CloseWindow();
         }
     }
+
+
+
+    #region Card Tab
+
 
     private void SetDropdownFilter()
     {
@@ -147,6 +167,70 @@ public class CollectionPopup : PopupBase
     {
         HLLogger.Log($"@@@ changed value is {change.value}");
 
+        CalcViewCardIdList();
+        UpdateCardView(cardSpawnCTS.Token).Forget();
+    }
+
+
+    #endregion
+
+
+
+
+    #region Word Tab
+
+    private void CalcViewWordIdList()
+    {
+        viewWordIdList.Clear();
+        viewWordIdList = LocalizeManager.instance.GetAllAIWordString();
+    }
+
+    public async UniTask UpdateWordView(CancellationToken token)
+    {
+        // 우선 null인데 삭제 안된 오브젝트 검사를 우선 실행
+        wordObjectList.RemoveAll(x => x == null);
+
+        for (int i = 0; i < wordObjectList.Count; ++i)
+            wordObjectList[i].SetData(i, SaveDataManager.instance.playerData.ownWordList.Contains(i));
+
+        // 추가 오브젝트 생성 및 데이터 셋팅
+        int startCount = wordObjectList.Count;
+        for (int i = startCount; i < viewWordIdList.Count; ++i)
+        {
+            var go = wordPrefab.Spawn(wordRoot);
+            go.transform.localScale = Vector3.one * 0.2f;
+            go.SetData(i, SaveDataManager.instance.playerData.ownWordList.Contains(i));
+            go.gameObject.SetActive(true);
+
+            wordObjectList.Add(go);
+
+            if (i % 5 == 4)
+                await UniTask.Yield(PlayerLoopTiming.Update, token);
+        }
+
+        wordRoot.gameObject.SetActive(false);
+        wordRoot.gameObject.SetActive(true);
+    }
+
+
+    #endregion
+
+
+    public void OnClickWordTab()
+    {
+        cardGroup.SetActive(false);
+        wordGroup.SetActive(true);
+
+        CalcViewWordIdList();
+        UpdateWordView(wordSpawnCTS.Token).Forget();
+    }
+
+    public void OnClickCardTab()
+    {
+        cardGroup.SetActive(true);
+        wordGroup.SetActive(false);
+
+        SetDropdownFilter();
         CalcViewCardIdList();
         UpdateCardView(cardSpawnCTS.Token).Forget();
     }

@@ -54,7 +54,31 @@ public class LocalizeManager : MonoBehaviour
         }
     }
 
-    public string GetRandomAIWordString()
+    public string GetString(StringMetaData stringMetaData)
+    {
+        if (stringMetaData == null)
+        {
+            HLLogger.LogWarning($"@@@ stringMetaData is null.");
+            return $"Missing String";
+        }
+
+        if (SaveDataManager.instance == null || SaveDataManager.instance.playerData == null)
+            return stringMetaData.ko;
+
+        switch (SaveDataManager.instance.playerData.languageType)
+        {
+            case LanguageType.ko:
+                return stringMetaData.ko;
+            // case LanguageType.jp:
+            //     return stringMetaData.jp;
+            // case LanguageType.en:
+            //     return stringMetaData.en;
+            default:
+                return stringMetaData.ko;
+        }
+    }
+
+    public (int, string) GetRandomAIWordString()
     {
         if (stringData == null && GameResourceManager.instance != null && GameResourceManager.instance.stringData != null)
             stringData = GameResourceManager.instance.stringData;
@@ -62,16 +86,40 @@ public class LocalizeManager : MonoBehaviour
         if (stringData == null)
         {
             HLLogger.LogError("StringData is null. Please load GameResourceManager first.");
-            return $"Missing String";
+            return (-1, $"Missing String");
         }
 
         var aiWords = stringData.Data.FindAll(x => x.key.StartsWith("AIWord.Key."));
         if (aiWords.Count == 0)
         {
-            return $"Missing String";
+            return (-1, $"Missing String");
         }
 
-        var randomWord = aiWords[Random.Range(0, aiWords.Count)];
-        return GetString(randomWord.key);
+        int index = Random.Range(0, aiWords.Count);
+        var randomWord = aiWords[index];
+        return (index, GetString(randomWord.key));
+    }
+
+    public List<string> GetAllAIWordString()
+    {
+        List<string> wordList = new List<string>();
+
+        if (stringData == null && GameResourceManager.instance != null && GameResourceManager.instance.stringData != null)
+            stringData = GameResourceManager.instance.stringData;
+
+        if (stringData == null)
+        {
+            HLLogger.LogError("StringData is null. Please load GameResourceManager first.");
+            return new List<string> { "Missing String" };
+        }
+
+        var aiWords = stringData.Data.FindAll(x => x.key.StartsWith("AIWord.Key."));
+
+        for (int i = 0; i < aiWords.Count; ++i)
+        {
+            wordList.Add(GetString(aiWords[i].key));
+        }
+
+        return wordList;
     }
 }

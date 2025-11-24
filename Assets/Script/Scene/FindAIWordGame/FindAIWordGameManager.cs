@@ -82,7 +82,8 @@ public class FindAIWordGameManager : MonoBehaviour
             else
             {
                 // Gemini로부터 힌트 받아오기
-                currentKeyword = LocalizeManager.instance.GetRandomAIWordString();
+                int index = -1;
+                (index, currentKeyword) = LocalizeManager.instance.GetRandomAIWordString();
                 hints = await GeminiApiManager.instance.GetHintsForKeyword(currentKeyword).AttachExternalCancellation(apiCts.Token);
             }
 

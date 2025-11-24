@@ -50,24 +50,7 @@ public class EasySaveEditor : Editor
 
         PlayerData playerData = new PlayerData();
         ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
-
-        HLLogger.Log($"savedTime : {playerData.savedTime}");
-        HLLogger.Log($"mid : {playerData.mid}");
-        HLLogger.Log($"name : {playerData.name}");
-        HLLogger.Log($"languageType : {playerData.languageType}");
-        HLLogger.Log($"master : {playerData.master}");
-        HLLogger.Log($"serverDataVersion : {playerData.serverDataVersion}");
-        HLLogger.Log($"coin : {playerData.coin}");
-        HLLogger.Log($"mileage : {playerData.mileage}");
-        HLLogger.Log($"level : {playerData.level}");
-        HLLogger.Log($"exp : {playerData.exp}");
-
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in playerData.ownCardList)
-        {
-            sb.Append($"{item},");
-        }
-        HLLogger.Log($"ownCardList : {sb}");
+        HLLogger.Log($"data\n{JsonUtility.ToJson(playerData)}");
     }
 
 

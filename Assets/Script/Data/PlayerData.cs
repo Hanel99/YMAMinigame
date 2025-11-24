@@ -26,6 +26,7 @@ public class PlayerData
     public int coin = 0;
     public int mileage = 0;
     public List<int> ownCardList = new();
+    public List<int> ownWordList = new();
     public List<string> usingRedeemCode = new();
 
     public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
@@ -40,7 +41,7 @@ public class PlayerData
     public float wingTtoHighScore;
 
     // gemini Data
-    public List<StringListPair> geminiHints2;
+    public List<GeminiHint> geminiHints2;
 
 
     //server switch
@@ -66,6 +67,7 @@ public class PlayerData
         coin = 0;
         mileage = 0;
         ownCardList.Clear();
+        ownWordList.Clear();
         usingRedeemCode.Clear();
 
         towerFloor = 1;
@@ -81,13 +83,15 @@ public class PlayerData
 
 
 [System.Serializable]
-public class StringListPair
+public class GeminiHint
 {
+    public int index;
     public string key;
     public List<string> value;
 
-    public StringListPair(string key, List<string> value)
+    public GeminiHint(int index, string key, List<string> value)
     {
+        this.index = index;
         this.key = key;
         this.value = value;
     }
