@@ -116,8 +116,16 @@ public class TowerGameCombatPopup : PopupBase
         foreach (var line in lines)
         {
             sb.AppendLine(line);
-            UpdateCombatText().Forget();
-            await UniTask.Delay(delayTime);
+
+            if (line.StartsWith("-") || line == "")
+            {
+                // 구분선이나 빈 줄은 바로 업데이트                
+            }
+            else
+            {
+                UpdateCombatText().Forget();
+                await UniTask.Delay(delayTime);
+            }
         }
 
         // 결과 처리
