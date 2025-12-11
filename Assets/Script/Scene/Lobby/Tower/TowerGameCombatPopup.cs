@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
@@ -103,104 +104,25 @@ public class TowerGameCombatPopup : PopupBase
 
     public async UniTask CombatProcess()
     {
-        bool isCritical;
         int bossNumber = TowerGamePopup.instance.GetBossNumber(playerData.towerFloor);
         string bossName = LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}");
+
+        // 전투 시뮬레이션을 먼저 모두 실행해서 로그와 결과를 얻음
+        var (lines, playerWon) = await SimulateCombat(bossName);
         await UniTask.Delay(1000);
 
-        while (playerCombatData.hp > 0 && bossCombatData.hp > 0 && turnCount < 20)
+        // 시뮬레이션 결과(라인들)를 순차적으로 UI에 표시
+        sb.Clear();
+        foreach (var line in lines)
         {
-            turnCount++;
-            sb.AppendLine("");
-            sb.AppendLine("---------------------------------");
-            sb.AppendLine($"{turnCount}번째 턴!");
+            sb.AppendLine(line);
             UpdateCombatText().Forget();
             await UniTask.Delay(delayTime);
-
-
-            // 플레이어가 보스에게 공격
-            sb.AppendLine();
-            sb.AppendLine($"{playerData.name}의 공격!").AppendLine();
-            UpdateCombatText().Forget();
-            await UniTask.Delay(delayTime);
-
-            if (!IsAvoided(bossCombatData.avoidance))
-            {
-                int damage = CalculateDamage(playerCombatData, bossCombatData, out isCritical);
-                if (isCritical)
-                    sb.AppendLine($"{playerData.name} 혼신의 일격!");
-                else
-                    sb.AppendLine($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-
-                bossCombatData.hp -= damage;
-                bossCombatData.hp = Mathf.Max(0, bossCombatData.hp);
-
-                sb.AppendLine($"{damage} 데미지를 입혔다! ({bossCombatData.hp}/{bossCombatData.maxHp})");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-
-                if (bossCombatData.hp <= 0)
-                {
-                    sb.AppendLine().AppendLine($"{bossName.Eul_Reul()} 물리쳤습니다!");
-                    UpdateCombatText().Forget();
-                    EndCombat(true).Forget();
-                    return;
-                }
-            }
-            else
-            {
-                sb.AppendLine($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-            }
-
-
-            // 보스가 플레이어에게 공격
-            sb.AppendLine();
-            sb.AppendLine($"{bossName}의 공격!").AppendLine();
-            UpdateCombatText().Forget();
-            await UniTask.Delay(delayTime);
-
-            if (!IsAvoided(playerCombatData.avoidance))
-            {
-                int damage = CalculateDamage(bossCombatData, playerCombatData, out isCritical);
-                if (isCritical)
-                    sb.AppendLine($"{bossName} 혼신의 일격!");
-                else
-                    sb.AppendLine($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-
-                playerCombatData.hp -= damage;
-                playerCombatData.hp = Mathf.Max(0, playerCombatData.hp);
-
-                sb.AppendLine($"{damage} 데미지를 입었다! ({playerCombatData.hp}/{playerCombatData.maxHp})");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-
-                if (playerCombatData.hp <= 0)
-                {
-                    sb.AppendLine().AppendLine($"{playerData.name.E_Ga()} 쓰러졌습니다...");
-                    UpdateCombatText().Forget();
-                    EndCombat(false).Forget();
-                    return;
-                }
-            }
-            else
-            {
-                sb.AppendLine($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
-                UpdateCombatText().Forget();
-                await UniTask.Delay(delayTime);
-            }
         }
 
-        sb.AppendLine().AppendLine($"{playerData.name.En_Nun()} 너무 길어진 전투에 지쳐버렸다...");
-        UpdateCombatText().Forget();
-
+        // 결과 처리
         await UniTask.Delay(delayTime);
-        EndCombat(false).Forget();
+        await EndCombat(playerWon);
     }
 
     private async UniTask UpdateCombatText()
@@ -303,19 +225,19 @@ public class TowerGameCombatPopup : PopupBase
         switch (speedMode)
         {
             case 0:
-                delayTime = 800;
+                delayTime = 200;
                 speedText.text = "x1";
                 break;
             case 1:
-                delayTime = 400;
+                delayTime = 100;
                 speedText.text = "x2";
                 break;
             case 2:
-                delayTime = 100;
+                delayTime = 50;
                 speedText.text = "x3";
                 break;
             default:
-                delayTime = 800;
+                delayTime = 200;
                 speedText.text = "x1";
                 break;
         }
@@ -326,5 +248,104 @@ public class TowerGameCombatPopup : PopupBase
         SetCombatData();
         UpdateUI();
         CombatProcess().Forget();
+    }
+
+    // 전투를 실제로 계산만 하고, 텍스트(라인) 리스트와 승패를 반환
+    private async UniTask<(List<string> lines, bool playerWon)> SimulateCombat(string bossName)
+    {
+        var lines = new List<string>();
+        bool isCritical;
+
+        // 로컬 복사본으로 시뮬레이션 (원본 데이터는 변경하지 않음)
+        var p = new combatStatData
+        {
+            atk = playerCombatData.atk,
+            def = playerCombatData.def,
+            hp = playerCombatData.hp,
+            maxHp = playerCombatData.maxHp,
+            criRate = playerCombatData.criRate,
+            criDmg = playerCombatData.criDmg,
+            avoidance = playerCombatData.avoidance
+        };
+
+        var b = new combatStatData
+        {
+            atk = bossCombatData.atk,
+            def = bossCombatData.def,
+            hp = bossCombatData.hp,
+            maxHp = bossCombatData.maxHp,
+            criRate = bossCombatData.criRate,
+            criDmg = bossCombatData.criDmg,
+            avoidance = bossCombatData.avoidance
+        };
+
+        int localTurn = 0;
+        while (p.hp > 0 && b.hp > 0 && localTurn < 20)
+        {
+            await UniTask.Delay(1); // 시뮬레이션 속도 조절용 딜레이
+
+            localTurn++;
+            lines.Add("");
+            lines.Add("---------------------------------");
+            lines.Add($"{localTurn}번째 턴!");
+
+            // 플레이어 공격
+            lines.Add("");
+            lines.Add($"{playerData.name}의 공격!");
+            if (!IsAvoided(b.avoidance))
+            {
+                int damage = CalculateDamage(p, b, out isCritical);
+                if (isCritical)
+                    lines.Add($"{playerData.name} 혼신의 일격!");
+                else
+                    lines.Add($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
+
+                b.hp -= damage;
+                b.hp = Mathf.Max(0, b.hp);
+                lines.Add($"{damage} 데미지를 입혔다! ({b.hp}/{b.maxHp})");
+
+                if (b.hp <= 0)
+                {
+                    lines.Add("");
+                    lines.Add($"{bossName.Eul_Reul()} 물리쳤습니다!");
+                    return (lines, true);
+                }
+            }
+            else
+            {
+                lines.Add($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
+            }
+
+            // 보스 공격
+            lines.Add("");
+            lines.Add($"{bossName}의 공격!");
+            if (!IsAvoided(p.avoidance))
+            {
+                int damage = CalculateDamage(b, p, out isCritical);
+                if (isCritical)
+                    lines.Add($"{bossName} 혼신의 일격!");
+                else
+                    lines.Add($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
+
+                p.hp -= damage;
+                p.hp = Mathf.Max(0, p.hp);
+                lines.Add($"{damage} 데미지를 입었다! ({p.hp}/{p.maxHp})");
+
+                if (p.hp <= 0)
+                {
+                    lines.Add("");
+                    lines.Add($"{playerData.name.E_Ga()} 쓰러졌습니다...");
+                    return (lines, false);
+                }
+            }
+            else
+            {
+                lines.Add($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
+            }
+        }
+
+        lines.Add("");
+        lines.Add($"{playerData.name.En_Nun()} 너무 길어진 전투에 지쳐버렸다...");
+        return (lines, false);
     }
 }
