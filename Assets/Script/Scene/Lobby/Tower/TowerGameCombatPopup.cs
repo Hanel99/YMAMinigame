@@ -38,7 +38,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
 
-    private bool @combatTest = true;
+    private bool @combatTest = false;
 
 
     protected override void OnAwake()
@@ -244,6 +244,7 @@ public class TowerGameCombatPopup : PopupBase
         }
         else
         {
+            playerEntity.DieAnimation();
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 패배했습니다...");
