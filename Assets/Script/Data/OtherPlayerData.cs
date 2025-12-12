@@ -17,7 +17,6 @@ public class OtherPlayerData
     public bool isBgmMute = false;
     public bool isSfxMute = false;
 
-    public int towerTextSpeed = 0;
     public bool isTowerSkip = false;
 
     public OtherPlayerData()
@@ -30,7 +29,6 @@ public class OtherPlayerData
         sfxVolume = 0.8f;
         isBgmMute = false;
         isSfxMute = false;
-        towerTextSpeed = 0;
         isTowerSkip = false;
     }
 }

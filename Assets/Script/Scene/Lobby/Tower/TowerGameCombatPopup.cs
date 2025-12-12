@@ -9,10 +9,13 @@ public class TowerGameCombatPopup : PopupBase
 {
     public static TowerGameCombatPopup instance { get; private set; }
 
+    public TowerGameCombatEntity playerEntity;
+    public TowerGameCombatEntity bossEntity;
+
+
     public ScrollRect scrollRect;
     public Text combatText;
-    public Button speedButton;
-    public Text speedText;
+    public Button skipButton;
     public Button retryButton;
     public Button confirmButton;
 
@@ -21,18 +24,21 @@ public class TowerGameCombatPopup : PopupBase
     private int turnCount = 0;
 
 
-    private combatStatData playerCombatData = new();
-    private combatStatData bossCombatData = new();
+    private CombatStatData playerCombatData = new();
+    private CombatStatData bossCombatData = new();
+    private int bossNumber;
     private int rewardCoin;
     private int rewardExp;
     private StringBuilder sb = new StringBuilder();
 
-    private int speedMode = 0;
-    private int delayTime = 800;
+    private int delayTime = 200;
+    private int lineCount = 0;
+    private int combatDataCount = 0;
+    private bool isSkip = false;
 
 
 
-
+    private bool @combatTest = true;
 
 
     protected override void OnAwake()
@@ -58,7 +64,11 @@ public class TowerGameCombatPopup : PopupBase
 
     private void SetCombatData()
     {
+        isSkip = false;
+        delayTime = 200;
         turnCount = 0;
+        lineCount = 0;
+        combatDataCount = 0;
         sb.Clear();
 
 
@@ -88,6 +98,10 @@ public class TowerGameCombatPopup : PopupBase
         bossCombatData.avoidance = Mathf.Min(0.2f, floor * 0.001f);
         rewardCoin = bossMetaData.rewardCoin;
         rewardExp = bossMetaData.rewardExp;
+
+        bossNumber = TowerGamePopup.instance.GetBossNumber(playerData.towerFloor);
+        playerEntity.SetData(playerCombatData.hp, true);
+        bossEntity.SetData(bossCombatData.hp, false, bossNumber);
     }
     private T GetValue<T>(TowerUserStatType type, int level)
     {
@@ -96,20 +110,19 @@ public class TowerGameCombatPopup : PopupBase
 
     public void UpdateUI()
     {
+        skipButton.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
-        SetTextSpeed();
         UpdateCombatText().Forget();
     }
 
     public async UniTask CombatProcess()
     {
-        int bossNumber = TowerGamePopup.instance.GetBossNumber(playerData.towerFloor);
         string bossName = LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}");
 
         // 전투 시뮬레이션을 먼저 모두 실행해서 로그와 결과를 얻음
-        var (lines, playerWon) = await SimulateCombat(bossName);
-        await UniTask.Delay(1000);
+        var (lines, combatDetails, playerWon) = await SimulateCombat(bossName);
+        await UniTask.Delay(800);
 
         // 시뮬레이션 결과(라인들)를 순차적으로 UI에 표시
         sb.Clear();
@@ -123,8 +136,48 @@ public class TowerGameCombatPopup : PopupBase
             }
             else
             {
+                lineCount++;
                 UpdateCombatText().Forget();
+
+
+                if (line.Contains("데미지"))
+                {
+                    // 데미지 애니메이션 재생
+                    var detail = combatDetails[combatDataCount];
+                    combatDataCount++;
+
+                    if (detail.isPlayerAttack)
+                    {
+                        bossEntity.GetDamage(detail.damage, isSkip);
+                    }
+                    else
+                    {
+                        playerEntity.GetDamage(detail.damage, isSkip);
+                    }
+                }
+                else if (line.Contains("회피"))
+                {
+                    var detail = combatDetails[combatDataCount];
+                    combatDataCount++;
+                    if (isSkip == false)
+                    {
+                        if (detail.isPlayerAttack)
+                        {
+                            bossEntity.AvoidAnimation();
+                        }
+                        else
+                        {
+                            playerEntity.AvoidAnimation();
+                        }
+                    }
+                }
+
                 await UniTask.Delay(delayTime);
+            }
+
+            if (lineCount >= 10 && isSkip == false)
+            {
+                skipButton.gameObject.SetActive(true);
             }
         }
 
@@ -153,7 +206,7 @@ public class TowerGameCombatPopup : PopupBase
         return randomValue < threshold;
     }
 
-    private int CalculateDamage(combatStatData attacker, combatStatData defender, out bool isCritical)
+    private int CalculateDamage(CombatStatData attacker, CombatStatData defender, out bool isCritical)
     {
         // 크리티컬 판정
         int randomValue = Random.Range(0, 10000); // 0부터 100000까지 포함
@@ -173,6 +226,7 @@ public class TowerGameCombatPopup : PopupBase
     {
         if (playerWon)
         {
+            bossEntity.DieAnimation();
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 승리했습니다!");
@@ -196,6 +250,7 @@ public class TowerGameCombatPopup : PopupBase
             UpdateCombatText().Forget();
         }
 
+        skipButton.gameObject.SetActive(false);
         retryButton.interactable = !playerWon;
         retryButton.gameObject.SetActive(true);
         confirmButton.gameObject.SetActive(true);
@@ -204,7 +259,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
 
-    private class combatStatData
+    private class CombatStatData
     {
         public int atk;
         public int def;
@@ -215,40 +270,22 @@ public class TowerGameCombatPopup : PopupBase
         public float avoidance; //회피율
     }
 
-
-
-    public void OnClickSpeedButton()
+    private class CombatDetailData
     {
-        speedMode = (speedMode + 1) % 3;
-        SaveDataManager.instance.otherPlayerData.towerTextSpeed = speedMode;
-        SaveDataManager.instance.SaveOtherPlayerData();
-        SetTextSpeed();
+        public bool isPlayerAttack = false;
+        public bool isAvoided = false;
+        public bool isCritical = false;
+        public int damage = 0;
     }
 
-    private void SetTextSpeed()
-    {
-        speedMode = SaveDataManager.instance.otherPlayerData.towerTextSpeed;
 
-        HLLogger.Log($"Mode {speedMode} : {delayTime}ms");
-        switch (speedMode)
-        {
-            case 0:
-                delayTime = 200;
-                speedText.text = "x1";
-                break;
-            case 1:
-                delayTime = 100;
-                speedText.text = "x2";
-                break;
-            case 2:
-                delayTime = 50;
-                speedText.text = "x3";
-                break;
-            default:
-                delayTime = 200;
-                speedText.text = "x1";
-                break;
-        }
+    public void OnClickSkipButton()
+    {
+        if (isSkip) return;
+
+        isSkip = true;
+        skipButton.gameObject.SetActive(false);
+        delayTime = 1;
     }
 
     public void OnClickRetryButton()
@@ -259,13 +296,14 @@ public class TowerGameCombatPopup : PopupBase
     }
 
     // 전투를 실제로 계산만 하고, 텍스트(라인) 리스트와 승패를 반환
-    private async UniTask<(List<string> lines, bool playerWon)> SimulateCombat(string bossName)
+    private async UniTask<(List<string> lines, List<CombatDetailData> combatDetails, bool playerWon)> SimulateCombat(string bossName)
     {
         var lines = new List<string>();
+        var combatDetails = new List<CombatDetailData>();
         bool isCritical;
 
         // 로컬 복사본으로 시뮬레이션 (원본 데이터는 변경하지 않음)
-        var p = new combatStatData
+        var p = new CombatStatData
         {
             atk = playerCombatData.atk,
             def = playerCombatData.def,
@@ -276,7 +314,7 @@ public class TowerGameCombatPopup : PopupBase
             avoidance = playerCombatData.avoidance
         };
 
-        var b = new combatStatData
+        var b = new CombatStatData
         {
             atk = bossCombatData.atk,
             def = bossCombatData.def,
@@ -287,15 +325,15 @@ public class TowerGameCombatPopup : PopupBase
             avoidance = bossCombatData.avoidance
         };
 
-        int localTurn = 0;
-        while (p.hp > 0 && b.hp > 0 && localTurn < 20)
+        turnCount = 0;
+        while (p.hp > 0 && b.hp > 0 && turnCount < 20)
         {
             await UniTask.Delay(1); // 시뮬레이션 속도 조절용 딜레이
 
-            localTurn++;
+            turnCount++;
             lines.Add("");
             lines.Add("---------------------------------");
-            lines.Add($"{localTurn}번째 턴!");
+            lines.Add($"{turnCount}번째 턴!");
 
             // 플레이어 공격
             lines.Add("");
@@ -308,20 +346,27 @@ public class TowerGameCombatPopup : PopupBase
                 else
                     lines.Add($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
 
+
+
+                if (@combatTest) damage = 50;
+
+
                 b.hp -= damage;
                 b.hp = Mathf.Max(0, b.hp);
                 lines.Add($"{damage} 데미지를 입혔다! ({b.hp}/{b.maxHp})");
+                combatDetails.Add(new CombatDetailData { isPlayerAttack = true, isCritical = isCritical, damage = damage });
 
                 if (b.hp <= 0)
                 {
                     lines.Add("");
                     lines.Add($"{bossName.Eul_Reul()} 물리쳤습니다!");
-                    return (lines, true);
+                    return (lines, combatDetails, true);
                 }
             }
             else
             {
                 lines.Add($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
+                combatDetails.Add(new CombatDetailData { isPlayerAttack = true, isAvoided = true });
             }
 
             // 보스 공격
@@ -335,25 +380,43 @@ public class TowerGameCombatPopup : PopupBase
                 else
                     lines.Add($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
 
+
+
+                if (@combatTest) damage = 100;
+
+
+
+
                 p.hp -= damage;
                 p.hp = Mathf.Max(0, p.hp);
                 lines.Add($"{damage} 데미지를 입었다! ({p.hp}/{p.maxHp})");
+                combatDetails.Add(new CombatDetailData { isPlayerAttack = false, isCritical = isCritical, damage = damage });
 
                 if (p.hp <= 0)
                 {
                     lines.Add("");
                     lines.Add($"{playerData.name.E_Ga()} 쓰러졌습니다...");
-                    return (lines, false);
+                    return (lines, combatDetails, false);
                 }
             }
             else
             {
                 lines.Add($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
+                combatDetails.Add(new CombatDetailData { isPlayerAttack = false, isAvoided = true });
             }
         }
 
         lines.Add("");
         lines.Add($"{playerData.name.En_Nun()} 너무 길어진 전투에 지쳐버렸다...");
-        return (lines, false);
+        return (lines, combatDetails, false);
     }
+
+
+
+    #region Combat Animation
+
+
+
+
+    #endregion
 }

@@ -250,7 +250,7 @@ public class BuildToolEditorWindow : OdinEditorWindow
         EditorUserBuildSettings.development = false;
 
         // Android API 레벨 설정
-        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel23; // API 23 (Android 6.0)
+        PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel25; // API 25 (Android 7.1)
         PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto; // 최신 API 자동
 
         // 그래픽 설정
