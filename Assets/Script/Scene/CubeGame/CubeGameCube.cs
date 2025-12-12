@@ -209,7 +209,6 @@ public class CubeGameCube : MonoBehaviour
         }
         catch (OperationCanceledException)
         {
-            HLLogger.Log($"@@@ SetState 취소됨 : {gameObject.name}, State={_state}");
             throw; // 상위로 예외 전파
         }
     }
@@ -256,6 +255,7 @@ public class CubeGameCube : MonoBehaviour
 
         // 게임 매니저에 클릭 처리 요청
         CubeGameManager.instance.CubeClickProcess(this, _state);
+        HLLogger.Log($"{this.gameObject.name} 클릭됨: {_state} / {perfectTime} - {fastTime} - {tooFastTime}");
 
         // 현재 사이클 재시작
         RestartCycle();

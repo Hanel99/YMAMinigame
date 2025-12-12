@@ -234,17 +234,19 @@ public class CubeGameManager : MonoBehaviour
     private (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) MakeStateTime()
     {
         float perfectAdjust = 0f;
+        float perfectAdjust2 = 0f;
 
         if (countDic.ContainsKey(CubeState.Perfect))
         {
             perfectAdjust = Math.Min(0.25f, countDic[CubeState.Perfect] * 0.001f);
+            perfectAdjust2 = Math.Min(0.1f, perfectAdjust * 0.5f);
         }
 
         float wait = GetRandomFloat(0.5f, 3.5f);
 
-        float too = GetRandomFloat(0.4f, 0.7f - perfectAdjust);
-        float middle = GetRandomFloat(0.3f, 0.7f - perfectAdjust);
-        float perfect = GetRandomFloat(0.2f, 0.6f - perfectAdjust);
+        float too = GetRandomFloat(0.4f - perfectAdjust2, 0.7f - perfectAdjust);
+        float middle = GetRandomFloat(0.3f - perfectAdjust2, 0.6f - perfectAdjust);
+        float perfect = GetRandomFloat(0.2f - perfectAdjust2, 0.45f - perfectAdjust);
 
         return (wait, too, middle, perfect, middle, too);
     }
