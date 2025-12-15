@@ -1,3 +1,4 @@
+using Coffee.UIExtensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class TowerGamePlayerStat : MonoBehaviour
     public Text valueText;
     public Text requireCoinText;
     public Button enchantButton;
+    public UIParticle uIParticle;
 
 
     private TowerUserStatType statType;
@@ -55,6 +57,10 @@ public class TowerGamePlayerStat : MonoBehaviour
         UpdateUIData(statType, statLevel);
         TowerGameWeaponEnchantPopup.instance.UpdateUI();
         //TODO 강화 파티클
+
+        if (uIParticle.IsActive() == false)
+            uIParticle.gameObject.SetActive(true);
+        uIParticle?.Play();
 
 
         // #if UNITY_EDITOR && DEV
