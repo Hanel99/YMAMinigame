@@ -9,12 +9,18 @@ public class TowerGamePlayerStat : MonoBehaviour
     public Text valueText;
     public Text requireCoinText;
     public Button enchantButton;
-    public UIParticle uIParticle;
+    public UIParticle uiParticle;
 
 
     private TowerUserStatType statType;
     private int statLevel;
     private int requireCoin;
+
+    void OnDisable()
+    {
+        uiParticle.gameObject.SetActive(false);
+    }
+
     public void UpdateUIData(TowerUserStatType type, int statLevel)
     {
         statType = type;
@@ -58,9 +64,9 @@ public class TowerGamePlayerStat : MonoBehaviour
         TowerGameWeaponEnchantPopup.instance.UpdateUI();
         //TODO 강화 파티클
 
-        if (uIParticle.IsActive() == false)
-            uIParticle.gameObject.SetActive(true);
-        uIParticle?.Play();
+        if (uiParticle.IsActive() == false)
+            uiParticle.gameObject.SetActive(true);
+        uiParticle?.Play();
 
 
         // #if UNITY_EDITOR && DEV

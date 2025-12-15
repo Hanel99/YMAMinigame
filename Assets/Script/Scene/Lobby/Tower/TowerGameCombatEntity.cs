@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TowerGameCombatEntity : MonoBehaviour
 {
     public Image image;
+    public Image punch;
     public Slider hpBar;
     public Text hpText;
     public Text damageText;
@@ -63,6 +64,7 @@ public class TowerGameCombatEntity : MonoBehaviour
         if (immediate == false)
         {
             //애니메이션으로 데미지 표시
+            PunchAnimation();
             image.DOKill();
             image.DOColor(Color.white, 0.3f).From(Color.red).SetEase(Ease.Linear);
             ShowDamageText(damage);
@@ -77,7 +79,7 @@ public class TowerGameCombatEntity : MonoBehaviour
         damageText.DOKill();
         damageText.transform.DOKill();
 
-        damageText.transform.DOLocalMoveY(80f, 0.5f).From(65f).SetEase(Ease.OutCubic);
+        damageText.transform.DOLocalMoveY(-95f, 0.5f).From(-80f).SetEase(Ease.OutCubic);
         damageText.DOFade(0, 0.5f).From(1).SetEase(Ease.Linear).onComplete = () =>
         {
             damageText.gameObject.SetActive(false);
@@ -91,12 +93,29 @@ public class TowerGameCombatEntity : MonoBehaviour
         image.DOKill();
         float movePositionX = isPlayer ? -45f : 45f;
 
+        PunchAnimation();
         image.transform.DOLocalMoveX(movePositionX, 0.15f).From(0f).SetEase(Ease.InOutSine).SetDelay(0f).OnComplete(() =>
         {
             DOVirtual.DelayedCall(0.1f, () =>
             {
                 image.transform.DOLocalMoveX(0f, 0.15f).SetEase(Ease.InOutSine);
             });
+        });
+    }
+
+    public void PunchAnimation()
+    {
+        //공격 애니메이션
+        float fromX = isPlayer ? 70f : -80f;
+        float toX = isPlayer ? 45f : -55f;
+        Vector3 from = new Vector3(fromX, 50f, 0f);
+        Vector3 to = new Vector3(toX, 23f, 0f);
+
+        punch.DOKill();
+        punch.gameObject.SetActive(true);
+        punch.transform.DOLocalMove(to, 0.3f).From(from).SetEase(Ease.OutBack).OnComplete(() =>
+        {
+            punch.gameObject.SetActive(false);
         });
     }
 

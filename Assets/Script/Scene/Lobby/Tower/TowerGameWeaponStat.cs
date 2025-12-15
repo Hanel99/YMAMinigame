@@ -1,5 +1,6 @@
 // using System;
 using System.Text;
+using Coffee.UIExtensions;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,11 @@ public class TowerGameWeaponStat : MonoBehaviour
     public GameObject emptyText;
     public GameObject weaponStatDetailGroup;
     public Toggle skipToggle;
+
+    public UIParticle rankUpParticle;
+    public UIParticle rankDownParticle;
+
+
 
     //private
     private int weaponLevel;
@@ -169,6 +175,19 @@ public class TowerGameWeaponStat : MonoBehaviour
     {
         if (skipToggle.isOn)
         {
+            if (type == TowerGameResultType.up)
+            {
+                if (rankUpParticle.IsActive() == false)
+                    rankUpParticle.gameObject.SetActive(true);
+                rankUpParticle.Play();
+            }
+            else if (type == TowerGameResultType.down)
+            {
+                if (rankDownParticle.IsActive() == false)
+                    rankDownParticle.gameObject.SetActive(true);
+                rankDownParticle.Play();
+            }
+
             UpdateUIData(weaponLevel);
             TowerGameWeaponEnchantPopup.instance.UpdateUI();
         }

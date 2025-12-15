@@ -38,7 +38,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
 
-    private bool @combatTest = false;
+    private bool @combatTest = true;
 
 
     protected override void OnAwake()
