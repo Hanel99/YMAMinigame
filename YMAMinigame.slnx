@@ -6,9 +6,7 @@
   <Project Path="PlayFab.csproj" />
   <Project Path="PlayFabEditorExtensions.csproj" />
   <Project Path="UniTask.Addressables.csproj" />
-  <Project Path="CFXRRuntime.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
-  <Project Path="CFXREditor.csproj" />
   <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
   <Project Path="UniTask.TextMeshPro.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.Unity.Addressables.csproj" />

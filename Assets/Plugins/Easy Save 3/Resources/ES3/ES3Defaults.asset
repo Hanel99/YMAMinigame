@@ -37,7 +37,6 @@ MonoBehaviour:
     assemblyNames:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
-    - CFXRRuntime
     - Coffee.UIParticle
     - Hierarchy4.Runtime
     - PlayFab
