@@ -1,0 +1,59 @@
+fileFormatVersion: 2
+guid: dd708945493cbad458a3d8b3fc43b85f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: fe56ec25963759b49955809beeb4324b, type: 3}
+  renderPipelineDetection: 0
+  detectedRenderPipeline: Built-In Render Pipeline
+  strippedLinesCount: 33
+  shaderSourceCode: "//--------------------------------------------------------------------------------------------------------------------------------\r\n//
+    Cartoon FX\r\n// (c) 2012-2020 Jean Moreno\r\n// Modified for UI Particle Compatibility\r\n//--------------------------------------------------------------------------------------------------------------------------------\r\n\r\nShader
+    \"Cartoon FX/Remaster/Particle Procedural Glow HL\"\r\n{\r\n\tProperties\r\n\t{\r\n\t//#
+    Blending\r\n\t//#\r\n\r\n\t\t[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend
+    (\"Blend Source\", Float) = 5\r\n\t\t[Enum(UnityEngine.Rendering.BlendMode)]
+    _DstBlend (\"Blend Destination\", Float) = 10\r\n\t\r\n\t//# --------------------------------------------------------\r\n\r\n\t\t[Toggle(_CFXR_DISSOLVE)]
+    _UseDissolve (\"Enable Dissolve\", Float) = 0\r\n\t//# IF_KEYWORD _CFXR_DISSOLVE\r\n\t\t[NoScaleOffset]
+    _DissolveTex (\"Dissolve Texture\", 2D) = \"gray\" {}\r\n\t\t_DissolveSmooth
+    (\"Dissolve Smoothing\", Range(0.0001,0.5)) = 0.1\r\n\t\t[ToggleNoKeyword] _InvertDissolveTex
+    (\"Invert Dissolve Texture\", Float) = 0\r\n\t//# END_IF\r\n\r\n\t//# --------------------------------------------------------\r\n\r\n\t//#
+    Procedural Circle\r\n\t//#\r\n\r\n\t\t[KeywordEnum(P0, P2, P4, P8)] _CFXR_GLOW_POW
+    (\"Apply Power of\", Float) = 0\r\n\t\t_GlowMin (\"Circle Min\", Float) = 0\r\n\t\t_GlowMax
+    (\"Circle Max\", Float) = 1\r\n\t//#\r\n\t\t_MaxValue (\"Max Value\", Float)
+    = 10\r\n\r\n\t//# --------------------------------------------------------\r\n\r\n\t\t_HdrMultiply
+    (\"HDR Multiplier\", Float) = 2\r\n\r\n\t//# --------------------------------------------------------\r\n\t\r\n\t\t//
+    Soft Particles disabled for UI compatibility\r\n\t\t// [Toggle(_FADING_ON)] _UseSP
+    (\"Soft Particles\", Float) = 0\r\n\t//# IF_KEYWORD _FADING_ON\r\n\t\t// _SoftParticlesFadeDistanceNear
+    (\"Near Fade\", Float) = 0\r\n\t\t// _SoftParticlesFadeDistanceFar (\"Far Fade\",
+    Float) = 1\r\n\t//# END_IF\r\n\r\n\t//# ========================================================\r\n\t//#
+    UI Compatibility\r\n\t//#\r\n\t\t\r\n\t\t[HideInInspector] _Stencil (\"Stencil
+    ID\", Float) = 0\r\n\t\t[HideInInspector] _StencilComp (\"Stencil Comparison\",
+    Float) = 8\r\n\t\t[HideInInspector] _StencilOp (\"Stencil Operation\", Float)
+    = 0\r\n\t\t[HideInInspector] _StencilReadMask (\"Stencil Read Mask\", Float)
+    = 255\r\n\t\t[HideInInspector] _StencilWriteMask (\"Stencil Write Mask\", Float)
+    = 255\r\n\t\t[HideInInspector] _ColorMask (\"Color Mask\", Float) = 15\r\n\r\n\t//#
+    ========================================================\r\n\t//# Shadows (disabled
+    for UI)\r\n\t//#\r\n\r\n\t\t// [KeywordEnum(Off,On,CustomTexture)] _CFXR_DITHERED_SHADOWS
+    (\"Dithered Shadows\", Float) = 0\r\n\t}\r\n\t\r\n\tCategory\r\n\t{\r\n\t\tTags\r\n\t\t{\r\n\t\t\t\"Queue\"=\"Transparent\"\r\n\t\t\t\"IgnoreProjector\"=\"True\"\r\n\t\t\t\"RenderType\"=\"Transparent\"\r\n\t\t\t\"PreviewType\"=\"Plane\"\r\n\t\t\t\"CanUseSpriteAtlas\"=\"True\"\r\n\t\t}\r\n\t\tBlend
+    [_SrcBlend] [_DstBlend], One One\r\n\t\tCull Off\r\n\t\tZWrite Off\r\n\t\tZTest
+    [unity_GUIZTestMode]\r\n\r\n\t\tStencil\r\n\t\t{\r\n\t\t\tRef [_Stencil]\r\n\t\t\tComp
+    [_StencilComp]\r\n\t\t\tPass [_StencilOp]\r\n\t\t\tReadMask [_StencilReadMask]\r\n\t\t\tWriteMask
+    [_StencilWriteMask]\r\n\t\t}\r\n\r\n\t\tColorMask [_ColorMask]\r\n\r\n\r\n\t\t//====================================================================================================================================\r\n\t\t//
+    Built-in Rendering Pipeline\r\n\r\n\t\tSubShader\r\n\t\t{\r\n\t\t\tPass\r\n\t\t\t{\r\n\t\t\t\tName
+    \"BASE\"\r\n\r\n\t\t\t\tCGPROGRAM\r\n\r\n\t\t\t\t#pragma vertex vertex_program\r\n\t\t\t\t#pragma
+    fragment fragment_program\r\n\t\t\t\t\r\n\t\t\t\t#pragma multi_compile_fog\r\n\t\t\t\t\r\n\t\t\t\t#pragma
+    shader_feature_local _ _CFXR_GLOW_POW_P2 _CFXR_GLOW_POW_P4 _CFXR_GLOW_POW_P8\r\n\t\t\t\t#pragma
+    shader_feature_local _ _CFXR_DISSOLVE\r\n\r\n\t\t\t\t#pragma shader_feature_local_fragment
+    _ _ALPHATEST_ON\r\n\t\t\t\t#pragma shader_feature_local_fragment _ _ALPHABLEND_ON
+    _ALPHAPREMULTIPLY_ON _ALPHAMODULATE_ON _CFXR_ADDITIVE\r\n\r\n\t\t\t\t#define
+    DISABLE_SOFT_PARTICLES\r\n\t\t\t\t#define CFXR_GLOW_SHADER\r\n\t\t\t\t#include
+    \"CFXR_PASSES.cginc\"\r\n\r\n\t\t\t\tENDCG\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\t\r\n\tCustomEditor
+    \"CartoonFX.MaterialInspector\"\r\n}\r\n"
+  shaderName: Cartoon FX/Remaster/Particle Procedural Glow HL
+  shaderErrors: []
+  variantCount: 320
+  variantCountUsed: 1

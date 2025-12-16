@@ -1,0 +1,164 @@
+//--------------------------------------------------------------------------------------------------------------------------------
+// Cartoon FX
+// (c) 2012-2020 Jean Moreno
+// Modified for UI Particle Compatibility
+//--------------------------------------------------------------------------------------------------------------------------------
+
+Shader "Cartoon FX/Remaster/Particle Procedural Glow HL"
+{
+	Properties
+	{
+	//# Blending
+	//#
+
+		[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend ("Blend Source", Float) = 5
+		[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend ("Blend Destination", Float) = 10
+	
+	//# --------------------------------------------------------
+
+		[Toggle(_CFXR_DISSOLVE)] _UseDissolve ("Enable Dissolve", Float) = 0
+	//# IF_KEYWORD _CFXR_DISSOLVE
+		[NoScaleOffset] _DissolveTex ("Dissolve Texture", 2D) = "gray" {}
+		_DissolveSmooth ("Dissolve Smoothing", Range(0.0001,0.5)) = 0.1
+		[ToggleNoKeyword] _InvertDissolveTex ("Invert Dissolve Texture", Float) = 0
+	//# END_IF
+
+	//# --------------------------------------------------------
+
+	//# Procedural Circle
+	//#
+
+		[KeywordEnum(P0, P2, P4, P8)] _CFXR_GLOW_POW ("Apply Power of", Float) = 0
+		_GlowMin ("Circle Min", Float) = 0
+		_GlowMax ("Circle Max", Float) = 1
+	//#
+		_MaxValue ("Max Value", Float) = 10
+
+	//# --------------------------------------------------------
+
+		_HdrMultiply ("HDR Multiplier", Float) = 2
+
+	//# --------------------------------------------------------
+	
+		// Soft Particles disabled for UI compatibility
+		// [Toggle(_FADING_ON)] _UseSP ("Soft Particles", Float) = 0
+	//# IF_KEYWORD _FADING_ON
+		// _SoftParticlesFadeDistanceNear ("Near Fade", Float) = 0
+		// _SoftParticlesFadeDistanceFar ("Far Fade", Float) = 1
+	//# END_IF
+
+	//# ========================================================
+	//# UI Compatibility
+	//#
+		
+		[HideInInspector] _Stencil ("Stencil ID", Float) = 0
+		[HideInInspector] _StencilComp ("Stencil Comparison", Float) = 8
+		[HideInInspector] _StencilOp ("Stencil Operation", Float) = 0
+		[HideInInspector] _StencilReadMask ("Stencil Read Mask", Float) = 255
+		[HideInInspector] _StencilWriteMask ("Stencil Write Mask", Float) = 255
+		[HideInInspector] _ColorMask ("Color Mask", Float) = 15
+
+	//# ========================================================
+	//# Shadows (disabled for UI)
+	//#
+
+		// [KeywordEnum(Off,On,CustomTexture)] _CFXR_DITHERED_SHADOWS ("Dithered Shadows", Float) = 0
+	}
+	
+	Category
+	{
+		Tags
+		{
+			"Queue"="Transparent"
+			"IgnoreProjector"="True"
+			"RenderType"="Transparent"
+			"PreviewType"="Plane"
+			"CanUseSpriteAtlas"="True"
+		}
+		Blend [_SrcBlend] [_DstBlend], One One
+		Cull Off
+		ZWrite Off
+		ZTest [unity_GUIZTestMode]
+
+		Stencil
+		{
+			Ref [_Stencil]
+			Comp [_StencilComp]
+			Pass [_StencilOp]
+			ReadMask [_StencilReadMask]
+			WriteMask [_StencilWriteMask]
+		}
+
+		ColorMask [_ColorMask]
+
+/*** URP ***/
+		//====================================================================================================================================
+		// Universal Rendering Pipeline
+
+		SubShader
+		{
+			Pass
+			{
+				Name "BASE"
+
+				CGPROGRAM
+
+				#pragma vertex vertex_program
+				#pragma fragment fragment_program
+				
+				#pragma target 2.0
+				
+				#pragma multi_compile_fog
+
+				#pragma shader_feature_local _ _CFXR_GLOW_POW_P2 _CFXR_GLOW_POW_P4 _CFXR_GLOW_POW_P8
+				#pragma shader_feature_local _ _CFXR_DISSOLVE
+
+				#pragma shader_feature_local_fragment _ _ALPHATEST_ON
+				#pragma shader_feature_local_fragment _ _ALPHABLEND_ON _ALPHAPREMULTIPLY_ON _ALPHAMODULATE_ON _CFXR_ADDITIVE
+
+				#define CFXR_URP
+				#define DISABLE_SOFT_PARTICLES
+				#define CFXR_GLOW_SHADER
+				#include "CFXR_PASSES.cginc"
+
+				ENDCG
+			}
+		}
+
+/*** END URP ***/
+
+/*** BIRP ***/
+		//====================================================================================================================================
+		// Built-in Rendering Pipeline
+
+		SubShader
+		{
+			Pass
+			{
+				Name "BASE"
+
+				CGPROGRAM
+
+				#pragma vertex vertex_program
+				#pragma fragment fragment_program
+				
+				#pragma multi_compile_fog
+				
+				#pragma shader_feature_local _ _CFXR_GLOW_POW_P2 _CFXR_GLOW_POW_P4 _CFXR_GLOW_POW_P8
+				#pragma shader_feature_local _ _CFXR_DISSOLVE
+
+				#pragma shader_feature_local_fragment _ _ALPHATEST_ON
+				#pragma shader_feature_local_fragment _ _ALPHABLEND_ON _ALPHAPREMULTIPLY_ON _ALPHAMODULATE_ON _CFXR_ADDITIVE
+
+				#define DISABLE_SOFT_PARTICLES
+				#define CFXR_GLOW_SHADER
+				#include "CFXR_PASSES.cginc"
+
+				ENDCG
+			}
+		}
+/*** END BIRP ***/
+	}
+	
+	CustomEditor "CartoonFX.MaterialInspector"
+}
