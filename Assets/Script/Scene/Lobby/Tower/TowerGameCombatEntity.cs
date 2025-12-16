@@ -22,6 +22,7 @@ public class TowerGameCombatEntity : MonoBehaviour
     void OnDisable()
     {
         image.DOKill();
+        punch.DOKill();
         damageText.DOKill();
         damageText.transform.DOKill();
     }
@@ -113,7 +114,7 @@ public class TowerGameCombatEntity : MonoBehaviour
 
         punch.DOKill();
         punch.gameObject.SetActive(true);
-        punch.transform.DOLocalMove(to, 0.3f).From(from).SetEase(Ease.OutBack).OnComplete(() =>
+        punch.transform.DOLocalMove(to, 0.2f).From(from).SetEase(Ease.OutBack).OnComplete(() =>
         {
             punch.gameObject.SetActive(false);
         });
