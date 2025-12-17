@@ -33,6 +33,7 @@ MonoBehaviour:
   m_UniqueBundleIds: 1
   m_EnableJsonCatalog: 0
   m_NonRecursiveBuilding: 1
+  m_AllowNestedBundleFolders: 0
   m_CCDEnabled: 0
   m_maxConcurrentWebRequests: 3
   m_UseUWRForLocalBundles: 0
@@ -74,20 +75,6 @@ MonoBehaviour:
   m_ProfileSettings:
     m_Profiles:
     - m_InheritedParent: 
-      m_Id: 134178591abcd90499165e1f35bdd027
-      m_ProfileName: New Profile
-      m_Values:
-      - m_Id: 04c1ca496688c51418393988c3371ca7
-        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
-      - m_Id: 1da8a5a7f94e66942ba412f7d39ce08a
-        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
-      - m_Id: 6dee193ff84db2542b7ae6baba98d741
-        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
-      - m_Id: c2bc94b1b7f658d47a7fd15bac180a98
-        m_Value: 'ServerData/[BuildTarget]'
-      - m_Id: f9ecf4acc1cf9fa44baa387230461c2a
-        m_Value: 'https://yourcdn.com/addressables/[Platform]/[Env]/[AssetVersion] '
-    - m_InheritedParent: 
       m_Id: a6b908add24004f42bc539d530300c2d
       m_ProfileName: Default
       m_Values:
@@ -101,6 +88,20 @@ MonoBehaviour:
         m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: f9ecf4acc1cf9fa44baa387230461c2a
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+    - m_InheritedParent: 
+      m_Id: 134178591abcd90499165e1f35bdd027
+      m_ProfileName: New Profile
+      m_Values:
+      - m_Id: 04c1ca496688c51418393988c3371ca7
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 1da8a5a7f94e66942ba412f7d39ce08a
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 6dee193ff84db2542b7ae6baba98d741
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: c2bc94b1b7f658d47a7fd15bac180a98
+        m_Value: 'ServerData/[BuildTarget]'
+      - m_Id: f9ecf4acc1cf9fa44baa387230461c2a
+        m_Value: 'https://yourcdn.com/addressables/[Platform]/[Env]/[AssetVersion] '
     - m_InheritedParent: 
       m_Id: ec9b53e990c83bc42b0a2b84b3a08371
       m_ProfileName: RemoteNAS

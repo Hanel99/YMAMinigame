@@ -210,7 +210,7 @@ public enum CubeState
 #endregion
 
 
-#region CubeGame
+#region WingTto
 
 public enum WingTtoObjectType
 {
@@ -238,6 +238,108 @@ public enum WingTtoPlayerState
 #endregion
 
 
+
+#region Quest
+
+public enum QuestType
+{
+    Daily,
+    Achievement,
+}
+
+
+public enum QuestGame
+{
+    MatchCardGame,
+    FindAIWordGame,
+    CubeGame,
+    WingTto,
+    TowerGame,
+    Gacha,
+    Collection,
+    Common,
+}
+
+
+public enum QuestDetailType
+{
+    // match card
+    PlayMatchCardGame,
+    FinishCardGameUnderCount,
+
+    // find AI word
+    PlayFindAIWordGame,
+    FinishWordGameUnderCount,
+
+    // cube
+    PlayCubeGame,
+    ReachCubeScore,
+    ReachTotalTouchCount,
+    ReachCubeStateTouchCount,
+    S_ReachScoreWithoutTooFastOrTooSlow,
+    S_ReachScoreWithOnlyPerfect,
+
+
+    // wingtto
+    PlayWingTto,
+    ReachWingTtoDistance,
+    CollectWingTtoItem,
+    S_ReachScoreWithoutGimbab,
+    S_ReachScoreWithCrash,
+
+    // tower
+    ReachTowerFloor,
+    ReachStatLevel,
+    ReachWeaponLevel,
+    S_WinWithAvoid,
+
+    // collection
+    CollectCard,
+    CollectWord,
+
+    // gacha
+    PlayGacha,
+    PlayMileageGacha,
+
+
+    // common
+    CollectCoin,
+    UseCoin,
+    ReachPlayerLevel,
+    S_EquipEtcIcon,
+
+
+
+
+
+}
+
+public enum QuestGrade
+{
+    Basic,
+    Difficult,
+    Challenge,
+    Insane,
+    Nightmare,
+    Unexpected,
+}
+
+
+
+
+public enum QuestState
+{
+    NotStarted,
+    InProgress,
+    Complete,
+}
+
+
+
+
+
+
+#endregion
 
 
 

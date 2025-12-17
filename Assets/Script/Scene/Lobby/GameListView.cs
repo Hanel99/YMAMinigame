@@ -14,6 +14,7 @@ public class GameListView : MonoBehaviour
     public GameObject towerBtn;
     public GameObject rankingBtn;
     public GameObject collectionBtn;
+    public GameObject questBtn;
     public GameObject gameQuitBtn;
 
     public List<GameSelectIcon> gameList = new();
@@ -122,6 +123,7 @@ public class GameListView : MonoBehaviour
         towerBtn.GetComponent<Button>().onClick.AddListener(OnClickTowerButton);
         rankingBtn.GetComponent<Button>().onClick.AddListener(OnClickRankingButton);
         collectionBtn.GetComponent<Button>().onClick.AddListener(OnClickCollectionButton);
+        questBtn.GetComponent<Button>().onClick.AddListener(OnClickQuestButton);
         gameQuitBtn.GetComponent<Button>().onClick.AddListener(OnClickGameQuit);
 
         UpdateUserProfileProcess();
@@ -205,6 +207,11 @@ public class GameListView : MonoBehaviour
     public void OnClickCollectionButton()
     {
         LobbyUIManager.instance.ShowPopup<CollectionPopup>();
+    }
+
+    public void OnClickQuestButton()
+    {
+        LobbyUIManager.instance.ShowPopup<QuestPopup>();
     }
 
     public void OnClickGameQuit()

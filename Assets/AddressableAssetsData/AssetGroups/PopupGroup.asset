@@ -93,6 +93,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68e559ef387c8574d89f6764e7ffaf98
+    m_Address: QuestPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6e9b40fd8f7f5fb4fa00debd5af5bed0
     m_Address: CardGameCheckCardPopup
     m_ReadOnly: 0
