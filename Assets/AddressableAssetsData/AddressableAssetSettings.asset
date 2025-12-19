@@ -61,6 +61,7 @@ MonoBehaviour:
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
   m_GroupAssets:
   - {fileID: 11400000, guid: 643ff107c61d45f41a931fd0e0bcd809, type: 2}
+  - {fileID: 11400000, guid: 04c6355d582001a45838d4e5b2add908, type: 2}
   - {fileID: 11400000, guid: b1f8938363996de4e8455f0f322a3990, type: 2}
   - {fileID: 11400000, guid: 93aeb977015ffd44fb91c76d01f2ccb5, type: 2}
   - {fileID: 11400000, guid: 54ba8dc9009325d4eb0b5946fc56f3fa, type: 2}
@@ -144,6 +145,7 @@ MonoBehaviour:
     - BGM
     - SFX
     - TowerBoss
+    - QuestGrade
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 57eaff35bc7b180438742f173f23539c, type: 2}

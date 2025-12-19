@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: QuestGrade
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: QuestGrade
+  m_GUID: 1d814c9fec6d5994d84a15213c9c9211
+  m_SerializeEntries:
+  - m_GUID: 22d671783e57f0644a48c8d433402937
+    m_Address: Unexpected
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23ed47725ba15e24aaeb5ec584c24bf3
+    m_Address: Nightmare
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 489c11981f2afdd48a9a1bab7dca408b
+    m_Address: Difficult
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: acd2daa4634360b40bc740c128e6a9f3
+    m_Address: Inasne
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdfb96794f649854b9d3d7179b34cc89
+    m_Address: Basic
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6f08e067da5f9f408bf050d06ff6fe8
+    m_Address: Challenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: b6d2b1aef27de754493f5df5a9c2fcdd, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c538f4b548f6e0940be5bcea12a059d6, type: 2}
+    - {fileID: 11400000, guid: ecf0f6ee16faa3040bdbad6a2b89b716, type: 2}
