@@ -69,15 +69,18 @@ public class SceneMoveManager : MonoBehaviour
             return SetPortrait();
     }
 
-    private async UniTaskVoid AnimationCompleteProcess(SceneName sceneName)
+    private async UniTask AnimationCompleteProcess(SceneName sceneName)
     {
 #if UNITY_ANDROID
-        if (SetScreenRotate(sceneName))
-            await UniTask.WaitForSeconds(1f);
+    if (SetScreenRotate(sceneName))
+        await UniTask.WaitForSeconds(1f);
+#else
+        await UniTask.Yield();
 #endif
 
         SceneManager.LoadScene(sceneName.ToString());
     }
+
 
 
 

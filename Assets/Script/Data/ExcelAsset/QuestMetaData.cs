@@ -11,7 +11,8 @@ public class QuestMetaData
     public int subId;
     public bool hidden;
     public string desc;
-    public int count;
+    public int reachCount;
+    public int tryCount;
     public int coin;
     public int exp;
 }
