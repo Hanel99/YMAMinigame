@@ -29,6 +29,9 @@ public class GameResourceManager : MonoBehaviour
     public TowerWeaponLevelData towerWeaponLevelData;
     public TowerUserLevelData towerUserLevelData;
     public TowerBossLevelData towerBossLevelData;
+    public QuestData questData;
+    public FinalQuizData finalQuizData;
+
 
     public List<Sprite> cardImages = new();
     public List<Sprite> gameImages = new();
@@ -76,6 +79,12 @@ public class GameResourceManager : MonoBehaviour
                     break;
                 case StringData data:
                     stringData = data;
+                    break;
+                case QuestData data:
+                    questData = data;
+                    break;
+                case FinalQuizData data:
+                    finalQuizData = data;
                     break;
                 default:
                     Debug.LogWarning($"Unknown config type: {sData.name}");
@@ -265,6 +274,23 @@ public class GameResourceManager : MonoBehaviour
     public TowerBossLevelMetaData GetTowerBossLevelMetaData(int floor)
     {
         return towerBossLevelData.Data.Find(x => x.level == floor);
+    }
+
+
+
+    // questData
+
+    public QuestMetaData GetQuestMetaData(int index)
+    {
+        return questData.Data.Find(x => x.id == index);
+    }
+
+
+    // finalQuizData
+
+    public FinalQuizMetaData GetFinalQuizMetaData(int index)
+    {
+        return finalQuizData.Data.Find(x => x.index == index);
     }
 
     #endregion

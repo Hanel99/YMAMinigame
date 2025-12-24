@@ -21,6 +21,18 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 142b540384508af488749bfa5523b0e0
+    m_Address: QuestData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ddd1577dcb48334db94ef0df1670b54
+    m_Address: FinalQuizData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43cf86da9fb74744b901a8c597f146ea
     m_Address: CardData
     m_ReadOnly: 0
