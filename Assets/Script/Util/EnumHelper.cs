@@ -263,6 +263,8 @@ public enum QuestGame
 
 public enum QuestDetailType
 {
+    // 1차 세부 퀘스트
+
     // match card
     PlayMatchCardGame,
     FinishCardGameUnderCount,
@@ -307,11 +309,33 @@ public enum QuestDetailType
     UseCoin,
     ReachPlayerLevel,
     S_EquipEtcIcon,
+    E_PlayEndRoll,
+}
 
+public enum QuestDetailType2
+{
+    // 추가 디테일이 필요한 경우
+    None,
 
+    // cube
+    CubeState_TooFast,
+    CubeState_Fast,
+    CubeState_Perfect,
+    CubeState_Slow,
+    CubeState_TooSlow,
 
+    // wingtto
+    WingTtoItem_Gimbab,
+    WingTtoItem_SpeedUp,
+    WingTtoItem_Coin,
+    WingTtoItem_Exp,
 
-
+    // tower
+    TowerStat_Atk,
+    TowerStat_Def,
+    TowerStat_Hp,
+    TowerStat_CriRate,
+    TowerStat_CriDmg,
 }
 
 public enum QuestGrade
