@@ -7,6 +7,7 @@ public class QuestItem : MonoBehaviour
 
     public Text questGradeText;
     public Text indexText;
+    public Text gameNameText;
     public Text descText;
 
     public Slider progressBar;
@@ -14,6 +15,7 @@ public class QuestItem : MonoBehaviour
     public Button rewardButton;
 
     public GameObject borderBlink;
+    public GameObject rewardButtonBorderBlink;
     public GameObject completeDim;
     public GameObject unknownDim;
 
@@ -40,7 +42,7 @@ public class QuestItem : MonoBehaviour
 
     public void UpdateProgress(int value)
     {
-        progressValue = value;
+        progressValue = Mathf.Min(value, progressMaxValue);
 
         progress = (float)progressValue / progressMaxValue;
         progressBar.value = progress;
