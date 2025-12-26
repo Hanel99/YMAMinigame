@@ -95,9 +95,29 @@ public class LocalizeManager : MonoBehaviour
             return (-1, $"Missing String");
         }
 
-        int index = Random.Range(0, aiWords.Count);
-        var randomWord = aiWords[index];
-        return (index, GetString(randomWord.key));
+        // 보유하지 않은 단어 인덱스 목록 생성
+        var ownedIndices = new HashSet<int>(SaveDataManager.instance.playerData.ownWordList);
+        var notOwnedIndexes = new List<int>();
+        for (int i = 0; i < aiWords.Count; ++i)
+        {
+            if (!ownedIndices.Contains(i))
+            {
+                notOwnedIndexes.Add(i);
+            }
+        }
+
+        // 70% 확률로 보유하지 않은 단어 선택
+        int index;
+        if (Random.value < 0.7f && notOwnedIndexes.Count > 0)
+        {
+            index = notOwnedIndexes[Random.Range(0, notOwnedIndexes.Count)];
+        }
+        else
+        {
+            index = Random.Range(0, aiWords.Count);
+        }
+
+        return (index, GetString(aiWords[index].key));
     }
 
     public List<string> GetAllAIWordString()

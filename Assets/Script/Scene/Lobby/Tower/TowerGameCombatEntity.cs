@@ -37,6 +37,8 @@ public class TowerGameCombatEntity : MonoBehaviour
         else
             image.sprite = GameResourceManager.instance.GetTowerBossImage(bossNumber, false, false);
 
+        image.color = Color.white;
+
         currentHp = maxHp;
         this.maxHp = maxHp;
         UpdateHpBar(true);

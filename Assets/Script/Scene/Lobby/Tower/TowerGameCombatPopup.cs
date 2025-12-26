@@ -349,7 +349,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
 
-                if (@combatTest) damage = 50;
+                if (@combatTest) damage = 10;
 
 
                 b.hp -= damage;
@@ -383,7 +383,7 @@ public class TowerGameCombatPopup : PopupBase
 
 
 
-                if (@combatTest) damage = 100;
+                if (@combatTest) damage = 10;
 
 
 

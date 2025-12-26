@@ -81,7 +81,7 @@ public class GameListView : MonoBehaviour
         //     UpdateUserProfileProcess();
 
         // if (Input.GetKeyDown(KeyCode.G))
-        //     LobbyUIManager.instance.ShowGachaProbabilityPopup();
+        //     LocalizeManager.instance.test();
 #endif
     }
 
