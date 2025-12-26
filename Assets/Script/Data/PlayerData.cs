@@ -43,6 +43,9 @@ public class PlayerData
     // gemini Data
     public List<GeminiHint> geminiHints2;
 
+    // Quest Data
+    public QuestUserData questUserData = new QuestUserData();
+
 
     //server switch
     public bool useServerData;
@@ -73,7 +76,8 @@ public class PlayerData
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
-        geminiHints2 = new();
+        geminiHints2 = new List<GeminiHint>();
+        questUserData = new QuestUserData();
         wingTtoHighScore = 0f;
 
         // server switch

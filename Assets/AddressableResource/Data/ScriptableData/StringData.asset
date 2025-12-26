@@ -2245,6 +2245,62 @@ MonoBehaviour:
     ko: "\uD50C\uB808\uC774 \uD574\uC8FC\uC154\uC11C \uAC10\uC0AC\uD569\uB2C8\uB2E4"
     jp: 
     en: 
+  - key: Quest.Detail2.CubeState_TooFast
+    ko: TooFast
+    jp: 
+    en: 
+  - key: Quest.Detail2.CubeState_Fast
+    ko: Fast
+    jp: 
+    en: 
+  - key: Quest.Detail2.CubeState_Perfect
+    ko: Perfect
+    jp: 
+    en: 
+  - key: Quest.Detail2.CubeState_Slow
+    ko: Slow
+    jp: 
+    en: 
+  - key: Quest.Detail2.CubeState_TooSlow
+    ko: TooSlow
+    jp: 
+    en: 
+  - key: Quest.Detail2.WingTtoItem_Gimbab
+    ko: "\uC0BC\uAC01\uAE40\uBC25"
+    jp: 
+    en: 
+  - key: Quest.Detail2.WingTtoItem_SpeedUp
+    ko: "\uC2A4\uD53C\uB4DC \uC5C5"
+    jp: 
+    en: 
+  - key: Quest.Detail2.WingTtoItem_Coin
+    ko: "\uCF54\uC778"
+    jp: 
+    en: 
+  - key: Quest.Detail2.WingTtoItem_Exp
+    ko: "\uACBD\uD5D8\uCE58"
+    jp: 
+    en: 
+  - key: Quest.Detail2.TowerStat_Atk
+    ko: "\uACF5\uACA9\uB825"
+    jp: 
+    en: 
+  - key: Quest.Detail2.TowerStat_Def
+    ko: "\uBC29\uC5B4\uB825"
+    jp: 
+    en: 
+  - key: Quest.Detail2.TowerStat_Hp
+    ko: HP
+    jp: 
+    en: 
+  - key: Quest.Detail2.TowerStat_CriRat
+    ko: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960"
+    jp: 
+    en: 
+  - key: Quest.Detail2.TowerStat_CriDmg
+    ko: "\uD06C\uB9AC\uD2F0\uCEEC \uB370\uBBF8\uC9C0"
+    jp: 
+    en: 
   - key: Quest.GameName.MatchCardGame
     ko: "\uCE74\uB4DC \uB9DE\uCD94\uAE30"
     jp: 

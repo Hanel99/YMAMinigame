@@ -17,51 +17,103 @@ MonoBehaviour:
     questType: 1
     questGame: 0
     detailType: 0
+    detailType2: 0
     grade: 0
     subId: 1
     hidden: 0
-    desc: 
     reachCount: 0
-    tryCount: 100
-    coin: 100
+    tryCount: 5
+    coin: 10
     exp: 1
-    redeem: 
+    redeem: 123
   - id: 2
     questType: 1
-    questGame: 3
-    detailType: 11
+    questGame: 1
+    detailType: 3
+    detailType2: 0
+    grade: 1
+    subId: 1
+    hidden: 0
+    reachCount: 3500
+    tryCount: 1
+    coin: 10
+    exp: 2
+    redeem: "\uAC00\uBDC1ABCabc1230"
+  - id: 3
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
     grade: 2
     subId: 1
     hidden: 0
-    desc: 
-    reachCount: 3500
-    tryCount: 1
-    coin: 100
-    exp: 1
-    redeem: 
-  - id: 3
-    questType: 0
-    questGame: 0
-    detailType: 0
-    grade: 0
-    subId: 0
-    hidden: 0
-    desc: 
     reachCount: 0
-    tryCount: 0
-    coin: 0
-    exp: 0
-    redeem: 
+    tryCount: 1000
+    coin: 11
+    exp: 3
+    redeem: 22
   - id: 4
-    questType: 0
-    questGame: 0
-    detailType: 0
-    grade: 0
-    subId: 0
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 3
+    subId: 1
     hidden: 0
-    desc: 
     reachCount: 0
-    tryCount: 0
-    coin: 0
-    exp: 0
+    tryCount: 300
+    coin: 12
+    exp: 4
     redeem: 
+  - id: 5
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 4
+    subId: 1
+    hidden: 0
+    reachCount: 0
+    tryCount: 99999999
+    coin: 13
+    exp: 5
+    redeem: 
+  - id: 6
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 5
+    subId: 1
+    hidden: 0
+    reachCount: 0
+    tryCount: 3
+    coin: 14
+    exp: 6
+    redeem: 
+  - id: 7
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 5
+    subId: 1
+    hidden: 1
+    reachCount: 0
+    tryCount: 9000
+    coin: 15
+    exp: 7
+    redeem: 13
+  - id: 8
+    questType: 1
+    questGame: 7
+    detailType: 27
+    detailType2: 0
+    grade: 5
+    subId: 2
+    hidden: 0
+    reachCount: 0
+    tryCount: 1
+    coin: 16
+    exp: 8
+    redeem: 12

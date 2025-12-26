@@ -69,6 +69,7 @@ public static class StaticGameData
         public const string MasterIcon = "MasterIcon";
         public const string PopupGroup = "PopupGroup";
         public const string TowerBossImage = "TowerBoss";
+        public const string QuestGradeImage = "QuestGrade";
         public const string BGMGroup = "BGM";
         public const string SFXGroup = "SFX";
     }
@@ -131,6 +132,33 @@ public static class StaticGameData
 
         serverGameSeed = result;
         HLLogger.Log($"@@@ Update Game Seed : {serverGameSeed}");
+    }
+
+
+    public static bool IsUnderVersion(string checkVersion = null, string baseVersion = null)
+    {
+        if (string.IsNullOrEmpty(checkVersion) || string.IsNullOrEmpty(baseVersion) || checkVersion.Equals(baseVersion))
+            return false;
+
+        string[] beforeVer = checkVersion.Split('.');
+        string[] afterVer = baseVersion.Split('.');
+        for (int i = 0; i < 3; ++i)
+        {
+            if (int.TryParse(beforeVer[i], out int checkVer) && int.TryParse(afterVer[i], out int baseVer))
+            {
+                if (checkVer < baseVer)
+                    return true;
+                else if (checkVer > baseVer)
+                    return false;
+            }
+            else
+            {
+                HLLogger.LogWarning($"not int parse : {SaveDataManager.instance.playerData.recentAppVersion} or {Application.version}");
+                return false;
+            }
+        }
+        return false;
+
     }
 
 

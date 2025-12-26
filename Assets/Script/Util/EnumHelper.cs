@@ -353,8 +353,8 @@ public enum QuestGrade
 
 public enum QuestState
 {
-    NotStarted,
     InProgress,
+    ReadyToComplete,
     Complete,
 }
 

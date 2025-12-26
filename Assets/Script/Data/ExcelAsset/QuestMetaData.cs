@@ -7,10 +7,10 @@ public class QuestMetaData
     public QuestType questType;
     public QuestGame questGame;
     public QuestDetailType detailType;
+    public QuestDetailType2 detailType2;
     public QuestGrade grade;
     public int subId;
     public bool hidden;
-    public string desc;
     public int reachCount;
     public int tryCount;
     public int coin;

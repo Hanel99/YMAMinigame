@@ -37,6 +37,7 @@ public class GameResourceManager : MonoBehaviour
     public List<Sprite> gameImages = new();
     public List<Sprite> masterImages = new();
     public List<Sprite> towerBossImages = new();
+    public List<Sprite> questGradeImages = new();
 
     public List<GameObject> popups = new();
 
@@ -97,6 +98,7 @@ public class GameResourceManager : MonoBehaviour
         gameImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.GameImage);
         masterImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.MasterIcon);
         towerBossImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.TowerBossImage);
+        questGradeImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.QuestGradeImage);
 
         // Prefabs
         popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.PopupGroup);
@@ -165,7 +167,15 @@ public class GameResourceManager : MonoBehaviour
         return sprite;
     }
 
+    public Sprite GetQuestGradeIcon(QuestGrade grade)
+    {
+        string str = grade.ToString();
+        Sprite sprite = questGradeImages.Find(x => x.name.Contains(str));
+        if (sprite == null)
+            sprite = null;
 
+        return sprite;
+    }
 
 
     #endregion
@@ -283,6 +293,11 @@ public class GameResourceManager : MonoBehaviour
     public QuestMetaData GetQuestMetaData(int index)
     {
         return questData.Data.Find(x => x.id == index);
+    }
+
+    public List<QuestMetaData> GetAllQuestMetaData()
+    {
+        return questData.Data;
     }
 
 

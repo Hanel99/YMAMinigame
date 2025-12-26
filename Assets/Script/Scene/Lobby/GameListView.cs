@@ -77,8 +77,14 @@ public class GameListView : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.C))
         //     SoundManager.instance.FadeOutBGM();
 
-        // if (Input.GetKeyDown(KeyCode.U))
-        //     UpdateUserProfileProcess();
+        if (Input.GetKeyDown(KeyCode.U))
+            QuestManager.instance.AddQuestProgress(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None, 10);
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            var s1 = QuestManager.instance.GetQuestValue(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None);
+            HLLogger.Log($"@@@ Quest Value : {s1} ");
+        }
+
 
         // if (Input.GetKeyDown(KeyCode.G))
         //     LocalizeManager.instance.test();
@@ -87,14 +93,21 @@ public class GameListView : MonoBehaviour
 
     private void StartGameViewSettingProcess()
     {
-        //@@@ 0.6.5 스탯 데이터 하드리셋 대응
+
+        // 버전 하위호환 보정 처리
         if (SaveDataManager.instance.playerData.recentAppVersion != Application.version)
         {
-            SaveDataManager.instance.playerData.recentAppVersion = Application.version;
-            if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
-                SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
-            if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
-                SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+            if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
+            {
+                //@@@ 0.6.5 스탯 데이터 하드리셋 대응
+                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
+                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
+                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
+                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+            }
+
+            // 필요한 게 있으면 비슷하게 코드 추가
+
         }
 
         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
