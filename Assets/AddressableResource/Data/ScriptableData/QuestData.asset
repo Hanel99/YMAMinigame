@@ -25,6 +25,7 @@ MonoBehaviour:
     tryCount: 100
     coin: 100
     exp: 1
+    redeem: 
   - id: 2
     questType: 1
     questGame: 3
@@ -37,6 +38,7 @@ MonoBehaviour:
     tryCount: 1
     coin: 100
     exp: 1
+    redeem: 
   - id: 3
     questType: 0
     questGame: 0
@@ -49,6 +51,7 @@ MonoBehaviour:
     tryCount: 0
     coin: 0
     exp: 0
+    redeem: 
   - id: 4
     questType: 0
     questGame: 0
@@ -61,3 +64,4 @@ MonoBehaviour:
     tryCount: 0
     coin: 0
     exp: 0
+    redeem: 

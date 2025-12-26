@@ -15,4 +15,5 @@ public class QuestMetaData
     public int tryCount;
     public int coin;
     public int exp;
+    public string redeem;
 }
