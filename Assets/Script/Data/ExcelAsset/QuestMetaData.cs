@@ -11,7 +11,6 @@ public class QuestMetaData
     public QuestGrade grade;
     public int subId;
     public bool hidden;
-    public int reachCount;
     public int tryCount;
     public int coin;
     public int exp;

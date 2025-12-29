@@ -300,6 +300,11 @@ public class GameResourceManager : MonoBehaviour
         return questData.Data;
     }
 
+    public List<QuestMetaData> GetQuestMetaData(QuestGame questGame)
+    {
+        return questData.Data.FindAll(x => x.questGame == questGame);
+    }
+
 
     // finalQuizData
 

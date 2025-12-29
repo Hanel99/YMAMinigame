@@ -12,6 +12,8 @@ public class QuestItem : MonoBehaviour
 
     public Slider progressBar;
     public Text progressText;
+    public Text coinRewardText;
+    public Text expRewardText;
 
     public GameObject borderBlink;
     public GameObject rewardButtonBorderBlink;
@@ -39,21 +41,27 @@ public class QuestItem : MonoBehaviour
         questState = QuestState.InProgress;
 
 
-
         //TODO 다 제대로 넣은게 아님.
-
         indexText.text = $"No.{questData.id.ToString("D2")}";
         questGradeIcon.sprite = GameResourceManager.instance.GetQuestGradeIcon(questData.grade);
         gameNameText.text = LocalizeManager.instance.GetString($"Quest.GameName.{questData.questGame}");
 
         SetDescText();
+        coinRewardText.text = questData.coin >= 1000000 ? $"{questData.coin / 10000}만" : questData.coin.ToString();
+        expRewardText.text = questData.exp.ToString();
+
         progressValue = QuestManager.instance.GetQuestValue(questData.detailType, questData.detailType2);
-        progressMaxValue = GetMaxProgressValue();
+        progressMaxValue = questData.tryCount;
         UpdateProgress();
         SetDimCover();
 
+    }
 
-
+    public void UpdateQuestUI()
+    {
+        progressValue = QuestManager.instance.GetQuestValue(questData.detailType, questData.detailType2);
+        UpdateProgress();
+        SetDimCover();
     }
 
 
@@ -65,25 +73,12 @@ public class QuestItem : MonoBehaviour
             detail2 = LocalizeManager.instance.GetString($"Quest.Detail2.{questData.detailType2}");
 
         //TODO detailtype에 맞춰서 format 조정하기
-        string descMix = string.Format(desc, questData.reachCount, questData.tryCount);
+        string descMix = string.Format(desc, questData.tryCount, detail2);
 
 
         descText.text = descMix;
     }
 
-
-    private int GetMaxProgressValue()
-    {
-        switch (questData.detailType)
-        {
-            case QuestDetailType.ReachTotalTouchCount:
-            case QuestDetailType.ReachWingTtoDistance:
-                return questData.reachCount;
-
-            default:
-                return questData.tryCount;
-        }
-    }
 
 
     public void UpdateProgress()

@@ -1220,15 +1220,11 @@ MonoBehaviour:
   isActBackKey: 1
   cardGroup: {fileID: 8976520665753531570}
   wordGroup: {fileID: 7028754971239058255}
-  filter: {fileID: 3496487074125698589}
+  cardFilterDropdown: {fileID: 3496487074125698589}
   cardPrefab: {fileID: 1321716365448166236}
   cardRoot: {fileID: 8658342247546662446}
-  cardObjectList: []
-  viewCardIdList: 
   wordPrefab: {fileID: 4267994616962327926}
   wordRoot: {fileID: 6439097591922668449}
-  wordObjectList: []
-  viewWordIdList: []
 --- !u!1 &4590234180513209405
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,7 +3116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3132,7 +3128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnDropdownValueChanged
+      value: OnCardFilterChanged
       objectReference: {fileID: 0}
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3141,10 +3137,10 @@ PrefabInstance:
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 3496487074125698589}
+      objectReference: {fileID: 0}
     - target: {fileID: 4690836412807714588, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.UI.Dropdown, UnityEngine.UI
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5460907315293541795, guid: 9ad26cdd7d36be145a023c24c14b6a20, type: 3}
       propertyPath: m_IsActive

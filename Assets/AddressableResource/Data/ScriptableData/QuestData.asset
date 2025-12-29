@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QuestData
   m_EditorClassIdentifier: Assembly-CSharp::QuestData
   Data:
-  - id: 1
+  - id: 0
     questType: 1
     questGame: 0
     detailType: 0
@@ -21,12 +21,203 @@ MonoBehaviour:
     grade: 0
     subId: 1
     hidden: 0
-    reachCount: 0
     tryCount: 5
-    coin: 10
+    coin: 10000
     exp: 1
-    redeem: 123
+    redeem: 
+  - id: 1
+    questType: 1
+    questGame: 0
+    detailType: 0
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 10
+    coin: 20000
+    exp: 3
+    redeem: 
   - id: 2
+    questType: 1
+    questGame: 0
+    detailType: 0
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 15
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 3
+    questType: 1
+    questGame: 0
+    detailType: 0
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 4
+    questType: 1
+    questGame: 0
+    detailType: 0
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 30
+    coin: 200000
+    exp: 13
+    redeem: 
+  - id: 5
+    questType: 1
+    questGame: 0
+    detailType: 0
+    detailType2: 0
+    grade: 5
+    subId: 6
+    hidden: 0
+    tryCount: 100
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 6
+    questType: 1
+    questGame: 0
+    detailType: 1
+    detailType2: 0
+    grade: 1
+    subId: 1
+    hidden: 0
+    tryCount: 1
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 7
+    questType: 1
+    questGame: 0
+    detailType: 1
+    detailType2: 0
+    grade: 1
+    subId: 2
+    hidden: 0
+    tryCount: 2
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 8
+    questType: 1
+    questGame: 0
+    detailType: 1
+    detailType2: 0
+    grade: 2
+    subId: 3
+    hidden: 0
+    tryCount: 3
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 9
+    questType: 1
+    questGame: 0
+    detailType: 1
+    detailType2: 0
+    grade: 3
+    subId: 4
+    hidden: 0
+    tryCount: 5
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 10
+    questType: 1
+    questGame: 0
+    detailType: 1
+    detailType2: 0
+    grade: 5
+    subId: 5
+    hidden: 0
+    tryCount: 10
+    coin: 1000000
+    exp: 23
+    redeem: 
+  - id: 11
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 12
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 13
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 14
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 50
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 15
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 70
+    coin: 200000
+    exp: 13
+    redeem: 
+  - id: 16
+    questType: 1
+    questGame: 1
+    detailType: 2
+    detailType2: 0
+    grade: 5
+    subId: 6
+    hidden: 0
+    tryCount: 150
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 17
     questType: 1
     questGame: 1
     detailType: 3
@@ -34,86 +225,2959 @@ MonoBehaviour:
     grade: 1
     subId: 1
     hidden: 0
-    reachCount: 3500
-    tryCount: 1
-    coin: 10
+    tryCount: 3
+    coin: 20000
+    exp: 1
+    redeem: 
+  - id: 18
+    questType: 1
+    questGame: 1
+    detailType: 3
+    detailType2: 0
+    grade: 1
+    subId: 2
+    hidden: 0
+    tryCount: 8
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 19
+    questType: 1
+    questGame: 1
+    detailType: 3
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 20
+    questType: 1
+    questGame: 1
+    detailType: 3
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 35
+    coin: 200000
+    exp: 13
+    redeem: 
+  - id: 21
+    questType: 1
+    questGame: 1
+    detailType: 3
+    detailType2: 0
+    grade: 1
+    subId: 5
+    hidden: 0
+    tryCount: 80
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 22
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 5
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 23
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 10
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 24
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 15
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 25
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 26
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 30
+    coin: 200000
+    exp: 13
+    redeem: 
+  - id: 27
+    questType: 1
+    questGame: 2
+    detailType: 4
+    detailType2: 0
+    grade: 5
+    subId: 6
+    hidden: 0
+    tryCount: 100
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 28
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 5000
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 29
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 10000
+    coin: 20000
+    exp: 1
+    redeem: 
+  - id: 30
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 30000
+    coin: 50000
     exp: 2
-    redeem: "\uAC00\uBDC1ABCabc1230"
-  - id: 3
+    redeem: 
+  - id: 31
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 50000
+    coin: 100000
+    exp: 2
+    redeem: 
+  - id: 32
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 100000
+    coin: 150000
+    exp: 3
+    redeem: 
+  - id: 33
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 3
+    subId: 6
+    hidden: 0
+    tryCount: 150000
+    coin: 200000
+    exp: 5
+    redeem: 
+  - id: 34
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 3
+    subId: 7
+    hidden: 0
+    tryCount: 200000
+    coin: 300000
+    exp: 8
+    redeem: 
+  - id: 35
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 4
+    subId: 8
+    hidden: 0
+    tryCount: 300000
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 36
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 4
+    subId: 9
+    hidden: 0
+    tryCount: 500000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 37
+    questType: 1
+    questGame: 2
+    detailType: 5
+    detailType2: 0
+    grade: 5
+    subId: 10
+    hidden: 0
+    tryCount: 1000000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 38
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 100
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 39
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 300
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 40
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 500
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 41
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 800
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 42
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 1300
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 43
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 2
+    subId: 6
+    hidden: 0
+    tryCount: 2000
+    coin: 80000
+    exp: 8
+    redeem: 
+  - id: 44
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 3
+    subId: 7
+    hidden: 0
+    tryCount: 3000
+    coin: 150000
+    exp: 13
+    redeem: 
+  - id: 45
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 4
+    subId: 8
+    hidden: 0
+    tryCount: 5000
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 46
+    questType: 1
+    questGame: 2
+    detailType: 6
+    detailType2: 0
+    grade: 5
+    subId: 9
+    hidden: 0
+    tryCount: 10000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 47
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 1
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 48
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 1
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 49
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 1
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 50
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 1
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 51
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 1
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 50
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 52
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 2
+    grade: 0
+    subId: 6
+    hidden: 0
+    tryCount: 50
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 53
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 2
+    grade: 0
+    subId: 7
+    hidden: 0
+    tryCount: 100
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 54
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 2
+    grade: 1
+    subId: 8
+    hidden: 0
+    tryCount: 150
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 55
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 2
+    grade: 1
+    subId: 9
+    hidden: 0
+    tryCount: 200
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 56
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 2
+    grade: 2
+    subId: 10
+    hidden: 0
+    tryCount: 250
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 57
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 0
+    subId: 11
+    hidden: 0
+    tryCount: 100
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 58
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 0
+    subId: 12
+    hidden: 0
+    tryCount: 300
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 59
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 1
+    subId: 13
+    hidden: 0
+    tryCount: 500
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 60
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 1
+    subId: 14
+    hidden: 0
+    tryCount: 800
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 61
     questType: 1
     questGame: 2
     detailType: 7
     detailType2: 3
     grade: 2
+    subId: 15
+    hidden: 0
+    tryCount: 1100
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 62
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 2
+    subId: 16
+    hidden: 0
+    tryCount: 1500
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 63
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 3
+    subId: 17
+    hidden: 0
+    tryCount: 2000
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 64
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 3
+    subId: 18
+    hidden: 0
+    tryCount: 2500
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 65
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 4
+    subId: 19
+    hidden: 0
+    tryCount: 3000
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 66
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 4
+    subId: 20
+    hidden: 0
+    tryCount: 5000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 67
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 3
+    grade: 5
+    subId: 21
+    hidden: 0
+    tryCount: 10000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 68
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 4
+    grade: 0
+    subId: 22
+    hidden: 0
+    tryCount: 50
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 69
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 4
+    grade: 0
+    subId: 23
+    hidden: 0
+    tryCount: 100
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 70
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 4
+    grade: 1
+    subId: 24
+    hidden: 0
+    tryCount: 150
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 71
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 4
+    grade: 1
+    subId: 25
+    hidden: 0
+    tryCount: 200
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 72
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 4
+    grade: 2
+    subId: 26
+    hidden: 0
+    tryCount: 250
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 73
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 5
+    grade: 0
+    subId: 27
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 74
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 5
+    grade: 0
+    subId: 28
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 75
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 5
+    grade: 1
+    subId: 29
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 76
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 5
+    grade: 1
+    subId: 30
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 77
+    questType: 1
+    questGame: 2
+    detailType: 7
+    detailType2: 5
+    grade: 2
+    subId: 31
+    hidden: 0
+    tryCount: 50
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 78
+    questType: 1
+    questGame: 2
+    detailType: 8
+    detailType2: 0
+    grade: 4
+    subId: 1
+    hidden: 1
+    tryCount: 50000
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 79
+    questType: 1
+    questGame: 2
+    detailType: 8
+    detailType2: 0
+    grade: 5
+    subId: 2
+    hidden: 1
+    tryCount: 300000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 80
+    questType: 1
+    questGame: 2
+    detailType: 9
+    detailType2: 0
+    grade: 4
+    subId: 1
+    hidden: 1
+    tryCount: 8000
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 81
+    questType: 1
+    questGame: 2
+    detailType: 9
+    detailType2: 0
+    grade: 5
+    subId: 2
+    hidden: 1
+    tryCount: 30000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 82
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 0
     subId: 1
     hidden: 0
-    reachCount: 0
-    tryCount: 1000
-    coin: 11
+    tryCount: 5
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 83
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 10
+    coin: 20000
     exp: 3
-    redeem: 22
-  - id: 4
+    redeem: 
+  - id: 84
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 15
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 85
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 86
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 30
+    coin: 200000
+    exp: 13
+    redeem: 
+  - id: 87
+    questType: 1
+    questGame: 3
+    detailType: 10
+    detailType2: 0
+    grade: 5
+    subId: 6
+    hidden: 0
+    tryCount: 100
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 88
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 500
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 89
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 1000
+    coin: 20000
+    exp: 1
+    redeem: 
+  - id: 90
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 1500
+    coin: 30000
+    exp: 2
+    redeem: 
+  - id: 91
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 2000
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 92
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 1
+    subId: 5
+    hidden: 0
+    tryCount: 2500
+    coin: 80000
+    exp: 3
+    redeem: 
+  - id: 93
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 2
+    subId: 6
+    hidden: 0
+    tryCount: 3000
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 94
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 2
+    subId: 7
+    hidden: 0
+    tryCount: 3500
+    coin: 200000
+    exp: 8
+    redeem: 
+  - id: 95
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 3
+    subId: 8
+    hidden: 0
+    tryCount: 4000
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 96
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 3
+    subId: 9
+    hidden: 0
+    tryCount: 4100
+    coin: 400000
+    exp: 20
+    redeem: 
+  - id: 97
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 4
+    subId: 10
+    hidden: 0
+    tryCount: 4200
+    coin: 400000
+    exp: 28
+    redeem: 
+  - id: 98
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 4
+    subId: 11
+    hidden: 0
+    tryCount: 4300
+    coin: 600000
+    exp: 37
+    redeem: 
+  - id: 99
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 4
+    subId: 12
+    hidden: 0
+    tryCount: 4400
+    coin: 800000
+    exp: 47
+    redeem: 
+  - id: 100
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 5
+    subId: 13
+    hidden: 0
+    tryCount: 4500
+    coin: 1000000
+    exp: 58
+    redeem: 
+  - id: 101
+    questType: 1
+    questGame: 3
+    detailType: 11
+    detailType2: 0
+    grade: 5
+    subId: 14
+    hidden: 0
+    tryCount: 5000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 102
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 103
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 104
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 105
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 106
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 1
+    subId: 5
+    hidden: 0
+    tryCount: 60
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 107
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 6
+    grade: 2
+    subId: 6
+    hidden: 0
+    tryCount: 100
+    coin: 100000
+    exp: 13
+    redeem: 
+  - id: 108
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 0
+    subId: 7
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 109
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 0
+    subId: 8
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 110
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 0
+    subId: 9
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 111
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 1
+    subId: 10
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 112
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 1
+    subId: 11
+    hidden: 0
+    tryCount: 60
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 113
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 7
+    grade: 2
+    subId: 12
+    hidden: 0
+    tryCount: 100
+    coin: 100000
+    exp: 13
+    redeem: 
+  - id: 114
     questType: 1
     questGame: 3
     detailType: 12
     detailType2: 8
-    grade: 3
+    grade: 0
+    subId: 13
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 115
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 0
+    subId: 14
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 116
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 0
+    subId: 15
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 117
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 1
+    subId: 16
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 118
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 1
+    subId: 17
+    hidden: 0
+    tryCount: 60
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 119
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 8
+    grade: 2
+    subId: 18
+    hidden: 0
+    tryCount: 100
+    coin: 100000
+    exp: 13
+    redeem: 
+  - id: 120
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 0
+    subId: 19
+    hidden: 0
+    tryCount: 10
+    coin: 5000
+    exp: 1
+    redeem: 
+  - id: 121
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 0
+    subId: 20
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 2
+    redeem: 
+  - id: 122
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 0
+    subId: 21
+    hidden: 0
+    tryCount: 30
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 123
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 1
+    subId: 22
+    hidden: 0
+    tryCount: 40
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 124
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 1
+    subId: 23
+    hidden: 0
+    tryCount: 60
+    coin: 50000
+    exp: 8
+    redeem: 
+  - id: 125
+    questType: 1
+    questGame: 3
+    detailType: 12
+    detailType2: 9
+    grade: 2
+    subId: 24
+    hidden: 0
+    tryCount: 100
+    coin: 100000
+    exp: 13
+    redeem: 
+  - id: 126
+    questType: 1
+    questGame: 3
+    detailType: 13
+    detailType2: 0
+    grade: 4
+    subId: 1
+    hidden: 1
+    tryCount: 1000
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 127
+    questType: 1
+    questGame: 3
+    detailType: 13
+    detailType2: 0
+    grade: 5
+    subId: 2
+    hidden: 1
+    tryCount: 4000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 128
+    questType: 1
+    questGame: 3
+    detailType: 14
+    detailType2: 0
+    grade: 4
+    subId: 1
+    hidden: 1
+    tryCount: 1000
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 129
+    questType: 1
+    questGame: 3
+    detailType: 14
+    detailType2: 0
+    grade: 5
+    subId: 2
+    hidden: 1
+    tryCount: 4000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 130
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 0
     subId: 1
     hidden: 0
-    reachCount: 0
-    tryCount: 300
-    coin: 12
-    exp: 4
+    tryCount: 10
+    coin: 5000
+    exp: 1
     redeem: 
-  - id: 5
+  - id: 131
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 10000
+    exp: 3
+    redeem: 
+  - id: 132
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 133
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 50
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 134
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 1
+    subId: 5
+    hidden: 0
+    tryCount: 100
+    coin: 300000
+    exp: 8
+    redeem: 
+  - id: 135
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 2
+    subId: 6
+    hidden: 0
+    tryCount: 150
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 136
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 2
+    subId: 7
+    hidden: 0
+    tryCount: 200
+    coin: 1000000
+    exp: 13
+    redeem: 
+  - id: 137
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 3
+    subId: 8
+    hidden: 0
+    tryCount: 250
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 138
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 3
+    subId: 9
+    hidden: 0
+    tryCount: 300
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 139
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 4
+    subId: 10
+    hidden: 1
+    tryCount: 600
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 140
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 4
+    subId: 11
+    hidden: 1
+    tryCount: 800
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 141
+    questType: 1
+    questGame: 4
+    detailType: 15
+    detailType2: 0
+    grade: 5
+    subId: 12
+    hidden: 1
+    tryCount: 1000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 142
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 143
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 144
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 50
+    coin: 80000
+    exp: 3
+    redeem: 
+  - id: 145
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 80
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 146
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 100
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 147
     questType: 1
     questGame: 4
     detailType: 16
     detailType2: 10
     grade: 4
-    subId: 1
+    subId: 6
+    hidden: 1
+    tryCount: 200
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 148
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 4
+    subId: 7
+    hidden: 1
+    tryCount: 300
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 149
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 10
+    grade: 5
+    subId: 8
+    hidden: 1
+    tryCount: 500
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 150
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 0
+    subId: 9
     hidden: 0
-    reachCount: 0
-    tryCount: 99999999
-    coin: 13
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 151
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 0
+    subId: 10
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 152
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 1
+    subId: 11
+    hidden: 0
+    tryCount: 50
+    coin: 80000
+    exp: 3
+    redeem: 
+  - id: 153
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 1
+    subId: 12
+    hidden: 0
+    tryCount: 80
+    coin: 100000
     exp: 5
     redeem: 
-  - id: 6
+  - id: 154
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 2
+    subId: 13
+    hidden: 0
+    tryCount: 100
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 155
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 4
+    subId: 14
+    hidden: 1
+    tryCount: 200
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 156
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 4
+    subId: 15
+    hidden: 1
+    tryCount: 300
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 157
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 11
+    grade: 5
+    subId: 16
+    hidden: 1
+    tryCount: 500
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 158
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 0
+    subId: 17
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 159
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 0
+    subId: 18
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 160
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 1
+    subId: 19
+    hidden: 0
+    tryCount: 50
+    coin: 80000
+    exp: 3
+    redeem: 
+  - id: 161
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 1
+    subId: 20
+    hidden: 0
+    tryCount: 80
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 162
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 2
+    subId: 21
+    hidden: 0
+    tryCount: 100
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 163
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 4
+    subId: 22
+    hidden: 1
+    tryCount: 200
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 164
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 4
+    subId: 23
+    hidden: 1
+    tryCount: 300
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 165
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 12
+    grade: 5
+    subId: 24
+    hidden: 1
+    tryCount: 500
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 166
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 0
+    subId: 25
+    hidden: 0
+    tryCount: 5
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 167
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 0
+    subId: 26
+    hidden: 0
+    tryCount: 10
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 168
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 1
+    subId: 27
+    hidden: 0
+    tryCount: 15
+    coin: 80000
+    exp: 3
+    redeem: 
+  - id: 169
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 1
+    subId: 28
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 170
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 2
+    subId: 29
+    hidden: 0
+    tryCount: 32
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 171
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 4
+    subId: 30
+    hidden: 1
+    tryCount: 36
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 172
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 13
+    grade: 5
+    subId: 31
+    hidden: 1
+    tryCount: 40
+    coin: 500000
+    exp: 38
+    redeem: 
+  - id: 173
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 0
+    subId: 32
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 174
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 0
+    subId: 33
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 175
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 1
+    subId: 34
+    hidden: 0
+    tryCount: 50
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 176
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 2
+    subId: 35
+    hidden: 0
+    tryCount: 80
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 177
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 4
+    subId: 36
+    hidden: 1
+    tryCount: 180
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 178
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 4
+    subId: 37
+    hidden: 1
+    tryCount: 290
+    coin: 1000000
+    exp: 13
+    redeem: 
+  - id: 179
+    questType: 1
+    questGame: 4
+    detailType: 16
+    detailType2: 14
+    grade: 5
+    subId: 38
+    hidden: 1
+    tryCount: 500
+    coin: 2000000
+    exp: 38
+    redeem: 
+  - id: 180
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 181
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 1
+    subId: 2
+    hidden: 0
+    tryCount: 30
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 182
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 50
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 183
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 2
+    subId: 4
+    hidden: 0
+    tryCount: 70
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 184
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 90
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 185
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 3
+    subId: 6
+    hidden: 0
+    tryCount: 100
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 186
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 3
+    subId: 7
+    hidden: 1
+    tryCount: 201
+    coin: 1000000
+    exp: 13
+    redeem: 
+  - id: 187
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 3
+    subId: 8
+    hidden: 1
+    tryCount: 301
+    coin: 2000000
+    exp: 38
+    redeem: 
+  - id: 188
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 4
+    subId: 9
+    hidden: 1
+    tryCount: 401
+    coin: 4000000
+    exp: 38
+    redeem: 
+  - id: 189
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 4
+    subId: 10
+    hidden: 1
+    tryCount: 501
+    coin: 6000000
+    exp: 38
+    redeem: 
+  - id: 190
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 4
+    subId: 11
+    hidden: 1
+    tryCount: 601
+    coin: 8000000
+    exp: 87
+    redeem: 
+  - id: 191
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 5
+    subId: 12
+    hidden: 1
+    tryCount: 701
+    coin: 10000000
+    exp: 87
+    redeem: 
+  - id: 192
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 5
+    subId: 13
+    hidden: 1
+    tryCount: 801
+    coin: 15000000
+    exp: 87
+    redeem: 
+  - id: 193
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 5
+    subId: 14
+    hidden: 1
+    tryCount: 901
+    coin: 30000000
+    exp: 198
+    redeem: 
+  - id: 194
+    questType: 1
+    questGame: 4
+    detailType: 17
+    detailType2: 0
+    grade: 5
+    subId: 15
+    hidden: 1
+    tryCount: 1000
+    coin: 50000000
+    exp: 594
+    redeem: 
+  - id: 195
+    questType: 1
+    questGame: 4
+    detailType: 18
+    detailType2: 0
+    grade: 2
+    subId: 1
+    hidden: 1
+    tryCount: 1
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 196
+    questType: 1
+    questGame: 4
+    detailType: 18
+    detailType2: 0
+    grade: 2
+    subId: 2
+    hidden: 1
+    tryCount: 3
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 197
+    questType: 1
+    questGame: 4
+    detailType: 18
+    detailType2: 0
+    grade: 2
+    subId: 3
+    hidden: 1
+    tryCount: 10
+    coin: 10000000
+    exp: 198
+    redeem: 
+  - id: 198
+    questType: 1
+    questGame: 6
+    detailType: 19
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 199
+    questType: 1
+    questGame: 6
+    detailType: 19
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 200
+    questType: 1
+    questGame: 6
+    detailType: 19
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 201
+    questType: 1
+    questGame: 6
+    detailType: 19
+    detailType2: 0
+    grade: 2
+    subId: 4
+    hidden: 0
+    tryCount: 50
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 202
+    questType: 1
+    questGame: 6
+    detailType: 19
+    detailType2: 0
+    grade: 3
+    subId: 5
+    hidden: 0
+    tryCount: 100
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 203
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 204
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 20
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 205
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 30
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 206
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 2
+    subId: 4
+    hidden: 0
+    tryCount: 50
+    coin: 150000
+    exp: 8
+    redeem: 
+  - id: 207
+    questType: 1
+    questGame: 6
+    detailType: 20
+    detailType2: 0
+    grade: 3
+    subId: 5
+    hidden: 0
+    tryCount: 100
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 208
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 30
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 209
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 100
+    coin: 30000
+    exp: 1
+    redeem: 
+  - id: 210
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 1
+    subId: 3
+    hidden: 0
+    tryCount: 200
+    coin: 50000
+    exp: 3
+    redeem: 
+  - id: 211
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 2
+    subId: 4
+    hidden: 0
+    tryCount: 500
+    coin: 100000
+    exp: 5
+    redeem: 
+  - id: 212
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 2
+    subId: 5
+    hidden: 0
+    tryCount: 1000
+    coin: 300000
+    exp: 8
+    redeem: 
+  - id: 213
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 3
+    subId: 6
+    hidden: 0
+    tryCount: 2000
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 214
+    questType: 1
+    questGame: 5
+    detailType: 21
+    detailType2: 0
+    grade: 4
+    subId: 7
+    hidden: 0
+    tryCount: 5000
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 215
     questType: 1
     questGame: 5
     detailType: 21
     detailType2: 0
     grade: 5
+    subId: 8
+    hidden: 0
+    tryCount: 10000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 216
+    questType: 1
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 0
     subId: 1
     hidden: 0
-    reachCount: 0
-    tryCount: 3
-    coin: 14
-    exp: 6
+    tryCount: 1
+    coin: 50000
+    exp: 3
     redeem: 
-  - id: 7
+  - id: 217
     questType: 1
-    questGame: 6
-    detailType: 20
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 1
+    subId: 2
+    hidden: 0
+    tryCount: 3
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 218
+    questType: 1
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 2
+    subId: 3
+    hidden: 0
+    tryCount: 5
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 219
+    questType: 1
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 3
+    subId: 4
+    hidden: 0
+    tryCount: 10
+    coin: 100000
+    exp: 13
+    redeem: 
+  - id: 220
+    questType: 1
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 4
+    subId: 5
+    hidden: 0
+    tryCount: 20
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 221
+    questType: 1
+    questGame: 5
+    detailType: 22
+    detailType2: 0
+    grade: 5
+    subId: 6
+    hidden: 0
+    tryCount: 50
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 222
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10000
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 223
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 50000
+    coin: 10000
+    exp: 3
+    redeem: 
+  - id: 224
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 100000
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 225
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 0
+    subId: 4
+    hidden: 0
+    tryCount: 300000
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 226
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 0
+    subId: 5
+    hidden: 0
+    tryCount: 500000
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 227
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 1
+    subId: 6
+    hidden: 0
+    tryCount: 1000000
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 228
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 1
+    subId: 7
+    hidden: 0
+    tryCount: 2000000
+    coin: 200000
+    exp: 8
+    redeem: 
+  - id: 229
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 2
+    subId: 8
+    hidden: 0
+    tryCount: 3000000
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 230
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 2
+    subId: 9
+    hidden: 0
+    tryCount: 5000000
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 231
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 3
+    subId: 10
+    hidden: 0
+    tryCount: 10000000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 232
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 3
+    subId: 11
+    hidden: 0
+    tryCount: 20000000
+    coin: 2000000
+    exp: 38
+    redeem: 
+  - id: 233
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 4
+    subId: 12
+    hidden: 0
+    tryCount: 30000000
+    coin: 3000000
+    exp: 87
+    redeem: 
+  - id: 234
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 4
+    subId: 13
+    hidden: 0
+    tryCount: 50000000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 235
+    questType: 1
+    questGame: 7
+    detailType: 23
+    detailType2: 0
+    grade: 5
+    subId: 14
+    hidden: 0
+    tryCount: 100000000
+    coin: 10000000
+    exp: 198
+    redeem: 
+  - id: 236
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 10000
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 237
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 50000
+    coin: 10000
+    exp: 3
+    redeem: 
+  - id: 238
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 100000
+    coin: 20000
+    exp: 3
+    redeem: 
+  - id: 239
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 0
+    subId: 4
+    hidden: 0
+    tryCount: 300000
+    coin: 30000
+    exp: 5
+    redeem: 
+  - id: 240
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 0
+    subId: 5
+    hidden: 0
+    tryCount: 500000
+    coin: 50000
+    exp: 5
+    redeem: 
+  - id: 241
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 1
+    subId: 6
+    hidden: 0
+    tryCount: 1000000
+    coin: 100000
+    exp: 8
+    redeem: 
+  - id: 242
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 1
+    subId: 7
+    hidden: 0
+    tryCount: 2000000
+    coin: 200000
+    exp: 8
+    redeem: 
+  - id: 243
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 2
+    subId: 8
+    hidden: 0
+    tryCount: 3000000
+    coin: 300000
+    exp: 13
+    redeem: 
+  - id: 244
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 2
+    subId: 9
+    hidden: 0
+    tryCount: 5000000
+    coin: 500000
+    exp: 13
+    redeem: 
+  - id: 245
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 3
+    subId: 10
+    hidden: 0
+    tryCount: 10000000
+    coin: 1000000
+    exp: 38
+    redeem: 
+  - id: 246
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 3
+    subId: 11
+    hidden: 0
+    tryCount: 20000000
+    coin: 2000000
+    exp: 38
+    redeem: 
+  - id: 247
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 4
+    subId: 12
+    hidden: 0
+    tryCount: 30000000
+    coin: 3000000
+    exp: 87
+    redeem: 
+  - id: 248
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 4
+    subId: 13
+    hidden: 0
+    tryCount: 50000000
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 249
+    questType: 1
+    questGame: 7
+    detailType: 24
+    detailType2: 0
+    grade: 5
+    subId: 14
+    hidden: 0
+    tryCount: 100000000
+    coin: 10000000
+    exp: 198
+    redeem: 
+  - id: 250
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 0
+    subId: 1
+    hidden: 0
+    tryCount: 5
+    coin: 10000
+    exp: 1
+    redeem: 
+  - id: 251
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 0
+    subId: 2
+    hidden: 0
+    tryCount: 10
+    coin: 50000
+    exp: 2
+    redeem: 
+  - id: 252
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 0
+    subId: 3
+    hidden: 0
+    tryCount: 20
+    coin: 100000
+    exp: 3
+    redeem: 
+  - id: 253
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 1
+    subId: 4
+    hidden: 0
+    tryCount: 30
+    coin: 200000
+    exp: 5
+    redeem: 
+  - id: 254
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 1
+    subId: 5
+    hidden: 0
+    tryCount: 50
+    coin: 300000
+    exp: 8
+    redeem: 
+  - id: 255
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 2
+    subId: 6
+    hidden: 0
+    tryCount: 70
+    coin: 500000
+    exp: 8
+    redeem: 
+  - id: 256
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 2
+    subId: 7
+    hidden: 0
+    tryCount: 90
+    coin: 800000
+    exp: 13
+    redeem: 
+  - id: 257
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 3
+    subId: 8
+    hidden: 0
+    tryCount: 100
+    coin: 1000000
+    exp: 13
+    redeem: 
+  - id: 258
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 4
+    subId: 9
+    hidden: 1
+    tryCount: 150
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 259
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 4
+    subId: 10
+    hidden: 1
+    tryCount: 200
+    coin: 3000000
+    exp: 38
+    redeem: 
+  - id: 260
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 5
+    subId: 11
+    hidden: 1
+    tryCount: 250
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 261
+    questType: 1
+    questGame: 7
+    detailType: 25
+    detailType2: 0
+    grade: 5
+    subId: 12
+    hidden: 1
+    tryCount: 300
+    coin: 5000000
+    exp: 87
+    redeem: 
+  - id: 262
+    questType: 1
+    questGame: 7
+    detailType: 26
     detailType2: 0
     grade: 5
     subId: 1
     hidden: 1
-    reachCount: 0
-    tryCount: 9000
-    coin: 15
-    exp: 7
-    redeem: 13
-  - id: 8
+    tryCount: 1
+    coin: 1000000
+    exp: 13
+    redeem: 
+  - id: 263
     questType: 1
     questGame: 7
     detailType: 27
     detailType2: 0
     grade: 5
-    subId: 2
-    hidden: 0
-    reachCount: 0
+    subId: 1
+    hidden: 1
     tryCount: 1
-    coin: 16
-    exp: 8
-    redeem: 12
+    coin: 49999999
+    exp: 198
+    redeem: TNKU4PLAY
