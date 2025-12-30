@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using DG.Tweening;
 using UnityEngine.UI;
+using Michsky.UI.Shift;
 
 
 public class PopupBase : MonoBehaviour
@@ -13,6 +14,8 @@ public class PopupBase : MonoBehaviour
     private Action closeCallBack = null;
     protected RectTransform bgTransform;
     private Image dim;
+    private Material blurMaterial;
+    private BlurManager blurManager;
     private Image border;
     public bool isActBackKey = true;
 
@@ -55,6 +58,13 @@ public class PopupBase : MonoBehaviour
         var dimObject = transform.Find("dim");
         if (dimObject != null)
             dim = dimObject.GetComponent<Image>();
+
+        var blurObject = transform.Find("blurDim");
+        if (blurObject != null)
+        {
+            blurManager = blurObject.GetComponent<BlurManager>();
+        }
+
 
         var borderObject = transform.Find("bg/bgBorder");
         if (borderObject != null)
@@ -180,6 +190,7 @@ public class PopupBase : MonoBehaviour
 
             //팝업 열림 애니메이션
             dim.DOFade(0.7f, dimAniDuration).SetEase(dimAniEase).From(0);
+            blurManager?.BlurInAnim();
 
             Sequence sequence = DOTween.Sequence();
             sequence.Append(bgTransform.DOScale(new Vector3(1f, 0.01f, 1f), scaleOpenAniDuration).SetEase(scaleAniEase).From(0.01f));
@@ -204,6 +215,8 @@ public class PopupBase : MonoBehaviour
 
             //팝업 닫힘 애니메이션
             dim.DOFade(0f, dimAniDuration).SetEase(dimAniEase).From(0.7f);
+            blurManager?.BlurOutAnim();
+
             Sequence sequence = DOTween.Sequence();
             sequence.Append(bgTransform.DOScale(new Vector3(1f, 0.01f, 1f), scaleCloseAniDuration).SetEase(scaleAniEase).From(1f));
             sequence.Append(bgTransform.DOScale(new Vector3(0.01f, 0.01f, 1f), scaleCloseAniDuration).SetEase(scaleAniEase));
