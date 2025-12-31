@@ -18,10 +18,11 @@ public class LobbyUIManager : MonoBehaviour
     }
 
 
-    public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null)
+    public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null, bool isActBackKey = true)
     {
         var popup = _ShowPopup<CommonPopup>();
         popup.ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
+        popup.isActBackKey = isActBackKey;
         return popup;
     }
     public void ShowGameSelectPopup(GameType type)

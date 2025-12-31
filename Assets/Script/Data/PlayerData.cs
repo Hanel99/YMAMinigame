@@ -29,6 +29,10 @@ public class PlayerData
     public List<int> ownWordList = new();
     public List<string> usingRedeemCode = new();
 
+    public string defineState = "";
+    public bool playEndRoll = false;
+
+
     public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
 
 
@@ -44,7 +48,7 @@ public class PlayerData
     public List<GeminiHint> geminiHints2;
 
     // Quest Data
-    public QuestUserData questUserData = new QuestUserData();
+    public QuestUserPlayData questUserPlayData = new QuestUserPlayData();
 
 
     //server switch
@@ -73,11 +77,14 @@ public class PlayerData
         ownWordList.Clear();
         usingRedeemCode.Clear();
 
+        defineState = "";
+        playEndRoll = false;
+
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
         geminiHints2 = new List<GeminiHint>();
-        questUserData = new QuestUserData();
+        questUserPlayData = new QuestUserPlayData();
         wingTtoHighScore = 0f;
 
         // server switch

@@ -318,7 +318,7 @@ public class IntroController : MonoBehaviour
     public void RemoveLoginData()
     {
         SaveDataManager.instance.RemoveLoginData();
-        IntroUIManager.instance.ShowCommonPopup("삭제 완료", "로그인 정보가 삭제되었습니다.\n게임을 재실행 해 주십시오.", false, true, false, () => { Application.Quit(); }, () => { Application.Quit(); });
+        IntroUIManager.instance.ShowCommonPopup("삭제 완료", "로그인 정보가 삭제되었습니다.\n게임을 재실행 해 주십시오.", false, true, false, () => { Application.Quit(); }, () => { Application.Quit(); }, false);
     }
 
 

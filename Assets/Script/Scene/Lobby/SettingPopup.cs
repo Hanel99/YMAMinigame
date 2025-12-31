@@ -278,16 +278,14 @@ public class SettingPopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
-        var popup = LobbyUIManager.instance.ShowCommonPopup("주의", "정말로 삭제하시겠습니까?\n삭제한 데이터는 복구되지 않습니다.", true, true, true, null,
+        var popup = LobbyUIManager.instance.ShowCommonPopup("주의", "로그아웃 하시겠습니까?", true, true, true, null,
         () =>
         {
-            SaveDataManager.instance.RemovePlayerData();
-            var popup2 = LobbyUIManager.instance.ShowCommonPopup("데이터 삭제", "데이터가 삭제되었습니다.", false, true, false, null, () =>
+            SaveDataManager.instance.RemoveLoginData();
+            var popup2 = LobbyUIManager.instance.ShowCommonPopup("로그아웃 완료", "로그아웃 되었습니다.\n게임을 재실행 해 주십시오.", false, true, false, null, () =>
             {
                 Application.Quit();
-            });
-            popup2.isActBackKey = false;
-        });
-        popup.isActBackKey = false;
+            }, false);
+        }, false);
     }
 }

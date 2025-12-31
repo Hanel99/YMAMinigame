@@ -7,7 +7,7 @@ public class QuestManager : MonoBehaviour
 
 
 
-    public QuestUserData questUserData => SaveDataManager.instance.playerData.questUserData;
+    public QuestUserPlayData questUserPlayData => SaveDataManager.instance.playerData.questUserPlayData;
 
 
 
@@ -42,24 +42,24 @@ public class QuestManager : MonoBehaviour
 
         switch (detailType)
         {
+
             //TODO Sample
-            case QuestDetailType.ReachTotalTouchCount:
-                if (questDetailType2 == QuestDetailType2.CubeState_Fast)
-                    questUserData.testData += progress;
-                else
-                    questUserData.testData += progress;
-                break;
+            // case QuestDetailType.ReachTotalTouchCount:
+            //     if (questDetailType2 == QuestDetailType2.CubeState_Fast)
+            //         questUserPlayData.testData += progress;
+            //     else
+            //         questUserPlayData.testData += progress;
+            //     break;
 
             default:
-                questUserData.testData += progress;
                 break;
         }
 
 
         //TODO sample
 
-        questUserData.testData += progress;
-        HLLogger.Log("@@@ Quest progress added. Current testData: " + questUserData.testData);
+        // questUserPlayData.testData += progress;
+        // HLLogger.Log("@@@ Quest progress added. Current testData: " + questUserPlayData.testData);
 
     }
 
@@ -69,15 +69,15 @@ public class QuestManager : MonoBehaviour
         switch (detailType)
         {
             //TODO Sample
-            case QuestDetailType.ReachTotalTouchCount:
-                if (questDetailType2 == QuestDetailType2.CubeState_Fast)
-                    return questUserData.testData;
-                else
-                    return questUserData.testData / 2;
+            // case QuestDetailType.ReachTotalTouchCount:
+            //     if (questDetailType2 == QuestDetailType2.CubeState_Fast)
+            //         return questUserPlayData.testData;
+            //     else
+            //         return questUserPlayData.testData / 2;
 
 
             default:
-                return questUserData.testData;
+                return 0;
         }
     }
 
@@ -90,17 +90,17 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(int questId, System.Action onComplete = null)
     {
         // 퀘스트 완료 처리.
-        if (!questUserData.completedQuestIds.Contains(questId))
+        if (!questUserPlayData.completedQuestIds.Contains(questId))
         {
             HLLogger.Log($"@@@ Quest completed: {questId}");
-            questUserData.completedQuestIds.Add(questId);
+            questUserPlayData.completedQuestIds.Add(questId);
         }
 
         onComplete?.Invoke();
     }
     public bool IsQuestCompleted(int questId)
     {
-        return questUserData.completedQuestIds.Contains(questId);
+        return questUserPlayData.completedQuestIds.Contains(questId);
     }
 
 

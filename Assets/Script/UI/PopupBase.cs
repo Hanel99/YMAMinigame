@@ -14,7 +14,6 @@ public class PopupBase : MonoBehaviour
     private Action closeCallBack = null;
     protected RectTransform bgTransform;
     private Image dim;
-    private Material blurMaterial;
     private BlurManager blurManager;
     private Image border;
     public bool isActBackKey = true;

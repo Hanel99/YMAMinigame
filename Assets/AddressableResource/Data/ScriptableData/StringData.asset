@@ -2159,7 +2159,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: Quest.Desc.ReachCubeStateTouchCount
-    ko: "{0} \uD310\uC815\uC744 {1}\uD68C \uD130\uCE58\uD558\uC138\uC694."
+    ko: "{1} \uD310\uC815\uC744 {0}\uD68C \uD130\uCE58\uD558\uC138\uC694."
     jp: 
     en: 
   - key: Quest.Desc.S_ReachScoreWithoutTooFastOrTooSlow
@@ -2181,7 +2181,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: Quest.Desc.CollectWingTtoItem
-    ko: "{0} \uC544\uC774\uD15C\uC744 {1}\uD68C \uD68D\uB4DD\uD558\uC138\uC694."
+    ko: "{1} \uC544\uC774\uD15C\uC744 {0}\uD68C \uD68D\uB4DD\uD558\uC138\uC694."
     jp: 
     en: 
   - key: Quest.Desc.S_ReachScoreWithoutGimbab
@@ -2198,7 +2198,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: Quest.Desc.ReachStatLevel
-    ko: "{0} \uC2A4\uD0EF\uC744 {1}\uB808\uBCA8\uAE4C\uC9C0 \uAC15\uD654\uD558\uC138\uC694."
+    ko: "{1} \uC2A4\uD0EF\uC744 {0}\uB808\uBCA8\uAE4C\uC9C0 \uAC15\uD654\uD558\uC138\uC694."
     jp: 
     en: 
   - key: Quest.Desc.ReachWeaponLevel

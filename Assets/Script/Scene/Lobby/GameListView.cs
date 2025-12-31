@@ -77,13 +77,13 @@ public class GameListView : MonoBehaviour
         // if (Input.GetKeyDown(KeyCode.C))
         //     SoundManager.instance.FadeOutBGM();
 
-        if (Input.GetKeyDown(KeyCode.U))
-            QuestManager.instance.AddQuestProgress(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None, 10);
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            var s1 = QuestManager.instance.GetQuestValue(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None);
-            HLLogger.Log($"@@@ Quest Value : {s1} ");
-        }
+        // if (Input.GetKeyDown(KeyCode.U))
+        //     QuestManager.instance.AddQuestProgress(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None, 10);
+        // if (Input.GetKeyDown(KeyCode.I))
+        // {
+        //     var s1 = QuestManager.instance.GetQuestValue(QuestDetailType.ReachTotalTouchCount, QuestDetailType2.None);
+        //     HLLogger.Log($"@@@ Quest Value : {s1} ");
+        // }
 
 
         // if (Input.GetKeyDown(KeyCode.G))

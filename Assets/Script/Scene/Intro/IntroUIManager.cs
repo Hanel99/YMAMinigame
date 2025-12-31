@@ -118,17 +118,18 @@ public class IntroUIManager : MonoBehaviour
 
     public void OnClickRemoveLoginDataButton()
     {
-        ShowCommonPopup("로그인 정보 삭제", "로그인 정보를 초기화 하겠습니까?", false, true, true, null, () => { IntroController.instance.RemoveLoginData(); });
+        ShowCommonPopup("로그인 정보 삭제", "로그인 정보를 초기화 하겠습니까?", false, true, true, null, () => { IntroController.instance.RemoveLoginData(); }, false);
     }
 
 
 
 
 
-    public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null)
+    public CommonPopup ShowCommonPopup(string titleText, string descText, bool showClose, bool showOK, bool showNo, Action closeCallback = null, Action OKCallback = null, bool isActBackKey = true)
     {
         var popup = _ShowPopup<CommonPopup>();
         popup.ShowPopup(titleText, descText, showClose, showOK, showNo, closeCallback, OKCallback);
+        popup.isActBackKey = isActBackKey;
         return popup;
     }
 
