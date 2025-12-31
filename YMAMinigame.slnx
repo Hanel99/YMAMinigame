@@ -2,6 +2,8 @@
   <Project Path="Assembly-CSharp-firstpass.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
   <Project Path="UniTask.csproj" />
+  <Project Path="Xarbrough.SelectionUtility.Editor.csproj" />
+  <Project Path="Xarbrough.SelectionUtility.Runtime.csproj" />
   <Project Path="UniTask.Linq.csproj" />
   <Project Path="PlayFab.csproj" />
   <Project Path="PlayFabEditorExtensions.csproj" />
