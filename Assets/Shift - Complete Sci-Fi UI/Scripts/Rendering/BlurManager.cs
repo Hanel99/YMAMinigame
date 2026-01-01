@@ -42,8 +42,6 @@ namespace Michsky.UI.Shift
         {
             currentBlurValue = blurMaterial.GetFloat(customProperty);
 
-            HLLogger.Log($"{this.name} - blur in start");
-
             if (currentBlurValue >= 0)
                 currentBlurValue = 0;
 
@@ -57,15 +55,11 @@ namespace Michsky.UI.Shift
                 blurMaterial.SetFloat(customProperty, currentBlurValue);
                 yield return null;
             }
-
-            HLLogger.Log($"{this.name} - blur in finish");
         }
 
         IEnumerator BlurOut()
         {
             currentBlurValue = blurMaterial.GetFloat(customProperty);
-
-            HLLogger.Log($"{this.name} - blur out start");
 
             while (currentBlurValue > 0)
             {
@@ -77,8 +71,6 @@ namespace Michsky.UI.Shift
                 blurMaterial.SetFloat(customProperty, currentBlurValue);
                 yield return null;
             }
-
-            HLLogger.Log($"{this.name} - blur out finish");
         }
 
         public void BlurInAnim()

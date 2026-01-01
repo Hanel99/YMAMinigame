@@ -274,7 +274,16 @@ public class IntroController : MonoBehaviour
 
     private void PlayFabLoginProcess()
     {
-        if (SaveDataManager.instance.playerData.autoLogin)
+        bool isSameDefineState = false;
+#if DEV
+        isSameDefineState = SaveDataManager.instance.playerData.defineState.Equals("DEV");
+#elif LIVE
+        isSameDefineState = SaveDataManager.instance.playerData.defineState.Equals("LIVE");
+#endif
+
+
+
+        if (SaveDataManager.instance.playerData.autoLogin && isSameDefineState)
         {
             var loginIDPWData = SaveDataManager.instance.GetIDPW();
             PlayFabManager.instance.IntroUserLoginProcess(loginIDPWData.Item1, loginIDPWData.Item2, () =>
@@ -286,6 +295,7 @@ public class IntroController : MonoBehaviour
                 });
             }, (error) =>
             {
+                SaveDataManager.instance.playerData.autoLogin = false;
                 IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, () => { IntroUIManager.instance.ShowLoginPopup(); });
             });
         }
@@ -307,6 +317,38 @@ public class IntroController : MonoBehaviour
     private void CompleteProcess()
     {
         IntroUIManager.instance.ShowCompleteDim(true);
+
+
+        // 버전 하위호환 보정 처리
+        if (SaveDataManager.instance.playerData != null && SaveDataManager.instance.playerData.recentAppVersion != Application.version)
+        {
+            if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
+            {
+                //@@@ 0.6.5 스탯 데이터 하드리셋 대응
+                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
+                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
+                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
+                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+            }
+
+            // 필요한 게 있으면 비슷하게 코드 추가
+
+        }
+
+        SaveDataManager.instance.playerData.recentAppVersion = Application.version;
+        SaveDataManager.instance.playerData.serverDataVersion = StaticGameData.serverVersion;
+
+#if DEV
+        SaveDataManager.instance.playerData.defineState = "DEV";
+#elif LIVE
+        SaveDataManager.instance.playerData.defineState = "LIVE";
+#else
+        SaveDataManager.instance.playerData.defineState = "UNKNOWN";
+#endif
+
+        SaveDataManager.instance.RemoveNotUseCardList();
+        StaticGameData.useServerSeed = false;
+
     }
 
 

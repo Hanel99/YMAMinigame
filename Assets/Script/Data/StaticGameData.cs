@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -135,29 +136,34 @@ public static class StaticGameData
     }
 
 
-    public static bool IsUnderVersion(string checkVersion = null, string baseVersion = null)
+    private static readonly Regex VersionRegex = new Regex(@"^\d+\.\d+\.\d+$");
+
+    public static bool IsUnderVersion(string checkVersion, string baseVersion)
     {
-        if (string.IsNullOrEmpty(checkVersion) || string.IsNullOrEmpty(baseVersion) || checkVersion.Equals(baseVersion))
+        if (string.IsNullOrEmpty(checkVersion) || string.IsNullOrEmpty(baseVersion))
+        {
+            HLLogger.LogWarning($"Version is null or empty - check: '{checkVersion}', base: '{baseVersion}'");
+            return false;
+        }
+
+        if (!IsValidVersionFormat(checkVersion) || !IsValidVersionFormat(baseVersion))
+        {
+            HLLogger.LogWarning($"Invalid version format - check: '{checkVersion}', base: '{baseVersion}'");
+            return false;
+        }
+
+        if (checkVersion == baseVersion)
             return false;
 
-        string[] beforeVer = checkVersion.Split('.');
-        string[] afterVer = baseVersion.Split('.');
-        for (int i = 0; i < 3; ++i)
-        {
-            if (int.TryParse(beforeVer[i], out int checkVer) && int.TryParse(afterVer[i], out int baseVer))
-            {
-                if (checkVer < baseVer)
-                    return true;
-                else if (checkVer > baseVer)
-                    return false;
-            }
-            else
-            {
-                HLLogger.LogWarning($"not int parse : {SaveDataManager.instance.playerData.recentAppVersion} or {Application.version}");
-                return false;
-            }
-        }
-        return false;
+        Version check = new Version(checkVersion);
+        Version baseVer = new Version(baseVersion);
+
+        return check < baseVer;
+    }
+
+    private static bool IsValidVersionFormat(string version)
+    {
+        return VersionRegex.IsMatch(version);
 
     }
 

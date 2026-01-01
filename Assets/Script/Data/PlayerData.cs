@@ -41,7 +41,8 @@ public class PlayerData
     public TowerGameUserStatLevelData towerGameUserStatLevelData;
     public TowerGameUserWeaponData towerGameUserWeaponData;
 
-    //WingTtoData
+    //GameHighScore
+    public int cubeGameHighScore;
     public float wingTtoHighScore;
 
     // gemini Data
@@ -85,6 +86,7 @@ public class PlayerData
         towerGameUserWeaponData = new TowerGameUserWeaponData();
         geminiHints2 = new List<GeminiHint>();
         questUserPlayData = new QuestUserPlayData();
+        cubeGameHighScore = 0;
         wingTtoHighScore = 0f;
 
         // server switch

@@ -94,27 +94,39 @@ public class GameListView : MonoBehaviour
     private void StartGameViewSettingProcess()
     {
 
-        // 버전 하위호환 보정 처리
-        if (SaveDataManager.instance.playerData.recentAppVersion != Application.version)
-        {
-            if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
-            {
-                //@@@ 0.6.5 스탯 데이터 하드리셋 대응
-                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
-                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
-                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
-                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
-            }
+        // intro controller로 이동. 혹시 몰라 백업용으로 코드 남겨둠
 
-            // 필요한 게 있으면 비슷하게 코드 추가
+        //         // 버전 하위호환 보정 처리
+        //         if (SaveDataManager.instance.playerData.recentAppVersion != Application.version)
+        //         {
+        //             if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
+        //             {
+        //                 //@@@ 0.6.5 스탯 데이터 하드리셋 대응
+        //                 if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
+        //                     SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
+        //                 if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
+        //                     SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+        //             }
 
-        }
+        //             // 필요한 게 있으면 비슷하게 코드 추가
 
-        SaveDataManager.instance.playerData.recentAppVersion = Application.version;
+        //         }
+
+        //         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
+        //         SaveDataManager.instance.playerData.serverDataVersion = StaticGameData.serverVersion;
+
+        // #if DEV
+        //         SaveDataManager.instance.playerData.defineState = "DEV";
+        // #elif LIVE
+        //         SaveDataManager.instance.playerData.defineState = "LIVE";
+        // #else
+        //         SaveDataManager.instance.playerData.defineState = "UNKNOWN";
+        // #endif
+
+        // SaveDataManager.instance.RemoveNotUseCardList();
+        // StaticGameData.useServerSeed = false;
+
         Application.targetFrameRate = StaticGameData.targetFrameRate;
-        SaveDataManager.instance.RemoveNotUseCardList();
-        StaticGameData.useServerSeed = false;
-
         if (SaveDataManager.instance.playerData.geminiHints2 != null && SaveDataManager.instance.playerData.geminiHints2.Count < 5)
         {
             int loopCount = 5 - SaveDataManager.instance.playerData.geminiHints2.Count;

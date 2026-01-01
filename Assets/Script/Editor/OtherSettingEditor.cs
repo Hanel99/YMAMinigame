@@ -30,6 +30,7 @@ public class OtherSettingEditor : Editor
             {
                 geminiApiKey = "DEFAULT_API_KEY",
                 playFabTitleId = "NONE",
+                playFabLiveTitleId = "NONE",
                 aesKey = "0123456789abcdef0123456789abcdef",
                 aesIV = "0123456789abcdef"
             };

@@ -47,7 +47,7 @@ public class QuestItem : MonoBehaviour
         gameNameText.text = LocalizeManager.instance.GetString($"Quest.GameName.{questData.questGame}");
 
         SetDescText();
-        coinRewardText.text = questData.coin >= 1000000 ? $"{questData.coin / 10000}만" : questData.coin.ToString();
+        coinRewardText.text = UnitKorean(questData.coin);
         expRewardText.text = questData.exp.ToString();
 
         progressValue = QuestManager.instance.GetQuestValue(questData.detailType, questData.detailType2);
@@ -188,6 +188,16 @@ public class QuestItem : MonoBehaviour
             completeText.text = questData.redeem;
             HLLogger.Log($"redeem Code : {questData.redeem}");
         }
+    }
+
+    private string UnitKorean(int value)
+    {
+        if (value >= 100000000)
+            return $"{value / 100000000}억";
+        else if (value >= 100000)
+            return $"{value / 10000}만";
+        else
+            return value.ToString();
     }
 
 

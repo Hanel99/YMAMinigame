@@ -5,7 +5,6 @@ using System;
 using PlayFab;
 using PlayFab.ClientModels;
 using Cysharp.Threading.Tasks;
-using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -28,11 +27,18 @@ public class PlayFabManager : MonoBehaviour
     public void Start()
     {
         isLoginSuccess = false;
-        if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
-            PlayFabSettings.staticSettings.TitleId = ConfigManager.instance.Config.playFabTitleId;
+
+        SetPlayFabTitleID();
     }
 
-
+    public void SetPlayFabTitleID()
+    {
+#if DEV
+        PlayFabSettings.staticSettings.TitleId = ConfigManager.instance.Config.playFabTitleId;
+#elif LIVE
+        PlayFabSettings.staticSettings.TitleId = ConfigManager.instance.Config.playFabLiveTitleId;
+#endif
+    }
 
 
     public void IntroUserRegisterProcess(string id, string pw, Action onSuccess, Action<PlayFabError> onFailure)
@@ -345,6 +351,7 @@ public class PlayFabManager : MonoBehaviour
         levelStat.Value = SaveDataManager.instance.playerData.level * 10000 + SaveDataManager.instance.playerData.exp;
         request.Statistics.Add(levelStat);
 
+
         // tower
         var towerStat = new StatisticUpdate();
 #if DEV
@@ -356,6 +363,20 @@ public class PlayFabManager : MonoBehaviour
 #endif
         towerStat.Value = SaveDataManager.instance.playerData.towerFloor;
         request.Statistics.Add(towerStat);
+
+
+        // cubeGame
+        var cubeGameStat = new StatisticUpdate();
+#if DEV
+        cubeGameStat.StatisticName = "CubeGameDev";
+#elif LIVE
+        cubeGameStat.StatisticName = "CubeGameLive";
+#else
+        cubeGameStat.StatisticName = "CubeGame";
+#endif
+        cubeGameStat.Value = SaveDataManager.instance.playerData.cubeGameHighScore;
+        request.Statistics.Add(cubeGameStat);
+
 
         // wingtto
         var wingttoStat = new StatisticUpdate();

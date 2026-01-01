@@ -169,6 +169,7 @@ public class CubeGameManager : MonoBehaviour
         HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
+        SaveDataManager.instance.SetCubeGameHighScore(score);
         CubeGameUIManager.instance.ShowResult(score, earnCoinAmount, exp);
 
         if (SaveDataManager.instance.AddExp(exp))

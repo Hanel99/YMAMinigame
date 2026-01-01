@@ -13,6 +13,7 @@ public class RankingPopup : PopupBase
     {
         Level,
         Tower,
+        CubeGame,
         WingTto
     }
 
@@ -98,6 +99,27 @@ public class RankingPopup : PopupBase
         SetRankingUI(statisticName).Forget();
     }
 
+
+    public void OnClickTowerCubeGameTab()
+    {
+        currentRankingType = RankingType.CubeGame;
+        string statisticName = string.Empty;
+        levelText.text = "";
+        expText.text = "";
+        singleText.text = "점";
+
+#if DEV
+        statisticName = "CubeGameDev";
+#elif LIVE
+        statisticName = "CubeGameLive";
+#else
+        statisticName = "CubeGame";
+#endif
+
+        SetRankingUI(statisticName).Forget();
+    }
+
+
     public void OnClickTowerWingTtoTab()
     {
         currentRankingType = RankingType.WingTto;
@@ -179,6 +201,10 @@ public class RankingPopup : PopupBase
             {
                 rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, -1, -1, topPlayerDataList[i].StatValue);
             }
+            else if (currentRankingType == RankingType.CubeGame)
+            {
+                rankUserDataList[i].UpdateData(topPlayerDataList[i].Position + 1, topPlayerDataList[i].DisplayName, -1, -1, topPlayerDataList[i].StatValue);
+            }
             else if (currentRankingType == RankingType.WingTto)
             {
                 float meter = 0.01f * topPlayerDataList[i].StatValue;
@@ -200,6 +226,10 @@ public class RankingPopup : PopupBase
         {
             playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, -1, -1, myPlayerData.StatValue);
         }
+        else if (currentRankingType == RankingType.CubeGame)
+        {
+            playerRankUserData.UpdateData(myPlayerData.Position + 1, myPlayerData.DisplayName, -1, -1, myPlayerData.StatValue);
+        }
         else if (currentRankingType == RankingType.WingTto)
         {
             float meter = 0.01f * myPlayerData.StatValue;
@@ -207,10 +237,6 @@ public class RankingPopup : PopupBase
         }
 
     }
-
-    #endregion
-
-    #region Tower Ranking
 
     #endregion
 

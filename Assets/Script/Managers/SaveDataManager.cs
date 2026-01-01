@@ -315,6 +315,13 @@ public class SaveDataManager : MonoBehaviour
         PlayFabManager.instance.SetDisplayName();
     }
 
+    public void SetCubeGameHighScore(int score)
+    {
+        if (_playerData.cubeGameHighScore < score)
+            _playerData.cubeGameHighScore = score;
+    }
+
+
     public void SetWingTtoHighScore(float score)
     {
         if (_playerData.wingTtoHighScore < score)
@@ -489,7 +496,6 @@ public class SaveDataManager : MonoBehaviour
         {
             HLLogger.Log("Force Use Server PlayerData");
             _playerData = serverData;
-            _playerData.serverDataVersion = StaticGameData.serverVersion;
 
             SavePlayerData();
             return;

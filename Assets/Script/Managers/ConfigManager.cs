@@ -6,12 +6,9 @@ public class GameConfig
 {
     public string geminiApiKey;
     public string playFabTitleId;
+    public string playFabLiveTitleId;
     public string aesKey;
     public string aesIV;
-    public string keystorePath;
-    public string keystorePassword;
-    public string keyAlias;
-    public string keyPassword;
 }
 
 public class ConfigManager : MonoBehaviour
@@ -53,12 +50,9 @@ public class ConfigManager : MonoBehaviour
         {
             geminiApiKey = "DEFAULT_API_KEY",
             playFabTitleId = "NONE",
+            playFabLiveTitleId = "NONE",
             aesKey = "0123456789abcdef0123456789abcdef",
             aesIV = "0123456789abcdef",
-            keystorePath = "keystore Path",
-            keystorePassword = "your_keystore_password",
-            keyAlias = "your_keyalias_name",
-            keyPassword = "your_keyalias_password"
         };
     }
 
