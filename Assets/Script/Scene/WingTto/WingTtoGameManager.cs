@@ -52,6 +52,8 @@ public class WingTtoGameManager : MonoBehaviour
     // 날아간 거리 계산
     private float distanceMultiplier = 1.6f;
     private float currentDistance = 0f;
+    public float CurrentDistance => currentDistance;
+
 
 
     private void Awake()
@@ -310,6 +312,12 @@ public class WingTtoGameManager : MonoBehaviour
     {
         int exp = 1 + player.EarnExp;
         int earnCoinAmount = player.EarnCoin + (int)Math.Max(1000f, currentDistance + 97000f * Math.Pow(currentDistance / 2900f, 1.5f));
+
+        QuestManager.instance.AddWingTtoData(1, player.collectCountDic[WingTtoObjectType.Gimbab], player.collectCountDic[WingTtoObjectType.SpeedUp]
+                                            , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp]);
+
+        QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutGimbab, player.Q_FirstGimbabDistance >= 0 ? player.Q_FirstGimbabDistance : currentDistance);
+        QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithCrash, player.Q_FirstCrashDistance);
 
 
         HLLogger.Log($"distance : {currentDistance} / coin : {earnCoinAmount} / exp : {exp}");

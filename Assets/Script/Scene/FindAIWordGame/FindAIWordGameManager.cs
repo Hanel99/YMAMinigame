@@ -213,6 +213,8 @@ public class FindAIWordGameManager : MonoBehaviour
         else
             earnCoinAmount = (hints.Count - currentHintIndex) * 1000 + 10000;
 
+        QuestManager.instance.AddFindAIWordData(1, currentHintIndex < 3 ? 1 : 0);
+
         SaveDataManager.instance.AddOwnWord(wordIndex);
         SaveDataManager.instance.AddCoin(earnCoinAmount);
 

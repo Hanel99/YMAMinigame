@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -8,13 +9,13 @@ public class QuestUserPlayData
 {
     public List<int> completedQuestIds = new List<int>();
 
-    Q_MatchCardGame matchCardGame;
-    Q_FindAIWordGame findAIWordGame;
-    Q_CubeGame cubeGame;
-    Q_WingTto wingTto;
-    Q_TowerGame towerGame;
-    Q_Gacha gacha;
-    Q_Common common;
+    public Q_MatchCardGame matchCardGame { get; private set; }
+    public Q_FindAIWordGame findAIWordGame { get; private set; }
+    public Q_CubeGame cubeGame { get; private set; }
+    public Q_WingTto wingTto { get; private set; }
+    public Q_TowerGame towerGame { get; private set; }
+    public Q_Gacha gacha { get; private set; }
+    public Q_Common common { get; private set; }
 
 
 
@@ -61,12 +62,10 @@ public class QuestUserPlayData
         cubeGame.totalTouchCount += totalTouchCount;
     }
 
-
     //wingTto
-    public void AddWingTtoData(int playCount, int reachMaxScore, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp)
+    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp)
     {
         wingTto.playCount += playCount;
-        wingTto.reachMaxScore += reachMaxScore;
         wingTto.collectCount_Gimbab += collectCount_Gimbab;
         wingTto.collectCount_SpeedUp += collectCount_SpeedUp;
         wingTto.collectCount_Coin += collectCount_Coin;
@@ -75,10 +74,9 @@ public class QuestUserPlayData
 
 
     //towerGame
-    public void AddTowerCombatData(int playCount, int winWithAvoid)
+    public void AddTowerCombatData(int playCount)
     {
         towerGame.playCount += playCount;
-        towerGame.winWithAvoid += winWithAvoid;
     }
 
     public void AddTowerEnchantData(TowerGameResultType resultType)
@@ -118,8 +116,8 @@ public class QuestUserPlayData
     private void AddGachaData(int playCount, int playGacha, int playMileageGacha)
     {
         gacha.playCount += playCount;
-        gacha.playGacha += playGacha;
-        gacha.playMileageGacha += playMileageGacha;
+        gacha.playGachaCount += playGacha;
+        gacha.playMileageGachaCount += playMileageGacha;
     }
 
 
@@ -136,11 +134,42 @@ public class QuestUserPlayData
         common.useCoin += value;
     }
 
-    public void AddCommonData_EquipEtcIcon()
-    {
-        common.equipEtcIcon += 1;
-    }
 
+    //special
+
+    public void AddSpecialMission(QuestDetailType type, float value)
+    {
+        switch (type)
+        {
+            // cubeGame
+            case QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow:
+                cubeGame.reachScoreWithoutTooFastOrTooSlow = math.max(cubeGame.reachScoreWithoutTooFastOrTooSlow, value.ToInt());
+                break;
+            case QuestDetailType.S_ReachScoreWithOnlyPerfect:
+                cubeGame.reachScoreWithOnlyPerfect = math.max(cubeGame.reachScoreWithOnlyPerfect, value.ToInt());
+                break;
+
+            //wingTto
+            case QuestDetailType.S_ReachScoreWithoutGimbab:
+                wingTto.reachScoreWithoutGimbab = Mathf.Max(wingTto.reachScoreWithoutGimbab, value);
+                break;
+            case QuestDetailType.S_ReachScoreWithCrash:
+                wingTto.reachScoreWithCrash = Mathf.Max(wingTto.reachScoreWithCrash, value);
+                break;
+
+            // tower
+            case QuestDetailType.S_WinWithAvoid:
+                towerGame.winWithAvoid += 1;
+                break;
+
+            //common
+            case QuestDetailType.S_EquipEtcIcon:
+                common.equipEtcIcon += 1;
+                break;
+            default:
+                break;
+        }
+    }
 
 
 
@@ -183,15 +212,14 @@ public class QuestUserPlayData
     [Serializable]
     public class Q_WingTto : Q_GameBase
     {
-        public int reachMaxScore;
         public int collectCount_Gimbab;
         public int collectCount_SpeedUp;
         public int collectCount_Coin;
         public int collectCount_Exp;
 
 
-        public int reachScoreWithoutGimbab;
-        public int reachScoreWithCrash;
+        public float reachScoreWithoutGimbab;
+        public float reachScoreWithCrash;
     }
 
 
@@ -209,8 +237,8 @@ public class QuestUserPlayData
     [Serializable]
     public class Q_Gacha : Q_GameBase
     {
-        public int playGacha;
-        public int playMileageGacha;
+        public int playGachaCount;
+        public int playMileageGachaCount;
     }
 
 

@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class SettingPopup : PopupBase
 {
     public enum SettingTab
@@ -36,6 +37,8 @@ public class SettingPopup : PopupBase
     public Toggle bgmMuteToggle;
     public Slider sfxSlider;
     public Toggle sfxMuteToggle;
+
+    // public SwitchManager switchManager;
 
 
     protected override void OnAwake()
@@ -274,7 +277,7 @@ public class SettingPopup : PopupBase
 
 
 
-    public void OnClickRemoveData()
+    public void OnClickSignOut()
     {
         if (isOpenCloseAnimationActing) return;
 

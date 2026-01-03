@@ -5,6 +5,7 @@ using DG.Tweening;
 using System.Threading;
 using System;
 using System.Text;
+using System.Linq;
 
 
 public class CubeGameManager : MonoBehaviour
@@ -24,10 +25,14 @@ public class CubeGameManager : MonoBehaviour
 
     private InGameState _inGameState;
     public InGameState inGameState => _inGameState;
-
     private Dictionary<CubeState, int> countDic = new();
-
     private Queue<Action> UpdateActionQueue = new();
+
+    private bool Q_WithoutTooFastOrTooSlow = true;
+    private int Q_WithoutTooFastOrTooSlowScore = 0;
+    private bool Q_OnlyPerfect = true;
+    private int Q_OnlyPerfectScore = 0;
+
 
 
 
@@ -168,6 +173,10 @@ public class CubeGameManager : MonoBehaviour
 
         HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
+        QuestManager.instance.AddCubeData(1, countDic[CubeState.TooFast], countDic[CubeState.Fast], countDic[CubeState.Perfect], countDic[CubeState.Slow], countDic[CubeState.TooSlow], countDic.Values.Sum());
+        QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow, Q_WithoutTooFastOrTooSlowScore);
+        QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithOnlyPerfect, Q_OnlyPerfectScore);
+
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
         SaveDataManager.instance.SetCubeGameHighScore(score);
         CubeGameUIManager.instance.ShowResult(score, earnCoinAmount, exp);
@@ -221,6 +230,19 @@ public class CubeGameManager : MonoBehaviour
         leftTime += addTime;
         leftTime = Math.Min(maxTime, leftTime);
         countDic[state]++;
+
+        //퀘스트 특수 미션 처리
+        Q_OnlyPerfect = Q_OnlyPerfect && state == CubeState.Perfect;
+        if (Q_OnlyPerfect)
+        {
+            Q_OnlyPerfectScore = score;
+        }
+
+        Q_WithoutTooFastOrTooSlow = Q_WithoutTooFastOrTooSlow && state != CubeState.TooFast && state != CubeState.TooSlow;
+        if (Q_WithoutTooFastOrTooSlow)
+        {
+            Q_WithoutTooFastOrTooSlowScore = score;
+        }
 
         CubeGameUIManager.instance.UpdateScoreText(score);
         CubeGameUIManager.instance.UpdateCubeCountText(state, countDic[state]);

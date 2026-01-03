@@ -1399,23 +1399,26 @@ MonoBehaviour:
     jp: 
     en: 
   - key: levelup.unlock.1
-    ko: 
+    ko: "\uB2E8\uC5B4 \uB9DE\uCD94\uAE30 \uAC8C\uC784\uC744 \uD50C\uB808\uC774 \uD560
+      \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
     jp: 
     en: 
   - key: levelup.unlock.2
-    ko: 
+    ko: "\uD050\uBE0C \uAC8C\uC784\uC744 \uD50C\uB808\uC774 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
     jp: 
     en: 
   - key: levelup.unlock.3
-    ko: 
+    ko: "\uC719\uB610 \uAC8C\uC784\uC744 \uD50C\uB808\uC774 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
     jp: 
     en: 
   - key: levelup.unlock.4
-    ko: 
+    ko: "\uCC9C\uD558\uBB34\uC801 \uAFC0\uBC24\uB300\uD68C \uAC8C\uC784\uC744 \uD50C\uB808\uC774
+      \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4!"
     jp: 
     en: 
   - key: levelup.unlock.5
-    ko: 
+    ko: "\uBAA8\uB4E0 \uAC8C\uC784 \uC2DC\uC2A4\uD15C\uC744 \uC774\uC6A9\uD560 \uC218
+      \uC788\uC2B5\uB2C8\uB2E4!"
     jp: 
     en: 
   - key: levelup.unlock.6
@@ -2206,7 +2209,8 @@ MonoBehaviour:
     jp: 
     en: 
   - key: Quest.Desc.S_WinWithAvoid
-    ko: "{0}\uD68C \uC774\uC0C1 \uD68C\uD53C\uD574\uC11C \uB300\uACB0\uC5D0 \uC2B9\uB9AC\uD558\uC138\uC694."
+    ko: "3\uD68C \uC774\uC0C1 \uD68C\uD53C\uD574\uC11C \uB300\uACB0\uC5D0 {0}\uD68C
+      \uC2B9\uB9AC\uD558\uC138\uC694."
     jp: 
     en: 
   - key: Quest.Desc.CollectCard

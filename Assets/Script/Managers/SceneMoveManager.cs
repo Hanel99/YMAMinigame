@@ -20,6 +20,39 @@ public class SceneMoveManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+
+    void Update()
+    {
+
+#if UNITY_EDITOR && DEV
+
+        // 모든 씬에서 사용하게 매니저로 이동
+        if (Input.GetKeyDown(KeyCode.Comma))
+        {
+            if (Time.timeScale - 0.5f <= 0)
+                Time.timeScale = 0;
+            else
+                Time.timeScale -= 0.5f;
+
+            HLLogger.Log($"TimeScale : {Time.timeScale}");
+        }
+        if (Input.GetKeyDown(KeyCode.Period))
+        {
+            if (Time.timeScale + 0.5f >= 15)
+                Time.timeScale = 15;
+            else
+                Time.timeScale += 0.5f;
+
+            HLLogger.Log($"TimeScale : {Time.timeScale}");
+        }
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            Time.timeScale = 1f;
+            HLLogger.Log($"TimeScale : {Time.timeScale}");
+        }
+#endif
+    }
+
     public void MoveScene(SceneName sceneName, bool showMoveAni = true)
     {
         SoundManager.instance.FadeOutBGM(0.4f);

@@ -173,6 +173,8 @@ public class TowerGameWeaponStat : MonoBehaviour
 
     private void ShowResult(TowerGameResultType type, string before, string after, System.Action callback)
     {
+        QuestManager.instance.AddTowerEnchantData(type);
+
         if (skipToggle.isOn)
         {
             if (type == TowerGameResultType.up)

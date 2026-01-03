@@ -93,6 +93,9 @@ public class PlayerDataSettingPopup : PopupBase
         SaveDataManager.instance.SetPlayerName();
         SaveDataManager.instance.SavePlayerData();
 
+        if (SaveDataManager.instance.playerData.master == CardMaster.Other)
+            QuestManager.instance.AddSpecialMission(QuestDetailType.S_EquipEtcIcon, 1);
+
         HLLogger.Log("@@@ Confirm Action");
         OnClickClose();
     }

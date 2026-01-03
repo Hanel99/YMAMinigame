@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -13,6 +14,10 @@ public class WingTtoPlayer : MonoBehaviour
     private int earnExp = 0;
     public int EarnCoin => earnCoin;
     public int EarnExp => earnExp;
+
+    public Dictionary<WingTtoObjectType, int> collectCountDic = new();
+    public float Q_FirstGimbabDistance = -1f;
+    public float Q_FirstCrashDistance = -1f;
 
     [Header("UI")]
     public SpriteRenderer playerIcon;
@@ -55,6 +60,13 @@ public class WingTtoPlayer : MonoBehaviour
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
+
+        collectCountDic.Add(WingTtoObjectType.Gimbab, 0);
+        collectCountDic.Add(WingTtoObjectType.SpeedUp, 0);
+        collectCountDic.Add(WingTtoObjectType.Coin, 0);
+        collectCountDic.Add(WingTtoObjectType.Exp, 0);
+        Q_FirstGimbabDistance = -1f;
+        Q_FirstCrashDistance = -1f;
 
         rb.gravityScale = 0;
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -154,22 +166,31 @@ public class WingTtoPlayer : MonoBehaviour
                 // HP 회복
                 UpdateHPUI(50);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoGimbab);
+
+                collectCountDic[WingTtoObjectType.Gimbab]++;
+                if (Q_FirstGimbabDistance < 0)
+                    Q_FirstGimbabDistance = gameManager.CurrentDistance;
             }
             else if (other.CompareTag("WingTtoSpeedUp"))
             {
                 gameManager.AddSpeed(1);
+                collectCountDic[WingTtoObjectType.SpeedUp]++;
             }
             else if (other.CompareTag("WingTtoCoin"))
             {
                 earnCoin += 5500;
                 WingTtoGameUIManager.instance.UpdateCoinText(earnCoin);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoCoin);
+
+                collectCountDic[WingTtoObjectType.Coin]++;
             }
             else if (other.CompareTag("WingTtoExp"))
             {
                 earnExp += 1;
                 WingTtoGameUIManager.instance.UpdateExpText(earnExp);
                 SoundManager.instance.PlaySFX(SFXType.WingTtoExp);
+
+                collectCountDic[WingTtoObjectType.Exp]++;
             }
             WingTtoObjectPool.instance.ReturnObject(other);
 
@@ -202,6 +223,9 @@ public class WingTtoPlayer : MonoBehaviour
         playerIcon.color = alphaColor;
 
         this.gameObject.layer = LayerMask.NameToLayer("WingTtoInvincible");
+
+        if (Q_FirstCrashDistance < 0)
+            Q_FirstCrashDistance = gameManager.CurrentDistance;
 
         await UniTask.WaitForSeconds(0.3f);
 

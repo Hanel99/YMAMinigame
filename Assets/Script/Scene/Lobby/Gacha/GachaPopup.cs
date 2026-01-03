@@ -91,6 +91,7 @@ public class GachaPopup : PopupBase
         gachaResultIDList.Add(list[0]);
 
         HLLogger.Log($"@@@ mileage gacha Result : {list[0]}");
+        QuestManager.instance.AddGachaData(true, 1);
         newCardIDList = SaveDataManager.instance.GetNotOwnCardList(gachaResultIDList);
         SaveDataManager.instance.AddOwnCardList(gachaResultIDList);
     }
@@ -137,8 +138,9 @@ public class GachaPopup : PopupBase
         {
             sb.Append($"{item},");
         }
-        HLLogger.Log($"@@@ Coin {count} gacha Result : {sb}");
 
+        HLLogger.Log($"@@@ Coin {count} gacha Result : {sb}");
+        QuestManager.instance.AddGachaData(false, count);
         newCardIDList = SaveDataManager.instance.GetNotOwnCardList(gachaResultIDList);
         SaveDataManager.instance.AddOwnCardList(gachaResultIDList);
         SaveDataManager.instance.AddMilage(count);

@@ -22,6 +22,7 @@ public class TowerGameCombatPopup : PopupBase
     //private 
     PlayerData playerData = null;
     private int turnCount = 0;
+    private int playerAvoidCount = 0;
 
 
     private CombatStatData playerCombatData = new();
@@ -35,6 +36,8 @@ public class TowerGameCombatPopup : PopupBase
     private int lineCount = 0;
     private int combatDataCount = 0;
     private bool isSkip = false;
+    private bool Q_isWinWithAvoid = false;
+
 
 
 
@@ -69,6 +72,8 @@ public class TowerGameCombatPopup : PopupBase
         turnCount = 0;
         lineCount = 0;
         combatDataCount = 0;
+        playerAvoidCount = 0;
+        Q_isWinWithAvoid = false;
         sb.Clear();
 
 
@@ -233,6 +238,10 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine($"{rewardCoin}코인, {rewardExp}경험치 획득!");
             UpdateCombatText().Forget();
 
+            if (playerAvoidCount >= 3)
+                QuestManager.instance.AddSpecialMission(QuestDetailType.S_WinWithAvoid, 0);
+
+
             SaveDataManager.instance.AddCoin(rewardCoin, false);
             if (SaveDataManager.instance.AddExp(rewardExp, false))
             {
@@ -250,6 +259,8 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("전투에서 패배했습니다...");
             UpdateCombatText().Forget();
         }
+
+        QuestManager.instance.AddTowerCombatData(1);
 
         skipButton.gameObject.SetActive(false);
         retryButton.interactable = !playerWon;
@@ -402,6 +413,7 @@ public class TowerGameCombatPopup : PopupBase
             }
             else
             {
+                playerAvoidCount++;
                 lines.Add($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
                 combatDetails.Add(new CombatDetailData { isPlayerAttack = false, isAvoided = true });
             }

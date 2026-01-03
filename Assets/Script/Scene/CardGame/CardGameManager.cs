@@ -44,31 +44,7 @@ public class CardGameManager : MonoBehaviour
                 CardGameUIManager.instance.ShowPausePopup();
         }
 
-#if UNITY_EDITOR && DEV
-        if (Input.GetKeyDown(KeyCode.Comma))
-        {
-            if (Time.timeScale - 0.5f <= 0)
-                Time.timeScale = 0;
-            else
-                Time.timeScale -= 0.5f;
-
-            HLLogger.Log($"TimeScale : {Time.timeScale}");
-        }
-        if (Input.GetKeyDown(KeyCode.Period))
-        {
-            if (Time.timeScale + 0.5f >= 15)
-                Time.timeScale = 15;
-            else
-                Time.timeScale += 0.5f;
-
-            HLLogger.Log($"TimeScale : {Time.timeScale}");
-        }
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            Time.timeScale = 1f;
-            HLLogger.Log($"TimeScale : {Time.timeScale}");
-        }
-
+#if UNITY_EDITOR && DEV    
         if (Input.GetKeyDown(KeyCode.C))
         {
             HLLogger.Log($"force clear");
@@ -141,6 +117,8 @@ public class CardGameManager : MonoBehaviour
         HLLogger.Log("@@@ Game Finish");
 
         CalcEarnCoinAmount();
+        QuestManager.instance.AddMatchCardData(1, tryCount <= 14 ? 1 : 0);
+
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         List<int> newCardIDList = SaveDataManager.instance.GetNotOwnCardList(collectCardIdList);
         SaveDataManager.instance.AddOwnCardList(collectCardIdList);

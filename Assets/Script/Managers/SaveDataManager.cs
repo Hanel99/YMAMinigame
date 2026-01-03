@@ -183,6 +183,11 @@ public class SaveDataManager : MonoBehaviour
     {
         _playerData.coin += amount;
 
+        if (amount > 0)
+            QuestManager.instance.AddCommonData_CollectCoin(amount);
+        else
+            QuestManager.instance.AddCommonData_UseCoin(amount);
+
         if (_playerData.coin > StaticGameData.MAX_COIN_VALUE)
             _playerData.coin = StaticGameData.MAX_COIN_VALUE;
         if (_playerData.coin < 0)
