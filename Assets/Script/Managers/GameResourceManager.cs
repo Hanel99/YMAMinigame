@@ -177,6 +177,16 @@ public class GameResourceManager : MonoBehaviour
         return sprite;
     }
 
+    public Sprite GetQuestGradeIcon(QuestType type, bool isHidden = false)
+    {
+        if (isHidden)
+            return questGradeImages.Find(x => x.name.Contains("Hidden"));
+        else if (type == QuestType.Daily)
+            return questGradeImages.Find(x => x.name.Contains("Daily"));
+        else
+            return questGradeImages.Find(x => x.name.Contains("Normal"));
+    }
+
 
     #endregion
 

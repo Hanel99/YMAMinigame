@@ -33,8 +33,26 @@ MonoBehaviour:
     m_SerializedLabels:
     - QuestGrade
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d4ae037250041640b4bc7f453a2d830
+    m_Address: Daily
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 69d07ca10fc96a24abe9f10b39041166
+    m_Address: Hidden
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a80410b47d8eeb349bbf2e86cf9d6f46
+    m_Address: Normal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - QuestGrade
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: acd2daa4634360b40bc740c128e6a9f3
-    m_Address: Inasne
+    m_Address: Insane
     m_ReadOnly: 0
     m_SerializedLabels:
     - QuestGrade

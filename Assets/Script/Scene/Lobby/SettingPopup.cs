@@ -39,6 +39,8 @@ public class SettingPopup : PopupBase
     public Toggle sfxMuteToggle;
 
     // public SwitchManager switchManager;
+    [Header("Dev Cheat")]
+    public Button cheatButton;
 
 
     protected override void OnAwake()
@@ -82,6 +84,12 @@ public class SettingPopup : PopupBase
 
             dataVersionText.text = $"Data Version - {sb}";
         }
+
+#if DEV
+        cheatButton.gameObject.SetActive(true);
+#else
+        cheatButton.gameObject.SetActive(false);
+#endif
 
         SetTab(SettingTab.Visual);
     }
@@ -290,5 +298,12 @@ public class SettingPopup : PopupBase
                 Application.Quit();
             }, false);
         }, false);
+    }
+
+    public void OnClickCheatButton()
+    {
+#if DEV
+        LobbyUIManager.instance.ShowPopup<CheatPopup>();
+#endif
     }
 }

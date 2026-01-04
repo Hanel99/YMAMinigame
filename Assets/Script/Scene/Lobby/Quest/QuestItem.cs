@@ -43,8 +43,11 @@ public class QuestItem : MonoBehaviour
 
         //TODO 다 제대로 넣은게 아님.
         indexText.text = $"No.{questData.id.ToString("D2")}";
-        questGradeIcon.sprite = GameResourceManager.instance.GetQuestGradeIcon(questData.grade);
         gameNameText.text = LocalizeManager.instance.GetString($"Quest.GameName.{questData.questGame}");
+
+        // questGradeIcon.sprite = GameResourceManager.instance.GetQuestGradeIcon(questData.grade);
+        questGradeIcon.sprite = GameResourceManager.instance.GetQuestGradeIcon(questData.questType, questData.hidden);
+        // questGradeIcon.gameObject.SetActive(questData.hidden);
 
         SetDescText();
         coinRewardText.text = UnitKorean(questData.coin);
@@ -163,12 +166,13 @@ public class QuestItem : MonoBehaviour
         {
             // 완료 후 처리
             SaveDataManager.instance.AddCoin(questData.coin);
-            SaveDataManager.instance.AddExp(questData.exp);
+            bool isShowLevelUpPopup = SaveDataManager.instance.AddExp(questData.exp);
 
             UpdateProgress();
             SetDimCover();
 
             isRewardProcessing = false;
+            LobbyUIManager.instance.ShowQuestRewardPopup(questData.coin, questData.exp, isShowLevelUpPopup);
         });
 
 

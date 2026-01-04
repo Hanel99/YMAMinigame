@@ -36,7 +36,6 @@ public class TowerGameCombatPopup : PopupBase
     private int lineCount = 0;
     private int combatDataCount = 0;
     private bool isSkip = false;
-    private bool Q_isWinWithAvoid = false;
 
 
 
@@ -73,7 +72,6 @@ public class TowerGameCombatPopup : PopupBase
         lineCount = 0;
         combatDataCount = 0;
         playerAvoidCount = 0;
-        Q_isWinWithAvoid = false;
         sb.Clear();
 
 

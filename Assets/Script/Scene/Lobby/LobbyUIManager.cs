@@ -44,6 +44,11 @@ public class LobbyUIManager : MonoBehaviour
         _ShowPopup<HowToPlayPopup>().ShowPopup(descKey);
     }
 
+    public void ShowQuestRewardPopup(int coin, int exp, bool isShowLevelUpPopup = false)
+    {
+        _ShowPopup<QuestRewardPopup>().ShowPopup(coin, exp, isShowLevelUpPopup);
+    }
+
 
     //매개변수 없는 팝업의 경우
     public void ShowPopup<T>() where T : PopupBase
