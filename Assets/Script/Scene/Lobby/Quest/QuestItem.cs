@@ -73,7 +73,7 @@ public class QuestItem : MonoBehaviour
             detail2 = LocalizeManager.instance.GetString($"Quest.Detail2.{questData.detailType2}");
 
         //TODO detailtype에 맞춰서 format 조정하기
-        string descMix = string.Format(desc, questData.tryCount, detail2);
+        string descMix = string.Format(desc, UnitKorean(questData.tryCount), detail2);
 
 
         descText.text = descMix;
@@ -90,7 +90,7 @@ public class QuestItem : MonoBehaviour
         progress = Mathf.Max(0f, Mathf.Min(1f, progress));
 
         progressBar.value = progress;
-        progressText.text = $"{progressValue} / {progressMaxValue}";
+        progressText.text = $"{progressValue:N0} / {progressMaxValue:N0}";
 
         // 퀘스트 상태 업데이트
         if (progressValue >= progressMaxValue)
@@ -199,9 +199,4 @@ public class QuestItem : MonoBehaviour
         else
             return value.ToString();
     }
-
-
-
-
-
 }

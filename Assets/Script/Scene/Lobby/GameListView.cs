@@ -86,8 +86,8 @@ public class GameListView : MonoBehaviour
         // }
 
 
-        // if (Input.GetKeyDown(KeyCode.G))
-        //     LocalizeManager.instance.test();
+        if (Input.GetKeyDown(KeyCode.G))
+            HLLogger.Log(SaveDataManager.instance.JsonPlayerData);
 #endif
     }
 

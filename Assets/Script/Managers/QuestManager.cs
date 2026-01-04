@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class QuestManager : MonoBehaviour
@@ -91,123 +92,92 @@ public class QuestManager : MonoBehaviour
 
     public int GetQuestValue(QuestDetailType detailType, QuestDetailType2 questDetailType2)
     {
-        switch (detailType)
+        return detailType switch
         {
             // match card
-            case QuestDetailType.PlayMatchCardGame:
-                return questUserPlayData.matchCardGame.playCount;
-            case QuestDetailType.FinishCardGameUnderCount:
-                return questUserPlayData.matchCardGame.underQuestClearCount;
+            QuestDetailType.PlayMatchCardGame => questUserPlayData.matchCardGame.playCount,
+            QuestDetailType.FinishCardGameUnderCount => questUserPlayData.matchCardGame.underQuestClearCount,
 
             // find AI word
-            case QuestDetailType.PlayFindAIWordGame:
-                return questUserPlayData.findAIWordGame.playCount;
-            case QuestDetailType.FinishWordGameUnderCount:
-                return questUserPlayData.findAIWordGame.underQuestClearCount;
+            QuestDetailType.PlayFindAIWordGame => questUserPlayData.findAIWordGame.playCount,
+            QuestDetailType.FinishWordGameUnderCount => questUserPlayData.findAIWordGame.underQuestClearCount,
 
             // cube
-            case QuestDetailType.PlayCubeGame:
-                return questUserPlayData.cubeGame.playCount;
-            case QuestDetailType.ReachCubeScore:
-                return playerData.cubeGameHighScore;
-            case QuestDetailType.ReachTotalTouchCount:
-                return questUserPlayData.cubeGame.totalTouchCount;
-            case QuestDetailType.ReachCubeStateTouchCount:
-                switch (questDetailType2)
-                {
-                    case QuestDetailType2.CubeState_TooFast:
-                        return questUserPlayData.cubeGame.touchCount_TooFast;
-                    case QuestDetailType2.CubeState_Fast:
-                        return questUserPlayData.cubeGame.touchCount_Fast;
-                    case QuestDetailType2.CubeState_Perfect:
-                        return questUserPlayData.cubeGame.touchCount_Perfect;
-                    case QuestDetailType2.CubeState_Slow:
-                        return questUserPlayData.cubeGame.touchCount_Slow;
-                    case QuestDetailType2.CubeState_TooSlow:
-                        return questUserPlayData.cubeGame.touchCount_TooSlow;
-                    default:
-                        return 0;
-                }
-            case QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow:
-                return questUserPlayData.cubeGame.reachScoreWithoutTooFastOrTooSlow;
-            case QuestDetailType.S_ReachScoreWithOnlyPerfect:
-                return questUserPlayData.cubeGame.reachScoreWithOnlyPerfect;
+            QuestDetailType.PlayCubeGame => questUserPlayData.cubeGame.playCount,
+            QuestDetailType.ReachCubeScore => playerData.cubeGameHighScore,
+            QuestDetailType.ReachTotalTouchCount => questUserPlayData.cubeGame.totalTouchCount,
+            QuestDetailType.ReachCubeStateTouchCount => GetCubeTouchCount(questDetailType2),
+            QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow => questUserPlayData.cubeGame.reachScoreWithoutTooFastOrTooSlow,
+            QuestDetailType.S_ReachScoreWithOnlyPerfect => questUserPlayData.cubeGame.reachScoreWithOnlyPerfect,
 
             // wingtto
-            case QuestDetailType.PlayWingTto:
-                return questUserPlayData.wingTto.playCount;
-            case QuestDetailType.ReachWingTtoDistance:
-                return playerData.wingTtoHighScore.ToInt();
-            case QuestDetailType.CollectWingTtoItem:
-                switch (questDetailType2)
-                {
-                    case QuestDetailType2.WingTtoItem_Gimbab:
-                        return questUserPlayData.wingTto.collectCount_Gimbab;
-                    case QuestDetailType2.WingTtoItem_SpeedUp:
-                        return questUserPlayData.wingTto.collectCount_SpeedUp;
-                    case QuestDetailType2.WingTtoItem_Coin:
-                        return questUserPlayData.wingTto.collectCount_Coin;
-                    case QuestDetailType2.WingTtoItem_Exp:
-                        return questUserPlayData.wingTto.collectCount_Exp;
-                    default:
-                        return 0;
-                }
-            case QuestDetailType.S_ReachScoreWithoutGimbab:
-                return questUserPlayData.wingTto.reachScoreWithoutGimbab.ToInt();
-            case QuestDetailType.S_ReachScoreWithCrash:
-                return questUserPlayData.wingTto.reachScoreWithCrash.ToInt();
+            QuestDetailType.PlayWingTto => questUserPlayData.wingTto.playCount,
+            QuestDetailType.ReachWingTtoDistance => playerData.wingTtoHighScore.ToInt(),
+            QuestDetailType.CollectWingTtoItem => GetWingTtoItemCount(questDetailType2),
+            QuestDetailType.S_ReachScoreWithoutGimbab => questUserPlayData.wingTto.reachScoreWithoutGimbab.ToInt(),
+            QuestDetailType.S_ReachScoreWithCrash => questUserPlayData.wingTto.reachScoreWithCrash.ToInt(),
 
             // tower
-            case QuestDetailType.ReachTowerFloor:
-                return playerData.towerFloor;
-            case QuestDetailType.ReachStatLevel:
-                switch (questDetailType2)
-                {
-                    case QuestDetailType2.TowerStat_Atk:
-                        return playerData.towerGameUserStatLevelData.atkLevel;
-                    case QuestDetailType2.TowerStat_Def:
-                        return playerData.towerGameUserStatLevelData.defLevel;
-                    case QuestDetailType2.TowerStat_Hp:
-                        return playerData.towerGameUserStatLevelData.hpLevel;
-                    case QuestDetailType2.TowerStat_CriRate:
-                        return playerData.towerGameUserStatLevelData.criRateLevel;
-                    case QuestDetailType2.TowerStat_CriDmg:
-                        return playerData.towerGameUserStatLevelData.criDmgLevel;
-                    default:
-                        return 0;
-                }
-            case QuestDetailType.ReachWeaponLevel:
-                return playerData.towerGameUserWeaponData.weaponLevel;
-            case QuestDetailType.S_WinWithAvoid:
-                return questUserPlayData.towerGame.winWithAvoid;
+            QuestDetailType.ReachTowerFloor => playerData.towerFloor,
+            QuestDetailType.ReachStatLevel => GetTowerStatLevel(questDetailType2),
+            QuestDetailType.ReachWeaponLevel => playerData.towerGameUserWeaponData.weaponLevel,
+            QuestDetailType.S_WinWithAvoid => questUserPlayData.towerGame.winWithAvoid,
 
             // collection
-            case QuestDetailType.CollectCard:
-                return playerData.ownCardList.Count;
-            case QuestDetailType.CollectWord:
-                return playerData.ownWordList.Count;
+            QuestDetailType.CollectCard => playerData.ownCardList.Count,
+            QuestDetailType.CollectWord => playerData.ownWordList.Count,
 
             // gacha
-            case QuestDetailType.PlayGacha:
-                return questUserPlayData.gacha.playGachaCount;
-            case QuestDetailType.PlayMileageGacha:
-                return questUserPlayData.gacha.playMileageGachaCount;
+            QuestDetailType.PlayGacha => questUserPlayData.gacha.playGachaCount,
+            QuestDetailType.PlayMileageGacha => questUserPlayData.gacha.playMileageGachaCount,
 
             // common
-            case QuestDetailType.CollectCoin:
-                return questUserPlayData.common.collectCoin;
-            case QuestDetailType.UseCoin:
-                return questUserPlayData.common.useCoin;
-            case QuestDetailType.ReachPlayerLevel:
-                return playerData.level;
-            case QuestDetailType.S_EquipEtcIcon:
-                return questUserPlayData.common.equipEtcIcon;
-            case QuestDetailType.E_PlayEndRoll:
-                return playerData.playEndRoll ? 1 : 0;
+            QuestDetailType.CollectCoin => (int)Math.Clamp(questUserPlayData.common.collectCoin, int.MinValue, int.MaxValue),
+            QuestDetailType.UseCoin => questUserPlayData.common.useCoin,
+            QuestDetailType.ReachPlayerLevel => playerData.level,
+            QuestDetailType.S_EquipEtcIcon => questUserPlayData.common.equipEtcIcon,
+            QuestDetailType.E_PlayEndRoll => playerData.playEndRoll ? 1 : 0,
 
-            default:
-                return 0;
-        }
+            _ => 0
+        };
+    }
+
+    private int GetCubeTouchCount(QuestDetailType2 touchType)
+    {
+        return touchType switch
+        {
+            QuestDetailType2.CubeState_TooFast => questUserPlayData.cubeGame.touchCount_TooFast,
+            QuestDetailType2.CubeState_Fast => questUserPlayData.cubeGame.touchCount_Fast,
+            QuestDetailType2.CubeState_Perfect => questUserPlayData.cubeGame.touchCount_Perfect,
+            QuestDetailType2.CubeState_Slow => questUserPlayData.cubeGame.touchCount_Slow,
+            QuestDetailType2.CubeState_TooSlow => questUserPlayData.cubeGame.touchCount_TooSlow,
+            _ => 0
+        };
+    }
+
+    private int GetWingTtoItemCount(QuestDetailType2 itemType)
+    {
+        return itemType switch
+        {
+            QuestDetailType2.WingTtoItem_Gimbab => questUserPlayData.wingTto.collectCount_Gimbab,
+            QuestDetailType2.WingTtoItem_SpeedUp => questUserPlayData.wingTto.collectCount_SpeedUp,
+            QuestDetailType2.WingTtoItem_Coin => questUserPlayData.wingTto.collectCount_Coin,
+            QuestDetailType2.WingTtoItem_Exp => questUserPlayData.wingTto.collectCount_Exp,
+            _ => 0
+        };
+    }
+
+    private int GetTowerStatLevel(QuestDetailType2 statType)
+    {
+        return statType switch
+        {
+            QuestDetailType2.TowerStat_Atk => playerData.towerGameUserStatLevelData.atkLevel,
+            QuestDetailType2.TowerStat_Def => playerData.towerGameUserStatLevelData.defLevel,
+            QuestDetailType2.TowerStat_Hp => playerData.towerGameUserStatLevelData.hpLevel,
+            QuestDetailType2.TowerStat_CriRate => playerData.towerGameUserStatLevelData.criRateLevel,
+            QuestDetailType2.TowerStat_CriDmg => playerData.towerGameUserStatLevelData.criDmgLevel,
+            _ => 0
+        };
     }
 
 
