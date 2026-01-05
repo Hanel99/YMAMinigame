@@ -302,6 +302,25 @@ public class SaveDataManager : MonoBehaviour
         return isShowLevelUpPopup;
     }
 
+    /// <summary>
+    /// only cheat. Do Not Set InGame
+    /// </summary>
+    /// <param name="value"></param>
+
+#if DEV
+    public void SetLevel(int value)
+    {
+        _playerData.level = value;
+        HLLogger.Log($"Player Level Set {_playerData.level}");
+
+    }
+    public void SetExp(int value)
+    {
+        _playerData.exp = value;
+        HLLogger.Log($"Player Exp Set {_playerData.exp}");
+    }
+#endif
+
     public void SaveUnlockContentDate()
     {
         _playerData.unlockContent = GameResourceManager.instance.GetLevelUnlockValue(_playerData.level);

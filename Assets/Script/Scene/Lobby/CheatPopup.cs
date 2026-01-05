@@ -1,9 +1,20 @@
+using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CheatPopup : PopupBase
 {
     public static CheatPopup instance { get; private set; }
+    public CheatItem cheatItemPrefab;
+    public Transform cheatRoot;
 
+    private List<CheatData> cheatList = new();
+    private List<CheatItem> cheatItemList = new();
+
+
+    private CancellationTokenSource cheatSpawnCTS;
 
 
     protected override void OnAwake()
@@ -15,20 +26,175 @@ public class CheatPopup : PopupBase
     {
         if (enable)
         {
+#if DEV
+            SetCheatData();
             _OpenUI();
+            MakeCheatItem();
+#else
+            _OpenUI();
+#endif
         }
         else
         {
+            cheatSpawnCTS?.Cancel();
             _CloseWindow();
         }
     }
 
-
-
-    public void OnClickLevelSelectButton()
+    private void MakeCheatItem()
     {
-        SaveDataManager.instance.playerData.level = 1;
-        SaveDataManager.instance.playerData.exp = 0;
+        cheatSpawnCTS?.Cancel();
+        cheatSpawnCTS = new CancellationTokenSource();
+
+        MakeCheatItems(cheatSpawnCTS.Token).Forget();
     }
+
+
+    private async UniTask MakeCheatItems(CancellationToken token)
+    {
+        for (int i = 0; i < cheatList.Count; ++i)
+        {
+            if (token.IsCancellationRequested) return;
+
+            var cheatItem = cheatItemPrefab.Spawn(cheatRoot);
+            cheatItem.transform.localScale = Vector3.one;
+            cheatItem.SetCheatData(cheatList[i]);
+
+            cheatItemList.Add(cheatItem);
+
+            if (i % 10 == 9)
+                await UniTask.Yield(PlayerLoopTiming.Update, token);
+        }
+
+
+        cheatItemPrefab.gameObject.SetActive(false);
+        cheatRoot.gameObject.SetActive(false);
+        cheatRoot.gameObject.SetActive(true);
+    }
+
+
+
+
+
+
+
+    private void SetCheatData()
+    {
+        cheatList.Clear();
+
+#if DEV
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "코인 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.SetCoin(value);
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "마일리지 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.SetMilage(value);
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "레벨 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 1, 300);
+                SaveDataManager.instance.SetLevel(value);
+                SaveDataManager.instance.SaveUnlockContentDate();
+                GameListView.instance.UpdateUserProfileProcess();
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "경험치 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.SetExp(value);
+                GameListView.instance.UpdateUserProfileProcess();
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "퀘스트 초기화",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.playerData.questUserPlayData.completedQuestData.Clear();
+                SaveDataManager.instance.playerData.questUserPlayData.completedQuestIds.Clear();
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "콜렉션 초기화",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.playerData.ownCardList.Clear();
+                SaveDataManager.instance.playerData.ownWordList.Clear();
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 층 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 1, 1000);
+                SaveDataManager.instance.playerData.towerFloor = value;
+            },
+        });
+
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 스탯 초기화",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.playerData.towerGameUserStatLevelData.ResetLevel();
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 무기 레벨 지정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 1, 1000);
+                SaveDataManager.instance.playerData.towerGameUserWeaponData.weaponLevel = value;
+            },
+        });
+
+#endif
+    }
+
+
+
+
+}
+
+public class CheatData
+{
+    public string desc;
+    public bool useInputfield;
+    public UnityAction<int> buttonAction;
 
 }

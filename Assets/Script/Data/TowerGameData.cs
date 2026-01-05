@@ -34,6 +34,19 @@ public class TowerGameUserStatLevelData
             _ => 1,
         };
     }
+
+
+    /// <summary>
+    /// Cheat Method.
+    /// </summary>
+    public void ResetLevel()
+    {
+        atkLevel = 1;
+        defLevel = 1;
+        criRateLevel = 1;
+        criDmgLevel = 1;
+        hpLevel = 1;
+    }
 }
 
 [Serializable]
