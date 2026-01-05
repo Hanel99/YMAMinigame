@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class EncryptionManager : MonoBehaviour
@@ -140,7 +141,7 @@ public class EncryptionManager : MonoBehaviour
     {
         try
         {
-            string json = JsonUtility.ToJson(obj);
+            string json = JsonConvert.SerializeObject(obj);
             return EncryptString(json);
         }
         catch (Exception ex)
@@ -163,7 +164,7 @@ public class EncryptionManager : MonoBehaviour
             if (string.IsNullOrEmpty(json))
                 return default(T);
 
-            return JsonUtility.FromJson<T>(json);
+            return JsonConvert.DeserializeObject<T>(json);
         }
         catch (Exception ex)
         {

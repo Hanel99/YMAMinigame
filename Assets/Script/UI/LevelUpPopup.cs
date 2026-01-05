@@ -43,7 +43,15 @@ public class LevelUpPopup : PopupBase
         targetMaxExp = SaveDataManager.instance.playerData.maxExp;
 
         int unlockContent = GameResourceManager.instance.GetLevelUnlockValue(targetLevel);
-        unlockContentText.text = unlockContent == 0 ? "" : LocalizeManager.instance.GetString($"levelup.unlock.{unlockContent}");
+        bool showUnlockContentText = SaveDataManager.instance.playerData.unlockContent != unlockContent;
+
+        unlockContentText.text = "";
+        if (showUnlockContentText)
+        {
+            unlockContentText.text = LocalizeManager.instance.GetString($"levelup.unlock.{unlockContent}");
+            SaveDataManager.instance.SaveUnlockContentDate();
+        }
+
         expText.text = targetMaxExp < 0 ? "MAX" : $"{targetExp} / {targetMaxExp}";
     }
 

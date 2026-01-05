@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using Sirenix.Serialization;
+using Newtonsoft.Json;
 
 public class GeminiApiManager : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class GeminiApiManager : MonoBehaviour
             }
         };
 
-        string json = JsonUtility.ToJson(requestData);
+        string json = JsonConvert.SerializeObject(requestData);
         using (UnityWebRequest request = new UnityWebRequest(url, "POST"))
         {
             byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
@@ -71,7 +72,7 @@ public class GeminiApiManager : MonoBehaviour
             else
             {
                 string responseJson = request.downloadHandler.text;
-                var response = JsonUtility.FromJson<GeminiResponse>(responseJson);
+                var response = JsonConvert.DeserializeObject<GeminiResponse>(responseJson);
 
                 if (response.candidates != null && response.candidates.Length > 0)
                 {

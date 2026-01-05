@@ -162,4 +162,12 @@ public class IntroUIManager : MonoBehaviour
         }
         return popup;
     }
+
+    public void CloseAllPopup()
+    {
+        foreach (var popup in popupList)
+        {
+            popup.ShowPopup(false);
+        }
+    }
 }

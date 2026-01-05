@@ -5,7 +5,8 @@ using System.Linq;
 using UnityEngine;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Unity.VisualScripting;
+using Newtonsoft.Json;
+
 
 public class SaveDataManager : MonoBehaviour
 {
@@ -21,14 +22,15 @@ public class SaveDataManager : MonoBehaviour
     #region Convert
 
     //playfab에 저장할 용도
-    public string JsonPlayerData => JsonUtility.ToJson(_playerData);
-    public PlayerData PlayerDataFromJson(string json) => JsonUtility.FromJson<PlayerData>(json);
+    public string JsonPlayerData => JsonConvert.SerializeObject(_playerData);
+    public PlayerData PlayerDataFromJson(string json) => JsonConvert.DeserializeObject<PlayerData>(json);
 
     #endregion
 
 
     private void Awake()
     {
+
         if (instance != null && instance != this)
             return;
 
@@ -298,6 +300,11 @@ public class SaveDataManager : MonoBehaviour
         if (isSave)
             SavePlayerData();
         return isShowLevelUpPopup;
+    }
+
+    public void SaveUnlockContentDate()
+    {
+        _playerData.unlockContent = GameResourceManager.instance.GetLevelUnlockValue(_playerData.level);
     }
 
 

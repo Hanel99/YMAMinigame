@@ -8,6 +8,7 @@ using UnityEngine;
 public class QuestUserPlayData
 {
     public List<int> completedQuestIds = new List<int>();
+    public Dictionary<int, string> completedQuestData = new Dictionary<int, string>();
 
     [SerializeField]
     private Q_MatchCardGame _matchCardGame;
@@ -43,6 +44,7 @@ public class QuestUserPlayData
     public QuestUserPlayData()
     {
         completedQuestIds = new List<int>();
+        completedQuestData = new Dictionary<int, string>();
 
         _matchCardGame = new();
         _findAIWordGame = new();

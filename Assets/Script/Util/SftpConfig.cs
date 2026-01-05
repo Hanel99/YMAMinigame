@@ -1,4 +1,5 @@
 using System.IO;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [System.Serializable]
@@ -19,6 +20,6 @@ public class SftpConfig
         }
 
         string json = File.ReadAllText(path);
-        return JsonUtility.FromJson<SftpConfig>(json);
+        return JsonConvert.DeserializeObject<SftpConfig>(json);
     }
 }

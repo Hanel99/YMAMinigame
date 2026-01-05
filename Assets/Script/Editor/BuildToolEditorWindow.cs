@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Text;
+using Newtonsoft.Json;
 // using Renci.SshNet; // SSH.NET (SFTP)
 
 public class BuildToolEditorWindow : OdinEditorWindow
@@ -154,20 +155,6 @@ public class BuildToolEditorWindow : OdinEditorWindow
         AppVersion = EditorPrefs.GetString(APP_VERSION_KEY, AppVersion);
         PlayerSettings.bundleVersion = AppVersion;
         PlayerSettings.productName = "YMA Mini Game";
-
-#if UNITY_ANDROID
-        string jsonPath = "D:/workspace/YMAMiniGames/YMAMinigame/Assets/Resources/Config/AppConfig.json";
-        if (File.Exists(jsonPath))
-        {
-            string jsonText = File.ReadAllText(jsonPath);
-            var jsonData = JsonUtility.FromJson<GameConfig>(jsonText);
-
-            // PlayerSettings.Android.keystoreName = jsonData.keystorePath;
-            PlayerSettings.Android.keystorePass = jsonData.keystorePassword;
-            PlayerSettings.Android.keyaliasName = jsonData.keyAlias;
-            PlayerSettings.Android.keyaliasPass = jsonData.keyPassword;
-        }
-#endif
 
         BuildPlayerOptions buildOptions = new BuildPlayerOptions
         {

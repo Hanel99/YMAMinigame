@@ -296,7 +296,11 @@ public class IntroController : MonoBehaviour
             }, (error) =>
             {
                 SaveDataManager.instance.playerData.autoLogin = false;
-                IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, () => { IntroUIManager.instance.ShowLoginPopup(); });
+                IntroUIManager.instance.ShowCommonPopup("오류", $"PlayFab 로그인에 실패하였습니다.\n{error}", false, true, false, null, () =>
+                {
+                    IntroUIManager.instance.CloseAllPopup();
+                    IntroUIManager.instance.ShowLoginPopup();
+                });
             });
         }
         else
@@ -337,6 +341,7 @@ public class IntroController : MonoBehaviour
 
         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
         SaveDataManager.instance.playerData.serverDataVersion = StaticGameData.serverVersion;
+        SaveDataManager.instance.SaveUnlockContentDate();
 
 #if DEV
         SaveDataManager.instance.playerData.defineState = "DEV";

@@ -25,15 +25,16 @@ public class PlayerData
     public int exp = 0;
     public int coin = 0;
     public int mileage = 0;
+    public int unlockContent = 0;
     public List<int> ownCardList = new();
     public List<int> ownWordList = new();
     public List<string> usingRedeemCode = new();
-
     public string defineState = "";
+
+    //Final Quiz Data
+    public DawnMemberRefer dawnMemberRefer;
+    public int finalQuizTryCount = 0;
     public bool playEndRoll = false;
-
-
-    public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
 
 
     //TowerData
@@ -52,8 +53,13 @@ public class PlayerData
     public QuestUserPlayData questUserPlayData = new QuestUserPlayData();
 
 
+
     //server switch
     public bool useServerData;
+
+
+    // Method
+    public int maxExp => GameResourceManager.instance.GetLevelRequireExp(level);
 
 
     public PlayerData()
@@ -74,11 +80,15 @@ public class PlayerData
         exp = 0;
         coin = 0;
         mileage = 0;
+        unlockContent = 0;
         ownCardList.Clear();
         ownWordList.Clear();
         usingRedeemCode.Clear();
 
         defineState = "";
+
+        dawnMemberRefer = new DawnMemberRefer();
+        finalQuizTryCount = 0;
         playEndRoll = false;
 
         towerFloor = 1;
@@ -108,4 +118,13 @@ public class GeminiHint
         this.key = key;
         this.value = value;
     }
+}
+
+[System.Serializable]
+public class DawnMemberRefer
+{
+    public bool matchCardGame = false;
+    public bool findAIWordGame = false;
+    public bool cubeGame = false;
+    public bool wingTto = false;
 }

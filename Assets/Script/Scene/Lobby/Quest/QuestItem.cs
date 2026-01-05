@@ -148,13 +148,13 @@ public class QuestItem : MonoBehaviour
         if (isRewardProcessing)
             return;
 
-        if (questState != QuestState.InProgress)
+        if (questState != QuestState.ReadyToComplete)
         {
             // 체크가 덜 된 경우, 재 체크 후 정상 진입
             // 퀘스트 매니저를 통해 체크할것
             UpdateProgress();
-            if (questState == QuestState.Complete || progressValue >= progressMaxValue)
-                questState = QuestState.Complete;
+            if (questState == QuestState.ReadyToComplete || progressValue >= progressMaxValue)
+                questState = QuestState.ReadyToComplete;
             else
                 return;
         }

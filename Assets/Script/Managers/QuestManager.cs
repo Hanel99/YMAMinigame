@@ -193,6 +193,7 @@ public class QuestManager : MonoBehaviour
         {
             HLLogger.Log($"@@@ Quest completed: {questId}");
             questUserPlayData.completedQuestIds.Add(questId);
+            questUserPlayData.completedQuestData.Add(questId, DateTime.Now.ToString());
         }
 
         onComplete?.Invoke();

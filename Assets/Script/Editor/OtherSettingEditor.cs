@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using Newtonsoft.Json;
 
 
 
@@ -35,7 +36,8 @@ public class OtherSettingEditor : Editor
                 aesIV = "0123456789abcdef"
             };
 
-            string json = JsonUtility.ToJson(config, true);
+
+            string json = JsonConvert.SerializeObject(config);
             File.WriteAllText(filePath, json);
 
             Debug.Log($"Config file created at: {filePath}");

@@ -42,6 +42,9 @@ public class QuestRewardPopup : PopupBase
         }
         else
         {
+            if (isShowLevelUpPopup)
+                return;
+
             showLevelUpPopupCts?.Cancel();
             _CloseWindow();
         }
@@ -64,8 +67,10 @@ public class QuestRewardPopup : PopupBase
     {
         try
         {
-            await UniTask.Delay(TimeSpan.FromSeconds(1.5f), cancellationToken: token);
+            await UniTask.Delay(TimeSpan.FromSeconds(1f), cancellationToken: token);
             LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
+            await UniTask.Delay(100);
+            isShowLevelUpPopup = false;
         }
         catch (OperationCanceledException)
         {

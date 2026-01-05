@@ -10,12 +10,14 @@ public class GameListView : MonoBehaviour
 
     public GameObject settingBtn;
     public GameObject userProfileBtn;
-    public GameObject gachaBtn;
-    public GameObject towerBtn;
-    public GameObject rankingBtn;
-    public GameObject collectionBtn;
-    public GameObject questBtn;
     public GameObject gameQuitBtn;
+
+    public LobbyButton gachaBtn;
+    public LobbyButton towerBtn;
+    public LobbyButton rankingBtn;
+    public LobbyButton collectionBtn;
+    public LobbyButton questBtn;
+    public LobbyButton finalQuizBtn;
 
     public List<GameSelectIcon> gameList = new();
 
@@ -93,39 +95,6 @@ public class GameListView : MonoBehaviour
 
     private void StartGameViewSettingProcess()
     {
-
-        // intro controller로 이동. 혹시 몰라 백업용으로 코드 남겨둠
-
-        //         // 버전 하위호환 보정 처리
-        //         if (SaveDataManager.instance.playerData.recentAppVersion != Application.version)
-        //         {
-        //             if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
-        //             {
-        //                 //@@@ 0.6.5 스탯 데이터 하드리셋 대응
-        //                 if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
-        //                     SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
-        //                 if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
-        //                     SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
-        //             }
-
-        //             // 필요한 게 있으면 비슷하게 코드 추가
-
-        //         }
-
-        //         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
-        //         SaveDataManager.instance.playerData.serverDataVersion = StaticGameData.serverVersion;
-
-        // #if DEV
-        //         SaveDataManager.instance.playerData.defineState = "DEV";
-        // #elif LIVE
-        //         SaveDataManager.instance.playerData.defineState = "LIVE";
-        // #else
-        //         SaveDataManager.instance.playerData.defineState = "UNKNOWN";
-        // #endif
-
-        // SaveDataManager.instance.RemoveNotUseCardList();
-        // StaticGameData.useServerSeed = false;
-
         Application.targetFrameRate = StaticGameData.targetFrameRate;
         if (SaveDataManager.instance.playerData.geminiHints2 != null && SaveDataManager.instance.playerData.geminiHints2.Count < 5)
         {
@@ -144,12 +113,14 @@ public class GameListView : MonoBehaviour
 
         settingBtn.GetComponent<Button>().onClick.AddListener(OnClickSettingButton);
         userProfileBtn.GetComponent<Button>().onClick.AddListener(OnClickUserProfileButton);
-        gachaBtn.GetComponent<Button>().onClick.AddListener(OnClickGachaButton);
-        towerBtn.GetComponent<Button>().onClick.AddListener(OnClickTowerButton);
-        rankingBtn.GetComponent<Button>().onClick.AddListener(OnClickRankingButton);
-        collectionBtn.GetComponent<Button>().onClick.AddListener(OnClickCollectionButton);
-        questBtn.GetComponent<Button>().onClick.AddListener(OnClickQuestButton);
         gameQuitBtn.GetComponent<Button>().onClick.AddListener(OnClickGameQuit);
+
+        gachaBtn.SetButtonData(LobbyIconType.Gacha, OnClickGachaButton);
+        towerBtn.SetButtonData(LobbyIconType.Tower, OnClickTowerButton);
+        rankingBtn.SetButtonData(LobbyIconType.Ranking, OnClickRankingButton);
+        collectionBtn.SetButtonData(LobbyIconType.Collection, OnClickCollectionButton);
+        questBtn.SetButtonData(LobbyIconType.Quest, OnClickQuestButton);
+        finalQuizBtn.SetButtonData(LobbyIconType.FinalQuiz, OnClickFinalQuizButton);
 
         UpdateUserProfileProcess();
         IntroDataProcess();
@@ -215,6 +186,13 @@ public class GameListView : MonoBehaviour
         LobbyUIManager.instance.ShowPopup<UserProfilePopup>();
     }
 
+    public void OnClickGameQuit()
+    {
+        LobbyUIManager.instance.ShowClosePopup();
+    }
+
+
+
     public void OnClickGachaButton()
     {
         LobbyUIManager.instance.ShowPopup<GachaPopup>();
@@ -239,10 +217,12 @@ public class GameListView : MonoBehaviour
         LobbyUIManager.instance.ShowPopup<QuestPopup>();
     }
 
-    public void OnClickGameQuit()
+    public void OnClickFinalQuizButton()
     {
-        LobbyUIManager.instance.ShowClosePopup();
+        // LobbyUIManager.instance.ShowPopup<QuestPopup>();
     }
+
+
 
 
 

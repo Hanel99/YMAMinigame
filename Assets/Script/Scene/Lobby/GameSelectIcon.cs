@@ -6,25 +6,27 @@ using UnityEngine.UI;
 public class GameSelectIcon : MonoBehaviour
 {
     public Image gameImage;
-    public Text tempGameId;
+    public Text gameNameText;
+
+    public Button button;
+    public GameObject lockObject;
+    public Text unlockText;
 
 
     private GameType gameType;
 
 
-
-
     public void SetGameData(GameType game)
     {
         gameType = game;
-
         gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
+        gameNameText.text = LocalizeManager.instance.GetString($"Quest.GameName.{gameType}");
 
-#if DEV
-        tempGameId.text = gameType.ToString();
-#else
-        tempGameId.text = "";
-#endif
+        bool gameLock = SaveDataManager.instance.playerData.unlockContent < (int)gameType;
+
+        button.interactable = !gameLock;
+        lockObject.SetActive(gameLock);
+        unlockText.text = $"Lv.{GameResourceManager.instance.GetContentUnlockLevel((int)gameType)}";
     }
 
 

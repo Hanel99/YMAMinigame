@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 using System.Text;
+using Newtonsoft.Json;
 
 
 #if UNITY_EDITOR
@@ -50,7 +51,7 @@ public class EasySaveEditor : Editor
 
         PlayerData playerData = new PlayerData();
         ES3.LoadInto(StaticGameData.SAVE_PLAYER_DATA_KEY, playerData);
-        HLLogger.Log($"data\n{JsonUtility.ToJson(playerData)}");
+        HLLogger.Log($"data\n{JsonConvert.SerializeObject(playerData)}");
     }
 
 

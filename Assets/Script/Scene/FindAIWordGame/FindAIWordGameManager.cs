@@ -223,7 +223,7 @@ public class FindAIWordGameManager : MonoBehaviour
         if (SaveDataManager.instance.AddExp(1))
         {
             await UniTask.Delay(1500);
-            DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowLevelUpPopup());
+            DOVirtual.DelayedCall(1.5f, () => FindAIWordGameUIManager.instance.ShowLevelUpPopup());
         }
     }
 }

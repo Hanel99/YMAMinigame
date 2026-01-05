@@ -105,7 +105,14 @@ public class GameResourceManager : MonoBehaviour
         BGMList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.BGMGroup);
         SFXList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.SFXGroup);
 
+
+        MakePrivData();
         _isLoaded = true;
+    }
+
+    private void MakePrivData()
+    {
+        MakeContentUnlockLevelDic();
     }
 
 
@@ -256,6 +263,30 @@ public class GameResourceManager : MonoBehaviour
     public int GetLevelUnlockValue(int level)
     {
         return levelData.Data.Find(x => x.level == level).unlock;
+    }
+
+    private Dictionary<int, int> contentUnlockLevelDic = new();
+    private void MakeContentUnlockLevelDic()
+    {
+        contentUnlockLevelDic.Clear();
+        for (int i = 0; i < levelData.Data.Count; ++i)
+        {
+            var unlock = levelData.Data[i].unlock;
+            if (contentUnlockLevelDic.ContainsKey(unlock) == false)
+            {
+                contentUnlockLevelDic.Add(unlock, levelData.Data[i].level);
+            }
+        }
+    }
+
+    public int GetContentUnlockLevel(UnlockContent unlockContent)
+    {
+        return contentUnlockLevelDic[(int)unlockContent];
+    }
+
+    public int GetContentUnlockLevel(int unlockContent)
+    {
+        return contentUnlockLevelDic[unlockContent];
     }
 
 

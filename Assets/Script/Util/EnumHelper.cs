@@ -151,6 +151,34 @@ public enum CardMaster
 
 
 
+#region Lobby & GameData
+
+
+public enum UnlockContent
+{
+    MatchCardGame = 0,
+    FindAIWordGame = 1,
+    CubeGame = 2,
+    WingTto = 3,
+    TowerGame = 4,
+    EveryThing = 5,
+}
+
+public enum LobbyIconType
+{
+    Gacha,
+    Tower,
+    Ranking,
+    Collection,
+    Quest,
+    FinalQuiz,
+}
+
+
+
+
+#endregion
+
 
 #region CommonGame
 

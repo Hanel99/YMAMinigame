@@ -1,4 +1,5 @@
 using System.IO;
+using Newtonsoft.Json;
 using UnityEngine;
 
 [System.Serializable]
@@ -33,7 +34,7 @@ public class ConfigManager : MonoBehaviour
 
         if (configFile != null)
         {
-            _config = JsonUtility.FromJson<GameConfig>(configFile.text);
+            _config = JsonConvert.DeserializeObject<GameConfig>(configFile.text);
             Debug.Log("Config loaded successfully");
         }
         else
