@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -94,6 +95,34 @@ public class FinalQuizUIManager : MonoBehaviour
 
 
     // InGame UI Logic    
+
+
+    public async UniTask StartUIAnimation()
+    {
+        await UniTask.Delay(2000);
+
+        var s1 = SaveDataManager.instance.playerData.finalQuizPlayData;
+
+
+        // 제 1회 벽반가입 인증시험
+
+    }
+
+    public async UniTask FailUIAnimation()
+    {
+        await UniTask.Delay(2000);
+
+        // 실패 연출
+
+    }
+
+    public async UniTask CompleteUIAnimation()
+    {
+        await UniTask.Delay(2000);
+
+        // 성공 연출
+
+    }
 
 
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
@@ -180,6 +181,33 @@ public class CheatPopup : PopupBase
             {
                 value = Mathf.Clamp(value, 1, 1000);
                 SaveDataManager.instance.playerData.towerGameUserWeaponData.weaponLevel = value;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "최종 미션 재료 지급",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 0, 4);
+                SaveDataManager.instance.playerData.finalQuizPlayData.matchCardGame = value > 0;
+                SaveDataManager.instance.playerData.finalQuizPlayData.findAIWordGame = value > 1;
+                SaveDataManager.instance.playerData.finalQuizPlayData.cubeGame = value > 2;
+                SaveDataManager.instance.playerData.finalQuizPlayData.wingTto = value > 3;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "최종 미션 클리어 처리",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 0, 1);
+                SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll = value > 0;
+                if (value > 0)
+                    SaveDataManager.instance.playerData.finalQuizPlayData.completeTime = DateTime.Now;
             },
         });
 

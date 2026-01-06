@@ -32,9 +32,7 @@ public class PlayerData
     public string defineState = "";
 
     //Final Quiz Data
-    public DawnMemberRefer dawnMemberRefer;
-    public int finalQuizTryCount = 0;
-    public bool playEndRoll = false;
+    public FinalQuizPlayData finalQuizPlayData;
 
 
     //TowerData
@@ -87,9 +85,7 @@ public class PlayerData
 
         defineState = "";
 
-        dawnMemberRefer = new DawnMemberRefer();
-        finalQuizTryCount = 0;
-        playEndRoll = false;
+        finalQuizPlayData = new FinalQuizPlayData();
 
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
@@ -121,10 +117,15 @@ public class GeminiHint
 }
 
 [System.Serializable]
-public class DawnMemberRefer
+public class FinalQuizPlayData
 {
     public bool matchCardGame = false;
     public bool findAIWordGame = false;
     public bool cubeGame = false;
     public bool wingTto = false;
+
+    public int enterQuizIndex = 0;
+    public int tryCount = 0;
+    public bool playEndRoll = false;
+    public DateTime completeTime = new DateTime(2025, 1, 1, 0, 0, 0, 0);
 }

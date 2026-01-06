@@ -13,6 +13,7 @@ public enum SceneName
     YMAFindAIWordGame,
     YMACubeGame,
     YMAWingTto,
+    YMAFinalQuiz,
 }
 
 

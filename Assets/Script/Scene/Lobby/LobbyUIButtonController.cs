@@ -14,12 +14,12 @@ public class LobbyButton : MonoBehaviour
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(buttonAction);
 
-        var playerData = SaveDataManager.instance.playerData;
+        var finalQuizPlayData = SaveDataManager.instance.playerData.finalQuizPlayData;
         if (iconType == LobbyIconType.FinalQuiz)
         {
-            if (playerData.playEndRoll || playerData.finalQuizTryCount > 0
-                || playerData.dawnMemberRefer.matchCardGame || playerData.dawnMemberRefer.findAIWordGame
-                || playerData.dawnMemberRefer.cubeGame || playerData.dawnMemberRefer.wingTto)
+            if (finalQuizPlayData.playEndRoll || finalQuizPlayData.tryCount > 0
+                || finalQuizPlayData.matchCardGame || finalQuizPlayData.findAIWordGame
+                || finalQuizPlayData.cubeGame || finalQuizPlayData.wingTto)
                 gameObject.SetActive(true);
             else
             {

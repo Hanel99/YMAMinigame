@@ -91,6 +91,10 @@ public class SceneMoveManager : MonoBehaviour
             case SceneName.YMAWingTto:
                 WingTtoGameUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
                 break;
+
+            case SceneName.YMAFinalQuiz:
+                FinalQuizUIManager.instance.ShowSceneMoveAnimation(false, () => AnimationCompleteProcess(sceneName).Forget());
+                break;
         }
     }
 

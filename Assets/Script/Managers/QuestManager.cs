@@ -136,7 +136,7 @@ public class QuestManager : MonoBehaviour
             QuestDetailType.UseCoin => questUserPlayData.common.useCoin,
             QuestDetailType.ReachPlayerLevel => playerData.level,
             QuestDetailType.S_EquipEtcIcon => questUserPlayData.common.equipEtcIcon,
-            QuestDetailType.E_PlayEndRoll => playerData.playEndRoll ? 1 : 0,
+            QuestDetailType.E_PlayEndRoll => playerData.finalQuizPlayData.playEndRoll ? 1 : 0,
 
             _ => 0
         };

@@ -14,6 +14,12 @@ public class FinalQuizManager : MonoBehaviour
     private List<FinalQuizMetaData> finalQuizMetaDataList = new();
     private int currentQuizIndex = 0;
     private FinalQuizMetaData currentQuizData;
+    private int wrongCount = 0;
+
+    private int maxWrongCount => SaveDataManager.instance.playerData.finalQuizPlayData.tryCount;
+
+
+
 
 
 
@@ -33,17 +39,10 @@ public class FinalQuizManager : MonoBehaviour
 
     private async UniTaskVoid StartProcess()
     {
-
-
-
-
         FinalQuizUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.CubeGame);
 
-        FinalQuizUIManager.instance.ShowDim(true, "준비!");
-        await UniTask.Delay(2000);
-        FinalQuizUIManager.instance.ShowDim(false);
-
+        FinalQuizUIManager.instance.StartUIAnimation().Forget();
     }
 
 
@@ -73,9 +72,16 @@ public class FinalQuizManager : MonoBehaviour
         return GetQuizData(currentQuizIndex);
     }
 
-    public bool CheckIsAnswer(int answer)
+    public void CheckIsAnswer(int answer)
     {
-        return currentQuizData.answer == answer;
+        if (currentQuizData.answer == answer)
+        {
+            wrongCount++;
+            // if (quizdata)
+
+        }
+
+        SetNextQuiz();
     }
 
     public void SetNextQuiz()

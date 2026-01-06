@@ -219,7 +219,7 @@ public class GameListView : MonoBehaviour
 
     public void OnClickFinalQuizButton()
     {
-        // LobbyUIManager.instance.ShowPopup<QuestPopup>();
+        LobbyUIManager.instance.ShowPopup<FinalQuizInfoPopup>();
     }
 
 

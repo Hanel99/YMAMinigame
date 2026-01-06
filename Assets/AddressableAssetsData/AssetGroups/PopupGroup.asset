@@ -81,6 +81,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 578b12a956d88f44fa54e4af2f03665d
+    m_Address: FinalQuizInfoPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 57eb481f3b341014080826b1ddeda9e9
     m_Address: HowToPlayPopup
     m_ReadOnly: 0
@@ -125,6 +131,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9eed3519b2818d34f8af236164c0ebde
     m_Address: TowerGameDetailStatPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a71d1e63c7c8e524184df94168bcfc00
+    m_Address: FinalQuizResultPopup
     m_ReadOnly: 0
     m_SerializedLabels:
     - PopupGroup
