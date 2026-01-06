@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/YMAWingTto.unity
     guid: 6587bfa7b3313494db8bc4a213ad4819
+  - enabled: 1
+    path: Assets/Scenes/YMAFinalQuiz.unity
+    guid: 47e379506de4a1843a0df0ae1de2628e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: a29d318d6a812684faf61d3968e13efe, type: 2}
   m_UseUCBPForAssetBundles: 0
