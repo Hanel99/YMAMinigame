@@ -354,6 +354,11 @@ public class GameResourceManager : MonoBehaviour
         return finalQuizData.Data.Find(x => x.index == index);
     }
 
+    public List<FinalQuizMetaData> GetAllFinalQuizMetaData()
+    {
+        return finalQuizData.Data;
+    }
+
     #endregion
 
     #region GetSound
