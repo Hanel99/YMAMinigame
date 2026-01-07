@@ -437,6 +437,12 @@ public enum SFXType
     Ready,
     Go,
 
+
+    // final quiz
+
+    Final_ding1,
+    Final_ding2,
+
     // Congratulations,
     // GameOver,
     // GameStart,

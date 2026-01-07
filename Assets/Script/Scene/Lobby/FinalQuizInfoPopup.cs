@@ -80,13 +80,7 @@ public class FinalQuizInfoPopup : PopupBase
         if (finalQuizPlayData.cubeGame) count++;
         if (finalQuizPlayData.wingTto) count++;
 
-        if (count < 4)
-        {
-            infoText.text = count < 4 ? $"동의서가 {4 - count}개 부족한 듯 하다." : "벽반 가입 시험에 응시할 수 있습니다.";
-        }
-
-
-
+        infoText.text = count < 4 ? $"동의서가 {4 - count}개 부족한 듯 하다." : "벽반 가입 시험에 응시할 수 있습니다.";
 
     }
 

@@ -135,12 +135,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a71d1e63c7c8e524184df94168bcfc00
-    m_Address: FinalQuizResultPopup
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PopupGroup
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b369a3e651daf2045b1ff949b78eeee6
     m_Address: TowerGameCombatPopup
     m_ReadOnly: 0

@@ -21,6 +21,15 @@ public class FinalQuizUIManager : MonoBehaviour
     public Text timerText;
     public Text scoreText;
 
+
+    [Header("Panel")]
+
+    public GameObject gameResultPanel;
+    public GameObject endingCreditPanel;
+
+
+    [Header("ETC")]
+
     public GameObject dimObject;
     public Text dimText;
 
