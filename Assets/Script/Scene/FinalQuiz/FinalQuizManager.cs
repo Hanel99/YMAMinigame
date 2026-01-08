@@ -20,6 +20,15 @@ public class FinalQuizManager : MonoBehaviour
 
 
 
+    private FinalGameState gameState = FinalGameState.Intro;
+
+    private float timer = 0;
+
+
+
+
+
+
 
 
 
@@ -34,15 +43,11 @@ public class FinalQuizManager : MonoBehaviour
         currentQuizIndex = 0;
         currentQuizData = GetQuizData(currentQuizIndex);
 
-        StartProcess().Forget();
-    }
-
-    private async UniTaskVoid StartProcess()
-    {
         FinalQuizUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.CubeGame);
 
-        FinalQuizUIManager.instance.StartUIAnimation().Forget();
+        gameState = FinalGameState.Intro;
+        StartStateProcess();
     }
 
 
@@ -53,11 +58,120 @@ public class FinalQuizManager : MonoBehaviour
         {
             HLLogger.Log($"force clear");
 
-            FinishProcess(0).Forget();
+            SetNextState();
+            StartStateProcess();
         }
 #endif
+
+        if (gameState == FinalGameState.Phase1)
+        {
+            timer -= Time.deltaTime;
+            if (timer < 0)
+            {
+                timer = 0;
+                SetState(FinalGameState.GameOver);
+                StartStateProcess();
+            }
+        }
     }
 
+
+
+    public void SetState(FinalGameState state)
+    {
+        gameState = state;
+    }
+    public void SetNextState()
+    {
+        gameState += 1;
+    }
+
+    public void StartStateProcess()
+    {
+        switch (gameState)
+        {
+            case FinalGameState.Intro:
+                IntroProcess();
+                break;
+            case FinalGameState.Ready:
+                ReadyProcess();
+                break;
+            case FinalGameState.Phase1:
+                Phase1Process();
+                break;
+            case FinalGameState.Phase1Complete:
+                Phase1FinishProcess();
+                break;
+            case FinalGameState.Phase2:
+                Phase2Process();
+                break;
+            case FinalGameState.Phase2Complete:
+                Phase2FinishProcess();
+                break;
+            case FinalGameState.Ending:
+                EndingProcess();
+                break;
+            case FinalGameState.GameOver:
+                GameOverProcess();
+                break;
+            case FinalGameState.GameResult:
+                GameResultProcess();
+                break;
+        }
+    }
+
+    private void IntroProcess()
+    {
+        FinalQuizUIManager.instance.IntroUIAnimation().Forget();
+    }
+
+    private void ReadyProcess()
+    {
+
+    }
+
+    private void Phase1Process()
+    {
+
+    }
+
+    private void Phase1FinishProcess()
+    {
+
+    }
+
+    private void Phase2Process()
+    {
+
+    }
+
+    private void Phase2FinishProcess()
+    {
+
+    }
+
+    private void EndingProcess()
+    {
+
+    }
+
+
+    private void GameOverProcess()
+    {
+
+    }
+
+    private void GameResultProcess()
+    {
+
+    }
+
+
+
+
+
+
+    #region Data
 
     public FinalQuizMetaData GetQuizData(int index)
     {
@@ -71,6 +185,9 @@ public class FinalQuizManager : MonoBehaviour
     {
         return GetQuizData(currentQuizIndex);
     }
+
+
+
 
     public void CheckIsAnswer(int answer)
     {
@@ -89,37 +206,29 @@ public class FinalQuizManager : MonoBehaviour
         currentQuizIndex++;
         if (currentQuizIndex >= finalQuizMetaDataList.Count)
         {
-            FinishProcess().Forget();
+            SetState(FinalGameState.GameOver);
+            StartStateProcess();
             return;
         }
 
         currentQuizData = GetQuizData(currentQuizIndex);
     }
 
+    #endregion
 
 
+}
 
 
-
-    private async UniTask FinishProcess(int delayTime = 3000)
-    {
-        // 3초 딜레이
-        await UniTask.Delay(delayTime);
-
-        //1회만에 바로 맞춘경우 15000. 1회 틀릴때마다 500씩 감소. 최소 12000
-        // int earnCoinAmount = 0;
-        // if (delayTime < 3000) //강제 치트를 쓴 경우
-        //     earnCoinAmount = 30000;
-        // else
-        //     earnCoinAmount = (hints.Count - currentHintIndex) * 1000 + 10000;
-
-        // QuestManager.instance.AddFindAIWordData(1, currentHintIndex < 3 ? 1 : 0);
-        // FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);
-
-        // if (SaveDataManager.instance.AddExp(1))
-        // {
-        //     await UniTask.Delay(1500);
-        //     FindAIWordGameUIManager.instance.ShowLevelUpPopup();
-        // }
-    }
+public enum FinalGameState
+{
+    Intro,
+    Ready, // 시작 준비
+    Phase1,
+    Phase1Complete, //페이즈 1 성공
+    Phase2,
+    Phase2Complete, //페이즈 2 성공
+    Ending,
+    GameOver, // 게임 실패
+    GameResult, // 게임 결과 노출
 }

@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Cysharp.Threading.Tasks;
-using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,8 +23,8 @@ public class FinalQuizUIManager : MonoBehaviour
 
     [Header("Panel")]
 
-    public GameObject gameResultPanel;
-    public GameObject endingCreditPanel;
+    public FinalQuizGameResultPanel gameResultPanel;
+    public FinalQuizEndingPanel endingCreditPanel;
 
 
     [Header("ETC")]
@@ -106,7 +105,7 @@ public class FinalQuizUIManager : MonoBehaviour
     // InGame UI Logic    
 
 
-    public async UniTask StartUIAnimation()
+    public async UniTask IntroUIAnimation()
     {
         await UniTask.Delay(2000);
 
@@ -117,21 +116,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     }
 
-    public async UniTask FailUIAnimation()
-    {
-        await UniTask.Delay(2000);
 
-        // 실패 연출
-
-    }
-
-    public async UniTask CompleteUIAnimation()
-    {
-        await UniTask.Delay(2000);
-
-        // 성공 연출
-
-    }
 
 
 
