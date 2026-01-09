@@ -11,18 +11,27 @@ public class FinalQuizManager : MonoBehaviour
 {
     public static FinalQuizManager instance { get; private set; }
 
+    private FinalQuizPlayData finalQuizPlayData => SaveDataManager.instance.playerData.finalQuizPlayData;
     private List<FinalQuizMetaData> finalQuizMetaDataList = new();
-    private int currentQuizIndex = 0;
     private FinalQuizMetaData currentQuizData;
-    private int wrongCount = 0;
-
-    private int maxWrongCount => SaveDataManager.instance.playerData.finalQuizPlayData.tryCount;
-
 
 
     private FinalGameState gameState = FinalGameState.Intro;
+    private int currentQuizIndex = 0;
+    private int maxWrongCount = 0;
+    private int wrongCount = 0;
 
-    private float timer = 0;
+
+
+
+    public float QuizTotalLeftTimeMax => quizTotalLeftTimeMax;
+    public float QuizLeftTimeMax => quizLeftTimeMax;
+
+    private float quizTotalLeftTimeMax = 0;
+    private float quizLeftTimeMax = 0;
+    private float quizTotalLeftTime = 0;
+    private float quizLeftTime = 0;
+    private float phase2PlusTime = 0;
 
 
 
@@ -53,26 +62,44 @@ public class FinalQuizManager : MonoBehaviour
 
     void Update()
     {
-#if UNITY_EDITOR && DEV
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            HLLogger.Log($"force clear");
+        // #if UNITY_EDITOR && DEV
+        //         if (Input.GetKeyDown(KeyCode.C))
+        //         {
+        //             HLLogger.Log($"force {gameState} state clear");
 
-            SetNextState();
-            StartStateProcess();
-        }
-#endif
+        //             SetNextState();
+        //             StartStateProcess();
+        //         }
+        // #endif
 
-        if (gameState == FinalGameState.Phase1)
+        if (gameState == FinalGameState.Ready)
         {
-            timer -= Time.deltaTime;
-            if (timer < 0)
+            if (Input.GetMouseButtonDown(0))
             {
-                timer = 0;
+                SetState(FinalGameState.Phase1);
+                StartStateProcess();
+            }
+        }
+
+
+        if (gameState == FinalGameState.Phase1 || gameState == FinalGameState.Phase2)
+        {
+            quizTotalLeftTime -= Time.deltaTime;
+            if (gameState == FinalGameState.Phase2)
+                quizLeftTime -= Time.deltaTime;
+
+            FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+            if (quizTotalLeftTime < 0 || quizLeftTime < 0)
+            {
+                if (quizTotalLeftTime < 0) quizTotalLeftTime = 0;
+                if (quizLeftTime < 0) quizLeftTime = 0;
+
+                FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
                 SetState(FinalGameState.GameOver);
                 StartStateProcess();
             }
         }
+
     }
 
 
@@ -83,11 +110,15 @@ public class FinalQuizManager : MonoBehaviour
     }
     public void SetNextState()
     {
+        if (gameState == FinalGameState.Ending || gameState == FinalGameState.GameResult)
+            return;
+
         gameState += 1;
     }
 
     public void StartStateProcess()
     {
+        HLLogger.Log($"gameState Action - {gameState}");
         switch (gameState)
         {
             case FinalGameState.Intro:
@@ -122,6 +153,23 @@ public class FinalQuizManager : MonoBehaviour
 
     private void IntroProcess()
     {
+        var tryCount = finalQuizPlayData.tryCount;
+
+        currentQuizIndex = 0;
+        maxWrongCount = tryCount;
+        wrongCount = 0;
+
+        quizTotalLeftTime = 15f + tryCount * 5f;
+        quizLeftTime = 2f + tryCount;
+        phase2PlusTime = 5f + tryCount * 5f;
+
+        quizTotalLeftTimeMax = quizTotalLeftTime;
+        quizLeftTimeMax = quizTotalLeftTime;
+
+
+        FinalQuizUIManager.instance.SetIntroUI();
+        FinalQuizUIManager.instance.SetIntroTextData(tryCount, quizTotalLeftTimeMax);
+        FinalQuizUIManager.instance.UpdateMaxTime();
         FinalQuizUIManager.instance.IntroUIAnimation().Forget();
     }
 
@@ -132,12 +180,16 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase1Process()
     {
-
+        FinalQuizUIManager.instance.SetPhase1UI();
+        FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+        FinalQuizUIManager.instance.ShowQuizItem(GetQuizData());
     }
 
     private void Phase1FinishProcess()
     {
+        HLLogger.Log("@@@ phase 1 complete");
 
+        FinalQuizUIManager.instance.FadeOutQuizItem(GetQuizData());
     }
 
     private void Phase2Process()
@@ -191,11 +243,22 @@ public class FinalQuizManager : MonoBehaviour
 
     public void CheckIsAnswer(int answer)
     {
-        if (currentQuizData.answer == answer)
+        if (gameState != FinalGameState.Phase1 && gameState != FinalGameState.Phase2)
         {
-            wrongCount++;
-            // if (quizdata)
+            HLLogger.Log("game over! dont touch");
+            return;
+        }
 
+        if (currentQuizData.answer != 0 && currentQuizData.answer == answer)
+        {
+            HLLogger.Log($"wrong answer - {wrongCount} / {maxWrongCount}");
+            wrongCount++;
+            if (wrongCount >= maxWrongCount)
+            {
+                SetState(FinalGameState.GameOver);
+                StartStateProcess();
+                return;
+            }
         }
 
         SetNextQuiz();
@@ -204,17 +267,40 @@ public class FinalQuizManager : MonoBehaviour
     public void SetNextQuiz()
     {
         currentQuizIndex++;
-        if (currentQuizIndex >= finalQuizMetaDataList.Count)
+
+        HLLogger.Log($"next Quiz - {currentQuizIndex}");
+
+        if (currentQuizIndex == 10)
         {
-            SetState(FinalGameState.GameOver);
+            SetState(FinalGameState.Phase1Complete);
+            StartStateProcess();
+            return;
+        }
+        else if (currentQuizIndex == 20)
+        {
+            SetState(FinalGameState.Phase2Complete);
             StartStateProcess();
             return;
         }
 
         currentQuizData = GetQuizData(currentQuizIndex);
+
+        FinalQuizUIManager.instance.ShowQuizItem(currentQuizData);
+        FinalQuizUIManager.instance.FadeOutQuizItem(currentQuizData);
     }
 
     #endregion
+
+
+
+
+
+
+
+    public void MoveScene()
+    {
+        SceneMoveManager.instance.MoveScene(SceneName.LobbyScene, true);
+    }
 
 
 }

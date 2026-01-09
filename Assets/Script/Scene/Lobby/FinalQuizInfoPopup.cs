@@ -92,7 +92,10 @@ public class FinalQuizInfoPopup : PopupBase
         if (finalQuizPlayData.matchCardGame && finalQuizPlayData.findAIWordGame && finalQuizPlayData.cubeGame && finalQuizPlayData.wingTto)
             OnClickShowWarningMiniPopup(true);
         else
+        {
+            examButton.transform.localPosition = new Vector3(0, 0, 0);
             examButton.transform.DOShakePosition(0.2f, 30, 100);
+        }
     }
 
     public void OnClickTryExamButton()

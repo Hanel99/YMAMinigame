@@ -18,11 +18,6 @@ public class SceneAnimation : MonoBehaviour
     float height = Screen.height * 2;
     bool isAniActing = false;
 
-    public void SetDuration(float value)
-    {
-        duration = value;
-    }
-
     public void ShowAnimation(bool showOpen, Action callback)
     {
         if (isAniActing) return;
