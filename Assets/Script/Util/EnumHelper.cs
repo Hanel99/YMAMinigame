@@ -408,6 +408,8 @@ public enum BGMType
     WordGame,
     CubeGame,
     WingTto,
+    FinalQuizPhase1,
+    FinalQuizPhase2,
 
     // Loading,
     // Result,

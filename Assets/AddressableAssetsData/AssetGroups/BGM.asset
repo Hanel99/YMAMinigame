@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - BGM
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02fe96a6b4014cd42ba15a8bcff5933e
+    m_Address: BGM_FinalQuizPhase2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 228b6c53ee7049b4f8b84e925cd92896
     m_Address: BGM_Other
     m_ReadOnly: 0
@@ -83,6 +89,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d9292c96bf4f8724c806207cc1053b8b
     m_Address: BGM_WingTto
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - BGM
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e188e290f803d464ea742d89cf1b3073
+    m_Address: BGM_FinalQuizPhase1
     m_ReadOnly: 0
     m_SerializedLabels:
     - BGM

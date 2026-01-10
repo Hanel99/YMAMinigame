@@ -112,6 +112,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     // InGame UI Logic    
 
+
     //Intro
 
     public void SetIntroTextData(int examTryCount, float totalTime)
@@ -162,6 +163,51 @@ public class FinalQuizUIManager : MonoBehaviour
         int showItemIndex = (quizData.index + 1) % 2;
         quizItems[showItemIndex].FlipQuizItem(true);
     }
+
+    public void OAnimation()
+    {
+
+
+    }
+
+
+    public void XAnimation()
+    {
+
+    }
+
+
+
+
+
+
+    #region State Animation
+
+    public void ShowPhase1CompleteAnimation()
+    {
+
+    }
+
+    public void ShowPhase2CompleteAnimation()
+    {
+
+    }
+
+
+    public void ShowGameOverAnimation()
+    {
+
+    }
+
+    public void ShowCompleteAnimation()
+    {
+
+    }
+
+
+
+
+    #endregion
 
 
 

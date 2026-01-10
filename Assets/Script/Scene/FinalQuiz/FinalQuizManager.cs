@@ -11,6 +11,8 @@ public class FinalQuizManager : MonoBehaviour
 {
     public static FinalQuizManager instance { get; private set; }
 
+    public FinalQuizUIManager uiManager => FinalQuizUIManager.instance;
+
     private FinalQuizPlayData finalQuizPlayData => SaveDataManager.instance.playerData.finalQuizPlayData;
     private List<FinalQuizMetaData> finalQuizMetaDataList = new();
     private FinalQuizMetaData currentQuizData;
@@ -52,8 +54,7 @@ public class FinalQuizManager : MonoBehaviour
         currentQuizIndex = 0;
         currentQuizData = GetQuizData(currentQuizIndex);
 
-        FinalQuizUIManager.instance.ShowSceneMoveAnimation(true);
-        SoundManager.instance.PlayBGM(BGMType.CubeGame);
+        uiManager.ShowSceneMoveAnimation(true);
 
         gameState = FinalGameState.Intro;
         StartStateProcess();
@@ -88,13 +89,13 @@ public class FinalQuizManager : MonoBehaviour
             if (gameState == FinalGameState.Phase2)
                 quizLeftTime -= Time.deltaTime;
 
-            FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+            uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
             if (quizTotalLeftTime < 0 || quizLeftTime < 0)
             {
                 if (quizTotalLeftTime < 0) quizTotalLeftTime = 0;
                 if (quizLeftTime < 0) quizLeftTime = 0;
 
-                FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+                uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
                 SetState(FinalGameState.GameOver);
                 StartStateProcess();
             }
@@ -167,10 +168,10 @@ public class FinalQuizManager : MonoBehaviour
         quizLeftTimeMax = quizTotalLeftTime;
 
 
-        FinalQuizUIManager.instance.SetIntroUI();
-        FinalQuizUIManager.instance.SetIntroTextData(tryCount, quizTotalLeftTimeMax);
-        FinalQuizUIManager.instance.UpdateMaxTime();
-        FinalQuizUIManager.instance.IntroUIAnimation().Forget();
+        uiManager.SetIntroUI();
+        uiManager.SetIntroTextData(tryCount, quizTotalLeftTimeMax);
+        uiManager.UpdateMaxTime();
+        uiManager.IntroUIAnimation().Forget();
     }
 
     private void ReadyProcess()
@@ -180,25 +181,31 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase1Process()
     {
-        FinalQuizUIManager.instance.SetPhase1UI();
-        FinalQuizUIManager.instance.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
-        FinalQuizUIManager.instance.ShowQuizItem(GetQuizData());
+        uiManager.SetPhase1UI();
+        uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+        uiManager.ShowQuizItem(GetQuizData());
+        SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase1);
     }
 
     private void Phase1FinishProcess()
     {
         HLLogger.Log("@@@ phase 1 complete");
 
-        FinalQuizUIManager.instance.FadeOutQuizItem(GetQuizData());
+
+        uiManager.FadeOutQuizItem(GetQuizData());
+        uiManager.ShowPhase1CompleteAnimation();
+        SoundManager.instance.StopBGM();
     }
 
     private void Phase2Process()
     {
+        SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase2);
 
     }
 
     private void Phase2FinishProcess()
     {
+        SoundManager.instance.StopBGM();
 
     }
 
@@ -251,7 +258,10 @@ public class FinalQuizManager : MonoBehaviour
 
         if (currentQuizData.answer != 0 && currentQuizData.answer == answer)
         {
+            //오답
             HLLogger.Log($"wrong answer - {wrongCount} / {maxWrongCount}");
+
+            uiManager.XAnimation();
             wrongCount++;
             if (wrongCount >= maxWrongCount)
             {
@@ -259,6 +269,11 @@ public class FinalQuizManager : MonoBehaviour
                 StartStateProcess();
                 return;
             }
+        }
+        else
+        {
+            //정답
+            uiManager.OAnimation();
         }
 
         SetNextQuiz();
@@ -285,8 +300,8 @@ public class FinalQuizManager : MonoBehaviour
 
         currentQuizData = GetQuizData(currentQuizIndex);
 
-        FinalQuizUIManager.instance.ShowQuizItem(currentQuizData);
-        FinalQuizUIManager.instance.FadeOutQuizItem(currentQuizData);
+        uiManager.ShowQuizItem(currentQuizData);
+        uiManager.FadeOutQuizItem(currentQuizData);
     }
 
     #endregion
