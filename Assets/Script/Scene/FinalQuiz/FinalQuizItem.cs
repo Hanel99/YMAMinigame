@@ -49,15 +49,14 @@ public class FinalQuizItem : MonoBehaviour
 
     public void FlipQuizItem(bool moveUp)
     {
-        float localMoveFrom = moveUp ? 0f : -550f;
-        float localMoveTo = moveUp ? 550f : 0f;
+        float localMoveFrom = moveUp ? 0f : -650f;
+        float localMoveTo = moveUp ? 650f : 0f;
         float fadeFrom = moveUp ? 1 : 0;
         float fadeTo = moveUp ? 0 : 1;
 
         gameObject.SetActive(true);
-
         canvasGroup.transform.DOLocalMoveY(localMoveTo, 0.3f).From(localMoveFrom).SetEase(Ease.InCubic);
-        canvasGroup.DOFade(fadeTo, 0.3f).From(fadeFrom).SetEase(Ease.InCubic);
+        canvasGroup.DOFade(fadeTo, 0.3f).From(fadeFrom).SetEase(Ease.InCubic).OnComplete(() => { this.gameObject.SetActive(false); });
     }
 
     public void OnClickOption(int optionNumber)

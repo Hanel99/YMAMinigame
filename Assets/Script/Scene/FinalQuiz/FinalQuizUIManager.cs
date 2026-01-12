@@ -34,6 +34,7 @@ public class FinalQuizUIManager : MonoBehaviour
     public Text wrongCountText;
     public Image OImage;
     public Image XImage;
+    public Slider quizProgressSlider;
 
 
     [Header("Panel")]
@@ -164,16 +165,34 @@ public class FinalQuizUIManager : MonoBehaviour
         quizItems[showItemIndex].FlipQuizItem(true);
     }
 
-    public void OAnimation()
+    public async UniTask OAnimation()
     {
-
-
+        OImage.gameObject.SetActive(true);
+        await UniTask.Delay(200);
+        OImage.gameObject.SetActive(false);
+        await UniTask.Delay(200);
+        OImage.gameObject.SetActive(true);
+        await UniTask.Delay(500);
+        OImage.gameObject.SetActive(false);
     }
 
 
-    public void XAnimation()
+    public async UniTask XAnimation()
     {
+        XImage.gameObject.SetActive(true);
 
+        // Sequence
+        Sequence seq = DOTween.Sequence();
+
+        // Shake X axis.
+        seq.Append(XImage.rectTransform.DOShakeAnchorPos(1f, new Vector3(30f, 0f, 0f), 20, 90, false, true));
+
+        // Fade out during the last half.
+        seq.Join(XImage.DOFade(0f, 0.5f).SetDelay(0.5f).From(1f));
+
+        await seq.Play().AsyncWaitForCompletion();
+
+        XImage.gameObject.SetActive(false);
     }
 
 
@@ -185,6 +204,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public void ShowPhase1CompleteAnimation()
     {
+        //페이즈 1 클리어
 
     }
 
@@ -239,6 +259,8 @@ public class FinalQuizUIManager : MonoBehaviour
         gameResultPanel.gameObject.SetActive(false);
         endingCreditPanel.gameObject.SetActive(false);
 
+        quizProgressSlider.gameObject.SetActive(false);
+
     }
 
 
@@ -258,6 +280,9 @@ public class FinalQuizUIManager : MonoBehaviour
         examStartText.gameObject.SetActive(true);
         examStartText.GetComponent<Text>().DOFade(0f, 0.4f).From(1f).SetEase(Ease.InCubic);
         examStartText.transform.DOScale(10f, 0.4f).From(1f).SetEase(Ease.InCubic).OnComplete(() => { examStartText.gameObject.SetActive(false); });
+
+        quizProgressSlider.value = 0;
+        quizProgressSlider.gameObject.SetActive(true);
     }
 
 
@@ -273,6 +298,17 @@ public class FinalQuizUIManager : MonoBehaviour
     {
         totalLeftTimeText.text = $"남은 시간 : {quizLeftTotalTime:F1}초";
         quizLeftTimeText.text = $"남은 시간 : {quizLeftTime:F1}초";
+    }
+
+    public void UpdateQuizProgress(int index, bool immediate = false)
+    {
+        int temp = index % 10;
+        float value = (float)temp / 10;
+
+        if (immediate)
+            quizProgressSlider.value = value;
+        else
+            quizProgressSlider.DOValue(value, 0.2f).SetEase(Ease.InCubic);
     }
 
 

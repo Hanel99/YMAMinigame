@@ -1,19 +1,19 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Text;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Threading;
-using System;
-using System.Text;
+using UnityEngine;
 
 
 public class FinalQuizManager : MonoBehaviour
 {
     public static FinalQuizManager instance { get; private set; }
 
-    public FinalQuizUIManager uiManager => FinalQuizUIManager.instance;
+    public FinalQuizUIManager UiManager => FinalQuizUIManager.instance;
 
-    private FinalQuizPlayData finalQuizPlayData => SaveDataManager.instance.playerData.finalQuizPlayData;
+    private FinalQuizPlayData FinalQuizPlayData => SaveDataManager.instance.playerData.finalQuizPlayData;
     private List<FinalQuizMetaData> finalQuizMetaDataList = new();
     private FinalQuizMetaData currentQuizData;
 
@@ -54,7 +54,7 @@ public class FinalQuizManager : MonoBehaviour
         currentQuizIndex = 0;
         currentQuizData = GetQuizData(currentQuizIndex);
 
-        uiManager.ShowSceneMoveAnimation(true);
+        UiManager.ShowSceneMoveAnimation(true);
 
         gameState = FinalGameState.Intro;
         StartStateProcess();
@@ -63,15 +63,34 @@ public class FinalQuizManager : MonoBehaviour
 
     void Update()
     {
-        // #if UNITY_EDITOR && DEV
-        //         if (Input.GetKeyDown(KeyCode.C))
-        //         {
-        //             HLLogger.Log($"force {gameState} state clear");
+#if UNITY_EDITOR && DEV
+        // if (Input.GetKeyDown(KeyCode.C))
+        // {
+        //     HLLogger.Log($"force {gameState} state clear");
 
-        //             SetNextState();
-        //             StartStateProcess();
-        //         }
-        // #endif
+        //     SetNextState();
+        //     StartStateProcess();
+        // }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            quizTotalLeftTime += 10f;
+            quizLeftTime += 10f;
+
+            HLLogger.Log($"+10 / quizTotalLeftTime : {quizTotalLeftTime}, quizLeftTime : {quizLeftTime}");
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            quizLeftTime -= 1f;
+            HLLogger.Log($"-1 / quizLeftTime : {quizLeftTime}");
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            quizTotalLeftTime -= 10f;
+            HLLogger.Log($"-10 / quizTotalLeftTime : {quizTotalLeftTime}");
+        }
+#endif
 
         if (gameState == FinalGameState.Ready)
         {
@@ -89,13 +108,13 @@ public class FinalQuizManager : MonoBehaviour
             if (gameState == FinalGameState.Phase2)
                 quizLeftTime -= Time.deltaTime;
 
-            uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+            UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
             if (quizTotalLeftTime < 0 || quizLeftTime < 0)
             {
                 if (quizTotalLeftTime < 0) quizTotalLeftTime = 0;
                 if (quizLeftTime < 0) quizLeftTime = 0;
 
-                uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+                UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
                 SetState(FinalGameState.GameOver);
                 StartStateProcess();
             }
@@ -119,7 +138,7 @@ public class FinalQuizManager : MonoBehaviour
 
     public void StartStateProcess()
     {
-        HLLogger.Log($"gameState Action - {gameState}");
+        HLLogger.Log($"@@@ GameState Action - {gameState}", LogColor.cyan);
         switch (gameState)
         {
             case FinalGameState.Intro:
@@ -154,7 +173,7 @@ public class FinalQuizManager : MonoBehaviour
 
     private void IntroProcess()
     {
-        var tryCount = finalQuizPlayData.tryCount;
+        var tryCount = FinalQuizPlayData.tryCount;
 
         currentQuizIndex = 0;
         maxWrongCount = tryCount;
@@ -168,10 +187,10 @@ public class FinalQuizManager : MonoBehaviour
         quizLeftTimeMax = quizTotalLeftTime;
 
 
-        uiManager.SetIntroUI();
-        uiManager.SetIntroTextData(tryCount, quizTotalLeftTimeMax);
-        uiManager.UpdateMaxTime();
-        uiManager.IntroUIAnimation().Forget();
+        UiManager.SetIntroUI();
+        UiManager.SetIntroTextData(tryCount, quizTotalLeftTimeMax);
+        UiManager.UpdateMaxTime();
+        UiManager.IntroUIAnimation().Forget();
     }
 
     private void ReadyProcess()
@@ -181,9 +200,9 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase1Process()
     {
-        uiManager.SetPhase1UI();
-        uiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
-        uiManager.ShowQuizItem(GetQuizData());
+        UiManager.SetPhase1UI();
+        UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+        UiManager.ShowQuizItem(GetQuizData());
         SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase1);
     }
 
@@ -192,19 +211,23 @@ public class FinalQuizManager : MonoBehaviour
         HLLogger.Log("@@@ phase 1 complete");
 
 
-        uiManager.FadeOutQuizItem(GetQuizData());
-        uiManager.ShowPhase1CompleteAnimation();
+        UiManager.UpdateQuizProgress(1);
+        UiManager.FadeOutQuizItem(GetQuizData());
+        UiManager.ShowPhase1CompleteAnimation();
         SoundManager.instance.StopBGM();
     }
 
     private void Phase2Process()
     {
+        UiManager.UpdateQuizProgress(0, true);
         SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase2);
 
     }
 
     private void Phase2FinishProcess()
     {
+        UiManager.FadeOutQuizItem(currentQuizData);
+        UiManager.UpdateQuizProgress(1);
         SoundManager.instance.StopBGM();
 
     }
@@ -261,7 +284,7 @@ public class FinalQuizManager : MonoBehaviour
             //오답
             HLLogger.Log($"wrong answer - {wrongCount} / {maxWrongCount}");
 
-            uiManager.XAnimation();
+            UiManager.XAnimation().Forget();
             wrongCount++;
             if (wrongCount >= maxWrongCount)
             {
@@ -269,14 +292,16 @@ public class FinalQuizManager : MonoBehaviour
                 StartStateProcess();
                 return;
             }
+            UiManager.UpdateQuizProgress(currentQuizIndex);
         }
         else
         {
             //정답
-            uiManager.OAnimation();
+            UiManager.OAnimation().Forget();
+            UiManager.UpdateQuizProgress(currentQuizIndex);
         }
 
-        SetNextQuiz();
+        DOVirtual.DelayedCall(0.2f, () => { SetNextQuiz(); });
     }
 
     public void SetNextQuiz()
@@ -300,8 +325,8 @@ public class FinalQuizManager : MonoBehaviour
 
         currentQuizData = GetQuizData(currentQuizIndex);
 
-        uiManager.ShowQuizItem(currentQuizData);
-        uiManager.FadeOutQuizItem(currentQuizData);
+        UiManager.FadeOutQuizItem(currentQuizData);
+        UiManager.ShowQuizItem(currentQuizData);
     }
 
     #endregion
