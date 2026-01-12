@@ -17,16 +17,13 @@ public class FinalQuizUIManager : MonoBehaviour
     public Transform rootDim;
     public SceneAnimation sceneDim;
 
-
-
     [Header("Intro")]
     public Text examInfoText;
     public Text lifeInfoText;
     public Text touchToStartText;
 
-
-
     [Header("InGame")]
+    public Image bg;
     public GameObject examStartText;
     public FinalQuizItem[] quizItems;
     public Text totalLeftTimeText;
@@ -35,10 +32,17 @@ public class FinalQuizUIManager : MonoBehaviour
     public Image OImage;
     public Image XImage;
     public Slider quizProgressSlider;
+    public Text countdownText;
+
+
+    [Header("Phase1Clear")]
+    public GameObject phaseClearPanel;
+    public Image phaseClearDim;
+    public Image warningIcon;
+    public Image warningTextImage;
 
 
     [Header("Panel")]
-
     public FinalQuizGameResultPanel gameResultPanel;
     public FinalQuizEndingPanel endingCreditPanel;
 
@@ -110,6 +114,23 @@ public class FinalQuizUIManager : MonoBehaviour
 
 
 
+    public void ShowCountdown(int time)
+    {
+        if (countdownText == null) return;
+
+        countdownText.text = time.ToString();
+        countdownText.gameObject.SetActive(true);
+
+        countdownText.transform.localRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-5, 5));
+        countdownText.DOFade(0f, 0.8f).From(1f).SetEase(Ease.OutQuad);
+        countdownText.transform.DOScale(3f, 0.8f).From(1f).SetEase(Ease.OutQuad).OnComplete(() =>
+        {
+            countdownText.gameObject.SetActive(false);
+        });
+    }
+
+
+
 
     // InGame UI Logic    
 
@@ -172,7 +193,7 @@ public class FinalQuizUIManager : MonoBehaviour
         OImage.gameObject.SetActive(false);
         await UniTask.Delay(200);
         OImage.gameObject.SetActive(true);
-        await UniTask.Delay(500);
+        await UniTask.Delay(600);
         OImage.gameObject.SetActive(false);
     }
 
@@ -180,16 +201,11 @@ public class FinalQuizUIManager : MonoBehaviour
     public async UniTask XAnimation()
     {
         XImage.gameObject.SetActive(true);
+        XImage.color = Color.white;
 
-        // Sequence
         Sequence seq = DOTween.Sequence();
-
-        // Shake X axis.
         seq.Append(XImage.rectTransform.DOShakeAnchorPos(1f, new Vector3(30f, 0f, 0f), 20, 90, false, true));
-
-        // Fade out during the last half.
         seq.Join(XImage.DOFade(0f, 0.5f).SetDelay(0.5f).From(1f));
-
         await seq.Play().AsyncWaitForCompletion();
 
         XImage.gameObject.SetActive(false);
@@ -202,14 +218,52 @@ public class FinalQuizUIManager : MonoBehaviour
 
     #region State Animation
 
-    public void ShowPhase1CompleteAnimation()
+    public async UniTask ShowPhase1CompleteAnimation()
     {
         //페이즈 1 클리어
+        warningIcon.gameObject.SetActive(false);
+        warningTextImage.gameObject.SetActive(false);
+        phaseClearPanel.gameObject.SetActive(true);
 
+        // 완료된 것 처럼 흰 배경 밝아짐
+        phaseClearDim.gameObject.SetActive(true);
+        phaseClearDim.DOFade(0.6f, 2f).From(0f).SetEase(Ease.Linear);
+        await UniTask.Delay(2000);
+
+        // 갑자기 멈추면서 느낌표 마크
+        warningIcon.gameObject.SetActive(true);
+        await UniTask.Delay(1000);
+
+        // 오류 이미지 켜짐
+        warningTextImage.gameObject.SetActive(true);
+        await UniTask.Delay(3000);
+
+        // 지직 거린 뒤 배경 까만색 전환
+        // 타이머 연출 추가 (10초 늘어남, 문제당 카운트 추가)
+        // 브금 다시 켜지면서 다음 퀴즈 등장
+
+        phaseClearDim.DOFade(0f, 1f).From(0.6f).SetEase(Ease.Linear);
+        bg.DOColor(new Color32(40, 40, 40, 255), 1f).SetEase(Ease.Linear);
+        quizItems[0].SetQuizPhase2Color();
+        quizItems[1].SetQuizPhase2Color();
+        await UniTask.Delay(1000);
+
+        phaseClearDim.gameObject.SetActive(false);
+        warningIcon.gameObject.SetActive(false);
+        warningTextImage.gameObject.SetActive(false);
+
+        FinalQuizManager.instance.SetNextState();
+        FinalQuizManager.instance.StartStateProcess();
     }
 
     public void ShowPhase2CompleteAnimation()
     {
+        //페이즈 2 클리어
+
+        // 진짜 완료.
+        // 검은 배경이 하얗게 밝아짐
+        // 이 시점에서 세이브 저장
+        // 이번엔 타이머도 같이 사라짐
 
     }
 
@@ -255,12 +309,12 @@ public class FinalQuizUIManager : MonoBehaviour
         wrongCountText.gameObject.SetActive(false);
         OImage.gameObject.SetActive(false);
         XImage.gameObject.SetActive(false);
+        quizProgressSlider.gameObject.SetActive(false);
+        countdownText.gameObject.SetActive(false);
 
         gameResultPanel.gameObject.SetActive(false);
         endingCreditPanel.gameObject.SetActive(false);
-
-        quizProgressSlider.gameObject.SetActive(false);
-
+        phaseClearPanel.gameObject.SetActive(false);
     }
 
 
@@ -275,7 +329,7 @@ public class FinalQuizUIManager : MonoBehaviour
         lifeInfoText.gameObject.SetActive(false);
 
         totalLeftTimeText.gameObject.SetActive(true);
-        quizLeftTimeText.gameObject.SetActive(true);
+        wrongCountText.gameObject.SetActive(true);
 
         examStartText.gameObject.SetActive(true);
         examStartText.GetComponent<Text>().DOFade(0f, 0.4f).From(1f).SetEase(Ease.InCubic);
@@ -283,6 +337,12 @@ public class FinalQuizUIManager : MonoBehaviour
 
         quizProgressSlider.value = 0;
         quizProgressSlider.gameObject.SetActive(true);
+    }
+
+    // Phase 2
+    public void SetPhase2UI()
+    {
+        quizLeftTimeText.gameObject.SetActive(true);
     }
 
 
@@ -296,8 +356,17 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public void UpdateTimerText(float quizLeftTotalTime, float quizLeftTime)
     {
-        totalLeftTimeText.text = $"남은 시간 : {quizLeftTotalTime:F1}초";
-        quizLeftTimeText.text = $"남은 시간 : {quizLeftTime:F1}초";
+        totalLeftTimeText.text = $"잔여 시간 : {quizLeftTotalTime:F1}초";
+        quizLeftTimeText.text = $"제한 시간 : {quizLeftTime:F1}초";
+    }
+
+
+    public void TimerAddPhase2TimeAnimation(float quizLeftTotalTime, float plusTime)
+    {
+        //TODO 시간 추가 연출 만들어야 함
+
+        // totalLeftTimeText.text = $"잔여 시간 : {quizLeftTotalTime:F1}초";
+        // quizLeftTimeText.text = $"제한 시간 : {quizLeftTime:F1}초";
     }
 
     public void UpdateQuizProgress(int index, bool immediate = false)
@@ -308,7 +377,15 @@ public class FinalQuizUIManager : MonoBehaviour
         if (immediate)
             quizProgressSlider.value = value;
         else
+        {
+            quizProgressSlider.DOKill();
             quizProgressSlider.DOValue(value, 0.2f).SetEase(Ease.InCubic);
+        }
+    }
+
+    public void UpdateWrongCount(int wrongCount)
+    {
+        wrongCountText.text = $"오답\n{wrongCount}";
     }
 
 
@@ -323,7 +400,7 @@ public class FinalQuizUIManager : MonoBehaviour
     public void OnClickExitButton()
     {
 #if UNITY_EDITOR && DEV
-        FinalQuizManager.instance.MoveScene();
+        FinalQuizManager.instance.MoveLobbyScene();
 
 #endif
     }

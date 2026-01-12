@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.Globalization;
 
 
 public class FinalQuizInfoPopup : PopupBase
@@ -89,6 +89,11 @@ public class FinalQuizInfoPopup : PopupBase
 
     public void OnClickExamButton()
     {
+        //debug;
+        SceneMoveManager.instance.MoveScene(SceneName.YMAFinalQuiz);
+        return;
+
+
         if (finalQuizPlayData.matchCardGame && finalQuizPlayData.findAIWordGame && finalQuizPlayData.cubeGame && finalQuizPlayData.wingTto)
             OnClickShowWarningMiniPopup(true);
         else

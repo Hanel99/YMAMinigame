@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,26 +38,32 @@ public class FinalQuizItem : MonoBehaviour
         option1Text.text = quizData.option1;
         option2Text.text = quizData.option2;
         option3Text.text = quizData.option3;
+
+        HLLogger.Log($"QuizData : {quizData.index} / ans - {quizData.answer}");
     }
 
     public void SetQuizPhase2Color()
     {
-        bgImage.color = new Color32(100, 100, 100, 1);
-        option1Image.color = new Color32(180, 180, 180, 1);
-        option2Image.color = new Color32(180, 180, 180, 1);
-        option3Image.color = new Color32(180, 180, 180, 1);
+        bgImage.color = new Color32(100, 100, 100, 255);
+        option1Image.color = new Color32(180, 180, 180, 255);
+        option2Image.color = new Color32(180, 180, 180, 255);
+        option3Image.color = new Color32(180, 180, 180, 255);
     }
 
     public void FlipQuizItem(bool moveUp)
     {
-        float localMoveFrom = moveUp ? 0f : -650f;
-        float localMoveTo = moveUp ? 650f : 0f;
+        float localMoveFrom = moveUp ? 0f : -450f;
+        float localMoveTo = moveUp ? 850f : 0f;
         float fadeFrom = moveUp ? 1 : 0;
         float fadeTo = moveUp ? 0 : 1;
 
         gameObject.SetActive(true);
         canvasGroup.transform.DOLocalMoveY(localMoveTo, 0.3f).From(localMoveFrom).SetEase(Ease.InCubic);
-        canvasGroup.DOFade(fadeTo, 0.3f).From(fadeFrom).SetEase(Ease.InCubic).OnComplete(() => { this.gameObject.SetActive(false); });
+        TweenCallback callback = null;
+        if (moveUp)
+            callback = () => this.gameObject.SetActive(false);
+
+        canvasGroup.DOFade(fadeTo, 0.3f).From(fadeFrom).SetEase(Ease.InCubic).OnComplete(callback);
     }
 
     public void OnClickOption(int optionNumber)
