@@ -1,5 +1,6 @@
 {
     "name": "ChocDino.UIFX.Editor",
+    "rootNamespace": "",
     "references": [
         "GUID:f188a8df9b3d5674bb11582ba51b70df"
     ],
