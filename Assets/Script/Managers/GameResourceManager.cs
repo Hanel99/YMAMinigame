@@ -365,13 +365,21 @@ public class GameResourceManager : MonoBehaviour
 
     public AudioClip GetBGM(BGMType type)
     {
-        string bgmName = $"BGM_{type}";
+        return GetBGM($"BGM_{type}");
+    }
+
+    public AudioClip GetBGM(string bgmName)
+    {
         return BGMList.Find(x => x.name.Equals(bgmName));
     }
 
     public AudioClip GetSFX(SFXType type)
     {
-        string sfxName = $"SFX_{type}";
+        return GetSFX($"SFX_{type}");
+    }
+
+    public AudioClip GetSFX(string sfxName)
+    {
         return SFXList.Find(x => x.name.Equals(sfxName));
     }
 

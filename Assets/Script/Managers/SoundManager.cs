@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
@@ -86,6 +86,16 @@ public class SoundManager : MonoBehaviour
         return GameResourceManager.instance.GetSFX(type);
     }
 
+    private AudioClip GetBGM(string name)
+    {
+        return GameResourceManager.instance.GetBGM(name);
+    }
+
+    private AudioClip GetSFX(string name)
+    {
+        return GameResourceManager.instance.GetSFX(name);
+    }
+
 
     // 볼륨 업데이트
     public void UpdateVolumes()
@@ -102,12 +112,9 @@ public class SoundManager : MonoBehaviour
 
     #region BGM 관리
 
-    // BGM 재생 (enum으로)
-    public void PlayBGM(BGMType bgmType, float fadeTime = 1f)
+    // 내부 BGM 재생 로직
+    private void PlayBGMInternal(AudioClip bgmClip, float fadeTime)
     {
-        if (bgmType == BGMType.None || isBgmMute) return;
-
-        var bgmClip = GetBGM(bgmType);
         if (bgmClip != null)
         {
             bgmSource.clip = bgmClip;
@@ -117,6 +124,18 @@ public class SoundManager : MonoBehaviour
                 bgmSource.volume = 0;
                 FadeInBGM(fadeTime);
             }
+        }
+    }
+
+    // BGM 재생 (enum으로)
+    public void PlayBGM(BGMType bgmType, float fadeTime = 1f)
+    {
+        if (bgmType == BGMType.None || isBgmMute) return;
+
+        var bgmClip = GetBGM(bgmType);
+        if (bgmClip != null)
+        {
+            PlayBGMInternal(bgmClip, fadeTime);
         }
         else
         {
@@ -143,10 +162,36 @@ public class SoundManager : MonoBehaviour
     }
 
 
+    // BGM 재생 (string으로)
+    public void PlayBGM(string bgmName, float fadeTime = 1f)
+    {
+        if (string.IsNullOrEmpty(bgmName) || isBgmMute) return;
+
+        var bgmClip = GetBGM(bgmName);
+        if (bgmClip != null)
+        {
+            PlayBGMInternal(bgmClip, fadeTime);
+        }
+        else
+        {
+            Debug.LogWarning($"BGM '{bgmName}' not found!");
+        }
+    }
+
+
 
     #endregion
 
     #region 단발성 SFX 관리
+
+    // 내부 SFX 재생 로직
+    private void PlaySFXInternal(AudioClip sfxClip)
+    {
+        if (sfxClip != null)
+        {
+            sfxSource.PlayOneShot(sfxClip);
+        }
+    }
 
     // 단발성 SFX 재생 (enum으로)
     public void PlaySFX(SFXType sfxType)
@@ -156,7 +201,7 @@ public class SoundManager : MonoBehaviour
         var sfxClip = GetSFX(sfxType);
         if (sfxClip != null)
         {
-            sfxSource.PlayOneShot(sfxClip);
+            PlaySFXInternal(sfxClip);
         }
         else
         {
@@ -164,9 +209,35 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    // 단발성 SFX 재생 (string으로)
+    public void PlaySFX(string sfxName)
+    {
+        if (string.IsNullOrEmpty(sfxName) || isSfxMute) return;
+
+        var sfxClip = GetSFX(sfxName);
+        if (sfxClip != null)
+        {
+            PlaySFXInternal(sfxClip);
+        }
+        else
+        {
+            Debug.LogWarning($"SFX '{sfxName}' not found!");
+        }
+    }
+
     #endregion
 
     #region 루프 SFX 관리
+
+    // 내부 루프 SFX 재생 로직
+    private void PlayLoopSFXInternal(AudioClip sfxClip)
+    {
+        if (sfxClip != null)
+        {
+            loopSfxSource.clip = sfxClip;
+            loopSfxSource.Play();
+        }
+    }
 
     // 루프 SFX 재생 (enum으로)
     public void PlayLoopSFX(SFXType sfxType)
@@ -176,12 +247,27 @@ public class SoundManager : MonoBehaviour
         var sfxClip = GetSFX(sfxType);
         if (sfxClip != null)
         {
-            loopSfxSource.clip = sfxClip;
-            loopSfxSource.Play();
+            PlayLoopSFXInternal(sfxClip);
         }
         else
         {
             Debug.LogWarning($"Loop SFX type '{sfxType}' not found!");
+        }
+    }
+
+    // 루프 SFX 재생 (string으로)
+    public void PlayLoopSFX(string sfxName)
+    {
+        if (string.IsNullOrEmpty(sfxName) || isSfxMute) return;
+
+        var sfxClip = GetSFX(sfxName);
+        if (sfxClip != null)
+        {
+            PlayLoopSFXInternal(sfxClip);
+        }
+        else
+        {
+            Debug.LogWarning($"Loop SFX '{sfxName}' not found!");
         }
     }
 
