@@ -30,13 +30,19 @@ public class FinalQuizManager : MonoBehaviour
 
     public float QuizTotalLeftTimeMax => quizTotalLeftTimeMax;
     public float QuizLeftTimeMax => quizLeftTimeMax;
+    public (float, float) GetPhase1ClearQuizTime()
+    {
+        return (quizTotalLeftTime, phase2PlusTime);
+    }
 
     private float quizTotalLeftTimeMax = 0;
     private float quizLeftTimeMax = 0;
     private float quizTotalLeftTime = 0;
     private float quizLeftTime = 0;
+    private float quizLeftTimeImageFillAmount = 0;
     private float phase2PlusTime = 0;
     private int lastCountdownTime = -1;
+
 
 
 
@@ -109,17 +115,24 @@ public class FinalQuizManager : MonoBehaviour
         {
             quizTotalLeftTime -= Time.deltaTime;
             if (gameState == FinalGameState.Phase2)
+            {
                 quizLeftTime -= Time.deltaTime;
+                quizLeftTimeImageFillAmount = quizLeftTime / quizLeftTimeMax;
+            }
 
 
 
-            UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+            UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
             if (quizTotalLeftTime < 0 || quizLeftTime < 0)
             {
                 if (quizTotalLeftTime < 0) quizTotalLeftTime = 0;
-                if (quizLeftTime < 0) quizLeftTime = 0;
+                if (quizLeftTime < 0)
+                {
+                    quizLeftTime = 0;
+                    quizLeftTimeImageFillAmount = 0;
+                }
 
-                UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+                UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
                 SetState(FinalGameState.GameOver);
                 StartStateProcess();
                 return;
@@ -202,7 +215,9 @@ public class FinalQuizManager : MonoBehaviour
         lastCountdownTime = -1;
 
         quizTotalLeftTimeMax = quizTotalLeftTime;
-        quizLeftTimeMax = quizTotalLeftTime;
+        quizLeftTimeMax = quizLeftTime;
+
+        HLLogger.Log($"quizTotalLeftTimeMax : {quizTotalLeftTimeMax} / quizLeftTimeMax : {quizLeftTimeMax} / phase2PlusTime : {phase2PlusTime}");
 
 
         UiManager.SetIntroUI();
@@ -219,7 +234,7 @@ public class FinalQuizManager : MonoBehaviour
     private void Phase1Process()
     {
         UiManager.SetPhase1UI();
-        UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+        UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
         UiManager.ShowQuizItem(GetQuizData());
         SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase1);
     }
@@ -236,9 +251,10 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase2Process()
     {
-        UiManager.SetPhase2UI();
+        quizTotalLeftTime += phase2PlusTime;
+
         UiManager.UpdateQuizProgress(0, true);
-        UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime);
+        UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
         UiManager.ShowQuizItem(GetQuizData());
         SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase2);
     }
@@ -260,8 +276,7 @@ public class FinalQuizManager : MonoBehaviour
     private void GameOverProcess()
     {
         SoundManager.instance.StopBGM();
-        UiManager.gameResultPanel.SetColorAndData(true);
-        UiManager.gameResultPanel.ResultAnimation().Forget();
+        UiManager.ShowGameOverAnimation();
     }
 
     private void GameResultProcess()
@@ -315,13 +330,13 @@ public class FinalQuizManager : MonoBehaviour
                 StartStateProcess();
                 return;
             }
-            UiManager.UpdateQuizProgress(currentQuizIndex);
+            UiManager.UpdateQuizProgress(currentQuizIndex + 1);
         }
         else
         {
             //정답
             UiManager.OAnimation().Forget();
-            UiManager.UpdateQuizProgress(currentQuizIndex);
+            UiManager.UpdateQuizProgress(currentQuizIndex + 1);
         }
 
         quizLeftTime = quizLeftTimeMax;
@@ -356,8 +371,7 @@ public class FinalQuizManager : MonoBehaviour
 
     public void AddPhase2Time()
     {
-        quizLeftTime += 0.2f;
-        quizTotalLeftTime += 10f;
+        quizTotalLeftTime += phase2PlusTime;
     }
 
     #endregion

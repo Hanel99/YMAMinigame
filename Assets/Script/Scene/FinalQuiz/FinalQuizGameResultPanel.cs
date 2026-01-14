@@ -61,7 +61,7 @@ public class FinalQuizGameResultPanel : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(true);
             bg.gameObject.SetActive(true);
-            bg.DOFade(1, 5f).From(0).SetEase(Ease.InCubic);
+            bg.DOFade(1, 5f).From(0).SetEase(Ease.OutCubic);
             await UniTask.Delay(5000);
 
             gameOverText.DOFade(0, 2f).From(1).SetEase(Ease.Linear);
@@ -72,7 +72,7 @@ public class FinalQuizGameResultPanel : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(false);
             bg.gameObject.SetActive(true);
-            bg.DOFade(1, 1f).From(0).SetEase(Ease.InCubic);
+            bg.DOFade(1, 1f).From(0).SetEase(Ease.Linear);
             await UniTask.Delay(1000);
         }
 

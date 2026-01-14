@@ -17,6 +17,8 @@ public class FinalQuizItem : MonoBehaviour
     public Image option2Image;
     public Image option3Image;
 
+    bool isAnimation = false;
+
 
 
 
@@ -58,16 +60,19 @@ public class FinalQuizItem : MonoBehaviour
         float fadeTo = moveUp ? 0 : 1;
 
         gameObject.SetActive(true);
+        isAnimation = true;
         canvasGroup.transform.DOLocalMoveY(localMoveTo, 0.3f).From(localMoveFrom).SetEase(Ease.InCubic);
-        TweenCallback callback = null;
+        TweenCallback callback = () => isAnimation = false;
         if (moveUp)
-            callback = () => this.gameObject.SetActive(false);
+            callback += () => this.gameObject.SetActive(false);
 
         canvasGroup.DOFade(fadeTo, 0.3f).From(fadeFrom).SetEase(Ease.InCubic).OnComplete(callback);
     }
 
     public void OnClickOption(int optionNumber)
     {
+        if (isAnimation) return;
+
         FinalQuizManager.instance.CheckIsAnswer(optionNumber);
     }
 }
