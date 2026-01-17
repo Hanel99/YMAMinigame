@@ -8,26 +8,19 @@ public class LobbyButton : MonoBehaviour
     public Button button;
     public GameObject lockObject;
     public Text unlockText;
+    LobbyIconType iconType;
 
     public void SetButtonData(LobbyIconType iconType, UnityAction buttonAction)
     {
         button.onClick.RemoveAllListeners();
         button.onClick.AddListener(buttonAction);
+        this.iconType = iconType;
 
-        var finalQuizPlayData = SaveDataManager.instance.playerData.finalQuizPlayData;
-        if (iconType == LobbyIconType.FinalQuiz)
-        {
-            if (finalQuizPlayData.playEndRoll || finalQuizPlayData.tryCount > 0
-                || finalQuizPlayData.matchCardGame || finalQuizPlayData.findAIWordGame
-                || finalQuizPlayData.cubeGame || finalQuizPlayData.wingTto)
-                gameObject.SetActive(true);
-            else
-            {
-                gameObject.SetActive(false);
-                return;
-            }
-        }
+        CheckUnlockContent();
+    }
 
+    public void CheckUnlockContent()
+    {
         UnlockContent unlockContent = (iconType) switch
         {
             LobbyIconType.Gacha => UnlockContent.MatchCardGame,
@@ -40,10 +33,23 @@ public class LobbyButton : MonoBehaviour
             _ => UnlockContent.MatchCardGame,
         };
 
+        if (iconType == LobbyIconType.FinalQuiz)
+        {
+            var finalQuizPlayData = SaveDataManager.instance.playerData.finalQuizPlayData;
+            if (finalQuizPlayData.playEndRoll || finalQuizPlayData.tryCount > 0
+                || finalQuizPlayData.matchCardGame || finalQuizPlayData.findAIWordGame
+                || finalQuizPlayData.cubeGame || finalQuizPlayData.wingTto)
+                gameObject.SetActive(true);
+            else
+            {
+                gameObject.SetActive(false);
+                return;
+            }
+        }
+
         bool isLock = SaveDataManager.instance.playerData.unlockContent < (int)unlockContent;
         lockObject.SetActive(isLock);
         button.interactable = !isLock;
         unlockText.text = $"Lv.{GameResourceManager.instance.GetContentUnlockLevel(unlockContent)}";
-
     }
 }

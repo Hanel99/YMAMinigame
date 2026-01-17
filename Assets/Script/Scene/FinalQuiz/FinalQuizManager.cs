@@ -160,7 +160,7 @@ public class FinalQuizManager : MonoBehaviour
     }
     public void SetNextState()
     {
-        if (gameState == FinalGameState.Ending || gameState == FinalGameState.GameResult)
+        if (gameState == FinalGameState.Ending || gameState == FinalGameState.GameOver)
             return;
 
         gameState += 1;
@@ -194,9 +194,6 @@ public class FinalQuizManager : MonoBehaviour
                 break;
             case FinalGameState.GameOver:
                 GameOverProcess();
-                break;
-            case FinalGameState.GameResult:
-                GameResultProcess();
                 break;
         }
     }
@@ -269,7 +266,8 @@ public class FinalQuizManager : MonoBehaviour
 
     private void EndingProcess()
     {
-
+        SoundManager.instance.StopBGM();
+        UiManager.ShowPhase2CompleteAnimation().Forget();
     }
 
 
@@ -277,11 +275,6 @@ public class FinalQuizManager : MonoBehaviour
     {
         SoundManager.instance.StopBGM();
         UiManager.ShowGameOverAnimation();
-    }
-
-    private void GameResultProcess()
-    {
-
     }
 
 
@@ -322,7 +315,7 @@ public class FinalQuizManager : MonoBehaviour
 
             UiManager.XAnimation().Forget();
             wrongCount++;
-            UiManager.UpdateWrongCount(wrongCount);
+            UiManager.UpdateWrongCount(wrongCount, maxWrongCount);
             HLLogger.Log($"wrong answer - {wrongCount} / {maxWrongCount}");
             if (wrongCount >= maxWrongCount)
             {
@@ -401,5 +394,4 @@ public enum FinalGameState
     Phase2Complete, //페이즈 2 성공
     Ending,
     GameOver, // 게임 실패
-    GameResult, // 게임 결과 노출
 }

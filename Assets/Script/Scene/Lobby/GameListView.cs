@@ -90,6 +90,9 @@ public class GameListView : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G))
             HLLogger.Log(SaveDataManager.instance.JsonPlayerData);
+
+        if (Input.GetKeyDown(KeyCode.H))
+            PlayFabManager.instance.UpdateEndingLeaderBoard();
 #endif
     }
 
@@ -126,6 +129,21 @@ public class GameListView : MonoBehaviour
         IntroDataProcess();
         LobbyUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.Lobby);
+    }
+
+    public void CheckUnlockContent()
+    {
+        for (int i = 0; i < gameList.Count; ++i)
+        {
+            gameList[i].CheckUnlockContent();
+        }
+
+        gachaBtn.CheckUnlockContent();
+        towerBtn.CheckUnlockContent();
+        rankingBtn.CheckUnlockContent();
+        collectionBtn.CheckUnlockContent();
+        questBtn.CheckUnlockContent();
+        finalQuizBtn.CheckUnlockContent();
     }
 
 

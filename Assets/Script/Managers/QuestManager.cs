@@ -133,7 +133,7 @@ public class QuestManager : MonoBehaviour
 
             // common
             QuestDetailType.CollectCoin => (int)Math.Clamp(questUserPlayData.common.collectCoin, int.MinValue, int.MaxValue),
-            QuestDetailType.UseCoin => questUserPlayData.common.useCoin,
+            QuestDetailType.UseCoin => (int)Math.Clamp(questUserPlayData.common.useCoin, int.MinValue, int.MaxValue),
             QuestDetailType.ReachPlayerLevel => playerData.level,
             QuestDetailType.S_EquipEtcIcon => questUserPlayData.common.equipEtcIcon,
             QuestDetailType.E_PlayEndRoll => playerData.finalQuizPlayData.playEndRoll ? 1 : 0,

@@ -17,6 +17,7 @@ public class PlayerDataSettingPopup : PopupBase
 
     List<string> languageList = new List<string>();
     List<string> masterList = new List<string>();
+    string userName = "";
 
 
     protected override void OnAwake()
@@ -76,7 +77,9 @@ public class PlayerDataSettingPopup : PopupBase
     {
         if (isOpenCloseAnimationActing) return;
 
-        var error = CheckValidation(inputName.text);
+        userName = inputName.text;
+
+        var error = CheckValidation(userName);
         if (error != ValidationError.Success)
         {
             string msg = LocalizeManager.instance.GetString($"playerNameSetting.{error.ToString()}");
@@ -87,7 +90,7 @@ public class PlayerDataSettingPopup : PopupBase
         }
 
 
-        SaveDataManager.instance.playerData.name = inputName.text;
+        SaveDataManager.instance.playerData.name = userName;
         SaveDataManager.instance.playerData.master = (CardMaster)inputMaster.value;
         SaveDataManager.instance.playerData.languageType = (LanguageType)inputLanguage.value;
         SaveDataManager.instance.SetPlayerName();
@@ -129,14 +132,27 @@ public class PlayerDataSettingPopup : PopupBase
             return ValidationError.Error1;
 
         //? ############ 입력 제한 - 6 ~ 24 byte (3 ~ 12자) ############
-        int bytecount = Encoding.Unicode.GetByteCount(value);
-        int minByte = 6, maxByte = 24;
-        if (bytecount < minByte)
+        // 4byte는 띄어쓰기로 인한 처리를 위한 보정값
+        int byteCount = Encoding.Unicode.GetByteCount(value);
+        int minByte = 4, maxByte = 24;
+        if (byteCount < minByte)
+        {
             return ValidationError.Error2;
-        else if (bytecount > maxByte)
+        }
+        else if (byteCount > maxByte)
         {
             inputName.text = Encoding.Unicode.GetString(Encoding.Unicode.GetBytes(value), 0, maxByte);
             return ValidationError.Error3;
+        }
+
+        if (byteCount < 6)
+        {
+            // 4~6사이 텍스트가 들어옴
+            userName = value + "\u200B";
+
+            // 검증 함수는 여기서 종료 (Validation Success) 
+            // ※ 아래 Regex 검사를 건너뛰어야 Error6가 안 뜸
+            return ValidationError.Success;
         }
 
         //? ############ 입력 제한 - 특수 문자 ############
@@ -152,7 +168,7 @@ public class PlayerDataSettingPopup : PopupBase
         bool isSpecial = !string.IsNullOrEmpty(Regex.Replace(value, @"[ ^0-9a-zA-Z가-힣]{1,24}", string.Empty, RegexOptions.Singleline)); //? 특수문자
         if (isSpace || isSpecial)
         {
-            inputName.text = Regex.Replace(value, @"[^0-9a-zA-Z가-힣]{1,24}", string.Empty, RegexOptions.Singleline);
+            userName = Regex.Replace(value, @"[^0-9a-zA-Z가-힣]{1,24}", string.Empty, RegexOptions.Singleline);
             if (isSpace && isSpecial)
                 return ValidationError.Error4;
             else if (isSpace)

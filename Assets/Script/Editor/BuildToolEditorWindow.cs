@@ -1,18 +1,18 @@
 #if UNITY_EDITOR
 
-using UnityEngine;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using Newtonsoft.Json;
+using Sirenix.OdinInspector;
+using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
-using UnityEditor.Build.Reporting;
 using UnityEditor.Build;
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor;
-using System.Collections.Generic;
-using System.IO;
-using System;
-using System.Text;
-using Newtonsoft.Json;
+using UnityEditor.Build.Reporting;
+using UnityEngine;
 // using Renci.SshNet; // SSH.NET (SFTP)
 
 public class BuildToolEditorWindow : OdinEditorWindow
@@ -67,6 +67,12 @@ public class BuildToolEditorWindow : OdinEditorWindow
         GetWindow<BuildToolEditorWindow>("통합 빌드 툴");
     }
 
+    [Button("타겟 스위칭, 디파인 심볼 설정", ButtonSizes.Large)]
+    private void SwitchTargetAndSetDefineSymbol()
+    {
+        SwitchTargetAndSetDefineSymbol(Platform, Environment);
+    }
+
     [Button("Addressables만 빌드", ButtonSizes.Large)]
     private void BuildAddressablesOnly()
     {
@@ -99,6 +105,34 @@ public class BuildToolEditorWindow : OdinEditorWindow
         }
     }
 
+
+
+
+
+    private void SwitchTargetAndSetDefineSymbol(PlatformOption platform, EnvOption env)
+    {
+        BuildTarget buildTarget = GetBuildTarget(platform);
+        if (EditorUserBuildSettings.activeBuildTarget != buildTarget)
+            EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(buildTarget), buildTarget);
+
+        SetDefineSymbol(env.ToString().ToUpper());
+    }
+
+    private void SetDefineSymbol(string symbol)
+    {
+        BuildTargetGroup group = EditorUserBuildSettings.selectedBuildTargetGroup;
+        var defines = PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.FromBuildTargetGroup(group));
+
+        List<string> defineList = new List<string>(defines.Split(';'));
+        defineList.RemoveAll(s => s == "DEV" || s == "LIVE");
+        defineList.Add(symbol);
+
+        NamedBuildTarget namedTarget = NamedBuildTarget.FromBuildTargetGroup(group);
+        PlayerSettings.SetScriptingDefineSymbols(namedTarget, string.Join(";", defineList));
+        Debug.Log($"🧩 디파인 심볼 설정: {string.Join(";", defineList)}");
+    }
+
+
     private void SetupAndBuildAddressables(PlatformOption platform, EnvOption env)
     {
         string envStr = env.ToString().ToLower();
@@ -117,33 +151,14 @@ public class BuildToolEditorWindow : OdinEditorWindow
         profileSettings.SetValue(currentProfileId, "Env", envStr);
         profileSettings.SetValue(currentProfileId, "AssetVersion", AssetVersion);
 
-        SetDefineSymbol(env.ToString().ToUpper());
+        SwitchTargetAndSetDefineSymbol(platform, env);
 
-
-        // 1. 현재 플랫폼과 다르면 에디터 전환
-        BuildTarget buildTarget = GetBuildTarget(platform);
-        if (EditorUserBuildSettings.activeBuildTarget != buildTarget)
-            EditorUserBuildSettings.SwitchActiveBuildTarget(GetBuildTargetGroup(buildTarget), buildTarget);
-
-        // 2. Addressables 빌드 수행
         AddressableAssetSettings.CleanPlayerContent();
         AddressableAssetSettings.BuildPlayerContent();
         Debug.Log($"✅ Addressables 빌드 완료: {platformStr}/{envStr}/{AssetVersion}");
     }
 
-    private void SetDefineSymbol(string symbol)
-    {
-        BuildTargetGroup group = EditorUserBuildSettings.selectedBuildTargetGroup;
-        var defines = PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.FromBuildTargetGroup(group));
 
-        List<string> defineList = new List<string>(defines.Split(';'));
-        defineList.RemoveAll(s => s == "DEV" || s == "LIVE");
-        defineList.Add(symbol);
-
-        NamedBuildTarget namedTarget = NamedBuildTarget.FromBuildTargetGroup(group);
-        PlayerSettings.SetScriptingDefineSymbols(namedTarget, string.Join(";", defineList));
-        Debug.Log($"🧩 디파인 심볼 설정: {string.Join(";", defineList)}");
-    }
 
     private string BuildPlayerApp()
     {

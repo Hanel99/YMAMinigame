@@ -22,6 +22,11 @@ public class GameSelectIcon : MonoBehaviour
         gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
         gameNameText.text = LocalizeManager.instance.GetString($"Quest.GameName.{gameType}");
 
+        CheckUnlockContent();
+    }
+
+    public void CheckUnlockContent()
+    {
         bool gameLock = SaveDataManager.instance.playerData.unlockContent < (int)gameType;
 
         button.interactable = !gameLock;
@@ -32,8 +37,6 @@ public class GameSelectIcon : MonoBehaviour
 
     public void OnClickGameButton()
     {
-        HLLogger.Log($"@@@ onClick Game {gameType}");
-
         LobbyUIManager.instance.ShowGameSelectPopup(gameType);
     }
 }

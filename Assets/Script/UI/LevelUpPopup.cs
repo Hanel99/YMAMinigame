@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class LevelUpPopup : PopupBase
 {
@@ -15,6 +18,8 @@ public class LevelUpPopup : PopupBase
     private int targetLevel;
     private int targetExp;
     private int targetMaxExp;
+
+    private bool isAnimationEnd = false;
 
 
     protected override void OnAwake()
@@ -32,7 +37,8 @@ public class LevelUpPopup : PopupBase
         }
         else
         {
-            _CloseWindow();
+            if (isAnimationEnd)
+                _CloseWindow();
         }
     }
 
@@ -53,10 +59,18 @@ public class LevelUpPopup : PopupBase
         }
 
         expText.text = targetMaxExp < 0 ? "MAX" : $"{targetExp} / {targetMaxExp}";
+
+
+        SceneName currentSceneName = (SceneName)Enum.Parse(typeof(SceneName), SceneManager.GetActiveScene().name, true);
+        if (currentSceneName == SceneName.LobbyScene)
+        {
+            GameListView.instance.CheckUnlockContent();
+        }
     }
 
     private void ShowAnimation()
     {
+        isAnimationEnd = false;
         expSlider.value = 0f;
 
         int startValue = 0;
@@ -78,7 +92,10 @@ public class LevelUpPopup : PopupBase
         });
 
         unlockContentText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic);
-        expText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic);
+        expText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic).OnComplete(() =>
+        {
+            isAnimationEnd = true;
+        });
     }
 
 

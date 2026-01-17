@@ -1,11 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using PlayFab;
 using PlayFab.ClientModels;
-using Cysharp.Threading.Tasks;
-using System.Threading.Tasks;
+using UnityEngine;
 
 
 public class PlayFabManager : MonoBehaviour
@@ -223,25 +223,10 @@ public class PlayFabManager : MonoBehaviour
             Data = new Dictionary<string, string>
             {
                 { "PlayerData", SaveDataManager.instance.JsonPlayerData },
-
                 { "savedTime", SaveDataManager.instance.playerData.savedTime.ToString() },
-
-                // 한번에 10개밖에 저장을 못함... 위 플레이어데이터에 싹다 들어가니까 눈에 보여야되는거만 넣자
-
-                // { "mid", SaveDataManager.instance.playerData.mid.ToString() },
-                // { "name", SaveDataManager.instance.playerData.name },
-                // { "languageType", ((int)SaveDataManager.instance.playerData.languageType).ToString() },
-                // { "master", ((int)SaveDataManager.instance.playerData.master).ToString() },
-                // { "playFabLoginID", SaveDataManager.instance.playerData.playFabLoginID },
-                // { "playFabLoginPW", SaveDataManager.instance.playerData.playFabLoginPW },
-
                 { "serverDataVersion", SaveDataManager.instance.playerData.serverDataVersion },
                 { "useServerData", SaveDataManager.instance.playerData.useServerData.ToString() },
-                { "level", SaveDataManager.instance.playerData.level.ToString() },
-                { "exp", SaveDataManager.instance.playerData.exp.ToString() },
-                { "coin", SaveDataManager.instance.playerData.coin.ToString() },
-                { "towerFloor", SaveDataManager.instance.playerData.towerFloor.ToString() },
-                { "wingTtoHighScore", SaveDataManager.instance.playerData.wingTtoHighScore.ToString() },
+                { "endingTime", SaveDataManager.instance.playerData.finalQuizPlayData.completeTime.ToString("yyyy-MM-dd HH:mm:ss") },
                 }
         };
 
@@ -389,6 +374,26 @@ public class PlayFabManager : MonoBehaviour
 #endif
         wingttoStat.Value = (int)(SaveDataManager.instance.playerData.wingTtoHighScore * 100);
         request.Statistics.Add(wingttoStat);
+
+        UpdateLeaderBoard(request);
+    }
+
+
+    public void UpdateEndingLeaderBoard()
+    {
+        var request = new UpdatePlayerStatisticsRequest { Statistics = new List<StatisticUpdate>() };
+
+        var ending = new StatisticUpdate();
+#if DEV
+        ending.StatisticName = "EndingDev";
+#elif LIVE
+        ending.StatisticName = "EndingLive";
+#else
+        ending.StatisticName = "Ending";
+#endif
+        int time = int.Parse(DateTime.Now.ToString("MMddHHmm"));
+        ending.Value = time;
+        request.Statistics.Add(ending);
 
         UpdateLeaderBoard(request);
     }

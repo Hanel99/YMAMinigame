@@ -410,11 +410,11 @@ public enum BGMType
     WingTto,
     FinalQuizPhase1,
     FinalQuizPhase2,
+    Ending,
 
     // Loading,
     // Result,
     // Other,
-    // Ending,
 
     Count,
 }

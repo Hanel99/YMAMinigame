@@ -115,6 +115,7 @@ public class CheatPopup : PopupBase
                 SaveDataManager.instance.SetLevel(value);
                 SaveDataManager.instance.SaveUnlockContentDate();
                 GameListView.instance.UpdateUserProfileProcess();
+                GameListView.instance.CheckUnlockContent();
             },
         });
 
@@ -195,6 +196,8 @@ public class CheatPopup : PopupBase
                 SaveDataManager.instance.playerData.finalQuizPlayData.findAIWordGame = value > 1;
                 SaveDataManager.instance.playerData.finalQuizPlayData.cubeGame = value > 2;
                 SaveDataManager.instance.playerData.finalQuizPlayData.wingTto = value > 3;
+
+                GameListView.instance.CheckUnlockContent();
             },
         });
 

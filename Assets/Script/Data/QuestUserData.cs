@@ -317,7 +317,7 @@ public class QuestUserPlayData
     public class Q_Common
     {
         public long collectCoin;
-        public int useCoin;
+        public long useCoin;
         public int equipEtcIcon;
     }
 }

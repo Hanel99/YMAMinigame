@@ -281,7 +281,7 @@ public class FinalQuizUIManager : MonoBehaviour
         FinalQuizManager.instance.StartStateProcess();
     }
 
-    public void ShowPhase2CompleteAnimation()
+    public async UniTask ShowPhase2CompleteAnimation()
     {
         //페이즈 2 클리어
 
@@ -290,6 +290,9 @@ public class FinalQuizUIManager : MonoBehaviour
         // 이 시점에서 세이브 저장
         // 이번엔 타이머도 같이 사라짐
 
+
+        await UniTask.Delay(1000);
+        endingCreditPanel.ShowEnding().Forget();
     }
 
 
@@ -301,7 +304,8 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public void ShowCompleteAnimation()
     {
-
+        gameResultPanel.SetColorAndData(false);
+        gameResultPanel.ResultAnimation().Forget();
     }
 
 
@@ -402,13 +406,13 @@ public class FinalQuizUIManager : MonoBehaviour
         else
         {
             quizProgressSlider.DOKill();
-            quizProgressSlider.DOValue(value, 0.2f).SetEase(Ease.InCubic);
+            quizProgressSlider.DOValue(value, 0.4f).SetEase(Ease.OutQuad);
         }
     }
 
-    public void UpdateWrongCount(int wrongCount)
+    public void UpdateWrongCount(int wrongCount, int maxWrongCount)
     {
-        wrongCountText.text = $"오답\n{wrongCount}";
+        wrongCountText.text = $"오답\n{wrongCount}/{maxWrongCount}";
     }
 
 

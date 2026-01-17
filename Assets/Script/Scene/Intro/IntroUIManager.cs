@@ -56,11 +56,12 @@ public class IntroUIManager : MonoBehaviour
         StringBuilder sb = new StringBuilder();
 
 #if DEV
-        sb.Append("DEV-");
+        sb.Append("DEV");
 #else
-        sb.Append("Live-");
+        sb.Append("Live");
 #endif
-        sb.Append($"Ver.{version}");
+        sb.Append($"-A_{Application.version}");
+        sb.Append($"-S_{version}");
 
         versionText.text = sb.ToString();
     }

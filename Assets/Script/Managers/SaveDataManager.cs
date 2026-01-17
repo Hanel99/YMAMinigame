@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
+using UnityEngine;
 
 
 public class SaveDataManager : MonoBehaviour
@@ -527,6 +527,7 @@ public class SaveDataManager : MonoBehaviour
         {
             HLLogger.Log("Force Use Server PlayerData");
             _playerData = serverData;
+            _playerData.useServerData = false;
 
             SavePlayerData();
             return;
