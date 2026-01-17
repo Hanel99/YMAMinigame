@@ -41,6 +41,11 @@ MonoBehaviour:
     - CFXRRuntime
     - ChocDino.UIFX
     - Coffee.UIParticle
+    - glTFast
+    - glTFast.Documentation.Examples
+    - glTFast.dots
+    - glTFast.Export
+    - glTFast.Newtonsoft
     - Hierarchy4.Runtime
     - PlayFab
     - Sirenix.OdinInspector.Modules.Unity.Addressables
