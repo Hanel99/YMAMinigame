@@ -41,5 +41,8 @@ public class FinalQuizEndingPanel : MonoBehaviour
         await UniTask.Delay(1000);
         SoundManager.instance.StopBGM();
         FinalQuizUIManager.instance.ShowCompleteAnimation();
+
+        await UniTask.Delay(1000);
+        this.gameObject.SetActive(false);
     }
 }

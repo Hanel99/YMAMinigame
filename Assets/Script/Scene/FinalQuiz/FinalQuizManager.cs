@@ -73,13 +73,10 @@ public class FinalQuizManager : MonoBehaviour
     void Update()
     {
 #if UNITY_EDITOR && DEV
-        // if (Input.GetKeyDown(KeyCode.C))
-        // {
-        //     HLLogger.Log($"force {gameState} state clear");
-
-        //     SetNextState();
-        //     StartStateProcess();
-        // }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CheckIsAnswer(1, true);
+        }
 
         if (Input.GetKeyDown(KeyCode.M))
         {
@@ -230,6 +227,7 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase1Process()
     {
+        UiManager.UpdateWrongCount(wrongCount, maxWrongCount);
         UiManager.SetPhase1UI();
         UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
         UiManager.ShowQuizItem(GetQuizData());
@@ -241,7 +239,7 @@ public class FinalQuizManager : MonoBehaviour
         HLLogger.Log("@@@ phase 1 complete");
 
         UiManager.UpdateQuizProgress(10);
-        UiManager.FadeOutQuizItem(GetQuizData());
+        UiManager.FadeOutAllQuizItem();
         UiManager.ShowPhase1CompleteAnimation().Forget();
         SoundManager.instance.StopBGM();
     }
@@ -252,22 +250,25 @@ public class FinalQuizManager : MonoBehaviour
 
         UiManager.UpdateQuizProgress(0, true);
         UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
-        UiManager.ShowQuizItem(GetQuizData());
+        currentQuizData = GetQuizData(currentQuizIndex);
+        UiManager.ShowQuizItem(currentQuizData);
         SoundManager.instance.PlayBGM(BGMType.FinalQuizPhase2);
     }
 
     private void Phase2FinishProcess()
     {
-        UiManager.FadeOutQuizItem(currentQuizData);
-        UiManager.UpdateQuizProgress(10);
+        HLLogger.Log("@@@ phase 2 complete");
+
+        UiManager.UpdateQuizProgress(20);
+        UiManager.FadeOutAllQuizItem();
+        UiManager.ShowPhase2CompleteAnimation().Forget();
         SoundManager.instance.StopBGM();
 
     }
 
     private void EndingProcess()
     {
-        SoundManager.instance.StopBGM();
-        UiManager.ShowPhase2CompleteAnimation().Forget();
+        UiManager.ShowEndingAnimation();
     }
 
 
@@ -300,7 +301,7 @@ public class FinalQuizManager : MonoBehaviour
 
 
 
-    public void CheckIsAnswer(int answer)
+    public void CheckIsAnswer(int answer, bool forceClear = false)
     {
         if (gameState != FinalGameState.Phase1 && gameState != FinalGameState.Phase2)
         {
@@ -309,7 +310,7 @@ public class FinalQuizManager : MonoBehaviour
         }
 
         quizLeftTime += 0.2f;
-        if (currentQuizData.answer != 0 && currentQuizData.answer != answer)
+        if (forceClear == false && currentQuizData.answer != 0 && currentQuizData.answer != answer)
         {
             //오답
 
@@ -356,7 +357,6 @@ public class FinalQuizManager : MonoBehaviour
         }
 
         currentQuizData = GetQuizData(currentQuizIndex);
-
         UiManager.FadeOutQuizItem(currentQuizData);
         UiManager.ShowQuizItem(currentQuizData);
     }
