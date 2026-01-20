@@ -427,10 +427,10 @@ public enum SFXType
     Warning,
     Coin,
     Explosion,
-    TowerAvoid,
-    TowerHit,
-    TowerResult,
+
     Victory,
+
+    //Wingtto
     Crash,
     WingTtoCoin,
     WingTtoExp,
@@ -439,11 +439,34 @@ public enum SFXType
     Ready,
     Go,
 
+    //tower
+    TowerAvoid,
+    TowerAvoid2,
+    TowerHit,
+    TowerHit2,
+    TowerResult,
+    WeaponFail,
+    WeaponSuccess,
+
 
     // final quiz
+    FinalDing1,
+    FinalDing2,
+    FinalClearFake,
+    FinalClear,
+    FinalGameOver1,
+    FinalGameOver2,
+    FinalWarning1,
+    FinalWarning2,
+    O,
+    X,
+    DiscordEnter,
+    DiscordLeave,
+    DiscordNoti,
 
-    Final_ding1,
-    Final_ding2,
+
+
+
 
     // Congratulations,
     // GameOver,

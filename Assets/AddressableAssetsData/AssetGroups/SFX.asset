@@ -15,6 +15,24 @@ MonoBehaviour:
   m_GroupName: SFX
   m_GUID: b922351420d2cb34bb2d72fe77f7d870
   m_SerializeEntries:
+  - m_GUID: 1020818e68e78b34c8f2c8278365c20a
+    m_Address: SFX_Final_ding1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11caa54943d18424ba0063f719132ada
+    m_Address: SFX_WeaponFail
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17b3415b33d2dc84084e69c75c44e412
+    m_Address: SFX_TowerAvoid2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1ba0c58cab6413046900efed55257688
     m_Address: SFX_WingTtoExp
     m_ReadOnly: 0
@@ -27,14 +45,50 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 217e10bdda2270548a279ffe692650d6
+    m_Address: SFX_WeaponSuccess
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 226f65e6f11b6704a892a883211fdfbf
     m_Address: SFX_Go
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ffb3334f83153544a60b58d1ae0a6f7
+    m_Address: SFX_FinalDing2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33c0265d178a6c649a001fead5ddcac3
+    m_Address: SFX_DIscordLeave
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34d7b97b5ed13d945affd96c287d7af1
+    m_Address: SFX_FinalGameOver1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 380285eb9bf67604d901227a523dd676
+    m_Address: SFX_FinalDing1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4931928ab473143459201d67511289e4
     m_Address: SFX_TowerHit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 519239b4c6ffba440bc08b17cadf5f4e
+    m_Address: SFX_TowerHit2
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -51,8 +105,38 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 688ffe9225a3e48459423f1a4a06a500
+    m_Address: SFX_FinalGameOver2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 792410fef343a404bbd0fd94d361f3a9
+    m_Address: SFX_FinalWarning1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7be28198efad2fc418546eaea3ab9092
+    m_Address: SFX_FinalClearFake
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7da3e33dfb406e94abaf09c9dbc3d5ec
     m_Address: SFX_Ready
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ea3f65acf72833488a98349117fd647
+    m_Address: SFX_DiscordEnter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b693e1198cc26f4bb82083002284598
+    m_Address: SFX_O
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -75,8 +159,32 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 968f2af2ace592240b2127f833d52e5a
+    m_Address: SFX_Final_ding2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a520d38a8aea2ff42bc23c98fbf91ec0
     m_Address: SFX_Victory
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7cc9ad35cd23fa4ea503d24b2e9f2e6
+    m_Address: SFX_X
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae915c099b9a93e46ac7acf86607e981
+    m_Address: SFX_FinalWarning2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b40fc5ddb624d1e408e6ce7a49fe33be
+    m_Address: SFX_DiscordNoti
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -101,6 +209,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbc67a879f84f76428da0ff352f4dedb
     m_Address: SFX_Explosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce5bd779e4cb990449b82afcc9c6a05e
+    m_Address: SFX_FinalClear
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
