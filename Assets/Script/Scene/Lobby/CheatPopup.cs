@@ -192,10 +192,10 @@ public class CheatPopup : PopupBase
             buttonAction = (value) =>
             {
                 value = Mathf.Clamp(value, 0, 4);
-                SaveDataManager.instance.playerData.finalQuizPlayData.matchCardGame = value > 0;
-                SaveDataManager.instance.playerData.finalQuizPlayData.findAIWordGame = value > 1;
-                SaveDataManager.instance.playerData.finalQuizPlayData.cubeGame = value > 2;
-                SaveDataManager.instance.playerData.finalQuizPlayData.wingTto = value > 3;
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, value > 0 ? FinalReferState.Completed : FinalReferState.Locked);
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, value > 1 ? FinalReferState.Completed : FinalReferState.Locked);
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, value > 2 ? FinalReferState.Completed : FinalReferState.Locked);
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, value > 3 ? FinalReferState.Completed : FinalReferState.Unlocked);
 
                 GameListView.instance.CheckUnlockContent();
             },

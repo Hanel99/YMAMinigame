@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
 using UnityEngine.SceneManagement;
-using System;
+using UnityEngine.UI;
 
 public class GameResultPopup : PopupBase
 {
@@ -19,7 +19,7 @@ public class GameResultPopup : PopupBase
 
     //private
     private Coroutine cor;
-    private Action showNewCardAction;
+    private Action callbackAction;
     private SceneName sceneName;
 
 
@@ -47,11 +47,11 @@ public class GameResultPopup : PopupBase
             StopCoroutine(cor);
     }
 
-    public void ShowPopup(int touchCount, int earnCoinAmount, List<int> collectCardIdList, SceneName sceneName, Action newCardAction = null)
+    public void ShowPopup(int touchCount, int earnCoinAmount, List<int> collectCardIdList, SceneName sceneName, Action callback = null)
     {
         HideResultObjects();
         ShowPopup();
-        showNewCardAction = newCardAction;
+        callbackAction = callback;
         this.sceneName = sceneName;
         cor = StartCoroutine(co_resultProcess(touchCount, earnCoinAmount, collectCardIdList));
     }
@@ -81,7 +81,7 @@ public class GameResultPopup : PopupBase
         yield return new WaitForSeconds(0.3f);
 
         if (collectCardIdList != null && collectCardIdList.Count > 0)
-            showNewCardAction?.Invoke();
+            callbackAction?.Invoke();
 
         lobbyButton.SetActive(true);
         retryButton.SetActive(true);

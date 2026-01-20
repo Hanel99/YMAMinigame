@@ -117,6 +117,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 703b5c52b5a86624a86501eb52e8d51e
+    m_Address: FinalQuizReferPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71afe55210e8f80469115c45fd4ce9c3
     m_Address: GameSelectPopup
     m_ReadOnly: 0

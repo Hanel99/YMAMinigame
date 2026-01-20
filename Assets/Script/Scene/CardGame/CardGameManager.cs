@@ -19,6 +19,8 @@ public class CardGameManager : MonoBehaviour
     private List<int> collectCardIdList = new();
 
 
+    // final refer mission
+    private bool isReferMissionSuccess = true;
 
 
 
@@ -126,6 +128,23 @@ public class CardGameManager : MonoBehaviour
 
         if (SaveDataManager.instance.AddExp(1))
             DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
+
+
+        // final refer
+        if (FinalReferManager.instance.IsFinalReferUnlock(GameType.MatchCardGame))
+        {
+            SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
+            DOVirtual.DelayedCall(1.2f, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+        }
+        else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.MatchCardGame))
+        {
+            if (isReferMissionSuccess)
+            {
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Completed);
+                DOVirtual.DelayedCall(1.2f, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+            }
+        }
+
     }
     private void CalcEarnCoinAmount()
     {
@@ -153,9 +172,11 @@ public class CardGameManager : MonoBehaviour
     private void CardMatchProcess()
     {
         tryCount++;
+        bool isMatch = touchCardDataList[0].cardId == touchCardDataList[1].cardId;
         CardGameInGameView.instance.UpdateTryCountText(tryCount);
-        if (touchCardDataList[0].cardId == touchCardDataList[1].cardId)
+        if (isMatch)
             collectCardIdList.Add(touchCardDataList[0].cardId);
+        CheckReferMission(tryCount, isMatch);
 
         CardGameUIManager.instance.ShowCardCheckPopup(touchCardDataList, () =>
         {
@@ -169,5 +190,15 @@ public class CardGameManager : MonoBehaviour
             if (IsGameFinish())
                 FinishProcess();
         });
+    }
+
+    private void CheckReferMission(int tryCount, bool isMatch)
+    {
+        if (tryCount == 1 && isMatch)
+            isReferMissionSuccess = false;
+        else if (tryCount == 2 && isMatch)
+            isReferMissionSuccess = false;
+        else if (tryCount == 3 && !isMatch)
+            isReferMissionSuccess = false;
     }
 }

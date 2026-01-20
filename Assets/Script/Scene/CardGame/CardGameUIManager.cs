@@ -76,9 +76,11 @@ public class CardGameUIManager : MonoBehaviour
         _ShowPopup<PausePopup>().ShowPopup();
     }
 
-    public void ShowLevelUpPopup()
+
+
+    public void ShowReferPopup(GameType gameType)
     {
-        _ShowPopup<LevelUpPopup>().ShowPopup();
+        _ShowPopup<FinalQuizReferPopup>().ShowPopup(gameType);
     }
 
 

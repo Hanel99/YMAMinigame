@@ -69,16 +69,16 @@ public class FinalQuizInfoPopup : PopupBase
             return;
         }
 
-        matchCardGameReferImage.gameObject.SetActive(finalQuizPlayData.matchCardGame);
-        wordGameReferImage.gameObject.SetActive(finalQuizPlayData.findAIWordGame);
-        cubeGameReferImage.gameObject.SetActive(finalQuizPlayData.cubeGame);
-        wingTtoReferImage.gameObject.SetActive(finalQuizPlayData.wingTto);
+        matchCardGameReferImage.gameObject.SetActive(finalQuizPlayData.matchCardGame == FinalReferState.Completed);
+        wordGameReferImage.gameObject.SetActive(finalQuizPlayData.findAIWordGame == FinalReferState.Completed);
+        cubeGameReferImage.gameObject.SetActive(finalQuizPlayData.cubeGame == FinalReferState.Completed);
+        wingTtoReferImage.gameObject.SetActive(finalQuizPlayData.wingTto == FinalReferState.Completed);
 
         int count = 0;
-        if (finalQuizPlayData.matchCardGame) count++;
-        if (finalQuizPlayData.findAIWordGame) count++;
-        if (finalQuizPlayData.cubeGame) count++;
-        if (finalQuizPlayData.wingTto) count++;
+        if (finalQuizPlayData.matchCardGame == FinalReferState.Completed) count++;
+        if (finalQuizPlayData.findAIWordGame == FinalReferState.Completed) count++;
+        if (finalQuizPlayData.cubeGame == FinalReferState.Completed) count++;
+        if (finalQuizPlayData.wingTto == FinalReferState.Completed) count++;
 
         infoText.text = count < 4 ? $"동의서가 {4 - count}개 부족한 듯 하다." : "벽반 가입 시험에 응시할 수 있습니다.";
 
@@ -89,12 +89,13 @@ public class FinalQuizInfoPopup : PopupBase
 
     public void OnClickExamButton()
     {
-        //debug;
+        //@@@ debug;
         SceneMoveManager.instance.MoveScene(SceneName.YMAFinalQuiz);
         return;
 
 
-        if (finalQuizPlayData.matchCardGame && finalQuizPlayData.findAIWordGame && finalQuizPlayData.cubeGame && finalQuizPlayData.wingTto)
+        if (finalQuizPlayData.matchCardGame == FinalReferState.Completed && finalQuizPlayData.findAIWordGame == FinalReferState.Completed
+            && finalQuizPlayData.cubeGame == FinalReferState.Completed && finalQuizPlayData.wingTto == FinalReferState.Completed)
             OnClickShowWarningMiniPopup(true);
         else
         {
@@ -105,10 +106,10 @@ public class FinalQuizInfoPopup : PopupBase
 
     public void OnClickTryExamButton()
     {
-        finalQuizPlayData.matchCardGame = false;
-        finalQuizPlayData.findAIWordGame = false;
-        finalQuizPlayData.cubeGame = false;
-        finalQuizPlayData.wingTto = false;
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Unlocked);
         finalQuizPlayData.tryCount++;
 
         SaveDataManager.instance.SavePlayerData();

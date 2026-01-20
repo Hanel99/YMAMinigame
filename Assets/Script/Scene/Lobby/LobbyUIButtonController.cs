@@ -37,8 +37,8 @@ public class LobbyButton : MonoBehaviour
         {
             var finalQuizPlayData = SaveDataManager.instance.playerData.finalQuizPlayData;
             if (finalQuizPlayData.playEndRoll || finalQuizPlayData.tryCount > 0
-                || finalQuizPlayData.matchCardGame || finalQuizPlayData.findAIWordGame
-                || finalQuizPlayData.cubeGame || finalQuizPlayData.wingTto)
+                || finalQuizPlayData.matchCardGame >= FinalReferState.Unlocked || finalQuizPlayData.findAIWordGame >= FinalReferState.Unlocked
+                || finalQuizPlayData.cubeGame >= FinalReferState.Unlocked || finalQuizPlayData.wingTto >= FinalReferState.Unlocked)
                 gameObject.SetActive(true);
             else
             {

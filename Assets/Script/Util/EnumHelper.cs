@@ -388,6 +388,12 @@ public enum QuestState
 }
 
 
+public enum FinalReferState
+{
+    Locked,
+    Unlocked,
+    Completed
+}
 
 
 

@@ -359,6 +359,27 @@ public class SaveDataManager : MonoBehaviour
             _playerData.wingTtoHighScore = score;
     }
 
+
+
+    public void SetFinalQuizReferData(GameType type, FinalReferState state)
+    {
+        switch (type)
+        {
+            case GameType.MatchCardGame:
+                _playerData.finalQuizPlayData.matchCardGame = state;
+                break;
+            case GameType.FindAIWordGame:
+                _playerData.finalQuizPlayData.findAIWordGame = state;
+                break;
+            case GameType.CubeGame:
+                _playerData.finalQuizPlayData.cubeGame = state;
+                break;
+            case GameType.WingTto:
+                _playerData.finalQuizPlayData.wingTto = state;
+                break;
+        }
+    }
+
     #endregion
 
 

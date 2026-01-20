@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 
 
 [Serializable]
@@ -119,10 +119,10 @@ public class GeminiHint
 [System.Serializable]
 public class FinalQuizPlayData
 {
-    public bool matchCardGame = false;
-    public bool findAIWordGame = false;
-    public bool cubeGame = false;
-    public bool wingTto = false;
+    public FinalReferState matchCardGame = FinalReferState.Locked;
+    public FinalReferState findAIWordGame = FinalReferState.Locked;
+    public FinalReferState cubeGame = FinalReferState.Locked;
+    public FinalReferState wingTto = FinalReferState.Locked;
 
     public int enterQuizIndex = 0;
     public int tryCount = 0;
