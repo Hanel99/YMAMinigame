@@ -1,11 +1,11 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
+using System.Text;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Threading;
-using System;
-using System.Text;
-using System.Linq;
+using UnityEngine;
 
 
 public class CubeGameManager : MonoBehaviour
@@ -33,6 +33,8 @@ public class CubeGameManager : MonoBehaviour
     private bool Q_OnlyPerfect = true;
     private int Q_OnlyPerfectScore = 0;
 
+    // final refer mission
+    private bool isReferMissionSuccess = false;
 
 
 
@@ -186,6 +188,22 @@ public class CubeGameManager : MonoBehaviour
             await UniTask.Delay(1500);
             CubeGameUIManager.instance.ShowLevelUpPopup();
         }
+
+
+        // final refer
+        if (FinalReferManager.instance.IsFinalReferUnlock(GameType.CubeGame))
+        {
+            SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
+            DOVirtual.DelayedCall(1.2f, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+        }
+        else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.CubeGame))
+        {
+            if (CheckReferMission())
+            {
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
+                DOVirtual.DelayedCall(1.2f, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+            }
+        }
     }
 
 
@@ -277,5 +295,16 @@ public class CubeGameManager : MonoBehaviour
     public float GetRandomFloat(float min, float max)
     {
         return min + (float)randomGenerator.NextDouble() * (max - min);
+    }
+
+
+
+
+
+    private bool CheckReferMission()
+    {
+        // 각각의 판정 타이밍마다 3번씩 터치하고 게임을 끝낼 것
+
+        return countDic[CubeState.TooFast] == 3 && countDic[CubeState.Fast] == 3 && countDic[CubeState.Perfect] == 3 && countDic[CubeState.Slow] == 3 && countDic[CubeState.TooSlow] == 3;
     }
 }

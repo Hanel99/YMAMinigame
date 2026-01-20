@@ -53,6 +53,11 @@ public class FindAIWordGameUIManager : MonoBehaviour
         _ShowPopup<LevelUpPopup>().ShowPopup();
     }
 
+    public void ShowReferPopup(GameType gameType)
+    {
+        _ShowPopup<FinalQuizReferPopup>().ShowPopup(gameType);
+    }
+
 
     //매개변수 없는 팝업의 경우
     public void ShowPopup<T>() where T : PopupBase

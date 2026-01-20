@@ -133,8 +133,10 @@ public class PlayFabManager : MonoBehaviour
         {
             if (result.Data.ContainsKey("useServerData"))
             {
-                HLLogger.Log($"use serverData? : {result.Data["useServerData"].Value.Equals("True")}");
-                StaticGameData.useServerData = result.Data["useServerData"].Value.Equals("True");
+                var tempData = result.Data["useServerData"].Value.ToLower();
+                var tempText = tempData.Equals("true");
+                HLLogger.Log($"use serverData? : {tempText}");
+                StaticGameData.useServerData = tempText;
             }
 
             if (result.Data.ContainsKey("PlayerData"))

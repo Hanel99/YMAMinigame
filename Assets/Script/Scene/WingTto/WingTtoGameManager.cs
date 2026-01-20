@@ -1,10 +1,10 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Text;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Threading;
-using System;
-using System.Text;
+using UnityEngine;
 
 
 public class WingTtoGameManager : MonoBehaviour
@@ -332,6 +332,22 @@ public class WingTtoGameManager : MonoBehaviour
             await UniTask.Delay(1500);
             WingTtoGameUIManager.instance.ShowLevelUpPopup();
         }
+
+
+        // final refer
+        if (FinalReferManager.instance.IsFinalReferUnlock(GameType.WingTto))
+        {
+            SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Unlocked);
+            DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
+        }
+        else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.WingTto))
+        {
+            if (CheckReferMission())
+            {
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Completed);
+                DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
+            }
+        }
     }
 
 
@@ -534,5 +550,14 @@ public class WingTtoGameManager : MonoBehaviour
         bool result = randomGenerator.Next(0, total) < success;
 
         return result;
+    }
+
+
+
+    private bool CheckReferMission()
+    {
+        // 1의 자릿수의 숫자가 3인 상태로 게임을 끝낼 것
+
+        return currentDistance.ToString("F0").EndsWith("3");
     }
 }

@@ -22,6 +22,9 @@ public class FinalReferManager : MonoBehaviour
 
     public bool IsFinalReferUnlock(GameType gameType)
     {
+        // 카드맞추기와 단어 맞추기는 획득한 카드와 단어가 33개 이상일 때
+        // 큐브게임과 윙또는 플레이한 횟수가 15회 이상일 때
+
         return gameType switch
         {
             GameType.MatchCardGame => finalQuizPlayData.matchCardGame == FinalReferState.Locked && playerData.ownCardList.Count >= 33,

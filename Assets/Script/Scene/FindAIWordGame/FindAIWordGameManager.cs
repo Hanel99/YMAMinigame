@@ -1,10 +1,10 @@
+using System;
 using System.Collections.Generic;
-using UnityEngine;
+using System.Text;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using System.Threading;
-using System;
-using System.Text;
+using UnityEngine;
 
 public class FindAIWordGameManager : MonoBehaviour
 {
@@ -17,6 +17,10 @@ public class FindAIWordGameManager : MonoBehaviour
 
     private CancellationTokenSource apiCts;
     private StringBuilder sb = new StringBuilder();
+
+    // final refer mission
+    private bool isReferMissionSuccess = false;
+    private bool hasInputThree = false;
 
     private void Awake()
     {
@@ -62,6 +66,9 @@ public class FindAIWordGameManager : MonoBehaviour
         // 기존 작업 취소
         apiCts?.Cancel();
         apiCts = new CancellationTokenSource();
+
+        isReferMissionSuccess = false;
+        hasInputThree = false;
 
         FindAIWordGameUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.WordGame);
@@ -179,9 +186,12 @@ public class FindAIWordGameManager : MonoBehaviour
         // 빈칸인 경우 넘김
         if (answer == string.Empty) return;
 
+        bool isCorrect = answer.Trim() == currentKeyword;
+        CheckReferMission(currentHintIndex + 1, answer, isCorrect);
+
         FindAIWordGameInGameView.instance.EnableAnswerButton(false);
 
-        if (answer.Trim() == currentKeyword)
+        if (isCorrect)
         {
             FindAIWordGameInGameView.instance.UpdateHintText("정답!\n축하합니다!");
             FinishProcess().Forget();
@@ -224,6 +234,39 @@ public class FindAIWordGameManager : MonoBehaviour
         {
             await UniTask.Delay(1500);
             FindAIWordGameUIManager.instance.ShowLevelUpPopup();
+        }
+
+
+        // final refer
+        if (FinalReferManager.instance.IsFinalReferUnlock(GameType.FindAIWordGame))
+        {
+            SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
+            DOVirtual.DelayedCall(1.2f, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+        }
+        else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.FindAIWordGame))
+        {
+            if (isReferMissionSuccess)
+            {
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Completed);
+                DOVirtual.DelayedCall(1.2f, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+            }
+        }
+    }
+
+
+
+    private void CheckReferMission(int tryCount, string answer, bool isCorrect)
+    {
+        // 1 2번째 트라이에 3을 입력 하여 실패한 뒤
+        // 3번째 트라이에 성공할 것.
+
+        if ((tryCount == 1 || tryCount == 2) && answer == "3")
+        {
+            hasInputThree = true;
+        }
+        else if (tryCount == 3 && isCorrect && hasInputThree)
+        {
+            isReferMissionSuccess = true;
         }
     }
 }

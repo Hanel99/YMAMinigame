@@ -194,6 +194,9 @@ public class CardGameManager : MonoBehaviour
 
     private void CheckReferMission(int tryCount, bool isMatch)
     {
+        // 1 2번째 트라이에 실패한 뒤
+        // 3번째 트라이에 성공할 것.
+
         if (tryCount == 1 && isMatch)
             isReferMissionSuccess = false;
         else if (tryCount == 2 && isMatch)
