@@ -182,7 +182,7 @@ public class WingTtoGameUIManager : MonoBehaviour
 
     public void UpdateSpeedText(float value)
     {
-        currentSpeedText.text = $"{value:F0}";
+        currentSpeedText.text = $"{(int)value}";
     }
 
     public void UpdateCoinText(int value)
@@ -220,9 +220,16 @@ public class WingTtoGameUIManager : MonoBehaviour
         gameManager.SetPause(true);
     }
 
+    private int _lastDistanceInt = -1;
+
     void Update()
     {
-        distanceText.text = gameManager.GetFormattedDistance();
+        int currentDistanceInt = (int)gameManager.CurrentDistance;
+        if (_lastDistanceInt != currentDistanceInt)
+        {
+            _lastDistanceInt = currentDistanceInt;
+            distanceText.text = $"{currentDistanceInt}m";
+        }
     }
 
 }

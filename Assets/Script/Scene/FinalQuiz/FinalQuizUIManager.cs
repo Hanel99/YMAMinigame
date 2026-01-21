@@ -259,7 +259,7 @@ public class FinalQuizUIManager : MonoBehaviour
         float quizLeftTotalTime = temp.Item1;
         float plusTime = temp.Item2;
 
-        phaseClearAddTimeText.text = $"+{plusTime:F0}";
+        phaseClearAddTimeText.text = $"+{(int)plusTime}";
         phaseClearAddTimeText.gameObject.SetActive(true);
         phaseClearAddTimeText.DOFade(0f, 1f).From(1f).SetEase(Ease.InCubic).OnComplete(() => phaseClearAddTimeText.gameObject.SetActive(false));
         DOTween.To(() => quizLeftTotalTime, x => totalLeftTimeText.text = $"잔여 시간 : {x:F2}초", quizLeftTotalTime + plusTime, 1f).SetEase(Ease.Linear);

@@ -37,6 +37,12 @@ public class TowerGameWeaponStat : MonoBehaviour
 
 
 
+    // Consts
+    private const string TEXT_MAX = "MAX";
+    private const string TEXT_BUY_WEAPON = "무기 구매";
+    private const string TEXT_ENCHANT = "강화";
+
+
     public void UpdateUIData(int weaponLevel)
     {
         this.weaponLevel = weaponLevel;
@@ -58,19 +64,19 @@ public class TowerGameWeaponStat : MonoBehaviour
         atkValueText.text = $"{weaponMetaData.atk}";
         criDmgValueText.text = $"x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
 
-        requireCoinText.text = weaponMetaData.requireCoin <= 0 ? "MAX" : weaponMetaData.requireCoin.ToString();
+        requireCoinText.text = weaponMetaData.requireCoin <= 0 ? TEXT_MAX : weaponMetaData.requireCoin.ToString();
         enchantButton.interactable = weaponMetaData.requireCoin > 0 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
 
         if (weaponLevel == 0)
         {
             RankUpText.SetActive(false);
-            enchantText.text = "무기 구매";
+            enchantText.text = TEXT_BUY_WEAPON;
             return;
         }
         else if (weaponMetaData.requireCoin <= 0)
         {
             RankUpText.SetActive(false);
-            enchantText.text = "강화";
+            enchantText.text = TEXT_ENCHANT;
             return;
         }
 
@@ -84,7 +90,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         float downRate = (float)downValue / total;
 
         RankUpText.SetActive(true);
-        enchantText.text = "강화";
+        enchantText.text = TEXT_ENCHANT;
         RankUpRateText.text = $"성공 : {(upRate * 100).ToString("F2")}%";
         RankStayRateText.text = $"유지 : {(stayRate * 100).ToString("F2")}%";
         RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F2")}%";

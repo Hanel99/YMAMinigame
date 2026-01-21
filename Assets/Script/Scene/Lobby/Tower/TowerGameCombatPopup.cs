@@ -43,6 +43,14 @@ public class TowerGameCombatPopup : PopupBase
     private bool @combatTest = false;
 
 
+    // Consts
+    private const int SCALE_PROBABILITY = 10000;
+    private const int MAX_TURN_COUNT = 20;
+    private const int DELAY_TURN_DEFAULT = 200;
+    private const int DELAY_RESULT_DEFAULT = 800;
+    private const int DELAY_SKIPPED = 1;
+
+
     protected override void OnAwake()
     {
         instance = this;
@@ -67,7 +75,7 @@ public class TowerGameCombatPopup : PopupBase
     private void SetCombatData()
     {
         isSkip = false;
-        delayTime = 200;
+        delayTime = DELAY_TURN_DEFAULT;
         turnCount = 0;
         lineCount = 0;
         combatDataCount = 0;
@@ -125,7 +133,7 @@ public class TowerGameCombatPopup : PopupBase
 
         // 전투 시뮬레이션을 먼저 모두 실행해서 로그와 결과를 얻음
         var (lines, combatDetails, playerWon) = await SimulateCombat(bossName);
-        await UniTask.Delay(800);
+        await UniTask.Delay(DELAY_RESULT_DEFAULT);
 
         // 시뮬레이션 결과(라인들)를 순차적으로 UI에 표시
         sb.Clear();
@@ -178,7 +186,7 @@ public class TowerGameCombatPopup : PopupBase
                 await UniTask.Delay(delayTime);
             }
 
-            if (lineCount >= 10 && isSkip == false)
+            if (lineCount >= 7 && isSkip == false)
             {
                 skipButton.gameObject.SetActive(true);
             }
@@ -202,8 +210,8 @@ public class TowerGameCombatPopup : PopupBase
     private bool IsAvoided(float avoidanceRate)
     {
         // 만분위 체크: 0~100000 범위의 랜덤 값 생성
-        int randomValue = Random.Range(0, 10000); // 0부터 100000까지 포함
-        int threshold = Mathf.RoundToInt(avoidanceRate * 10000); // 회피율을 0~100000 범위로 변환
+        int randomValue = Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
+        int threshold = Mathf.RoundToInt(avoidanceRate * SCALE_PROBABILITY); // 회피율을 0~10000 범위로 변환
         HLLogger.Log($"회피 판정 - Random: {randomValue}, Threshold: {threshold} / 회피? {randomValue < threshold}");
 
         return randomValue < threshold;
@@ -212,8 +220,8 @@ public class TowerGameCombatPopup : PopupBase
     private int CalculateDamage(CombatStatData attacker, CombatStatData defender, out bool isCritical)
     {
         // 크리티컬 판정
-        int randomValue = Random.Range(0, 10000); // 0부터 100000까지 포함
-        int threshold = Mathf.RoundToInt(attacker.criRate * 10000); // 회피율을 0~100000 범위로 변환
+        int randomValue = Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
+        int threshold = Mathf.RoundToInt(attacker.criRate * SCALE_PROBABILITY); // 크리티컬율을 0~10000 범위로 변환
 
         isCritical = randomValue < threshold;
         float criticalMultiplier = isCritical ? 1 + attacker.criDmg : 1;
@@ -295,7 +303,7 @@ public class TowerGameCombatPopup : PopupBase
 
         isSkip = true;
         skipButton.gameObject.SetActive(false);
-        delayTime = 1;
+        delayTime = DELAY_SKIPPED;
     }
 
     public void OnClickRetryButton()
@@ -310,7 +318,6 @@ public class TowerGameCombatPopup : PopupBase
     {
         var lines = new List<string>();
         var combatDetails = new List<CombatDetailData>();
-        bool isCritical;
 
         // 로컬 복사본으로 시뮬레이션 (원본 데이터는 변경하지 않음)
         var p = new CombatStatData
@@ -336,7 +343,7 @@ public class TowerGameCombatPopup : PopupBase
         };
 
         turnCount = 0;
-        while (p.hp > 0 && b.hp > 0 && turnCount < 20)
+        while (p.hp > 0 && b.hp > 0 && turnCount < MAX_TURN_COUNT)
         {
             await UniTask.Delay(1); // 시뮬레이션 속도 조절용 딜레이
 
@@ -346,75 +353,26 @@ public class TowerGameCombatPopup : PopupBase
             lines.Add($"{turnCount}번째 턴!");
 
             // 플레이어 공격
-            lines.Add("");
-            lines.Add($"{playerData.name}의 공격!");
-            if (!IsAvoided(b.avoidance))
-            {
-                int damage = CalculateDamage(p, b, out isCritical);
-                if (isCritical)
-                    lines.Add($"{playerData.name} 혼신의 일격!");
-                else
-                    lines.Add($"{playerData.name.E_Ga()} {bossName.Eul_Reul()} 공격!");
+            bool bossDefeated = ProcessAttack(
+                p, b,
+                attackerName: playerData.name,
+                defenderName: bossName,
+                isPlayerAttacking: true,
+                lines, combatDetails
+            );
+            if (bossDefeated) return (lines, combatDetails, true);
 
-
-
-                if (@combatTest) damage = 10;
-
-
-                b.hp -= damage;
-                b.hp = Mathf.Max(0, b.hp);
-                lines.Add($"{damage} 데미지를 입혔다! ({b.hp}/{b.maxHp})");
-                combatDetails.Add(new CombatDetailData { isPlayerAttack = true, isCritical = isCritical, damage = damage });
-
-                if (b.hp <= 0)
-                {
-                    lines.Add("");
-                    lines.Add($"{bossName.Eul_Reul()} 물리쳤습니다!");
-                    return (lines, combatDetails, true);
-                }
-            }
-            else
-            {
-                lines.Add($"{bossName.E_Ga()} {playerData.name}의 공격을 회피했습니다!");
-                combatDetails.Add(new CombatDetailData { isPlayerAttack = true, isAvoided = true });
-            }
 
             // 보스 공격
-            lines.Add("");
-            lines.Add($"{bossName}의 공격!");
-            if (!IsAvoided(p.avoidance))
-            {
-                int damage = CalculateDamage(b, p, out isCritical);
-                if (isCritical)
-                    lines.Add($"{bossName} 혼신의 일격!");
-                else
-                    lines.Add($"{bossName.E_Ga()} {playerData.name.Eul_Reul()} 공격!");
+            bool playerDefeated = ProcessAttack(
+                b, p,
+                attackerName: bossName,
+                defenderName: playerData.name,
+                isPlayerAttacking: false,
+                lines, combatDetails
+            );
+            if (playerDefeated) return (lines, combatDetails, false);
 
-
-
-                if (@combatTest) damage = 10;
-
-
-
-
-                p.hp -= damage;
-                p.hp = Mathf.Max(0, p.hp);
-                lines.Add($"{damage} 데미지를 입었다! ({p.hp}/{p.maxHp})");
-                combatDetails.Add(new CombatDetailData { isPlayerAttack = false, isCritical = isCritical, damage = damage });
-
-                if (p.hp <= 0)
-                {
-                    lines.Add("");
-                    lines.Add($"{playerData.name.E_Ga()} 쓰러졌습니다...");
-                    return (lines, combatDetails, false);
-                }
-            }
-            else
-            {
-                playerAvoidCount++;
-                lines.Add($"{playerData.name.E_Ga()} {bossName}의 공격을 회피했습니다!");
-                combatDetails.Add(new CombatDetailData { isPlayerAttack = false, isAvoided = true });
-            }
         }
 
         lines.Add("");
@@ -422,7 +380,74 @@ public class TowerGameCombatPopup : PopupBase
         return (lines, combatDetails, false);
     }
 
+    /// <summary>
+    /// 공격 처리 공통 로직
+    /// </summary>
+    /// <returns>방어자가 죽었는지 여부</returns>
+    private bool ProcessAttack(
+        CombatStatData attacker,
+        CombatStatData defender,
+        string attackerName,
+        string defenderName,
+        bool isPlayerAttacking,
+        List<string> lines,
+        List<CombatDetailData> combatDetails)
+    {
+        lines.Add("");
+        lines.Add($"{attackerName}의 공격!");
 
+        if (!IsAvoided(defender.avoidance))
+        {
+            bool isCritical;
+            int damage = CalculateDamage(attacker, defender, out isCritical);
+
+            if (isCritical)
+                lines.Add($"{attackerName} 혼신의 일격!");
+            else
+                lines.Add($"{attackerName.E_Ga()} {defenderName.Eul_Reul()} 공격!");
+
+            if (@combatTest) damage = 10;
+
+            defender.hp -= damage;
+            defender.hp = Mathf.Max(0, defender.hp);
+
+            lines.Add($"{damage} 데미지를 입{'혔': '었'}다! ({defender.hp}/{defender.maxHp})"); // 입혔다/입었다 구분 필요 시 삼항 로직 개선 필요. 예전엔 입혔다/입었다 구분했음.
+                                                                                        // isPlayerAttacking일 때: 플레이어가 보스를 때림 -> 데미지를 "입혔다"
+                                                                                        // !isPlayerAttacking일 때: 보스가 플레이어를 때림 -> 데미지를 "입었다"
+                                                                                        // 위 삼항연산자는 C# 6.0 문자열 보간에서 조건문 사용 시 유용하나 여기선 단순 텍스트가 다름.
+                                                                                        // 원본 코드는 플레이어 공격 시: "데미지를 입혔다!", 보스 공격 시: "데미지를 입었다!"
+
+            // 다시 수정
+            if (isPlayerAttacking)
+                lines[lines.Count - 1] = $"{damage} 데미지를 입혔다! ({defender.hp}/{defender.maxHp})";
+            else
+                lines[lines.Count - 1] = $"{damage} 데미지를 입었다! ({defender.hp}/{defender.maxHp})";
+
+
+            combatDetails.Add(new CombatDetailData { isPlayerAttack = isPlayerAttacking, isCritical = isCritical, damage = damage });
+
+            if (defender.hp <= 0)
+            {
+                lines.Add("");
+                if (isPlayerAttacking)
+                    lines.Add($"{defenderName.Eul_Reul()} 물리쳤습니다!");
+                else
+                    lines.Add($"{defenderName.E_Ga()} 쓰러졌습니다...");
+
+                return true;
+            }
+        }
+        else
+        {
+            // 회피 발생
+            if (!isPlayerAttacking) playerAvoidCount++; // 보스가 공격했는데 플레이어가 피함 -> 플레이어 회피 카운트 증가
+
+            lines.Add($"{defenderName.E_Ga()} {attackerName}의 공격을 회피했습니다!");
+            combatDetails.Add(new CombatDetailData { isPlayerAttack = isPlayerAttacking, isAvoided = true });
+        }
+
+        return false;
+    }
 
     #region Combat Animation
 

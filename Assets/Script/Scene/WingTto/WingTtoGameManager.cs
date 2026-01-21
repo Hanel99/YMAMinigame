@@ -308,10 +308,16 @@ public class WingTtoGameManager : MonoBehaviour
     }
 
 
+    // Calcs
+    private const float SCORE_COIN_BASE = 1000f;
+    private const float SCORE_COIN_FACTOR = 97000f;
+    private const float SCORE_COIN_DIVISOR = 2900f;
+    private const float SCORE_COIN_POW = 1.5f;
+
     private async UniTaskVoid FinishProcess()
     {
         int exp = 1 + player.EarnExp;
-        int earnCoinAmount = player.EarnCoin + (int)Math.Max(1000f, currentDistance + 97000f * Math.Pow(currentDistance / 2900f, 1.5f));
+        int earnCoinAmount = player.EarnCoin + (int)Math.Max(SCORE_COIN_BASE, currentDistance + SCORE_COIN_FACTOR * Math.Pow(currentDistance / SCORE_COIN_DIVISOR, SCORE_COIN_POW));
 
         QuestManager.instance.AddWingTtoData(1, player.collectCountDic[WingTtoObjectType.Gimbab], player.collectCountDic[WingTtoObjectType.SpeedUp]
                                             , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp]);
@@ -362,11 +368,6 @@ public class WingTtoGameManager : MonoBehaviour
         currentDistance += deltaTime * tempSpeed * distanceMultiplier;
     }
 
-    public string GetFormattedDistance()
-    {
-        return $"{currentDistance:F0}m";
-    }
-
     public void AddSpeed(int value)
     {
         _normalSpeed += value;
@@ -392,72 +393,103 @@ public class WingTtoGameManager : MonoBehaviour
 
     #region Spawn Process
 
-    float calcWallTime = 20f;
-    float calcGimbabTime = 15f;
-    float calcStoneTime = 1f;
-    float calcSpeedUpTime = 3f;
-    float calcCoinTime = 4f;
-    float calcExpTime = 5f;
+    // Initial delays
+    private const float INITIAL_TIME_WALL = 20f;
+    private const float INITIAL_TIME_GIMBAB = 15f;
+    private const float INITIAL_TIME_STONE = 1f;
+    private const float INITIAL_TIME_SPEED_UP = 3f;
+    private const float INITIAL_TIME_COIN = 4f;
+    private const float INITIAL_TIME_EXP = 5f;
 
-    float spawnWallTime = 0.15f;
-    float spawnGimbabTime = 29f;
-    float spawnStoneTime = 1.4f;
-    float spawnSpeedUpTime = 21f;
-    float spawnCoinTime = 12f;
-    float spawnExpTime = 27f;
+    // Spawn intervals
+    private const float SPAWN_TIME_WALL = 0.15f;
+    private const float SPAWN_TIME_GIMBAB = 29f;
+    private const float SPAWN_TIME_STONE = 1.4f;
+    private const float SPAWN_TIME_SPEED_UP = 21f;
+    private const float SPAWN_TIME_COIN = 12f;
+    private const float SPAWN_TIME_EXP = 27f;
 
-    float topWallPositionY = 9.5f;
-    float wallDistance = 9.5f;
-    float maxTopPosition = 9.5f;
-    float maxBottomPosition = 5f;
+    // Positions & Distances
+    private const float WALL_GAP_Y = 6f; // Gap between wall and safe zone edge
+    private const float WALL_DISTANCE_DECREASE_RATE = 0.0025f;
+    private const float WALL_DISTANCE_MIN = 6.2f;
+    private const float WALL_DISTANCE_STOP_GIMBAB = 6.5f;
+    private const float WALL_DISTANCE_NO_SAFE = 7.1f;
+
+    private const float POS_Y_MAX_TOP = 9.5f;
+    private const float POS_Y_MAX_BOTTOM = 5f;
+    private const float POS_Y_INITIAL_TOP = 9.5f;
+    private const float POS_Y_INITIAL_DISTANCE = 9.5f;
+    private const float POS_Y_LIMIT_BOTTOM_FACTOR = -10f;
+
+
+    float calcWallTime = INITIAL_TIME_WALL;
+    float calcGimbabTime = INITIAL_TIME_GIMBAB;
+    float calcStoneTime = INITIAL_TIME_STONE;
+    float calcSpeedUpTime = INITIAL_TIME_SPEED_UP;
+    float calcCoinTime = INITIAL_TIME_COIN;
+    float calcExpTime = INITIAL_TIME_EXP;
+
+    float spawnWallTime = SPAWN_TIME_WALL;
+    float spawnGimbabTime = SPAWN_TIME_GIMBAB;
+    float spawnStoneTime = SPAWN_TIME_STONE;
+    float spawnSpeedUpTime = SPAWN_TIME_SPEED_UP;
+    float spawnCoinTime = SPAWN_TIME_COIN;
+    float spawnExpTime = SPAWN_TIME_EXP;
+
+    float topWallPositionY = POS_Y_INITIAL_TOP;
+    float wallDistance = POS_Y_INITIAL_DISTANCE;
+    float maxTopPosition = POS_Y_MAX_TOP;
+    float maxBottomPosition = POS_Y_MAX_BOTTOM;
 
     private void RandomSpawnObject(float deltaTime)
     {
-        calcWallTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
-        calcGimbabTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
-        calcStoneTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
-        calcSpeedUpTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
-        calcCoinTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
-        calcExpTime -= deltaTime * (isSpeedPressed ? speedUpMultiplier : 1f);
+        float speedMultiplier = isSpeedPressed ? speedUpMultiplier : 1f;
+
+        calcWallTime -= deltaTime * speedMultiplier;
+        calcGimbabTime -= deltaTime * speedMultiplier;
+        calcStoneTime -= deltaTime * speedMultiplier;
+        calcSpeedUpTime -= deltaTime * speedMultiplier;
+        calcCoinTime -= deltaTime * speedMultiplier;
+        calcExpTime -= deltaTime * speedMultiplier;
 
 
         if (calcWallTime <= 0)
         {
             calcWallTime = spawnWallTime;
 
-            wallDistance -= 0.0025f;
-            wallDistance = Mathf.Max(wallDistance, 6.2f);
+            wallDistance -= WALL_DISTANCE_DECREASE_RATE;
+            wallDistance = Mathf.Max(wallDistance, WALL_DISTANCE_MIN);
             topWallPositionY += GetRandomFloat(-0.5f, 0.5f);
-            topWallPositionY = Mathf.Clamp(topWallPositionY, Mathf.Max(maxBottomPosition, -10f + wallDistance * 2), maxTopPosition);
+            topWallPositionY = Mathf.Clamp(topWallPositionY, Mathf.Max(maxBottomPosition, POS_Y_LIMIT_BOTTOM_FACTOR + wallDistance * 2), maxTopPosition);
 
 
             pool.GetObject(WingTtoObjectType.Wall, topWallPositionY, topWallPositionY);
             pool.GetObject(WingTtoObjectType.Wall, topWallPositionY - wallDistance * 2, topWallPositionY - wallDistance * 2);
         }
+
         if (calcGimbabTime <= 0)
         {
             calcGimbabTime = spawnGimbabTime;
-            float safeTop = topWallPositionY - 6f;
-            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+            (float safeTop, float safeBottom) = GetSafeZone();
 
-            if (wallDistance >= 6.5f) // 포션 지급 중지(난이도 상승)
+            if (wallDistance >= WALL_DISTANCE_STOP_GIMBAB) // 포션 지급 중지(난이도 상승)
                 pool.GetObject(WingTtoObjectType.Gimbab, safeBottom, safeTop);
         }
+
         if (calcStoneTime <= 0)
         {
             calcStoneTime = spawnStoneTime;
-            float safeTop = topWallPositionY - 6f;
-            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+            (float safeTop, float safeBottom) = GetSafeZone();
 
-            if (wallDistance >= 7.1f) //안전지역 없음
+            if (wallDistance >= WALL_DISTANCE_NO_SAFE) //안전지역 없음
                 pool.GetObject(WingTtoObjectType.Stone, safeBottom, safeTop);
         }
 
         if (calcSpeedUpTime <= 0)
         {
             calcSpeedUpTime = spawnSpeedUpTime;
-            float safeTop = topWallPositionY - 6f;
-            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+            (float safeTop, float safeBottom) = GetSafeZone();
 
             if (GetRandomBool(80, 20)) // 80%확률로 생성
                 pool.GetObject(WingTtoObjectType.SpeedUp, safeBottom, safeTop);
@@ -466,8 +498,7 @@ public class WingTtoGameManager : MonoBehaviour
         if (calcCoinTime <= 0)
         {
             calcCoinTime = spawnCoinTime;
-            float safeTop = topWallPositionY - 6f;
-            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+            (float safeTop, float safeBottom) = GetSafeZone();
 
             if (GetRandomBool(70, 30)) // 70%확률로 생성
                 pool.GetObject(WingTtoObjectType.Coin, safeBottom, safeTop);
@@ -476,13 +507,16 @@ public class WingTtoGameManager : MonoBehaviour
         if (calcExpTime <= 0)
         {
             calcExpTime = spawnExpTime;
-            float safeTop = topWallPositionY - 6f;
-            float safeBottom = topWallPositionY - wallDistance * 2 + 6f;
+            (float safeTop, float safeBottom) = GetSafeZone();
 
             if (GetRandomBool(50, 50)) // 50%확률로 생성
                 pool.GetObject(WingTtoObjectType.Exp, safeBottom, safeTop);
         }
+    }
 
+    private (float top, float bottom) GetSafeZone()
+    {
+        return (topWallPositionY - WALL_GAP_Y, topWallPositionY - wallDistance * 2 + WALL_GAP_Y);
     }
 
     public void AddSpawnObject(WingTtoObject obj)
@@ -558,6 +592,6 @@ public class WingTtoGameManager : MonoBehaviour
     {
         // 1의 자릿수의 숫자가 3인 상태로 게임을 끝낼 것
 
-        return currentDistance.ToString("F0").EndsWith("3");
+        return ((int)currentDistance).ToString().EndsWith("3");
     }
 }

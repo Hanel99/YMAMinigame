@@ -169,6 +169,17 @@ public class CubeGameCube : MonoBehaviour
         }
     }
 
+    // Colors
+    private static readonly Color COLOR_WAIT = new Color(1f, 1f, 1f, 0.3f);
+    private static readonly Color32 COLOR_TOO_FAST = new Color32(94, 19, 19, 255);
+    private static readonly Color32 COLOR_FAST = new Color32(198, 40, 40, 255);
+    private static readonly Color32 COLOR_PERFECT = new Color32(0, 230, 118, 255);
+    private static readonly Color32 COLOR_SLOW = new Color32(25, 118, 210, 255);
+    private static readonly Color32 COLOR_TOO_SLOW = new Color32(11, 53, 118, 255);
+
+
+    // ... (Omitted fields)
+
     private async UniTask SetState(CubeState newState, float duration, CancellationToken token)
     {
         if (this == null || gameObject == null) return;
@@ -188,7 +199,10 @@ public class CubeGameCube : MonoBehaviour
                 if (CubeGameManager.instance.inGameState == InGameState.Pause)
                 {
 #if DEV
-                    // 일시정지 중에는 시간을 멈춤
+                    // 일시정지 중에는 가이드라인(DOTween)도 멈춤
+                    if (barSequence != null && barSequence.IsActive() && barSequence.IsPlaying())
+                        barSequence.Pause();
+
                     if (devText != null)
                         devText.text = $"{newState}\n{elapsed:F2}\n{duration:F2}  [PAUSED]";
 #endif
@@ -196,6 +210,12 @@ public class CubeGameCube : MonoBehaviour
                     await UniTask.Yield(PlayerLoopTiming.Update, token);
                     continue;
                 }
+
+#if DEV
+                // 일시정지 해제 시 다시 재생
+                if (barSequence != null && barSequence.IsActive() && !barSequence.IsPlaying())
+                    barSequence.Play();
+#endif
 
                 elapsed += Time.deltaTime;
 
@@ -221,27 +241,27 @@ public class CubeGameCube : MonoBehaviour
         switch (state)
         {
             case CubeState.Wait:
-                image.color = new Color(1f, 1f, 1f, 0.3f); // 흰색 반투명
+                image.color = COLOR_WAIT;
                 break;
 
             case CubeState.TooFast:
-                image.color = new Color32(94, 19, 19, 255);   // #8B1E1E (아주빠름 - 더 어두운 붉은색)
+                image.color = COLOR_TOO_FAST;
                 break;
 
             case CubeState.Fast:
-                image.color = new Color32(198, 40, 40, 255);   // #C62828 (빠름 - 살짝 어두운 붉은색)
+                image.color = COLOR_FAST;
                 break;
 
             case CubeState.Perfect:
-                image.color = new Color32(0, 230, 118, 255);   // #00E676 (정확 - 형광초록/시원한 느낌)
+                image.color = COLOR_PERFECT;
                 break;
 
             case CubeState.Slow:
-                image.color = new Color32(25, 118, 210, 255);  // #1976D2 (느림 - 살짝 어두운 푸른색)
+                image.color = COLOR_SLOW;
                 break;
 
             case CubeState.TooSlow:
-                image.color = new Color32(11, 53, 118, 255);   // #0D47A1 (아주느림 - 진한 남색)
+                image.color = COLOR_TOO_SLOW;
                 break;
         }
 

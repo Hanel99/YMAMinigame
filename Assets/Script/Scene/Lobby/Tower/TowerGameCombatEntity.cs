@@ -19,6 +19,31 @@ public class TowerGameCombatEntity : MonoBehaviour
 
 
 
+    // Consts
+    private const float DURATION_HP_BAR = 0.3f;
+    private const float DURATION_DAMAGE_COLOR = 0.3f;
+    private const float DURATION_DAMAGE_TEXT_MOVE = 0.5f;
+    private const float DURATION_DAMAGE_TEXT_FADE = 0.5f;
+
+    private const float POS_Y_DAMAGE_TEXT_FROM = -80f;
+    private const float POS_Y_DAMAGE_TEXT_TO = -95f;
+
+    private const float DURATION_AVOID_MOVE = 0.15f;
+    private const float DELAY_AVOID_RETURN = 0.1f;
+    private const float POS_X_AVOID_PLAYER = -45f;
+    private const float POS_X_AVOID_BOSS = 45f;
+
+    private const float DURATION_PUNCH_MOVE = 0.2f;
+    private const float POS_X_PUNCH_PLAYER_FROM = 70f;
+    private const float POS_X_PUNCH_PLAYER_TO = 45f;
+    private const float POS_X_PUNCH_BOSS_FROM = -80f;
+    private const float POS_X_PUNCH_BOSS_TO = -55f;
+    private const float POS_Y_PUNCH_FROM = 50f;
+    private const float POS_Y_PUNCH_TO = 23f;
+
+    private const float DURATION_DIE_FADE = 0.5f;
+
+
     void OnDisable()
     {
         image.DOKill();
@@ -53,7 +78,7 @@ public class TowerGameCombatEntity : MonoBehaviour
         if (immediate)
             hpBar.value = ratio;
         else
-            hpBar.DOValue(ratio, 0.3f).SetEase(Ease.Linear);
+            hpBar.DOValue(ratio, DURATION_HP_BAR).SetEase(Ease.Linear);
     }
 
     public void GetDamage(int damage, bool immediate = false)
@@ -69,7 +94,7 @@ public class TowerGameCombatEntity : MonoBehaviour
             //애니메이션으로 데미지 표시
             PunchAnimation();
             image.DOKill();
-            image.DOColor(Color.white, 0.3f).From(Color.red).SetEase(Ease.Linear);
+            image.DOColor(Color.white, DURATION_DAMAGE_COLOR).From(Color.red).SetEase(Ease.Linear);
             ShowDamageText(damage);
         }
     }
@@ -82,8 +107,8 @@ public class TowerGameCombatEntity : MonoBehaviour
         damageText.DOKill();
         damageText.transform.DOKill();
 
-        damageText.transform.DOLocalMoveY(-95f, 0.5f).From(-80f).SetEase(Ease.OutCubic);
-        damageText.DOFade(0, 0.5f).From(1).SetEase(Ease.Linear).onComplete = () =>
+        damageText.transform.DOLocalMoveY(POS_Y_DAMAGE_TEXT_TO, DURATION_DAMAGE_TEXT_MOVE).From(POS_Y_DAMAGE_TEXT_FROM).SetEase(Ease.OutCubic);
+        damageText.DOFade(0, DURATION_DAMAGE_TEXT_FADE).From(1).SetEase(Ease.Linear).onComplete = () =>
         {
             damageText.gameObject.SetActive(false);
         };
@@ -94,14 +119,14 @@ public class TowerGameCombatEntity : MonoBehaviour
     {
         //회피 애니메이션
         image.DOKill();
-        float movePositionX = isPlayer ? -45f : 45f;
+        float movePositionX = isPlayer ? POS_X_AVOID_PLAYER : POS_X_AVOID_BOSS;
 
         PunchAnimation();
-        image.transform.DOLocalMoveX(movePositionX, 0.15f).From(0f).SetEase(Ease.InOutSine).SetDelay(0f).OnComplete(() =>
+        image.transform.DOLocalMoveX(movePositionX, DURATION_AVOID_MOVE).From(0f).SetEase(Ease.InOutSine).SetDelay(0f).OnComplete(() =>
         {
-            DOVirtual.DelayedCall(0.1f, () =>
+            DOVirtual.DelayedCall(DELAY_AVOID_RETURN, () =>
             {
-                image.transform.DOLocalMoveX(0f, 0.15f).SetEase(Ease.InOutSine);
+                image.transform.DOLocalMoveX(0f, DURATION_AVOID_MOVE).SetEase(Ease.InOutSine);
             });
         });
     }
@@ -109,14 +134,14 @@ public class TowerGameCombatEntity : MonoBehaviour
     public void PunchAnimation()
     {
         //공격 애니메이션
-        float fromX = isPlayer ? 70f : -80f;
-        float toX = isPlayer ? 45f : -55f;
-        Vector3 from = new Vector3(fromX, 50f, 0f);
-        Vector3 to = new Vector3(toX, 23f, 0f);
+        float fromX = isPlayer ? POS_X_PUNCH_PLAYER_FROM : POS_X_PUNCH_BOSS_FROM;
+        float toX = isPlayer ? POS_X_PUNCH_PLAYER_TO : POS_X_PUNCH_BOSS_TO;
+        Vector3 from = new Vector3(fromX, POS_Y_PUNCH_FROM, 0f);
+        Vector3 to = new Vector3(toX, POS_Y_PUNCH_TO, 0f);
 
         punch.DOKill();
         punch.gameObject.SetActive(true);
-        punch.transform.DOLocalMove(to, 0.2f).From(from).SetEase(Ease.OutBack).OnComplete(() =>
+        punch.transform.DOLocalMove(to, DURATION_PUNCH_MOVE).From(from).SetEase(Ease.OutBack).OnComplete(() =>
         {
             punch.gameObject.SetActive(false);
         });
@@ -126,8 +151,8 @@ public class TowerGameCombatEntity : MonoBehaviour
     {
         //죽는 애니메이션
         image.DOKill();
-        image.DOFade(0, 0.5f).From(1).SetEase(Ease.Linear);
+        image.DOFade(0, DURATION_DIE_FADE).From(1).SetEase(Ease.Linear);
     }
-
-
 }
+
+

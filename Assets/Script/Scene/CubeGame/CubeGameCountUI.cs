@@ -17,6 +17,17 @@ public class CubeGameCountUI : MonoBehaviour
         countText.text = count.ToString();
     }
 
+    // Consts (Colors matched with CubeGameCube to keep consistency, but defined here for UI independence or could be shared)
+    private static readonly Color32 COLOR_TOO_FAST = new Color32(94, 19, 19, 255);
+    private static readonly Color32 COLOR_FAST = new Color32(198, 40, 40, 255);
+    private static readonly Color32 COLOR_PERFECT = new Color32(0, 230, 118, 255);
+    private static readonly Color32 COLOR_SLOW = new Color32(25, 118, 210, 255);
+    private static readonly Color32 COLOR_TOO_SLOW = new Color32(11, 53, 118, 255);
+
+    private const string TEXT_TOO_FAST_SLOW = "-100점, -0.5초";
+    private const string TEXT_FAST_SLOW = "100점";
+    private const string TEXT_PERFECT = "300점, +0.5초";
+
     public void InitUI(CubeState cubeState)
     {
         state = cubeState;
@@ -28,28 +39,28 @@ public class CubeGameCountUI : MonoBehaviour
         switch (state)
         {
             case CubeState.TooFast:
-                image.color = new Color32(94, 19, 19, 255);   // #8B1E1E (아주빠름 - 더 어두운 붉은색)
-                detailText.text = "-100점, -0.5초";
+                image.color = COLOR_TOO_FAST;
+                detailText.text = TEXT_TOO_FAST_SLOW;
                 break;
 
             case CubeState.Fast:
-                image.color = new Color32(198, 40, 40, 255);   // #C62828 (빠름 - 살짝 어두운 붉은색)
-                detailText.text = "100점";
+                image.color = COLOR_FAST;
+                detailText.text = TEXT_FAST_SLOW;
                 break;
 
             case CubeState.Perfect:
-                image.color = new Color32(0, 230, 118, 255);   // #00E676 (정확 - 형광초록/시원한 느낌)
-                detailText.text = "300점, +0.5초";
+                image.color = COLOR_PERFECT;
+                detailText.text = TEXT_PERFECT;
                 break;
 
             case CubeState.Slow:
-                image.color = new Color32(25, 118, 210, 255);  // #1976D2 (느림 - 살짝 어두운 푸른색)
-                detailText.text = "100점";
+                image.color = COLOR_SLOW;
+                detailText.text = TEXT_FAST_SLOW;
                 break;
 
             case CubeState.TooSlow:
-                image.color = new Color32(11, 53, 118, 255);   // #0D47A1 (아주느림 - 진한 남색)
-                detailText.text = "-100점, -0.5초";
+                image.color = COLOR_TOO_SLOW;
+                detailText.text = TEXT_TOO_FAST_SLOW;
                 break;
 
             default:

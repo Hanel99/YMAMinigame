@@ -33,10 +33,6 @@ public class CubeGameManager : MonoBehaviour
     private bool Q_OnlyPerfect = true;
     private int Q_OnlyPerfectScore = 0;
 
-    // final refer mission
-    private bool isReferMissionSuccess = false;
-
-
 
 
 
@@ -45,11 +41,28 @@ public class CubeGameManager : MonoBehaviour
         instance = this;
     }
 
+    // Consts
+    private const float GAME_LIMIT_TIME = 30f;
+    private const float MAX_LIMIT_TIME = 30f;
+    private const int START_DELAY = 2000;
+    private const int FINISH_DELAY = 2000;
+    private const int LEVEL_UP_DELAY = 1500;
+    private const float REFER_POPUP_DELAY = 1.2f;
+
+    // Score & Time Values
+    private const int SCORE_PERFECT = 300;
+    private const int SCORE_FAST_SLOW = 100;
+    private const int SCORE_TOO_FAST_SLOW = -100;
+
+    private const float TIME_PERFECT = 0.5f;
+    private const float TIME_FAST_SLOW = 0f;
+    private const float TIME_TOO_FAST_SLOW = -0.5f;
+
     private void Start()
     {
         score = 0;
-        leftTime = 30f;
-        maxTime = 30f;
+        leftTime = GAME_LIMIT_TIME;
+        maxTime = MAX_LIMIT_TIME;
         _inGameState = InGameState.Ready;
         countDic.Clear();
 
@@ -89,7 +102,7 @@ public class CubeGameManager : MonoBehaviour
         CubeGameUIManager.instance.UpdateCubeCountText(countDic);
         CubeGameUIManager.instance.InitCountUI();
         CubeGameUIManager.instance.ShowDim(true, "준비!");
-        await UniTask.Delay(2000);
+        await UniTask.Delay(START_DELAY);
         CubeGameUIManager.instance.ShowDim(false);
 
 
@@ -162,7 +175,7 @@ public class CubeGameManager : MonoBehaviour
     {
         CubeGameUIManager.instance.ShowDim(true, "게임 종료!");
         foreach (var cube in cubeList) cube.StopCube();
-        await UniTask.Delay(2000);
+        await UniTask.Delay(FINISH_DELAY);
 
         FinishProcess().Forget();
     }
@@ -185,7 +198,7 @@ public class CubeGameManager : MonoBehaviour
 
         if (SaveDataManager.instance.AddExp(exp))
         {
-            await UniTask.Delay(1500);
+            await UniTask.Delay(LEVEL_UP_DELAY);
             CubeGameUIManager.instance.ShowLevelUpPopup();
         }
 
@@ -194,14 +207,14 @@ public class CubeGameManager : MonoBehaviour
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.CubeGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(1.2f, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+            DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.CubeGame))
         {
             if (CheckReferMission())
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(1.2f, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+                DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
             }
         }
     }
@@ -221,27 +234,8 @@ public class CubeGameManager : MonoBehaviour
         if (inGameState != InGameState.Play) return;
 
         // 점수, 시간 처리.
-        int addScore = state switch
-        {
-            CubeState.TooFast => -100,
-            CubeState.Fast => 100,
-            CubeState.Perfect => 300,
-            CubeState.Slow => 100,
-            CubeState.TooSlow => -100,
-
-            _ => 0,
-        };
-
-        float addTime = state switch
-        {
-            CubeState.TooFast => -0.5f,
-            CubeState.Fast => 0f,
-            CubeState.Perfect => 0.5f,
-            CubeState.Slow => 0f,
-            CubeState.TooSlow => -0.5f,
-
-            _ => 0f,
-        };
+        int addScore = CalculateScore(state);
+        float addTime = CalculateTime(state);
 
         score += addScore;
         score = Math.Max(0, score);
@@ -270,6 +264,32 @@ public class CubeGameManager : MonoBehaviour
             (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) = MakeStateTime();
             cube.StartCube(wait, tooFast, fast, perfect, slow, tooSlow);
         }
+    }
+
+    private int CalculateScore(CubeState state)
+    {
+        return state switch
+        {
+            CubeState.TooFast => SCORE_TOO_FAST_SLOW,
+            CubeState.Fast => SCORE_FAST_SLOW,
+            CubeState.Perfect => SCORE_PERFECT,
+            CubeState.Slow => SCORE_FAST_SLOW,
+            CubeState.TooSlow => SCORE_TOO_FAST_SLOW,
+            _ => 0,
+        };
+    }
+
+    private float CalculateTime(CubeState state)
+    {
+        return state switch
+        {
+            CubeState.TooFast => TIME_TOO_FAST_SLOW,
+            CubeState.Fast => TIME_FAST_SLOW,
+            CubeState.Perfect => TIME_PERFECT,
+            CubeState.Slow => TIME_FAST_SLOW,
+            CubeState.TooSlow => TIME_TOO_FAST_SLOW,
+            _ => 0f,
+        };
     }
 
     private (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) MakeStateTime()

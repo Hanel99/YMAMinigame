@@ -61,6 +61,26 @@ public class FindAIWordGameManager : MonoBehaviour
     }
 
 
+    // Consts
+    private const int LOADING_DELAY = 500;
+    private const int FAIL_DELAY = 1500;
+    private const int WRONG_DELAY = 1500;
+    private const int FINISH_DELAY = 3000;
+    private const int LEVEL_UP_DELAY = 1500;
+    private const float REFER_POPUP_DELAY = 1.2f;
+
+    private const int REWARD_MAX = 30000; // 치트 사용 시
+    private const int REWARD_BASE = 10000;
+    private const int REWARD_PER_HINT = 1000;
+
+    private const string MSG_LOADING_PREFIX = "AI에게 힌트 받아오는 중";
+    private const string MSG_FAIL_LOAD = "힌트를 받아오지 못했습니다.\n다른 게임을 이용해주세요.";
+    private const string MSG_CANCEL = "힌트 요청이 취소되었습니다.";
+    private const string MSG_FAIL_GAME = "실패!\n정답은 ";
+    private const string MSG_SUCCESS = "정답!\n축하합니다!";
+    private const string MSG_WRONG = "오답!";
+
+
     private async UniTask StartGameProcess()
     {
         // 기존 작업 취소
@@ -102,8 +122,8 @@ public class FindAIWordGameManager : MonoBehaviour
             if (hints == null || hints.Count == 0)
             {
                 HLLogger.LogError("힌트를 불러오지 못했습니다.");
-                FindAIWordGameInGameView.instance.UpdateHintText("힌트를 받아오지 못했습니다.\n다른 게임을 이용해주세요.");
-                await UniTask.Delay(1500);
+                FindAIWordGameInGameView.instance.UpdateHintText(MSG_FAIL_LOAD);
+                await UniTask.Delay(FAIL_DELAY);
                 SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
                 return;
             }
@@ -118,7 +138,7 @@ public class FindAIWordGameManager : MonoBehaviour
         catch (OperationCanceledException)
         {
             HLLogger.Log("힌트 요청이 취소되었습니다.");
-            FindAIWordGameInGameView.instance.UpdateHintText("힌트 요청이 취소되었습니다.");
+            FindAIWordGameInGameView.instance.UpdateHintText(MSG_CANCEL);
         }
         finally
         {
@@ -136,19 +156,18 @@ public class FindAIWordGameManager : MonoBehaviour
     {
         try
         {
-            string baseText = "AI에게 힌트 받아오는 중";
             string[] dots = { ".", "..", "..." };
-            StringBuilder sb = new StringBuilder(baseText);
+            StringBuilder sb = new StringBuilder(MSG_LOADING_PREFIX);
             int index = 0;
 
             while (!token.IsCancellationRequested)
             {
                 sb.Length = 0;
-                sb.Append(baseText);
+                sb.Append(MSG_LOADING_PREFIX);
                 sb.Append(dots[index]);
                 FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
                 index = (index + 1) % dots.Length;
-                await UniTask.Delay(500, cancellationToken: token); // 0.5초마다 갱신
+                await UniTask.Delay(LOADING_DELAY, cancellationToken: token); // 0.5초마다 갱신
             }
         }
 
@@ -176,7 +195,7 @@ public class FindAIWordGameManager : MonoBehaviour
         }
         else
         {
-            FindAIWordGameInGameView.instance.UpdateHintText("실패!\n정답은 " + currentKeyword);
+            FindAIWordGameInGameView.instance.UpdateHintText(MSG_FAIL_GAME + currentKeyword);
             FinishProcess().Forget();
         }
     }
@@ -193,21 +212,21 @@ public class FindAIWordGameManager : MonoBehaviour
 
         if (isCorrect)
         {
-            FindAIWordGameInGameView.instance.UpdateHintText("정답!\n축하합니다!");
+            FindAIWordGameInGameView.instance.UpdateHintText(MSG_SUCCESS);
             FinishProcess().Forget();
         }
         else
         {
-            FindAIWordGameInGameView.instance.UpdateHintText("오답!");
+            FindAIWordGameInGameView.instance.UpdateHintText(MSG_WRONG);
             FindAIWordGameInGameView.instance.ResetAnswerField();
 
             currentHintIndex++;
-            ShowNextHint(1500).Forget();
+            ShowNextHint(WRONG_DELAY).Forget();
         }
     }
 
 
-    private async UniTask FinishProcess(int delayTime = 3000)
+    private async UniTask FinishProcess(int delayTime = FINISH_DELAY)
     {
         apiCts?.Cancel();
         apiCts?.Dispose();
@@ -217,11 +236,7 @@ public class FindAIWordGameManager : MonoBehaviour
         await UniTask.Delay(delayTime);
 
         //1회만에 바로 맞춘경우 15000. 1회 틀릴때마다 500씩 감소. 최소 12000
-        int earnCoinAmount = 0;
-        if (delayTime < 3000) //강제 치트를 쓴 경우
-            earnCoinAmount = 30000;
-        else
-            earnCoinAmount = (hints.Count - currentHintIndex) * 1000 + 10000;
+        int earnCoinAmount = CalculateReward(delayTime);
 
         QuestManager.instance.AddFindAIWordData(1, currentHintIndex < 3 ? 1 : 0);
 
@@ -232,7 +247,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
         if (SaveDataManager.instance.AddExp(1))
         {
-            await UniTask.Delay(1500);
+            await UniTask.Delay(LEVEL_UP_DELAY);
             FindAIWordGameUIManager.instance.ShowLevelUpPopup();
         }
 
@@ -241,16 +256,24 @@ public class FindAIWordGameManager : MonoBehaviour
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.FindAIWordGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(1.2f, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+            DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.FindAIWordGame))
         {
             if (isReferMissionSuccess)
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(1.2f, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+                DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
             }
         }
+    }
+
+    private int CalculateReward(int delayTime)
+    {
+        if (delayTime < FINISH_DELAY) //강제 치트를 쓴 경우
+            return REWARD_MAX;
+
+        return (hints.Count - currentHintIndex) * REWARD_PER_HINT + REWARD_BASE;
     }
 
 

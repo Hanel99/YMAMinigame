@@ -78,7 +78,6 @@ public class QuestItem : MonoBehaviour
         //TODO detailtype에 맞춰서 format 조정하기
         string descMix = string.Format(desc, UnitKorean(questData.tryCount), detail2);
 
-
         descText.text = descMix;
     }
 
@@ -181,13 +180,21 @@ public class QuestItem : MonoBehaviour
     }
 
 
+    // Consts
+    private const int UNIT_HM = 100000000;
+    private const int UNIT_M = 10000;
+    private const int TOUCH_COUNT_FOR_REDEEM = 5;
+
+    private const string TEXT_UNIT_HM = "억";
+    private const string TEXT_UNIT_M = "만";
+
     public void OnClickComplete()
     {
         if (string.IsNullOrEmpty(questData.redeem))
             return;
 
         completeTouchCount++;
-        if (completeTouchCount >= 5)
+        if (completeTouchCount >= TOUCH_COUNT_FOR_REDEEM)
         {
             completeText.text = questData.redeem;
             HLLogger.Log($"redeem Code : {questData.redeem}");
@@ -196,10 +203,10 @@ public class QuestItem : MonoBehaviour
 
     private string UnitKorean(int value)
     {
-        if (value >= 100000000)
-            return $"{value / 100000000}억";
-        else if (value >= 100000)
-            return $"{value / 10000}만";
+        if (value >= UNIT_HM)
+            return $"{value / UNIT_HM}{TEXT_UNIT_HM}";
+        else if (value >= UNIT_M)
+            return $"{value / UNIT_M}{TEXT_UNIT_M}";
         else
             return value.ToString();
     }

@@ -11,7 +11,7 @@ public class CardGameInGameView : MonoBehaviour
     public Transform cardRoot;
     public Text tryCountText;
     public List<Card> cardList = new();
-    public bool isAllOpen => cardList.FindAll(x => x.isShow == false).Count == 0;
+    public bool isAllOpen => cardList.TrueForAll(x => x.isShow);
 
 
     private void Awake()

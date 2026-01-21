@@ -1,9 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using System;
 
 public class WingTtoGameResultPopup : PopupBase
 {
@@ -77,11 +77,11 @@ public class WingTtoGameResultPopup : PopupBase
         resultDim.DOFade(0.7f, 1).SetEase(Ease.Linear).From(0f);
         yield return new WaitForSeconds(0.2f);
 
-        distanceText.text = $"도달 거리 : {distance:F0}";
+        distanceText.text = $"도달 거리 : {(int)distance}";
         yield return new WaitForSeconds(0.3f);
 
         float bestScore = SaveDataManager.instance.playerData.wingTtoHighScore;
-        myBestScoreText.text = $"최고 기록 : {bestScore:F0}";
+        myBestScoreText.text = $"최고 기록 : {(int)bestScore}";
         if (bestScore == distance)
             newRecordObject.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.3f);

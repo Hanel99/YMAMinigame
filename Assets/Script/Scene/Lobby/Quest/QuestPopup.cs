@@ -72,6 +72,9 @@ public class QuestPopup : PopupBase
         questFilterDropdown.AddOptions(options);
     }
 
+    // Consts
+    private const int BATCH_SIZE = 10;
+
     private async UniTask SetQuestItems(QuestGame questGame, CancellationToken token)
     {
         var questMetaDataList = GameResourceManager.instance.GetQuestMetaData(questGame);
@@ -88,7 +91,7 @@ public class QuestPopup : PopupBase
                 questItem.transform.localScale = Vector3.one;
                 questItemList.Add(questItem);
 
-                if (i % 10 == 9)
+                if (i > 0 && i % BATCH_SIZE == 0)
                     await UniTask.Yield(PlayerLoopTiming.Update, token);
             }
         }
@@ -108,7 +111,7 @@ public class QuestPopup : PopupBase
                 questItemList[i].gameObject.SetActive(false);
             }
 
-            if (i % 10 == 9)
+            if (i > 0 && i % BATCH_SIZE == 0)
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
         }
 

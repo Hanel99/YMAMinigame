@@ -125,6 +125,11 @@ public class CollectionPopup : PopupBase
         cardFilterDropdown.AddOptions(options);
     }
 
+    // Consts
+    private const float SCALE_CARD = 0.2f;
+    private const float SCALE_WORD = 1.0f;
+    private const int BATCH_SIZE = 20;
+
     private async UniTask UpdateCardView(List<int> cardIds, CancellationToken token)
     {
         await UpdateCollectionViewAsync(
@@ -133,7 +138,7 @@ public class CollectionPopup : PopupBase
             itemPrefab: cardPrefab,
             root: cardRoot,
             setDataAction: (item, data) => item.SetImage(data, SaveDataManager.instance.IsOwnCard(data)),
-            initializeAction: item => item.transform.localScale = Vector3.one * 0.2f,
+            initializeAction: item => item.transform.localScale = Vector3.one * SCALE_CARD,
             token: token
         );
     }
@@ -158,7 +163,7 @@ public class CollectionPopup : PopupBase
             itemPrefab: wordPrefab,
             root: wordRoot,
             setDataAction: (item, data) => item.SetData(data, SaveDataManager.instance.IsOwnWord(data)),
-            initializeAction: item => item.transform.localScale = Vector3.one,
+            initializeAction: item => item.transform.localScale = Vector3.one * SCALE_WORD,
             token: token
         );
     }
@@ -222,7 +227,7 @@ public class CollectionPopup : PopupBase
             }
 
             // 리스트가 클 경우 UI가 멈추는 것을 방지하기 위해 주기적으로 양보합니다.
-            if (i > 0 && i % 20 == 0)
+            if (i > 0 && i % BATCH_SIZE == 0)
             {
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
             }

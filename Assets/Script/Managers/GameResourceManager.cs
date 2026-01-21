@@ -57,7 +57,7 @@ public class GameResourceManager : MonoBehaviour
         if (_isLoaded) return;
 
         // ScriptableObject
-        var scriptableDatas = await AddressableResourceManager.instance.LoadAllScriptableDataAsync(StaticGameData.AddressLabels.SOData);
+        var scriptableDatas = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<ScriptableObject>(StaticGameData.AddressLabels.SOData);
 
         foreach (var sData in scriptableDatas)
         {
@@ -94,16 +94,16 @@ public class GameResourceManager : MonoBehaviour
         }
 
         // Images - AddressableResourceManager를 통해 로드
-        cardImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.CardImage);
-        gameImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.GameImage);
-        masterImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.MasterIcon);
-        towerBossImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.TowerBossImage);
-        questGradeImages = await AddressableResourceManager.instance.LoadSpritesByLabelAsync(StaticGameData.AddressLabels.QuestGradeImage);
+        cardImages = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<Sprite>(StaticGameData.AddressLabels.CardImage);
+        gameImages = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<Sprite>(StaticGameData.AddressLabels.GameImage);
+        masterImages = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<Sprite>(StaticGameData.AddressLabels.MasterIcon);
+        towerBossImages = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<Sprite>(StaticGameData.AddressLabels.TowerBossImage);
+        questGradeImages = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<Sprite>(StaticGameData.AddressLabels.QuestGradeImage);
 
         // Prefabs
-        popups = await AddressableResourceManager.instance.LoadPrefabsByLabelAsync(StaticGameData.AddressLabels.PopupGroup);
-        BGMList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.BGMGroup);
-        SFXList = await AddressableResourceManager.instance.LoadAudioClipsByLabelAsync(StaticGameData.AddressLabels.SFXGroup);
+        popups = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<GameObject>(StaticGameData.AddressLabels.PopupGroup);
+        BGMList = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<AudioClip>(StaticGameData.AddressLabels.BGMGroup);
+        SFXList = await AddressableResourceManager.instance.LoadAssetsByLabelAsync<AudioClip>(StaticGameData.AddressLabels.SFXGroup);
 
 
         MakePrivData();
@@ -113,17 +113,42 @@ public class GameResourceManager : MonoBehaviour
     private void MakePrivData()
     {
         MakeContentUnlockLevelDic();
+        MakeCardDataDic();
+        MakeCardImageDic();
     }
 
 
+    #region Data Caching
 
+    private Dictionary<int, CardMetaData> _cardMetaDataDic = new();
+    private Dictionary<int, Sprite> _cardImageDic = new();
 
+    private void MakeCardDataDic()
+    {
+        _cardMetaDataDic.Clear();
+        if (cardData == null) return;
 
+        foreach (var data in cardData.Data)
+        {
+            if (!_cardMetaDataDic.ContainsKey(data.Id))
+                _cardMetaDataDic.Add(data.Id, data);
+        }
+    }
 
+    private void MakeCardImageDic()
+    {
+        _cardImageDic.Clear();
+        foreach (var sprite in cardImages)
+        {
+            if (int.TryParse(sprite.name, out int id))
+            {
+                if (!_cardImageDic.ContainsKey(id))
+                    _cardImageDic.Add(id, sprite);
+            }
+        }
+    }
 
-
-
-
+    #endregion
 
 
     #region GetSprite
@@ -131,9 +156,11 @@ public class GameResourceManager : MonoBehaviour
 
     public Sprite GetCardImage(int imageNumber)
     {
-        Sprite sprite = cardImages.Find(x => x.name == imageNumber.ToString("D4"));
+        if (_cardImageDic.TryGetValue(imageNumber, out var sprite))
+            return sprite;
 
-        return sprite;
+        // Fallback or Reload if needed? Currently return null if not found.
+        return null;
     }
 
     public Sprite GetGameImage(GameType type)
@@ -141,7 +168,7 @@ public class GameResourceManager : MonoBehaviour
         string str = ((int)type).ToString("D2");
         Sprite sprite = gameImages.Find(x => x.name.Contains(str));
 
-        if (sprite == null)
+        if (sprite == null && gameImages.Count > 0)
             sprite = gameImages[gameImages.Count - 1];
 
         return sprite;
@@ -159,39 +186,29 @@ public class GameResourceManager : MonoBehaviour
 
     public Sprite GetTowerBossImage(int bossNumber, bool isWin = false, bool isLose = false)
     {
-        Sprite sprite = null;
         if (isWin)
-            sprite = towerBossImages.Find(x => x.name.Contains("Win"));
-        else if (isLose)
-            sprite = towerBossImages.Find(x => x.name.Contains("Lose"));
-        else
-        {
-            sprite = towerBossImages.Find(x => x.name.Contains(bossNumber.ToString("D2")));
-        }
-        if (sprite == null)
-            sprite = towerBossImages.Find(x => x.name.Contains("00"));
+            return towerBossImages.Find(x => x.name.Contains("Win"));
+        if (isLose)
+            return towerBossImages.Find(x => x.name.Contains("Lose"));
 
-        return sprite;
+        var sprite = towerBossImages.Find(x => x.name.Contains(bossNumber.ToString("D2")));
+        return sprite ?? towerBossImages.Find(x => x.name.Contains("00"));
     }
 
     public Sprite GetQuestGradeIcon(QuestGrade grade)
     {
         string str = grade.ToString();
-        Sprite sprite = questGradeImages.Find(x => x.name.Contains(str));
-        if (sprite == null)
-            sprite = null;
-
-        return sprite;
+        return questGradeImages.Find(x => x.name.Contains(str));
     }
 
     public Sprite GetQuestGradeIcon(QuestType type, bool isHidden = false)
     {
         if (isHidden)
             return questGradeImages.Find(x => x.name.Contains("Hidden"));
-        else if (type == QuestType.Daily)
-            return questGradeImages.Find(x => x.name.Contains("Daily"));
-        else
-            return questGradeImages.Find(x => x.name.Contains("Normal"));
+
+        return type == QuestType.Daily
+            ? questGradeImages.Find(x => x.name.Contains("Daily"))
+            : questGradeImages.Find(x => x.name.Contains("Normal"));
     }
 
 
@@ -204,7 +221,8 @@ public class GameResourceManager : MonoBehaviour
     // CardData
     public CardMetaData GetCardMetaData(int id)
     {
-        return cardData.Data.Find(x => x.Id == id);
+        _cardMetaDataDic.TryGetValue(id, out var data);
+        return data;
     }
 
     public List<CardMetaData> GetCardMetaData(CardMaster master)
@@ -219,31 +237,17 @@ public class GameResourceManager : MonoBehaviour
     public List<int> GetCardIds(CardMaster master)
     {
         var list = GetCardMetaData(master);
-        List<int> ids = new();
-        foreach (var card in list)
-            ids.Add(card.Id);
-
-        return ids;
+        return list.ConvertAll(x => x.Id);
     }
     public List<int> GetCardIds(CardGrade grade)
     {
         var list = GetCardMetaData(grade);
-        List<int> ids = new();
-        foreach (var card in list)
-            ids.Add(card.Id);
-
-        return ids;
+        return list.ConvertAll(x => x.Id);
     }
 
     public List<int> GetAllCardIds()
     {
-        var list = cardData.Data;
-        List<int> ids = new();
-        foreach (var card in list)
-        {
-            ids.Add(card.Id);
-        }
-        return ids;
+        return cardData.Data.ConvertAll(x => x.Id);
     }
 
     public int GetTotalCardCount()

@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    public Image mask;
-    public Image frontImage;
-    public Image border;
-    public Image backImage;
+    [SerializeField] private Image mask;
+    [SerializeField] private Image frontImage;
+    [SerializeField] private Image border;
+    [SerializeField] private Image backImage;
 
     //@@@ temp
-    public Text cardIdText;
+    [SerializeField] private Text cardIdText;
 
     private CardMetaData cardMetaData;
     private int _cardNumber;

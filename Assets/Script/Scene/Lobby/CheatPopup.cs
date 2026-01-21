@@ -16,7 +16,7 @@ public class CheatPopup : PopupBase
 
 
     private CancellationTokenSource cheatSpawnCTS;
-
+    private const int BATCH_SIZE = 10;
 
     protected override void OnAwake()
     {
@@ -63,7 +63,7 @@ public class CheatPopup : PopupBase
 
             cheatItemList.Add(cheatItem);
 
-            if (i % 10 == 9)
+            if (i > 0 && i % BATCH_SIZE == 0)
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
         }
 

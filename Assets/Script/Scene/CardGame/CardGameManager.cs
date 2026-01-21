@@ -19,6 +19,15 @@ public class CardGameManager : MonoBehaviour
     private List<int> collectCardIdList = new();
 
 
+    // Consts
+    private const int MAX_TRY_COUNT_PENALTY_THRESHOLD = 8;
+    private const int MAX_TRY_COUNT_REFER_THRESHOLD = 14;
+    private const int BASE_EARN_COIN = 20000;
+    private const int MIN_EARN_COIN = 10000;
+    private const int PENALTY_COIN_PER_TRY = 500;
+    private const float GAME_END_DELAY = 1.5f;
+    private const float RESULT_POPUP_DELAY = 1.2f;
+
     // final refer mission
     private bool isReferMissionSuccess = true;
 
@@ -119,7 +128,7 @@ public class CardGameManager : MonoBehaviour
         HLLogger.Log("@@@ Game Finish");
 
         CalcEarnCoinAmount();
-        QuestManager.instance.AddMatchCardData(1, tryCount <= 14 ? 1 : 0);
+        QuestManager.instance.AddMatchCardData(1, tryCount <= MAX_TRY_COUNT_REFER_THRESHOLD ? 1 : 0);
 
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         List<int> newCardIDList = SaveDataManager.instance.GetNotOwnCardList(collectCardIdList);
@@ -127,32 +136,32 @@ public class CardGameManager : MonoBehaviour
         CardGameUIManager.instance.ShowResult(tryCount, earnCoinAmount, newCardIDList);
 
         if (SaveDataManager.instance.AddExp(1))
-            DOVirtual.DelayedCall(1.5f, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
+            DOVirtual.DelayedCall(GAME_END_DELAY, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
 
 
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.MatchCardGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(1.2f, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+            DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.MatchCardGame))
         {
             if (isReferMissionSuccess)
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(1.2f, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+                DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
             }
         }
 
     }
     private void CalcEarnCoinAmount()
     {
-        earnCoinAmount = 20000;
-        if (tryCount > 8)
-            earnCoinAmount -= (tryCount - 8) * 500;
-        if (earnCoinAmount <= 10000)
-            earnCoinAmount = 10000;
+        earnCoinAmount = BASE_EARN_COIN;
+        if (tryCount > MAX_TRY_COUNT_PENALTY_THRESHOLD)
+            earnCoinAmount -= (tryCount - MAX_TRY_COUNT_PENALTY_THRESHOLD) * PENALTY_COIN_PER_TRY;
+        if (earnCoinAmount <= MIN_EARN_COIN)
+            earnCoinAmount = MIN_EARN_COIN;
     }
 
 
@@ -194,14 +203,9 @@ public class CardGameManager : MonoBehaviour
 
     private void CheckReferMission(int tryCount, bool isMatch)
     {
-        // 1 2번째 트라이에 실패한 뒤
-        // 3번째 트라이에 성공할 것.
-
-        if (tryCount == 1 && isMatch)
-            isReferMissionSuccess = false;
-        else if (tryCount == 2 && isMatch)
-            isReferMissionSuccess = false;
-        else if (tryCount == 3 && !isMatch)
-            isReferMissionSuccess = false;
+        // 1, 2번째 트라이에는 실패해야 하고, 3번째 트라이에는 성공해야 함
+        if (tryCount == 1 && isMatch) isReferMissionSuccess = false;
+        else if (tryCount == 2 && isMatch) isReferMissionSuccess = false;
+        else if (tryCount == 3 && !isMatch) isReferMissionSuccess = false;
     }
 }

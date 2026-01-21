@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,17 @@ public class GachaPopup : PopupBase
     private List<int> gachaResultIDList = new List<int>();
     private List<int> newCardIDList = new List<int>();
 
+
+
+    // Consts
+    private const int PRICE_PICK_1 = 0; // Index in GachaPrice
+    private const int PRICE_PICK_10 = 1;
+    private const int PRICE_MILEAGE = 2;
+
+    private const string MSG_COMPLETE_TITLE = "컴플리트!";
+    private const string MSG_COMPLETE_DESC = "축하합니다!\n모든 카드를 획득하셨습니다.\n추가 카드 업데이트를 기다려주세요.";
+
+    private const float DELAY_PROCESS_FINISH = 1f;
 
 
     protected override void OnAwake()
@@ -49,13 +61,17 @@ public class GachaPopup : PopupBase
         userCoinValueText.text = SaveDataManager.instance.playerData.coin.ToString();
         userMileageValueText.text = SaveDataManager.instance.playerData.mileage.ToString();
 
-        pick1Button.interactable = SaveDataManager.instance.playerData.coin >= StaticGameData.GachaPrice[0];
-        pick10Button.interactable = SaveDataManager.instance.playerData.coin >= StaticGameData.GachaPrice[1];
-        mileageButton.interactable = SaveDataManager.instance.playerData.mileage >= StaticGameData.GachaPrice[2];
+        int price1 = StaticGameData.GachaPrice[PRICE_PICK_1];
+        int price10 = StaticGameData.GachaPrice[PRICE_PICK_10];
+        int priceMileage = StaticGameData.GachaPrice[PRICE_MILEAGE];
 
-        pick1ValueText.text = $"1회 {StaticGameData.GachaPrice[0].ToString()}";
-        pick10ValueText.text = $"10회 {StaticGameData.GachaPrice[1].ToString()}";
-        mileageValueText.text = $"1회 {StaticGameData.GachaPrice[2].ToString()}";
+        pick1Button.interactable = SaveDataManager.instance.playerData.coin >= price1;
+        pick10Button.interactable = SaveDataManager.instance.playerData.coin >= price10;
+        mileageButton.interactable = SaveDataManager.instance.playerData.mileage >= priceMileage;
+
+        pick1ValueText.text = $"1회 {price1}";
+        pick10ValueText.text = $"10회 {price10}";
+        mileageValueText.text = $"1회 {priceMileage}";
     }
 
     //@ 미획득 확정 1회 마일리지 가챠
@@ -65,35 +81,11 @@ public class GachaPopup : PopupBase
 
         if (SaveDataManager.instance.GetNotOwnCardList().Count == 0)
         {
-            LobbyUIManager.instance.ShowCommonPopup("컴플리트!", "축하합니다!\n모든 카드를 획득하셨습니다.\n추가 카드 업데이트를 기다려주세요.", true, true, false);
+            LobbyUIManager.instance.ShowCommonPopup(MSG_COMPLETE_TITLE, MSG_COMPLETE_DESC, true, true, false);
             return;
         }
 
-        isOnProcess = true;
-        MileageGachaProcess();
-
-        SaveDataManager.instance.AddMilage(-StaticGameData.GachaPrice[2]);
-        UpdateUI();
-        LobbyUIManager.instance.ShowGachaResultPopup(gachaResultIDList, newCardIDList);
-        isOnProcess = false;
-    }
-
-    private void MileageGachaProcess()
-    {
-        // 확정 가챠의 경우는 미획득 카드 중 랜덤으로 1개 획득.
-        // 등급 가중치 생각하지 말고 그냥 남은거 중 랜덤으로
-
-        gachaResultIDList.Clear();
-        newCardIDList.Clear();
-
-        var list = SaveDataManager.instance.GetNotOwnCardList();
-        list.Shuffle();
-        gachaResultIDList.Add(list[0]);
-
-        HLLogger.Log($"@@@ mileage gacha Result : {list[0]}");
-        QuestManager.instance.AddGachaData(true, 1);
-        newCardIDList = SaveDataManager.instance.GetNotOwnCardList(gachaResultIDList);
-        SaveDataManager.instance.AddOwnCardList(gachaResultIDList);
+        ProcessGacha(true, 1).Forget();
     }
 
     //@ 코인 사용 일반 1회, 10회 가챠
@@ -101,49 +93,66 @@ public class GachaPopup : PopupBase
     {
         if (isOnProcess || isOpenCloseAnimationActing) return;
 
-        isOnProcess = true;
-        GachaProcess(1);
-        SaveDataManager.instance.AddCoin(-StaticGameData.GachaPrice[0]);
-        UpdateUI();
-        LobbyUIManager.instance.ShowGachaResultPopup(gachaResultIDList, newCardIDList);
-        DOVirtual.DelayedCall(1f, () => isOnProcess = false);
+        ProcessGacha(false, 1).Forget();
     }
 
     public void OnClickPick10()
     {
         if (isOnProcess || isOpenCloseAnimationActing) return;
 
-        isOnProcess = true;
-        GachaProcess(10);
-        SaveDataManager.instance.AddCoin(-StaticGameData.GachaPrice[1]);
-        UpdateUI();
-        LobbyUIManager.instance.ShowGachaResultPopup(gachaResultIDList, newCardIDList);
-        DOVirtual.DelayedCall(1f, () => isOnProcess = false);
+        ProcessGacha(false, 10).Forget();
     }
 
-    private void GachaProcess(int count)
+
+    private async UniTask ProcessGacha(bool isMileage, int count)
     {
-        // 카드 등급을 우선 선정
-        // 해당 등급의 카드 리스트를 셔플해 1개의 카드를 선택
+        isOnProcess = true;
 
         gachaResultIDList.Clear();
         newCardIDList.Clear();
 
-        var gradeList = StaticGameData.GetRandomCardGradeList(count);
-        for (int i = 0; i < gradeList.Count; ++i)
-            gachaResultIDList.Add(StaticGameData.GetRandomCardId(gradeList[i]));
-
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in gachaResultIDList)
+        if (isMileage)
         {
-            sb.Append($"{item},");
+            // 마일리지 가챠 로직
+            var list = SaveDataManager.instance.GetNotOwnCardList();
+            list.Shuffle();
+            gachaResultIDList.Add(list[0]);
+
+            HLLogger.Log($"@@@ mileage gacha Result : {list[0]}");
+            QuestManager.instance.AddGachaData(true, count);
+
+            // 재화 차감
+            SaveDataManager.instance.AddMilage(-StaticGameData.GachaPrice[PRICE_MILEAGE]);
+        }
+        else
+        {
+            // 일반 가챠 로직
+            var gradeList = StaticGameData.GetRandomCardGradeList(count);
+            for (int i = 0; i < gradeList.Count; ++i)
+                gachaResultIDList.Add(StaticGameData.GetRandomCardId(gradeList[i]));
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in gachaResultIDList)
+                sb.Append($"{item},");
+
+            HLLogger.Log($"@@@ Coin {count} gacha Result : {sb}");
+            QuestManager.instance.AddGachaData(false, count);
+
+            // 재화 차감 및 마일리지 적립
+            int priceIndex = count == 1 ? PRICE_PICK_1 : PRICE_PICK_10;
+            SaveDataManager.instance.AddCoin(-StaticGameData.GachaPrice[priceIndex]);
+            SaveDataManager.instance.AddMilage(count);
         }
 
-        HLLogger.Log($"@@@ Coin {count} gacha Result : {sb}");
-        QuestManager.instance.AddGachaData(false, count);
+        // 공통 결과 처리
         newCardIDList = SaveDataManager.instance.GetNotOwnCardList(gachaResultIDList);
         SaveDataManager.instance.AddOwnCardList(gachaResultIDList);
-        SaveDataManager.instance.AddMilage(count);
+
+        UpdateUI();
+        LobbyUIManager.instance.ShowGachaResultPopup(gachaResultIDList, newCardIDList);
+
+        await UniTask.Delay(System.TimeSpan.FromSeconds(DELAY_PROCESS_FINISH));
+        isOnProcess = false;
     }
 
     public void OnClickProbability()
