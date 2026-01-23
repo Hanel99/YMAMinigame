@@ -39,7 +39,7 @@ public class FinalQuizGameResultPanel : MonoBehaviour
 
 
         wrongCountText.text = $"오답 {FinalQuizManager.instance.WrongCount}회";
-        playTimeText.text = $"응시 시간 : {FinalQuizManager.instance.PlayTime:F1}초";
+        playTimeText.text = $"진행 정도 {FinalQuizManager.instance.CurrentQuizIndex * 10}%";
         resultText.text = isFail ? "불합격" : "합격";
         descText.text = isFail ? "준비를 더 한 뒤 시험에 응시하세요" : "당신은 이제 연모아 벽반의 일원입니다";
     }

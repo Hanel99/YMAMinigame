@@ -393,9 +393,27 @@ public class PlayFabManager : MonoBehaviour
 #else
         ending.StatisticName = "Ending";
 #endif
-        int time = int.Parse(DateTime.Now.ToString("MMddHHmm"));
+        int time = int.Parse(DateTime.Now.ToString("MMddHHmm")) * -1; //음수로 해서 역순으로 출력되도록(빠른 순으로 위에 정렬)
         ending.Value = time;
         request.Statistics.Add(ending);
+
+        UpdateLeaderBoard(request);
+    }
+
+    public void UpdateEndingProgressLeaderBoard()
+    {
+        var request = new UpdatePlayerStatisticsRequest { Statistics = new List<StatisticUpdate>() };
+
+        var endingProgress = new StatisticUpdate();
+#if DEV
+        endingProgress.StatisticName = "EndingProgressDev";
+#elif LIVE
+        endingProgress.StatisticName = "EndingProgressLive";
+#else
+        endingProgress.StatisticName = "EndingProgress";
+#endif
+        endingProgress.Value = SaveDataManager.instance.playerData.finalQuizPlayData.enterQuizIndex;
+        request.Statistics.Add(endingProgress);
 
         UpdateLeaderBoard(request);
     }

@@ -380,6 +380,12 @@ public class SaveDataManager : MonoBehaviour
         }
     }
 
+    public void UpdateFinalQuizProgress(int progress)
+    {
+        if (progress >= _playerData.finalQuizPlayData.enterQuizIndex)
+            _playerData.finalQuizPlayData.enterQuizIndex = progress;
+    }
+
     #endregion
 
 

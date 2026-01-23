@@ -23,7 +23,7 @@ public class FinalQuizManager : MonoBehaviour
     private int maxWrongCount = 0;
     private int wrongCount = 0;
     public int WrongCount => wrongCount;
-    public float PlayTime => quizTotalLeftTimeMax - quizTotalLeftTime;
+    public int CurrentQuizIndex => currentQuizIndex;
 
 
 
@@ -268,12 +268,16 @@ public class FinalQuizManager : MonoBehaviour
 
     private void EndingProcess()
     {
+        SaveEndRollData();
         UiManager.ShowEndingAnimation();
     }
 
 
     private void GameOverProcess()
     {
+        PlayFabManager.instance.UpdateEndingProgressLeaderBoard();
+        SaveDataManager.instance.SavePlayerData();
+
         SoundManager.instance.StopBGM();
         UiManager.ShowGameOverAnimation();
     }
@@ -340,6 +344,7 @@ public class FinalQuizManager : MonoBehaviour
     public void SetNextQuiz()
     {
         currentQuizIndex++;
+        SaveDataManager.instance.UpdateFinalQuizProgress(currentQuizIndex);
 
         HLLogger.Log($"next Quiz - {currentQuizIndex}");
 
@@ -365,6 +370,21 @@ public class FinalQuizManager : MonoBehaviour
     public void AddPhase2Time()
     {
         quizTotalLeftTime += phase2PlusTime;
+    }
+
+
+    private void SaveEndRollData()
+    {
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Completed);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Completed);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
+        SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Completed);
+        SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll = true;
+        SaveDataManager.instance.playerData.finalQuizPlayData.completeTime = DateTime.Now;
+
+        SaveDataManager.instance.SavePlayerData();
+        PlayFabManager.instance.UpdateEndingLeaderBoard();
+        PlayFabManager.instance.UpdateEndingProgressLeaderBoard();
     }
 
     #endregion
