@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using Newtonsoft.Json;
+using PlayFab;
 using UnityEngine;
 
 
@@ -341,9 +342,9 @@ public class SaveDataManager : MonoBehaviour
         return (_playerData.playFabLoginID, _playerData.playFabLoginPW);
     }
 
-    public void SetPlayerName()
+    public void SetPlayerName(Action onSuccess = null, Action<PlayFabError> onFailure = null)
     {
-        PlayFabManager.instance.SetDisplayName();
+        PlayFabManager.instance.SetDisplayName(onSuccess, onFailure);
     }
 
     public void SetCubeGameHighScore(int score)

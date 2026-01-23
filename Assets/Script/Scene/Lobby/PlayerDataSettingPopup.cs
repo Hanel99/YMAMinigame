@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using PlayFab;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -93,14 +94,22 @@ public class PlayerDataSettingPopup : PopupBase
         SaveDataManager.instance.playerData.name = userName;
         SaveDataManager.instance.playerData.master = (CardMaster)inputMaster.value;
         SaveDataManager.instance.playerData.languageType = (LanguageType)inputLanguage.value;
-        SaveDataManager.instance.SetPlayerName();
-        SaveDataManager.instance.SavePlayerData();
+        SaveDataManager.instance.SetPlayerName(
+            () =>
+            {
+                SaveDataManager.instance.SavePlayerData();
 
-        if (SaveDataManager.instance.playerData.master == CardMaster.Other)
-            QuestManager.instance.AddSpecialMission(QuestDetailType.S_EquipEtcIcon, 1);
+                if (SaveDataManager.instance.playerData.master == CardMaster.Other)
+                    QuestManager.instance.AddSpecialMission(QuestDetailType.S_EquipEtcIcon, 1);
 
-        HLLogger.Log("@@@ Confirm Action");
-        OnClickClose();
+                HLLogger.Log("@@@ Confirm Action");
+                OnClickClose();
+            },
+            (error) =>
+            {
+                string msg = PlayFabManager.instance.GetPlayFabErrorText(error.Error, error.ErrorMessage);
+                LobbyUIManager.instance.ShowCommonPopup("경고", msg, true, true, false, null, null);
+            });
     }
 
 
@@ -148,7 +157,7 @@ public class PlayerDataSettingPopup : PopupBase
         if (byteCount < 6)
         {
             // 4~6사이 텍스트가 들어옴
-            userName = value + "\u200B";
+            userName = "\u200B" + value;
 
             // 검증 함수는 여기서 종료 (Validation Success) 
             // ※ 아래 Regex 검사를 건너뛰어야 Error6가 안 뜸

@@ -94,11 +94,12 @@ public class PlayFabManager : MonoBehaviour
 
 
 
-    public void SetDisplayName()
+    public void SetDisplayName(Action onSuccess = null, Action<PlayFabError> onFailure = null)
     {
         var request = new UpdateUserTitleDisplayNameRequest { DisplayName = SaveDataManager.instance.playerData.name };
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request, (UpdateUserTitleDisplayNameResult) =>
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, (result) =>
         {
+            onSuccess?.Invoke();
         },
         (error) =>
         {
@@ -115,10 +116,8 @@ public class PlayFabManager : MonoBehaviour
             {
                 Debug.LogError("프로필이 존재하지 않습니다. 먼저 로그인이 필요합니다.");
             }
-            else
-            {
 
-            }
+            onFailure?.Invoke(error);
         });
     }
 
