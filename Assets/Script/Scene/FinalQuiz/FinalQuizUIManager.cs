@@ -295,6 +295,7 @@ public class FinalQuizUIManager : MonoBehaviour
     public async UniTask ShowPhase2CompleteAnimation()
     {
         //페이즈 2 클리어. 진짜 완료
+        quizLeftTimeImage.gameObject.SetActive(false);
         phaseClearPanel.gameObject.SetActive(true);
         phaseClearDim.gameObject.SetActive(true);
         phaseClearDim.DOFade(1f, 6f).From(0f).SetEase(Ease.Linear);
@@ -306,6 +307,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public void ShowEndingAnimation()
     {
+        endingCreditPanel.InitUIObject();
         endingCreditPanel.gameObject.SetActive(true);
         endingCreditPanel.ShowEnding().Forget();
     }

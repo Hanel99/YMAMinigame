@@ -72,8 +72,8 @@ public class FinalQuizGameResultPanel : MonoBehaviour
         {
             gameOverText.gameObject.SetActive(false);
             bg.gameObject.SetActive(true);
-            bg.DOFade(1, 1f).From(0).SetEase(Ease.Linear);
-            await UniTask.Delay(1000);
+            bg.DOFade(1, 0.1f).From(0).SetEase(Ease.Linear);
+            await UniTask.Delay(200);
         }
 
         titleText.gameObject.SetActive(true);
