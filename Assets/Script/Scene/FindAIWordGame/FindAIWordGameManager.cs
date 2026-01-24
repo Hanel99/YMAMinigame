@@ -255,6 +255,7 @@ public class FindAIWordGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.FindAIWordGame))
         {
+            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
         }
@@ -262,6 +263,7 @@ public class FindAIWordGameManager : MonoBehaviour
         {
             if (isReferMissionSuccess)
             {
+                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Completed);
                 DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
             }

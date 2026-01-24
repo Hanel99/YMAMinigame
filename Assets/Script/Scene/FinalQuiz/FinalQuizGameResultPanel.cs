@@ -76,6 +76,7 @@ public class FinalQuizGameResultPanel : MonoBehaviour
             await UniTask.Delay(200);
         }
 
+        SoundManager.instance.PlaySFX(SFXType.FinalFlip);
         titleText.gameObject.SetActive(true);
         await UniTask.Delay(1000);
 
@@ -94,6 +95,7 @@ public class FinalQuizGameResultPanel : MonoBehaviour
         descText.gameObject.SetActive(true);
         await UniTask.Delay(5000);
 
+        SoundManager.instance.PlaySFX(SFXType.DiscordLeave);
         FinalQuizManager.instance.MoveLobbyScene();
     }
 

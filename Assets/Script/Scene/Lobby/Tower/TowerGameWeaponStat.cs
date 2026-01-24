@@ -157,6 +157,7 @@ public class TowerGameWeaponStat : MonoBehaviour
 
     private void SuccessProcess()
     {
+        SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
         weaponLevel++;
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
@@ -165,11 +166,13 @@ public class TowerGameWeaponStat : MonoBehaviour
     }
     private void StayProcess()
     {
+        SoundManager.instance.PlaySFX(SFXType.WeaponStay);
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
         ShowResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
     }
     private void DownProcess()
     {
+        SoundManager.instance.PlaySFX(SFXType.WeaponFail);
         weaponLevel--;
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);

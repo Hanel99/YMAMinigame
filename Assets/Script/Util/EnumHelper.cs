@@ -450,9 +450,11 @@ public enum SFXType
     TowerAvoid2,
     TowerHit,
     TowerHit2,
-    TowerResult,
+    TowerStart,
+    TowerDie,
     WeaponFail,
     WeaponSuccess,
+    WeaponStay,
 
 
     // final quiz
@@ -460,8 +462,11 @@ public enum SFXType
     FinalDing2,
     FinalClearFake,
     FinalClear,
+    FinalFlip,
     FinalGameOver1,
     FinalGameOver2,
+    FinalGameOver3,
+    FinalCountDown,
     FinalWarning1,
     FinalWarning2,
     O,

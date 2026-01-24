@@ -103,11 +103,6 @@ public class FinalQuizInfoPopup : PopupBase
 
     public void OnClickExamButton()
     {
-        //@@@ debug;
-        // SceneMoveManager.instance.MoveScene(SceneName.YMAFinalQuiz);
-        // return;
-
-
         if (FinalQuizPlayData.matchCardGame == FinalReferState.Completed && FinalQuizPlayData.findAIWordGame == FinalReferState.Completed
             && FinalQuizPlayData.cubeGame == FinalReferState.Completed && FinalQuizPlayData.wingTto == FinalReferState.Completed)
             OnClickShowWarningMiniPopup(true);
@@ -120,6 +115,11 @@ public class FinalQuizInfoPopup : PopupBase
 
     public void OnClickTryExamButton()
     {
+#if !UNITY_EDITOR && DEV
+        LobbyUIManager.instance.ShowCommonPopup("미공개", "정식 출시 게임에서 확인해주세요.", true, true, false);
+        return;
+#endif
+
         SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
         SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
         SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
@@ -155,6 +155,7 @@ public class FinalQuizInfoPopup : PopupBase
     {
         if (show)
         {
+            SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
             warningMiniPopup.gameObject.SetActive(show);
             warningMiniPopup.alpha = 0;
             warningMiniPopup.DOFade(1, 0.8f).SetEase(Ease.OutQuart);

@@ -56,6 +56,7 @@ public class TowerGamePlayerStat : MonoBehaviour
         if (requireCoin <= 0 || SaveDataManager.instance.playerData.coin < requireCoin)
             return;
 
+        SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
         SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel), false);
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);

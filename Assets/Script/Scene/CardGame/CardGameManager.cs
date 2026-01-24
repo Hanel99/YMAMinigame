@@ -142,6 +142,7 @@ public class CardGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.MatchCardGame))
         {
+            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
         }
@@ -149,6 +150,7 @@ public class CardGameManager : MonoBehaviour
         {
             if (isReferMissionSuccess)
             {
+                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Completed);
                 DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
             }

@@ -142,6 +142,7 @@ public class FinalQuizManager : MonoBehaviour
                 if (currentIntTime != lastCountdownTime)
                 {
                     lastCountdownTime = currentIntTime;
+                    SoundManager.instance.PlaySFX(SFXType.FinalCountDown);
                     UiManager.ShowCountdown(lastCountdownTime);
                 }
             }
@@ -242,6 +243,7 @@ public class FinalQuizManager : MonoBehaviour
         UiManager.FadeOutAllQuizItem();
         UiManager.ShowPhase1CompleteAnimation().Forget();
         SoundManager.instance.StopBGM();
+        SoundManager.instance.PlaySFX(SFXType.FinalFlip);
     }
 
     private void Phase2Process()
@@ -263,6 +265,7 @@ public class FinalQuizManager : MonoBehaviour
         UiManager.FadeOutAllQuizItem();
         UiManager.ShowPhase2CompleteAnimation().Forget();
         SoundManager.instance.StopBGM();
+        SoundManager.instance.PlaySFX(SFXType.FinalFlip);
 
     }
 
@@ -279,6 +282,7 @@ public class FinalQuizManager : MonoBehaviour
         SaveDataManager.instance.SavePlayerData();
 
         SoundManager.instance.StopBGM();
+        SoundManager.instance.PlaySFX(SFXType.FinalGameOver2);
         UiManager.ShowGameOverAnimation();
     }
 

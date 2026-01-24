@@ -15,14 +15,20 @@ MonoBehaviour:
   m_GroupName: SFX
   m_GUID: b922351420d2cb34bb2d72fe77f7d870
   m_SerializeEntries:
-  - m_GUID: 1020818e68e78b34c8f2c8278365c20a
-    m_Address: SFX_Final_ding1
+  - m_GUID: 11caa54943d18424ba0063f719132ada
+    m_Address: SFX_WeaponFail
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 11caa54943d18424ba0063f719132ada
-    m_Address: SFX_WeaponFail
+  - m_GUID: 15466c33d0caa84428c910559bac473e
+    m_Address: SFX_WeaponStay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15e67551c9c7ba447964eff937984125
+    m_Address: SFX_FinalGameOver3
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -35,6 +41,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1ba0c58cab6413046900efed55257688
     m_Address: SFX_WingTtoExp
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1bf457d10646b5a40a852db070848c50
+    m_Address: SFX_TowerStart
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -64,7 +76,7 @@ MonoBehaviour:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33c0265d178a6c649a001fead5ddcac3
-    m_Address: SFX_DIscordLeave
+    m_Address: SFX_DiscordLeave
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -99,8 +111,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 64daf1906152068429d8fd11e3a646c6
-    m_Address: SFX_TowerResult
+  - m_GUID: 5fce3adc84f094b4185328cc2cc7de91
+    m_Address: SFX_TowerDie
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -159,8 +171,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 968f2af2ace592240b2127f833d52e5a
-    m_Address: SFX_Final_ding2
+  - m_GUID: 9ccfab519de070d468311f01fb1b2d84
+    m_Address: SFX_FinalCountDown
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -173,6 +185,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7cc9ad35cd23fa4ea503d24b2e9f2e6
     m_Address: SFX_X
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abcff9fd4e48d4d4f95456b40e76be06
+    m_Address: SFX_FinalFlip
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX

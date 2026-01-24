@@ -206,6 +206,7 @@ public class CubeGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.CubeGame))
         {
+            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
         }
@@ -213,6 +214,7 @@ public class CubeGameManager : MonoBehaviour
         {
             if (CheckReferMission())
             {
+                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
                 DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
             }

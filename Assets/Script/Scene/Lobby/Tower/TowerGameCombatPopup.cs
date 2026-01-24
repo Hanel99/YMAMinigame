@@ -129,6 +129,7 @@ public class TowerGameCombatPopup : PopupBase
 
     public async UniTask CombatProcess()
     {
+        SoundManager.instance.PlaySFX(SFXType.TowerStart);
         string bossName = LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}");
 
         // 전투 시뮬레이션을 먼저 모두 실행해서 로그와 결과를 얻음
@@ -150,13 +151,13 @@ public class TowerGameCombatPopup : PopupBase
                 lineCount++;
                 UpdateCombatText().Forget();
 
-
                 if (line.Contains("데미지"))
                 {
-                    // 데미지 애니메이션 재생
                     var detail = combatDetails[combatDataCount];
                     combatDataCount++;
 
+                    if (isSkip == false)
+                        SoundManager.instance.PlaySFX(SFXType.TowerHit2);
                     if (detail.isPlayerAttack)
                     {
                         bossEntity.GetDamage(detail.damage, isSkip);
@@ -172,6 +173,7 @@ public class TowerGameCombatPopup : PopupBase
                     combatDataCount++;
                     if (isSkip == false)
                     {
+                        SoundManager.instance.PlaySFX(SFXType.TowerHit);
                         if (detail.isPlayerAttack)
                         {
                             bossEntity.AvoidAnimation();
@@ -411,17 +413,10 @@ public class TowerGameCombatPopup : PopupBase
             defender.hp -= damage;
             defender.hp = Mathf.Max(0, defender.hp);
 
-            lines.Add($"{damage} 데미지를 입{'혔': '었'}다! ({defender.hp}/{defender.maxHp})"); // 입혔다/입었다 구분 필요 시 삼항 로직 개선 필요. 예전엔 입혔다/입었다 구분했음.
-                                                                                        // isPlayerAttacking일 때: 플레이어가 보스를 때림 -> 데미지를 "입혔다"
-                                                                                        // !isPlayerAttacking일 때: 보스가 플레이어를 때림 -> 데미지를 "입었다"
-                                                                                        // 위 삼항연산자는 C# 6.0 문자열 보간에서 조건문 사용 시 유용하나 여기선 단순 텍스트가 다름.
-                                                                                        // 원본 코드는 플레이어 공격 시: "데미지를 입혔다!", 보스 공격 시: "데미지를 입었다!"
-
-            // 다시 수정
             if (isPlayerAttacking)
-                lines[lines.Count - 1] = $"{damage} 데미지를 입혔다! ({defender.hp}/{defender.maxHp})";
+                lines.Add($"{damage} 데미지를 입혔다! ({defender.hp}/{defender.maxHp})");
             else
-                lines[lines.Count - 1] = $"{damage} 데미지를 입었다! ({defender.hp}/{defender.maxHp})";
+                lines.Add($"{damage} 데미지를 입었다! ({defender.hp}/{defender.maxHp})");
 
 
             combatDetails.Add(new CombatDetailData { isPlayerAttack = isPlayerAttacking, isCritical = isCritical, damage = damage });

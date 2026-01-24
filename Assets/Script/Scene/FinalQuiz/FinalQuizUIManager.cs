@@ -158,19 +158,24 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public async UniTask IntroUIAnimation()
     {
+        SoundManager.instance.PlaySFX(SFXType.DiscordEnter);
         await UniTask.Delay(2000);
 
         examInfoText.gameObject.SetActive(true);
+        SoundManager.instance.PlaySFX(SFXType.FinalDing1);
         await UniTask.Delay(1000);
 
         quizTimeInfoText.gameObject.SetActive(true);
+        SoundManager.instance.PlaySFX(SFXType.FinalDing1);
         await UniTask.Delay(1000);
 
         wrongCountInfoText.gameObject.SetActive(true);
+        SoundManager.instance.PlaySFX(SFXType.FinalDing1);
         await UniTask.Delay(1000);
 
         touchToStartText.gameObject.SetActive(true);
         touchToStartText.DOFade(0.4f, 0.4f).SetEase(Ease.InCubic).From(1).SetLoops(-1, LoopType.Yoyo);
+        SoundManager.instance.PlaySFX(SFXType.FinalDing2);
 
         FinalQuizManager.instance.SetNextState();
         FinalQuizManager.instance.StartStateProcess();
@@ -186,6 +191,7 @@ public class FinalQuizUIManager : MonoBehaviour
         int showItemIndex = quizData.index % 2;
         quizItems[showItemIndex].SetQuizData(quizData);
         quizItems[showItemIndex].FlipQuizItem(false);
+        SoundManager.instance.PlaySFX(SFXType.FinalFlip);
     }
 
     public void FadeOutQuizItem(FinalQuizMetaData quizData)
@@ -204,6 +210,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public async UniTask OAnimation()
     {
+        SoundManager.instance.PlaySFX(SFXType.O);
         OImage.gameObject.SetActive(true);
         await UniTask.Delay(100);
         OImage.gameObject.SetActive(false);
@@ -216,6 +223,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
     public async UniTask XAnimation()
     {
+        SoundManager.instance.PlaySFX(SFXType.X);
         XImage.gameObject.SetActive(true);
         XImage.color = Color.white;
 
@@ -239,17 +247,20 @@ public class FinalQuizUIManager : MonoBehaviour
         //페이즈 1 클리어
         // 0. 초기화: 일단 필요한 거 다 켜고 초기 상태 설정
         // 완료된 것 처럼 흰 배경 밝아짐 (기존 코드 유지)
+        SoundManager.instance.PlaySFX(SFXType.FinalClearFake);
         phaseClearPanel.gameObject.SetActive(true);
         phaseClearDim.gameObject.SetActive(true);
         phaseClearDim.DOFade(0.9f, 4f).From(0f).SetEase(Ease.Linear);
         await UniTask.Delay(4000);
 
         // 갑자기 멈추면서 느낌표 마크 (기존)
+        SoundManager.instance.PlaySFX(SFXType.DiscordNoti);
         phaseClearDim.DOFade(0.4f, 0.2f).From(0.9f).SetEase(Ease.Linear);
         warningIcon.gameObject.SetActive(true);
         await UniTask.Delay(2000);
 
         // 오류 이미지 켜짐
+        SoundManager.instance.PlaySFX(SFXType.DiscordNoti);
         warningTextImage.gameObject.SetActive(true);
         var sliderTween = quizProgressSlider.DOValue(0f, 6f).From(1f).SetEase(Ease.Linear);
         await UniTask.Delay(3000);
@@ -295,6 +306,7 @@ public class FinalQuizUIManager : MonoBehaviour
     public async UniTask ShowPhase2CompleteAnimation()
     {
         //페이즈 2 클리어. 진짜 완료
+        SoundManager.instance.PlaySFX(SFXType.FinalClear);
         quizLeftTimeImage.gameObject.SetActive(false);
         phaseClearPanel.gameObject.SetActive(true);
         phaseClearDim.gameObject.SetActive(true);

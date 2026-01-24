@@ -150,6 +150,7 @@ public class TowerGameCombatEntity : MonoBehaviour
     public void DieAnimation()
     {
         //죽는 애니메이션
+        SoundManager.instance.PlaySFX(SFXType.TowerDie);
         image.DOKill();
         image.DOFade(0, DURATION_DIE_FADE).From(1).SetEase(Ease.Linear);
     }

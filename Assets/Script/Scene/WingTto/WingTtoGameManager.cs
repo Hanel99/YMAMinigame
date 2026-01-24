@@ -343,6 +343,7 @@ public class WingTtoGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.WingTto))
         {
+            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
         }
@@ -350,6 +351,7 @@ public class WingTtoGameManager : MonoBehaviour
         {
             if (CheckReferMission())
             {
+                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Completed);
                 DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
             }
