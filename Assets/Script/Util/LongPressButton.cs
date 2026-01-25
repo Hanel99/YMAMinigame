@@ -1,16 +1,16 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using System;
 
 public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    [SerializeField] private float holdTime = 5f; // 5초 이상 눌렀을 때 발동
+    [SerializeField] private float holdTime = 3f; // 5초 이상 눌렀을 때 발동
     [SerializeField] private bool isRepeat = false;
     [SerializeField] private float repeatInterval = 0.3f; // 반복 호출 간격
 
 
-    private Action eventAction;
+    private Action<bool> eventAction;
     private bool isHolding = false;
     private float holdTimer = 0f;
 
@@ -31,7 +31,7 @@ public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
                 if (repeatTimer >= repeatInterval)
                 {
-                    eventAction?.Invoke();
+                    eventAction?.Invoke(true);
                     repeatTimer = 0f;
                 }
             }
@@ -40,7 +40,7 @@ public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
                 if (hasTriggered == false)
                 {
                     hasTriggered = true;
-                    eventAction?.Invoke(); // 이벤트 발동
+                    eventAction?.Invoke(false); // 이벤트 발동
                 }
             }
         }
@@ -76,7 +76,7 @@ public class LongPressButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         repeatInterval = interval;
     }
 
-    public void SetLongPressAction(Action action)
+    public void SetLongPressAction(Action<bool> action)
     {
         eventAction = action;
     }

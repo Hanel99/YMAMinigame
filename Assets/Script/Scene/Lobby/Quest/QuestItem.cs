@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -124,7 +125,7 @@ public class QuestItem : MonoBehaviour
     private void SetDimCover()
     {
         completeDim.SetActive(questState == QuestState.Complete);
-        unknownDim.SetActive(questState == QuestState.InProgress && questData.hidden);
+        unknownDim.SetActive(SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll == false && questState == QuestState.InProgress && questData.hidden);
     }
 
 
@@ -164,14 +165,23 @@ public class QuestItem : MonoBehaviour
         QuestManager.instance.CompleteQuest(questId, () =>
         {
             // 완료 후 처리
-            SaveDataManager.instance.AddCoin(questData.coin);
-            bool isShowLevelUpPopup = SaveDataManager.instance.AddExp(questData.exp);
+            int earnCoinAmount = questData.coin;
+            int earnExpAmount = questData.exp;
+
+            if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+            {
+                earnCoinAmount = (int)Math.Min((long)StaticGameData.MAX_COIN_VALUE, (long)earnCoinAmount * 50);
+                earnExpAmount *= 10;
+            }
+
+            SaveDataManager.instance.AddCoin(earnCoinAmount);
+            bool isShowLevelUpPopup = SaveDataManager.instance.AddExp(earnExpAmount);
 
             UpdateProgress();
             SetDimCover();
 
             isRewardProcessing = false;
-            LobbyUIManager.instance.ShowQuestRewardPopup(questData.coin, questData.exp, isShowLevelUpPopup);
+            LobbyUIManager.instance.ShowQuestRewardPopup(earnCoinAmount, earnExpAmount, isShowLevelUpPopup);
         });
 
 
@@ -183,7 +193,7 @@ public class QuestItem : MonoBehaviour
     // Consts
     private const int UNIT_HM = 100000000;
     private const int UNIT_M = 10000;
-    private const int TOUCH_COUNT_FOR_REDEEM = 5;
+    private const int TOUCH_COUNT_FOR_REDEEM = 3;
 
     private const string TEXT_UNIT_HM = "억";
     private const string TEXT_UNIT_M = "만";
@@ -197,6 +207,8 @@ public class QuestItem : MonoBehaviour
         if (completeTouchCount >= TOUCH_COUNT_FOR_REDEEM)
         {
             completeText.text = questData.redeem;
+            GUIUtility.systemCopyBuffer = questData.redeem;
+
             HLLogger.Log($"redeem Code : {questData.redeem}");
         }
     }

@@ -1,8 +1,8 @@
 using System;
-using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,9 +20,9 @@ public class SettingPopup : PopupBase
     public Text appVersionText;
     public Text dataVersionText;
 
-    [Header("Tab Group")]
-    public GameObject VisualTab;
-    public GameObject SoundTab;
+    // [Header("Tab Group")]
+    // public GameObject VisualTab;
+    // public GameObject SoundTab;
 
 
     [Header("Visual Settings")]
@@ -91,40 +91,54 @@ public class SettingPopup : PopupBase
         cheatButton.gameObject.SetActive(false);
 #endif
 
-        SetTab(SettingTab.Visual);
+        SetTab();
+        // SetTab(SettingTab.Visual);
     }
 
-    [VisibleEnum(typeof(SettingTab))]
-    public void OnClickTab(int tabIndex)
+    // [VisibleEnum(typeof(SettingTab))]
+    // public void OnClickTab(int tabIndex)
 
+    // {
+    //     if (isOpenCloseAnimationActing) return;
+
+    //     SettingTab tab = (SettingTab)tabIndex;
+    //     SetTab(tab);
+    // }
+    // private void SetTab(SettingTab tab)
+    // {
+    //     if (tab == SettingTab.Visual)
+    //     {
+    //         VisualTab.SetActive(true);
+    //         SoundTab.SetActive(false);
+
+    //         inputRedeem.text = "";
+    //         SetResolutionOption();
+    //     }
+    //     else if (tab == SettingTab.Sound)
+    //     {
+    //         VisualTab.SetActive(false);
+    //         SoundTab.SetActive(true);
+
+    //         // 사운드 설정 초기화
+    //         bgmSlider.value = SoundManager.instance.bgmVolume;
+    //         bgmMuteToggle.isOn = SoundManager.instance.isBgmMute;
+
+    //         sfxSlider.value = SoundManager.instance.sfxVolume;
+    //         sfxMuteToggle.isOn = SoundManager.instance.isSfxMute;
+    //     }
+    // }
+
+    private void SetTab()
     {
-        if (isOpenCloseAnimationActing) return;
+        inputRedeem.text = "";
+        SetResolutionOption();
 
-        SettingTab tab = (SettingTab)tabIndex;
-        SetTab(tab);
-    }
-    private void SetTab(SettingTab tab)
-    {
-        if (tab == SettingTab.Visual)
-        {
-            VisualTab.SetActive(true);
-            SoundTab.SetActive(false);
+        // 사운드 설정 초기화
+        bgmSlider.value = SoundManager.instance.bgmVolume;
+        bgmMuteToggle.isOn = SoundManager.instance.isBgmMute;
 
-            inputRedeem.text = "";
-            SetResolutionOption();
-        }
-        else if (tab == SettingTab.Sound)
-        {
-            VisualTab.SetActive(false);
-            SoundTab.SetActive(true);
-
-            // 사운드 설정 초기화
-            bgmSlider.value = SoundManager.instance.bgmVolume;
-            bgmMuteToggle.isOn = SoundManager.instance.isBgmMute;
-
-            sfxSlider.value = SoundManager.instance.sfxVolume;
-            sfxMuteToggle.isOn = SoundManager.instance.isSfxMute;
-        }
+        sfxSlider.value = SoundManager.instance.sfxVolume;
+        sfxMuteToggle.isOn = SoundManager.instance.isSfxMute;
     }
 
 

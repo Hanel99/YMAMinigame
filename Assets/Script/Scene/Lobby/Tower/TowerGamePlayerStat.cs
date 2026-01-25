@@ -15,6 +15,7 @@ public class TowerGamePlayerStat : MonoBehaviour
     private TowerUserStatType statType;
     private int statLevel;
     private int requireCoin;
+    private bool isLongPress = false;
 
     void OnDisable()
     {
@@ -38,7 +39,7 @@ public class TowerGamePlayerStat : MonoBehaviour
 
         requireCoin = GameResourceManager.instance.GetTowerUserLevelRequireCoin(type, statLevel);
 
-        requireCoinText.text = requireCoin <= 0 ? "MAX" : requireCoin.ToString();
+        requireCoinText.text = requireCoin <= 0 ? "MAX" : requireCoin.ToString("N0");
         enchantButton.interactable = requireCoin > 0 && SaveDataManager.instance.playerData.coin >= requireCoin;
 
         enchantButton.GetComponent<LongPressButton>().SetLongPressAction(OnClickEnchant);
@@ -50,13 +51,15 @@ public class TowerGamePlayerStat : MonoBehaviour
     }
 
 
-    public void OnClickEnchant()
+    public void OnClickEnchant(bool isLongPress = false)
     {
+        this.isLongPress = isLongPress;
         requireCoin = GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel);
         if (requireCoin <= 0 || SaveDataManager.instance.playerData.coin < requireCoin)
             return;
 
-        SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
+        if (isLongPress == false)
+            SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
         SaveDataManager.instance.AddCoin(-GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel), false);
         statLevel++;
         SaveDataManager.instance.SetTowerUserStatLevel(statType, statLevel);

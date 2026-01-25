@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Cysharp.Threading.Tasks;
@@ -212,7 +213,7 @@ public class TowerGameCombatPopup : PopupBase
     private bool IsAvoided(float avoidanceRate)
     {
         // 만분위 체크: 0~100000 범위의 랜덤 값 생성
-        int randomValue = Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
+        int randomValue = UnityEngine.Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
         int threshold = Mathf.RoundToInt(avoidanceRate * SCALE_PROBABILITY); // 회피율을 0~10000 범위로 변환
         HLLogger.Log($"회피 판정 - Random: {randomValue}, Threshold: {threshold} / 회피? {randomValue < threshold}");
 
@@ -222,7 +223,7 @@ public class TowerGameCombatPopup : PopupBase
     private int CalculateDamage(CombatStatData attacker, CombatStatData defender, out bool isCritical)
     {
         // 크리티컬 판정
-        int randomValue = Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
+        int randomValue = UnityEngine.Random.Range(0, SCALE_PROBABILITY); // 0부터 10000까지 포함
         int threshold = Mathf.RoundToInt(attacker.criRate * SCALE_PROBABILITY); // 크리티컬율을 0~10000 범위로 변환
 
         isCritical = randomValue < threshold;
@@ -239,19 +240,27 @@ public class TowerGameCombatPopup : PopupBase
     {
         if (playerWon)
         {
+            int earnCoinAmount = rewardCoin;
+            int earnExpAmount = rewardExp;
+
+            if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+            {
+                earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+                earnExpAmount *= 10;
+            }
+
             bossEntity.DieAnimation();
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 승리했습니다!");
-            sb.AppendLine($"{rewardCoin}코인, {rewardExp}경험치 획득!");
+            sb.AppendLine($"{earnCoinAmount}코인, {earnExpAmount}경험치 획득!");
             UpdateCombatText().Forget();
 
             if (playerAvoidCount >= 3)
                 QuestManager.instance.AddSpecialMission(QuestDetailType.S_WinWithAvoid, 0);
 
-
-            SaveDataManager.instance.AddCoin(rewardCoin, false);
-            if (SaveDataManager.instance.AddExp(rewardExp, false))
+            SaveDataManager.instance.AddCoin(earnCoinAmount, false);
+            if (SaveDataManager.instance.AddExp(earnExpAmount, false))
             {
                 await UniTask.Delay(1000);
                 LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
@@ -271,7 +280,11 @@ public class TowerGameCombatPopup : PopupBase
         QuestManager.instance.AddTowerCombatData(1);
 
         skipButton.gameObject.SetActive(false);
-        retryButton.interactable = !playerWon;
+        if (playerWon)
+            retryButton.transform.Find("text").GetComponent<Text>().text = "다음 도전";
+        if (SaveDataManager.instance.playerData.towerFloor < 10)
+            retryButton.interactable = false;
+
         retryButton.gameObject.SetActive(true);
         confirmButton.gameObject.SetActive(true);
         TowerGamePopup.instance.UpdatePopupData();

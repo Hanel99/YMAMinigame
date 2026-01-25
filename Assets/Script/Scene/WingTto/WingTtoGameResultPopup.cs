@@ -87,12 +87,12 @@ public class WingTtoGameResultPopup : PopupBase
         yield return new WaitForSeconds(0.3f);
 
         expItemText.text = $"획득 경험치 : {exp}";
-        coinItemText.text = $"획득 코인 : {coin}";
+        coinItemText.text = $"획득 코인 : {coin:N0}";
         yield return new WaitForSeconds(0.3f);
 
         earnExpText.text = $"총 획득 경험치 : {totalExp}";
-        earnCoinText.text = $"총 획득 코인 : {totalCoin}";
-        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin}";
+        earnCoinText.text = $"총 획득 코인 : {totalCoin:N0}";
+        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin:N0}";
         yield return new WaitForSeconds(0.3f);
 
         lobbyButton.SetActive(true);

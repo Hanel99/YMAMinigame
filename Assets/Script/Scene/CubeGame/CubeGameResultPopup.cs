@@ -74,16 +74,16 @@ public class CubeGameResultPopup : PopupBase
         resultDim.DOFade(0.7f, FADE_DURATION).SetEase(Ease.Linear).From(0f);
         yield return new WaitForSeconds(INITIAL_DELAY);
 
-        scoreText.text = $"점수 : {score}";
+        scoreText.text = $"점수 : {score:N0}";
         yield return new WaitForSeconds(TEXT_DELAY);
 
         expText.text = $"획득 경험치 : {exp}";
         yield return new WaitForSeconds(TEXT_DELAY);
 
-        earnCoinText.text = $"획득 코인 : {earnCoinAmount}";
+        earnCoinText.text = $"획득 코인 : {earnCoinAmount:N0}";
         yield return new WaitForSeconds(TEXT_DELAY);
 
-        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin}";
+        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin:N0}";
         yield return new WaitForSeconds(TEXT_DELAY);
 
         lobbyButton.SetActive(true);

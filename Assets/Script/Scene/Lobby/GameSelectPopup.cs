@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using ChocDino.UIFX;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,16 +54,30 @@ public class GameSelectPopup : PopupBase
     {
         gameType = type;
         gameImage.sprite = GameResourceManager.instance.GetGameImage(gameType);
-        gameImageButton = gameImage.GetComponent<LongPressButton>();
-        gameImageButton.SetLongPressTime(5f);
-        gameImageButton.SetLongPressAction(() =>
-        {
-            StaticGameData.useServerSeed = true;
-            HLLogger.Log($"@@@ Long Press! {StaticGameData.useServerSeed}, {StaticGameData.serverGameSeed}");
-        });
 
         titleText.text = LocalizeManager.instance.GetString($"game.name.{gameType.ToString()}");
         descText.text = LocalizeManager.instance.GetString($"game.desc.{gameType.ToString()}");
+
+        if (type == GameType.CubeGame || type == GameType.WingTto)
+        {
+            gameImageButton = gameImage.GetComponent<LongPressButton>();
+            gameImageButton.SetLongPressTime(3f);
+            gameImageButton.SetLongPressAction((isLongPress) =>
+            {
+                StaticGameData.useServerSeed = true;
+                HLLogger.Log($"@@@ Long Press! {StaticGameData.useServerSeed}, {StaticGameData.serverGameSeed}");
+                SoundManager.instance.PlaySFX(SFXType.TowerStart);
+
+                DOVirtual.Float(0f, 1f, 0.3f, (val) =>
+                {
+                    gameImage.GetComponent<GlowFilter>().Strength = val;
+                });
+            });
+        }
+        else
+        {
+            gameImageButton = null;
+        }
     }
 
     private IEnumerator Co_RefreshDesc()

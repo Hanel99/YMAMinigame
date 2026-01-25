@@ -1,7 +1,7 @@
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,17 +46,21 @@ public class TowerGameEnchantResult : MonoBehaviour
         {
             case TowerGameResultType.stat:
                 resultText.text = "스탯 레벨업!";
+                SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
                 PopEffect(resultText.transform);
                 break;
             case TowerGameResultType.up:
                 resultText.text = "무기 강화 성공!!";
+                SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
                 PopEffect(resultText.transform);
                 break;
             case TowerGameResultType.stay:
                 resultText.text = "무기 등급 유지";
+                SoundManager.instance.PlaySFX(SFXType.WeaponStay);
                 break;
             case TowerGameResultType.down:
                 resultText.text = "강화 실패...\n\n무기 등급 하락";
+                SoundManager.instance.PlaySFX(SFXType.WeaponFail);
                 break;
         }
 

@@ -58,8 +58,8 @@ public class GachaPopup : PopupBase
 
     private void UpdateUI()
     {
-        userCoinValueText.text = SaveDataManager.instance.playerData.coin.ToString();
-        userMileageValueText.text = SaveDataManager.instance.playerData.mileage.ToString();
+        userCoinValueText.text = SaveDataManager.instance.playerData.coin.ToString("N0");
+        userMileageValueText.text = SaveDataManager.instance.playerData.mileage.ToString("N0");
 
         int price1 = StaticGameData.GachaPrice[PRICE_PICK_1];
         int price10 = StaticGameData.GachaPrice[PRICE_PICK_10];
@@ -69,9 +69,9 @@ public class GachaPopup : PopupBase
         pick10Button.interactable = SaveDataManager.instance.playerData.coin >= price10;
         mileageButton.interactable = SaveDataManager.instance.playerData.mileage >= priceMileage;
 
-        pick1ValueText.text = $"1회 {price1}";
-        pick10ValueText.text = $"10회 {price10}";
-        mileageValueText.text = $"1회 {priceMileage}";
+        pick1ValueText.text = $"1회 {price1:N0}";
+        pick10ValueText.text = $"10회 {price10:N0}";
+        mileageValueText.text = $"1회 {priceMileage:N0}";
     }
 
     //@ 미획득 확정 1회 마일리지 가챠

@@ -32,8 +32,10 @@ public class TowerGameWeaponStat : MonoBehaviour
     private int weaponLevel;
     private TowerWeaponLevelMetaData weaponMetaData;
     private TowerGameUserWeaponData userWeaponData;
+    private LongPressButton longPressButton;
 
     private StringBuilder sb = new StringBuilder();
+    private bool isLongPress = false;
 
 
 
@@ -46,6 +48,10 @@ public class TowerGameWeaponStat : MonoBehaviour
     public void UpdateUIData(int weaponLevel)
     {
         this.weaponLevel = weaponLevel;
+        if (longPressButton == null)
+        {
+            longPressButton = enchantButton.GetComponent<LongPressButton>();
+        }
 
         weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponLevel);
         userWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
@@ -55,7 +61,12 @@ public class TowerGameWeaponStat : MonoBehaviour
         skipToggle.isOn = SaveDataManager.instance.otherPlayerData.isTowerSkip;
         UpdateDetailText();
 
-        enchantButton.GetComponent<LongPressButton>().SetLongPressAction(OnClickEnchant);
+        longPressButton.SetLongPressAction(OnClickEnchant);
+
+        // 1렙일 때 0.3초, 90렙일 때 0.05초로 선형 보간
+        float t = Mathf.Clamp01((weaponLevel - 1f) / 89f);
+        float interval = Mathf.Lerp(0.3f, 0.05f, t);
+        longPressButton.SetRepeatInterval(interval);
     }
 
     private void UpdateDetailText()
@@ -64,7 +75,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         atkValueText.text = $"{weaponMetaData.atk}";
         criDmgValueText.text = $"x{((1 + weaponMetaData.criDmg) * 100).ToString("F1")}%";
 
-        requireCoinText.text = weaponMetaData.requireCoin <= 0 ? TEXT_MAX : weaponMetaData.requireCoin.ToString();
+        requireCoinText.text = weaponMetaData.requireCoin <= 0 ? TEXT_MAX : weaponMetaData.requireCoin.ToString("N0");
         enchantButton.interactable = weaponMetaData.requireCoin > 0 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
 
         if (weaponLevel == 0)
@@ -81,8 +92,8 @@ public class TowerGameWeaponStat : MonoBehaviour
         }
 
         int upValue = weaponMetaData.up + userWeaponData.failCount * 10;
-        int stayValue = weaponMetaData.stay + (userWeaponData.isDown ? weaponMetaData.down : 0);
-        int downValue = userWeaponData.isDown ? 0 : weaponMetaData.down;
+        int stayValue = weaponMetaData.stay + (userWeaponData.isDown || SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll ? weaponMetaData.down : 0);
+        int downValue = (userWeaponData.isDown || SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll) ? 0 : weaponMetaData.down;
         int total = upValue + stayValue + downValue;
 
         float upRate = (float)upValue / total;
@@ -96,12 +107,13 @@ public class TowerGameWeaponStat : MonoBehaviour
         RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F2")}%";
     }
 
-    public void OnClickEnchant()
+    public void OnClickEnchant(bool isLongPress = false)
     {
         if (weaponMetaData.requireCoin <= 0 || SaveDataManager.instance.playerData.coin < weaponMetaData.requireCoin)
             return;
 
         SaveDataManager.instance.AddCoin(-weaponMetaData.requireCoin, false);
+        this.isLongPress = isLongPress;
         WeaponEnchantProcess();
     }
 
@@ -132,7 +144,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         }
         else if (rand < stayValue + downValue)
         {
-            if (userWeaponData.isDown)
+            if ((userWeaponData.isDown || SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll))
             {
                 // 이미 하락 상태면 등급 유지
                 sb.AppendLine($"rand: {rand} -> Stay (isDown)");
@@ -157,7 +169,6 @@ public class TowerGameWeaponStat : MonoBehaviour
 
     private void SuccessProcess()
     {
-        SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
         weaponLevel++;
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
@@ -166,13 +177,11 @@ public class TowerGameWeaponStat : MonoBehaviour
     }
     private void StayProcess()
     {
-        SoundManager.instance.PlaySFX(SFXType.WeaponStay);
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
         ShowResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
     }
     private void DownProcess()
     {
-        SoundManager.instance.PlaySFX(SFXType.WeaponFail);
         weaponLevel--;
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
@@ -191,12 +200,20 @@ public class TowerGameWeaponStat : MonoBehaviour
                 if (rankUpParticle.IsActive() == false)
                     rankUpParticle.gameObject.SetActive(true);
                 rankUpParticle.Play();
+                SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
             }
             else if (type == TowerGameResultType.down)
             {
                 if (rankDownParticle.IsActive() == false)
                     rankDownParticle.gameObject.SetActive(true);
                 rankDownParticle.Play();
+                SoundManager.instance.PlaySFX(SFXType.WeaponFail);
+            }
+            else
+            {
+                // 유지
+                if (isLongPress == false)
+                    SoundManager.instance.PlaySFX(SFXType.WeaponStay);
             }
 
             UpdateUIData(weaponLevel);

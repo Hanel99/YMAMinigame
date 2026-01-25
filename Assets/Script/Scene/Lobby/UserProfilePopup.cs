@@ -40,7 +40,7 @@ public class UserProfilePopup : PopupBase
         userMid.text = SaveDataManager.instance.playerData.mid.ToString("D4");
         userName.text = SaveDataManager.instance.playerData.name.ToString();
         userMaster.text = LocalizeManager.instance.GetString($"master.name.{SaveDataManager.instance.playerData.master}");
-        userCoin.text = SaveDataManager.instance.playerData.coin.ToString();
+        userCoin.text = SaveDataManager.instance.playerData.coin.ToString("N0");
         userMilage.text = SaveDataManager.instance.playerData.mileage.ToString();
         userCardCount.text = $"{SaveDataManager.instance.playerData.ownCardList.Count} / {GameResourceManager.instance.GetTotalCardCount()}";
     }

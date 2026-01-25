@@ -238,6 +238,14 @@ public class FindAIWordGameManager : MonoBehaviour
         //1회만에 바로 맞춘경우 15000. 1회 틀릴때마다 500씩 감소. 최소 12000
         int earnCoinAmount = CalculateReward(delayTime);
 
+        int exp = 1;
+
+        if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+        {
+            earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+            exp *= 10;
+        }
+
         QuestManager.instance.AddFindAIWordData(1, currentHintIndex < 3 ? 1 : 0);
 
         SaveDataManager.instance.AddOwnWord(wordIndex);
@@ -245,7 +253,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
         FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);
 
-        if (SaveDataManager.instance.AddExp(1))
+        if (SaveDataManager.instance.AddExp(exp))
         {
             await UniTask.Delay(LEVEL_UP_DELAY);
             FindAIWordGameUIManager.instance.ShowLevelUpPopup();

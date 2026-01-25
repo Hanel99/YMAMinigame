@@ -82,7 +82,7 @@ public class TowerGameDetailStatPopup : PopupBase
             bossHp.text = bossMetaData.hp.ToString();
             bossCriRate.text = $"{(bossMetaData.criRate * 100).ToString("F1")}%";
             bossCriDmg.text = $"x{((1 + bossMetaData.criDmg) * 100).ToString("F1")}%";
-            bossRewardCoin.text = bossMetaData.rewardCoin.ToString();
+            bossRewardCoin.text = bossMetaData.rewardCoin.ToString("N0");
         }
     }
 

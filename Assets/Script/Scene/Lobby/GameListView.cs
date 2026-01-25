@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
@@ -186,7 +187,15 @@ public class GameListView : MonoBehaviour
         else if (StaticGameData.introData.isFirstLogin)
         {
             StaticGameData.introData.isFirstLogin = false;
-            SaveDataManager.instance.AddCoin(StaticGameData.introData.firstLoginCoinAmount);
+
+            int earnCoinAmount = StaticGameData.introData.firstLoginCoinAmount;
+
+            if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+            {
+                earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+            }
+
+            SaveDataManager.instance.AddCoin(earnCoinAmount);
             LobbyUIManager.instance.ShowCommonPopup("데일리 보너스", $"오늘 첫 로그인 기념으로\n{StaticGameData.introData.firstLoginCoinAmount} 골드를 드립니다.", true, true, false);
         }
     }

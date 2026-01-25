@@ -89,13 +89,11 @@ public class LevelUpPopup : PopupBase
         level.transform.DOScale(1.5f, 0.2f).SetDelay(1.6f).SetEase(Ease.OutQuad).OnComplete(() =>
         {
             level.transform.DOScale(1f, 0.2f).SetEase(Ease.InQuad);
+            isAnimationEnd = true;
         });
 
         unlockContentText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic);
-        expText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic).OnComplete(() =>
-        {
-            isAnimationEnd = true;
-        });
+        expText.DOFade(1f, 1f).SetDelay(1.6f).From(0f).SetEase(Ease.OutCubic);
     }
 
 

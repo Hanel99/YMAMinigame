@@ -74,10 +74,10 @@ public class GameResultPopup : PopupBase
         tryCountText.text = $"시도 횟수 : {touchCount}";
         yield return new WaitForSeconds(0.3f);
 
-        earnCoinText.text = $"획득 코인 : {earnCoinAmount}";
+        earnCoinText.text = $"획득 코인 : {earnCoinAmount:N0}";
         yield return new WaitForSeconds(0.3f);
 
-        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin}";
+        totalCoinText.text = $"총 보유 코인 : {SaveDataManager.instance.playerData.coin:N0}";
         yield return new WaitForSeconds(0.3f);
 
         if (collectCardIdList != null && collectCardIdList.Count > 0)

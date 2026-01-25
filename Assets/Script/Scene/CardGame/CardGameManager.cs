@@ -129,13 +129,20 @@ public class CardGameManager : MonoBehaviour
 
         CalcEarnCoinAmount();
         QuestManager.instance.AddMatchCardData(1, tryCount <= MAX_TRY_COUNT_REFER_THRESHOLD ? 1 : 0);
+        int exp = 1;
+
+        if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+        {
+            earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+            exp *= 10;
+        }
 
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         List<int> newCardIDList = SaveDataManager.instance.GetNotOwnCardList(collectCardIdList);
         SaveDataManager.instance.AddOwnCardList(collectCardIdList);
         CardGameUIManager.instance.ShowResult(tryCount, earnCoinAmount, newCardIDList);
 
-        if (SaveDataManager.instance.AddExp(1))
+        if (SaveDataManager.instance.AddExp(exp))
             DOVirtual.DelayedCall(GAME_END_DELAY, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
 
 

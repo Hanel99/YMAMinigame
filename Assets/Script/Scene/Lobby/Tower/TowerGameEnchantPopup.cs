@@ -45,7 +45,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void UpdateUI()
     {
-        ownCoinText.text = SaveDataManager.instance.playerData.coin.ToString();
+        ownCoinText.text = SaveDataManager.instance.playerData.coin.ToString("N0");
     }
 
     private void UpdateGameData()

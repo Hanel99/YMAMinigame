@@ -328,6 +328,12 @@ public class WingTtoGameManager : MonoBehaviour
 
         HLLogger.Log($"distance : {currentDistance} / coin : {earnCoinAmount} / exp : {exp}");
 
+        if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+        {
+            earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+            exp *= 10;
+        }
+
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
         SaveDataManager.instance.SetWingTtoHighScore(currentDistance);
 

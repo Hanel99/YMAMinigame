@@ -192,6 +192,12 @@ public class CubeGameManager : MonoBehaviour
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow, Q_WithoutTooFastOrTooSlowScore);
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithOnlyPerfect, Q_OnlyPerfectScore);
 
+        if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+        {
+            earnCoinAmount = Math.Min(StaticGameData.MAX_COIN_VALUE, earnCoinAmount * 50);
+            exp *= 10;
+        }
+
         SaveDataManager.instance.AddCoin(earnCoinAmount, false);
         SaveDataManager.instance.SetCubeGameHighScore(score);
         CubeGameUIManager.instance.ShowResult(score, earnCoinAmount, exp);
@@ -296,20 +302,27 @@ public class CubeGameManager : MonoBehaviour
 
     private (float wait, float tooFast, float fast, float perfect, float slow, float tooSlow) MakeStateTime()
     {
-        float perfectAdjust = 0f;
-        float perfectAdjust2 = 0f;
+        // 0개일 때: 1 ~ 1.5
+        // 200개일 때:
+        // too 0.2 ~ 0.5
+        // middle 0.15 ~ 0.3
+        // perfect 0.1 ~ 0.2    
 
+        int perfectCount = 0;
         if (countDic.ContainsKey(CubeState.Perfect))
         {
-            perfectAdjust = Math.Min(0.25f, countDic[CubeState.Perfect] * 0.001f);
-            perfectAdjust2 = Math.Min(0.1f, perfectAdjust * 0.5f);
+            perfectCount = countDic[CubeState.Perfect];
         }
+
+        // 0 ~ 200 사이의 값을 0 ~ 1로 정규화
+        float t = Mathf.Clamp01(perfectCount / 200f);
 
         float wait = GetRandomFloat(0.5f, 3.5f);
 
-        float too = GetRandomFloat(0.4f - perfectAdjust2, 0.7f - perfectAdjust);
-        float middle = GetRandomFloat(0.3f - perfectAdjust2, 0.6f - perfectAdjust);
-        float perfect = GetRandomFloat(0.2f - perfectAdjust2, 0.45f - perfectAdjust);
+        // Lerp(start, end, t)
+        float too = GetRandomFloat(Mathf.Lerp(1f, 0.2f, t), Mathf.Lerp(1.5f, 0.5f, t));
+        float middle = GetRandomFloat(Mathf.Lerp(1f, 0.15f, t), Mathf.Lerp(1.5f, 0.3f, t));
+        float perfect = GetRandomFloat(Mathf.Lerp(1f, 0.1f, t), Mathf.Lerp(1.5f, 0.2f, t));
 
         return (wait, too, middle, perfect, middle, too);
     }
