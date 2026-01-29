@@ -126,6 +126,8 @@ public class FinalQuizPlayData
 
     public int enterQuizIndex = 0;
     public int tryCount = 0;
+    public int XCount = 0;
+    public int OCount = 0;
     public bool playEndRoll = false;
     public DateTime completeTime = new DateTime(2025, 1, 1, 0, 0, 0, 0);
 }

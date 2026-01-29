@@ -1,12 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System;
+using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using Newtonsoft.Json;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Threading.Tasks;
-using Sirenix.Serialization;
-using Newtonsoft.Json;
 
 public class GeminiApiManager : MonoBehaviour
 {
@@ -35,7 +35,8 @@ public class GeminiApiManager : MonoBehaviour
             return null;
         }
 
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={geminiApiKey}";
+        // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
         // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-pro:generateContent?key={geminiApiKey}";
 
         // 요청 데이터 간소화
@@ -62,7 +63,15 @@ public class GeminiApiManager : MonoBehaviour
             request.SetRequestHeader("Content-Type", "application/json");
 
             HLLogger.Log($"api send start : {url}");
-            await request.SendWebRequest();
+            try
+            {
+                await request.SendWebRequest();
+            }
+            catch (Exception ex)
+            {
+                HLLogger.LogError($"Gemini API Error: {ex.Message}");
+                return null;
+            }
 
             if (request.result != UnityWebRequest.Result.Success)
             {

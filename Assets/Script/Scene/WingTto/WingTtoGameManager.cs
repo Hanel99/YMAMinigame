@@ -320,7 +320,7 @@ public class WingTtoGameManager : MonoBehaviour
         int earnCoinAmount = player.EarnCoin + (int)Math.Max(SCORE_COIN_BASE, currentDistance + SCORE_COIN_FACTOR * Math.Pow(currentDistance / SCORE_COIN_DIVISOR, SCORE_COIN_POW));
 
         QuestManager.instance.AddWingTtoData(1, player.collectCountDic[WingTtoObjectType.Gimbab], player.collectCountDic[WingTtoObjectType.SpeedUp]
-                                            , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp]);
+                                            , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp], player.crashCount);
 
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutGimbab, player.Q_FirstGimbabDistance >= 0 ? player.Q_FirstGimbabDistance : currentDistance);
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithCrash, player.Q_FirstCrashDistance);

@@ -47,8 +47,8 @@ public class TowerGamePlayerStat : MonoBehaviour
         {
             longPressButton = enchantButton.GetComponent<LongPressButton>();
             longPressButton.SetLongPressAction(OnClickEnchant);
+            longPressButton.SetAccelerateAction(OnClickEnchant);
         }
-
     }
 
     public void UpdateButtonInteractable()

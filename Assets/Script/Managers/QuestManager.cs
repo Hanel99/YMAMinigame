@@ -42,9 +42,9 @@ public class QuestManager : MonoBehaviour
 
 
     //wingTto
-    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp)
+    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount)
     {
-        questUserPlayData.AddWingTtoData(playCount, collectCount_Gimbab, collectCount_SpeedUp, collectCount_Coin, collectCount_Exp);
+        questUserPlayData.AddWingTtoData(playCount, collectCount_Gimbab, collectCount_SpeedUp, collectCount_Coin, collectCount_Exp, crashCount);
     }
 
 

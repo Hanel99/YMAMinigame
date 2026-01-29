@@ -78,6 +78,12 @@ public class FinalQuizManager : MonoBehaviour
             CheckIsAnswer(1, true);
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            SetState(FinalGameState.Phase2Complete);
+            StartStateProcess();
+        }
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             quizTotalLeftTime += 10f;
@@ -278,6 +284,9 @@ public class FinalQuizManager : MonoBehaviour
 
     private void GameOverProcess()
     {
+        FinalQuizPlayData.XCount += wrongCount;
+        FinalQuizPlayData.OCount += (currentQuizIndex + 1 - wrongCount);
+
         PlayFabManager.instance.UpdateEndingProgressLeaderBoard();
         SaveDataManager.instance.SavePlayerData();
 
@@ -324,6 +333,7 @@ public class FinalQuizManager : MonoBehaviour
 
             UiManager.XAnimation().Forget();
             wrongCount++;
+
             UiManager.UpdateWrongCount(wrongCount, maxWrongCount);
             HLLogger.Log($"wrong answer - {wrongCount} / {maxWrongCount}");
             if (wrongCount >= maxWrongCount)

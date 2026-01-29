@@ -192,6 +192,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
             sb.AppendLine(hints[currentHintIndex]);
             FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
+            FindAIWordGameInGameView.instance.SetInputFieldFocus();
         }
         else
         {

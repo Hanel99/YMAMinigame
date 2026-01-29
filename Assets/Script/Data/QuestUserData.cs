@@ -97,18 +97,20 @@ public class QuestUserPlayData
     }
 
     //wingTto
-    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp)
+    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount)
     {
         wingTto.playCount += playCount;
         wingTto.collectCount_Gimbab += collectCount_Gimbab;
         wingTto.collectCount_SpeedUp += collectCount_SpeedUp;
         wingTto.collectCount_Coin += collectCount_Coin;
         wingTto.collectCount_Exp += collectCount_Exp;
+        wingTto.crashCount += crashCount;
         HLLogger.Log($"Q wing tto data - playcount {wingTto.playCount} (+ {playCount})");
         HLLogger.Log($"Q wing tto data - collect Gimbab {wingTto.collectCount_Gimbab} (+ {collectCount_Gimbab})");
         HLLogger.Log($"Q wing tto data - collect SpeedUp {wingTto.collectCount_SpeedUp} (+ {collectCount_SpeedUp})");
         HLLogger.Log($"Q wing tto data - collect Coin {wingTto.collectCount_Coin} (+ {collectCount_Coin})");
         HLLogger.Log($"Q wing tto data - collect Exp {wingTto.collectCount_Exp} (+ {collectCount_Exp})");
+        HLLogger.Log($"Q wing tto data - crashCount {wingTto.crashCount} (+ {crashCount})");
     }
 
 
@@ -288,6 +290,7 @@ public class QuestUserPlayData
         public int collectCount_Coin;
         public int collectCount_Exp;
 
+        public int crashCount;
 
         public float reachScoreWithoutGimbab;
         public float reachScoreWithCrash;

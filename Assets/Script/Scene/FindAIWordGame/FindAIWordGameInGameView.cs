@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class FindAIWordGameInGameView : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class FindAIWordGameInGameView : MonoBehaviour
         answerButton.interactable = enable;
     }
 
+    public void SetInputFieldFocus()
+    {
+        EventSystem.current.SetSelectedGameObject(answerField.gameObject);
+        answerField.ActivateInputField();
+    }
 
     public void OnClickPause()
     {

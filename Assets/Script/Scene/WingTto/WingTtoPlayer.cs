@@ -18,6 +18,7 @@ public class WingTtoPlayer : MonoBehaviour
     public Dictionary<WingTtoObjectType, int> collectCountDic = new();
     public float Q_FirstGimbabDistance = -1f;
     public float Q_FirstCrashDistance = -1f;
+    public int crashCount = 0;
 
     [Header("UI")]
     public SpriteRenderer playerIcon;
@@ -226,6 +227,7 @@ public class WingTtoPlayer : MonoBehaviour
 
         if (Q_FirstCrashDistance < 0)
             Q_FirstCrashDistance = gameManager.CurrentDistance;
+        crashCount++;
 
         await UniTask.WaitForSeconds(0.3f);
 
