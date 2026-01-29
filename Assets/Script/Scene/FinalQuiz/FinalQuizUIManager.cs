@@ -126,10 +126,7 @@ public class FinalQuizUIManager : MonoBehaviour
 
         countdownText.transform.localRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-5, 5));
 
-        Sequence seq = DOTween.Sequence();
-        seq.Append(countdownText.DOFade(0f, 0.8f).From(1f).SetEase(Ease.OutQuad));
-        seq.Join(countdownText.transform.DOScale(3f, 0.8f).From(1f).SetEase(Ease.OutQuad));
-        seq.OnComplete(() =>
+        countdownText.transform.DOScale(3f, 0.8f).From(1f).SetEase(Ease.OutQuad).OnComplete(() =>
         {
             countdownText.gameObject.SetActive(false);
         });

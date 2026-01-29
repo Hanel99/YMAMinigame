@@ -16,6 +16,7 @@ public class TowerGamePlayerStat : MonoBehaviour
     private int statLevel;
     private int requireCoin;
     private bool isLongPress = false;
+    private LongPressButton longPressButton;
 
     void OnDisable()
     {
@@ -42,7 +43,12 @@ public class TowerGamePlayerStat : MonoBehaviour
         requireCoinText.text = requireCoin <= 0 ? "MAX" : requireCoin.ToString("N0");
         enchantButton.interactable = requireCoin > 0 && SaveDataManager.instance.playerData.coin >= requireCoin;
 
-        enchantButton.GetComponent<LongPressButton>().SetLongPressAction(OnClickEnchant);
+        if (longPressButton == null)
+        {
+            longPressButton = enchantButton.GetComponent<LongPressButton>();
+            longPressButton.SetLongPressAction(OnClickEnchant);
+        }
+
     }
 
     public void UpdateButtonInteractable()

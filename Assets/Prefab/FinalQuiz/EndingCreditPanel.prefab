@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7266639141455863466}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: titleGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 511468430138940500}
   - component: {fileID: 2691437570230603680}
   m_Layer: 5
-  m_Name: 'EndingCreditPanel '
+  m_Name: EndingCreditPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalQuizEndingPanel
   ymaLogo: {fileID: 2367451970223268155}
+  endingTitle: {fileID: 0}
   endingCredit: {fileID: 894172941281531082}
 --- !u!1 &8629176231977031011
 GameObject:

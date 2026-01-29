@@ -5419,9 +5419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressType: 2
   holdTime: 1
-  isRepeat: 1
   repeatInterval: 0.05
+  accelerateTime: 3
+  accelerateInterval: 0.01
 --- !u!1 &502154992771829970
 GameObject:
   m_ObjectHideFlags: 0
@@ -21338,9 +21340,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressType: 2
   holdTime: 1
-  isRepeat: 1
   repeatInterval: 0.05
+  accelerateTime: 3
+  accelerateInterval: 0.01
 --- !u!1 &1650692287406370969
 GameObject:
   m_ObjectHideFlags: 0
@@ -58213,9 +58217,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressType: 2
   holdTime: 1
-  isRepeat: 1
   repeatInterval: 0.05
+  accelerateTime: 3
+  accelerateInterval: 0.01
 --- !u!1 &4629919318941622546
 GameObject:
   m_ObjectHideFlags: 0
@@ -85292,9 +85298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressType: 2
   holdTime: 1
-  isRepeat: 1
   repeatInterval: 0.05
+  accelerateTime: 3
+  accelerateInterval: 0.01
 --- !u!1 &6946082184849143823
 GameObject:
   m_ObjectHideFlags: 0
@@ -96217,9 +96225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pressType: 2
   holdTime: 1
-  isRepeat: 1
   repeatInterval: 0.05
+  accelerateTime: 3
+  accelerateInterval: 0.01
 --- !u!1 &8064175571192515830
 GameObject:
   m_ObjectHideFlags: 0
@@ -102200,9 +102210,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6c2b2931ff23f4893106a909f3f26b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdTime: 1
-  isRepeat: 1
+  pressType: 1
+  holdTime: 3
   repeatInterval: 0.05
+  accelerateTime: 2
+  accelerateInterval: 0.1
 --- !u!1 &9074141181702701860
 GameObject:
   m_ObjectHideFlags: 0

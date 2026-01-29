@@ -64,6 +64,8 @@ public class GameSelectPopup : PopupBase
             gameImageButton.SetLongPressTime(3f);
             gameImageButton.SetLongPressAction((isLongPress) =>
             {
+                if (StaticGameData.useServerSeed) return;
+
                 StaticGameData.useServerSeed = true;
                 HLLogger.Log($"@@@ Long Press! {StaticGameData.useServerSeed}, {StaticGameData.serverGameSeed}");
                 SoundManager.instance.PlaySFX(SFXType.TowerStart);
