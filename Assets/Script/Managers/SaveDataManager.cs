@@ -381,6 +381,11 @@ public class SaveDataManager : MonoBehaviour
         }
     }
 
+    public void SetFinalQuizTryCount(int count)
+    {
+        _playerData.finalQuizPlayData.tryCount = count;
+    }
+
     public void UpdateFinalQuizProgress(int progress)
     {
         if (progress >= _playerData.finalQuizPlayData.enterQuizIndex)

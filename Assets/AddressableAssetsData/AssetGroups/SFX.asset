@@ -231,6 +231,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce4c47379328cd544b3ae8b8cb4dce9a
+    m_Address: SFX_Ending
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ce5bd779e4cb990449b82afcc9c6a05e
     m_Address: SFX_FinalClear
     m_ReadOnly: 0

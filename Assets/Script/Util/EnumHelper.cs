@@ -475,16 +475,7 @@ public enum SFXType
     DiscordLeave,
     DiscordNoti,
 
-
-
-
-
-    // Congratulations,
-    // GameOver,
-    // GameStart,
-    // GameResult,
-
-
+    Ending,
     Count,
 }
 

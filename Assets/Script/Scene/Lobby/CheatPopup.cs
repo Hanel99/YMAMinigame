@@ -203,6 +203,17 @@ public class CheatPopup : PopupBase
 
         cheatList.Add(new CheatData()
         {
+            desc = "최종 미션 트라이 카운트 변경",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                value = Mathf.Clamp(value, 0, 10);
+                SaveDataManager.instance.SetFinalQuizTryCount(value);
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
             desc = "최종 미션 클리어 처리",
             useInputfield = true,
             buttonAction = (value) =>

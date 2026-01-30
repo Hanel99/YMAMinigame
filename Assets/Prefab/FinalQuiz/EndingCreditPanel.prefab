@@ -67,7 +67,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5a8a1d8f0673d6546ad6dc7477e5a9c5, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -146,7 +146,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5a8a1d8f0673d6546ad6dc7477e5a9c5, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 8189576384468116056}
   - component: {fileID: 6589603999767606683}
   - component: {fileID: 2367451970223268155}
+  - component: {fileID: 8962595172549298747}
   m_Layer: 5
   m_Name: logo
   m_TagString: Untagged
@@ -313,6 +314,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &8962595172549298747
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020104914801568012}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2294297541459545893
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,7 +472,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5a8a1d8f0673d6546ad6dc7477e5a9c5, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -538,7 +551,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5a8a1d8f0673d6546ad6dc7477e5a9c5, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -687,7 +700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9502a42f00c7c14e9d16cbda1804480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalQuizEndingPanel
-  ymaLogo: {fileID: 2367451970223268155}
+  ymaLogo: {fileID: 8962595172549298747}
   endingTitle: {fileID: 8862631037569125028}
   endingCredits:
   - {fileID: 894172941281531082}
@@ -762,7 +775,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5a8a1d8f0673d6546ad6dc7477e5a9c5, type: 3}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4

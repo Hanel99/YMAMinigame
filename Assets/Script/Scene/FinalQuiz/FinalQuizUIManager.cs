@@ -307,8 +307,8 @@ public class FinalQuizUIManager : MonoBehaviour
         quizLeftTimeImage.gameObject.SetActive(false);
         phaseClearPanel.gameObject.SetActive(true);
         phaseClearDim.gameObject.SetActive(true);
-        phaseClearDim.DOFade(1f, 6f).From(0f).SetEase(Ease.Linear);
-        await UniTask.Delay(7000);
+        phaseClearDim.DOFade(1f, 7f).From(0f).SetEase(Ease.Linear);
+        await UniTask.Delay(8000);
 
         FinalQuizManager.instance.SetNextState();
         FinalQuizManager.instance.StartStateProcess();

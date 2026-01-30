@@ -253,7 +253,7 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("");
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 승리했습니다!");
-            sb.AppendLine($"{earnCoinAmount}코인, {earnExpAmount}경험치 획득!");
+            sb.AppendLine($"{earnCoinAmount:N0}코인, {earnExpAmount}경험치 획득!");
             UpdateCombatText().Forget();
 
             if (playerAvoidCount >= 3)
