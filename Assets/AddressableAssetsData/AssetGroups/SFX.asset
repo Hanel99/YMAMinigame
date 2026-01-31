@@ -27,18 +27,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 15e67551c9c7ba447964eff937984125
-    m_Address: SFX_FinalGameOver3
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SFX
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 17b3415b33d2dc84084e69c75c44e412
-    m_Address: SFX_TowerAvoid2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SFX
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1ba0c58cab6413046900efed55257688
     m_Address: SFX_WingTtoExp
     m_ReadOnly: 0
@@ -53,6 +41,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1eb54860c37a2ed4c8c96a45463baa6d
     m_Address: SFX_WingTtoGimbab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2148663d11664044fb438cc5566e4ee9
+    m_Address: SFX_FinalWarning
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -81,12 +75,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 34d7b97b5ed13d945affd96c287d7af1
-    m_Address: SFX_FinalGameOver1
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SFX
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 380285eb9bf67604d901227a523dd676
     m_Address: SFX_FinalDing1
     m_ReadOnly: 0
@@ -101,6 +89,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 519239b4c6ffba440bc08b17cadf5f4e
     m_Address: SFX_TowerHit2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 545ec588c79d4384ca74b725d82dcbad
+    m_Address: SFX_FinalEnter
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -123,8 +117,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 792410fef343a404bbd0fd94d361f3a9
-    m_Address: SFX_FinalWarning1
+  - m_GUID: 7b35192edf79fdb418743a50a8a7b4c0
+    m_Address: SFX_FinalRefer1
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -153,8 +147,8 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8c778cfb10940c34c907e776043ca567
-    m_Address: SFX_TowerAvoid
+  - m_GUID: 8d0461fb2aeec8f44bd9bf6db9cad114
+    m_Address: SFX_FinalRefer2
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -195,12 +189,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ae915c099b9a93e46ac7acf86607e981
-    m_Address: SFX_FinalWarning2
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SFX
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b40fc5ddb624d1e408e6ce7a49fe33be
     m_Address: SFX_DiscordNoti
     m_ReadOnly: 0
@@ -225,12 +213,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cbc67a879f84f76428da0ff352f4dedb
-    m_Address: SFX_Explosion
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - SFX
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ce4c47379328cd544b3ae8b8cb4dce9a
     m_Address: SFX_Ending
     m_ReadOnly: 0
@@ -245,6 +227,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ceea59b34cc7b3b4788d6c8d5c4effa7
     m_Address: SFX_WingTtoSpeedUp
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee78bdf2d4ba0854b9ebf19044d8e9b4
+    m_Address: SFX_FinalAllClear
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX

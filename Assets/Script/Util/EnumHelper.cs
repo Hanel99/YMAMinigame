@@ -432,7 +432,6 @@ public enum SFXType
     BtnNO,
     Warning,
     Coin,
-    Explosion,
 
     Victory,
 
@@ -446,8 +445,6 @@ public enum SFXType
     Go,
 
     //tower
-    TowerAvoid,
-    TowerAvoid2,
     TowerHit,
     TowerHit2,
     TowerStart,
@@ -463,19 +460,21 @@ public enum SFXType
     FinalClearFake,
     FinalClear,
     FinalFlip,
-    FinalGameOver1,
     FinalGameOver2,
-    FinalGameOver3,
     FinalCountDown,
-    FinalWarning1,
-    FinalWarning2,
+    FinalRefer1,
+    FinalRefer2,
+    FinalWarning,
+    FinalEnter,
+    FinalAllClear,
     O,
     X,
     DiscordEnter,
     DiscordLeave,
     DiscordNoti,
-
     Ending,
+
+
     Count,
 }
 

@@ -47,5 +47,7 @@ public class FinalQuizReferPopup : PopupBase
         referImage.gameObject.SetActive(isGet);
 
         infoText.text = isGet ? "동의서를 획득했습니다." : "동의서가 발견되었습니다.\n게임을 플레이해서 동의서를 획득하세요.";
+
+        SoundManager.instance.PlaySFX(isGet ? SFXType.FinalRefer2 : SFXType.FinalRefer1);
     }
 }

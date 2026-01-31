@@ -135,6 +135,7 @@ public class FinalQuizInfoPopup : PopupBase
         isActBackKey = false;
         OnClickShowWarningMiniPopup(false);
         sceneMoveDim.SetActive(true);
+        SoundManager.instance.PlaySFX(SFXType.FinalWarning);
 
         matchCardGameReferImage.transform.DOScale(0.55f, 0.8f).From(0.4f).SetEase(Ease.OutQuart);
         wordGameReferImage.transform.DOScale(0.55f, 0.8f).From(0.4f).SetEase(Ease.OutQuart);
@@ -155,7 +156,7 @@ public class FinalQuizInfoPopup : PopupBase
     {
         if (show)
         {
-            SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
+            SoundManager.instance.PlaySFX(SFXType.FinalEnter);
             warningMiniPopup.gameObject.SetActive(show);
             warningMiniPopup.alpha = 0;
             warningMiniPopup.DOFade(1, 0.8f).SetEase(Ease.OutQuart);

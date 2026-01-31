@@ -103,10 +103,10 @@ public class FinalQuizEndingPanel : MonoBehaviour
         // 파이널 퀴즈 게임 정보
         var finalData = playerData.finalQuizPlayData;
         sb.Clear();
-        sb.Append("<size=60>[ 연모아 새벽반 입부 시험 ]</size>\n\n");
+        sb.Append("<size=60>[ 새벽반 입부 시험 ]</size>\n\n");
         sb.Append($"시험 본 횟수 : {finalData.tryCount:N0} 회\n");
-        sb.Append($"맞춘 문제 수 : {finalData.OCount:N0} 개\n");
-        sb.Append($"틀린 문제 수 : {finalData.XCount:N0} 개");
+        sb.Append($"누적 정답 수 : {finalData.OCount:N0} 개\n");
+        sb.Append($"누적 오답 수 : {finalData.XCount:N0} 개");
         await ShowCreditSection(sb.ToString(), 5f);
 
 
@@ -135,13 +135,15 @@ public class FinalQuizEndingPanel : MonoBehaviour
         sb.Append($"노래 만들어준 가슬이\n");
         sb.Append($"그림 그려준 삼사, 멍개, 만타, 니모 등등\n");
         sb.Append($"게임 테스트해준 연모아 매니저들\n");
+        sb.Append($"지금 이걸 보고 있는 당신까지\n");
         sb.Append($"모두모두 고맙습니다.");
         await ShowCenterCredit(sb.ToString(), 5f);
 
 
         sb.Clear();
         sb.Append("플레이 해주셔서 감사합니다.\n");
-        sb.Append("Thank you for playing.");
+        sb.Append("Thank you for playing.\n\n\n");
+        sb.Append("앞으로도 연모아에서 같이 놀아요.");
         await ShowCenterCredit(sb.ToString(), 8f, 2f);
 
 

@@ -35,16 +35,16 @@ public class QuestManager : MonoBehaviour
 
 
     //cubeGame
-    public void AddCubeData(int playCount, int touchCount_TooFast, int touchCount_Fast, int touchCount_Perfect, int touchCount_Slow, int touchCount_TooSlow, int totalTouchCount)
+    public void AddCubeData(int playCount, int touchCount_TooFast, int touchCount_Fast, int touchCount_Perfect, int touchCount_Slow, int touchCount_TooSlow, int totalTouchCount, int totalScore)
     {
-        questUserPlayData.AddCubeData(playCount, touchCount_TooFast, touchCount_Fast, touchCount_Perfect, touchCount_Slow, touchCount_TooSlow, totalTouchCount);
+        questUserPlayData.AddCubeData(playCount, touchCount_TooFast, touchCount_Fast, touchCount_Perfect, touchCount_Slow, touchCount_TooSlow, totalTouchCount, totalScore);
     }
 
 
     //wingTto
-    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount)
+    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount, float flyDistance)
     {
-        questUserPlayData.AddWingTtoData(playCount, collectCount_Gimbab, collectCount_SpeedUp, collectCount_Coin, collectCount_Exp, crashCount);
+        questUserPlayData.AddWingTtoData(playCount, collectCount_Gimbab, collectCount_SpeedUp, collectCount_Coin, collectCount_Exp, crashCount, flyDistance);
     }
 
 

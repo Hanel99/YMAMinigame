@@ -77,7 +77,7 @@ public class QuestUserPlayData
 
 
     //cubeGame
-    public void AddCubeData(int playCount, int touchCount_TooFast, int touchCount_Fast, int touchCount_Perfect, int touchCount_Slow, int touchCount_TooSlow, int totalTouchCount)
+    public void AddCubeData(int playCount, int touchCount_TooFast, int touchCount_Fast, int touchCount_Perfect, int touchCount_Slow, int touchCount_TooSlow, int totalTouchCount, int totalScore)
     {
         cubeGame.playCount += playCount;
         cubeGame.touchCount_TooFast += touchCount_TooFast;
@@ -86,6 +86,7 @@ public class QuestUserPlayData
         cubeGame.touchCount_Slow += touchCount_Slow;
         cubeGame.touchCount_TooSlow += touchCount_TooSlow;
         cubeGame.totalTouchCount += totalTouchCount;
+        cubeGame.totalScore += totalScore;
 
         HLLogger.Log($"Q cube data - playcount {cubeGame.playCount} (+ {playCount})");
         HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooFast} (+ {touchCount_TooFast})");
@@ -94,10 +95,11 @@ public class QuestUserPlayData
         HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Slow} (+ {touchCount_Slow})");
         HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooSlow} (+ {touchCount_TooSlow})");
         HLLogger.Log($"Q cube data - totalCount {cubeGame.totalTouchCount} (+ {totalTouchCount})");
+        HLLogger.Log($"Q cube data - totalScore {cubeGame.totalScore} (+ {totalScore})");
     }
 
     //wingTto
-    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount)
+    public void AddWingTtoData(int playCount, int collectCount_Gimbab, int collectCount_SpeedUp, int collectCount_Coin, int collectCount_Exp, int crashCount, float flyDistance)
     {
         wingTto.playCount += playCount;
         wingTto.collectCount_Gimbab += collectCount_Gimbab;
@@ -105,12 +107,14 @@ public class QuestUserPlayData
         wingTto.collectCount_Coin += collectCount_Coin;
         wingTto.collectCount_Exp += collectCount_Exp;
         wingTto.crashCount += crashCount;
+        wingTto.totalFlyDistance += flyDistance;
         HLLogger.Log($"Q wing tto data - playcount {wingTto.playCount} (+ {playCount})");
         HLLogger.Log($"Q wing tto data - collect Gimbab {wingTto.collectCount_Gimbab} (+ {collectCount_Gimbab})");
         HLLogger.Log($"Q wing tto data - collect SpeedUp {wingTto.collectCount_SpeedUp} (+ {collectCount_SpeedUp})");
         HLLogger.Log($"Q wing tto data - collect Coin {wingTto.collectCount_Coin} (+ {collectCount_Coin})");
         HLLogger.Log($"Q wing tto data - collect Exp {wingTto.collectCount_Exp} (+ {collectCount_Exp})");
         HLLogger.Log($"Q wing tto data - crashCount {wingTto.crashCount} (+ {crashCount})");
+        HLLogger.Log($"Q wing tto data - totalFlyDistance {wingTto.totalFlyDistance} (+ {flyDistance})");
     }
 
 
@@ -276,6 +280,7 @@ public class QuestUserPlayData
         public int touchCount_Slow;
         public int touchCount_TooSlow;
         public int totalTouchCount;
+        public float totalScore;
 
         public int reachScoreWithoutTooFastOrTooSlow;
         public int reachScoreWithOnlyPerfect;
@@ -291,6 +296,7 @@ public class QuestUserPlayData
         public int collectCount_Exp;
 
         public int crashCount;
+        public float totalFlyDistance;
 
         public float reachScoreWithoutGimbab;
         public float reachScoreWithCrash;

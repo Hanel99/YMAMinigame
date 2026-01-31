@@ -89,6 +89,9 @@ public class FinalQuizGameResultPanel : MonoBehaviour
         resultTitleText.gameObject.SetActive(true);
         await UniTask.Delay(2000);
 
+        if (!isFail)
+            SoundManager.instance.PlaySFX(SFXType.FinalAllClear);
+
         resultText.gameObject.SetActive(true);
         await UniTask.Delay(2000);
 

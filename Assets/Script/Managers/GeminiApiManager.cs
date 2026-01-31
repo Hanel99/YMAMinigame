@@ -35,8 +35,8 @@ public class GeminiApiManager : MonoBehaviour
             return null;
         }
 
-        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={geminiApiKey}";
-        // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
+        // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key={geminiApiKey}";
+        string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={geminiApiKey}";
         // string url = $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.0-pro:generateContent?key={geminiApiKey}";
 
         // 요청 데이터 간소화

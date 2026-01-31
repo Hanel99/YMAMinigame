@@ -170,6 +170,18 @@ public class CubeGameManager : MonoBehaviour
 #endif
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && _inGameState == InGameState.Play)
+        {
+            if (!CubeGameUIManager.instance.IsPopupOpen())
+            {
+                CubeGameUIManager.instance.ShowPausePopup();
+                SetPause(true);
+            }
+        }
+    }
+
 
     private async UniTaskVoid TimeOverProcess()
     {
@@ -188,7 +200,8 @@ public class CubeGameManager : MonoBehaviour
 
         HLLogger.Log($"Score : {score} / coin : {earnCoinAmount} / exp : {exp}");
 
-        QuestManager.instance.AddCubeData(1, countDic[CubeState.TooFast], countDic[CubeState.Fast], countDic[CubeState.Perfect], countDic[CubeState.Slow], countDic[CubeState.TooSlow], countDic.Values.Sum());
+        QuestManager.instance.AddCubeData(1, countDic[CubeState.TooFast], countDic[CubeState.Fast], countDic[CubeState.Perfect],
+                                            countDic[CubeState.Slow], countDic[CubeState.TooSlow], countDic.Values.Sum(), score);
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutTooFastOrTooSlow, Q_WithoutTooFastOrTooSlowScore);
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithOnlyPerfect, Q_OnlyPerfectScore);
 
@@ -212,7 +225,6 @@ public class CubeGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.CubeGame))
         {
-            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
         }
@@ -220,7 +232,6 @@ public class CubeGameManager : MonoBehaviour
         {
             if (CheckReferMission())
             {
-                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
                 DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
             }

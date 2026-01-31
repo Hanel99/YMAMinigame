@@ -191,6 +191,18 @@ public class WingTtoGameManager : MonoBehaviour
 #endif
     }
 
+    private void OnApplicationFocus(bool hasFocus)
+    {
+        if (!hasFocus && _inGameState == InGameState.Play)
+        {
+            if (!WingTtoGameUIManager.instance.IsPopupOpen())
+            {
+                WingTtoGameUIManager.instance.ShowPausePopup();
+                SetPause(true);
+            }
+        }
+    }
+
     void CheckClickTouch()
     {
         if (_inGameState == InGameState.Play || _inGameState == InGameState.GetSet)
@@ -320,7 +332,7 @@ public class WingTtoGameManager : MonoBehaviour
         int earnCoinAmount = player.EarnCoin + (int)Math.Max(SCORE_COIN_BASE, currentDistance + SCORE_COIN_FACTOR * Math.Pow(currentDistance / SCORE_COIN_DIVISOR, SCORE_COIN_POW));
 
         QuestManager.instance.AddWingTtoData(1, player.collectCountDic[WingTtoObjectType.Gimbab], player.collectCountDic[WingTtoObjectType.SpeedUp]
-                                            , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp], player.crashCount);
+                                            , player.collectCountDic[WingTtoObjectType.Coin], player.collectCountDic[WingTtoObjectType.Exp], player.crashCount, currentDistance);
 
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithoutGimbab, player.Q_FirstGimbabDistance >= 0 ? player.Q_FirstGimbabDistance : currentDistance);
         QuestManager.instance.AddSpecialMission(QuestDetailType.S_ReachScoreWithCrash, player.Q_FirstCrashDistance);
@@ -349,7 +361,6 @@ public class WingTtoGameManager : MonoBehaviour
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.WingTto))
         {
-            SoundManager.instance.PlaySFX(SFXType.FinalWarning1);
             SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Unlocked);
             DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
         }
@@ -357,7 +368,6 @@ public class WingTtoGameManager : MonoBehaviour
         {
             if (CheckReferMission())
             {
-                SoundManager.instance.PlaySFX(SFXType.FinalWarning2);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Completed);
                 DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
             }
@@ -598,8 +608,8 @@ public class WingTtoGameManager : MonoBehaviour
 
     private bool CheckReferMission()
     {
-        // 1의 자릿수의 숫자가 3인 상태로 게임을 끝낼 것
-
-        return ((int)currentDistance).ToString().EndsWith("3");
+        // 1의 자리 또는 10의 자리의 숫자가 3인 경우
+        int score = (int)currentDistance;
+        return (score % 10 == 3) || ((score / 10) % 10 == 3);
     }
 }
