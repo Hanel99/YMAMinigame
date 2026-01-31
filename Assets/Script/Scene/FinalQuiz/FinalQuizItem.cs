@@ -54,6 +54,8 @@ public class FinalQuizItem : MonoBehaviour
 
     public void FlipQuizItem(bool moveUp)
     {
+        if (moveUp && this.gameObject.activeSelf == false) return;
+
         float localMoveFrom = moveUp ? 0f : -450f;
         float localMoveTo = moveUp ? 850f : 0f;
         float fadeFrom = moveUp ? 1 : 0;

@@ -266,6 +266,8 @@ public class FinalQuizManager : MonoBehaviour
     private void Phase2FinishProcess()
     {
         HLLogger.Log("@@@ phase 2 complete");
+        FinalQuizPlayData.XCount += wrongCount;
+        FinalQuizPlayData.OCount += (currentQuizIndex + 1 - wrongCount);
 
         UiManager.UpdateQuizProgress(20);
         UiManager.FadeOutAllQuizItem();

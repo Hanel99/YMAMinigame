@@ -75,6 +75,7 @@ public class FinalQuizEndingPanel : MonoBehaviour
         sb.Append("<size=60>[ 큐브 게임 ]</size>\n\n");
         sb.Append($"플레이 횟수 : {questData.cubeGame.playCount:N0} 회\n");
         sb.Append($"최고 점수 : {playerData.cubeGameHighScore:N0} 점\n");
+        sb.Append($"총 누적 점수 : {questData.cubeGame.totalScore:N0} 점\n");
         sb.Append($"퍼펙트 횟수 : {questData.cubeGame.touchCount_Perfect:N0} 회\n");
         sb.Append($"총 터치 횟수 : {questData.cubeGame.totalTouchCount:N0} 회");
         await ShowCreditSection(sb.ToString(), 5f);
@@ -84,6 +85,7 @@ public class FinalQuizEndingPanel : MonoBehaviour
         sb.Clear();
         sb.Append("<size=60>[ 윙또 ]</size>\n\n");
         sb.Append($"플레이 횟수 : {questData.wingTto.playCount:N0} 회\n");
+        sb.Append($"총 비행 거리 : {questData.wingTto.totalFlyDistance:N0}m\n");
         sb.Append($"최장 비행 거리 : {playerData.wingTtoHighScore:N0}m\n");
         sb.Append($"삼김 먹은 횟수 : {questData.wingTto.collectCount_Gimbab:N0} 개\n");
         sb.Append($"벽에 부딪힌 횟수 : {questData.wingTto.crashCount:N0} 회");
@@ -113,7 +115,7 @@ public class FinalQuizEndingPanel : MonoBehaviour
         // 기타 계정 정보(레벨, 콜렉션, 퀘스트, 사용 코인 등)
         sb.Clear();
         sb.Append("<size=60>[ 플레이어 기록 ]</size>\n\n");
-        sb.Append($"레벨 : {playerData.level} +({playerData.exp}exp)\n");
+        sb.Append($"레벨 : {playerData.level} (+{playerData.exp}exp)\n");
         sb.Append($"총 사용한 코인 : {questData.common.useCoin:N0} 개\n");
         sb.Append($"가챠 돌린 횟수 : {questData.gacha.playCount:N0} 회");
         await ShowCreditSection(sb.ToString(), 5f);
