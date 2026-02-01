@@ -29,6 +29,11 @@ public class BorderBlink : MonoBehaviour
         border.DOKill();
     }
 
+    public void SetBorderDuration(float duration)
+    {
+        borderAniDuration = duration;
+    }
+
     public void StartAnimation()
     {
         border.DOKill();

@@ -78,7 +78,42 @@ public class QuestPopup : PopupBase
     private async UniTask SetQuestItems(QuestGame questGame, CancellationToken token)
     {
         var questMetaDataList = GameResourceManager.instance.GetQuestMetaData(questGame);
-        int requiredCount = questMetaDataList.Count;
+
+        // 필터링된 리스트 생성
+        var visibleList = new List<QuestMetaData>();
+        foreach (var quest in questMetaDataList)
+        {
+            QuestMetaData preQuest = null;
+            // 1. Explicit PreQuestId
+            if (quest.preQuestId > 0)
+            {
+                var target = GameResourceManager.instance.GetQuestMetaData(quest.detailType, quest.preQuestId);
+                // detailType이 같은 경우에만 사전 퀘스트로 인정
+                if (target != null && target.detailType == quest.detailType)
+                {
+                    preQuest = target;
+                }
+            }
+            // 2. Implicit SubId (only if explicit is not set)
+            else if (quest.subId > 1)
+            {
+                preQuest = questMetaDataList.Find(x => x.detailType == quest.detailType && x.subId == quest.subId - 1);
+            }
+
+            if (preQuest != null)
+            {
+                bool isComplete = QuestManager.instance.IsQuestCompleted(preQuest.id);
+                bool isReady = QuestManager.instance.IsQuestReady(preQuest);
+
+                // 사전 퀘스트가 완료되었거나, 완료 대기 상태여야 현 퀘스트 노출
+                if (!isComplete && !isReady)
+                    continue;
+            }
+
+            visibleList.Add(quest);
+        }
+
+        int requiredCount = visibleList.Count;
         int currentCount = questItemList.Count;
 
         // questItem이 부족하면 추가 생성
@@ -103,7 +138,7 @@ public class QuestPopup : PopupBase
 
             if (i < requiredCount)
             {
-                questItemList[i].SetData(questMetaDataList[i]);
+                questItemList[i].SetData(visibleList[i]);
                 questItemList[i].gameObject.SetActive(true);
             }
             else

@@ -17,7 +17,8 @@ public class QuestItem : MonoBehaviour
     public Text expRewardText;
 
     public GameObject borderBlink;
-    public GameObject rewardButtonBorderBlink;
+    public GameObject rewardButtonBorderBlinkObj;
+    public BorderBlink rewardButtonBorderBlink;
     public GameObject completeDim;
     public Text completeText;
     public GameObject unknownDim;
@@ -102,14 +103,15 @@ public class QuestItem : MonoBehaviour
             {
                 questState = QuestState.Complete;
                 borderBlink.SetActive(false);
-                rewardButtonBorderBlink.SetActive(false);
+                rewardButtonBorderBlinkObj.SetActive(false);
                 return;
             }
             else
             {
                 questState = QuestState.ReadyToComplete;
+                rewardButtonBorderBlink.SetBorderDuration(0.2f);
                 borderBlink.SetActive(true);
-                rewardButtonBorderBlink.SetActive(true);
+                rewardButtonBorderBlinkObj.SetActive(true);
                 return;
             }
         }
@@ -117,7 +119,7 @@ public class QuestItem : MonoBehaviour
         {
             questState = QuestState.InProgress;
             borderBlink.SetActive(false);
-            rewardButtonBorderBlink.SetActive(false);
+            rewardButtonBorderBlinkObj.SetActive(false);
         }
     }
 

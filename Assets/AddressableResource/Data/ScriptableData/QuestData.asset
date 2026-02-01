@@ -20,6 +20,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 5
     coin: 10000
@@ -32,6 +33,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 10
     coin: 20000
@@ -42,8 +44,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 0
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 15
     coin: 50000
@@ -54,8 +57,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 0
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -66,8 +70,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 0
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 30
     coin: 200000
@@ -78,8 +83,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 0
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 100
     coin: 1000000
@@ -90,8 +96,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 1
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 1
     coin: 10000
@@ -102,8 +109,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 1
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 2
     coin: 20000
@@ -114,8 +122,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 1
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 3
     coin: 50000
@@ -126,8 +135,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 1
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 5
     coin: 100000
@@ -138,8 +148,9 @@ MonoBehaviour:
     questGame: 0
     detailType: 1
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 10
     coin: 1000000
@@ -152,6 +163,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -164,6 +176,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 20000
@@ -174,8 +187,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 2
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -186,8 +200,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 2
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 50
     coin: 100000
@@ -198,8 +213,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 2
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 70
     coin: 200000
@@ -210,8 +226,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 2
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 150
     coin: 1000000
@@ -222,8 +239,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 3
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 3
     coin: 20000
@@ -234,8 +252,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 3
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 8
     coin: 50000
@@ -246,8 +265,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 3
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -258,8 +278,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 3
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 35
     coin: 200000
@@ -270,8 +291,9 @@ MonoBehaviour:
     questGame: 1
     detailType: 3
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 80
     coin: 1000000
@@ -284,6 +306,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 5
     coin: 10000
@@ -296,6 +319,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 10
     coin: 20000
@@ -306,8 +330,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 4
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 15
     coin: 50000
@@ -318,8 +343,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 4
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -330,8 +356,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 4
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 30
     coin: 200000
@@ -342,8 +369,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 4
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 100
     coin: 1000000
@@ -356,6 +384,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 5000
     coin: 10000
@@ -368,6 +397,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 10000
     coin: 20000
@@ -378,8 +408,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30000
     coin: 50000
@@ -390,8 +421,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 50000
     coin: 100000
@@ -402,8 +434,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 100000
     coin: 150000
@@ -414,8 +447,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 150000
     coin: 200000
@@ -426,8 +460,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 200000
     coin: 300000
@@ -438,8 +473,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 300000
     coin: 500000
@@ -450,8 +486,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 500000
     coin: 1000000
@@ -462,8 +499,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 5
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 1000000
     coin: 5000000
@@ -476,6 +514,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 100
     coin: 5000
@@ -488,6 +527,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 300
     coin: 10000
@@ -498,8 +538,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 500
     coin: 20000
@@ -510,8 +551,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 800
     coin: 30000
@@ -522,8 +564,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 1300
     coin: 50000
@@ -534,8 +577,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 2000
     coin: 80000
@@ -546,8 +590,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 3000
     coin: 150000
@@ -558,8 +603,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 5000
     coin: 300000
@@ -570,8 +616,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 6
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 10000
     coin: 1000000
@@ -584,6 +631,7 @@ MonoBehaviour:
     detailType2: 1
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -596,6 +644,7 @@ MonoBehaviour:
     detailType2: 1
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -606,8 +655,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 1
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -618,8 +668,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 1
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -630,8 +681,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 1
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 50
     coin: 50000
@@ -644,6 +696,7 @@ MonoBehaviour:
     detailType2: 2
     grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 50
     coin: 5000
@@ -656,6 +709,7 @@ MonoBehaviour:
     detailType2: 2
     grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 100
     coin: 10000
@@ -666,8 +720,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 2
-    grade: 1
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 150
     coin: 20000
@@ -678,8 +733,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 2
-    grade: 1
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 200
     coin: 30000
@@ -690,8 +746,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 2
-    grade: 2
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 250
     coin: 50000
@@ -704,6 +761,7 @@ MonoBehaviour:
     detailType2: 3
     grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 100
     coin: 5000
@@ -716,6 +774,7 @@ MonoBehaviour:
     detailType2: 3
     grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 300
     coin: 10000
@@ -726,8 +785,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 1
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 500
     coin: 20000
@@ -738,8 +798,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 1
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 0
     tryCount: 800
     coin: 30000
@@ -750,8 +811,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 2
+    grade: 0
     subId: 15
+    preQuestId: 14
     hidden: 0
     tryCount: 1100
     coin: 50000
@@ -762,8 +824,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 2
+    grade: 0
     subId: 16
+    preQuestId: 15
     hidden: 0
     tryCount: 1500
     coin: 100000
@@ -774,8 +837,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 3
+    grade: 0
     subId: 17
+    preQuestId: 16
     hidden: 0
     tryCount: 2000
     coin: 150000
@@ -786,8 +850,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 3
+    grade: 0
     subId: 18
+    preQuestId: 17
     hidden: 0
     tryCount: 2500
     coin: 300000
@@ -798,8 +863,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 4
+    grade: 0
     subId: 19
+    preQuestId: 18
     hidden: 0
     tryCount: 3000
     coin: 500000
@@ -810,8 +876,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 4
+    grade: 0
     subId: 20
+    preQuestId: 19
     hidden: 0
     tryCount: 5000
     coin: 1000000
@@ -822,8 +889,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 3
-    grade: 5
+    grade: 0
     subId: 21
+    preQuestId: 20
     hidden: 0
     tryCount: 10000
     coin: 5000000
@@ -836,6 +904,7 @@ MonoBehaviour:
     detailType2: 4
     grade: 0
     subId: 22
+    preQuestId: 21
     hidden: 0
     tryCount: 50
     coin: 5000
@@ -848,6 +917,7 @@ MonoBehaviour:
     detailType2: 4
     grade: 0
     subId: 23
+    preQuestId: 22
     hidden: 0
     tryCount: 100
     coin: 10000
@@ -858,8 +928,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 4
-    grade: 1
+    grade: 0
     subId: 24
+    preQuestId: 23
     hidden: 0
     tryCount: 150
     coin: 20000
@@ -870,8 +941,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 4
-    grade: 1
+    grade: 0
     subId: 25
+    preQuestId: 24
     hidden: 0
     tryCount: 200
     coin: 30000
@@ -882,8 +954,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 4
-    grade: 2
+    grade: 0
     subId: 26
+    preQuestId: 25
     hidden: 0
     tryCount: 250
     coin: 50000
@@ -896,6 +969,7 @@ MonoBehaviour:
     detailType2: 5
     grade: 0
     subId: 27
+    preQuestId: 26
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -908,6 +982,7 @@ MonoBehaviour:
     detailType2: 5
     grade: 0
     subId: 28
+    preQuestId: 27
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -918,8 +993,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 5
-    grade: 1
+    grade: 0
     subId: 29
+    preQuestId: 28
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -930,8 +1006,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 5
-    grade: 1
+    grade: 0
     subId: 30
+    preQuestId: 29
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -942,8 +1019,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 7
     detailType2: 5
-    grade: 2
+    grade: 0
     subId: 31
+    preQuestId: 30
     hidden: 0
     tryCount: 50
     coin: 50000
@@ -954,8 +1032,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 8
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 50000
     coin: 3000000
@@ -966,8 +1045,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 8
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 1
     tryCount: 300000
     coin: 5000000
@@ -978,8 +1058,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 9
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 8000
     coin: 3000000
@@ -990,8 +1071,9 @@ MonoBehaviour:
     questGame: 2
     detailType: 9
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 1
     tryCount: 30000
     coin: 5000000
@@ -1004,6 +1086,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 5
     coin: 10000
@@ -1016,6 +1099,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 10
     coin: 20000
@@ -1026,8 +1110,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 10
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 15
     coin: 50000
@@ -1038,8 +1123,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 10
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -1050,8 +1136,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 10
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 30
     coin: 200000
@@ -1062,8 +1149,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 10
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 100
     coin: 1000000
@@ -1076,6 +1164,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 500
     coin: 10000
@@ -1088,6 +1177,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 1000
     coin: 20000
@@ -1100,6 +1190,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 1500
     coin: 30000
@@ -1110,8 +1201,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 2000
     coin: 50000
@@ -1122,8 +1214,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 2500
     coin: 80000
@@ -1134,8 +1227,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 3000
     coin: 100000
@@ -1146,8 +1240,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 3500
     coin: 200000
@@ -1158,8 +1253,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 4000
     coin: 300000
@@ -1170,8 +1266,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 4100
     coin: 400000
@@ -1182,8 +1279,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 4200
     coin: 400000
@@ -1194,8 +1292,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 4300
     coin: 600000
@@ -1206,8 +1305,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 4400
     coin: 800000
@@ -1218,8 +1318,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 4500
     coin: 1000000
@@ -1230,8 +1331,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 11
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 0
     tryCount: 5000
     coin: 5000000
@@ -1244,6 +1346,7 @@ MonoBehaviour:
     detailType2: 6
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -1256,6 +1359,7 @@ MonoBehaviour:
     detailType2: 6
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -1268,6 +1372,7 @@ MonoBehaviour:
     detailType2: 6
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -1278,8 +1383,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 6
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -1290,8 +1396,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 6
-    grade: 1
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 60
     coin: 50000
@@ -1302,8 +1409,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 6
-    grade: 2
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 100
     coin: 100000
@@ -1316,6 +1424,7 @@ MonoBehaviour:
     detailType2: 7
     grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -1328,6 +1437,7 @@ MonoBehaviour:
     detailType2: 7
     grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -1340,6 +1450,7 @@ MonoBehaviour:
     detailType2: 7
     grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -1350,8 +1461,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 7
-    grade: 1
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -1362,8 +1474,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 7
-    grade: 1
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 60
     coin: 50000
@@ -1374,8 +1487,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 7
-    grade: 2
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 100
     coin: 100000
@@ -1388,6 +1502,7 @@ MonoBehaviour:
     detailType2: 8
     grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -1400,6 +1515,7 @@ MonoBehaviour:
     detailType2: 8
     grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -1412,6 +1528,7 @@ MonoBehaviour:
     detailType2: 8
     grade: 0
     subId: 15
+    preQuestId: 14
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -1422,8 +1539,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 8
-    grade: 1
+    grade: 0
     subId: 16
+    preQuestId: 15
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -1434,8 +1552,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 8
-    grade: 1
+    grade: 0
     subId: 17
+    preQuestId: 16
     hidden: 0
     tryCount: 60
     coin: 50000
@@ -1446,8 +1565,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 8
-    grade: 2
+    grade: 0
     subId: 18
+    preQuestId: 17
     hidden: 0
     tryCount: 100
     coin: 100000
@@ -1460,6 +1580,7 @@ MonoBehaviour:
     detailType2: 9
     grade: 0
     subId: 19
+    preQuestId: 18
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -1472,6 +1593,7 @@ MonoBehaviour:
     detailType2: 9
     grade: 0
     subId: 20
+    preQuestId: 19
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -1484,6 +1606,7 @@ MonoBehaviour:
     detailType2: 9
     grade: 0
     subId: 21
+    preQuestId: 20
     hidden: 0
     tryCount: 30
     coin: 20000
@@ -1494,8 +1617,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 9
-    grade: 1
+    grade: 0
     subId: 22
+    preQuestId: 21
     hidden: 0
     tryCount: 40
     coin: 30000
@@ -1506,8 +1630,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 9
-    grade: 1
+    grade: 0
     subId: 23
+    preQuestId: 22
     hidden: 0
     tryCount: 60
     coin: 50000
@@ -1518,8 +1643,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 12
     detailType2: 9
-    grade: 2
+    grade: 0
     subId: 24
+    preQuestId: 23
     hidden: 0
     tryCount: 100
     coin: 100000
@@ -1530,8 +1656,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 13
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 1000
     coin: 3000000
@@ -1542,8 +1669,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 13
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 1
     tryCount: 4000
     coin: 5000000
@@ -1554,8 +1682,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 14
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 1000
     coin: 3000000
@@ -1566,8 +1695,9 @@ MonoBehaviour:
     questGame: 3
     detailType: 14
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 1
     tryCount: 4000
     coin: 5000000
@@ -1580,6 +1710,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 5000
@@ -1592,6 +1723,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 10000
@@ -1604,6 +1736,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -1614,8 +1747,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 50
     coin: 100000
@@ -1626,8 +1760,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 100
     coin: 300000
@@ -1638,8 +1773,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 150
     coin: 500000
@@ -1650,8 +1786,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 200
     coin: 1000000
@@ -1662,8 +1799,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 250
     coin: 1000000
@@ -1674,8 +1812,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 300
     coin: 1000000
@@ -1686,8 +1825,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 1
     tryCount: 600
     coin: 5000000
@@ -1698,8 +1838,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 1
     tryCount: 800
     coin: 5000000
@@ -1710,8 +1851,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 15
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 1
     tryCount: 1000
     coin: 5000000
@@ -1724,6 +1866,7 @@ MonoBehaviour:
     detailType2: 10
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -1736,6 +1879,7 @@ MonoBehaviour:
     detailType2: 10
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -1746,8 +1890,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 50
     coin: 80000
@@ -1758,8 +1903,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 80
     coin: 100000
@@ -1770,8 +1916,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 100
     coin: 150000
@@ -1782,8 +1929,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 4
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 1
     tryCount: 200
     coin: 500000
@@ -1794,8 +1942,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 4
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 1
     tryCount: 300
     coin: 500000
@@ -1806,8 +1955,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 10
-    grade: 5
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 1
     tryCount: 500
     coin: 1000000
@@ -1820,6 +1970,7 @@ MonoBehaviour:
     detailType2: 11
     grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -1832,6 +1983,7 @@ MonoBehaviour:
     detailType2: 11
     grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -1842,8 +1994,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 1
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 50
     coin: 80000
@@ -1854,8 +2007,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 1
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 80
     coin: 100000
@@ -1866,8 +2020,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 2
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 100
     coin: 150000
@@ -1878,8 +2033,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 4
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 1
     tryCount: 200
     coin: 500000
@@ -1890,8 +2046,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 4
+    grade: 0
     subId: 15
+    preQuestId: 14
     hidden: 1
     tryCount: 300
     coin: 500000
@@ -1902,8 +2059,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 11
-    grade: 5
+    grade: 0
     subId: 16
+    preQuestId: 15
     hidden: 1
     tryCount: 500
     coin: 1000000
@@ -1916,6 +2074,7 @@ MonoBehaviour:
     detailType2: 12
     grade: 0
     subId: 17
+    preQuestId: 16
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -1928,6 +2087,7 @@ MonoBehaviour:
     detailType2: 12
     grade: 0
     subId: 18
+    preQuestId: 17
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -1938,8 +2098,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 1
+    grade: 0
     subId: 19
+    preQuestId: 18
     hidden: 0
     tryCount: 50
     coin: 80000
@@ -1950,8 +2111,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 1
+    grade: 0
     subId: 20
+    preQuestId: 19
     hidden: 0
     tryCount: 80
     coin: 100000
@@ -1962,8 +2124,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 2
+    grade: 0
     subId: 21
+    preQuestId: 20
     hidden: 0
     tryCount: 100
     coin: 150000
@@ -1974,8 +2137,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 4
+    grade: 0
     subId: 22
+    preQuestId: 21
     hidden: 1
     tryCount: 200
     coin: 500000
@@ -1986,8 +2150,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 4
+    grade: 0
     subId: 23
+    preQuestId: 22
     hidden: 1
     tryCount: 300
     coin: 500000
@@ -1998,8 +2163,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 12
-    grade: 5
+    grade: 0
     subId: 24
+    preQuestId: 23
     hidden: 1
     tryCount: 500
     coin: 1000000
@@ -2012,6 +2178,7 @@ MonoBehaviour:
     detailType2: 13
     grade: 0
     subId: 25
+    preQuestId: 24
     hidden: 0
     tryCount: 5
     coin: 10000
@@ -2024,6 +2191,7 @@ MonoBehaviour:
     detailType2: 13
     grade: 0
     subId: 26
+    preQuestId: 25
     hidden: 0
     tryCount: 10
     coin: 50000
@@ -2034,8 +2202,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 13
-    grade: 1
+    grade: 0
     subId: 27
+    preQuestId: 26
     hidden: 0
     tryCount: 15
     coin: 80000
@@ -2046,8 +2215,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 13
-    grade: 1
+    grade: 0
     subId: 28
+    preQuestId: 27
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -2058,8 +2228,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 13
-    grade: 2
+    grade: 0
     subId: 29
+    preQuestId: 28
     hidden: 0
     tryCount: 32
     coin: 150000
@@ -2070,8 +2241,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 13
-    grade: 4
+    grade: 0
     subId: 30
+    preQuestId: 29
     hidden: 1
     tryCount: 36
     coin: 300000
@@ -2082,8 +2254,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 13
-    grade: 5
+    grade: 0
     subId: 31
+    preQuestId: 30
     hidden: 1
     tryCount: 40
     coin: 500000
@@ -2096,6 +2269,7 @@ MonoBehaviour:
     detailType2: 14
     grade: 0
     subId: 32
+    preQuestId: 31
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -2108,6 +2282,7 @@ MonoBehaviour:
     detailType2: 14
     grade: 0
     subId: 33
+    preQuestId: 32
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -2118,8 +2293,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 14
-    grade: 1
+    grade: 0
     subId: 34
+    preQuestId: 33
     hidden: 0
     tryCount: 50
     coin: 100000
@@ -2130,8 +2306,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 14
-    grade: 2
+    grade: 0
     subId: 35
+    preQuestId: 34
     hidden: 0
     tryCount: 80
     coin: 150000
@@ -2142,8 +2319,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 14
-    grade: 4
+    grade: 0
     subId: 36
+    preQuestId: 35
     hidden: 1
     tryCount: 180
     coin: 500000
@@ -2154,8 +2332,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 14
-    grade: 4
+    grade: 0
     subId: 37
+    preQuestId: 36
     hidden: 1
     tryCount: 290
     coin: 1000000
@@ -2166,8 +2345,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 16
     detailType2: 14
-    grade: 5
+    grade: 0
     subId: 38
+    preQuestId: 37
     hidden: 1
     tryCount: 500
     coin: 2000000
@@ -2180,6 +2360,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -2190,8 +2371,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 30
     coin: 50000
@@ -2202,8 +2384,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 50
     coin: 100000
@@ -2214,8 +2397,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 70
     coin: 150000
@@ -2226,8 +2410,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 90
     coin: 300000
@@ -2238,8 +2423,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 100
     coin: 500000
@@ -2250,8 +2436,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 1
     tryCount: 201
     coin: 1000000
@@ -2262,8 +2449,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 1
     tryCount: 301
     coin: 2000000
@@ -2274,8 +2462,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 1
     tryCount: 401
     coin: 4000000
@@ -2286,8 +2475,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 1
     tryCount: 501
     coin: 6000000
@@ -2298,8 +2488,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 1
     tryCount: 601
     coin: 8000000
@@ -2310,8 +2501,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 1
     tryCount: 701
     coin: 10000000
@@ -2322,8 +2514,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 1
     tryCount: 801
     coin: 15000000
@@ -2334,8 +2527,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 1
     tryCount: 901
     coin: 30000000
@@ -2346,8 +2540,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 17
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 15
+    preQuestId: 14
     hidden: 1
     tryCount: 1000
     coin: 50000000
@@ -2358,8 +2553,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 18
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 1
     coin: 3000000
@@ -2370,8 +2566,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 18
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 1
     tryCount: 3
     coin: 5000000
@@ -2382,8 +2579,9 @@ MonoBehaviour:
     questGame: 4
     detailType: 18
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 1
     tryCount: 10
     coin: 10000000
@@ -2396,6 +2594,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -2408,6 +2607,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 50000
@@ -2418,8 +2618,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 19
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 100000
@@ -2430,8 +2631,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 19
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 50
     coin: 150000
@@ -2442,8 +2644,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 19
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 100
     coin: 300000
@@ -2456,6 +2659,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10
     coin: 10000
@@ -2468,6 +2672,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 20
     coin: 50000
@@ -2478,8 +2683,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 20
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 30
     coin: 100000
@@ -2490,8 +2696,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 20
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 50
     coin: 150000
@@ -2502,8 +2709,9 @@ MonoBehaviour:
     questGame: 6
     detailType: 20
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 100
     coin: 300000
@@ -2516,6 +2724,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 30
     coin: 10000
@@ -2528,6 +2737,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 100
     coin: 30000
@@ -2538,8 +2748,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 200
     coin: 50000
@@ -2550,8 +2761,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 500
     coin: 100000
@@ -2562,8 +2774,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 1000
     coin: 300000
@@ -2574,8 +2787,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 2000
     coin: 300000
@@ -2586,8 +2800,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 5000
     coin: 500000
@@ -2598,8 +2813,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 21
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 10000
     coin: 1000000
@@ -2612,6 +2828,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 1
     coin: 50000
@@ -2622,8 +2839,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 22
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 3
     coin: 30000
@@ -2634,8 +2852,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 22
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 5
     coin: 100000
@@ -2646,8 +2865,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 22
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 10
     coin: 100000
@@ -2658,8 +2878,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 22
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 20
     coin: 500000
@@ -2670,8 +2891,9 @@ MonoBehaviour:
     questGame: 5
     detailType: 22
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 50
     coin: 1000000
@@ -2684,6 +2906,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10000
     coin: 10000
@@ -2696,6 +2919,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 50000
     coin: 10000
@@ -2708,6 +2932,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 100000
     coin: 20000
@@ -2720,6 +2945,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 300000
     coin: 30000
@@ -2732,6 +2958,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 500000
     coin: 50000
@@ -2742,8 +2969,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 1000000
     coin: 100000
@@ -2754,8 +2982,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 2000000
     coin: 200000
@@ -2766,8 +2995,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 3000000
     coin: 300000
@@ -2778,8 +3008,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 5000000
     coin: 500000
@@ -2790,8 +3021,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 10000000
     coin: 1000000
@@ -2802,8 +3034,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 20000000
     coin: 2000000
@@ -2814,8 +3047,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 30000000
     coin: 3000000
@@ -2826,8 +3060,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 50000000
     coin: 5000000
@@ -2838,8 +3073,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 23
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 0
     tryCount: 100000000
     coin: 10000000
@@ -2852,6 +3088,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 10000
     coin: 10000
@@ -2864,6 +3101,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 50000
     coin: 10000
@@ -2876,6 +3114,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 100000
     coin: 20000
@@ -2888,6 +3127,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 300000
     coin: 30000
@@ -2900,6 +3140,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 500000
     coin: 50000
@@ -2910,8 +3151,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 1000000
     coin: 100000
@@ -2922,8 +3164,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 2000000
     coin: 200000
@@ -2934,8 +3177,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 3000000
     coin: 300000
@@ -2946,8 +3190,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 0
     tryCount: 5000000
     coin: 500000
@@ -2958,8 +3203,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 0
     tryCount: 10000000
     coin: 1000000
@@ -2970,8 +3216,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 0
     tryCount: 20000000
     coin: 2000000
@@ -2982,8 +3229,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 0
     tryCount: 30000000
     coin: 3000000
@@ -2994,8 +3242,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 13
+    preQuestId: 12
     hidden: 0
     tryCount: 50000000
     coin: 5000000
@@ -3006,8 +3255,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 24
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 14
+    preQuestId: 13
     hidden: 0
     tryCount: 100000000
     coin: 10000000
@@ -3020,6 +3270,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 0
     tryCount: 5
     coin: 10000
@@ -3032,6 +3283,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 2
+    preQuestId: 1
     hidden: 0
     tryCount: 10
     coin: 50000
@@ -3044,6 +3296,7 @@ MonoBehaviour:
     detailType2: 0
     grade: 0
     subId: 3
+    preQuestId: 2
     hidden: 0
     tryCount: 20
     coin: 100000
@@ -3054,8 +3307,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 4
+    preQuestId: 3
     hidden: 0
     tryCount: 30
     coin: 200000
@@ -3066,8 +3320,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 1
+    grade: 0
     subId: 5
+    preQuestId: 4
     hidden: 0
     tryCount: 50
     coin: 300000
@@ -3078,8 +3333,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 6
+    preQuestId: 5
     hidden: 0
     tryCount: 70
     coin: 500000
@@ -3090,8 +3346,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 2
+    grade: 0
     subId: 7
+    preQuestId: 6
     hidden: 0
     tryCount: 90
     coin: 800000
@@ -3102,8 +3359,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 3
+    grade: 0
     subId: 8
+    preQuestId: 7
     hidden: 0
     tryCount: 100
     coin: 1000000
@@ -3114,8 +3372,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 9
+    preQuestId: 8
     hidden: 1
     tryCount: 150
     coin: 3000000
@@ -3126,8 +3385,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 4
+    grade: 0
     subId: 10
+    preQuestId: 9
     hidden: 1
     tryCount: 200
     coin: 3000000
@@ -3138,8 +3398,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 11
+    preQuestId: 10
     hidden: 1
     tryCount: 250
     coin: 5000000
@@ -3150,8 +3411,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 25
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 12
+    preQuestId: 11
     hidden: 1
     tryCount: 300
     coin: 5000000
@@ -3162,8 +3424,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 26
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 1
     coin: 1000000
@@ -3174,8 +3437,9 @@ MonoBehaviour:
     questGame: 7
     detailType: 27
     detailType2: 0
-    grade: 5
+    grade: 0
     subId: 1
+    preQuestId: 0
     hidden: 1
     tryCount: 1
     coin: 49999999

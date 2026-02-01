@@ -204,5 +204,12 @@ public class QuestManager : MonoBehaviour
         return questUserPlayData.completedQuestIds.Contains(questId);
     }
 
+    public bool IsQuestReady(QuestMetaData data)
+    {
+        if (data == null) return false;
+        int currentVal = GetQuestValue(data.detailType, data.detailType2);
+        return currentVal >= data.tryCount;
+    }
+
     #endregion
 }
