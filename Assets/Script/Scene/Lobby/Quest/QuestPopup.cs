@@ -73,7 +73,8 @@ public class QuestPopup : PopupBase
     }
 
     // Consts
-    private const int BATCH_SIZE = 10;
+    private const int BATCH_SIZE = 30;
+    private const int DISABLE_BATCH_SIZE = 100;
 
     private async UniTask SetQuestItems(QuestGame questGame, CancellationToken token)
     {
@@ -87,9 +88,9 @@ public class QuestPopup : PopupBase
             // 1. Explicit PreQuestId
             if (quest.preQuestId > 0)
             {
-                var target = GameResourceManager.instance.GetQuestMetaData(quest.detailType, quest.preQuestId);
-                // detailType이 같은 경우에만 사전 퀘스트로 인정
-                if (target != null && target.detailType == quest.detailType)
+                var target = GameResourceManager.instance.GetQuestMetaData(quest.detailType, quest.detailType2, quest.preQuestId);
+                // detailType과 detailType2가 모두 같은 경우에만 사전 퀘스트로 인정
+                if (target != null && target.detailType == quest.detailType && target.detailType2 == quest.detailType2)
                 {
                     preQuest = target;
                 }
@@ -97,7 +98,7 @@ public class QuestPopup : PopupBase
             // 2. Implicit SubId (only if explicit is not set)
             else if (quest.subId > 1)
             {
-                preQuest = questMetaDataList.Find(x => x.detailType == quest.detailType && x.subId == quest.subId - 1);
+                preQuest = questMetaDataList.Find(x => x.detailType == quest.detailType && x.detailType2 == quest.detailType2 && x.subId == quest.subId - 1);
             }
 
             if (preQuest != null)
@@ -126,31 +127,39 @@ public class QuestPopup : PopupBase
                 questItem.transform.localScale = Vector3.one;
                 questItemList.Add(questItem);
 
+                // 생성은 비용이 높으므로 짧은 주기로 yield
                 if (i > 0 && i % BATCH_SIZE == 0)
                     await UniTask.Yield(PlayerLoopTiming.Update, token);
             }
         }
 
-        // 모든 questItem 데이터 설정 및 활성화/비활성화
-        for (int i = 0; i < questItemList.Count; ++i)
+        // 1. 활성 리스트 처리 (데이터 설정 포함)
+        for (int i = 0; i < requiredCount; ++i)
         {
             if (token.IsCancellationRequested) return;
 
-            if (i < requiredCount)
-            {
-                questItemList[i].SetData(visibleList[i]);
-                questItemList[i].gameObject.SetActive(true);
-            }
-            else
-            {
-                questItemList[i].gameObject.SetActive(false);
-            }
+            questItemList[i].SetData(visibleList[i]);
+            questItemList[i].gameObject.SetActive(true);
 
             if (i > 0 && i % BATCH_SIZE == 0)
                 await UniTask.Yield(PlayerLoopTiming.Update, token);
         }
 
+        // 2. 비활성 리스트 처리 (단순 끄기)
+        // 나머지는 비활성화. 단순 SetActive(false)는 비용이 낮으므로 한 번에 처리하거나 큰 배치를 사용
+
+        for (int i = requiredCount; i < questItemList.Count; ++i)
+        {
+            if (token.IsCancellationRequested) return;
+
+            questItemList[i].gameObject.SetActive(false);
+
+            if ((i - requiredCount) > 0 && (i - requiredCount) % DISABLE_BATCH_SIZE == 0)
+                await UniTask.Yield(PlayerLoopTiming.Update, token);
+        }
+
         questItemPrefab.gameObject.SetActive(false);
+        // 레이아웃 갱신을 위해 껐다 켜기
         questItemRoot.gameObject.SetActive(false);
         questItemRoot.gameObject.SetActive(true);
     }

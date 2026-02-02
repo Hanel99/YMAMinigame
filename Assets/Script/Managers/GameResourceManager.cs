@@ -340,9 +340,9 @@ public class GameResourceManager : MonoBehaviour
         return questData.Data.Find(x => x.id == index);
     }
 
-    public QuestMetaData GetQuestMetaData(QuestDetailType detailType, int subId)
+    public QuestMetaData GetQuestMetaData(QuestDetailType detailType, QuestDetailType2 detailType2, int subId)
     {
-        return questData.Data.Find(x => x.detailType == detailType && x.subId == subId);
+        return questData.Data.Find(x => x.detailType == detailType && x.detailType2 == detailType2 && x.subId == subId);
     }
 
     public List<QuestMetaData> GetAllQuestMetaData()

@@ -326,13 +326,11 @@ public class IntroController : MonoBehaviour
         // 버전 하위호환 보정 처리
         if (SaveDataManager.instance.playerData != null && SaveDataManager.instance.playerData.recentAppVersion != Application.version)
         {
-            if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.6.5"))
+            if (StaticGameData.IsUnderVersion(SaveDataManager.instance.playerData.recentAppVersion, "0.8.0"))
             {
-                //@@@ 0.6.5 스탯 데이터 하드리셋 대응
-                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criRateLevel > 32)
-                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criRate, 32);
-                if (SaveDataManager.instance.playerData.towerGameUserStatLevelData.criDmgLevel > 80)
-                    SaveDataManager.instance.SetTowerUserStatLevel(TowerUserStatType.criDmg, 80);
+                //@@@ 0.8.0 퀘스트 데이터 하드리셋 대응
+                SaveDataManager.instance.playerData.questUserPlayData.completedQuestData.Clear();
+                SaveDataManager.instance.playerData.questUserPlayData.completedQuestIds.Clear();
             }
 
             // 필요한 게 있으면 비슷하게 코드 추가
