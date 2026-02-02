@@ -79,6 +79,9 @@ public class FindAIWordGameManager : MonoBehaviour
     private const string MSG_FAIL_GAME = "실패!\n정답은 ";
     private const string MSG_SUCCESS = "정답!\n축하합니다!";
     private const string MSG_WRONG = "오답!";
+    private const string MSG_NEXT_HINT = "다음 힌트 확인";
+    private const string MSG_GIVE_UP = "포기하셨습니다.";
+    private const string MSG_HIDDEN_MESSAGE = "TRIGGER_ENTERED";
 
 
     private async UniTask StartGameProcess()
@@ -187,7 +190,7 @@ public class FindAIWordGameManager : MonoBehaviour
 
         if (currentHintIndex < hints.Count)
         {
-            FindAIWordGameInGameView.instance.EnableAnswerButton(true);
+            FindAIWordGameInGameView.instance.EnableButtons(true);
             FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
 
             sb.AppendLine(hints[currentHintIndex]);
@@ -209,7 +212,7 @@ public class FindAIWordGameManager : MonoBehaviour
         bool isCorrect = answer.Trim() == currentKeyword;
         CheckReferMission(currentHintIndex + 1, answer, isCorrect);
 
-        FindAIWordGameInGameView.instance.EnableAnswerButton(false);
+        FindAIWordGameInGameView.instance.EnableButtons(false);
 
         if (isCorrect)
         {
@@ -218,8 +221,29 @@ public class FindAIWordGameManager : MonoBehaviour
         }
         else
         {
-            FindAIWordGameInGameView.instance.UpdateHintText(MSG_WRONG);
+            string message;
+            if (answer.Equals("3"))
+            {
+                message = MSG_HIDDEN_MESSAGE;
+            }
+            else if (answer.Equals(MSG_NEXT_HINT))
+            {
+                message = MSG_NEXT_HINT;
+            }
+            else if (answer.Equals(MSG_GIVE_UP))
+            {
+                message = MSG_GIVE_UP;
+                currentHintIndex = hints.Count;
+            }
+            else
+            {
+                message = MSG_WRONG;
+            }
+            FindAIWordGameInGameView.instance.UpdateHintText(message);
             FindAIWordGameInGameView.instance.ResetAnswerField();
+
+            if (answer.Equals("3"))
+                FindAIWordGameInGameView.instance.GlitchHintText(message);
 
             currentHintIndex++;
             ShowNextHint(WRONG_DELAY).Forget();

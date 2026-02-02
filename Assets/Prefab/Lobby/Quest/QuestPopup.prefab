@@ -2974,6 +2974,7 @@ GameObject:
   - component: {fileID: 6970035246473352986}
   - component: {fileID: 7134995387894638887}
   - component: {fileID: 1539629355500261067}
+  - component: {fileID: 4385963225078327055}
   m_Layer: 5
   m_Name: text
   m_TagString: Untagged
@@ -3057,6 +3058,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &4385963225078327055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855526386548678064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19c7ec39ef44ab42b2beb03d59beca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlitchText
+  textComponent: {fileID: 7134995387894638887}
 --- !u!1 &8017297294254219357
 GameObject:
   m_ObjectHideFlags: 0

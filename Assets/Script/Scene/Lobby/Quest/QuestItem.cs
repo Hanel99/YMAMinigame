@@ -33,6 +33,8 @@ public class QuestItem : MonoBehaviour
 
     private bool isRewardProcessing = false;
     private int completeTouchCount = 0;
+    private bool isGlitchTextShow = false;
+    private readonly string completeString = "C O M P L E T E";
 
 
 
@@ -55,11 +57,8 @@ public class QuestItem : MonoBehaviour
         coinRewardText.text = UnitKorean(questData.coin);
         expRewardText.text = questData.exp.ToString();
 
-        progressValue = QuestManager.instance.GetQuestValue(questData.detailType, questData.detailType2);
         progressMaxValue = questData.tryCount;
-        UpdateProgress();
-        SetDimCover();
-
+        UpdateQuestUI();
     }
 
     public void UpdateQuestUI()
@@ -128,18 +127,14 @@ public class QuestItem : MonoBehaviour
     {
         completeDim.SetActive(questState == QuestState.Complete);
         unknownDim.SetActive(SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll == false && questState == QuestState.InProgress && questData.hidden);
+
+        if (questState == QuestState.Complete)
+        {
+            completeTouchCount = 0;
+            string redeemText = string.IsNullOrEmpty(questData.redeem) ? "!" : "?";
+            completeText.text = $"{completeString} {redeemText}";
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -208,7 +203,13 @@ public class QuestItem : MonoBehaviour
         completeTouchCount++;
         if (completeTouchCount >= TOUCH_COUNT_FOR_REDEEM)
         {
-            completeText.text = questData.redeem;
+            if (isGlitchTextShow)
+                return;
+            isGlitchTextShow = true;
+
+            SoundManager.instance.PlaySFX("SFX_glitch");
+            // completeText.text = questData.redeem;
+            completeText.GetComponent<GlitchText>().ChangeTextWithGlitch(questData.redeem);
             GUIUtility.systemCopyBuffer = questData.redeem;
 
             HLLogger.Log($"redeem Code : {questData.redeem}");
