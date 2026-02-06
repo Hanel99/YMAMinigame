@@ -29,7 +29,9 @@ public class QuestItem : MonoBehaviour
     private float progress = 0f;
 
     private QuestState questState = QuestState.InProgress;
-    public QuestMetaData questData;
+    private QuestMetaData questData;
+    public int RewardCoin => questData.coin;
+    public int RewardExp => questData.exp;
 
     public bool IsReadyToComplete => questState == QuestState.ReadyToComplete;
 

@@ -193,8 +193,8 @@ public class QuestPopup : PopupBase
         {
             if (item.gameObject.activeInHierarchy && item.IsReadyToComplete)
             {
-                int earnCoinAmount = item.questData.coin;
-                int earnExpAmount = item.questData.exp;
+                int earnCoinAmount = item.RewardCoin;
+                int earnExpAmount = item.RewardExp;
 
                 if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
                 {
