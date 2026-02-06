@@ -154,6 +154,32 @@ public class CheatPopup : PopupBase
 
         cheatList.Add(new CheatData()
         {
+            desc = "카드 지급",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                for (int i = 0; i < value; i++)
+                {
+                    SaveDataManager.instance.playerData.ownCardList.Add(i);
+                }
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "단어 지급",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                for (int i = 0; i < value; i++)
+                {
+                    SaveDataManager.instance.playerData.ownWordList.Add(i);
+                }
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
             desc = "꿀밤대회 층 지정",
             useInputfield = true,
             buttonAction = (value) =>
@@ -185,6 +211,29 @@ public class CheatPopup : PopupBase
             },
         });
 
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "큐브 게임 플레이카운트 수정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.playerData.questUserPlayData.cubeGame.playCount = value;
+            },
+        });
+
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "윙또 플레이카운트 수정",
+            useInputfield = true,
+            buttonAction = (value) =>
+            {
+                SaveDataManager.instance.playerData.questUserPlayData.wingTto.playCount = value;
+            },
+        });
+
+
         cheatList.Add(new CheatData()
         {
             desc = "최종 미션 재료 지급",
@@ -195,7 +244,7 @@ public class CheatPopup : PopupBase
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, value > 0 ? FinalReferState.Completed : FinalReferState.Locked);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, value > 1 ? FinalReferState.Completed : FinalReferState.Locked);
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, value > 2 ? FinalReferState.Completed : FinalReferState.Locked);
-                SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, value > 3 ? FinalReferState.Completed : FinalReferState.Unlocked);
+                SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, value > 3 ? FinalReferState.Completed : FinalReferState.Locked);
 
                 GameListView.instance.CheckUnlockContent();
             },
@@ -209,6 +258,7 @@ public class CheatPopup : PopupBase
             {
                 value = Mathf.Clamp(value, 0, 10);
                 SaveDataManager.instance.SetFinalQuizTryCount(value);
+                GameListView.instance.CheckUnlockContent();
             },
         });
 

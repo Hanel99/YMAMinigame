@@ -105,12 +105,18 @@ public class WingTtoGameResultPopup : PopupBase
 
     public override void OnClickClose()
     {
+        if (WingTtoGameUIManager.instance != null && !WingTtoGameUIManager.instance.IsPopupQueueEmpty)
+            return;
+
         SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
         ShowPopup(false);
     }
 
     public void OnClickRetry()
     {
+        if (WingTtoGameUIManager.instance != null && !WingTtoGameUIManager.instance.IsPopupQueueEmpty)
+            return;
+
         SceneMoveManager.instance.MoveScene(SceneName.YMAWingTto);
     }
 }

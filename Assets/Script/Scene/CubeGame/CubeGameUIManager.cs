@@ -45,6 +45,26 @@ public class CubeGameUIManager : MonoBehaviour
 
 
 
+    // Popup Queue
+    private Queue<Action> popupQueue = new Queue<Action>();
+
+    public void AddPopupToQueue(Action popupAction)
+    {
+        popupQueue.Enqueue(popupAction);
+    }
+
+    public void ShowNextPopup()
+    {
+        if (popupQueue.Count > 0)
+        {
+            var action = popupQueue.Dequeue();
+            action?.Invoke();
+        }
+    }
+
+    public bool IsPopupQueueEmpty => popupQueue.Count == 0;
+
+
     public void ShowResult(int score, int earnCoinAmount, int exp)
     {
         _ShowPopup<CubeGameResultPopup>().ShowPopup(score, earnCoinAmount, exp);
@@ -55,21 +75,30 @@ public class CubeGameUIManager : MonoBehaviour
         _ShowPopup<PausePopup>().ShowPopup();
     }
 
-    public void ShowLevelUpPopup()
+    public void ShowLevelUpPopup(Action onClose = null)
     {
-        _ShowPopup<LevelUpPopup>().ShowPopup();
+        var popup = _ShowPopup<LevelUpPopup>();
+        popup.ShowPopup(true);
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
-    public void ShowReferPopup(GameType gameType)
+    public void ShowReferPopup(GameType gameType, Action onClose = null)
     {
-        _ShowPopup<FinalQuizReferPopup>().ShowPopup(gameType);
+        var popup = _ShowPopup<FinalQuizReferPopup>();
+        popup.ShowPopup(gameType);
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
 
     //매개변수 없는 팝업의 경우
-    public void ShowPopup<T>() where T : PopupBase
+    public void ShowPopup<T>(Action onClose = null) where T : PopupBase
     {
-        _ShowPopup<T>().ShowPopup(true);
+        var popup = _ShowPopup<T>();
+        popup.ShowPopup(true);
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
     private T _ShowPopup<T>() where T : PopupBase

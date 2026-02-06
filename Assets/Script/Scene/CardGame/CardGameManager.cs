@@ -26,7 +26,6 @@ public class CardGameManager : MonoBehaviour
     private const int MIN_EARN_COIN = 10000;
     private const int PENALTY_COIN_PER_TRY = 500;
     private const float GAME_END_DELAY = 1.5f;
-    private const float RESULT_POPUP_DELAY = 1.2f;
 
     // final refer mission
     private bool isReferMissionSuccess = true;
@@ -140,27 +139,46 @@ public class CardGameManager : MonoBehaviour
         SaveDataManager.instance.AddCoin(earnCoinAmount);
         List<int> newCardIDList = SaveDataManager.instance.GetNotOwnCardList(collectCardIdList);
         SaveDataManager.instance.AddOwnCardList(collectCardIdList);
+
+        // 결과 팝업 노출 (큐 미사용, 즉시 노출)
         CardGameUIManager.instance.ShowResult(tryCount, earnCoinAmount, newCardIDList);
 
-        if (SaveDataManager.instance.AddExp(exp))
-            DOVirtual.DelayedCall(GAME_END_DELAY, () => CardGameUIManager.instance.ShowPopup<LevelUpPopup>());
 
+        // 1.5초 뒤 팝업 큐 실행 시작
+        DOVirtual.DelayedCall(GAME_END_DELAY, () => CardGameUIManager.instance.ShowNextPopup());
 
-        // final refer
+        // 팝업 큐 등록
+
+        // 1. Final Refer Popup
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.MatchCardGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+            CardGameUIManager.instance.AddPopupToQueue(() =>
+                CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame, CardGameUIManager.instance.ShowNextPopup));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.MatchCardGame))
         {
             if (isReferMissionSuccess)
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.MatchCardGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(RESULT_POPUP_DELAY, () => CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame));
+                CardGameUIManager.instance.AddPopupToQueue(() =>
+                    CardGameUIManager.instance.ShowReferPopup(GameType.MatchCardGame, CardGameUIManager.instance.ShowNextPopup));
             }
         }
 
+        // 2. New Card Popup
+        if (newCardIDList != null && newCardIDList.Count > 0)
+        {
+            CardGameUIManager.instance.AddPopupToQueue(() =>
+                CardGameUIManager.instance.ShowNewCardPopup(newCardIDList, CardGameUIManager.instance.ShowNextPopup));
+        }
+
+        // 3. Level Up Popup
+        if (SaveDataManager.instance.AddExp(exp))
+        {
+            CardGameUIManager.instance.AddPopupToQueue(() =>
+                CardGameUIManager.instance.ShowPopup<LevelUpPopup>(CardGameUIManager.instance.ShowNextPopup));
+        }
     }
     private void CalcEarnCoinAmount()
     {

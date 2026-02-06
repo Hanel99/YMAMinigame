@@ -278,27 +278,33 @@ public class FindAIWordGameManager : MonoBehaviour
 
         FindAIWordGameUIManager.instance.ShowResult(currentHintIndex + 1, earnCoinAmount);
 
-        if (SaveDataManager.instance.AddExp(exp))
-        {
-            await UniTask.Delay(LEVEL_UP_DELAY);
-            FindAIWordGameUIManager.instance.ShowLevelUpPopup();
-        }
-
-
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.FindAIWordGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+            FindAIWordGameUIManager.instance.AddPopupToQueue(() =>
+                FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame, FindAIWordGameUIManager.instance.ShowNextPopup));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.FindAIWordGame))
         {
             if (isReferMissionSuccess)
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.FindAIWordGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame));
+                FindAIWordGameUIManager.instance.AddPopupToQueue(() =>
+                    FindAIWordGameUIManager.instance.ShowReferPopup(GameType.FindAIWordGame, FindAIWordGameUIManager.instance.ShowNextPopup));
             }
         }
+
+        if (SaveDataManager.instance.AddExp(exp))
+        {
+            FindAIWordGameUIManager.instance.AddPopupToQueue(() =>
+                FindAIWordGameUIManager.instance.ShowLevelUpPopup(FindAIWordGameUIManager.instance.ShowNextPopup));
+        }
+
+
+        // 1.5초 뒤 팝업 큐 실행 시작
+        await UniTask.Delay(1500);
+        FindAIWordGameUIManager.instance.ShowNextPopup();
     }
 
     private int CalculateReward(int delayTime)

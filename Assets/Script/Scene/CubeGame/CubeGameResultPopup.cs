@@ -95,12 +95,18 @@ public class CubeGameResultPopup : PopupBase
 
     public override void OnClickClose()
     {
+        if (CubeGameUIManager.instance != null && !CubeGameUIManager.instance.IsPopupQueueEmpty)
+            return;
+
         SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
         ShowPopup(false);
     }
 
     public void OnClickRetry()
     {
+        if (CubeGameUIManager.instance != null && !CubeGameUIManager.instance.IsPopupQueueEmpty)
+            return;
+
         SceneMoveManager.instance.MoveScene(SceneName.YMACubeGame);
     }
 }

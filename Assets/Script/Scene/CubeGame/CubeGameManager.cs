@@ -215,27 +215,33 @@ public class CubeGameManager : MonoBehaviour
         SaveDataManager.instance.SetCubeGameHighScore(score);
         CubeGameUIManager.instance.ShowResult(score, earnCoinAmount, exp);
 
-        if (SaveDataManager.instance.AddExp(exp))
-        {
-            await UniTask.Delay(LEVEL_UP_DELAY);
-            CubeGameUIManager.instance.ShowLevelUpPopup();
-        }
-
-
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.CubeGame))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+            CubeGameUIManager.instance.AddPopupToQueue(() =>
+                CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame, CubeGameUIManager.instance.ShowNextPopup));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.CubeGame))
         {
             if (CheckReferMission())
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.CubeGame, FinalReferState.Completed);
-                DOVirtual.DelayedCall(REFER_POPUP_DELAY, () => CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame));
+                CubeGameUIManager.instance.AddPopupToQueue(() =>
+                    CubeGameUIManager.instance.ShowReferPopup(GameType.CubeGame, CubeGameUIManager.instance.ShowNextPopup));
             }
         }
+
+        if (SaveDataManager.instance.AddExp(exp))
+        {
+            CubeGameUIManager.instance.AddPopupToQueue(() =>
+                CubeGameUIManager.instance.ShowLevelUpPopup(CubeGameUIManager.instance.ShowNextPopup));
+        }
+
+
+        // 1.5초 뒤 팝업 큐 실행 시작
+        await UniTask.Delay(1500);
+        CubeGameUIManager.instance.ShowNextPopup();
     }
 
 

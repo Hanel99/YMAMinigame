@@ -351,27 +351,33 @@ public class WingTtoGameManager : MonoBehaviour
 
         WingTtoGameUIManager.instance.ShowResult(currentDistance, player.EarnCoin, player.EarnExp, earnCoinAmount, exp);
 
-        if (SaveDataManager.instance.AddExp(exp))
-        {
-            await UniTask.Delay(1500);
-            WingTtoGameUIManager.instance.ShowLevelUpPopup();
-        }
-
-
         // final refer
         if (FinalReferManager.instance.IsFinalReferUnlock(GameType.WingTto))
         {
             SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Unlocked);
-            DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
+            WingTtoGameUIManager.instance.AddPopupToQueue(() =>
+                WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto, WingTtoGameUIManager.instance.ShowNextPopup));
         }
         else if (FinalReferManager.instance.IsFinalReferStateUnlocked(GameType.WingTto))
         {
             if (CheckReferMission())
             {
                 SaveDataManager.instance.SetFinalQuizReferData(GameType.WingTto, FinalReferState.Completed);
-                DOVirtual.DelayedCall(1.2f, () => WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto));
+                WingTtoGameUIManager.instance.AddPopupToQueue(() =>
+                    WingTtoGameUIManager.instance.ShowReferPopup(GameType.WingTto, WingTtoGameUIManager.instance.ShowNextPopup));
             }
         }
+
+        if (SaveDataManager.instance.AddExp(exp))
+        {
+            WingTtoGameUIManager.instance.AddPopupToQueue(() =>
+                WingTtoGameUIManager.instance.ShowLevelUpPopup(WingTtoGameUIManager.instance.ShowNextPopup));
+        }
+
+
+        // 1.5초 뒤 팝업 큐 실행 시작
+        await UniTask.Delay(1500);
+        WingTtoGameUIManager.instance.ShowNextPopup();
     }
 
 

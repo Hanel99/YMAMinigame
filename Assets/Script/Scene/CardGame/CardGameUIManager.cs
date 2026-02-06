@@ -48,9 +48,30 @@ public class CardGameUIManager : MonoBehaviour
 
 
 
+    // Popup Queue
+    private Queue<Action> popupQueue = new Queue<Action>();
+
+    public void AddPopupToQueue(Action popupAction)
+    {
+        popupQueue.Enqueue(popupAction);
+    }
+
+    public void ShowNextPopup()
+    {
+        if (popupQueue.Count > 0)
+        {
+            var action = popupQueue.Dequeue();
+            action?.Invoke();
+        }
+    }
+
+    public bool IsPopupQueueEmpty => popupQueue.Count == 0;
+
+
     public void ShowResult(int touchCount, int earnCoinAmount, List<int> collectCardIdList)
     {
-        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList, SceneName.YMAMatch2CardGame, () => ShowNewCardPopup(collectCardIdList));
+        // 결과 팝업 닫힘 콜백 제거 (큐 시스템 사용 예정)
+        _ShowPopup<GameResultPopup>().ShowPopup(touchCount, earnCoinAmount, collectCardIdList, SceneName.YMAMatch2CardGame, null);
     }
 
     public void ShowCardCheckPopup(List<Card> selectCardList, Action callback = null)
@@ -59,11 +80,14 @@ public class CardGameUIManager : MonoBehaviour
         checkCardPopup.StartCheckProcess(selectCardList, callback);
     }
 
-    public void ShowNewCardPopup(List<int> newCardIdList)
+    public void ShowNewCardPopup(List<int> newCardIdList, Action onClose = null)
     {
         var popup = _ShowPopup<GachaResultPopup>();
         popup.SetTitle("New Card");
         popup.ShowPopup(newCardIdList, null);
+
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
     public void ShowNewCardDetailPopup(CardMetaData data)
@@ -78,9 +102,13 @@ public class CardGameUIManager : MonoBehaviour
 
 
 
-    public void ShowReferPopup(GameType gameType)
+    public void ShowReferPopup(GameType gameType, Action onClose = null)
     {
-        _ShowPopup<FinalQuizReferPopup>().ShowPopup(gameType);
+        var popup = _ShowPopup<FinalQuizReferPopup>();
+        popup.ShowPopup(gameType);
+
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
 
@@ -88,9 +116,13 @@ public class CardGameUIManager : MonoBehaviour
 
 
     //매개변수 없는 팝업의 경우
-    public void ShowPopup<T>() where T : PopupBase
+    public void ShowPopup<T>(Action onClose = null) where T : PopupBase
     {
-        _ShowPopup<T>().ShowPopup(true);
+        var popup = _ShowPopup<T>();
+        popup.ShowPopup(true);
+
+        if (onClose != null)
+            popup.SetCloseCallBack(onClose);
     }
 
     private T _ShowPopup<T>() where T : PopupBase

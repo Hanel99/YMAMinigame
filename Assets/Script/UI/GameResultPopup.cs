@@ -93,12 +93,34 @@ public class GameResultPopup : PopupBase
 
     public override void OnClickClose()
     {
+        if (sceneName == SceneName.YMAMatch2CardGame)
+        {
+            if (CardGameUIManager.instance != null && !CardGameUIManager.instance.IsPopupQueueEmpty)
+                return;
+        }
+        else if (sceneName == SceneName.YMAFindAIWordGame)
+        {
+            if (FindAIWordGameUIManager.instance != null && !FindAIWordGameUIManager.instance.IsPopupQueueEmpty)
+                return;
+        }
+
         SceneMoveManager.instance.MoveScene(SceneName.LobbyScene);
         ShowPopup(false);
     }
 
     public void OnClickRetry()
     {
+        if (sceneName == SceneName.YMAMatch2CardGame)
+        {
+            if (CardGameUIManager.instance != null && !CardGameUIManager.instance.IsPopupQueueEmpty)
+                return;
+        }
+        else if (sceneName == SceneName.YMAFindAIWordGame)
+        {
+            if (FindAIWordGameUIManager.instance != null && !FindAIWordGameUIManager.instance.IsPopupQueueEmpty)
+                return;
+        }
+
         SceneMoveManager.instance.MoveScene(sceneName);
     }
 }
