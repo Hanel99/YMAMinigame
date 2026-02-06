@@ -80,6 +80,22 @@ public class QuestPopup : PopupBase
     {
         var questMetaDataList = GameResourceManager.instance.GetQuestMetaData(questGame);
 
+        // 퀘스트 데이터 정렬
+        questMetaDataList.Sort((a, b) =>
+        {
+            // 완료 여부 확인
+            bool isCompleteA = QuestManager.instance.IsQuestCompleted(a.id);
+            bool isCompleteB = QuestManager.instance.IsQuestCompleted(b.id);
+
+            // 완료된 퀘스트가 뒤로 가도록 정렬 (false < true)
+            if (isCompleteA != isCompleteB)
+                return isCompleteA.CompareTo(isCompleteB);
+
+            // 완료 상태가 같다면 ID 순으로 정렬 (오름차순)
+            return a.id.CompareTo(b.id);
+        });
+
+
         // 필터링된 리스트 생성
         var visibleList = new List<QuestMetaData>();
         foreach (var quest in questMetaDataList)
@@ -162,5 +178,48 @@ public class QuestPopup : PopupBase
         // 레이아웃 갱신을 위해 껐다 켜기
         questItemRoot.gameObject.SetActive(false);
         questItemRoot.gameObject.SetActive(true);
+    }
+
+
+
+    public void ReceiveAllQuestReward()
+    {
+        long totalCoin = 0;
+        int totalExp = 0;
+        bool isLevelUp = false;
+        int receivedCount = 0;
+
+        foreach (var item in questItemList)
+        {
+            if (item.gameObject.activeInHierarchy && item.IsReadyToComplete)
+            {
+                int earnCoinAmount = item.questData.coin;
+                int earnExpAmount = item.questData.exp;
+
+                if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+                {
+                    earnCoinAmount = (int)Math.Min((long)StaticGameData.MAX_COIN_VALUE, (long)earnCoinAmount * 50);
+                    earnExpAmount *= 10;
+                }
+
+                totalCoin += earnCoinAmount;
+                totalExp += earnExpAmount;
+
+                QuestManager.instance.CompleteQuest(item.questId);
+                item.SetCompleteState();
+                receivedCount++;
+            }
+        }
+
+        if (receivedCount > 0)
+        {
+            int finalCoin = (int)Math.Min(totalCoin, (long)StaticGameData.MAX_COIN_VALUE);
+
+            SaveDataManager.instance.AddCoin(finalCoin);
+            isLevelUp = SaveDataManager.instance.AddExp(totalExp);
+
+            GameListView.instance.UpdateUserProfileProcess();
+            LobbyUIManager.instance.ShowQuestRewardPopup(finalCoin, totalExp, isLevelUp);
+        }
     }
 }

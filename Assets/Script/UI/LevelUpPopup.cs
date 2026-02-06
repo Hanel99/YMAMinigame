@@ -65,6 +65,7 @@ public class LevelUpPopup : PopupBase
         if (currentSceneName == SceneName.LobbyScene)
         {
             GameListView.instance.CheckUnlockContent();
+            GameListView.instance.UpdateUserProfileProcess();
         }
     }
 

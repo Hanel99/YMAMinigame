@@ -62,7 +62,7 @@ public class QuestUserPlayData
         matchCardGame.playCount += playCount;
         matchCardGame.underQuestClearCount += underQuestClearCount;
 
-        HLLogger.Log($"Q match card data - playcount {matchCardGame.playCount} (+ {playCount}), underQuestClearCount {matchCardGame.underQuestClearCount} (+ {underQuestClearCount})");
+        // HLLogger.Log($"Q match card data - playcount {matchCardGame.playCount} (+ {playCount}), underQuestClearCount {matchCardGame.underQuestClearCount} (+ {underQuestClearCount})");
     }
 
 
@@ -72,7 +72,7 @@ public class QuestUserPlayData
         findAIWordGame.playCount += playCount;
         findAIWordGame.underQuestClearCount += underQuestClearCount;
 
-        HLLogger.Log($"Q ai word data - playcount {findAIWordGame.playCount} (+ {playCount}), underQuestClearCount {findAIWordGame.underQuestClearCount} (+ {underQuestClearCount})");
+        // HLLogger.Log($"Q ai word data - playcount {findAIWordGame.playCount} (+ {playCount}), underQuestClearCount {findAIWordGame.underQuestClearCount} (+ {underQuestClearCount})");
     }
 
 
@@ -88,14 +88,14 @@ public class QuestUserPlayData
         cubeGame.totalTouchCount += totalTouchCount;
         cubeGame.totalScore += totalScore;
 
-        HLLogger.Log($"Q cube data - playcount {cubeGame.playCount} (+ {playCount})");
-        HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooFast} (+ {touchCount_TooFast})");
-        HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Fast} (+ {touchCount_Fast})");
-        HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Perfect} (+ {touchCount_Perfect})");
-        HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Slow} (+ {touchCount_Slow})");
-        HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooSlow} (+ {touchCount_TooSlow})");
-        HLLogger.Log($"Q cube data - totalCount {cubeGame.totalTouchCount} (+ {totalTouchCount})");
-        HLLogger.Log($"Q cube data - totalScore {cubeGame.totalScore} (+ {totalScore})");
+        // HLLogger.Log($"Q cube data - playcount {cubeGame.playCount} (+ {playCount})");
+        // HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooFast} (+ {touchCount_TooFast})");
+        // HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Fast} (+ {touchCount_Fast})");
+        // HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Perfect} (+ {touchCount_Perfect})");
+        // HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_Slow} (+ {touchCount_Slow})");
+        // HLLogger.Log($"Q cube data - touchcount {cubeGame.touchCount_TooSlow} (+ {touchCount_TooSlow})");
+        // HLLogger.Log($"Q cube data - totalCount {cubeGame.totalTouchCount} (+ {totalTouchCount})");
+        // HLLogger.Log($"Q cube data - totalScore {cubeGame.totalScore} (+ {totalScore})");
     }
 
     //wingTto
@@ -108,13 +108,14 @@ public class QuestUserPlayData
         wingTto.collectCount_Exp += collectCount_Exp;
         wingTto.crashCount += crashCount;
         wingTto.totalFlyDistance += flyDistance;
-        HLLogger.Log($"Q wing tto data - playcount {wingTto.playCount} (+ {playCount})");
-        HLLogger.Log($"Q wing tto data - collect Gimbab {wingTto.collectCount_Gimbab} (+ {collectCount_Gimbab})");
-        HLLogger.Log($"Q wing tto data - collect SpeedUp {wingTto.collectCount_SpeedUp} (+ {collectCount_SpeedUp})");
-        HLLogger.Log($"Q wing tto data - collect Coin {wingTto.collectCount_Coin} (+ {collectCount_Coin})");
-        HLLogger.Log($"Q wing tto data - collect Exp {wingTto.collectCount_Exp} (+ {collectCount_Exp})");
-        HLLogger.Log($"Q wing tto data - crashCount {wingTto.crashCount} (+ {crashCount})");
-        HLLogger.Log($"Q wing tto data - totalFlyDistance {wingTto.totalFlyDistance} (+ {flyDistance})");
+
+        // HLLogger.Log($"Q wing tto data - playcount {wingTto.playCount} (+ {playCount})");
+        // HLLogger.Log($"Q wing tto data - collect Gimbab {wingTto.collectCount_Gimbab} (+ {collectCount_Gimbab})");
+        // HLLogger.Log($"Q wing tto data - collect SpeedUp {wingTto.collectCount_SpeedUp} (+ {collectCount_SpeedUp})");
+        // HLLogger.Log($"Q wing tto data - collect Coin {wingTto.collectCount_Coin} (+ {collectCount_Coin})");
+        // HLLogger.Log($"Q wing tto data - collect Exp {wingTto.collectCount_Exp} (+ {collectCount_Exp})");
+        // HLLogger.Log($"Q wing tto data - crashCount {wingTto.crashCount} (+ {crashCount})");
+        // HLLogger.Log($"Q wing tto data - totalFlyDistance {wingTto.totalFlyDistance} (+ {flyDistance})");
     }
 
 
@@ -122,7 +123,7 @@ public class QuestUserPlayData
     public void AddTowerCombatData(int playCount)
     {
         towerGame.playCount += playCount;
-        HLLogger.Log($"Q tower data - playcount {towerGame.playCount} (+ {playCount})");
+        // HLLogger.Log($"Q tower data - playcount {towerGame.playCount} (+ {playCount})");
     }
 
     public void AddTowerEnchantData(TowerGameResultType resultType)
@@ -149,10 +150,11 @@ public class QuestUserPlayData
         towerGame.weaponEnchantCount_Up += weaponEnchantCount_Up;
         towerGame.weaponEnchantCount_Stay += weaponEnchantCount_Stay;
         towerGame.weaponEnchantCount_Down += weaponEnchantCount_Down;
-        HLLogger.Log($"Q tower enchant data - total {towerGame.weaponTotalEnchantCount} (+ {weaponTotalEnchantCount})");
-        if (weaponEnchantCount_Up > 0) HLLogger.Log($"Q tower enchant data - up {towerGame.weaponEnchantCount_Up} (+ {weaponEnchantCount_Up})");
-        if (weaponEnchantCount_Stay > 0) HLLogger.Log($"Q tower enchant data - stay {towerGame.weaponEnchantCount_Stay} (+ {weaponEnchantCount_Stay})");
-        if (weaponEnchantCount_Down > 0) HLLogger.Log($"Q tower enchant data - down {towerGame.weaponEnchantCount_Down} (+ {weaponEnchantCount_Down})");
+
+        // HLLogger.Log($"Q tower enchant data - total {towerGame.weaponTotalEnchantCount} (+ {weaponTotalEnchantCount})");
+        // if (weaponEnchantCount_Up > 0) HLLogger.Log($"Q tower enchant data - up {towerGame.weaponEnchantCount_Up} (+ {weaponEnchantCount_Up})");
+        // if (weaponEnchantCount_Stay > 0) HLLogger.Log($"Q tower enchant data - stay {towerGame.weaponEnchantCount_Stay} (+ {weaponEnchantCount_Stay})");
+        // if (weaponEnchantCount_Down > 0) HLLogger.Log($"Q tower enchant data - down {towerGame.weaponEnchantCount_Down} (+ {weaponEnchantCount_Down})");
     }
 
 
@@ -168,7 +170,8 @@ public class QuestUserPlayData
         gacha.playCount += playCount;
         gacha.playGachaCount += playGacha;
         gacha.playMileageGachaCount += playMileageGacha;
-        HLLogger.Log($"Q gacha data - playcount {gacha.playCount} (+ {playCount}), playGacha {gacha.playGachaCount} (+ {playGacha}), playMileageGacha {gacha.playMileageGachaCount} (+ {playMileageGacha})");
+
+        // HLLogger.Log($"Q gacha data - playcount {gacha.playCount} (+ {playCount}), playGacha {gacha.playGachaCount} (+ {playGacha}), playMileageGacha {gacha.playMileageGachaCount} (+ {playMileageGacha})");
     }
 
 
@@ -178,13 +181,13 @@ public class QuestUserPlayData
     public void AddCommonData_CollectCoin(int value)
     {
         common.collectCoin += value;
-        HLLogger.Log($"Q common data - collectCoin {common.collectCoin} (+ {value})");
+        // HLLogger.Log($"Q common data - collectCoin {common.collectCoin} (+ {value})");
     }
 
     public void AddCommonData_UseCoin(int value)
     {
         common.useCoin += value;
-        HLLogger.Log($"Q common data - useCoin {common.useCoin} (+ {value})");
+        // HLLogger.Log($"Q common data - useCoin {common.useCoin} (+ {value})");
     }
 
 
@@ -199,14 +202,14 @@ public class QuestUserPlayData
                 {
                     var oldVal = cubeGame.reachScoreWithoutTooFastOrTooSlow;
                     cubeGame.reachScoreWithoutTooFastOrTooSlow = math.max(cubeGame.reachScoreWithoutTooFastOrTooSlow, value.ToInt());
-                    HLLogger.Log($"Q special mission - S_ReachScoreWithoutTooFastOrTooSlow {oldVal} -> {cubeGame.reachScoreWithoutTooFastOrTooSlow}");
+                    // HLLogger.Log($"Q special mission - S_ReachScoreWithoutTooFastOrTooSlow {oldVal} -> {cubeGame.reachScoreWithoutTooFastOrTooSlow}");
                 }
                 break;
             case QuestDetailType.S_ReachScoreWithOnlyPerfect:
                 {
                     var oldVal = cubeGame.reachScoreWithOnlyPerfect;
                     cubeGame.reachScoreWithOnlyPerfect = math.max(cubeGame.reachScoreWithOnlyPerfect, value.ToInt());
-                    HLLogger.Log($"Q special mission - S_ReachScoreWithOnlyPerfect {oldVal} -> {cubeGame.reachScoreWithOnlyPerfect}");
+                    // HLLogger.Log($"Q special mission - S_ReachScoreWithOnlyPerfect {oldVal} -> {cubeGame.reachScoreWithOnlyPerfect}");
                 }
                 break;
 
@@ -215,14 +218,14 @@ public class QuestUserPlayData
                 {
                     var oldVal = wingTto.reachScoreWithoutGimbab;
                     wingTto.reachScoreWithoutGimbab = Mathf.Max(wingTto.reachScoreWithoutGimbab, value);
-                    HLLogger.Log($"Q special mission - S_ReachScoreWithoutGimbab {oldVal} -> {wingTto.reachScoreWithoutGimbab}");
+                    // HLLogger.Log($"Q special mission - S_ReachScoreWithoutGimbab {oldVal} -> {wingTto.reachScoreWithoutGimbab}");
                 }
                 break;
             case QuestDetailType.S_ReachScoreWithCrash:
                 {
                     var oldVal = wingTto.reachScoreWithCrash;
                     wingTto.reachScoreWithCrash = Mathf.Max(wingTto.reachScoreWithCrash, value);
-                    HLLogger.Log($"Q special mission - S_ReachScoreWithCrash {oldVal} -> {wingTto.reachScoreWithCrash}");
+                    // HLLogger.Log($"Q special mission - S_ReachScoreWithCrash {oldVal} -> {wingTto.reachScoreWithCrash}");
                 }
                 break;
 
@@ -231,7 +234,7 @@ public class QuestUserPlayData
                 {
                     var oldVal = towerGame.winWithAvoid;
                     towerGame.winWithAvoid += 1;
-                    HLLogger.Log($"Q special mission - S_WinWithAvoid {oldVal} -> {towerGame.winWithAvoid}");
+                    // HLLogger.Log($"Q special mission - S_WinWithAvoid {oldVal} -> {towerGame.winWithAvoid}");
                 }
                 break;
 
@@ -240,7 +243,7 @@ public class QuestUserPlayData
                 {
                     var oldVal = common.equipEtcIcon;
                     common.equipEtcIcon += 1;
-                    HLLogger.Log($"Q special mission - S_EquipEtcIcon {oldVal} -> {common.equipEtcIcon}");
+                    // HLLogger.Log($"Q special mission - S_EquipEtcIcon {oldVal} -> {common.equipEtcIcon}");
                 }
                 break;
             default:

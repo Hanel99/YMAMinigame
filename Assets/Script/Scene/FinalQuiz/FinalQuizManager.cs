@@ -42,6 +42,7 @@ public class FinalQuizManager : MonoBehaviour
     private float quizLeftTimeImageFillAmount = 0;
     private float phase2PlusTime = 0;
     private int lastCountdownTime = -1;
+    private bool stopTimer = false;
 
 
 
@@ -114,7 +115,7 @@ public class FinalQuizManager : MonoBehaviour
         }
 
 
-        if (gameState == FinalGameState.Phase1 || gameState == FinalGameState.Phase2)
+        if (stopTimer == false && (gameState == FinalGameState.Phase1 || gameState == FinalGameState.Phase2))
         {
             quizTotalLeftTime -= Time.deltaTime;
             if (gameState == FinalGameState.Phase2)
@@ -234,6 +235,8 @@ public class FinalQuizManager : MonoBehaviour
 
     private void Phase1Process()
     {
+        stopTimer = false;
+
         UiManager.UpdateWrongCount(wrongCount, maxWrongCount);
         UiManager.SetPhase1UI();
         UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
@@ -255,6 +258,7 @@ public class FinalQuizManager : MonoBehaviour
     private void Phase2Process()
     {
         quizTotalLeftTime += phase2PlusTime;
+        stopTimer = false;
 
         UiManager.UpdateQuizProgress(0, true);
         UiManager.UpdateTimerText(quizTotalLeftTime, quizLeftTime, quizLeftTimeImageFillAmount);
@@ -328,7 +332,6 @@ public class FinalQuizManager : MonoBehaviour
             return;
         }
 
-        quizLeftTime += 0.2f;
         if (forceClear == false && currentQuizData.answer != 0 && currentQuizData.answer != answer)
         {
             //오답
@@ -353,7 +356,13 @@ public class FinalQuizManager : MonoBehaviour
             UiManager.UpdateQuizProgress(currentQuizIndex + 1);
         }
 
-        quizLeftTime = quizLeftTimeMax;
+        quizLeftTime = quizLeftTimeMax + 0.2f;
+
+        if (currentQuizIndex == 9 || currentQuizIndex == 19)
+        {
+            stopTimer = true;
+        }
+
         DOVirtual.DelayedCall(0.2f, () => { SetNextQuiz(); });
     }
 

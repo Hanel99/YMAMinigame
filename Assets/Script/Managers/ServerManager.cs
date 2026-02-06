@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Networking;
-using Sirenix.Utilities;
 
 public class ServerManager : MonoBehaviour
 {
@@ -67,7 +67,7 @@ public class ServerManager : MonoBehaviour
         Coroutine cor = StartCoroutine(GoogleSheetProcess(apiCount, url));
         coroutines.Add(cor);
 
-        HLLogger.Log($"@@@ send {apiCount} / {url}");
+        // HLLogger.Log($"@@@ send {apiCount} / {url}");
         apiCount++;
     }
 
@@ -80,7 +80,7 @@ public class ServerManager : MonoBehaviour
             if (www.isDone)
             {
                 var sheetData = www.downloadHandler.text;
-                HLLogger.Log($"FInish {apiNum}\nurl : {url}\ndate : {sheetData}");
+                // HLLogger.Log($"FInish {apiNum}\nurl : {url}\ndate : {sheetData}");
 
                 if (apiCallbackDic.ContainsKey(apiNum))
                     apiCallbackDic[apiNum]?.Invoke(sheetData);

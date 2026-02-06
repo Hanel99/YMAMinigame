@@ -126,7 +126,10 @@ public class FinalQuizUIManager : MonoBehaviour
 
         countdownText.transform.localRotation = Quaternion.Euler(0, 0, UnityEngine.Random.Range(-5, 5));
 
-        countdownText.transform.DOScale(3f, 0.8f).From(1f).SetEase(Ease.OutQuad).OnComplete(() =>
+        Sequence seq = DOTween.Sequence();
+        seq.Append(countdownText.transform.DOScale(1f, 0.1f).From(5f));
+        seq.Append(countdownText.transform.DOScale(0.9f, 0.7f));
+        seq.OnComplete(() =>
         {
             countdownText.gameObject.SetActive(false);
         });
@@ -270,7 +273,7 @@ public class FinalQuizUIManager : MonoBehaviour
         phaseClearAddTimeText.text = $"+{(int)plusTime}";
         phaseClearAddTimeText.gameObject.SetActive(true);
         phaseClearAddTimeText.DOFade(0f, 1f).From(1f).SetEase(Ease.InCubic).OnComplete(() => phaseClearAddTimeText.gameObject.SetActive(false));
-        DOTween.To(() => quizLeftTotalTime, x => totalLeftTimeText.text = $"잔여 시간 : {x:F2}초", quizLeftTotalTime + plusTime, 1f).SetEase(Ease.Linear);
+        DOTween.To(() => quizLeftTotalTime, x => totalLeftTimeText.text = $"잔여 시간 : {x:F1}초", quizLeftTotalTime + plusTime, 1f).SetEase(Ease.Linear);
         await UniTask.Delay(1000);
 
         // T+3초: 퀴즈당 제한 시간 표시

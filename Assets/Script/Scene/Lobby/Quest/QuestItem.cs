@@ -29,7 +29,11 @@ public class QuestItem : MonoBehaviour
     private float progress = 0f;
 
     private QuestState questState = QuestState.InProgress;
-    private QuestMetaData questData;
+    public QuestMetaData questData;
+
+    public bool IsReadyToComplete => questState == QuestState.ReadyToComplete;
+
+
 
     private bool isRewardProcessing = false;
     private int completeTouchCount = 0;
@@ -178,13 +182,21 @@ public class QuestItem : MonoBehaviour
             SetDimCover();
 
             isRewardProcessing = false;
+            GameListView.instance.UpdateUserProfileProcess();
             LobbyUIManager.instance.ShowQuestRewardPopup(earnCoinAmount, earnExpAmount, isShowLevelUpPopup);
         });
-
-
-
-
     }
+
+
+    public void SetCompleteState()
+    {
+        questState = QuestState.Complete;
+        borderBlink.SetActive(false);
+        rewardButtonBorderBlinkObj.SetActive(false);
+        UpdateProgress();
+        SetDimCover();
+    }
+
 
 
     // Consts
