@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class TowerGameWeaponStat : MonoBehaviour
 {
+    public Image weaponImage;
+
     public Text levelText;
     public Text atkValueText;
     public Text criDmgValueText;
@@ -57,6 +59,8 @@ public class TowerGameWeaponStat : MonoBehaviour
         userWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
 
         emptyText.SetActive(weaponLevel == 0);
+        weaponImage.gameObject.SetActive(weaponLevel != 0);
+
         weaponStatDetailGroup.SetActive(weaponLevel != 0);
         skipToggle.isOn = SaveDataManager.instance.otherPlayerData.isTowerSkip;
         UpdateDetailText();
@@ -67,6 +71,12 @@ public class TowerGameWeaponStat : MonoBehaviour
         float t = Mathf.Clamp01((weaponLevel - 1f) / 89f);
         float interval = Mathf.Lerp(0.3f, 0.05f, t);
         longPressButton.SetRepeatInterval(interval);
+    }
+
+    public void HideParticle()
+    {
+        rankUpParticle.gameObject.SetActive(false);
+        rankDownParticle.gameObject.SetActive(false);
     }
 
     private void UpdateDetailText()
@@ -102,9 +112,9 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         RankUpText.SetActive(true);
         enchantText.text = TEXT_ENCHANT;
-        RankUpRateText.text = $"성공 : {(upRate * 100).ToString("F2")}%";
-        RankStayRateText.text = $"유지 : {(stayRate * 100).ToString("F2")}%";
-        RankDownRateText.text = $"하락 : {(downRate * 100).ToString("F2")}%";
+        RankUpRateText.text = $"성공\n{(upRate * 100).ToString("F2")}%";
+        RankStayRateText.text = $"유지\n{(stayRate * 100).ToString("F2")}%";
+        RankDownRateText.text = $"하락\n{(downRate * 100).ToString("F2")}%";
     }
 
     public void OnClickEnchant(bool isLongPress = false)
@@ -224,4 +234,7 @@ public class TowerGameWeaponStat : MonoBehaviour
             TowerGameWeaponEnchantPopup.instance.ShowEnchantResult(type, before, after, callback);
         }
     }
+
+
+
 }

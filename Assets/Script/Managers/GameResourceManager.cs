@@ -323,7 +323,21 @@ public class GameResourceManager : MonoBehaviour
 
     public T GetTowerUserLevelStatValue<T>(TowerUserStatType type, int level)
     {
-        return (T)typeof(TowerUserLevelMetaData).GetField(type.ToString()).GetValue(GetTowerUserLevelMetaData(level));
+        var metaData = GetTowerUserLevelMetaData(level);
+        if (metaData == null)
+            return default;
+
+        object value = type switch
+        {
+            TowerUserStatType.Atk => (object)metaData.atk,
+            TowerUserStatType.Def => (object)metaData.def,
+            TowerUserStatType.HP => (object)metaData.hp,
+            TowerUserStatType.CriRate => (object)metaData.criRate,
+            TowerUserStatType.CriDmg => (object)metaData.criDmg,
+            _ => (object)0,
+        };
+
+        return (T)System.Convert.ChangeType(value, typeof(T));
     }
 
     public TowerBossLevelMetaData GetTowerBossLevelMetaData(int floor)

@@ -82,6 +82,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
 
         weaponTab.UpdateUIData(towerGameUserWeaponData.weaponLevel);
+        weaponTab.HideParticle();
         isStatTab = false;
         statTab.SetActive(false);
         weaponTab.gameObject.SetActive(true);

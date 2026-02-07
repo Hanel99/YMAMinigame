@@ -1901,23 +1901,23 @@ MonoBehaviour:
     ko: "\uB098\uC758\uD788\uC5B4\uB85C\uC544\uCE74\uB370\uBBF8\uC544"
     jp: 
     en: 
-  - key: Tower.StatType.atk
+  - key: Tower.StatType.Atk
     ko: "\uACF5\uACA9\uB825"
     jp: 
     en: 
-  - key: Tower.StatType.def
+  - key: Tower.StatType.Def
     ko: "\uBC29\uC5B4\uB825"
     jp: 
     en: 
-  - key: Tower.StatType.hp
+  - key: Tower.StatType.HP
     ko: HP
     jp: 
     en: 
-  - key: Tower.StatType.criRate
+  - key: Tower.StatType.CriRate
     ko: "\uD06C\uB9AC\uD2F0\uCEEC \uD655\uB960"
     jp: 
     en: 
-  - key: Tower.StatType.criDmg
+  - key: Tower.StatType.CriDmg
     ko: "\uD06C\uB9AC\uD2F0\uCEEC \uB370\uBBF8\uC9C0"
     jp: 
     en: 

@@ -39,6 +39,7 @@ public class PlayerData
     public int towerFloor = 1;
     public TowerGameUserStatLevelData towerGameUserStatLevelData;
     public TowerGameUserWeaponData towerGameUserWeaponData;
+    public List<TowerJewelUserData> towerJewelUserDataList;
 
     //GameHighScore
     public int cubeGameHighScore;
@@ -90,6 +91,8 @@ public class PlayerData
         towerFloor = 1;
         towerGameUserStatLevelData = new TowerGameUserStatLevelData();
         towerGameUserWeaponData = new TowerGameUserWeaponData();
+        towerJewelUserDataList = new List<TowerJewelUserData>();
+
         geminiHints2 = new List<GeminiHint>();
         questUserPlayData = new QuestUserPlayData();
         cubeGameHighScore = 0;
@@ -130,4 +133,12 @@ public class FinalQuizPlayData
     public int OCount = 0;
     public bool playEndRoll = false;
     public DateTime completeTime = new DateTime(2025, 1, 1, 0, 0, 0, 0);
+}
+
+[Serializable]
+public class TowerJewelUserData
+{
+    public TowerJewelType type = TowerJewelType.None;
+    public TowerJewelGrade grade = TowerJewelGrade.Common;
+    public float value = 0f;
 }
