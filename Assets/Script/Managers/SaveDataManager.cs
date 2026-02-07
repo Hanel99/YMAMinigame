@@ -403,19 +403,19 @@ public class SaveDataManager : MonoBehaviour
     {
         switch (type)
         {
-            case TowerUserStatType.atk:
+            case TowerUserStatType.Atk:
                 _playerData.towerGameUserStatLevelData.atkLevel = level;
                 break;
-            case TowerUserStatType.def:
+            case TowerUserStatType.Def:
                 _playerData.towerGameUserStatLevelData.defLevel = level;
                 break;
-            case TowerUserStatType.hp:
+            case TowerUserStatType.HP:
                 _playerData.towerGameUserStatLevelData.hpLevel = level;
                 break;
-            case TowerUserStatType.criRate:
+            case TowerUserStatType.CriRate:
                 _playerData.towerGameUserStatLevelData.criRateLevel = level;
                 break;
-            case TowerUserStatType.criDmg:
+            case TowerUserStatType.CriDmg:
                 _playerData.towerGameUserStatLevelData.criDmgLevel = level;
                 break;
         }

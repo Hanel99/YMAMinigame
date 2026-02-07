@@ -56,11 +56,11 @@ public class TowerGameDetailStatPopup : PopupBase
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(weaponStatData.weaponLevel);
         var bossMetaData = GameResourceManager.instance.GetTowerBossLevelMetaData(floor);
 
-        playerAtk.text = $"{playerLevel + GetValue<int>(TowerUserStatType.atk, userStatData.atkLevel)}";
-        playerDef.text = $"{playerLevel + GetValue<int>(TowerUserStatType.def, userStatData.defLevel)}";
-        playerHp.text = $"{playerLevel + GetValue<int>(TowerUserStatType.hp, userStatData.hpLevel)}";
-        playerCriRate.text = $"{(GetValue<float>(TowerUserStatType.criRate, userStatData.criRateLevel) * 100).ToString("F1")}%";
-        playerCriDmg.text = $"x{((1 + GetValue<float>(TowerUserStatType.criDmg, userStatData.criDmgLevel)) * 100).ToString("F1")}%";
+        playerAtk.text = $"{playerLevel + GetValue<int>(TowerUserStatType.Atk, userStatData.atkLevel)}";
+        playerDef.text = $"{playerLevel + GetValue<int>(TowerUserStatType.Def, userStatData.defLevel)}";
+        playerHp.text = $"{playerLevel + GetValue<int>(TowerUserStatType.HP, userStatData.hpLevel)}";
+        playerCriRate.text = $"{(GetValue<float>(TowerUserStatType.CriRate, userStatData.criRateLevel) * 100).ToString("F1")}%";
+        playerCriDmg.text = $"x{((1 + GetValue<float>(TowerUserStatType.CriDmg, userStatData.criDmgLevel)) * 100).ToString("F1")}%";
 
         weaponAtk.text = $"+ {weaponMetaData.atk}";
         weaponCriDmg.text = $"+ x{(weaponMetaData.criDmg * 100).ToString("F1")}%";

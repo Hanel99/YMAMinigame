@@ -310,11 +310,11 @@ public class GameResourceManager : MonoBehaviour
         var levelData = towerUserLevelData.Data.Find(x => x.level == level);
         int value = (type) switch
         {
-            TowerUserStatType.atk => levelData.atkRequireCoin,
-            TowerUserStatType.def => levelData.defRequireCoin,
-            TowerUserStatType.hp => levelData.hpRequireCoin,
-            TowerUserStatType.criRate => levelData.criRateRequireCoin,
-            TowerUserStatType.criDmg => levelData.criDmgRequireCoin,
+            TowerUserStatType.Atk => levelData.atkRequireCoin,
+            TowerUserStatType.Def => levelData.defRequireCoin,
+            TowerUserStatType.HP => levelData.hpRequireCoin,
+            TowerUserStatType.CriRate => levelData.criRateRequireCoin,
+            TowerUserStatType.CriDmg => levelData.criDmgRequireCoin,
             _ => -1,
         };
 

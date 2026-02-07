@@ -65,7 +65,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void OnClickStatEnchantTab()
     {
-        for (TowerUserStatType type = TowerUserStatType.atk; type <= TowerUserStatType.criDmg; type++)
+        for (TowerUserStatType type = TowerUserStatType.Atk; type <= TowerUserStatType.CriDmg; type++)
         {
             int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(type);
             playerStatList[(int)type].UpdateUIData(type, statLevel);

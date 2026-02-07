@@ -173,12 +173,12 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(false);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
-        ShowResult(TowerGameResultType.up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
+        ShowResult(TowerGameResultType.Up, $"Lv.{weaponLevel - 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
     }
     private void StayProcess()
     {
         SaveDataManager.instance.AddTowerUserWeaponFailCount();
-        ShowResult(TowerGameResultType.stay, "", "", () => UpdateUIData(weaponLevel));
+        ShowResult(TowerGameResultType.Stay, "", "", () => UpdateUIData(weaponLevel));
     }
     private void DownProcess()
     {
@@ -186,7 +186,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         SaveDataManager.instance.SetTowerUserWeaponFailCount(0);
         SaveDataManager.instance.SetTowerUserWeaponIsDown(true);
         SaveDataManager.instance.SetTowerUserWeaponLevel(weaponLevel);
-        ShowResult(TowerGameResultType.down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
+        ShowResult(TowerGameResultType.Down, $"Lv.{weaponLevel + 1}", $"-> Lv.{weaponLevel}", () => UpdateUIData(weaponLevel));
     }
 
     private void ShowResult(TowerGameResultType type, string before, string after, System.Action callback)
@@ -195,14 +195,14 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         if (skipToggle.isOn)
         {
-            if (type == TowerGameResultType.up)
+            if (type == TowerGameResultType.Up)
             {
                 if (rankUpParticle.IsActive() == false)
                     rankUpParticle.gameObject.SetActive(true);
                 rankUpParticle.Play();
                 SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
             }
-            else if (type == TowerGameResultType.down)
+            else if (type == TowerGameResultType.Down)
             {
                 if (rankDownParticle.IsActive() == false)
                     rankDownParticle.gameObject.SetActive(true);

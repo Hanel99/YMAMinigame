@@ -92,12 +92,12 @@ public class TowerGameCombatPopup : PopupBase
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(playerWeaponData.weaponLevel);
         var bossMetaData = GameResourceManager.instance.GetTowerBossLevelMetaData(floor);
 
-        playerCombatData.atk = playerData.level + GetValue<int>(TowerUserStatType.atk, playerStatData.atkLevel) + weaponMetaData.atk;
-        playerCombatData.def = playerData.level + GetValue<int>(TowerUserStatType.def, playerStatData.defLevel);
-        playerCombatData.hp = playerData.level + GetValue<int>(TowerUserStatType.hp, playerStatData.hpLevel);
+        playerCombatData.atk = playerData.level + GetValue<int>(TowerUserStatType.Atk, playerStatData.atkLevel) + weaponMetaData.atk;
+        playerCombatData.def = playerData.level + GetValue<int>(TowerUserStatType.Def, playerStatData.defLevel);
+        playerCombatData.hp = playerData.level + GetValue<int>(TowerUserStatType.HP, playerStatData.hpLevel);
         playerCombatData.maxHp = playerCombatData.hp;
-        playerCombatData.criRate = GetValue<float>(TowerUserStatType.criRate, playerStatData.criRateLevel);
-        playerCombatData.criDmg = GetValue<float>(TowerUserStatType.criDmg, playerStatData.criDmgLevel) + weaponMetaData.criDmg;
+        playerCombatData.criRate = GetValue<float>(TowerUserStatType.CriRate, playerStatData.criRateLevel);
+        playerCombatData.criDmg = GetValue<float>(TowerUserStatType.CriDmg, playerStatData.criDmgLevel) + weaponMetaData.criDmg;
         playerCombatData.avoidance = Mathf.Min(0.2f, playerData.level * 0.01f);
 
 

@@ -130,13 +130,13 @@ public class QuestUserPlayData
     {
         switch (resultType)
         {
-            case TowerGameResultType.up:
+            case TowerGameResultType.Up:
                 AddTowerEnchantData(1, 1, 0, 0);
                 break;
-            case TowerGameResultType.stay:
+            case TowerGameResultType.Stay:
                 AddTowerEnchantData(1, 0, 1, 0);
                 break;
-            case TowerGameResultType.down:
+            case TowerGameResultType.Down:
                 AddTowerEnchantData(1, 0, 0, 1);
                 break;
             default:

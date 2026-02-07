@@ -31,9 +31,9 @@ public class TowerGamePlayerStat : MonoBehaviour
         nameText.text = LocalizeManager.instance.GetString($"Tower.StatType.{type}");
         this.levelText.text = $"Lv.{statLevel}";
 
-        if (type == TowerUserStatType.criRate)
+        if (type == TowerUserStatType.CriRate)
             valueText.text = $"{(GetValue<float>(type) * 100).ToString("F1")}%";
-        else if (type == TowerUserStatType.criDmg)
+        else if (type == TowerUserStatType.CriDmg)
             valueText.text = $"x{((1 + GetValue<float>(type)) * 100).ToString("F1")}%";
         else
             valueText.text = GetValue<int>(type).ToString();

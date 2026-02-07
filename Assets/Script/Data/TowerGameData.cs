@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 
 
 [Serializable]
@@ -26,11 +26,11 @@ public class TowerGameUserStatLevelData
     {
         return type switch
         {
-            TowerUserStatType.atk => atkLevel,
-            TowerUserStatType.def => defLevel,
-            TowerUserStatType.hp => hpLevel,
-            TowerUserStatType.criRate => criRateLevel,
-            TowerUserStatType.criDmg => criDmgLevel,
+            TowerUserStatType.Atk => atkLevel,
+            TowerUserStatType.Def => defLevel,
+            TowerUserStatType.HP => hpLevel,
+            TowerUserStatType.CriRate => criRateLevel,
+            TowerUserStatType.CriDmg => criDmgLevel,
             _ => 1,
         };
     }

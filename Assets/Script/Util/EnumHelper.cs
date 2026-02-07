@@ -201,19 +201,44 @@ public enum InGameState
 
 public enum TowerUserStatType
 {
-    atk,
-    def,
-    hp,
-    criRate,
-    criDmg
+    Atk,
+    Def,
+    HP,
+    CriRate,
+    CriDmg
 }
 
 public enum TowerGameResultType
 {
-    stat,
-    up,
-    stay,
-    down,
+    Stat,
+    Up,
+    Stay,
+    Down,
+}
+
+
+
+public enum TowerJewelType
+{
+    None,
+
+    Atk,
+    Def,
+    CriRate,
+    CriDmg,
+    Avoid,
+    DefensePenetration,
+    DmgImmune,
+}
+
+public enum TowerJewelGrade
+{
+    Common,
+    Rare,
+    SuperRare,
+    Silver,
+    Gold,
+    Black,
 }
 
 

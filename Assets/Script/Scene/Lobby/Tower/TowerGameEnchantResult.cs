@@ -31,7 +31,7 @@ public class TowerGameEnchantResult : MonoBehaviour
             UIRefreshAction?.Invoke();
         });
 
-        if (type != TowerGameResultType.stat)
+        if (type != TowerGameResultType.Stat)
         {
             resultText.text = ".";
             await UniTask.Delay(200);
@@ -44,27 +44,27 @@ public class TowerGameEnchantResult : MonoBehaviour
         // 결과 텍스트 설정
         switch (type)
         {
-            case TowerGameResultType.stat:
+            case TowerGameResultType.Stat:
                 resultText.text = "스탯 레벨업!";
                 SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
                 PopEffect(resultText.transform);
                 break;
-            case TowerGameResultType.up:
+            case TowerGameResultType.Up:
                 resultText.text = "무기 강화 성공!!";
                 SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
                 PopEffect(resultText.transform);
                 break;
-            case TowerGameResultType.stay:
+            case TowerGameResultType.Stay:
                 resultText.text = "무기 등급 유지";
                 SoundManager.instance.PlaySFX(SFXType.WeaponStay);
                 break;
-            case TowerGameResultType.down:
+            case TowerGameResultType.Down:
                 resultText.text = "강화 실패...\n\n무기 등급 하락";
                 SoundManager.instance.PlaySFX(SFXType.WeaponFail);
                 break;
         }
 
-        await UniTask.Delay(type == TowerGameResultType.stay ? 0 : 300);
+        await UniTask.Delay(type == TowerGameResultType.Stay ? 0 : 300);
 
         beforeText.DOFade(1f, 1f).From(0).SetEase(Ease.Linear);
         afterText.DOFade(1f, 1f).From(0).SetEase(Ease.Linear);
