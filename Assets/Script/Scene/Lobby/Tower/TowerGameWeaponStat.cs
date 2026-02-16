@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TowerGameWeaponStat : MonoBehaviour
 {
-    public Image weaponImage;
+    public GameObject weaponImage;
 
     public Text levelText;
     public Text atkValueText;
