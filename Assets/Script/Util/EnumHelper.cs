@@ -227,13 +227,13 @@ public enum TowerJewelType
     CriRate,
     CriDmg,
     Avoid,
-    DefensePenetration,
-    DmgImmune,
+    DefBreak,
+    DmgReduce,
 }
 
 public enum TowerJewelGrade
 {
-    Common,
+    Normal,
     Rare,
     SuperRare,
     Silver,

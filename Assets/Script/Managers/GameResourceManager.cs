@@ -31,6 +31,7 @@ public class GameResourceManager : MonoBehaviour
     public TowerBossLevelData towerBossLevelData;
     public QuestData questData;
     public FinalQuizData finalQuizData;
+    public TowerWeaponJewelData towerWeaponJewelData;
 
 
     public List<Sprite> cardImages = new();
@@ -86,6 +87,9 @@ public class GameResourceManager : MonoBehaviour
                     break;
                 case FinalQuizData data:
                     finalQuizData = data;
+                    break;
+                case TowerWeaponJewelData data:
+                    towerWeaponJewelData = data;
                     break;
                 default:
                     Debug.LogWarning($"Unknown config type: {sData.name}");
@@ -345,6 +349,13 @@ public class GameResourceManager : MonoBehaviour
         return towerBossLevelData.Data.Find(x => x.level == floor);
     }
 
+
+
+    // tower jewel
+    public List<TowerWeaponJewelMetaData> GetTowerJewelGradeList(TowerJewelGrade grade)
+    {
+        return towerWeaponJewelData.Data.FindAll(x => x.grade == grade);
+    }
 
 
     // questData

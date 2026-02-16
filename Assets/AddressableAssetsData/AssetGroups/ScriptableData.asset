@@ -39,6 +39,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SOData
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fbc269174f32354492f560b85b3f873
+    m_Address: TowerWeaponJewelData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SOData
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 88c46c6c342defc41aaa8a6ca5407aee
     m_Address: TowerWeaponLevelData
     m_ReadOnly: 0

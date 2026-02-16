@@ -139,6 +139,6 @@ public class FinalQuizPlayData
 public class TowerJewelUserData
 {
     public TowerJewelType type = TowerJewelType.None;
-    public TowerJewelGrade grade = TowerJewelGrade.Common;
+    public TowerJewelGrade grade = TowerJewelGrade.Normal;
     public float value = 0f;
 }
