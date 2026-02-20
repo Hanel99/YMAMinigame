@@ -340,6 +340,7 @@ public class IntroController : MonoBehaviour
         SaveDataManager.instance.playerData.recentAppVersion = Application.version;
         SaveDataManager.instance.playerData.serverDataVersion = StaticGameData.serverVersion;
         SaveDataManager.instance.SaveUnlockContentDate();
+        SaveDataManager.instance.CheckTowerWeaponJewel();
 
 #if DEV
         SaveDataManager.instance.playerData.defineState = "DEV";

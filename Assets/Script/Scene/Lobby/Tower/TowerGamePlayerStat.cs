@@ -15,7 +15,6 @@ public class TowerGamePlayerStat : MonoBehaviour
     private TowerUserStatType statType;
     private int statLevel;
     private int requireCoin;
-    private bool isLongPress = false;
     private LongPressButton longPressButton;
 
     void OnDisable()
@@ -59,7 +58,6 @@ public class TowerGamePlayerStat : MonoBehaviour
 
     public void OnClickEnchant(bool isLongPress = false)
     {
-        this.isLongPress = isLongPress;
         requireCoin = GameResourceManager.instance.GetTowerUserLevelRequireCoin(statType, statLevel);
         if (requireCoin <= 0 || SaveDataManager.instance.playerData.coin < requireCoin)
             return;
@@ -72,7 +70,6 @@ public class TowerGamePlayerStat : MonoBehaviour
 
         UpdateUIData(statType, statLevel);
         TowerGameWeaponEnchantPopup.instance.UpdateUI();
-        //TODO 강화 파티클
 
         if (uiParticle.IsActive() == false)
             uiParticle.gameObject.SetActive(true);

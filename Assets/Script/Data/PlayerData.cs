@@ -138,7 +138,14 @@ public class FinalQuizPlayData
 [Serializable]
 public class TowerJewelUserData
 {
-    public TowerJewelType type = TowerJewelType.None;
     public TowerJewelGrade grade = TowerJewelGrade.Normal;
+    public TowerJewelType type = TowerJewelType.None;
     public float value = 0f;
+
+    public TowerJewelUserData()
+    {
+        this.grade = TowerJewelGrade.Normal;
+        this.type = TowerJewelType.None;
+        this.value = 0f;
+    }
 }

@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 
@@ -18,6 +18,7 @@ public class OtherPlayerData
     public bool isSfxMute = false;
 
     public bool isTowerSkip = false;
+    public bool[] isJewelLock = new bool[4];
 
     public OtherPlayerData()
     {
@@ -30,5 +31,7 @@ public class OtherPlayerData
         isBgmMute = false;
         isSfxMute = false;
         isTowerSkip = false;
+
+        Array.Fill(isJewelLock, false);
     }
 }

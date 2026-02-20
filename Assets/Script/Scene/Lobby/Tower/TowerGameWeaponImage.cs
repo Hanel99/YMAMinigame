@@ -10,18 +10,20 @@ public class TowerGameWeaponImage : MonoBehaviour
 
     private List<TowerJewelUserData> TowerJewelUserDataList => SaveDataManager.instance.playerData.towerJewelUserDataList;
     private int WeaponLevel => SaveDataManager.instance.playerData.towerGameUserWeaponData.weaponLevel;
-    private readonly int UNLOCK_WEAPON_LEVEL = 100;
+    private readonly int UNLOCK_JEWEL_FLOOR = 200;
     private readonly int MAX_JEWEL_COUNT = 4;
 
     public void UpdateWeaponImage()
     {
-        weaponImage.SetActive(WeaponLevel < UNLOCK_WEAPON_LEVEL);
-        weaponImage2.SetActive(WeaponLevel >= UNLOCK_WEAPON_LEVEL);
+        weaponImage.SetActive(WeaponLevel < UNLOCK_JEWEL_FLOOR);
+        weaponImage2.SetActive(WeaponLevel >= UNLOCK_JEWEL_FLOOR);
 
-        for (int i = 0; i < MAX_JEWEL_COUNT; i++)
+        if (WeaponLevel >= UNLOCK_JEWEL_FLOOR)
         {
-            jewels[i].SetActive(TowerJewelUserDataList.Count > i && TowerJewelUserDataList[i].type != TowerJewelType.None);
+            for (int i = 0; i < MAX_JEWEL_COUNT; i++)
+            {
+                jewels[i].SetActive(TowerJewelUserDataList.Count > i);
+            }
         }
     }
-
 }

@@ -254,7 +254,29 @@ public class SaveDataManager : MonoBehaviour
     public void AddLevel(int amount = 1)
     {
         _playerData.level += amount;
+        CheckTowerWeaponJewel();
         HLLogger.Log($"Player Level Up! {_playerData.level}");
+    }
+
+    public void CheckTowerWeaponJewel()
+    {
+        //@@@ TODO 해금 레벨 데이터 추가되면 수정 필요
+        if (_playerData.level >= 100 && _playerData.towerJewelUserDataList.Count < 1)
+        {
+            _playerData.towerJewelUserDataList.Add(new TowerJewelUserData());
+        }
+        if (_playerData.level >= 150 && _playerData.towerJewelUserDataList.Count < 2)
+        {
+            _playerData.towerJewelUserDataList.Add(new TowerJewelUserData());
+        }
+        if (_playerData.level >= 200 && _playerData.towerJewelUserDataList.Count < 3)
+        {
+            _playerData.towerJewelUserDataList.Add(new TowerJewelUserData());
+        }
+        if (_playerData.level >= 250 && _playerData.towerJewelUserDataList.Count < 4)
+        {
+            _playerData.towerJewelUserDataList.Add(new TowerJewelUserData());
+        }
     }
 
     public bool AddExp(int amount, bool isSave = true)
@@ -433,7 +455,7 @@ public class SaveDataManager : MonoBehaviour
     }
 
 
-
+    // weapon
     public void SetTowerUserWeaponLevel(int level)
     {
         _playerData.towerGameUserWeaponData.weaponLevel = level;
@@ -461,6 +483,21 @@ public class SaveDataManager : MonoBehaviour
 
         ScheduleSavePlayerData();
     }
+
+
+    //jewel
+    public void SetTowerUserJewelData(int index, TowerJewelGrade grade, TowerJewelType type, float value)
+    {
+        if (_playerData.towerJewelUserDataList.Count <= index)
+            return;
+
+        _playerData.towerJewelUserDataList[index].grade = grade;
+        _playerData.towerJewelUserDataList[index].type = type;
+        _playerData.towerJewelUserDataList[index].value = value;
+
+        ScheduleSavePlayerData();
+    }
+
 
 
     // 세이브데이터가 너무 많이 들어올 경우, 1초간 중복 메소드를 기다린 뒤 실행.

@@ -88,10 +88,10 @@ public class CardGameManager : MonoBehaviour
         collectCardIdList.Clear();
         tryCount = 0;
 
-        var gradeList = StaticGameData.GetRandomCardGradeDic(8);
+        var gradeList = GetRandomCardGradeDic(8);
         foreach (var item in gradeList)
         {
-            var idList = StaticGameData.GetRandomCardIdList(item.Key, item.Value);
+            var idList = GetRandomCardIdList(item.Key, item.Value);
             selectCardIdList.AddRange(idList);
             selectCardIdList.AddRange(idList);
             //카드 1쌍을 넣어야하니 두개 삽입
@@ -225,6 +225,61 @@ public class CardGameManager : MonoBehaviour
                 FinishProcess();
         });
     }
+
+
+    public Dictionary<CardGrade, int> GetRandomCardGradeDic(int count = 1)
+    {
+        Dictionary<CardGrade, int> dic = new();
+
+        for (int i = 0; i < count; ++i)
+        {
+            var randomValue = UnityEngine.Random.Range(0, StaticGameData.TotalRandomValue);
+            CardGrade grade = CardGrade.Normal;
+
+            if (randomValue < StaticGameData.RandomValue[0])
+                grade = CardGrade.Black;
+            else if (randomValue < StaticGameData.RandomValue[1])
+                grade = CardGrade.Gold;
+            else if (randomValue < StaticGameData.RandomValue[2])
+                grade = CardGrade.Silver;
+            else if (randomValue < StaticGameData.RandomValue[3])
+                grade = CardGrade.SuperRare;
+            else if (randomValue < StaticGameData.RandomValue[4])
+                grade = CardGrade.Rare;
+
+            if (dic.ContainsKey(grade))
+                dic[grade]++;
+            else
+                dic.Add(grade, 1);
+        }
+
+        SortedDictionary<CardGrade, int> sortDic = new SortedDictionary<CardGrade, int>(dic);
+        foreach (var item in sortDic)
+        {
+            HLLogger.Log($"{item.Key} - {item.Value}");
+        }
+
+        return dic;
+    }
+
+
+    public List<int> GetRandomCardIdList(CardGrade grade, int count = 1)
+    {
+        var list = GameResourceManager.instance.GetCardIds(grade);
+        list.Shuffle();
+
+        var selectCardIdList = list.GetRange(0, count);
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in selectCardIdList)
+        {
+            sb.Append($"{item},");
+        }
+        HLLogger.Log($"@@@ Select [{grade}] grade card List : {sb}");
+
+        return selectCardIdList;
+    }
+
 
     private void CheckReferMission(int tryCount, bool isMatch)
     {

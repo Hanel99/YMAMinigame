@@ -4,11 +4,22 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class TowerGameWeaponEnchantPopup : PopupBase
 {
+    public enum EnchantTabType
+    {
+        Stat,
+        Weapon,
+        Jewel
+    }
+
     public static TowerGameWeaponEnchantPopup instance { get; private set; }
     public GameObject statTab;
     public TowerGameWeaponStat weaponTab;
+    public TowerGameWeaponJewel weaponJewelTab;
+    public GameObject jewelButton;
     public Text ownCoinText;
     public List<TowerGamePlayerStat> playerStatList;
     public TowerGameEnchantResult enchantResult;
@@ -16,7 +27,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
 
     //private
-    private bool isStatTab = true;
+    private EnchantTabType currentTab = EnchantTabType.Stat;
 
     private TowerGameUserStatLevelData towerGameUserStatLevelData;
     private TowerGameUserWeaponData towerGameUserWeaponData;
@@ -35,7 +46,8 @@ public class TowerGameWeaponEnchantPopup : PopupBase
             UpdateGameData();
             UpdateUI();
             _OpenUI();
-            OnClickStatEnchantTab();
+            currentTab = EnchantTabType.Stat;
+            OnClickTab(currentTab, true);
         }
         else
         {
@@ -60,32 +72,68 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void OnClickHowToPlay()
     {
-        LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.Enchant.{(isStatTab ? "User" : "Weapon")}");
+        string typeStr = currentTab == EnchantTabType.Stat ? "User" : "Weapon";
+        LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.Enchant.{typeStr}");
     }
 
+
+    public void OnClickTab(EnchantTabType type, bool setForce = false)
+    {
+        if (!setForce && currentTab == type) return;
+
+        currentTab = type;
+
+        statTab.SetActive(false);
+        weaponTab.gameObject.SetActive(false);
+        weaponJewelTab.gameObject.SetActive(false);
+        ShowJewelButton(false);
+
+        SetTitle(LocalizeManager.instance.GetString($"Tower.Enchant.{type}Tab"));
+
+        switch (type)
+        {
+            case EnchantTabType.Stat:
+                statTab.SetActive(true);
+                for (TowerUserStatType statType = TowerUserStatType.Atk; statType <= TowerUserStatType.CriDmg; statType++)
+                {
+                    int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(statType);
+                    playerStatList[(int)statType].UpdateUIData(statType, statLevel);
+                }
+                break;
+            case EnchantTabType.Weapon:
+                //@@@ 쥬얼 표시 조건 재정의 필요
+                ShowJewelButton(SaveDataManager.instance.playerData.towerFloor > 250);
+
+                weaponTab.gameObject.SetActive(true);
+                weaponTab.UpdateUIData(towerGameUserWeaponData.weaponLevel);
+                weaponTab.HideParticle();
+                break;
+            case EnchantTabType.Jewel:
+                weaponJewelTab.gameObject.SetActive(true);
+                weaponJewelTab.UpdateUIData();
+                break;
+        }
+    }
+
+    // 버튼 할당을 위해...
     public void OnClickStatEnchantTab()
     {
-        for (TowerUserStatType type = TowerUserStatType.Atk; type <= TowerUserStatType.CriDmg; type++)
-        {
-            int statLevel = SaveDataManager.instance.playerData.towerGameUserStatLevelData.GetLevel(type);
-            playerStatList[(int)type].UpdateUIData(type, statLevel);
-        }
-
-        SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.StatTab"));
-        isStatTab = true;
-        statTab.SetActive(true);
-        weaponTab.gameObject.SetActive(false);
+        OnClickTab(EnchantTabType.Stat);
     }
 
     public void OnClickWeaponEnchantTab()
     {
-        SetTitle(LocalizeManager.instance.GetString("Tower.Enchant.WeaponTab"));
+        OnClickTab(EnchantTabType.Weapon);
+    }
 
-        weaponTab.UpdateUIData(towerGameUserWeaponData.weaponLevel);
-        weaponTab.HideParticle();
-        isStatTab = false;
-        statTab.SetActive(false);
-        weaponTab.gameObject.SetActive(true);
+    public void OnClickWeaponJewelTab()
+    {
+        OnClickTab(EnchantTabType.Jewel);
+    }
+
+    public void ShowJewelButton(bool isShow)
+    {
+        jewelButton.SetActive(isShow);
     }
 
     public void ShowEnchantResult(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)

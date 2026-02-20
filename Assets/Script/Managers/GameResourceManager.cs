@@ -357,6 +357,14 @@ public class GameResourceManager : MonoBehaviour
         return towerWeaponJewelData.Data.FindAll(x => x.grade == grade);
     }
 
+    public TowerWeaponJewelMetaData GetTowerJewelGradeList(TowerJewelGrade grade, TowerJewelType type)
+    {
+        return towerWeaponJewelData.Data.Find(x => x.grade == grade && x.type == type);
+    }
+
+
+
+
 
     // questData
 

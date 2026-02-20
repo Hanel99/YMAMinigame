@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TowerGameWeaponStat : MonoBehaviour
 {
-    public GameObject weaponImage;
+    public TowerGameWeaponImage weaponImage;
 
     public Text levelText;
     public Text atkValueText;
@@ -59,7 +59,7 @@ public class TowerGameWeaponStat : MonoBehaviour
         userWeaponData = SaveDataManager.instance.playerData.towerGameUserWeaponData;
 
         emptyText.SetActive(weaponLevel == 0);
-        weaponImage.gameObject.SetActive(weaponLevel != 0);
+        weaponImage.UpdateWeaponImage();
 
         weaponStatDetailGroup.SetActive(weaponLevel != 0);
         skipToggle.isOn = SaveDataManager.instance.otherPlayerData.isTowerSkip;

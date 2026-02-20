@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class GachaPopup : PopupBase
 {
@@ -127,9 +130,9 @@ public class GachaPopup : PopupBase
         else
         {
             // 일반 가챠 로직
-            var gradeList = StaticGameData.GetRandomCardGradeList(count);
+            var gradeList = GetRandomCardGradeList(count);
             for (int i = 0; i < gradeList.Count; ++i)
-                gachaResultIDList.Add(StaticGameData.GetRandomCardId(gradeList[i]));
+                gachaResultIDList.Add(GetRandomCardId(gradeList[i]));
 
             StringBuilder sb = new StringBuilder();
             foreach (var item in gachaResultIDList)
@@ -162,6 +165,50 @@ public class GachaPopup : PopupBase
         LobbyUIManager.instance.ShowPopup<GachaProbabilityPopup>();
     }
 
+
+
+
+
+    public List<CardGrade> GetRandomCardGradeList(int count = 1)
+    {
+        List<CardGrade> list = new();
+
+        for (int i = 0; i < count; ++i)
+        {
+            var randomValue = UnityEngine.Random.Range(0, StaticGameData.TotalRandomValue);
+            CardGrade grade = CardGrade.Normal;
+
+            if (randomValue < StaticGameData.RandomValue[0])
+                grade = CardGrade.Black;
+            else if (randomValue < StaticGameData.RandomValue[1])
+                grade = CardGrade.Gold;
+            else if (randomValue < StaticGameData.RandomValue[2])
+                grade = CardGrade.Silver;
+            else if (randomValue < StaticGameData.RandomValue[3])
+                grade = CardGrade.SuperRare;
+            else if (randomValue < StaticGameData.RandomValue[4])
+                grade = CardGrade.Rare;
+
+            list.Add(grade);
+        }
+
+        HLLogger.Log($"Normal - {list.Count(x => x == CardGrade.Normal)}");
+        HLLogger.Log($"Rare - {list.Count(x => x == CardGrade.Rare)}");
+        HLLogger.Log($"SuperRare - {list.Count(x => x == CardGrade.SuperRare)}");
+        HLLogger.Log($"Silver - {list.Count(x => x == CardGrade.Silver)}");
+        HLLogger.Log($"Gold - {list.Count(x => x == CardGrade.Gold)}");
+        HLLogger.Log($"Black - {list.Count(x => x == CardGrade.Black)}");
+        return list;
+    }
+
+    public int GetRandomCardId(CardGrade grade)
+    {
+        var list = GameResourceManager.instance.GetCardIds(grade);
+        list.Shuffle();
+
+        HLLogger.Log($"@@@ Select [{grade}] grade card : {list[0]}");
+        return list[0];
+    }
 
 
 }
