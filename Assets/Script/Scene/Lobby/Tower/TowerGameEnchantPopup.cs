@@ -72,7 +72,13 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void OnClickHowToPlay()
     {
-        string typeStr = currentTab == EnchantTabType.Stat ? "User" : "Weapon";
+        string typeStr = (currentTab) switch
+        {
+            EnchantTabType.Stat => "User",
+            EnchantTabType.Weapon => "Weapon",
+            EnchantTabType.Jewel => "Jewel",
+            _ => ""
+        };
         LobbyUIManager.instance.ShowHowToPlayPopup($"game.desc.Enchant.{typeStr}");
     }
 
@@ -86,7 +92,6 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         statTab.SetActive(false);
         weaponTab.gameObject.SetActive(false);
         weaponJewelTab.gameObject.SetActive(false);
-        ShowJewelButton(false);
 
         SetTitle(LocalizeManager.instance.GetString($"Tower.Enchant.{type}Tab"));
 
@@ -101,9 +106,6 @@ public class TowerGameWeaponEnchantPopup : PopupBase
                 }
                 break;
             case EnchantTabType.Weapon:
-                //@@@ 쥬얼 표시 조건 재정의 필요
-                ShowJewelButton(SaveDataManager.instance.playerData.towerFloor > 250);
-
                 weaponTab.gameObject.SetActive(true);
                 weaponTab.UpdateUIData(towerGameUserWeaponData.weaponLevel);
                 weaponTab.HideParticle();
@@ -123,17 +125,21 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     public void OnClickWeaponEnchantTab()
     {
+        if (!CheckUnlockCondition(StaticGameData.unlockWeaponFloor)) return;
+
         OnClickTab(EnchantTabType.Weapon);
     }
 
     public void OnClickWeaponJewelTab()
     {
+        if (!CheckUnlockCondition(StaticGameData.unlockJewelFloor[0])) return;
+
         OnClickTab(EnchantTabType.Jewel);
     }
 
-    public void ShowJewelButton(bool isShow)
+    public void OnClickJewelProbabilityButton()
     {
-        jewelButton.SetActive(isShow);
+        LobbyUIManager.instance.ShowTowerJewelProbabilityPopup(weaponJewelTab.CurrentGrade);
     }
 
     public void ShowEnchantResult(TowerGameResultType type, string before, string after, Action UIRefreshAction = null)
@@ -148,5 +154,15 @@ public class TowerGameWeaponEnchantPopup : PopupBase
         isActBackKey = true;
         enchantResult.gameObject.SetActive(false);
         UpdateUI();
+    }
+
+    private bool CheckUnlockCondition(int unlockFloor)
+    {
+        if (SaveDataManager.instance.playerData.towerFloor < unlockFloor)
+        {
+            LobbyUIManager.instance.ShowCommonPopup("미개방 컨텐츠", $"하넬을 {unlockFloor}명 쓰러트린 뒤 부터 사용할 수 있습니다.", true, true, false);
+            return false;
+        }
+        return true;
     }
 }

@@ -56,8 +56,6 @@ public static class StaticGameData
 
     public static string[] RedeemCodes = new string[]
     {
-        "GETCOIN1",
-        "GETMILE1",
     };
 
 
@@ -168,6 +166,15 @@ public static class StaticGameData
     }
 
 
+
+    #endregion
+
+
+    #region Tower
+
+    public static readonly int unlockWeaponFloor = 100;
+    public static readonly int[] unlockJewelFloor = new int[4] { 200, 300, 400, 500 };
+    public static readonly float[] rankUpRate = new float[5] { 3f, 1f, 0.8f, 0.5f, 0.3f };
 
     #endregion
 

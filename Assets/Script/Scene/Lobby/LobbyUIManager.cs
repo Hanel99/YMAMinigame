@@ -49,6 +49,11 @@ public class LobbyUIManager : MonoBehaviour
         _ShowPopup<QuestRewardPopup>().ShowPopup(coin, exp, isShowLevelUpPopup);
     }
 
+    public void ShowTowerJewelProbabilityPopup(TowerJewelGrade grade)
+    {
+        _ShowPopup<TowerGameJewelProbabilityPopup>().ShowPopup(grade);
+    }
+
 
     //매개변수 없는 팝업의 경우
     public void ShowPopup<T>() where T : PopupBase

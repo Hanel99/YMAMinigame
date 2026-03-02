@@ -171,6 +171,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PopupGroup
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ddcc8d798b7829845ace8d2bbebddf43
+    m_Address: TowerGameJewelProbabilityPopup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PopupGroup
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eb0f7227159ee854d853c9787abd3d8b
     m_Address: WingTtoGameResultPopup
     m_ReadOnly: 0

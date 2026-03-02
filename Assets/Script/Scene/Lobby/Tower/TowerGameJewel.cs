@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using Coffee.UIExtensions;
@@ -26,13 +25,13 @@ public class TowerGameWeaponJewel : MonoBehaviour
     //private 
     private List<TowerJewelUserData> jewelUserDataList;
     private TowerJewelUserData currentJewelData;
+    public TowerJewelGrade CurrentGrade => currentJewelData.grade;
     private LongPressButton longPressButton;
     private bool isLongPress = false;
     private int currentJewelIndex;
     private bool isRankUp = false;
     private int rollCoinCost = 0;
 
-    private readonly int[] rankUpRate = new int[5] { 5, 4, 3, 2, 1 };
     private readonly int[] rollCoin = new int[6] { 1500, 3150, 6620, 13910, 29220, 61370 };
     private readonly int[] rollLockCoin = new int[6] { 2, 2, 3, 3, 4, 4 };
 
@@ -72,12 +71,14 @@ public class TowerGameWeaponJewel : MonoBehaviour
         var jewelPosition = jewelSlots[currentJewelIndex].transform.localPosition;
         arrow.transform.localPosition = new Vector3(jewelPosition.x, jewelPosition.y - 150, jewelPosition.z);
         UpdateStatUI();
+        UpdateRollCoinCost();
     }
 
     private void UpdateStatUI()
     {
         if (isRankUp)
         {
+            UpdateRollCoinCost();
             SoundManager.instance.PlaySFX(SFXType.WeaponSuccess);
 
             rankUpParticle.gameObject.SetActive(true);
@@ -85,13 +86,20 @@ public class TowerGameWeaponJewel : MonoBehaviour
             isRankUp = false;
         }
 
-        rankUpRateText.text = currentJewelData.grade >= TowerJewelGrade.Black ? "" : $"등급 상승 확률 : {rankUpRate[(int)currentJewelData.grade]}%";
+        rankUpRateText.text = currentJewelData.grade >= TowerJewelGrade.Black ? "" : $"등급 상승 확률 : {StaticGameData.rankUpRate[(int)currentJewelData.grade]}%";
         gradeText.text = $"{LocalizeManager.instance.GetString($"grade.name.{currentJewelData.grade}")} 등급";
         typeText.text = LocalizeManager.instance.GetString($"jewel.type.{currentJewelData.type}");
 
         valueText.text = GetJewelValueString(currentJewelData.type, currentJewelData.value);
+        TowerGameWeaponEnchantPopup.instance.UpdateUI();
     }
 
+    private void UpdateRollCoinCost()
+    {
+        rollCoinCost = lockToggle.isOn ? (rollCoin[(int)currentJewelData.grade] * rollLockCoin[(int)currentJewelData.grade])
+                                        : rollCoin[(int)currentJewelData.grade];
+        rollCoinText.text = rollCoinCost.ToString("N0");
+    }
 
 
     public void OnClickRoll(bool isLongPress = false)
@@ -107,11 +115,11 @@ public class TowerGameWeaponJewel : MonoBehaviour
         {
             // 등급업 체크
             int gradeIndex = (int)currentJewelData.grade;
-            if (gradeIndex < rankUpRate.Length && gradeIndex < (int)TowerJewelGrade.Black)
+            if (gradeIndex < StaticGameData.rankUpRate.Length && gradeIndex < (int)TowerJewelGrade.Black)
             {
-                int rate = rankUpRate[gradeIndex];
-                int rand = UnityEngine.Random.Range(0, 100);
-                if (rand < rate)
+                float rate = StaticGameData.rankUpRate[gradeIndex];
+                int rand = UnityEngine.Random.Range(0, 10000);
+                if (rand < rate * 100)
                 {
                     isRankUp = true;
                     targetGrade = (TowerJewelGrade)(gradeIndex + 1);
@@ -129,7 +137,7 @@ public class TowerGameWeaponJewel : MonoBehaviour
                 totalWeight += jewelMetaList[i].weight;
             }
 
-            int weightRand = UnityEngine.Random.Range(0, totalWeight);
+            int weightRand = Random.Range(0, totalWeight);
             int currentWeight = 0;
 
             for (int i = 0; i < jewelMetaList.Count; i++)
@@ -177,9 +185,7 @@ public class TowerGameWeaponJewel : MonoBehaviour
         SaveDataManager.instance.otherPlayerData.isJewelLock[currentJewelIndex] = lockToggle.isOn;
         SaveDataManager.instance.SaveOtherPlayerData();
 
-        rollCoinCost = lockToggle.isOn ? (rollCoin[(int)currentJewelData.grade] * rollLockCoin[(int)currentJewelData.grade])
-                                        : rollCoin[(int)currentJewelData.grade];
-        rollCoinText.text = rollCoinCost.ToString("N0");
+        UpdateRollCoinCost();
     }
 
 
@@ -191,7 +197,7 @@ public class TowerGameWeaponJewel : MonoBehaviour
         return type switch
         {
             TowerJewelType.CriDmg => $"+{value * 100}%",
-            TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce => $"+{value}%",
+            TowerJewelType.CriRate or TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce or TowerJewelType.AtkMul or TowerJewelType.CriDmgMul => $"{value}%",
             _ => $"+{value}",
         };
     }
