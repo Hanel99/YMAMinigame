@@ -498,7 +498,30 @@ public class SaveDataManager : MonoBehaviour
         ScheduleSavePlayerData();
     }
 
+    /// <summary>
+    /// 보유 중인 보석 리스트를 순회하여 해당 타입(TowerJewelType)의 능력치 합산 값을 반환합니다.
+    /// 해당 타입의 보석이 없을 경우 0f를 반환합니다.
+    /// </summary>
+    public float GetJewelValue(TowerJewelType type)
+    {
+        if (_playerData.towerJewelUserDataList == null || _playerData.towerJewelUserDataList.Count == 0)
+            return 0f;
 
+        float total = 0f;
+        bool found = false;
+        int count = _playerData.towerJewelUserDataList.Count;
+        for (int i = 0; i < count; i++)
+        {
+            var jewelData = _playerData.towerJewelUserDataList[i];
+            if (jewelData == null || jewelData.type != type)
+                continue;
+
+            total += jewelData.value;
+            found = true;
+        }
+
+        return found ? total : 0f;
+    }
 
     // 세이브데이터가 너무 많이 들어올 경우, 1초간 중복 메소드를 기다린 뒤 실행.
     private void ScheduleSavePlayerData()

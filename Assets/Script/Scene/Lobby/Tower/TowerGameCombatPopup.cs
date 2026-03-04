@@ -92,13 +92,23 @@ public class TowerGameCombatPopup : PopupBase
         var weaponMetaData = GameResourceManager.instance.GetTowerWeaponLevelMetaData(playerWeaponData.weaponLevel);
         var bossMetaData = GameResourceManager.instance.GetTowerBossLevelMetaData(floor);
 
-        playerCombatData.atk = playerData.level + GetValue<int>(TowerUserStatType.Atk, playerStatData.atkLevel) + weaponMetaData.atk;
-        playerCombatData.def = playerData.level + GetValue<int>(TowerUserStatType.Def, playerStatData.defLevel);
+
+        playerCombatData.atk = playerData.level + GetValue<int>(TowerUserStatType.Atk, playerStatData.atkLevel) + weaponMetaData.atk
+                                + (int)SaveDataManager.instance.GetJewelValue(TowerJewelType.Atk);
+        playerCombatData.def = playerData.level + GetValue<int>(TowerUserStatType.Def, playerStatData.defLevel)
+                                + (int)SaveDataManager.instance.GetJewelValue(TowerJewelType.Def);
         playerCombatData.hp = playerData.level + GetValue<int>(TowerUserStatType.HP, playerStatData.hpLevel);
         playerCombatData.maxHp = playerCombatData.hp;
-        playerCombatData.criRate = GetValue<float>(TowerUserStatType.CriRate, playerStatData.criRateLevel);
-        playerCombatData.criDmg = GetValue<float>(TowerUserStatType.CriDmg, playerStatData.criDmgLevel) + weaponMetaData.criDmg;
-        playerCombatData.avoidance = Mathf.Min(0.2f, playerData.level * 0.01f);
+        playerCombatData.criRate = GetValue<float>(TowerUserStatType.CriRate, playerStatData.criRateLevel)
+                                + SaveDataManager.instance.GetJewelValue(TowerJewelType.CriRate);
+        playerCombatData.criDmg = GetValue<float>(TowerUserStatType.CriDmg, playerStatData.criDmgLevel) + weaponMetaData.criDmg
+                                + SaveDataManager.instance.GetJewelValue(TowerJewelType.CriDmg);
+        playerCombatData.avoidance = Mathf.Min(0.2f, playerData.level * 0.01f)
+                                + SaveDataManager.instance.GetJewelValue(TowerJewelType.Avoid);
+
+        playerCombatData.defBreak = SaveDataManager.instance.GetJewelValue(TowerJewelType.DefBreak);
+        playerCombatData.dmgReduce = SaveDataManager.instance.GetJewelValue(TowerJewelType.DmgReduce);
+        playerCombatData.atkMul = SaveDataManager.instance.GetJewelValue(TowerJewelType.AtkMul);
 
 
         bossCombatData.atk = bossMetaData.atk;
@@ -108,6 +118,11 @@ public class TowerGameCombatPopup : PopupBase
         bossCombatData.criRate = bossMetaData.criRate;
         bossCombatData.criDmg = bossMetaData.criDmg;
         bossCombatData.avoidance = Mathf.Min(0.2f, floor * 0.001f);
+
+        bossCombatData.defBreak = 0;
+        bossCombatData.dmgReduce = 0;
+        bossCombatData.atkMul = 1;
+
         rewardCoin = bossMetaData.rewardCoin;
         rewardExp = bossMetaData.rewardExp;
 
@@ -230,9 +245,13 @@ public class TowerGameCombatPopup : PopupBase
         float criticalMultiplier = isCritical ? 1 + attacker.criDmg : 1;
         HLLogger.Log($"크리티컬 판정 - Random: {randomValue}, Threshold: {threshold} / 크리티컬? {isCritical}");
 
-        // 데미지 계산
-        int rawDamage = Mathf.Max(0, Mathf.RoundToInt(attacker.atk * criticalMultiplier) - defender.def);
-        HLLogger.Log($"기본 {attacker.atk}, 크뎀 {Mathf.RoundToInt(attacker.atk * criticalMultiplier)}, 상대 방어력 {defender.def}, 최종뎀 {rawDamage}");
+        // 데미지 공식: (공격력 * 크리티컬 배수 - 유효방어력) * (1 + 공격배수) * (1 - 데미지경감)
+        //              유효방어력 = 방어력 * (1 - 방어무시)
+        int effectiveDef = (int)Mathf.Max(0, defender.def * (1 - attacker.defBreak * 0.01f));
+        int calcDmg = (int)Mathf.Max(0, attacker.atk * criticalMultiplier - effectiveDef);
+        int rawDamage = Mathf.Max(0, Mathf.RoundToInt((calcDmg * (1 + attacker.atkMul * 0.01f) * (1 - defender.dmgReduce * 0.01f))));
+
+        HLLogger.Log($"공격력 {attacker.atk}, 크리티컬 {criticalMultiplier}배, 유효방어력 {effectiveDef}(방어력 {defender.def} * 방어무시 {attacker.defBreak}% 적용), 순수뎀 {calcDmg}, 공격배수 {1 + attacker.atkMul * 0.01f}배, 데미지경감 {defender.dmgReduce}%, 최종뎀 {rawDamage}");
         return Mathf.Max(1, rawDamage); // 최소 데미지는 1
     }
 
@@ -301,6 +320,11 @@ public class TowerGameCombatPopup : PopupBase
         public float criRate;
         public float criDmg;
         public float avoidance; //회피율
+
+        // jewel로 강화 가능한 특수 능력치
+        public float defBreak;
+        public float dmgReduce;
+        public float atkMul;
     }
 
     private class CombatDetailData
@@ -343,7 +367,10 @@ public class TowerGameCombatPopup : PopupBase
             maxHp = playerCombatData.maxHp,
             criRate = playerCombatData.criRate,
             criDmg = playerCombatData.criDmg,
-            avoidance = playerCombatData.avoidance
+            avoidance = playerCombatData.avoidance,
+            defBreak = playerCombatData.defBreak,
+            dmgReduce = playerCombatData.dmgReduce,
+            atkMul = playerCombatData.atkMul
         };
 
         var b = new CombatStatData
@@ -354,7 +381,10 @@ public class TowerGameCombatPopup : PopupBase
             maxHp = bossCombatData.maxHp,
             criRate = bossCombatData.criRate,
             criDmg = bossCombatData.criDmg,
-            avoidance = bossCombatData.avoidance
+            avoidance = bossCombatData.avoidance,
+            defBreak = bossCombatData.defBreak,
+            dmgReduce = bossCombatData.dmgReduce,
+            atkMul = bossCombatData.atkMul
         };
 
         turnCount = 0;

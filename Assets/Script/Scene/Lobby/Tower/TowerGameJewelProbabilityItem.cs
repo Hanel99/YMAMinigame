@@ -41,7 +41,7 @@ public class TowerGameJewelProbabilityItem : MonoBehaviour
         return type switch
         {
             TowerJewelType.CriDmg => $"{value * 100}%",
-            TowerJewelType.CriRate or TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce or TowerJewelType.AtkMul or TowerJewelType.CriDmgMul => $"{value}%",
+            TowerJewelType.CriRate or TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce or TowerJewelType.AtkMul => $"{value}%",
             _ => $"{value}",
         };
     }

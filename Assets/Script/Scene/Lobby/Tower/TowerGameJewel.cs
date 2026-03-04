@@ -164,14 +164,15 @@ public class TowerGameWeaponJewel : MonoBehaviour
 
         // 최종 수치 계산
         float finalValue = 0f;
-        if (selectedMeta.max > 1f)
-        {
-            finalValue = UnityEngine.Random.Range((int)selectedMeta.min, (int)selectedMeta.max + 1);
-        }
-        else
+        if (selectedMeta.type == TowerJewelType.CriRate || selectedMeta.type == TowerJewelType.CriDmg || selectedMeta.type == TowerJewelType.Avoid
+            || selectedMeta.type == TowerJewelType.DefBreak || selectedMeta.type == TowerJewelType.DmgReduce || selectedMeta.type == TowerJewelType.AtkMul)
         {
             float randVal = UnityEngine.Random.Range(selectedMeta.min, selectedMeta.max);
             finalValue = (float)System.Math.Round(randVal, 2);
+        }
+        else
+        {
+            finalValue = UnityEngine.Random.Range((int)selectedMeta.min, (int)selectedMeta.max + 1);
         }
 
         SaveDataManager.instance.AddCoin(-rollCoinCost, false);
@@ -197,7 +198,7 @@ public class TowerGameWeaponJewel : MonoBehaviour
         return type switch
         {
             TowerJewelType.CriDmg => $"+{value * 100}%",
-            TowerJewelType.CriRate or TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce or TowerJewelType.AtkMul or TowerJewelType.CriDmgMul => $"{value}%",
+            TowerJewelType.CriRate or TowerJewelType.Avoid or TowerJewelType.DefBreak or TowerJewelType.DmgReduce or TowerJewelType.AtkMul => $"{value}%",
             _ => $"+{value}",
         };
     }

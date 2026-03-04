@@ -230,7 +230,6 @@ public enum TowerJewelType
     DefBreak,
     DmgReduce,
     AtkMul,
-    CriDmgMul,
 }
 
 public enum TowerJewelGrade
