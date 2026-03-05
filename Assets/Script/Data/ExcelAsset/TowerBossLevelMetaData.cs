@@ -9,6 +9,7 @@ public class TowerBossLevelMetaData
     public int hp;
     public float criRate;
     public float criDmg;
+    public float avoid;
     public int rewardCoin;
     public int rewardExp;
 }

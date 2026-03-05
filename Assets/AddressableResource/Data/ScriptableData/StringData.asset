@@ -1921,6 +1921,22 @@ MonoBehaviour:
     ko: "\uD06C\uB9AC\uD2F0\uCEEC \uB370\uBBF8\uC9C0"
     jp: 
     en: 
+  - key: Tower.StatType.Avoid
+    ko: "\uD68C\uD53C\uC728"
+    jp: 
+    en: 
+  - key: Tower.StatType.DefBreak
+    ko: "\uBC29\uC5B4\uB825 \uBB34\uC2DC"
+    jp: 
+    en: 
+  - key: Tower.StatType.DmgReduce
+    ko: "\uB370\uBBF8\uC9C0 \uACBD\uAC10"
+    jp: 
+    en: 
+  - key: Tower.StatType.AtkMul
+    ko: "\uCD1D \uB370\uBBF8\uC9C0 \uC99D\uAC00"
+    jp: 
+    en: 
   - key: Tower.Enchant.StatTab
     ko: "\uC2A4\uD0EF \uAC15\uD654"
     jp: 
@@ -2396,7 +2412,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: jewel.type.AtkMul
-    ko: "\uCD1D \uACF5\uACA9\uB825 \uC99D\uAC00"
+    ko: "\uCD1D \uB370\uBBF8\uC9C0 \uC99D\uAC00"
     jp: 
     en: 
   - key: jewel.type.CriDmgMul

@@ -117,7 +117,7 @@ public class TowerGameCombatPopup : PopupBase
         bossCombatData.maxHp = bossMetaData.hp;
         bossCombatData.criRate = bossMetaData.criRate;
         bossCombatData.criDmg = bossMetaData.criDmg;
-        bossCombatData.avoidance = Mathf.Min(0.2f, floor * 0.001f);
+        bossCombatData.avoidance = bossMetaData.avoid;
 
         bossCombatData.defBreak = 0;
         bossCombatData.dmgReduce = 0;
@@ -301,7 +301,8 @@ public class TowerGameCombatPopup : PopupBase
         skipButton.gameObject.SetActive(false);
         if (playerWon)
             retryButton.transform.Find("text").GetComponent<Text>().text = "다음 도전";
-        if (SaveDataManager.instance.playerData.towerFloor < 10)
+        int floor = SaveDataManager.instance.playerData.towerFloor;
+        if (floor < 10 || floor > 1000)
             retryButton.interactable = false;
 
         retryButton.gameObject.SetActive(true);
