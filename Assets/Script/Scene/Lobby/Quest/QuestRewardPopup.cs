@@ -59,7 +59,7 @@ public class QuestRewardPopup : PopupBase
 
     public void SetReward(int coin, int exp)
     {
-        coinText.text = UnitKorean(coin);
+        coinText.text = coin.ToKoreanUnit();
         expText.text = exp.ToString();
     }
 
@@ -78,13 +78,4 @@ public class QuestRewardPopup : PopupBase
         }
     }
 
-    private string UnitKorean(int value)
-    {
-        if (value >= 100000000)
-            return $"{value / 100000000}억";
-        else if (value >= 100000)
-            return $"{value / 10000}만";
-        else
-            return value.ToString();
-    }
 }

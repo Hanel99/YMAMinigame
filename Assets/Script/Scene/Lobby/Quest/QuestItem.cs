@@ -60,7 +60,7 @@ public class QuestItem : MonoBehaviour
         // questGradeIcon.gameObject.SetActive(questData.hidden);
 
         SetDescText();
-        coinRewardText.text = UnitKorean(questData.coin);
+        coinRewardText.text = questData.coin.ToKoreanUnit();
         expRewardText.text = questData.exp.ToString();
 
         progressMaxValue = questData.tryCount;
@@ -83,7 +83,7 @@ public class QuestItem : MonoBehaviour
             detail2 = LocalizeManager.instance.GetString($"Quest.Detail2.{questData.detailType2}");
 
         //TODO detailtype에 맞춰서 format 조정하기
-        string descMix = string.Format(desc, UnitKorean(questData.tryCount), detail2);
+        string descMix = string.Format(desc, questData.tryCount.ToKoreanUnit(), detail2);
 
         descText.text = descMix;
     }
@@ -201,13 +201,7 @@ public class QuestItem : MonoBehaviour
 
 
 
-    // Consts
-    private const int UNIT_HM = 100000000;
-    private const int UNIT_M = 10000;
     private const int TOUCH_COUNT_FOR_REDEEM = 3;
-
-    private const string TEXT_UNIT_HM = "억";
-    private const string TEXT_UNIT_M = "만";
 
     public void OnClickComplete()
     {
@@ -230,13 +224,4 @@ public class QuestItem : MonoBehaviour
         }
     }
 
-    private string UnitKorean(int value)
-    {
-        if (value >= UNIT_HM)
-            return $"{value / UNIT_HM}{TEXT_UNIT_HM}";
-        else if (value >= UNIT_M)
-            return $"{value / UNIT_M}{TEXT_UNIT_M}";
-        else
-            return value.ToString();
-    }
 }

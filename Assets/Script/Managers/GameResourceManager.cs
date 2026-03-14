@@ -362,6 +362,11 @@ public class GameResourceManager : MonoBehaviour
         return towerWeaponJewelData.Data.Find(x => x.grade == grade && x.type == type);
     }
 
+    public float GetTowerJewelMaxStat(TowerJewelGrade grade, TowerJewelType type)
+    {
+        return towerWeaponJewelData.Data.Find(x => x.grade == grade && x.type == type).max;
+    }
+
 
 
 

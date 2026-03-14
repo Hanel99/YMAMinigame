@@ -158,7 +158,7 @@ public class TowerGameWeaponEnchantPopup : PopupBase
 
     private bool CheckUnlockCondition(int unlockFloor)
     {
-        if (SaveDataManager.instance.playerData.towerFloor < unlockFloor)
+        if (SaveDataManager.instance.playerData.towerFloor <= unlockFloor)
         {
             LobbyUIManager.instance.ShowCommonPopup("미개방 컨텐츠", $"하넬을 {unlockFloor}명 쓰러트린 뒤 부터 사용할 수 있습니다.", true, true, false);
             return false;

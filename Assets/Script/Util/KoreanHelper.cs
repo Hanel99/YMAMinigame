@@ -22,6 +22,31 @@ public static class KoreanHelper
         return word + (HasJongseong(word) ? "과" : "와");
     }
 
+    // 숫자를 한글 단위(억, 만)로 변환
+    public static string ToKoreanUnit(this int value)
+    {
+        if (value >= 100000000) // 1억 이상: 1억 0000만
+        {
+            int uk = value / 100000000;
+            int man = (value % 100000000) / 10000;
+            return $"{uk}억 {man:D4}만";
+        }
+        else if (value >= 1000000) // 100만 이상 ~ 1억 미만: 0000만
+        {
+            return $"{value / 10000}만";
+        }
+        else if (value >= 10000) // 1만 이상 ~ 100만 미만: 00만 0000
+        {
+            int man = value / 10000;
+            int remain = value % 10000;
+            return $"{man}만 {remain:D4}";
+        }
+        else // 1만 미만: 0000
+        {
+            return value.ToString();
+        }
+    }
+
     private static bool HasJongseong(string word)
     {
         if (string.IsNullOrEmpty(word)) return false;

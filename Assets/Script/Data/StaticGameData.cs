@@ -75,7 +75,7 @@ public static class StaticGameData
 
 
 
-    public static readonly int MAX_COIN_VALUE = 99999999;
+    public static readonly int MAX_COIN_VALUE = 999999999; //9억 9천만
     public static readonly int MAX_MILEAGE_VALUE = 999999;
     public static readonly string SAVE_PLAYER_DATA_KEY = "YMASaveDataAlpha1";
     public static readonly string SAVE_PLAYER_OTHER_DATA_KEY = "YMALocalSaveData";

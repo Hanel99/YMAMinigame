@@ -2724,8 +2724,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 301
     atk: 651
-    def: 309
-    hp: 1002
+    def: 310
+    hp: 1004
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.0971
@@ -2733,8 +2733,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 302
     atk: 652
-    def: 321
-    hp: 1005
+    def: 322
+    hp: 1011
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.09753333
@@ -2742,8 +2742,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 303
     atk: 653
-    def: 335
-    hp: 1008
+    def: 336
+    hp: 1019
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.09796666
@@ -2751,8 +2751,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 304
     atk: 654
-    def: 349
-    hp: 1012
+    def: 350
+    hp: 1028
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.0984
@@ -2760,8 +2760,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 305
     atk: 655
-    def: 364
-    hp: 1016
+    def: 366
+    hp: 1039
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.09883333
@@ -2769,8 +2769,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 306
     atk: 656
-    def: 380
-    hp: 1021
+    def: 382
+    hp: 1050
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.09926666
@@ -2778,8 +2778,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 307
     atk: 657
-    def: 396
-    hp: 1026
+    def: 398
+    hp: 1062
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.0997
@@ -2787,8 +2787,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 308
     atk: 658
-    def: 412
-    hp: 1032
+    def: 415
+    hp: 1075
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10013333
@@ -2796,8 +2796,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 309
     atk: 659
-    def: 430
-    hp: 1037
+    def: 433
+    hp: 1088
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10056667
@@ -2805,8 +2805,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 310
     atk: 660
-    def: 447
-    hp: 1043
+    def: 451
+    hp: 1102
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.101
@@ -2814,8 +2814,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 311
     atk: 661
-    def: 465
-    hp: 1050
+    def: 469
+    hp: 1116
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10143334
@@ -2823,8 +2823,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 312
     atk: 662
-    def: 483
-    hp: 1056
+    def: 488
+    hp: 1131
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10186667
@@ -2832,8 +2832,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 313
     atk: 663
-    def: 501
-    hp: 1063
+    def: 507
+    hp: 1147
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.1023
@@ -2841,8 +2841,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 314
     atk: 664
-    def: 520
-    hp: 1069
+    def: 526
+    hp: 1163
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10273334
@@ -2850,8 +2850,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 315
     atk: 665
-    def: 539
-    hp: 1076
+    def: 546
+    hp: 1180
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10316667
@@ -2859,8 +2859,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 316
     atk: 666
-    def: 558
-    hp: 1084
+    def: 565
+    hp: 1197
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.1036
@@ -2868,8 +2868,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 317
     atk: 667
-    def: 578
-    hp: 1091
+    def: 585
+    hp: 1214
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.104033336
@@ -2877,8 +2877,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 318
     atk: 668
-    def: 598
-    hp: 1099
+    def: 606
+    hp: 1232
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.10446667
@@ -2886,8 +2886,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 319
     atk: 669
-    def: 618
-    hp: 1106
+    def: 626
+    hp: 1250
     criRate: 0.8
     criDmg: 2.4
     avoid: 0.1049
@@ -2895,8 +2895,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 320
     atk: 670
-    def: 638
-    hp: 1114
+    def: 647
+    hp: 1269
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.105333336
@@ -2904,8 +2904,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 321
     atk: 671
-    def: 658
-    hp: 1122
+    def: 668
+    hp: 1288
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.10576667
@@ -2913,8 +2913,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 322
     atk: 672
-    def: 679
-    hp: 1131
+    def: 689
+    hp: 1307
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1062
@@ -2922,8 +2922,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 323
     atk: 673
-    def: 699
-    hp: 1139
+    def: 710
+    hp: 1327
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.106633335
@@ -2931,8 +2931,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 324
     atk: 674
-    def: 720
-    hp: 1148
+    def: 732
+    hp: 1347
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.10706667
@@ -2940,8 +2940,8 @@ MonoBehaviour:
     rewardExp: 9
   - level: 325
     atk: 675
-    def: 741
-    hp: 1156
+    def: 753
+    hp: 1367
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1075
@@ -2949,8 +2949,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 326
     atk: 676
-    def: 763
-    hp: 1165
+    def: 775
+    hp: 1388
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.107933335
@@ -2958,8 +2958,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 327
     atk: 677
-    def: 784
-    hp: 1174
+    def: 797
+    hp: 1409
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.10836667
@@ -2967,8 +2967,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 328
     atk: 678
-    def: 806
-    hp: 1183
+    def: 819
+    hp: 1431
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1088
@@ -2976,8 +2976,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 329
     atk: 679
-    def: 827
-    hp: 1192
+    def: 842
+    hp: 1452
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.109233335
@@ -2985,8 +2985,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 330
     atk: 680
-    def: 849
-    hp: 1202
+    def: 864
+    hp: 1474
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.10966667
@@ -2994,8 +2994,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 331
     atk: 681
-    def: 871
-    hp: 1211
+    def: 887
+    hp: 1496
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1101
@@ -3003,8 +3003,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 332
     atk: 682
-    def: 894
-    hp: 1221
+    def: 910
+    hp: 1519
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.110533334
@@ -3012,8 +3012,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 333
     atk: 683
-    def: 916
-    hp: 1231
+    def: 933
+    hp: 1542
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.11096667
@@ -3021,8 +3021,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 334
     atk: 684
-    def: 938
-    hp: 1240
+    def: 956
+    hp: 1565
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1114
@@ -3030,8 +3030,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 335
     atk: 685
-    def: 961
-    hp: 1250
+    def: 979
+    hp: 1588
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.111833334
@@ -3039,8 +3039,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 336
     atk: 686
-    def: 984
-    hp: 1260
+    def: 1002
+    hp: 1612
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.11226667
@@ -3048,8 +3048,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 337
     atk: 687
-    def: 1007
-    hp: 1271
+    def: 1026
+    hp: 1636
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.1127
@@ -3057,8 +3057,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 338
     atk: 688
-    def: 1030
-    hp: 1281
+    def: 1049
+    hp: 1660
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.11313333
@@ -3066,8 +3066,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 339
     atk: 689
-    def: 1053
-    hp: 1291
+    def: 1073
+    hp: 1685
     criRate: 0.8
     criDmg: 2.6
     avoid: 0.11356667
@@ -3075,8 +3075,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 340
     atk: 690
-    def: 1076
-    hp: 1302
+    def: 1097
+    hp: 1709
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.114
@@ -3084,8 +3084,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 341
     atk: 691
-    def: 1099
-    hp: 1312
+    def: 1121
+    hp: 1734
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11443333
@@ -3093,8 +3093,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 342
     atk: 692
-    def: 1123
-    hp: 1323
+    def: 1145
+    hp: 1760
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11486667
@@ -3102,8 +3102,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 343
     atk: 693
-    def: 1146
-    hp: 1334
+    def: 1169
+    hp: 1785
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1153
@@ -3111,8 +3111,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 344
     atk: 694
-    def: 1170
-    hp: 1345
+    def: 1193
+    hp: 1811
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11573333
@@ -3120,8 +3120,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 345
     atk: 695
-    def: 1194
-    hp: 1356
+    def: 1218
+    hp: 1837
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.116166666
@@ -3129,8 +3129,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 346
     atk: 696
-    def: 1218
-    hp: 1367
+    def: 1242
+    hp: 1863
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1166
@@ -3138,8 +3138,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 347
     atk: 697
-    def: 1242
-    hp: 1378
+    def: 1267
+    hp: 1889
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11703333
@@ -3147,8 +3147,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 348
     atk: 698
-    def: 1266
-    hp: 1390
+    def: 1292
+    hp: 1916
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.117466666
@@ -3156,8 +3156,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 349
     atk: 699
-    def: 1290
-    hp: 1401
+    def: 1316
+    hp: 1942
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1179
@@ -3165,8 +3165,8 @@ MonoBehaviour:
     rewardExp: 10
   - level: 350
     atk: 700
-    def: 1314
-    hp: 1412
+    def: 1341
+    hp: 1970
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11833333
@@ -3174,8 +3174,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 351
     atk: 701
-    def: 1338
-    hp: 1424
+    def: 1366
+    hp: 1997
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.118766665
@@ -3183,8 +3183,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 352
     atk: 702
-    def: 1363
-    hp: 1436
+    def: 1392
+    hp: 2024
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1192
@@ -3192,8 +3192,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 353
     atk: 703
-    def: 1388
-    hp: 1447
+    def: 1417
+    hp: 2052
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.11963333
@@ -3201,8 +3201,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 354
     atk: 704
-    def: 1412
-    hp: 1459
+    def: 1442
+    hp: 2080
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.120066665
@@ -3210,8 +3210,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 355
     atk: 705
-    def: 1437
-    hp: 1471
+    def: 1468
+    hp: 2108
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1205
@@ -3219,8 +3219,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 356
     atk: 706
-    def: 1462
-    hp: 1483
+    def: 1493
+    hp: 2136
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.12093333
@@ -3228,8 +3228,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 357
     atk: 707
-    def: 1487
-    hp: 1495
+    def: 1519
+    hp: 2165
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.121366665
@@ -3237,8 +3237,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 358
     atk: 708
-    def: 1512
-    hp: 1508
+    def: 1544
+    hp: 2193
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.1218
@@ -3246,8 +3246,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 359
     atk: 709
-    def: 1537
-    hp: 1520
+    def: 1570
+    hp: 2222
     criRate: 0.8
     criDmg: 2.8
     avoid: 0.12223333
@@ -3255,8 +3255,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 360
     atk: 710
-    def: 1562
-    hp: 1532
+    def: 1596
+    hp: 2251
     criRate: 0.8
     criDmg: 3
     avoid: 0.122666664
@@ -3264,8 +3264,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 361
     atk: 711
-    def: 1587
-    hp: 1545
+    def: 1622
+    hp: 2281
     criRate: 0.8
     criDmg: 3
     avoid: 0.1231
@@ -3273,8 +3273,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 362
     atk: 712
-    def: 1613
-    hp: 1557
+    def: 1648
+    hp: 2310
     criRate: 0.8
     criDmg: 3
     avoid: 0.12353333
@@ -3282,8 +3282,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 363
     atk: 713
-    def: 1638
-    hp: 1570
+    def: 1674
+    hp: 2340
     criRate: 0.8
     criDmg: 3
     avoid: 0.123966664
@@ -3291,8 +3291,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 364
     atk: 714
-    def: 1664
-    hp: 1583
+    def: 1700
+    hp: 2370
     criRate: 0.8
     criDmg: 3
     avoid: 0.1244
@@ -3300,8 +3300,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 365
     atk: 715
-    def: 1689
-    hp: 1595
+    def: 1727
+    hp: 2400
     criRate: 0.8
     criDmg: 3
     avoid: 0.12483333
@@ -3309,8 +3309,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 366
     atk: 716
-    def: 1715
-    hp: 1608
+    def: 1753
+    hp: 2430
     criRate: 0.8
     criDmg: 3
     avoid: 0.12526667
@@ -3318,8 +3318,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 367
     atk: 717
-    def: 1741
-    hp: 1621
+    def: 1780
+    hp: 2460
     criRate: 0.8
     criDmg: 3
     avoid: 0.1257
@@ -3327,8 +3327,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 368
     atk: 718
-    def: 1767
-    hp: 1634
+    def: 1806
+    hp: 2491
     criRate: 0.8
     criDmg: 3
     avoid: 0.12613334
@@ -3336,8 +3336,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 369
     atk: 719
-    def: 1793
-    hp: 1647
+    def: 1833
+    hp: 2522
     criRate: 0.8
     criDmg: 3
     avoid: 0.12656666
@@ -3345,8 +3345,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 370
     atk: 720
-    def: 1819
-    hp: 1661
+    def: 1859
+    hp: 2553
     criRate: 0.8
     criDmg: 3
     avoid: 0.127
@@ -3354,8 +3354,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 371
     atk: 721
-    def: 1845
-    hp: 1674
+    def: 1886
+    hp: 2584
     criRate: 0.8
     criDmg: 3
     avoid: 0.12743333
@@ -3363,8 +3363,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 372
     atk: 722
-    def: 1871
-    hp: 1687
+    def: 1913
+    hp: 2615
     criRate: 0.8
     criDmg: 3
     avoid: 0.12786667
@@ -3372,8 +3372,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 373
     atk: 723
-    def: 1897
-    hp: 1701
+    def: 1940
+    hp: 2647
     criRate: 0.8
     criDmg: 3
     avoid: 0.1283
@@ -3381,8 +3381,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 374
     atk: 724
-    def: 1923
-    hp: 1714
+    def: 1967
+    hp: 2678
     criRate: 0.8
     criDmg: 3
     avoid: 0.12873334
@@ -3390,8 +3390,8 @@ MonoBehaviour:
     rewardExp: 11
   - level: 375
     atk: 725
-    def: 1950
-    hp: 1728
+    def: 1994
+    hp: 2710
     criRate: 0.8
     criDmg: 3
     avoid: 0.12916666
@@ -3399,8 +3399,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 376
     atk: 726
-    def: 1976
-    hp: 1741
+    def: 2021
+    hp: 2742
     criRate: 0.8
     criDmg: 3
     avoid: 0.1296
@@ -3408,8 +3408,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 377
     atk: 727
-    def: 2003
-    hp: 1755
+    def: 2048
+    hp: 2775
     criRate: 0.8
     criDmg: 3
     avoid: 0.13003333
@@ -3417,8 +3417,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 378
     atk: 728
-    def: 2029
-    hp: 1769
+    def: 2076
+    hp: 2807
     criRate: 0.8
     criDmg: 3
     avoid: 0.13046667
@@ -3426,8 +3426,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 379
     atk: 729
-    def: 2056
-    hp: 1782
+    def: 2103
+    hp: 2839
     criRate: 0.8
     criDmg: 3
     avoid: 0.1309
@@ -3435,8 +3435,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 380
     atk: 730
-    def: 2082
-    hp: 1796
+    def: 2131
+    hp: 2872
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13133334
@@ -3444,8 +3444,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 381
     atk: 731
-    def: 2109
-    hp: 1810
+    def: 2158
+    hp: 2905
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13176666
@@ -3453,8 +3453,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 382
     atk: 732
-    def: 2136
-    hp: 1824
+    def: 2186
+    hp: 2938
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1322
@@ -3462,8 +3462,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 383
     atk: 733
-    def: 2163
-    hp: 1838
+    def: 2213
+    hp: 2971
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13263333
@@ -3471,8 +3471,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 384
     atk: 734
-    def: 2190
-    hp: 1853
+    def: 2241
+    hp: 3004
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13306667
@@ -3480,8 +3480,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 385
     atk: 735
-    def: 2217
-    hp: 1867
+    def: 2269
+    hp: 3038
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1335
@@ -3489,8 +3489,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 386
     atk: 736
-    def: 2244
-    hp: 1881
+    def: 2296
+    hp: 3072
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13393334
@@ -3498,8 +3498,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 387
     atk: 737
-    def: 2271
-    hp: 1896
+    def: 2324
+    hp: 3105
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13436666
@@ -3507,8 +3507,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 388
     atk: 738
-    def: 2298
-    hp: 1910
+    def: 2352
+    hp: 3139
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1348
@@ -3516,8 +3516,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 389
     atk: 739
-    def: 2326
-    hp: 1925
+    def: 2380
+    hp: 3173
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13523333
@@ -3525,8 +3525,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 390
     atk: 740
-    def: 2353
-    hp: 1939
+    def: 2408
+    hp: 3208
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13566667
@@ -3534,8 +3534,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 391
     atk: 741
-    def: 2380
-    hp: 1954
+    def: 2437
+    hp: 3242
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1361
@@ -3543,8 +3543,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 392
     atk: 742
-    def: 2408
-    hp: 1968
+    def: 2465
+    hp: 3277
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13653333
@@ -3552,8 +3552,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 393
     atk: 743
-    def: 2435
-    hp: 1983
+    def: 2493
+    hp: 3311
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13696666
@@ -3561,8 +3561,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 394
     atk: 744
-    def: 2463
-    hp: 1998
+    def: 2521
+    hp: 3346
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1374
@@ -3570,8 +3570,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 395
     atk: 745
-    def: 2491
-    hp: 2013
+    def: 2550
+    hp: 3381
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13783333
@@ -3579,8 +3579,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 396
     atk: 746
-    def: 2518
-    hp: 2028
+    def: 2578
+    hp: 3416
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13826667
@@ -3588,8 +3588,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 397
     atk: 747
-    def: 2546
-    hp: 2043
+    def: 2607
+    hp: 3452
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.1387
@@ -3597,8 +3597,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 398
     atk: 748
-    def: 2574
-    hp: 2058
+    def: 2635
+    hp: 3487
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13913333
@@ -3606,8 +3606,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 399
     atk: 749
-    def: 2602
-    hp: 2073
+    def: 2664
+    hp: 3523
     criRate: 0.8
     criDmg: 3.2
     avoid: 0.13956666
@@ -3615,8 +3615,8 @@ MonoBehaviour:
     rewardExp: 12
   - level: 400
     atk: 750
-    def: 2630
-    hp: 2088
+    def: 2693
+    hp: 3559
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14
@@ -3624,8 +3624,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 401
     atk: 751
-    def: 2658
-    hp: 2104
+    def: 2721
+    hp: 3594
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14043333
@@ -3633,8 +3633,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 402
     atk: 752
-    def: 2686
-    hp: 2119
+    def: 2750
+    hp: 3630
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14086667
@@ -3642,8 +3642,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 403
     atk: 753
-    def: 2714
-    hp: 2134
+    def: 2779
+    hp: 3667
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1413
@@ -3651,8 +3651,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 404
     atk: 754
-    def: 2742
-    hp: 2150
+    def: 2808
+    hp: 3703
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14173333
@@ -3660,8 +3660,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 405
     atk: 755
-    def: 2770
-    hp: 2165
+    def: 2837
+    hp: 3739
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14216666
@@ -3669,8 +3669,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 406
     atk: 756
-    def: 2799
-    hp: 2181
+    def: 2866
+    hp: 3776
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1426
@@ -3678,8 +3678,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 407
     atk: 757
-    def: 2827
-    hp: 2197
+    def: 2895
+    hp: 3813
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14303334
@@ -3687,8 +3687,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 408
     atk: 758
-    def: 2855
-    hp: 2212
+    def: 2924
+    hp: 3850
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14346667
@@ -3696,8 +3696,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 409
     atk: 759
-    def: 2884
-    hp: 2228
+    def: 2953
+    hp: 3887
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1439
@@ -3705,8 +3705,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 410
     atk: 760
-    def: 2912
-    hp: 2244
+    def: 2982
+    hp: 3924
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14433333
@@ -3714,8 +3714,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 411
     atk: 761
-    def: 2941
-    hp: 2260
+    def: 3012
+    hp: 3961
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14476667
@@ -3723,8 +3723,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 412
     atk: 762
-    def: 2969
-    hp: 2276
+    def: 3041
+    hp: 3998
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1452
@@ -3732,8 +3732,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 413
     atk: 763
-    def: 2998
-    hp: 2292
+    def: 3071
+    hp: 4036
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14563334
@@ -3741,8 +3741,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 414
     atk: 764
-    def: 3026
-    hp: 2308
+    def: 3100
+    hp: 4074
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14606667
@@ -3750,8 +3750,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 415
     atk: 765
-    def: 3055
-    hp: 2324
+    def: 3129
+    hp: 4111
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1465
@@ -3759,8 +3759,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 416
     atk: 766
-    def: 3084
-    hp: 2340
+    def: 3159
+    hp: 4149
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14693333
@@ -3768,8 +3768,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 417
     atk: 767
-    def: 3113
-    hp: 2356
+    def: 3189
+    hp: 4188
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14736667
@@ -3777,8 +3777,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 418
     atk: 768
-    def: 3142
-    hp: 2372
+    def: 3218
+    hp: 4226
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.1478
@@ -3786,8 +3786,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 419
     atk: 769
-    def: 3171
-    hp: 2389
+    def: 3248
+    hp: 4264
     criRate: 0.9
     criDmg: 3.4
     avoid: 0.14823334
@@ -3795,8 +3795,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 420
     atk: 770
-    def: 3200
-    hp: 2405
+    def: 3278
+    hp: 4303
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.14866666
@@ -3804,8 +3804,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 421
     atk: 771
-    def: 3229
-    hp: 2421
+    def: 3308
+    hp: 4341
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1491
@@ -3813,8 +3813,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 422
     atk: 772
-    def: 3258
-    hp: 2438
+    def: 3337
+    hp: 4380
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.14953333
@@ -3822,8 +3822,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 423
     atk: 773
-    def: 3287
-    hp: 2454
+    def: 3367
+    hp: 4419
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.14996667
@@ -3831,8 +3831,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 424
     atk: 774
-    def: 3316
-    hp: 2471
+    def: 3397
+    hp: 4458
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1504
@@ -3840,8 +3840,8 @@ MonoBehaviour:
     rewardExp: 13
   - level: 425
     atk: 775
-    def: 3345
-    hp: 2488
+    def: 3427
+    hp: 4497
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15083334
@@ -3849,8 +3849,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 426
     atk: 776
-    def: 3374
-    hp: 2504
+    def: 3457
+    hp: 4536
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15126666
@@ -3858,8 +3858,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 427
     atk: 777
-    def: 3404
-    hp: 2521
+    def: 3487
+    hp: 4575
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1517
@@ -3867,8 +3867,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 428
     atk: 778
-    def: 3433
-    hp: 2538
+    def: 3517
+    hp: 4615
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15213333
@@ -3876,8 +3876,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 429
     atk: 779
-    def: 3462
-    hp: 2555
+    def: 3548
+    hp: 4654
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15256667
@@ -3885,8 +3885,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 430
     atk: 780
-    def: 3492
-    hp: 2571
+    def: 3578
+    hp: 4694
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.153
@@ -3894,8 +3894,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 431
     atk: 781
-    def: 3521
-    hp: 2588
+    def: 3608
+    hp: 4734
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15343334
@@ -3903,8 +3903,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 432
     atk: 782
-    def: 3551
-    hp: 2605
+    def: 3639
+    hp: 4774
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15386666
@@ -3912,8 +3912,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 433
     atk: 783
-    def: 3580
-    hp: 2622
+    def: 3669
+    hp: 4814
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1543
@@ -3921,8 +3921,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 434
     atk: 784
-    def: 3610
-    hp: 2640
+    def: 3699
+    hp: 4854
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15473333
@@ -3930,8 +3930,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 435
     atk: 785
-    def: 3640
-    hp: 2657
+    def: 3730
+    hp: 4895
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15516667
@@ -3939,8 +3939,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 436
     atk: 786
-    def: 3669
-    hp: 2674
+    def: 3760
+    hp: 4935
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1556
@@ -3948,8 +3948,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 437
     atk: 787
-    def: 3699
-    hp: 2691
+    def: 3791
+    hp: 4976
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15603334
@@ -3957,8 +3957,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 438
     atk: 788
-    def: 3729
-    hp: 2709
+    def: 3821
+    hp: 5016
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.15646666
@@ -3966,8 +3966,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 439
     atk: 789
-    def: 3759
-    hp: 2726
+    def: 3852
+    hp: 5057
     criRate: 0.9
     criDmg: 3.6
     avoid: 0.1569
@@ -3975,8 +3975,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 440
     atk: 790
-    def: 3789
-    hp: 2743
+    def: 3883
+    hp: 5098
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.15733333
@@ -3984,8 +3984,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 441
     atk: 791
-    def: 3819
-    hp: 2761
+    def: 3913
+    hp: 5139
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.15776667
@@ -3993,8 +3993,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 442
     atk: 792
-    def: 3849
-    hp: 2778
+    def: 3944
+    hp: 5180
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1582
@@ -4002,8 +4002,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 443
     atk: 793
-    def: 3879
-    hp: 2796
+    def: 3975
+    hp: 5221
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.15863334
@@ -4011,8 +4011,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 444
     atk: 794
-    def: 3909
-    hp: 2813
+    def: 4006
+    hp: 5263
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.15906666
@@ -4020,8 +4020,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 445
     atk: 795
-    def: 3939
-    hp: 2831
+    def: 4037
+    hp: 5304
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1595
@@ -4029,8 +4029,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 446
     atk: 796
-    def: 3969
-    hp: 2849
+    def: 4068
+    hp: 5346
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.15993333
@@ -4038,8 +4038,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 447
     atk: 797
-    def: 3999
-    hp: 2867
+    def: 4099
+    hp: 5388
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16036667
@@ -4047,8 +4047,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 448
     atk: 798
-    def: 4029
-    hp: 2884
+    def: 4130
+    hp: 5430
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1608
@@ -4056,8 +4056,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 449
     atk: 799
-    def: 4060
-    hp: 2902
+    def: 4161
+    hp: 5471
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16123334
@@ -4065,8 +4065,8 @@ MonoBehaviour:
     rewardExp: 14
   - level: 450
     atk: 800
-    def: 4090
-    hp: 2920
+    def: 4192
+    hp: 5514
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16166666
@@ -4074,8 +4074,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 451
     atk: 801
-    def: 4120
-    hp: 2938
+    def: 4223
+    hp: 5556
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1621
@@ -4083,8 +4083,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 452
     atk: 802
-    def: 4151
-    hp: 2956
+    def: 4254
+    hp: 5598
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16253333
@@ -4092,8 +4092,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 453
     atk: 803
-    def: 4181
-    hp: 2974
+    def: 4286
+    hp: 5640
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16296667
@@ -4101,8 +4101,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 454
     atk: 804
-    def: 4211
-    hp: 2992
+    def: 4317
+    hp: 5683
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1634
@@ -4110,8 +4110,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 455
     atk: 805
-    def: 4242
-    hp: 3010
+    def: 4348
+    hp: 5726
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16383334
@@ -4119,8 +4119,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 456
     atk: 806
-    def: 4272
-    hp: 3028
+    def: 4380
+    hp: 5768
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16426666
@@ -4128,8 +4128,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 457
     atk: 807
-    def: 4303
-    hp: 3047
+    def: 4411
+    hp: 5811
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.1647
@@ -4137,8 +4137,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 458
     atk: 808
-    def: 4334
-    hp: 3065
+    def: 4442
+    hp: 5854
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16513333
@@ -4146,8 +4146,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 459
     atk: 809
-    def: 4364
-    hp: 3083
+    def: 4474
+    hp: 5897
     criRate: 0.9
     criDmg: 3.8
     avoid: 0.16556667
@@ -4155,8 +4155,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 460
     atk: 810
-    def: 4395
-    hp: 3102
+    def: 4505
+    hp: 5940
     criRate: 0.9
     criDmg: 4
     avoid: 0.166
@@ -4164,8 +4164,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 461
     atk: 811
-    def: 4426
-    hp: 3120
+    def: 4537
+    hp: 5984
     criRate: 0.9
     criDmg: 4
     avoid: 0.16643333
@@ -4173,8 +4173,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 462
     atk: 812
-    def: 4457
-    hp: 3139
+    def: 4569
+    hp: 6027
     criRate: 0.9
     criDmg: 4
     avoid: 0.16686666
@@ -4182,8 +4182,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 463
     atk: 813
-    def: 4487
-    hp: 3157
+    def: 4600
+    hp: 6071
     criRate: 0.9
     criDmg: 4
     avoid: 0.1673
@@ -4191,8 +4191,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 464
     atk: 814
-    def: 4518
-    hp: 3176
+    def: 4632
+    hp: 6114
     criRate: 0.9
     criDmg: 4
     avoid: 0.16773333
@@ -4200,8 +4200,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 465
     atk: 815
-    def: 4549
-    hp: 3194
+    def: 4664
+    hp: 6158
     criRate: 0.9
     criDmg: 4
     avoid: 0.16816667
@@ -4209,8 +4209,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 466
     atk: 816
-    def: 4580
-    hp: 3213
+    def: 4695
+    hp: 6202
     criRate: 0.9
     criDmg: 4
     avoid: 0.1686
@@ -4218,8 +4218,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 467
     atk: 817
-    def: 4611
-    hp: 3231
+    def: 4727
+    hp: 6246
     criRate: 0.9
     criDmg: 4
     avoid: 0.16903333
@@ -4227,8 +4227,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 468
     atk: 818
-    def: 4642
-    hp: 3250
+    def: 4759
+    hp: 6290
     criRate: 0.9
     criDmg: 4
     avoid: 0.16946666
@@ -4236,8 +4236,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 469
     atk: 819
-    def: 4673
-    hp: 3269
+    def: 4791
+    hp: 6334
     criRate: 0.9
     criDmg: 4
     avoid: 0.1699
@@ -4245,8 +4245,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 470
     atk: 820
-    def: 4704
-    hp: 3288
+    def: 4823
+    hp: 6378
     criRate: 0.9
     criDmg: 4
     avoid: 0.17033334
@@ -4254,8 +4254,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 471
     atk: 821
-    def: 4735
-    hp: 3307
+    def: 4855
+    hp: 6422
     criRate: 0.9
     criDmg: 4
     avoid: 0.17076667
@@ -4263,8 +4263,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 472
     atk: 822
-    def: 4766
-    hp: 3326
+    def: 4887
+    hp: 6467
     criRate: 0.9
     criDmg: 4
     avoid: 0.1712
@@ -4272,8 +4272,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 473
     atk: 823
-    def: 4797
-    hp: 3345
+    def: 4919
+    hp: 6511
     criRate: 0.9
     criDmg: 4
     avoid: 0.17163333
@@ -4281,8 +4281,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 474
     atk: 824
-    def: 4829
-    hp: 3364
+    def: 4951
+    hp: 6556
     criRate: 0.9
     criDmg: 4
     avoid: 0.17206667
@@ -4290,8 +4290,8 @@ MonoBehaviour:
     rewardExp: 15
   - level: 475
     atk: 825
-    def: 4860
-    hp: 3383
+    def: 4983
+    hp: 6601
     criRate: 0.9
     criDmg: 4
     avoid: 0.1725
@@ -4299,8 +4299,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 476
     atk: 826
-    def: 4891
-    hp: 3402
+    def: 5015
+    hp: 6646
     criRate: 0.9
     criDmg: 4
     avoid: 0.17293334
@@ -4308,8 +4308,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 477
     atk: 827
-    def: 4923
-    hp: 3421
+    def: 5047
+    hp: 6691
     criRate: 0.9
     criDmg: 4
     avoid: 0.17336667
@@ -4317,8 +4317,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 478
     atk: 828
-    def: 4954
-    hp: 3440
+    def: 5079
+    hp: 6736
     criRate: 0.9
     criDmg: 4
     avoid: 0.1738
@@ -4326,8 +4326,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 479
     atk: 829
-    def: 4985
-    hp: 3459
+    def: 5112
+    hp: 6781
     criRate: 0.9
     criDmg: 4
     avoid: 0.17423333
@@ -4335,8 +4335,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 480
     atk: 830
-    def: 5017
-    hp: 3478
+    def: 5144
+    hp: 6826
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17466667
@@ -4344,8 +4344,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 481
     atk: 831
-    def: 5048
-    hp: 3498
+    def: 5176
+    hp: 6871
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1751
@@ -4353,8 +4353,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 482
     atk: 832
-    def: 5080
-    hp: 3517
+    def: 5209
+    hp: 6917
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17553334
@@ -4362,8 +4362,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 483
     atk: 833
-    def: 5111
-    hp: 3536
+    def: 5241
+    hp: 6962
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17596667
@@ -4371,8 +4371,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 484
     atk: 834
-    def: 5143
-    hp: 3556
+    def: 5273
+    hp: 7008
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1764
@@ -4380,8 +4380,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 485
     atk: 835
-    def: 5174
-    hp: 3575
+    def: 5306
+    hp: 7054
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17683333
@@ -4389,8 +4389,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 486
     atk: 836
-    def: 5206
-    hp: 3595
+    def: 5338
+    hp: 7100
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17726667
@@ -4398,8 +4398,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 487
     atk: 837
-    def: 5238
-    hp: 3614
+    def: 5371
+    hp: 7146
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1777
@@ -4407,8 +4407,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 488
     atk: 838
-    def: 5269
-    hp: 3634
+    def: 5403
+    hp: 7192
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17813334
@@ -4416,8 +4416,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 489
     atk: 839
-    def: 5301
-    hp: 3654
+    def: 5436
+    hp: 7238
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17856666
@@ -4425,8 +4425,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 490
     atk: 840
-    def: 5333
-    hp: 3673
+    def: 5469
+    hp: 7284
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.179
@@ -4434,8 +4434,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 491
     atk: 841
-    def: 5365
-    hp: 3693
+    def: 5501
+    hp: 7330
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17943333
@@ -4443,8 +4443,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 492
     atk: 842
-    def: 5397
-    hp: 3713
+    def: 5534
+    hp: 7377
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.17986667
@@ -4452,8 +4452,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 493
     atk: 843
-    def: 5428
-    hp: 3733
+    def: 5567
+    hp: 7423
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1803
@@ -4461,8 +4461,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 494
     atk: 844
-    def: 5460
-    hp: 3752
+    def: 5599
+    hp: 7470
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.18073334
@@ -4470,8 +4470,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 495
     atk: 845
-    def: 5492
-    hp: 3772
+    def: 5632
+    hp: 7517
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.18116666
@@ -4479,8 +4479,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 496
     atk: 846
-    def: 5524
-    hp: 3792
+    def: 5665
+    hp: 7564
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1816
@@ -4488,8 +4488,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 497
     atk: 847
-    def: 5556
-    hp: 3812
+    def: 5698
+    hp: 7611
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.18203333
@@ -4497,8 +4497,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 498
     atk: 848
-    def: 5588
-    hp: 3832
+    def: 5731
+    hp: 7658
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.18246667
@@ -4506,8 +4506,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 499
     atk: 849
-    def: 5620
-    hp: 3852
+    def: 5764
+    hp: 7705
     criRate: 0.9
     criDmg: 4.2
     avoid: 0.1829
@@ -4515,8 +4515,8 @@ MonoBehaviour:
     rewardExp: 16
   - level: 500
     atk: 850
-    def: 5652
-    hp: 3872
+    def: 5797
+    hp: 7752
     criRate: 1
     criDmg: 4.4
     avoid: 0.18333334
@@ -4524,8 +4524,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 501
     atk: 851
-    def: 5685
-    hp: 3892
+    def: 5830
+    hp: 7799
     criRate: 1
     criDmg: 4.4
     avoid: 0.18376666
@@ -4533,8 +4533,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 502
     atk: 852
-    def: 5717
-    hp: 3913
+    def: 5863
+    hp: 7847
     criRate: 1
     criDmg: 4.4
     avoid: 0.1842
@@ -4542,8 +4542,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 503
     atk: 853
-    def: 5749
-    hp: 3933
+    def: 5896
+    hp: 7894
     criRate: 1
     criDmg: 4.4
     avoid: 0.18463333
@@ -4551,8 +4551,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 504
     atk: 854
-    def: 5781
-    hp: 3953
+    def: 5929
+    hp: 7942
     criRate: 1
     criDmg: 4.4
     avoid: 0.18506667
@@ -4560,8 +4560,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 505
     atk: 855
-    def: 5813
-    hp: 3973
+    def: 5962
+    hp: 7990
     criRate: 1
     criDmg: 4.4
     avoid: 0.1855
@@ -4569,8 +4569,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 506
     atk: 856
-    def: 5846
-    hp: 3994
+    def: 5995
+    hp: 8037
     criRate: 1
     criDmg: 4.4
     avoid: 0.18593334
@@ -4578,8 +4578,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 507
     atk: 857
-    def: 5878
-    hp: 4014
+    def: 6028
+    hp: 8085
     criRate: 1
     criDmg: 4.4
     avoid: 0.18636666
@@ -4587,8 +4587,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 508
     atk: 858
-    def: 5910
-    hp: 4034
+    def: 6062
+    hp: 8133
     criRate: 1
     criDmg: 4.4
     avoid: 0.1868
@@ -4596,8 +4596,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 509
     atk: 859
-    def: 5943
-    hp: 4055
+    def: 6095
+    hp: 8181
     criRate: 1
     criDmg: 4.4
     avoid: 0.18723333
@@ -4605,8 +4605,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 510
     atk: 860
-    def: 5975
-    hp: 4075
+    def: 6128
+    hp: 8229
     criRate: 1
     criDmg: 4.4
     avoid: 0.18766667
@@ -4614,8 +4614,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 511
     atk: 861
-    def: 6008
-    hp: 4096
+    def: 6161
+    hp: 8278
     criRate: 1
     criDmg: 4.4
     avoid: 0.1881
@@ -4623,8 +4623,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 512
     atk: 862
-    def: 6040
-    hp: 4116
+    def: 6195
+    hp: 8326
     criRate: 1
     criDmg: 4.4
     avoid: 0.18853334
@@ -4632,8 +4632,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 513
     atk: 863
-    def: 6073
-    hp: 4137
+    def: 6228
+    hp: 8374
     criRate: 1
     criDmg: 4.4
     avoid: 0.18896666
@@ -4641,8 +4641,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 514
     atk: 864
-    def: 6105
-    hp: 4158
+    def: 6262
+    hp: 8423
     criRate: 1
     criDmg: 4.4
     avoid: 0.1894
@@ -4650,8 +4650,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 515
     atk: 865
-    def: 6138
-    hp: 4178
+    def: 6295
+    hp: 8471
     criRate: 1
     criDmg: 4.4
     avoid: 0.18983333
@@ -4659,8 +4659,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 516
     atk: 866
-    def: 6170
-    hp: 4199
+    def: 6329
+    hp: 8520
     criRate: 1
     criDmg: 4.4
     avoid: 0.19026667
@@ -4668,8 +4668,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 517
     atk: 867
-    def: 6203
-    hp: 4220
+    def: 6362
+    hp: 8569
     criRate: 1
     criDmg: 4.4
     avoid: 0.1907
@@ -4677,8 +4677,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 518
     atk: 868
-    def: 6236
-    hp: 4241
+    def: 6396
+    hp: 8618
     criRate: 1
     criDmg: 4.4
     avoid: 0.19113334
@@ -4686,8 +4686,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 519
     atk: 869
-    def: 6268
-    hp: 4261
+    def: 6429
+    hp: 8667
     criRate: 1
     criDmg: 4.4
     avoid: 0.19156666
@@ -4695,8 +4695,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 520
     atk: 870
-    def: 6301
-    hp: 4282
+    def: 6463
+    hp: 8716
     criRate: 1
     criDmg: 4.6
     avoid: 0.192
@@ -4704,8 +4704,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 521
     atk: 871
-    def: 6334
-    hp: 4303
+    def: 6496
+    hp: 8765
     criRate: 1
     criDmg: 4.6
     avoid: 0.19243333
@@ -4713,8 +4713,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 522
     atk: 872
-    def: 6366
-    hp: 4324
+    def: 6530
+    hp: 8814
     criRate: 1
     criDmg: 4.6
     avoid: 0.19286667
@@ -4722,8 +4722,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 523
     atk: 873
-    def: 6399
-    hp: 4345
+    def: 6564
+    hp: 8864
     criRate: 1
     criDmg: 4.6
     avoid: 0.1933
@@ -4731,8 +4731,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 524
     atk: 874
-    def: 6432
-    hp: 4366
+    def: 6597
+    hp: 8913
     criRate: 1
     criDmg: 4.6
     avoid: 0.19373333
@@ -4740,8 +4740,8 @@ MonoBehaviour:
     rewardExp: 17
   - level: 525
     atk: 875
-    def: 6465
-    hp: 4387
+    def: 6631
+    hp: 8962
     criRate: 1
     criDmg: 4.6
     avoid: 0.19416666
@@ -4749,8 +4749,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 526
     atk: 876
-    def: 6498
-    hp: 4408
+    def: 6665
+    hp: 9012
     criRate: 1
     criDmg: 4.6
     avoid: 0.1946
@@ -4758,8 +4758,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 527
     atk: 877
-    def: 6531
-    hp: 4429
+    def: 6699
+    hp: 9062
     criRate: 1
     criDmg: 4.6
     avoid: 0.19503333
@@ -4767,8 +4767,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 528
     atk: 878
-    def: 6564
-    hp: 4451
+    def: 6733
+    hp: 9111
     criRate: 1
     criDmg: 4.6
     avoid: 0.19546667
@@ -4776,8 +4776,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 529
     atk: 879
-    def: 6597
-    hp: 4472
+    def: 6766
+    hp: 9161
     criRate: 1
     criDmg: 4.6
     avoid: 0.1959
@@ -4785,8 +4785,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 530
     atk: 880
-    def: 6630
-    hp: 4493
+    def: 6800
+    hp: 9211
     criRate: 1
     criDmg: 4.6
     avoid: 0.19633333
@@ -4794,8 +4794,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 531
     atk: 881
-    def: 6663
-    hp: 4514
+    def: 6834
+    hp: 9261
     criRate: 1
     criDmg: 4.6
     avoid: 0.19676666
@@ -4803,8 +4803,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 532
     atk: 882
-    def: 6696
-    hp: 4536
+    def: 6868
+    hp: 9311
     criRate: 1
     criDmg: 4.6
     avoid: 0.1972
@@ -4812,8 +4812,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 533
     atk: 883
-    def: 6729
-    hp: 4557
+    def: 6902
+    hp: 9362
     criRate: 1
     criDmg: 4.6
     avoid: 0.19763333
@@ -4821,8 +4821,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 534
     atk: 884
-    def: 6762
-    hp: 4578
+    def: 6936
+    hp: 9412
     criRate: 1
     criDmg: 4.6
     avoid: 0.19806667
@@ -4830,8 +4830,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 535
     atk: 885
-    def: 6795
-    hp: 4600
+    def: 6970
+    hp: 9462
     criRate: 1
     criDmg: 4.6
     avoid: 0.1985
@@ -4839,8 +4839,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 536
     atk: 886
-    def: 6828
-    hp: 4621
+    def: 7004
+    hp: 9513
     criRate: 1
     criDmg: 4.6
     avoid: 0.19893333
@@ -4848,8 +4848,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 537
     atk: 887
-    def: 6862
-    hp: 4643
+    def: 7038
+    hp: 9563
     criRate: 1
     criDmg: 4.6
     avoid: 0.19936667
@@ -4857,8 +4857,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 538
     atk: 888
-    def: 6895
-    hp: 4664
+    def: 7073
+    hp: 9614
     criRate: 1
     criDmg: 4.6
     avoid: 0.1998
@@ -4866,8 +4866,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 539
     atk: 889
-    def: 6928
-    hp: 4686
+    def: 7107
+    hp: 9665
     criRate: 1
     criDmg: 4.6
     avoid: 0.20023334
@@ -4875,8 +4875,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 540
     atk: 890
-    def: 6961
-    hp: 4708
+    def: 7141
+    hp: 9715
     criRate: 1
     criDmg: 4.8
     avoid: 0.20066667
@@ -4884,8 +4884,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 541
     atk: 891
-    def: 6995
-    hp: 4729
+    def: 7175
+    hp: 9766
     criRate: 1
     criDmg: 4.8
     avoid: 0.2011
@@ -4893,8 +4893,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 542
     atk: 892
-    def: 7028
-    hp: 4751
+    def: 7209
+    hp: 9817
     criRate: 1
     criDmg: 4.8
     avoid: 0.20153333
@@ -4902,8 +4902,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 543
     atk: 893
-    def: 7061
-    hp: 4773
+    def: 7244
+    hp: 9868
     criRate: 1
     criDmg: 4.8
     avoid: 0.20196667
@@ -4911,8 +4911,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 544
     atk: 894
-    def: 7095
-    hp: 4794
+    def: 7278
+    hp: 9919
     criRate: 1
     criDmg: 4.8
     avoid: 0.2024
@@ -4920,8 +4920,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 545
     atk: 895
-    def: 7128
-    hp: 4816
+    def: 7312
+    hp: 9971
     criRate: 1
     criDmg: 4.8
     avoid: 0.20283334
@@ -4929,8 +4929,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 546
     atk: 896
-    def: 7162
-    hp: 4838
+    def: 7347
+    hp: 10022
     criRate: 1
     criDmg: 4.8
     avoid: 0.20326667
@@ -4938,8 +4938,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 547
     atk: 897
-    def: 7195
-    hp: 4860
+    def: 7381
+    hp: 10073
     criRate: 1
     criDmg: 4.8
     avoid: 0.2037
@@ -4947,8 +4947,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 548
     atk: 898
-    def: 7229
-    hp: 4882
+    def: 7416
+    hp: 10125
     criRate: 1
     criDmg: 4.8
     avoid: 0.20413333
@@ -4956,8 +4956,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 549
     atk: 899
-    def: 7262
-    hp: 4904
+    def: 7450
+    hp: 10176
     criRate: 1
     criDmg: 4.8
     avoid: 0.20456667
@@ -4965,8 +4965,8 @@ MonoBehaviour:
     rewardExp: 18
   - level: 550
     atk: 900
-    def: 7296
-    hp: 4926
+    def: 7484
+    hp: 10228
     criRate: 1
     criDmg: 4.8
     avoid: 0.205
@@ -4974,8 +4974,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 551
     atk: 901
-    def: 7329
-    hp: 4948
+    def: 7519
+    hp: 10280
     criRate: 1
     criDmg: 4.8
     avoid: 0.20543334
@@ -4983,8 +4983,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 552
     atk: 902
-    def: 7363
-    hp: 4970
+    def: 7553
+    hp: 10332
     criRate: 1
     criDmg: 4.8
     avoid: 0.20586666
@@ -4992,8 +4992,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 553
     atk: 903
-    def: 7397
-    hp: 4992
+    def: 7588
+    hp: 10383
     criRate: 1
     criDmg: 4.8
     avoid: 0.2063
@@ -5001,8 +5001,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 554
     atk: 904
-    def: 7430
-    hp: 5014
+    def: 7623
+    hp: 10435
     criRate: 1
     criDmg: 4.8
     avoid: 0.20673333
@@ -5010,8 +5010,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 555
     atk: 905
-    def: 7464
-    hp: 5036
+    def: 7657
+    hp: 10487
     criRate: 1
     criDmg: 4.8
     avoid: 0.20716667
@@ -5019,8 +5019,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 556
     atk: 906
-    def: 7498
-    hp: 5058
+    def: 7692
+    hp: 10540
     criRate: 1
     criDmg: 4.8
     avoid: 0.2076
@@ -5028,8 +5028,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 557
     atk: 907
-    def: 7532
-    hp: 5080
+    def: 7727
+    hp: 10592
     criRate: 1
     criDmg: 4.8
     avoid: 0.20803334
@@ -5037,8 +5037,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 558
     atk: 908
-    def: 7565
-    hp: 5103
+    def: 7761
+    hp: 10644
     criRate: 1
     criDmg: 4.8
     avoid: 0.20846666
@@ -5046,8 +5046,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 559
     atk: 909
-    def: 7599
-    hp: 5125
+    def: 7796
+    hp: 10696
     criRate: 1
     criDmg: 4.8
     avoid: 0.2089
@@ -5055,8 +5055,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 560
     atk: 910
-    def: 7633
-    hp: 5147
+    def: 7831
+    hp: 10749
     criRate: 1
     criDmg: 5
     avoid: 0.20933333
@@ -5064,8 +5064,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 561
     atk: 911
-    def: 7667
-    hp: 5170
+    def: 7865
+    hp: 10801
     criRate: 1
     criDmg: 5
     avoid: 0.20976667
@@ -5073,8 +5073,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 562
     atk: 912
-    def: 7701
-    hp: 5192
+    def: 7900
+    hp: 10854
     criRate: 1
     criDmg: 5
     avoid: 0.2102
@@ -5082,8 +5082,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 563
     atk: 913
-    def: 7735
-    hp: 5214
+    def: 7935
+    hp: 10907
     criRate: 1
     criDmg: 5
     avoid: 0.21063334
@@ -5091,8 +5091,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 564
     atk: 914
-    def: 7769
-    hp: 5237
+    def: 7970
+    hp: 10959
     criRate: 1
     criDmg: 5
     avoid: 0.21106666
@@ -5100,8 +5100,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 565
     atk: 915
-    def: 7803
-    hp: 5259
+    def: 8005
+    hp: 11012
     criRate: 1
     criDmg: 5
     avoid: 0.2115
@@ -5109,8 +5109,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 566
     atk: 916
-    def: 7837
-    hp: 5282
+    def: 8040
+    hp: 11065
     criRate: 1
     criDmg: 5
     avoid: 0.21193333
@@ -5118,8 +5118,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 567
     atk: 917
-    def: 7871
-    hp: 5304
+    def: 8075
+    hp: 11118
     criRate: 1
     criDmg: 5
     avoid: 0.21236667
@@ -5127,8 +5127,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 568
     atk: 918
-    def: 7905
-    hp: 5327
+    def: 8110
+    hp: 11171
     criRate: 1
     criDmg: 5
     avoid: 0.2128
@@ -5136,8 +5136,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 569
     atk: 919
-    def: 7939
-    hp: 5350
+    def: 8145
+    hp: 11225
     criRate: 1
     criDmg: 5
     avoid: 0.21323334
@@ -5145,8 +5145,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 570
     atk: 920
-    def: 7973
-    hp: 5372
+    def: 8180
+    hp: 11278
     criRate: 1
     criDmg: 5
     avoid: 0.21366666
@@ -5154,8 +5154,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 571
     atk: 921
-    def: 8007
-    hp: 5395
+    def: 8215
+    hp: 11331
     criRate: 1
     criDmg: 5
     avoid: 0.2141
@@ -5163,8 +5163,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 572
     atk: 922
-    def: 8041
-    hp: 5418
+    def: 8250
+    hp: 11385
     criRate: 1
     criDmg: 5
     avoid: 0.21453333
@@ -5172,8 +5172,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 573
     atk: 923
-    def: 8075
-    hp: 5440
+    def: 8285
+    hp: 11438
     criRate: 1
     criDmg: 5
     avoid: 0.21496667
@@ -5181,8 +5181,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 574
     atk: 924
-    def: 8109
-    hp: 5463
+    def: 8320
+    hp: 11492
     criRate: 1
     criDmg: 5
     avoid: 0.2154
@@ -5190,8 +5190,8 @@ MonoBehaviour:
     rewardExp: 19
   - level: 575
     atk: 925
-    def: 8144
-    hp: 5486
+    def: 8355
+    hp: 11545
     criRate: 1
     criDmg: 5
     avoid: 0.21583334
@@ -5199,8 +5199,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 576
     atk: 926
-    def: 8178
-    hp: 5509
+    def: 8390
+    hp: 11599
     criRate: 1
     criDmg: 5
     avoid: 0.21626666
@@ -5208,8 +5208,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 577
     atk: 927
-    def: 8212
-    hp: 5532
+    def: 8425
+    hp: 11653
     criRate: 1
     criDmg: 5
     avoid: 0.2167
@@ -5217,8 +5217,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 578
     atk: 928
-    def: 8246
-    hp: 5555
+    def: 8461
+    hp: 11707
     criRate: 1
     criDmg: 5
     avoid: 0.21713333
@@ -5226,8 +5226,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 579
     atk: 929
-    def: 8281
-    hp: 5578
+    def: 8496
+    hp: 11761
     criRate: 1
     criDmg: 5
     avoid: 0.21756667
@@ -5235,8 +5235,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 580
     atk: 930
-    def: 8315
-    hp: 5601
+    def: 8531
+    hp: 11815
     criRate: 1
     criDmg: 5.2
     avoid: 0.218
@@ -5244,8 +5244,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 581
     atk: 931
-    def: 8349
-    hp: 5624
+    def: 8566
+    hp: 11869
     criRate: 1
     criDmg: 5.2
     avoid: 0.21843334
@@ -5253,8 +5253,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 582
     atk: 932
-    def: 8384
-    hp: 5647
+    def: 8602
+    hp: 11923
     criRate: 1
     criDmg: 5.2
     avoid: 0.21886666
@@ -5262,8 +5262,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 583
     atk: 933
-    def: 8418
-    hp: 5670
+    def: 8637
+    hp: 11977
     criRate: 1
     criDmg: 5.2
     avoid: 0.2193
@@ -5271,8 +5271,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 584
     atk: 934
-    def: 8453
-    hp: 5693
+    def: 8672
+    hp: 12032
     criRate: 1
     criDmg: 5.2
     avoid: 0.21973333
@@ -5280,8 +5280,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 585
     atk: 935
-    def: 8487
-    hp: 5716
+    def: 8708
+    hp: 12086
     criRate: 1
     criDmg: 5.2
     avoid: 0.22016667
@@ -5289,8 +5289,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 586
     atk: 936
-    def: 8522
-    hp: 5739
+    def: 8743
+    hp: 12140
     criRate: 1
     criDmg: 5.2
     avoid: 0.2206
@@ -5298,8 +5298,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 587
     atk: 937
-    def: 8556
-    hp: 5762
+    def: 8779
+    hp: 12195
     criRate: 1
     criDmg: 5.2
     avoid: 0.22103333
@@ -5307,8 +5307,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 588
     atk: 938
-    def: 8591
-    hp: 5786
+    def: 8814
+    hp: 12250
     criRate: 1
     criDmg: 5.2
     avoid: 0.22146666
@@ -5316,8 +5316,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 589
     atk: 939
-    def: 8625
-    hp: 5809
+    def: 8850
+    hp: 12304
     criRate: 1
     criDmg: 5.2
     avoid: 0.2219
@@ -5325,8 +5325,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 590
     atk: 940
-    def: 8660
-    hp: 5832
+    def: 8885
+    hp: 12359
     criRate: 1
     criDmg: 5.2
     avoid: 0.22233333
@@ -5334,8 +5334,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 591
     atk: 941
-    def: 8694
-    hp: 5856
+    def: 8921
+    hp: 12414
     criRate: 1
     criDmg: 5.2
     avoid: 0.22276667
@@ -5343,8 +5343,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 592
     atk: 942
-    def: 8729
-    hp: 5879
+    def: 8956
+    hp: 12469
     criRate: 1
     criDmg: 5.2
     avoid: 0.2232
@@ -5352,8 +5352,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 593
     atk: 943
-    def: 8764
-    hp: 5902
+    def: 8992
+    hp: 12524
     criRate: 1
     criDmg: 5.2
     avoid: 0.22363333
@@ -5361,8 +5361,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 594
     atk: 944
-    def: 8798
-    hp: 5926
+    def: 9027
+    hp: 12579
     criRate: 1
     criDmg: 5.2
     avoid: 0.22406666
@@ -5370,8 +5370,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 595
     atk: 945
-    def: 8833
-    hp: 5949
+    def: 9063
+    hp: 12634
     criRate: 1
     criDmg: 5.2
     avoid: 0.2245
@@ -5379,8 +5379,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 596
     atk: 946
-    def: 8868
-    hp: 5973
+    def: 9099
+    hp: 12690
     criRate: 1
     criDmg: 5.2
     avoid: 0.22493333
@@ -5388,8 +5388,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 597
     atk: 947
-    def: 8902
-    hp: 5996
+    def: 9134
+    hp: 12745
     criRate: 1
     criDmg: 5.2
     avoid: 0.22536667
@@ -5397,8 +5397,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 598
     atk: 948
-    def: 8937
-    hp: 6020
+    def: 9170
+    hp: 12800
     criRate: 1
     criDmg: 5.2
     avoid: 0.2258
@@ -5406,8 +5406,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 599
     atk: 949
-    def: 8972
-    hp: 6043
+    def: 9206
+    hp: 12856
     criRate: 1
     criDmg: 5.2
     avoid: 0.22623333
@@ -5415,8 +5415,8 @@ MonoBehaviour:
     rewardExp: 20
   - level: 600
     atk: 950
-    def: 9007
-    hp: 6067
+    def: 9242
+    hp: 12911
     criRate: 1
     criDmg: 5.4
     avoid: 0.22666667
@@ -5424,8 +5424,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 601
     atk: 951
-    def: 9042
-    hp: 6091
+    def: 9277
+    hp: 12967
     criRate: 1
     criDmg: 5.4
     avoid: 0.2271
@@ -5433,8 +5433,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 602
     atk: 952
-    def: 9077
-    hp: 6114
+    def: 9313
+    hp: 13023
     criRate: 1
     criDmg: 5.4
     avoid: 0.22753334
@@ -5442,8 +5442,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 603
     atk: 953
-    def: 9111
-    hp: 6138
+    def: 9349
+    hp: 13078
     criRate: 1
     criDmg: 5.4
     avoid: 0.22796667
@@ -5451,8 +5451,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 604
     atk: 954
-    def: 9146
-    hp: 6162
+    def: 9385
+    hp: 13134
     criRate: 1
     criDmg: 5.4
     avoid: 0.2284
@@ -5460,8 +5460,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 605
     atk: 955
-    def: 9181
-    hp: 6186
+    def: 9421
+    hp: 13190
     criRate: 1
     criDmg: 5.4
     avoid: 0.22883333
@@ -5469,8 +5469,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 606
     atk: 956
-    def: 9216
-    hp: 6210
+    def: 9457
+    hp: 13246
     criRate: 1
     criDmg: 5.4
     avoid: 0.22926667
@@ -5478,8 +5478,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 607
     atk: 957
-    def: 9251
-    hp: 6233
+    def: 9492
+    hp: 13302
     criRate: 1
     criDmg: 5.4
     avoid: 0.2297
@@ -5487,8 +5487,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 608
     atk: 958
-    def: 9286
-    hp: 6257
+    def: 9528
+    hp: 13358
     criRate: 1
     criDmg: 5.4
     avoid: 0.23013334
@@ -5496,8 +5496,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 609
     atk: 959
-    def: 9321
-    hp: 6281
+    def: 9564
+    hp: 13415
     criRate: 1
     criDmg: 5.4
     avoid: 0.23056667
@@ -5505,8 +5505,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 610
     atk: 960
-    def: 9356
-    hp: 6305
+    def: 9600
+    hp: 13471
     criRate: 1
     criDmg: 5.4
     avoid: 0.231
@@ -5514,8 +5514,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 611
     atk: 961
-    def: 9391
-    hp: 6329
+    def: 9636
+    hp: 13527
     criRate: 1
     criDmg: 5.4
     avoid: 0.23143333
@@ -5523,8 +5523,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 612
     atk: 962
-    def: 9426
-    hp: 6353
+    def: 9672
+    hp: 13584
     criRate: 1
     criDmg: 5.4
     avoid: 0.23186667
@@ -5532,8 +5532,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 613
     atk: 963
-    def: 9462
-    hp: 6377
+    def: 9708
+    hp: 13640
     criRate: 1
     criDmg: 5.4
     avoid: 0.2323
@@ -5541,8 +5541,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 614
     atk: 964
-    def: 9497
-    hp: 6401
+    def: 9745
+    hp: 13697
     criRate: 1
     criDmg: 5.4
     avoid: 0.23273334
@@ -5550,8 +5550,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 615
     atk: 965
-    def: 9532
-    hp: 6425
+    def: 9781
+    hp: 13753
     criRate: 1
     criDmg: 5.4
     avoid: 0.23316666
@@ -5559,8 +5559,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 616
     atk: 966
-    def: 9567
-    hp: 6449
+    def: 9817
+    hp: 13810
     criRate: 1
     criDmg: 5.4
     avoid: 0.2336
@@ -5568,8 +5568,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 617
     atk: 967
-    def: 9602
-    hp: 6474
+    def: 9853
+    hp: 13867
     criRate: 1
     criDmg: 5.4
     avoid: 0.23403333
@@ -5577,8 +5577,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 618
     atk: 968
-    def: 9637
-    hp: 6498
+    def: 9889
+    hp: 13924
     criRate: 1
     criDmg: 5.4
     avoid: 0.23446667
@@ -5586,8 +5586,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 619
     atk: 969
-    def: 9673
-    hp: 6522
+    def: 9925
+    hp: 13981
     criRate: 1
     criDmg: 5.4
     avoid: 0.2349
@@ -5595,8 +5595,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 620
     atk: 970
-    def: 9708
-    hp: 6546
+    def: 9962
+    hp: 14038
     criRate: 1
     criDmg: 5.6
     avoid: 0.23533334
@@ -5604,8 +5604,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 621
     atk: 971
-    def: 9743
-    hp: 6571
+    def: 9998
+    hp: 14095
     criRate: 1
     criDmg: 5.6
     avoid: 0.23576666
@@ -5613,8 +5613,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 622
     atk: 972
-    def: 9779
-    hp: 6595
+    def: 10034
+    hp: 14152
     criRate: 1
     criDmg: 5.6
     avoid: 0.2362
@@ -5622,8 +5622,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 623
     atk: 973
-    def: 9814
-    hp: 6619
+    def: 10070
+    hp: 14209
     criRate: 1
     criDmg: 5.6
     avoid: 0.23663333
@@ -5631,8 +5631,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 624
     atk: 974
-    def: 9849
-    hp: 6644
+    def: 10107
+    hp: 14266
     criRate: 1
     criDmg: 5.6
     avoid: 0.23706667
@@ -5640,8 +5640,8 @@ MonoBehaviour:
     rewardExp: 21
   - level: 625
     atk: 975
-    def: 9885
-    hp: 6668
+    def: 10143
+    hp: 14324
     criRate: 1
     criDmg: 5.6
     avoid: 0.2375
@@ -5649,8 +5649,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 626
     atk: 976
-    def: 9920
-    hp: 6692
+    def: 10179
+    hp: 14381
     criRate: 1
     criDmg: 5.6
     avoid: 0.23793334
@@ -5658,8 +5658,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 627
     atk: 977
-    def: 9955
-    hp: 6717
+    def: 10216
+    hp: 14439
     criRate: 1
     criDmg: 5.6
     avoid: 0.23836666
@@ -5667,8 +5667,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 628
     atk: 978
-    def: 9991
-    hp: 6741
+    def: 10252
+    hp: 14496
     criRate: 1
     criDmg: 5.6
     avoid: 0.2388
@@ -5676,8 +5676,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 629
     atk: 979
-    def: 10026
-    hp: 6766
+    def: 10288
+    hp: 14554
     criRate: 1
     criDmg: 5.6
     avoid: 0.23923333
@@ -5685,8 +5685,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 630
     atk: 980
-    def: 10062
-    hp: 6790
+    def: 10325
+    hp: 14612
     criRate: 1
     criDmg: 5.6
     avoid: 0.23966667
@@ -5694,8 +5694,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 631
     atk: 981
-    def: 10097
-    hp: 6815
+    def: 10361
+    hp: 14669
     criRate: 1
     criDmg: 5.6
     avoid: 0.2401
@@ -5703,8 +5703,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 632
     atk: 982
-    def: 10133
-    hp: 6840
+    def: 10398
+    hp: 14727
     criRate: 1
     criDmg: 5.6
     avoid: 0.24053334
@@ -5712,8 +5712,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 633
     atk: 983
-    def: 10168
-    hp: 6864
+    def: 10434
+    hp: 14785
     criRate: 1
     criDmg: 5.6
     avoid: 0.24096666
@@ -5721,8 +5721,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 634
     atk: 984
-    def: 10204
-    hp: 6889
+    def: 10471
+    hp: 14843
     criRate: 1
     criDmg: 5.6
     avoid: 0.2414
@@ -5730,8 +5730,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 635
     atk: 985
-    def: 10240
-    hp: 6914
+    def: 10507
+    hp: 14901
     criRate: 1
     criDmg: 5.6
     avoid: 0.24183333
@@ -5739,8 +5739,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 636
     atk: 986
-    def: 10275
-    hp: 6938
+    def: 10544
+    hp: 14959
     criRate: 1
     criDmg: 5.6
     avoid: 0.24226667
@@ -5748,8 +5748,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 637
     atk: 987
-    def: 10311
-    hp: 6963
+    def: 10581
+    hp: 15018
     criRate: 1
     criDmg: 5.6
     avoid: 0.2427
@@ -5757,8 +5757,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 638
     atk: 988
-    def: 10346
-    hp: 6988
+    def: 10617
+    hp: 15076
     criRate: 1
     criDmg: 5.6
     avoid: 0.24313334
@@ -5766,8 +5766,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 639
     atk: 989
-    def: 10382
-    hp: 7013
+    def: 10654
+    hp: 15134
     criRate: 1
     criDmg: 5.6
     avoid: 0.24356666
@@ -5775,8 +5775,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 640
     atk: 990
-    def: 10418
-    hp: 7038
+    def: 10691
+    hp: 15193
     criRate: 1
     criDmg: 5.8
     avoid: 0.244
@@ -5784,8 +5784,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 641
     atk: 991
-    def: 10454
-    hp: 7062
+    def: 10727
+    hp: 15251
     criRate: 1
     criDmg: 5.8
     avoid: 0.24443333
@@ -5793,8 +5793,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 642
     atk: 992
-    def: 10489
-    hp: 7087
+    def: 10764
+    hp: 15310
     criRate: 1
     criDmg: 5.8
     avoid: 0.24486667
@@ -5802,8 +5802,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 643
     atk: 993
-    def: 10525
-    hp: 7112
+    def: 10801
+    hp: 15368
     criRate: 1
     criDmg: 5.8
     avoid: 0.2453
@@ -5811,8 +5811,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 644
     atk: 994
-    def: 10561
-    hp: 7137
+    def: 10837
+    hp: 15427
     criRate: 1
     criDmg: 5.8
     avoid: 0.24573334
@@ -5820,8 +5820,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 645
     atk: 995
-    def: 10597
-    hp: 7162
+    def: 10874
+    hp: 15486
     criRate: 1
     criDmg: 5.8
     avoid: 0.24616666
@@ -5829,8 +5829,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 646
     atk: 996
-    def: 10632
-    hp: 7187
+    def: 10911
+    hp: 15544
     criRate: 1
     criDmg: 5.8
     avoid: 0.2466
@@ -5838,8 +5838,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 647
     atk: 997
-    def: 10668
-    hp: 7212
+    def: 10948
+    hp: 15603
     criRate: 1
     criDmg: 5.8
     avoid: 0.24703333
@@ -5847,8 +5847,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 648
     atk: 998
-    def: 10704
-    hp: 7237
+    def: 10985
+    hp: 15662
     criRate: 1
     criDmg: 5.8
     avoid: 0.24746667
@@ -5856,8 +5856,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 649
     atk: 999
-    def: 10740
-    hp: 7262
+    def: 11021
+    hp: 15721
     criRate: 1
     criDmg: 5.8
     avoid: 0.2479
@@ -5865,8 +5865,8 @@ MonoBehaviour:
     rewardExp: 22
   - level: 650
     atk: 1000
-    def: 10776
-    hp: 7288
+    def: 11058
+    hp: 15780
     criRate: 1
     criDmg: 5.8
     avoid: 0.24833333
@@ -5874,8 +5874,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 651
     atk: 1001
-    def: 10812
-    hp: 7313
+    def: 11095
+    hp: 15840
     criRate: 1
     criDmg: 5.8
     avoid: 0.24876666
@@ -5883,8 +5883,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 652
     atk: 1002
-    def: 10848
-    hp: 7338
+    def: 11132
+    hp: 15899
     criRate: 1
     criDmg: 5.8
     avoid: 0.2492
@@ -5892,8 +5892,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 653
     atk: 1003
-    def: 10884
-    hp: 7363
+    def: 11169
+    hp: 15958
     criRate: 1
     criDmg: 5.8
     avoid: 0.24963333
@@ -5901,8 +5901,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 654
     atk: 1004
-    def: 10920
-    hp: 7388
+    def: 11206
+    hp: 16017
     criRate: 1
     criDmg: 5.8
     avoid: 0.25006667
@@ -5910,8 +5910,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 655
     atk: 1005
-    def: 10956
-    hp: 7414
+    def: 11243
+    hp: 16077
     criRate: 1
     criDmg: 5.8
     avoid: 0.2505
@@ -5919,8 +5919,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 656
     atk: 1006
-    def: 10992
-    hp: 7439
+    def: 11280
+    hp: 16136
     criRate: 1
     criDmg: 5.8
     avoid: 0.25093332
@@ -5928,8 +5928,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 657
     atk: 1007
-    def: 11028
-    hp: 7464
+    def: 11317
+    hp: 16196
     criRate: 1
     criDmg: 5.8
     avoid: 0.25136667
@@ -5937,8 +5937,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 658
     atk: 1008
-    def: 11064
-    hp: 7490
+    def: 11354
+    hp: 16256
     criRate: 1
     criDmg: 5.8
     avoid: 0.2518
@@ -5946,8 +5946,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 659
     atk: 1009
-    def: 11100
-    hp: 7515
+    def: 11391
+    hp: 16315
     criRate: 1
     criDmg: 5.8
     avoid: 0.25223333
@@ -5955,8 +5955,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 660
     atk: 1010
-    def: 11136
-    hp: 7541
+    def: 11428
+    hp: 16375
     criRate: 1
     criDmg: 6
     avoid: 0.25266665
@@ -5964,8 +5964,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 661
     atk: 1011
-    def: 11172
-    hp: 7566
+    def: 11465
+    hp: 16435
     criRate: 1
     criDmg: 6
     avoid: 0.2531
@@ -5973,8 +5973,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 662
     atk: 1012
-    def: 11208
-    hp: 7591
+    def: 11503
+    hp: 16495
     criRate: 1
     criDmg: 6
     avoid: 0.25353333
@@ -5982,8 +5982,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 663
     atk: 1013
-    def: 11245
-    hp: 7617
+    def: 11540
+    hp: 16555
     criRate: 1
     criDmg: 6
     avoid: 0.25396666
@@ -5991,8 +5991,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 664
     atk: 1014
-    def: 11281
-    hp: 7642
+    def: 11577
+    hp: 16615
     criRate: 1
     criDmg: 6
     avoid: 0.2544
@@ -6000,8 +6000,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 665
     atk: 1015
-    def: 11317
-    hp: 7668
+    def: 11614
+    hp: 16675
     criRate: 1
     criDmg: 6
     avoid: 0.25483334
@@ -6009,8 +6009,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 666
     atk: 1016
-    def: 11353
-    hp: 7694
+    def: 11651
+    hp: 16735
     criRate: 1
     criDmg: 6
     avoid: 0.25526667
@@ -6018,8 +6018,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 667
     atk: 1017
-    def: 11390
-    hp: 7719
+    def: 11688
+    hp: 16795
     criRate: 1
     criDmg: 6
     avoid: 0.2557
@@ -6027,8 +6027,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 668
     atk: 1018
-    def: 11426
-    hp: 7745
+    def: 11726
+    hp: 16855
     criRate: 1
     criDmg: 6
     avoid: 0.25613335
@@ -6036,8 +6036,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 669
     atk: 1019
-    def: 11462
-    hp: 7771
+    def: 11763
+    hp: 16916
     criRate: 1
     criDmg: 6
     avoid: 0.25656667
@@ -6045,8 +6045,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 670
     atk: 1020
-    def: 11498
-    hp: 7796
+    def: 11800
+    hp: 16976
     criRate: 1
     criDmg: 6
     avoid: 0.257
@@ -6054,8 +6054,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 671
     atk: 1021
-    def: 11535
-    hp: 7822
+    def: 11838
+    hp: 17037
     criRate: 1
     criDmg: 6
     avoid: 0.25743333
@@ -6063,8 +6063,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 672
     atk: 1022
-    def: 11571
-    hp: 7848
+    def: 11875
+    hp: 17097
     criRate: 1
     criDmg: 6
     avoid: 0.25786668
@@ -6072,8 +6072,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 673
     atk: 1023
-    def: 11607
-    hp: 7874
+    def: 11912
+    hp: 17158
     criRate: 1
     criDmg: 6
     avoid: 0.2583
@@ -6081,8 +6081,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 674
     atk: 1024
-    def: 11644
-    hp: 7899
+    def: 11950
+    hp: 17219
     criRate: 1
     criDmg: 6
     avoid: 0.25873333
@@ -6090,8 +6090,8 @@ MonoBehaviour:
     rewardExp: 23
   - level: 675
     atk: 1025
-    def: 11680
-    hp: 7925
+    def: 11987
+    hp: 17279
     criRate: 1
     criDmg: 6
     avoid: 0.25916666
@@ -6099,8 +6099,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 676
     atk: 1026
-    def: 11717
-    hp: 7951
+    def: 12024
+    hp: 17340
     criRate: 1
     criDmg: 6
     avoid: 0.2596
@@ -6108,8 +6108,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 677
     atk: 1027
-    def: 11753
-    hp: 7977
+    def: 12062
+    hp: 17401
     criRate: 1
     criDmg: 6
     avoid: 0.26003334
@@ -6117,8 +6117,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 678
     atk: 1028
-    def: 11790
-    hp: 8003
+    def: 12099
+    hp: 17462
     criRate: 1
     criDmg: 6
     avoid: 0.26046667
@@ -6126,8 +6126,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 679
     atk: 1029
-    def: 11826
-    hp: 8029
+    def: 12137
+    hp: 17523
     criRate: 1
     criDmg: 6
     avoid: 0.2609
@@ -6135,8 +6135,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 680
     atk: 1030
-    def: 11863
-    hp: 8055
+    def: 12174
+    hp: 17584
     criRate: 1
     criDmg: 6.2
     avoid: 0.26133335
@@ -6144,8 +6144,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 681
     atk: 1031
-    def: 11899
-    hp: 8081
+    def: 12212
+    hp: 17645
     criRate: 1
     criDmg: 6.2
     avoid: 0.26176667
@@ -6153,8 +6153,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 682
     atk: 1032
-    def: 11936
-    hp: 8107
+    def: 12249
+    hp: 17706
     criRate: 1
     criDmg: 6.2
     avoid: 0.2622
@@ -6162,8 +6162,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 683
     atk: 1033
-    def: 11972
-    hp: 8133
+    def: 12287
+    hp: 17768
     criRate: 1
     criDmg: 6.2
     avoid: 0.26263332
@@ -6171,8 +6171,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 684
     atk: 1034
-    def: 12009
-    hp: 8159
+    def: 12324
+    hp: 17829
     criRate: 1
     criDmg: 6.2
     avoid: 0.26306668
@@ -6180,8 +6180,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 685
     atk: 1035
-    def: 12045
-    hp: 8185
+    def: 12362
+    hp: 17890
     criRate: 1
     criDmg: 6.2
     avoid: 0.2635
@@ -6189,8 +6189,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 686
     atk: 1036
-    def: 12082
-    hp: 8211
+    def: 12400
+    hp: 17952
     criRate: 1
     criDmg: 6.2
     avoid: 0.26393333
@@ -6198,8 +6198,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 687
     atk: 1037
-    def: 12119
-    hp: 8237
+    def: 12437
+    hp: 18013
     criRate: 1
     criDmg: 6.2
     avoid: 0.26436666
@@ -6207,8 +6207,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 688
     atk: 1038
-    def: 12155
-    hp: 8264
+    def: 12475
+    hp: 18075
     criRate: 1
     criDmg: 6.2
     avoid: 0.2648
@@ -6216,8 +6216,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 689
     atk: 1039
-    def: 12192
-    hp: 8290
+    def: 12512
+    hp: 18136
     criRate: 1
     criDmg: 6.2
     avoid: 0.26523334
@@ -6225,8 +6225,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 690
     atk: 1040
-    def: 12229
-    hp: 8316
+    def: 12550
+    hp: 18198
     criRate: 1
     criDmg: 6.2
     avoid: 0.26566666
@@ -6234,8 +6234,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 691
     atk: 1041
-    def: 12265
-    hp: 8342
+    def: 12588
+    hp: 18260
     criRate: 1
     criDmg: 6.2
     avoid: 0.2661
@@ -6243,8 +6243,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 692
     atk: 1042
-    def: 12302
-    hp: 8369
+    def: 12626
+    hp: 18322
     criRate: 1
     criDmg: 6.2
     avoid: 0.26653334
@@ -6252,8 +6252,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 693
     atk: 1043
-    def: 12339
-    hp: 8395
+    def: 12663
+    hp: 18384
     criRate: 1
     criDmg: 6.2
     avoid: 0.26696667
@@ -6261,8 +6261,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 694
     atk: 1044
-    def: 12376
-    hp: 8421
+    def: 12701
+    hp: 18446
     criRate: 1
     criDmg: 6.2
     avoid: 0.2674
@@ -6270,8 +6270,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 695
     atk: 1045
-    def: 12412
-    hp: 8448
+    def: 12739
+    hp: 18508
     criRate: 1
     criDmg: 6.2
     avoid: 0.26783332
@@ -6279,8 +6279,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 696
     atk: 1046
-    def: 12449
-    hp: 8474
+    def: 12777
+    hp: 18570
     criRate: 1
     criDmg: 6.2
     avoid: 0.26826668
@@ -6288,8 +6288,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 697
     atk: 1047
-    def: 12486
-    hp: 8501
+    def: 12815
+    hp: 18632
     criRate: 1
     criDmg: 6.2
     avoid: 0.2687
@@ -6297,8 +6297,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 698
     atk: 1048
-    def: 12523
-    hp: 8527
+    def: 12852
+    hp: 18694
     criRate: 1
     criDmg: 6.2
     avoid: 0.26913333
@@ -6306,8 +6306,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 699
     atk: 1049
-    def: 12560
-    hp: 8554
+    def: 12890
+    hp: 18756
     criRate: 1
     criDmg: 6.2
     avoid: 0.26956666
@@ -6315,8 +6315,8 @@ MonoBehaviour:
     rewardExp: 24
   - level: 700
     atk: 1050
-    def: 12597
-    hp: 8580
+    def: 12928
+    hp: 18819
     criRate: 1
     criDmg: 6.4
     avoid: 0.27
@@ -6324,8 +6324,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 701
     atk: 1051
-    def: 12634
-    hp: 8607
+    def: 12966
+    hp: 18881
     criRate: 1
     criDmg: 6.4
     avoid: 0.27043334
@@ -6333,8 +6333,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 702
     atk: 1052
-    def: 12670
-    hp: 8633
+    def: 13004
+    hp: 18944
     criRate: 1
     criDmg: 6.4
     avoid: 0.27086666
@@ -6342,8 +6342,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 703
     atk: 1053
-    def: 12707
-    hp: 8660
+    def: 13042
+    hp: 19006
     criRate: 1
     criDmg: 6.4
     avoid: 0.2713
@@ -6351,8 +6351,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 704
     atk: 1054
-    def: 12744
-    hp: 8686
+    def: 13080
+    hp: 19069
     criRate: 1
     criDmg: 6.4
     avoid: 0.27173334
@@ -6360,8 +6360,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 705
     atk: 1055
-    def: 12781
-    hp: 8713
+    def: 13118
+    hp: 19131
     criRate: 1
     criDmg: 6.4
     avoid: 0.27216667
@@ -6369,8 +6369,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 706
     atk: 1056
-    def: 12818
-    hp: 8740
+    def: 13156
+    hp: 19194
     criRate: 1
     criDmg: 6.4
     avoid: 0.2726
@@ -6378,8 +6378,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 707
     atk: 1057
-    def: 12855
-    hp: 8766
+    def: 13194
+    hp: 19257
     criRate: 1
     criDmg: 6.4
     avoid: 0.27303332
@@ -6387,8 +6387,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 708
     atk: 1058
-    def: 12892
-    hp: 8793
+    def: 13232
+    hp: 19320
     criRate: 1
     criDmg: 6.4
     avoid: 0.27346668
@@ -6396,8 +6396,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 709
     atk: 1059
-    def: 12929
-    hp: 8820
+    def: 13270
+    hp: 19382
     criRate: 1
     criDmg: 6.4
     avoid: 0.2739
@@ -6405,8 +6405,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 710
     atk: 1060
-    def: 12966
-    hp: 8847
+    def: 13308
+    hp: 19445
     criRate: 1
     criDmg: 6.4
     avoid: 0.27433333
@@ -6414,8 +6414,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 711
     atk: 1061
-    def: 13004
-    hp: 8873
+    def: 13346
+    hp: 19508
     criRate: 1
     criDmg: 6.4
     avoid: 0.27476665
@@ -6423,8 +6423,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 712
     atk: 1062
-    def: 13041
-    hp: 8900
+    def: 13384
+    hp: 19571
     criRate: 1
     criDmg: 6.4
     avoid: 0.2752
@@ -6432,8 +6432,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 713
     atk: 1063
-    def: 13078
-    hp: 8927
+    def: 13422
+    hp: 19635
     criRate: 1
     criDmg: 6.4
     avoid: 0.27563334
@@ -6441,8 +6441,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 714
     atk: 1064
-    def: 13115
-    hp: 8954
+    def: 13460
+    hp: 19698
     criRate: 1
     criDmg: 6.4
     avoid: 0.27606666
@@ -6450,8 +6450,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 715
     atk: 1065
-    def: 13152
-    hp: 8981
+    def: 13498
+    hp: 19761
     criRate: 1
     criDmg: 6.4
     avoid: 0.2765
@@ -6459,8 +6459,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 716
     atk: 1066
-    def: 13189
-    hp: 9008
+    def: 13537
+    hp: 19824
     criRate: 1
     criDmg: 6.4
     avoid: 0.27693334
@@ -6468,8 +6468,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 717
     atk: 1067
-    def: 13226
-    hp: 9035
+    def: 13575
+    hp: 19888
     criRate: 1
     criDmg: 6.4
     avoid: 0.27736667
@@ -6477,8 +6477,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 718
     atk: 1068
-    def: 13264
-    hp: 9062
+    def: 13613
+    hp: 19951
     criRate: 1
     criDmg: 6.4
     avoid: 0.2778
@@ -6486,8 +6486,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 719
     atk: 1069
-    def: 13301
-    hp: 9089
+    def: 13651
+    hp: 20015
     criRate: 1
     criDmg: 6.4
     avoid: 0.27823332
@@ -6495,8 +6495,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 720
     atk: 1070
-    def: 13338
-    hp: 9116
+    def: 13689
+    hp: 20078
     criRate: 1
     criDmg: 6.6
     avoid: 0.27866668
@@ -6504,8 +6504,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 721
     atk: 1071
-    def: 13375
-    hp: 9143
+    def: 13728
+    hp: 20142
     criRate: 1
     criDmg: 6.6
     avoid: 0.2791
@@ -6513,8 +6513,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 722
     atk: 1072
-    def: 13413
-    hp: 9170
+    def: 13766
+    hp: 20206
     criRate: 1
     criDmg: 6.6
     avoid: 0.27953333
@@ -6522,8 +6522,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 723
     atk: 1073
-    def: 13450
-    hp: 9197
+    def: 13804
+    hp: 20269
     criRate: 1
     criDmg: 6.6
     avoid: 0.27996665
@@ -6531,8 +6531,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 724
     atk: 1074
-    def: 13487
-    hp: 9224
+    def: 13843
+    hp: 20333
     criRate: 1
     criDmg: 6.6
     avoid: 0.2804
@@ -6540,8 +6540,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 725
     atk: 1075
-    def: 13525
-    hp: 9252
+    def: 13881
+    hp: 20397
     criRate: 1
     criDmg: 6.6
     avoid: 0.28083333
@@ -6549,8 +6549,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 726
     atk: 1076
-    def: 13562
-    hp: 9279
+    def: 13919
+    hp: 20461
     criRate: 1
     criDmg: 6.6
     avoid: 0.28126666
@@ -6558,8 +6558,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 727
     atk: 1077
-    def: 13599
-    hp: 9306
+    def: 13958
+    hp: 20525
     criRate: 1
     criDmg: 6.6
     avoid: 0.2817
@@ -6567,8 +6567,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 728
     atk: 1078
-    def: 13637
-    hp: 9333
+    def: 13996
+    hp: 20589
     criRate: 1
     criDmg: 6.6
     avoid: 0.28213334
@@ -6576,8 +6576,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 729
     atk: 1079
-    def: 13674
-    hp: 9360
+    def: 14035
+    hp: 20653
     criRate: 1
     criDmg: 6.6
     avoid: 0.28256667
@@ -6585,8 +6585,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 730
     atk: 1080
-    def: 13711
-    hp: 9388
+    def: 14073
+    hp: 20717
     criRate: 1
     criDmg: 6.6
     avoid: 0.283
@@ -6594,8 +6594,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 731
     atk: 1081
-    def: 13749
-    hp: 9415
+    def: 14111
+    hp: 20781
     criRate: 1
     criDmg: 6.6
     avoid: 0.28343335
@@ -6603,8 +6603,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 732
     atk: 1082
-    def: 13786
-    hp: 9442
+    def: 14150
+    hp: 20846
     criRate: 1
     criDmg: 6.6
     avoid: 0.28386667
@@ -6612,8 +6612,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 733
     atk: 1083
-    def: 13824
-    hp: 9470
+    def: 14188
+    hp: 20910
     criRate: 1
     criDmg: 6.6
     avoid: 0.2843
@@ -6621,8 +6621,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 734
     atk: 1084
-    def: 13861
-    hp: 9497
+    def: 14227
+    hp: 20975
     criRate: 1
     criDmg: 6.6
     avoid: 0.28473333
@@ -6630,8 +6630,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 735
     atk: 1085
-    def: 13899
-    hp: 9525
+    def: 14265
+    hp: 21039
     criRate: 1
     criDmg: 6.6
     avoid: 0.28516668
@@ -6639,8 +6639,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 736
     atk: 1086
-    def: 13936
-    hp: 9552
+    def: 14304
+    hp: 21104
     criRate: 1
     criDmg: 6.6
     avoid: 0.2856
@@ -6648,8 +6648,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 737
     atk: 1087
-    def: 13974
-    hp: 9580
+    def: 14342
+    hp: 21168
     criRate: 1
     criDmg: 6.6
     avoid: 0.28603333
@@ -6657,8 +6657,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 738
     atk: 1088
-    def: 14011
-    hp: 9607
+    def: 14381
+    hp: 21233
     criRate: 1
     criDmg: 6.6
     avoid: 0.28646666
@@ -6666,8 +6666,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 739
     atk: 1089
-    def: 14049
-    hp: 9635
+    def: 14420
+    hp: 21297
     criRate: 1
     criDmg: 6.6
     avoid: 0.2869
@@ -6675,8 +6675,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 740
     atk: 1090
-    def: 14087
-    hp: 9662
+    def: 14458
+    hp: 21362
     criRate: 1
     criDmg: 6.8
     avoid: 0.28733334
@@ -6684,8 +6684,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 741
     atk: 1091
-    def: 14124
-    hp: 9690
+    def: 14497
+    hp: 21427
     criRate: 1
     criDmg: 6.8
     avoid: 0.28776667
@@ -6693,8 +6693,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 742
     atk: 1092
-    def: 14162
-    hp: 9717
+    def: 14535
+    hp: 21492
     criRate: 1
     criDmg: 6.8
     avoid: 0.2882
@@ -6702,8 +6702,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 743
     atk: 1093
-    def: 14199
-    hp: 9745
+    def: 14574
+    hp: 21557
     criRate: 1
     criDmg: 6.8
     avoid: 0.28863335
@@ -6711,8 +6711,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 744
     atk: 1094
-    def: 14237
-    hp: 9773
+    def: 14613
+    hp: 21622
     criRate: 1
     criDmg: 6.8
     avoid: 0.28906667
@@ -6720,8 +6720,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 745
     atk: 1095
-    def: 14275
-    hp: 9800
+    def: 14651
+    hp: 21687
     criRate: 1
     criDmg: 6.8
     avoid: 0.2895
@@ -6729,8 +6729,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 746
     atk: 1096
-    def: 14313
-    hp: 9828
+    def: 14690
+    hp: 21752
     criRate: 1
     criDmg: 6.8
     avoid: 0.28993332
@@ -6738,8 +6738,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 747
     atk: 1097
-    def: 14350
-    hp: 9856
+    def: 14729
+    hp: 21817
     criRate: 1
     criDmg: 6.8
     avoid: 0.29036668
@@ -6747,8 +6747,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 748
     atk: 1098
-    def: 14388
-    hp: 9883
+    def: 14768
+    hp: 21882
     criRate: 1
     criDmg: 6.8
     avoid: 0.2908
@@ -6756,8 +6756,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 749
     atk: 1099
-    def: 14426
-    hp: 9911
+    def: 14806
+    hp: 21948
     criRate: 1
     criDmg: 6.8
     avoid: 0.29123333
@@ -6765,8 +6765,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 750
     atk: 1100
-    def: 14463
-    hp: 9939
+    def: 14845
+    hp: 22013
     criRate: 1
     criDmg: 6.8
     avoid: 0.29166666
@@ -6774,8 +6774,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 751
     atk: 1101
-    def: 14501
-    hp: 9967
+    def: 14884
+    hp: 22078
     criRate: 1
     criDmg: 6.8
     avoid: 0.2921
@@ -6783,8 +6783,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 752
     atk: 1102
-    def: 14539
-    hp: 9995
+    def: 14923
+    hp: 22144
     criRate: 1
     criDmg: 6.8
     avoid: 0.29253334
@@ -6792,8 +6792,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 753
     atk: 1103
-    def: 14577
-    hp: 10022
+    def: 14962
+    hp: 22209
     criRate: 1
     criDmg: 6.8
     avoid: 0.29296666
@@ -6801,8 +6801,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 754
     atk: 1104
-    def: 14615
-    hp: 10050
+    def: 15000
+    hp: 22275
     criRate: 1
     criDmg: 6.8
     avoid: 0.2934
@@ -6810,8 +6810,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 755
     atk: 1105
-    def: 14653
-    hp: 10078
+    def: 15039
+    hp: 22341
     criRate: 1
     criDmg: 6.8
     avoid: 0.29383335
@@ -6819,8 +6819,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 756
     atk: 1106
-    def: 14690
-    hp: 10106
+    def: 15078
+    hp: 22406
     criRate: 1
     criDmg: 6.8
     avoid: 0.29426667
@@ -6828,8 +6828,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 757
     atk: 1107
-    def: 14728
-    hp: 10134
+    def: 15117
+    hp: 22472
     criRate: 1
     criDmg: 6.8
     avoid: 0.2947
@@ -6837,8 +6837,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 758
     atk: 1108
-    def: 14766
-    hp: 10162
+    def: 15156
+    hp: 22538
     criRate: 1
     criDmg: 6.8
     avoid: 0.29513332
@@ -6846,8 +6846,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 759
     atk: 1109
-    def: 14804
-    hp: 10190
+    def: 15195
+    hp: 22604
     criRate: 1
     criDmg: 6.8
     avoid: 0.29556668
@@ -6855,8 +6855,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 760
     atk: 1110
-    def: 14842
-    hp: 10218
+    def: 15234
+    hp: 22670
     criRate: 1
     criDmg: 7
     avoid: 0.296
@@ -6864,8 +6864,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 761
     atk: 1111
-    def: 14880
-    hp: 10246
+    def: 15273
+    hp: 22736
     criRate: 1
     criDmg: 7
     avoid: 0.29643333
@@ -6873,8 +6873,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 762
     atk: 1112
-    def: 14918
-    hp: 10274
+    def: 15312
+    hp: 22802
     criRate: 1
     criDmg: 7
     avoid: 0.29686666
@@ -6882,8 +6882,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 763
     atk: 1113
-    def: 14956
-    hp: 10303
+    def: 15351
+    hp: 22868
     criRate: 1
     criDmg: 7
     avoid: 0.2973
@@ -6891,8 +6891,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 764
     atk: 1114
-    def: 14994
-    hp: 10331
+    def: 15390
+    hp: 22934
     criRate: 1
     criDmg: 7
     avoid: 0.29773334
@@ -6900,8 +6900,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 765
     atk: 1115
-    def: 15032
-    hp: 10359
+    def: 15429
+    hp: 23000
     criRate: 1
     criDmg: 7
     avoid: 0.29816666
@@ -6909,8 +6909,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 766
     atk: 1116
-    def: 15070
-    hp: 10387
+    def: 15468
+    hp: 23066
     criRate: 1
     criDmg: 7
     avoid: 0.2986
@@ -6918,8 +6918,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 767
     atk: 1117
-    def: 15108
-    hp: 10415
+    def: 15507
+    hp: 23133
     criRate: 1
     criDmg: 7
     avoid: 0.29903334
@@ -6927,8 +6927,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 768
     atk: 1118
-    def: 15146
-    hp: 10444
+    def: 15546
+    hp: 23199
     criRate: 1
     criDmg: 7
     avoid: 0.29946667
@@ -6936,8 +6936,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 769
     atk: 1119
-    def: 15184
-    hp: 10472
+    def: 15585
+    hp: 23266
     criRate: 1
     criDmg: 7
     avoid: 0.2999
@@ -6945,8 +6945,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 770
     atk: 1120
-    def: 15222
-    hp: 10500
+    def: 15624
+    hp: 23332
     criRate: 1
     criDmg: 7
     avoid: 0.30033332
@@ -6954,8 +6954,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 771
     atk: 1121
-    def: 15260
-    hp: 10528
+    def: 15663
+    hp: 23399
     criRate: 1
     criDmg: 7
     avoid: 0.30076668
@@ -6963,8 +6963,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 772
     atk: 1122
-    def: 15298
-    hp: 10557
+    def: 15703
+    hp: 23465
     criRate: 1
     criDmg: 7
     avoid: 0.3012
@@ -6972,8 +6972,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 773
     atk: 1123
-    def: 15337
-    hp: 10585
+    def: 15742
+    hp: 23532
     criRate: 1
     criDmg: 7
     avoid: 0.30163333
@@ -6981,8 +6981,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 774
     atk: 1124
-    def: 15375
-    hp: 10613
+    def: 15781
+    hp: 23599
     criRate: 1
     criDmg: 7
     avoid: 0.30206665
@@ -6990,8 +6990,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 775
     atk: 1125
-    def: 15413
-    hp: 10642
+    def: 15820
+    hp: 23665
     criRate: 1
     criDmg: 7
     avoid: 0.3025
@@ -6999,8 +6999,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 776
     atk: 1126
-    def: 15451
-    hp: 10670
+    def: 15859
+    hp: 23732
     criRate: 1
     criDmg: 7
     avoid: 0.30293334
@@ -7008,8 +7008,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 777
     atk: 1127
-    def: 15489
-    hp: 10699
+    def: 15899
+    hp: 23799
     criRate: 1
     criDmg: 7
     avoid: 0.30336666
@@ -7017,8 +7017,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 778
     atk: 1128
-    def: 15527
-    hp: 10727
+    def: 15938
+    hp: 23866
     criRate: 1
     criDmg: 7
     avoid: 0.3038
@@ -7026,8 +7026,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 779
     atk: 1129
-    def: 15566
-    hp: 10756
+    def: 15977
+    hp: 23933
     criRate: 1
     criDmg: 7
     avoid: 0.30423334
@@ -7035,8 +7035,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 780
     atk: 1130
-    def: 15604
-    hp: 10784
+    def: 16016
+    hp: 24000
     criRate: 1
     criDmg: 7.2
     avoid: 0.30466667
@@ -7044,8 +7044,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 781
     atk: 1131
-    def: 15642
-    hp: 10813
+    def: 16056
+    hp: 24067
     criRate: 1
     criDmg: 7.2
     avoid: 0.3051
@@ -7053,8 +7053,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 782
     atk: 1132
-    def: 15680
-    hp: 10841
+    def: 16095
+    hp: 24134
     criRate: 1
     criDmg: 7.2
     avoid: 0.30553332
@@ -7062,8 +7062,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 783
     atk: 1133
-    def: 15719
-    hp: 10870
+    def: 16134
+    hp: 24202
     criRate: 1
     criDmg: 7.2
     avoid: 0.30596668
@@ -7071,8 +7071,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 784
     atk: 1134
-    def: 15757
-    hp: 10899
+    def: 16174
+    hp: 24269
     criRate: 1
     criDmg: 7.2
     avoid: 0.3064
@@ -7080,8 +7080,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 785
     atk: 1135
-    def: 15795
-    hp: 10927
+    def: 16213
+    hp: 24336
     criRate: 1
     criDmg: 7.2
     avoid: 0.30683333
@@ -7089,8 +7089,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 786
     atk: 1136
-    def: 15834
-    hp: 10956
+    def: 16252
+    hp: 24404
     criRate: 1
     criDmg: 7.2
     avoid: 0.30726665
@@ -7098,8 +7098,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 787
     atk: 1137
-    def: 15872
-    hp: 10985
+    def: 16292
+    hp: 24471
     criRate: 1
     criDmg: 7.2
     avoid: 0.3077
@@ -7107,8 +7107,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 788
     atk: 1138
-    def: 15911
-    hp: 11013
+    def: 16331
+    hp: 24538
     criRate: 1
     criDmg: 7.2
     avoid: 0.30813333
@@ -7116,8 +7116,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 789
     atk: 1139
-    def: 15949
-    hp: 11042
+    def: 16371
+    hp: 24606
     criRate: 1
     criDmg: 7.2
     avoid: 0.30856666
@@ -7125,8 +7125,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 790
     atk: 1140
-    def: 15987
-    hp: 11071
+    def: 16410
+    hp: 24674
     criRate: 1
     criDmg: 7.2
     avoid: 0.309
@@ -7134,8 +7134,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 791
     atk: 1141
-    def: 16026
-    hp: 11100
+    def: 16450
+    hp: 24741
     criRate: 1
     criDmg: 7.2
     avoid: 0.30943334
@@ -7143,8 +7143,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 792
     atk: 1142
-    def: 16064
-    hp: 11128
+    def: 16489
+    hp: 24809
     criRate: 1
     criDmg: 7.2
     avoid: 0.30986667
@@ -7152,8 +7152,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 793
     atk: 1143
-    def: 16103
-    hp: 11157
+    def: 16529
+    hp: 24877
     criRate: 1
     criDmg: 7.2
     avoid: 0.3103
@@ -7161,8 +7161,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 794
     atk: 1144
-    def: 16141
-    hp: 11186
+    def: 16568
+    hp: 24945
     criRate: 1
     criDmg: 7.2
     avoid: 0.31073335
@@ -7170,8 +7170,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 795
     atk: 1145
-    def: 16180
-    hp: 11215
+    def: 16608
+    hp: 25013
     criRate: 1
     criDmg: 7.2
     avoid: 0.31116667
@@ -7179,8 +7179,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 796
     atk: 1146
-    def: 16218
-    hp: 11244
+    def: 16647
+    hp: 25080
     criRate: 1
     criDmg: 7.2
     avoid: 0.3116
@@ -7188,8 +7188,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 797
     atk: 1147
-    def: 16257
-    hp: 11273
+    def: 16687
+    hp: 25148
     criRate: 1
     criDmg: 7.2
     avoid: 0.31203333
@@ -7197,8 +7197,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 798
     atk: 1148
-    def: 16295
-    hp: 11302
+    def: 16726
+    hp: 25217
     criRate: 1
     criDmg: 7.2
     avoid: 0.31246668
@@ -7206,8 +7206,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 799
     atk: 1149
-    def: 16334
-    hp: 11331
+    def: 16766
+    hp: 25285
     criRate: 1
     criDmg: 7.2
     avoid: 0.3129
@@ -7215,8 +7215,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 800
     atk: 1150
-    def: 16372
-    hp: 11360
+    def: 16806
+    hp: 25353
     criRate: 1
     criDmg: 7.4
     avoid: 0.31333333
@@ -7224,8 +7224,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 801
     atk: 1151
-    def: 16411
-    hp: 11389
+    def: 16845
+    hp: 25421
     criRate: 1
     criDmg: 7.4
     avoid: 0.31376666
@@ -7233,8 +7233,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 802
     atk: 1152
-    def: 16449
-    hp: 11418
+    def: 16885
+    hp: 25489
     criRate: 1
     criDmg: 7.4
     avoid: 0.3142
@@ -7242,8 +7242,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 803
     atk: 1153
-    def: 16488
-    hp: 11447
+    def: 16924
+    hp: 25558
     criRate: 1
     criDmg: 7.4
     avoid: 0.31463334
@@ -7251,8 +7251,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 804
     atk: 1154
-    def: 16527
-    hp: 11476
+    def: 16964
+    hp: 25626
     criRate: 1
     criDmg: 7.4
     avoid: 0.31506667
@@ -7260,8 +7260,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 805
     atk: 1155
-    def: 16565
-    hp: 11505
+    def: 17004
+    hp: 25694
     criRate: 1
     criDmg: 7.4
     avoid: 0.3155
@@ -7269,8 +7269,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 806
     atk: 1156
-    def: 16604
-    hp: 11534
+    def: 17043
+    hp: 25763
     criRate: 1
     criDmg: 7.4
     avoid: 0.31593335
@@ -7278,8 +7278,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 807
     atk: 1157
-    def: 16643
-    hp: 11563
+    def: 17083
+    hp: 25831
     criRate: 1
     criDmg: 7.4
     avoid: 0.31636667
@@ -7287,8 +7287,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 808
     atk: 1158
-    def: 16681
-    hp: 11592
+    def: 17123
+    hp: 25900
     criRate: 1
     criDmg: 7.4
     avoid: 0.3168
@@ -7296,8 +7296,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 809
     atk: 1159
-    def: 16720
-    hp: 11622
+    def: 17163
+    hp: 25969
     criRate: 1
     criDmg: 7.4
     avoid: 0.31723332
@@ -7305,8 +7305,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 810
     atk: 1160
-    def: 16759
-    hp: 11651
+    def: 17202
+    hp: 26037
     criRate: 1
     criDmg: 7.4
     avoid: 0.31766668
@@ -7314,8 +7314,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 811
     atk: 1161
-    def: 16798
-    hp: 11680
+    def: 17242
+    hp: 26106
     criRate: 1
     criDmg: 7.4
     avoid: 0.3181
@@ -7323,8 +7323,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 812
     atk: 1162
-    def: 16836
-    hp: 11709
+    def: 17282
+    hp: 26175
     criRate: 1
     criDmg: 7.4
     avoid: 0.31853333
@@ -7332,8 +7332,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 813
     atk: 1163
-    def: 16875
-    hp: 11739
+    def: 17322
+    hp: 26244
     criRate: 1
     criDmg: 7.4
     avoid: 0.31896666
@@ -7341,8 +7341,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 814
     atk: 1164
-    def: 16914
-    hp: 11768
+    def: 17362
+    hp: 26313
     criRate: 1
     criDmg: 7.4
     avoid: 0.3194
@@ -7350,8 +7350,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 815
     atk: 1165
-    def: 16953
-    hp: 11797
+    def: 17401
+    hp: 26382
     criRate: 1
     criDmg: 7.4
     avoid: 0.31983334
@@ -7359,8 +7359,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 816
     atk: 1166
-    def: 16991
-    hp: 11827
+    def: 17441
+    hp: 26451
     criRate: 1
     criDmg: 7.4
     avoid: 0.32026666
@@ -7368,8 +7368,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 817
     atk: 1167
-    def: 17030
-    hp: 11856
+    def: 17481
+    hp: 26520
     criRate: 1
     criDmg: 7.4
     avoid: 0.3207
@@ -7377,8 +7377,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 818
     atk: 1168
-    def: 17069
-    hp: 11886
+    def: 17521
+    hp: 26589
     criRate: 1
     criDmg: 7.4
     avoid: 0.32113335
@@ -7386,8 +7386,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 819
     atk: 1169
-    def: 17108
-    hp: 11915
+    def: 17561
+    hp: 26658
     criRate: 1
     criDmg: 7.4
     avoid: 0.32156667
@@ -7395,8 +7395,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 820
     atk: 1170
-    def: 17147
-    hp: 11944
+    def: 17601
+    hp: 26727
     criRate: 1
     criDmg: 7.6
     avoid: 0.322
@@ -7404,8 +7404,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 821
     atk: 1171
-    def: 17186
-    hp: 11974
+    def: 17641
+    hp: 26797
     criRate: 1
     criDmg: 7.6
     avoid: 0.32243332
@@ -7413,8 +7413,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 822
     atk: 1172
-    def: 17225
-    hp: 12003
+    def: 17681
+    hp: 26866
     criRate: 1
     criDmg: 7.6
     avoid: 0.32286668
@@ -7422,8 +7422,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 823
     atk: 1173
-    def: 17264
-    hp: 12033
+    def: 17721
+    hp: 26935
     criRate: 1
     criDmg: 7.6
     avoid: 0.3233
@@ -7431,8 +7431,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 824
     atk: 1174
-    def: 17302
-    hp: 12062
+    def: 17761
+    hp: 27005
     criRate: 1
     criDmg: 7.6
     avoid: 0.32373333
@@ -7440,8 +7440,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 825
     atk: 1175
-    def: 17341
-    hp: 12092
+    def: 17801
+    hp: 27074
     criRate: 1
     criDmg: 7.6
     avoid: 0.32416666
@@ -7449,8 +7449,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 826
     atk: 1176
-    def: 17380
-    hp: 12122
+    def: 17841
+    hp: 27144
     criRate: 1
     criDmg: 7.6
     avoid: 0.3246
@@ -7458,8 +7458,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 827
     atk: 1177
-    def: 17419
-    hp: 12151
+    def: 17881
+    hp: 27214
     criRate: 1
     criDmg: 7.6
     avoid: 0.32503334
@@ -7467,8 +7467,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 828
     atk: 1178
-    def: 17458
-    hp: 12181
+    def: 17921
+    hp: 27283
     criRate: 1
     criDmg: 7.6
     avoid: 0.32546666
@@ -7476,8 +7476,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 829
     atk: 1179
-    def: 17497
-    hp: 12211
+    def: 17961
+    hp: 27353
     criRate: 1
     criDmg: 7.6
     avoid: 0.3259
@@ -7485,8 +7485,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 830
     atk: 1180
-    def: 17536
-    hp: 12240
+    def: 18001
+    hp: 27423
     criRate: 1
     criDmg: 7.6
     avoid: 0.32633334
@@ -7494,8 +7494,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 831
     atk: 1181
-    def: 17575
-    hp: 12270
+    def: 18041
+    hp: 27493
     criRate: 1
     criDmg: 7.6
     avoid: 0.32676667
@@ -7503,8 +7503,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 832
     atk: 1182
-    def: 17614
-    hp: 12300
+    def: 18081
+    hp: 27562
     criRate: 1
     criDmg: 7.6
     avoid: 0.3272
@@ -7512,8 +7512,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 833
     atk: 1183
-    def: 17653
-    hp: 12329
+    def: 18121
+    hp: 27632
     criRate: 1
     criDmg: 7.6
     avoid: 0.32763332
@@ -7521,8 +7521,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 834
     atk: 1184
-    def: 17693
-    hp: 12359
+    def: 18161
+    hp: 27702
     criRate: 1
     criDmg: 7.6
     avoid: 0.32806668
@@ -7530,8 +7530,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 835
     atk: 1185
-    def: 17732
-    hp: 12389
+    def: 18202
+    hp: 27772
     criRate: 1
     criDmg: 7.6
     avoid: 0.3285
@@ -7539,8 +7539,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 836
     atk: 1186
-    def: 17771
-    hp: 12419
+    def: 18242
+    hp: 27842
     criRate: 1
     criDmg: 7.6
     avoid: 0.32893333
@@ -7548,8 +7548,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 837
     atk: 1187
-    def: 17810
-    hp: 12449
+    def: 18282
+    hp: 27913
     criRate: 1
     criDmg: 7.6
     avoid: 0.32936665
@@ -7557,8 +7557,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 838
     atk: 1188
-    def: 17849
-    hp: 12478
+    def: 18322
+    hp: 27983
     criRate: 1
     criDmg: 7.6
     avoid: 0.3298
@@ -7566,8 +7566,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 839
     atk: 1189
-    def: 17888
-    hp: 12508
+    def: 18362
+    hp: 28053
     criRate: 1
     criDmg: 7.6
     avoid: 0.33023334
@@ -7575,8 +7575,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 840
     atk: 1190
-    def: 17927
-    hp: 12538
+    def: 18402
+    hp: 28123
     criRate: 1
     criDmg: 7.8
     avoid: 0.33066666
@@ -7584,8 +7584,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 841
     atk: 1191
-    def: 17967
-    hp: 12568
+    def: 18443
+    hp: 28194
     criRate: 1
     criDmg: 7.8
     avoid: 0.3311
@@ -7593,8 +7593,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 842
     atk: 1192
-    def: 18006
-    hp: 12598
+    def: 18483
+    hp: 28264
     criRate: 1
     criDmg: 7.8
     avoid: 0.33153334
@@ -7602,8 +7602,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 843
     atk: 1193
-    def: 18045
-    hp: 12628
+    def: 18523
+    hp: 28334
     criRate: 1
     criDmg: 7.8
     avoid: 0.33196667
@@ -7611,8 +7611,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 844
     atk: 1194
-    def: 18084
-    hp: 12658
+    def: 18563
+    hp: 28405
     criRate: 1
     criDmg: 7.8
     avoid: 0.3324
@@ -7620,8 +7620,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 845
     atk: 1195
-    def: 18123
-    hp: 12688
+    def: 18604
+    hp: 28476
     criRate: 1
     criDmg: 7.8
     avoid: 0.33283332
@@ -7629,8 +7629,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 846
     atk: 1196
-    def: 18163
-    hp: 12718
+    def: 18644
+    hp: 28546
     criRate: 1
     criDmg: 7.8
     avoid: 0.33326668
@@ -7638,8 +7638,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 847
     atk: 1197
-    def: 18202
-    hp: 12748
+    def: 18684
+    hp: 28617
     criRate: 1
     criDmg: 7.8
     avoid: 0.3337
@@ -7647,8 +7647,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 848
     atk: 1198
-    def: 18241
-    hp: 12778
+    def: 18725
+    hp: 28687
     criRate: 1
     criDmg: 7.8
     avoid: 0.33413333
@@ -7656,8 +7656,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 849
     atk: 1199
-    def: 18280
-    hp: 12808
+    def: 18765
+    hp: 28758
     criRate: 1
     criDmg: 7.8
     avoid: 0.33456665
@@ -7665,8 +7665,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 850
     atk: 1200
-    def: 18320
-    hp: 12839
+    def: 18805
+    hp: 28829
     criRate: 1
     criDmg: 7.8
     avoid: 0.335
@@ -7674,8 +7674,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 851
     atk: 1201
-    def: 18359
-    hp: 12869
+    def: 18846
+    hp: 28900
     criRate: 1
     criDmg: 7.8
     avoid: 0.33543333
@@ -7683,8 +7683,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 852
     atk: 1202
-    def: 18398
-    hp: 12899
+    def: 18886
+    hp: 28971
     criRate: 1
     criDmg: 7.8
     avoid: 0.33586666
@@ -7692,8 +7692,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 853
     atk: 1203
-    def: 18438
-    hp: 12929
+    def: 18927
+    hp: 29042
     criRate: 1
     criDmg: 7.8
     avoid: 0.3363
@@ -7701,8 +7701,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 854
     atk: 1204
-    def: 18477
-    hp: 12959
+    def: 18967
+    hp: 29113
     criRate: 1
     criDmg: 7.8
     avoid: 0.33673334
@@ -7710,8 +7710,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 855
     atk: 1205
-    def: 18517
-    hp: 12989
+    def: 19008
+    hp: 29184
     criRate: 1
     criDmg: 7.8
     avoid: 0.33716667
@@ -7719,8 +7719,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 856
     atk: 1206
-    def: 18556
-    hp: 13020
+    def: 19048
+    hp: 29255
     criRate: 1
     criDmg: 7.8
     avoid: 0.3376
@@ -7728,8 +7728,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 857
     atk: 1207
-    def: 18595
-    hp: 13050
+    def: 19088
+    hp: 29326
     criRate: 1
     criDmg: 7.8
     avoid: 0.33803332
@@ -7737,8 +7737,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 858
     atk: 1208
-    def: 18635
-    hp: 13080
+    def: 19129
+    hp: 29397
     criRate: 1
     criDmg: 7.8
     avoid: 0.33846667
@@ -7746,8 +7746,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 859
     atk: 1209
-    def: 18674
-    hp: 13111
+    def: 19169
+    hp: 29469
     criRate: 1
     criDmg: 7.8
     avoid: 0.3389
@@ -7755,8 +7755,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 860
     atk: 1210
-    def: 18714
-    hp: 13141
+    def: 19210
+    hp: 29540
     criRate: 1
     criDmg: 8
     avoid: 0.33933333
@@ -7764,8 +7764,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 861
     atk: 1211
-    def: 18753
-    hp: 13171
+    def: 19250
+    hp: 29611
     criRate: 1
     criDmg: 8
     avoid: 0.33976668
@@ -7773,8 +7773,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 862
     atk: 1212
-    def: 18793
-    hp: 13202
+    def: 19291
+    hp: 29683
     criRate: 1
     criDmg: 8
     avoid: 0.3402
@@ -7782,8 +7782,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 863
     atk: 1213
-    def: 18832
-    hp: 13232
+    def: 19332
+    hp: 29754
     criRate: 1
     criDmg: 8
     avoid: 0.34063333
@@ -7791,8 +7791,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 864
     atk: 1214
-    def: 18872
-    hp: 13263
+    def: 19372
+    hp: 29826
     criRate: 1
     criDmg: 8
     avoid: 0.34106666
@@ -7800,8 +7800,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 865
     atk: 1215
-    def: 18911
-    hp: 13293
+    def: 19413
+    hp: 29897
     criRate: 1
     criDmg: 8
     avoid: 0.3415
@@ -7809,8 +7809,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 866
     atk: 1216
-    def: 18951
-    hp: 13323
+    def: 19453
+    hp: 29969
     criRate: 1
     criDmg: 8
     avoid: 0.34193334
@@ -7818,8 +7818,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 867
     atk: 1217
-    def: 18990
-    hp: 13354
+    def: 19494
+    hp: 30041
     criRate: 1
     criDmg: 8
     avoid: 0.34236667
@@ -7827,8 +7827,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 868
     atk: 1218
-    def: 19030
-    hp: 13384
+    def: 19535
+    hp: 30112
     criRate: 1
     criDmg: 8
     avoid: 0.3428
@@ -7836,8 +7836,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 869
     atk: 1219
-    def: 19069
-    hp: 13415
+    def: 19575
+    hp: 30184
     criRate: 1
     criDmg: 8
     avoid: 0.34323335
@@ -7845,8 +7845,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 870
     atk: 1220
-    def: 19109
-    hp: 13446
+    def: 19616
+    hp: 30256
     criRate: 1
     criDmg: 8
     avoid: 0.34366667
@@ -7854,8 +7854,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 871
     atk: 1221
-    def: 19149
-    hp: 13476
+    def: 19657
+    hp: 30328
     criRate: 1
     criDmg: 8
     avoid: 0.3441
@@ -7863,8 +7863,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 872
     atk: 1222
-    def: 19188
-    hp: 13507
+    def: 19697
+    hp: 30400
     criRate: 1
     criDmg: 8
     avoid: 0.34453332
@@ -7872,8 +7872,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 873
     atk: 1223
-    def: 19228
-    hp: 13537
+    def: 19738
+    hp: 30472
     criRate: 1
     criDmg: 8
     avoid: 0.34496668
@@ -7881,8 +7881,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 874
     atk: 1224
-    def: 19267
-    hp: 13568
+    def: 19779
+    hp: 30544
     criRate: 1
     criDmg: 8
     avoid: 0.3454
@@ -7890,8 +7890,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 875
     atk: 1225
-    def: 19307
-    hp: 13599
+    def: 19819
+    hp: 30616
     criRate: 1
     criDmg: 8
     avoid: 0.34583333
@@ -7899,8 +7899,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 876
     atk: 1226
-    def: 19347
-    hp: 13629
+    def: 19860
+    hp: 30688
     criRate: 1
     criDmg: 8
     avoid: 0.34626666
@@ -7908,8 +7908,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 877
     atk: 1227
-    def: 19386
-    hp: 13660
+    def: 19901
+    hp: 30760
     criRate: 1
     criDmg: 8
     avoid: 0.3467
@@ -7917,8 +7917,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 878
     atk: 1228
-    def: 19426
-    hp: 13691
+    def: 19942
+    hp: 30833
     criRate: 1
     criDmg: 8
     avoid: 0.34713334
@@ -7926,8 +7926,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 879
     atk: 1229
-    def: 19466
-    hp: 13722
+    def: 19982
+    hp: 30905
     criRate: 1
     criDmg: 8
     avoid: 0.34756666
@@ -7935,8 +7935,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 880
     atk: 1230
-    def: 19506
-    hp: 13752
+    def: 20023
+    hp: 30977
     criRate: 1
     criDmg: 8.2
     avoid: 0.348
@@ -7944,8 +7944,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 881
     atk: 1231
-    def: 19545
-    hp: 13783
+    def: 20064
+    hp: 31050
     criRate: 1
     criDmg: 8.2
     avoid: 0.34843335
@@ -7953,8 +7953,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 882
     atk: 1232
-    def: 19585
-    hp: 13814
+    def: 20105
+    hp: 31122
     criRate: 1
     criDmg: 8.2
     avoid: 0.34886667
@@ -7962,8 +7962,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 883
     atk: 1233
-    def: 19625
-    hp: 13845
+    def: 20146
+    hp: 31194
     criRate: 1
     criDmg: 8.2
     avoid: 0.3493
@@ -7971,8 +7971,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 884
     atk: 1234
-    def: 19665
-    hp: 13876
+    def: 20187
+    hp: 31267
     criRate: 1
     criDmg: 8.2
     avoid: 0.34973332
@@ -7980,8 +7980,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 885
     atk: 1235
-    def: 19704
-    hp: 13906
+    def: 20227
+    hp: 31340
     criRate: 1
     criDmg: 8.2
     avoid: 0.35016668
@@ -7989,8 +7989,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 886
     atk: 1236
-    def: 19744
-    hp: 13937
+    def: 20268
+    hp: 31412
     criRate: 1
     criDmg: 8.2
     avoid: 0.3506
@@ -7998,8 +7998,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 887
     atk: 1237
-    def: 19784
-    hp: 13968
+    def: 20309
+    hp: 31485
     criRate: 1
     criDmg: 8.2
     avoid: 0.35103333
@@ -8007,8 +8007,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 888
     atk: 1238
-    def: 19824
-    hp: 13999
+    def: 20350
+    hp: 31558
     criRate: 1
     criDmg: 8.2
     avoid: 0.35146666
@@ -8016,8 +8016,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 889
     atk: 1239
-    def: 19864
-    hp: 14030
+    def: 20391
+    hp: 31630
     criRate: 1
     criDmg: 8.2
     avoid: 0.3519
@@ -8025,8 +8025,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 890
     atk: 1240
-    def: 19904
-    hp: 14061
+    def: 20432
+    hp: 31703
     criRate: 1
     criDmg: 8.2
     avoid: 0.35233334
@@ -8034,8 +8034,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 891
     atk: 1241
-    def: 19944
-    hp: 14092
+    def: 20473
+    hp: 31776
     criRate: 1
     criDmg: 8.2
     avoid: 0.35276666
@@ -8043,8 +8043,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 892
     atk: 1242
-    def: 19983
-    hp: 14123
+    def: 20514
+    hp: 31849
     criRate: 1
     criDmg: 8.2
     avoid: 0.3532
@@ -8052,8 +8052,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 893
     atk: 1243
-    def: 20023
-    hp: 14154
+    def: 20555
+    hp: 31922
     criRate: 1
     criDmg: 8.2
     avoid: 0.35363334
@@ -8061,8 +8061,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 894
     atk: 1244
-    def: 20063
-    hp: 14185
+    def: 20596
+    hp: 31995
     criRate: 1
     criDmg: 8.2
     avoid: 0.35406667
@@ -8070,8 +8070,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 895
     atk: 1245
-    def: 20103
-    hp: 14216
+    def: 20637
+    hp: 32068
     criRate: 1
     criDmg: 8.2
     avoid: 0.3545
@@ -8079,8 +8079,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 896
     atk: 1246
-    def: 20143
-    hp: 14247
+    def: 20678
+    hp: 32141
     criRate: 1
     criDmg: 8.2
     avoid: 0.35493332
@@ -8088,8 +8088,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 897
     atk: 1247
-    def: 20183
-    hp: 14279
+    def: 20719
+    hp: 32214
     criRate: 1
     criDmg: 8.2
     avoid: 0.35536668
@@ -8097,8 +8097,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 898
     atk: 1248
-    def: 20223
-    hp: 14310
+    def: 20760
+    hp: 32288
     criRate: 1
     criDmg: 8.2
     avoid: 0.3558
@@ -8106,8 +8106,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 899
     atk: 1249
-    def: 20263
-    hp: 14341
+    def: 20801
+    hp: 32361
     criRate: 1
     criDmg: 8.2
     avoid: 0.35623333
@@ -8115,8 +8115,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 900
     atk: 1250
-    def: 20303
-    hp: 14372
+    def: 20842
+    hp: 32434
     criRate: 1
     criDmg: 8.4
     avoid: 0.35666665
@@ -8124,8 +8124,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 901
     atk: 1251
-    def: 20343
-    hp: 14403
+    def: 20883
+    hp: 32508
     criRate: 1
     criDmg: 8.4
     avoid: 0.3571
@@ -8133,8 +8133,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 902
     atk: 1252
-    def: 20383
-    hp: 14435
+    def: 20924
+    hp: 32581
     criRate: 1
     criDmg: 8.4
     avoid: 0.35753334
@@ -8142,8 +8142,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 903
     atk: 1253
-    def: 20423
-    hp: 14466
+    def: 20965
+    hp: 32654
     criRate: 1
     criDmg: 8.4
     avoid: 0.35796666
@@ -8151,8 +8151,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 904
     atk: 1254
-    def: 20463
-    hp: 14497
+    def: 21007
+    hp: 32728
     criRate: 1
     criDmg: 8.4
     avoid: 0.3584
@@ -8160,8 +8160,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 905
     atk: 1255
-    def: 20503
-    hp: 14528
+    def: 21048
+    hp: 32802
     criRate: 1
     criDmg: 8.4
     avoid: 0.35883334
@@ -8169,8 +8169,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 906
     atk: 1256
-    def: 20543
-    hp: 14560
+    def: 21089
+    hp: 32875
     criRate: 1
     criDmg: 8.4
     avoid: 0.35926667
@@ -8178,8 +8178,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 907
     atk: 1257
-    def: 20583
-    hp: 14591
+    def: 21130
+    hp: 32949
     criRate: 1
     criDmg: 8.4
     avoid: 0.3597
@@ -8187,8 +8187,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 908
     atk: 1258
-    def: 20623
-    hp: 14622
+    def: 21171
+    hp: 33023
     criRate: 1
     criDmg: 8.4
     avoid: 0.36013332
@@ -8196,8 +8196,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 909
     atk: 1259
-    def: 20664
-    hp: 14654
+    def: 21212
+    hp: 33096
     criRate: 1
     criDmg: 8.4
     avoid: 0.36056668
@@ -8205,8 +8205,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 910
     atk: 1260
-    def: 20704
-    hp: 14685
+    def: 21254
+    hp: 33170
     criRate: 1
     criDmg: 8.4
     avoid: 0.361
@@ -8214,8 +8214,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 911
     atk: 1261
-    def: 20744
-    hp: 14717
+    def: 21295
+    hp: 33244
     criRate: 1
     criDmg: 8.4
     avoid: 0.36143333
@@ -8223,8 +8223,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 912
     atk: 1262
-    def: 20784
-    hp: 14748
+    def: 21336
+    hp: 33318
     criRate: 1
     criDmg: 8.4
     avoid: 0.36186665
@@ -8232,8 +8232,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 913
     atk: 1263
-    def: 20824
-    hp: 14780
+    def: 21377
+    hp: 33392
     criRate: 1
     criDmg: 8.4
     avoid: 0.3623
@@ -8241,8 +8241,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 914
     atk: 1264
-    def: 20864
-    hp: 14811
+    def: 21419
+    hp: 33466
     criRate: 1
     criDmg: 8.4
     avoid: 0.36273333
@@ -8250,8 +8250,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 915
     atk: 1265
-    def: 20905
-    hp: 14842
+    def: 21460
+    hp: 33540
     criRate: 1
     criDmg: 8.4
     avoid: 0.36316666
@@ -8259,8 +8259,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 916
     atk: 1266
-    def: 20945
-    hp: 14874
+    def: 21501
+    hp: 33614
     criRate: 1
     criDmg: 8.4
     avoid: 0.3636
@@ -8268,8 +8268,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 917
     atk: 1267
-    def: 20985
-    hp: 14906
+    def: 21543
+    hp: 33688
     criRate: 1
     criDmg: 8.4
     avoid: 0.36403334
@@ -8277,8 +8277,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 918
     atk: 1268
-    def: 21025
-    hp: 14937
+    def: 21584
+    hp: 33762
     criRate: 1
     criDmg: 8.4
     avoid: 0.36446667
@@ -8286,8 +8286,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 919
     atk: 1269
-    def: 21066
-    hp: 14969
+    def: 21625
+    hp: 33837
     criRate: 1
     criDmg: 8.4
     avoid: 0.3649
@@ -8295,8 +8295,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 920
     atk: 1270
-    def: 21106
-    hp: 15000
+    def: 21667
+    hp: 33911
     criRate: 1
     criDmg: 8.6
     avoid: 0.36533332
@@ -8304,8 +8304,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 921
     atk: 1271
-    def: 21146
-    hp: 15032
+    def: 21708
+    hp: 33985
     criRate: 1
     criDmg: 8.6
     avoid: 0.36576667
@@ -8313,8 +8313,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 922
     atk: 1272
-    def: 21186
-    hp: 15064
+    def: 21749
+    hp: 34060
     criRate: 1
     criDmg: 8.6
     avoid: 0.3662
@@ -8322,8 +8322,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 923
     atk: 1273
-    def: 21227
-    hp: 15095
+    def: 21791
+    hp: 34134
     criRate: 1
     criDmg: 8.6
     avoid: 0.36663333
@@ -8331,8 +8331,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 924
     atk: 1274
-    def: 21267
-    hp: 15127
+    def: 21832
+    hp: 34209
     criRate: 1
     criDmg: 8.6
     avoid: 0.36706668
@@ -8340,8 +8340,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 925
     atk: 1275
-    def: 21307
-    hp: 15159
+    def: 21874
+    hp: 34283
     criRate: 1
     criDmg: 8.6
     avoid: 0.3675
@@ -8349,8 +8349,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 926
     atk: 1276
-    def: 21348
-    hp: 15190
+    def: 21915
+    hp: 34358
     criRate: 1
     criDmg: 8.6
     avoid: 0.36793333
@@ -8358,8 +8358,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 927
     atk: 1277
-    def: 21388
-    hp: 15222
+    def: 21956
+    hp: 34432
     criRate: 1
     criDmg: 8.6
     avoid: 0.36836666
@@ -8367,8 +8367,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 928
     atk: 1278
-    def: 21428
-    hp: 15254
+    def: 21998
+    hp: 34507
     criRate: 1
     criDmg: 8.6
     avoid: 0.3688
@@ -8376,8 +8376,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 929
     atk: 1279
-    def: 21469
-    hp: 15286
+    def: 22039
+    hp: 34582
     criRate: 1
     criDmg: 8.6
     avoid: 0.36923334
@@ -8385,8 +8385,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 930
     atk: 1280
-    def: 21509
-    hp: 15317
+    def: 22081
+    hp: 34656
     criRate: 1
     criDmg: 8.6
     avoid: 0.36966667
@@ -8394,8 +8394,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 931
     atk: 1281
-    def: 21550
-    hp: 15349
+    def: 22122
+    hp: 34731
     criRate: 1
     criDmg: 8.6
     avoid: 0.3701
@@ -8403,8 +8403,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 932
     atk: 1282
-    def: 21590
-    hp: 15381
+    def: 22164
+    hp: 34806
     criRate: 1
     criDmg: 8.6
     avoid: 0.37053335
@@ -8412,8 +8412,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 933
     atk: 1283
-    def: 21630
-    hp: 15413
+    def: 22205
+    hp: 34881
     criRate: 1
     criDmg: 8.6
     avoid: 0.37096667
@@ -8421,8 +8421,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 934
     atk: 1284
-    def: 21671
-    hp: 15445
+    def: 22247
+    hp: 34956
     criRate: 1
     criDmg: 8.6
     avoid: 0.3714
@@ -8430,8 +8430,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 935
     atk: 1285
-    def: 21711
-    hp: 15477
+    def: 22288
+    hp: 35031
     criRate: 1
     criDmg: 8.6
     avoid: 0.37183332
@@ -8439,8 +8439,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 936
     atk: 1286
-    def: 21752
-    hp: 15509
+    def: 22330
+    hp: 35106
     criRate: 1
     criDmg: 8.6
     avoid: 0.37226668
@@ -8448,8 +8448,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 937
     atk: 1287
-    def: 21792
-    hp: 15541
+    def: 22372
+    hp: 35181
     criRate: 1
     criDmg: 8.6
     avoid: 0.3727
@@ -8457,8 +8457,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 938
     atk: 1288
-    def: 21833
-    hp: 15573
+    def: 22413
+    hp: 35256
     criRate: 1
     criDmg: 8.6
     avoid: 0.37313333
@@ -8466,8 +8466,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 939
     atk: 1289
-    def: 21873
-    hp: 15605
+    def: 22455
+    hp: 35331
     criRate: 1
     criDmg: 8.6
     avoid: 0.37356666
@@ -8475,8 +8475,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 940
     atk: 1290
-    def: 21914
-    hp: 15637
+    def: 22496
+    hp: 35407
     criRate: 1
     criDmg: 8.8
     avoid: 0.374
@@ -8484,8 +8484,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 941
     atk: 1291
-    def: 21954
-    hp: 15669
+    def: 22538
+    hp: 35482
     criRate: 1
     criDmg: 8.8
     avoid: 0.37443334
@@ -8493,8 +8493,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 942
     atk: 1292
-    def: 21995
-    hp: 15701
+    def: 22580
+    hp: 35557
     criRate: 1
     criDmg: 8.8
     avoid: 0.37486666
@@ -8502,8 +8502,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 943
     atk: 1293
-    def: 22035
-    hp: 15733
+    def: 22621
+    hp: 35633
     criRate: 1
     criDmg: 8.8
     avoid: 0.3753
@@ -8511,8 +8511,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 944
     atk: 1294
-    def: 22076
-    hp: 15765
+    def: 22663
+    hp: 35708
     criRate: 1
     criDmg: 8.8
     avoid: 0.37573335
@@ -8520,8 +8520,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 945
     atk: 1295
-    def: 22117
-    hp: 15797
+    def: 22705
+    hp: 35784
     criRate: 1
     criDmg: 8.8
     avoid: 0.37616667
@@ -8529,8 +8529,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 946
     atk: 1296
-    def: 22157
-    hp: 15829
+    def: 22746
+    hp: 35859
     criRate: 1
     criDmg: 8.8
     avoid: 0.3766
@@ -8538,8 +8538,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 947
     atk: 1297
-    def: 22198
-    hp: 15861
+    def: 22788
+    hp: 35935
     criRate: 1
     criDmg: 8.8
     avoid: 0.37703332
@@ -8547,8 +8547,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 948
     atk: 1298
-    def: 22238
-    hp: 15893
+    def: 22830
+    hp: 36010
     criRate: 1
     criDmg: 8.8
     avoid: 0.37746668
@@ -8556,8 +8556,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 949
     atk: 1299
-    def: 22279
-    hp: 15926
+    def: 22871
+    hp: 36086
     criRate: 1
     criDmg: 8.8
     avoid: 0.3779
@@ -8565,8 +8565,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 950
     atk: 1300
-    def: 22320
-    hp: 15958
+    def: 22913
+    hp: 36162
     criRate: 1
     criDmg: 8.8
     avoid: 0.37833333
@@ -8574,8 +8574,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 951
     atk: 1301
-    def: 22360
-    hp: 15990
+    def: 22955
+    hp: 36237
     criRate: 1
     criDmg: 8.8
     avoid: 0.37876666
@@ -8583,8 +8583,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 952
     atk: 1302
-    def: 22401
-    hp: 16022
+    def: 22997
+    hp: 36313
     criRate: 1
     criDmg: 8.8
     avoid: 0.3792
@@ -8592,8 +8592,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 953
     atk: 1303
-    def: 22442
-    hp: 16055
+    def: 23038
+    hp: 36389
     criRate: 1
     criDmg: 8.8
     avoid: 0.37963334
@@ -8601,8 +8601,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 954
     atk: 1304
-    def: 22482
-    hp: 16087
+    def: 23080
+    hp: 36465
     criRate: 1
     criDmg: 8.8
     avoid: 0.38006666
@@ -8610,8 +8610,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 955
     atk: 1305
-    def: 22523
-    hp: 16119
+    def: 23122
+    hp: 36541
     criRate: 1
     criDmg: 8.8
     avoid: 0.3805
@@ -8619,8 +8619,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 956
     atk: 1306
-    def: 22564
-    hp: 16151
+    def: 23164
+    hp: 36617
     criRate: 1
     criDmg: 8.8
     avoid: 0.38093334
@@ -8628,8 +8628,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 957
     atk: 1307
-    def: 22604
-    hp: 16184
+    def: 23206
+    hp: 36693
     criRate: 1
     criDmg: 8.8
     avoid: 0.38136667
@@ -8637,8 +8637,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 958
     atk: 1308
-    def: 22645
-    hp: 16216
+    def: 23248
+    hp: 36769
     criRate: 1
     criDmg: 8.8
     avoid: 0.3818
@@ -8646,8 +8646,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 959
     atk: 1309
-    def: 22686
-    hp: 16249
+    def: 23289
+    hp: 36845
     criRate: 1
     criDmg: 8.8
     avoid: 0.38223332
@@ -8655,8 +8655,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 960
     atk: 1310
-    def: 22727
-    hp: 16281
+    def: 23331
+    hp: 36921
     criRate: 1
     criDmg: 9
     avoid: 0.38266668
@@ -8664,8 +8664,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 961
     atk: 1311
-    def: 22768
-    hp: 16313
+    def: 23373
+    hp: 36998
     criRate: 1
     criDmg: 9
     avoid: 0.3831
@@ -8673,8 +8673,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 962
     atk: 1312
-    def: 22808
-    hp: 16346
+    def: 23415
+    hp: 37074
     criRate: 1
     criDmg: 9
     avoid: 0.38353333
@@ -8682,8 +8682,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 963
     atk: 1313
-    def: 22849
-    hp: 16378
+    def: 23457
+    hp: 37150
     criRate: 1
     criDmg: 9
     avoid: 0.38396665
@@ -8691,8 +8691,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 964
     atk: 1314
-    def: 22890
-    hp: 16411
+    def: 23499
+    hp: 37226
     criRate: 1
     criDmg: 9
     avoid: 0.3844
@@ -8700,8 +8700,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 965
     atk: 1315
-    def: 22931
-    hp: 16443
+    def: 23541
+    hp: 37303
     criRate: 1
     criDmg: 9
     avoid: 0.38483334
@@ -8709,8 +8709,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 966
     atk: 1316
-    def: 22972
-    hp: 16476
+    def: 23583
+    hp: 37379
     criRate: 1
     criDmg: 9
     avoid: 0.38526666
@@ -8718,8 +8718,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 967
     atk: 1317
-    def: 23012
-    hp: 16508
+    def: 23625
+    hp: 37456
     criRate: 1
     criDmg: 9
     avoid: 0.3857
@@ -8727,8 +8727,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 968
     atk: 1318
-    def: 23053
-    hp: 16541
+    def: 23667
+    hp: 37532
     criRate: 1
     criDmg: 9
     avoid: 0.38613334
@@ -8736,8 +8736,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 969
     atk: 1319
-    def: 23094
-    hp: 16573
+    def: 23709
+    hp: 37609
     criRate: 1
     criDmg: 9
     avoid: 0.38656667
@@ -8745,8 +8745,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 970
     atk: 1320
-    def: 23135
-    hp: 16606
+    def: 23751
+    hp: 37686
     criRate: 1
     criDmg: 9
     avoid: 0.387
@@ -8754,8 +8754,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 971
     atk: 1321
-    def: 23176
-    hp: 16639
+    def: 23793
+    hp: 37762
     criRate: 1
     criDmg: 9
     avoid: 0.38743332
@@ -8763,8 +8763,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 972
     atk: 1322
-    def: 23217
-    hp: 16671
+    def: 23835
+    hp: 37839
     criRate: 1
     criDmg: 9
     avoid: 0.38786668
@@ -8772,8 +8772,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 973
     atk: 1323
-    def: 23258
-    hp: 16704
+    def: 23877
+    hp: 37916
     criRate: 1
     criDmg: 9
     avoid: 0.3883
@@ -8781,8 +8781,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 974
     atk: 1324
-    def: 23299
-    hp: 16737
+    def: 23919
+    hp: 37993
     criRate: 1
     criDmg: 9
     avoid: 0.38873333
@@ -8790,8 +8790,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 975
     atk: 1325
-    def: 23340
-    hp: 16769
+    def: 23961
+    hp: 38069
     criRate: 1
     criDmg: 9
     avoid: 0.38916665
@@ -8799,8 +8799,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 976
     atk: 1326
-    def: 23381
-    hp: 16802
+    def: 24003
+    hp: 38146
     criRate: 1
     criDmg: 9
     avoid: 0.3896
@@ -8808,8 +8808,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 977
     atk: 1327
-    def: 23422
-    hp: 16835
+    def: 24045
+    hp: 38223
     criRate: 1
     criDmg: 9
     avoid: 0.39003333
@@ -8817,8 +8817,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 978
     atk: 1328
-    def: 23463
-    hp: 16868
+    def: 24087
+    hp: 38300
     criRate: 1
     criDmg: 9
     avoid: 0.39046666
@@ -8826,8 +8826,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 979
     atk: 1329
-    def: 23504
-    hp: 16900
+    def: 24129
+    hp: 38377
     criRate: 1
     criDmg: 9
     avoid: 0.3909
@@ -8835,8 +8835,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 980
     atk: 1330
-    def: 23545
-    hp: 16933
+    def: 24171
+    hp: 38454
     criRate: 1
     criDmg: 9.2
     avoid: 0.39133334
@@ -8844,8 +8844,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 981
     atk: 1331
-    def: 23586
-    hp: 16966
+    def: 24213
+    hp: 38532
     criRate: 1
     criDmg: 9.2
     avoid: 0.39176667
@@ -8853,8 +8853,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 982
     atk: 1332
-    def: 23627
-    hp: 16999
+    def: 24256
+    hp: 38609
     criRate: 1
     criDmg: 9.2
     avoid: 0.3922
@@ -8862,8 +8862,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 983
     atk: 1333
-    def: 23668
-    hp: 17032
+    def: 24298
+    hp: 38686
     criRate: 1
     criDmg: 9.2
     avoid: 0.39263332
@@ -8871,8 +8871,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 984
     atk: 1334
-    def: 23709
-    hp: 17065
+    def: 24340
+    hp: 38763
     criRate: 1
     criDmg: 9.2
     avoid: 0.39306667
@@ -8880,8 +8880,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 985
     atk: 1335
-    def: 23750
-    hp: 17097
+    def: 24382
+    hp: 38841
     criRate: 1
     criDmg: 9.2
     avoid: 0.3935
@@ -8889,8 +8889,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 986
     atk: 1336
-    def: 23791
-    hp: 17130
+    def: 24424
+    hp: 38918
     criRate: 1
     criDmg: 9.2
     avoid: 0.39393333
@@ -8898,8 +8898,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 987
     atk: 1337
-    def: 23832
-    hp: 17163
+    def: 24466
+    hp: 38995
     criRate: 1
     criDmg: 9.2
     avoid: 0.39436665
@@ -8907,8 +8907,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 988
     atk: 1338
-    def: 23873
-    hp: 17196
+    def: 24509
+    hp: 39073
     criRate: 1
     criDmg: 9.2
     avoid: 0.3948
@@ -8916,8 +8916,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 989
     atk: 1339
-    def: 23914
-    hp: 17229
+    def: 24551
+    hp: 39150
     criRate: 1
     criDmg: 9.2
     avoid: 0.39523333
@@ -8925,8 +8925,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 990
     atk: 1340
-    def: 23956
-    hp: 17262
+    def: 24593
+    hp: 39228
     criRate: 1
     criDmg: 9.2
     avoid: 0.39566666
@@ -8934,8 +8934,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 991
     atk: 1341
-    def: 23997
-    hp: 17295
+    def: 24635
+    hp: 39305
     criRate: 1
     criDmg: 9.2
     avoid: 0.3961
@@ -8943,8 +8943,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 992
     atk: 1342
-    def: 24038
-    hp: 17328
+    def: 24678
+    hp: 39383
     criRate: 1
     criDmg: 9.2
     avoid: 0.39653334
@@ -8952,8 +8952,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 993
     atk: 1343
-    def: 24079
-    hp: 17361
+    def: 24720
+    hp: 39461
     criRate: 1
     criDmg: 9.2
     avoid: 0.39696667
@@ -8961,8 +8961,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 994
     atk: 1344
-    def: 24120
-    hp: 17394
+    def: 24762
+    hp: 39538
     criRate: 1
     criDmg: 9.2
     avoid: 0.3974
@@ -8970,8 +8970,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 995
     atk: 1345
-    def: 24161
-    hp: 17427
+    def: 24805
+    hp: 39616
     criRate: 1
     criDmg: 9.2
     avoid: 0.39783335
@@ -8979,8 +8979,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 996
     atk: 1346
-    def: 24203
-    hp: 17460
+    def: 24847
+    hp: 39694
     criRate: 1
     criDmg: 9.2
     avoid: 0.39826667
@@ -8988,8 +8988,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 997
     atk: 1347
-    def: 24244
-    hp: 17494
+    def: 24889
+    hp: 39772
     criRate: 1
     criDmg: 9.2
     avoid: 0.3987
@@ -8997,8 +8997,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 998
     atk: 1348
-    def: 24285
-    hp: 17527
+    def: 24932
+    hp: 39850
     criRate: 1
     criDmg: 9.2
     avoid: 0.39913332
@@ -9006,8 +9006,8 @@ MonoBehaviour:
     rewardExp: 25
   - level: 999
     atk: 1349
-    def: 24326
-    hp: 17560
+    def: 24974
+    hp: 39928
     criRate: 1
     criDmg: 9.2
     avoid: 0.39956668
@@ -9016,7 +9016,7 @@ MonoBehaviour:
   - level: 1000
     atk: 1350
     def: 25000
-    hp: 18000
+    hp: 41000
     criRate: 1
     criDmg: 9.4
     avoid: 0.4

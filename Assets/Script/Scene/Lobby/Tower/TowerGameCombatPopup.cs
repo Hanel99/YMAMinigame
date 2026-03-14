@@ -14,6 +14,7 @@ public class TowerGameCombatPopup : PopupBase
     public TowerGameCombatEntity bossEntity;
 
 
+    public Text floorText;
     public ScrollRect scrollRect;
     public Text combatText;
     public Button skipButton;
@@ -104,7 +105,7 @@ public class TowerGameCombatPopup : PopupBase
         playerCombatData.criDmg = GetValue<float>(TowerUserStatType.CriDmg, playerStatData.criDmgLevel) + weaponMetaData.criDmg
                                 + SaveDataManager.instance.GetJewelValue(TowerJewelType.CriDmg);
         playerCombatData.avoidance = Mathf.Min(0.2f, playerData.level * 0.01f)
-                                + SaveDataManager.instance.GetJewelValue(TowerJewelType.Avoid);
+                                + SaveDataManager.instance.GetJewelValue(TowerJewelType.Avoid) * 0.01f;
 
         playerCombatData.defBreak = SaveDataManager.instance.GetJewelValue(TowerJewelType.DefBreak);
         playerCombatData.dmgReduce = SaveDataManager.instance.GetJewelValue(TowerJewelType.DmgReduce);
@@ -137,6 +138,7 @@ public class TowerGameCombatPopup : PopupBase
 
     public void UpdateUI()
     {
+        floorText.text = $"{playerData.towerFloor}번째 상대";
         skipButton.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
@@ -299,8 +301,7 @@ public class TowerGameCombatPopup : PopupBase
         QuestManager.instance.AddTowerCombatData(1);
 
         skipButton.gameObject.SetActive(false);
-        if (playerWon)
-            retryButton.transform.Find("text").GetComponent<Text>().text = "다음 도전";
+        retryButton.transform.Find("text").GetComponent<Text>().text = playerWon ? "다음 도전" : "재도전";
         int floor = SaveDataManager.instance.playerData.towerFloor;
         if (floor < 10 || floor > 1000)
             retryButton.interactable = false;

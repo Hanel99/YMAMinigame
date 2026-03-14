@@ -211,6 +211,108 @@ public class CheatPopup : PopupBase
             },
         });
 
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(공격력)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.Atk;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.Atk);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(크뎀)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.CriDmg;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.CriDmg);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(회피)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.Avoid;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.Avoid);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(방무)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.DefBreak;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.DefBreak);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(뎀무)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.DmgReduce;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.DmgReduce);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
+        cheatList.Add(new CheatData()
+        {
+            desc = "꿀밤대회 쥬얼 일괄 수정(총뎀)",
+            useInputfield = false,
+            buttonAction = (value) =>
+            {
+                TowerJewelUserData data = new TowerJewelUserData();
+                data.grade = TowerJewelGrade.Black;
+                data.type = TowerJewelType.AtkMul;
+                data.value = GameResourceManager.instance.GetTowerJewelMaxStat(TowerJewelGrade.Black, TowerJewelType.AtkMul);
+                SaveDataManager.instance.playerData.towerJewelUserDataList[0] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[1] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[2] = data;
+                SaveDataManager.instance.playerData.towerJewelUserDataList[3] = data;
+            },
+        });
+
 
         cheatList.Add(new CheatData()
         {

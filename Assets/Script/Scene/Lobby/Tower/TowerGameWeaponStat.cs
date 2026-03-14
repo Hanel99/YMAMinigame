@@ -13,10 +13,13 @@ public class TowerGameWeaponStat : MonoBehaviour
     public Text criDmgValueText;
     public Text requireCoinText;
 
-    public GameObject RankUpText;
-    public Text RankUpRateText;
-    public Text RankStayRateText;
-    public Text RankDownRateText;
+    public GameObject rateGroup;
+    public Text rankUpRateText;
+    public Text rankStayRateText;
+    public Text rankDownRateText;
+    public Image rankUpGauge;
+    public Image rankStayGauge;
+    public Image rankDownGauge;
 
     public Button enchantButton;
     public Text enchantText;
@@ -87,16 +90,15 @@ public class TowerGameWeaponStat : MonoBehaviour
 
         requireCoinText.text = weaponMetaData.requireCoin <= 0 ? TEXT_MAX : weaponMetaData.requireCoin.ToString("N0");
         enchantButton.interactable = weaponMetaData.requireCoin > 0 && SaveDataManager.instance.playerData.coin >= weaponMetaData.requireCoin;
+        rateGroup.SetActive(weaponLevel > 0 && weaponLevel < 1000);
 
         if (weaponLevel == 0)
         {
-            RankUpText.SetActive(false);
             enchantText.text = TEXT_BUY_WEAPON;
             return;
         }
         else if (weaponMetaData.requireCoin <= 0)
         {
-            RankUpText.SetActive(false);
             enchantText.text = TEXT_ENCHANT;
             return;
         }
@@ -110,11 +112,26 @@ public class TowerGameWeaponStat : MonoBehaviour
         float stayRate = (float)stayValue / total;
         float downRate = (float)downValue / total;
 
-        RankUpText.SetActive(true);
         enchantText.text = TEXT_ENCHANT;
-        RankUpRateText.text = $"성공\n{(upRate * 100).ToString("F2")}%";
-        RankStayRateText.text = $"유지\n{(stayRate * 100).ToString("F2")}%";
-        RankDownRateText.text = $"하락\n{(downRate * 100).ToString("F2")}%";
+        rankUpRateText.text = $"성공\n{(upRate * 100).ToString("F2")}%";
+        rankStayRateText.text = $"유지\n{(stayRate * 100).ToString("F2")}%";
+        rankDownRateText.text = $"하락\n{(downRate * 100).ToString("F2")}%";
+
+
+        // 게이지 이미지 연출 (총 너비 500)
+        float totalGaugeWidth = 496f;
+        float upWidth = upRate * totalGaugeWidth;
+        float stayWidth = stayRate * totalGaugeWidth;
+        float downWidth = downRate * totalGaugeWidth;
+
+        rankUpGauge.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, upWidth);
+        rankDownGauge.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, downWidth);
+
+        Vector2 stayPos = rankStayGauge.rectTransform.anchoredPosition;
+        stayPos.x = (upWidth - downWidth) / 2;
+        rankStayGauge.rectTransform.anchoredPosition = stayPos;
+        rankStayGauge.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, stayWidth);
+
     }
 
     public void OnClickEnchant(bool isLongPress = false)
