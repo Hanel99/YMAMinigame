@@ -71,7 +71,7 @@ public class CardGameManager : MonoBehaviour
     private IEnumerator StartGameProcess()
     {
         ReadyProcess();
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(1.2f);
 
         PlayProcess();
     }

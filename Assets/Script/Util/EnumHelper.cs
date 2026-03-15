@@ -461,6 +461,9 @@ public enum SFXType
 
     Victory,
 
+    //card
+    CardFlip,
+
     //Wingtto
     Crash,
     WingTtoCoin,

@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258329425ac32fd47815ea3321f3e440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dimImage: {fileID: 7637373511975777501}
   tryCountText: {fileID: 8078366744720532202}
   cardObject:
   - {fileID: 3515834543460237825}
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.68235296}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -377,8 +378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Michsky.UI.Shift.BlurManager
   blurMaterial: {fileID: 2100000, guid: 016ee15a185914f4f8731c257dbf3650, type: 2}
-  blurValue: 1.5
-  animationSpeed: 25
   customProperty: _Size
 --- !u!1 &8182030519529127373
 GameObject:

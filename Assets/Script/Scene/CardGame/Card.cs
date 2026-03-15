@@ -1,5 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -77,10 +77,33 @@ public class Card : MonoBehaviour
 
     public void OnClickCard()
     {
-        if (_isShow) return;
+        if (_isShow || DOTween.IsTweening(transform)) return;
 
-        ShowCardImage(true);
+        Flip(true);
         CardGameManager.instance.CardClickProcess(this);
+    }
+
+    public void Flip(bool showFront, bool playSound = true, Action onComplete = null)
+    {
+        if (_isShow == showFront)
+        {
+            onComplete?.Invoke();
+            return;
+        }
+
+        float duration = 0.2f;
+        transform.DOPunchPosition(new Vector3(-15f, 0, 0), duration * 2, 0, 0);
+        transform.DORotate(new Vector3(0, 90, 0), duration).SetEase(Ease.InQuad).OnComplete(() =>
+        {
+            ShowCardImage(showFront);
+            transform.DORotate(new Vector3(0, 0, 0), duration).SetEase(Ease.OutQuad).OnComplete(() =>
+            {
+                onComplete?.Invoke();
+            });
+        });
+
+        if (playSound)
+            SoundManager.instance.PlaySFX(SFXType.CardFlip);
     }
 
 

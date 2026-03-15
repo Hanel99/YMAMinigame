@@ -153,6 +153,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e8aa459994f2164e9b98b01719c6b47
+    m_Address: SFX_CardFlip
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 940b4a77d35cf8446a3545563f040845
     m_Address: SFX_Crash
     m_ReadOnly: 0

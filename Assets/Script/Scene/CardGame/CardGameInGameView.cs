@@ -41,7 +41,8 @@ public class CardGameInGameView : MonoBehaviour
     public void CloseCardUI(int index)
     {
         if (index < 0 || index >= cardList.Count) return;
-        cardList[index].ShowCardImage(false);
+        // 단순히 끄는 대신 뒤집기 애니메이션 수행
+        cardList[index].Flip(false, playSound: false);
     }
 
     public void SetCardUI(List<int> cardIdList)
