@@ -263,6 +263,7 @@ public class CubeGameManager : MonoBehaviour
     {
         if (inGameState != InGameState.Play) return;
 
+        SoundManager.instance.PlaySFX(SFXType.CubeMiss);
         combo = 0;
         CubeGameUIManager.instance.UpdateComboText(combo);
     }

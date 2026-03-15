@@ -159,6 +159,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - SFX
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 938309bb8bc3b5a41b905b0d998e9eb8
+    m_Address: SFX_CubeBad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 940b4a77d35cf8446a3545563f040845
     m_Address: SFX_Crash
     m_ReadOnly: 0
@@ -173,6 +179,12 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9ccfab519de070d468311f01fb1b2d84
     m_Address: SFX_FinalCountDown
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f3fff529843c22439a01aa4f2b093f2
+    m_Address: SFX_CubePerfect
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX
@@ -233,6 +245,18 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ceea59b34cc7b3b4788d6c8d5c4effa7
     m_Address: SFX_WingTtoSpeedUp
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dec7310a6d12ca44f8ef7ce5f5e60bd0
+    m_Address: SFX_CubeMiss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - SFX
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfe5816e04fc1c644b718edc50f65d14
+    m_Address: SFX_CubeGreat
     m_ReadOnly: 0
     m_SerializedLabels:
     - SFX

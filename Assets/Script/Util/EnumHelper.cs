@@ -464,6 +464,12 @@ public enum SFXType
     //card
     CardFlip,
 
+    //CubeGame
+    CubePerfect,
+    CubeGreat,
+    CubeBad,
+    CubeMiss,
+
     //Wingtto
     Crash,
     WingTtoCoin,

@@ -141,7 +141,7 @@ public class CubeGameCube : MonoBehaviour
                 // 한 사이클 실행
                 bool cycleCompleted = await RunSingleCycle(token);
                 if (!cycleCompleted) break; // 사이클이 취소된 경우(클릭 등)
-                
+
                 // Miss까지 완료된 경우 (클릭하지 않음)
                 CubeGameManager.instance.MissProcess();
                 // 자동 재시작 
@@ -272,9 +272,16 @@ public class CubeGameCube : MonoBehaviour
 
     public void OnClickCube()
     {
+        // 큐브 터치 연출: 살짝 작아졌다 커짐
+        transform.DOKill();
+        transform.DOScale(0.95f, 0.05f).OnComplete(() => transform.DOScale(1f, 0.05f));
+
         // 조건 수정: Idle 상태에서는 클릭 무시
         if (_state == CubeState.Wait)
             return;
+
+        // 판정에 따른 사운드 시스템 (주석 처리된 곳을 추후 수정하여 사용)
+        PlayJudgeSound(_state);
 
         // 게임 매니저에 클릭 처리 요청
         CubeGameManager.instance.CubeClickProcess(this, _state);
@@ -282,6 +289,24 @@ public class CubeGameCube : MonoBehaviour
 
         // 현재 사이클 재시작
         RestartCycle();
+    }
+
+    private void PlayJudgeSound(CubeState state)
+    {
+        switch (state)
+        {
+            case CubeState.Perfect:
+                SoundManager.instance.PlaySFX(SFXType.CubePerfect);
+                break;
+            case CubeState.Fast:
+            case CubeState.Slow:
+                SoundManager.instance.PlaySFX(SFXType.CubeGreat);
+                break;
+            case CubeState.TooFast:
+            case CubeState.TooSlow:
+                SoundManager.instance.PlaySFX(SFXType.CubeBad);
+                break;
+        }
     }
 
     private void RestartCycle()
