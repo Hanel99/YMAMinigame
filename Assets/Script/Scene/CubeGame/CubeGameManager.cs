@@ -32,6 +32,7 @@ public class CubeGameManager : MonoBehaviour
     private int Q_WithoutTooFastOrTooSlowScore = 0;
     private bool Q_OnlyPerfect = true;
     private int Q_OnlyPerfectScore = 0;
+    private int combo = 0;
 
 
 
@@ -61,6 +62,7 @@ public class CubeGameManager : MonoBehaviour
     private void Start()
     {
         score = 0;
+        combo = 0;
         leftTime = GAME_LIMIT_TIME;
         maxTime = MAX_LIMIT_TIME;
         _inGameState = InGameState.Ready;
@@ -98,7 +100,9 @@ public class CubeGameManager : MonoBehaviour
         SoundManager.instance.PlayBGM(BGMType.CubeGame);
 
         CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
+        CubeGameUIManager.instance.UpdateLeft10TimeBar(leftTime / 10f);
         CubeGameUIManager.instance.UpdateScoreText(score);
+        CubeGameUIManager.instance.UpdateComboText(combo);
         CubeGameUIManager.instance.UpdateCubeCountText(countDic);
         CubeGameUIManager.instance.InitCountUI();
         CubeGameUIManager.instance.ShowDim(true, "준비!");
@@ -135,11 +139,13 @@ public class CubeGameManager : MonoBehaviour
         {
             leftTime -= Time.deltaTime;
             CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
+            CubeGameUIManager.instance.UpdateLeft10TimeBar(leftTime / 10f);
 
             if (leftTime <= 0f)
             {
                 leftTime = 0f;
                 CubeGameUIManager.instance.UpdateLeftTimeText(leftTime);
+                CubeGameUIManager.instance.UpdateLeft10TimeBar(leftTime / 10f);
                 _inGameState = InGameState.Finish;
                 TimeOverProcess().Forget();
             }
@@ -253,13 +259,33 @@ public class CubeGameManager : MonoBehaviour
         _inGameState = isPause ? InGameState.Pause : InGameState.Play;
     }
 
+    public void MissProcess()
+    {
+        if (inGameState != InGameState.Play) return;
+
+        combo = 0;
+        CubeGameUIManager.instance.UpdateComboText(combo);
+    }
+
 
     public void CubeClickProcess(CubeGameCube cube, CubeState state)
     {
         if (inGameState != InGameState.Play) return;
 
+        // 콤보 처리
+        bool isComboIncrement = state == CubeState.Perfect || state == CubeState.Fast || state == CubeState.Slow;
+        if (isComboIncrement)
+        {
+            combo++;
+        }
+        else
+        {
+            combo = 0;
+        }
+
         // 점수, 시간 처리.
-        int addScore = CalculateScore(state);
+        int baseScore = CalculateScore(state);
+        int addScore = baseScore > 0 ? baseScore + combo : baseScore; // 점수가 양수일 때만 콤보 보너스 적용
         float addTime = CalculateTime(state);
 
         score += addScore;
@@ -282,6 +308,7 @@ public class CubeGameManager : MonoBehaviour
         }
 
         CubeGameUIManager.instance.UpdateScoreText(score);
+        CubeGameUIManager.instance.UpdateComboText(combo);
         CubeGameUIManager.instance.UpdateCubeCountText(state, countDic[state]);
 
         if (_inGameState == InGameState.Play)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,11 @@ public class CubeGameUIManager : MonoBehaviour
     [Header("InGame")]
     public Text timerText;
     public Text scoreText;
+    public Image left10TimeBarL;
+    public Image left10TimeBarR;
+    public Text left10TimeText;
+    public GameObject left10TimeRoot;
+    public Text comboText;
 
     public List<CubeGameCountUI> cubeGameCountUIList = new();
     private Dictionary<CubeState, CubeGameCountUI> cubeGameCountUIDic = new();
@@ -151,12 +157,48 @@ public class CubeGameUIManager : MonoBehaviour
 
     public void UpdateLeftTimeText(float leftTime)
     {
-        timerText.text = $"남은 시간 : {leftTime.ToString("F2")}";
+        timerText.text = $"남은 시간 : {leftTime:F2}";
+    }
+    public void UpdateLeft10TimeBar(float value)
+    {
+        // 10초(value 1.0) 이하이고 0초(value 0.0) 이상일 때만 표시
+        bool isVisible = value <= 1f && value >= 0f;
+
+        // 상태가 변경될 때만 SetActive 호출 (불필요한 Hierarchy 갱신 방지)
+        if (left10TimeRoot.activeSelf != isVisible)
+        {
+            left10TimeRoot.SetActive(isVisible);
+        }
+
+        if (isVisible)
+        {
+            // 남은 시간 계산 (10.00 ~ 0.00)
+            float displayTime = Mathf.Max(0, value * 10f);
+            left10TimeText.text = $"{displayTime:F2}";
+
+            // Fill Amount 처리
+            left10TimeBarL.fillAmount = value;
+            left10TimeBarR.fillAmount = value;
+        }
     }
 
     public void UpdateScoreText(int score)
     {
         scoreText.text = $"점수 : {score}";
+    }
+
+    public void UpdateComboText(int combo)
+    {
+        if (combo <= 0)
+        {
+            comboText.text = string.Empty;
+            return;
+        }
+
+        comboText.text = $"{combo} COMBO!";
+
+        comboText.transform.DOKill();
+        comboText.transform.DOScale(1f, 0.2f).From(0.5f).SetEase(Ease.OutBack);
     }
 
     public void UpdateCubeCountText(Dictionary<CubeState, int> countDic)

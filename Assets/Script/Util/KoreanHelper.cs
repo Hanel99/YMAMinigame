@@ -31,15 +31,9 @@ public static class KoreanHelper
             int man = (value % 100000000) / 10000;
             return $"{uk}억 {man:D4}만";
         }
-        else if (value >= 1000000) // 100만 이상 ~ 1억 미만: 0000만
+        else if (value >= 10000) // 1만 이상 ~ 1억 미만: 0000만
         {
             return $"{value / 10000}만";
-        }
-        else if (value >= 10000) // 1만 이상 ~ 100만 미만: 00만 0000
-        {
-            int man = value / 10000;
-            int remain = value % 10000;
-            return $"{man}만 {remain:D4}";
         }
         else // 1만 미만: 0000
         {

@@ -140,8 +140,11 @@ public class CubeGameCube : MonoBehaviour
 
                 // 한 사이클 실행
                 bool cycleCompleted = await RunSingleCycle(token);
-                if (!cycleCompleted) break; // 사이클이 취소된 경우
-                // Miss까지 완료된 경우 자동 재시작 
+                if (!cycleCompleted) break; // 사이클이 취소된 경우(클릭 등)
+                
+                // Miss까지 완료된 경우 (클릭하지 않음)
+                CubeGameManager.instance.MissProcess();
+                // 자동 재시작 
             }
         }
         catch (OperationCanceledException)
