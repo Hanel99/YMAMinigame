@@ -132,7 +132,7 @@ public class FindAIWordGameManager : MonoBehaviour
             }
 
             currentHintIndex = 0;
-            ShowNextHint().Forget();
+            TryShowNextHint().Forget();
 
             // 다음 데이터 미리 로딩
             GeminiApiManager.instance.SaveHintsPreload().Forget();
@@ -168,7 +168,7 @@ public class FindAIWordGameManager : MonoBehaviour
                 sb.Length = 0;
                 sb.Append(MSG_LOADING_PREFIX);
                 sb.Append(dots[index]);
-                FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
+
                 index = (index + 1) % dots.Length;
                 await UniTask.Delay(LOADING_DELAY, cancellationToken: token); // 0.5초마다 갱신
             }
@@ -184,24 +184,34 @@ public class FindAIWordGameManager : MonoBehaviour
         }
     }
 
-    private async UniTask ShowNextHint(int delayTime = 0)
+    private async UniTask TryShowNextHint(int delayTime = 0)
     {
-        await UniTask.Delay(delayTime);
+        if (delayTime > 0)
+            await UniTask.Delay(delayTime);
 
         if (currentHintIndex < hints.Count)
         {
-            FindAIWordGameInGameView.instance.EnableButtons(true);
-            FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
-
-            sb.AppendLine(hints[currentHintIndex]);
-            FindAIWordGameInGameView.instance.UpdateHintText(sb.ToString());
-            FindAIWordGameInGameView.instance.SetInputFieldFocus();
+            await ShowNextHint(sb, hints[currentHintIndex]);
         }
         else
         {
             FindAIWordGameInGameView.instance.UpdateHintText(MSG_FAIL_GAME + currentKeyword);
             FinishProcess().Forget();
         }
+    }
+
+    private async UniTask ShowNextHint(StringBuilder targetSb, string newHint)
+    {
+        FindAIWordGameInGameView.instance.EnableButtons(true);
+        FindAIWordGameInGameView.instance.UpdateTryCountText(currentHintIndex + 1);
+
+        // 신규 힌트 타이핑 연출 수행 (기존 힌트들은 그대로 표시)
+        await FindAIWordGameInGameView.instance.UpdateHintWithTyping(targetSb.ToString(), newHint);
+        
+        // 연출 완료 후 StringBuilder에 추가 (다음 호출 시 baseText가 됨)
+        targetSb.AppendLine(newHint);
+        
+        FindAIWordGameInGameView.instance.SetInputFieldFocus();
     }
 
     public void OnPlayerAnswer(string answer)
@@ -217,6 +227,7 @@ public class FindAIWordGameManager : MonoBehaviour
         if (isCorrect)
         {
             FindAIWordGameInGameView.instance.UpdateHintText(MSG_SUCCESS);
+            FindAIWordGameInGameView.instance.ShowResultEffect(true).Forget();
             FinishProcess().Forget();
         }
         else
@@ -239,14 +250,16 @@ public class FindAIWordGameManager : MonoBehaviour
             {
                 message = MSG_WRONG;
             }
+
             FindAIWordGameInGameView.instance.UpdateHintText(message);
+            FindAIWordGameInGameView.instance.ShowResultEffect(false).Forget();
             FindAIWordGameInGameView.instance.ResetAnswerField();
 
             if (answer.Equals("3"))
                 FindAIWordGameInGameView.instance.GlitchHintText(message);
 
             currentHintIndex++;
-            ShowNextHint(WRONG_DELAY).Forget();
+            TryShowNextHint(WRONG_DELAY).Forget();
         }
     }
 

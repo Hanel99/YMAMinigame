@@ -665,8 +665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlitchText
   textComponent: {fileID: 6322243757522011591}
-  glitchSpeed: 0.05
-  glitchIterations: 15
 --- !u!1 &2815591101834809462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1647,9 @@ MonoBehaviour:
   answerButton: {fileID: 4949457835792235689}
   nextHintButton: {fileID: 691310407017604746}
   giveUpButton: {fileID: 2371066884623011465}
+  correctColor: {r: 0, g: 1, b: 0, a: 1}
+  wrongColor: {r: 1, g: 0, b: 0, a: 1}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5952766418216585546
 GameObject:
   m_ObjectHideFlags: 0
