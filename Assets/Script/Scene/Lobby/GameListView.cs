@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ChocDino.UIFX;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -127,6 +129,7 @@ public class GameListView : MonoBehaviour
         finalQuizBtn.SetButtonData(LobbyIconType.FinalQuiz, OnClickFinalQuizButton);
 
         UpdateUserProfileProcess();
+        SetGlowEffect();
         IntroDataProcess();
         LobbyUIManager.instance.ShowSceneMoveAnimation(true);
         SoundManager.instance.PlayBGM(BGMType.Lobby);
@@ -154,6 +157,7 @@ public class GameListView : MonoBehaviour
         var playerData = SaveDataManager.instance.playerData;
 
         userIcon.sprite = GameResourceManager.instance.GetMasterIcon(playerData.master);
+
         userName.text = playerData.name;
         userLevel.text = playerData.level.ToString();
         if (playerData.maxExp < 0)
@@ -169,11 +173,36 @@ public class GameListView : MonoBehaviour
 
     }
 
+    private void SetGlowEffect()
+    {
+        if (SaveDataManager.instance.playerData.finalQuizPlayData.playEndRoll)
+        {
+            var glowFilter = userIcon.GetComponent<GlowFilter>();
+            if (glowFilter != null)
+            {
+                DOTween.Kill(glowFilter);
+
+                glowFilter.Strength = 0f;
+                Sequence seq = DOTween.Sequence()
+                    .SetTarget(glowFilter)
+                    .SetLink(glowFilter.gameObject);
+
+                seq.Append(DOTween.To(() => glowFilter.Strength, x => glowFilter.Strength = x, 1f, 2f)
+                    .SetEase(Ease.OutQuad));
+
+                seq.Append(DOTween.To(() => glowFilter.Strength, x => glowFilter.Strength = x, 0.5f, 5f)
+                    .SetEase(Ease.InOutSine)
+                    .SetLoops(-1, LoopType.Yoyo));
+            }
+        }
+    }
+
 
 
     private void IntroDataProcess()
     {
-        if (SaveDataManager.instance.playerData.isNewUser)
+        var playerData = SaveDataManager.instance.playerData;
+        if (playerData.isNewUser)
         {
             SaveDataManager.instance.playerData.isNewUser = false;
             CommonPopup popup = null;
@@ -183,6 +212,14 @@ public class GameListView : MonoBehaviour
                 popup.ShowPopup(false);
             });
             popup.isActBackKey = false;
+        }
+        else if (playerData.finalQuizPlayData.playEndRoll && playerData.isShowEndRollPopup == false)
+        {
+            SaveDataManager.instance.playerData.isShowEndRollPopup = true;
+            LobbyUIManager.instance.ShowCommonPopup("안내", "연모아 미니게임 엔딩을 보셨습니다! 축하합니다!"
+                                                            + "\n\n앞으로 획득하는 모든 코인은 50배, 경험치는 10배가 됩니다."
+                                                            + "\n\n또한 꿀밤대회 무기 등급 하락 확률이 영구적으로 0%로 보정됩니다."
+                                                            + "\n\n남은 컨텐츠를 마저 즐겨주세요!", true, true, false);
         }
         else if (StaticGameData.introData.isFirstLogin)
         {

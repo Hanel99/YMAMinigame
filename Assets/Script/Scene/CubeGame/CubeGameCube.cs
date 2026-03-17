@@ -41,7 +41,11 @@ public class CubeGameCube : MonoBehaviour
         guideBarD.gameObject.SetActive(false);
 
         keyText.text = string.Empty;
-#if UNITY_STANDALONE_WIN
+
+        if (devText != null)
+            devText.text = "";
+
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
         keyCode = code;
         keyText.text = code.ToString();
 #endif
@@ -49,7 +53,7 @@ public class CubeGameCube : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN || UNITY_EDITOR
         if (CubeGameManager.instance.inGameState == InGameState.Play)
         {
             if (Input.GetKeyDown(keyCode))
@@ -112,7 +116,7 @@ public class CubeGameCube : MonoBehaviour
         {
             while (!token.IsCancellationRequested && CubeGameManager.instance?.inGameState == InGameState.Play && this != null)
             {
-#if DEV
+                // #if DEV
                 barSequence?.Kill();
                 barSequence = DOTween.Sequence();
 
@@ -135,7 +139,7 @@ public class CubeGameCube : MonoBehaviour
                         .Join(guideBarD.transform.DOLocalMoveY(0, perfectTime).SetEase(Ease.InQuad).From(100f));
 
                 barSequence.Play();
-#endif
+                // #endif
 
 
                 // 한 사이클 실행
@@ -201,24 +205,24 @@ public class CubeGameCube : MonoBehaviour
                 // 게임이 일시정지 상태인지 체크
                 if (CubeGameManager.instance.inGameState == InGameState.Pause)
                 {
-#if DEV
+                    // #if DEV
                     // 일시정지 중에는 가이드라인(DOTween)도 멈춤
                     if (barSequence != null && barSequence.IsActive() && barSequence.IsPlaying())
                         barSequence.Pause();
 
                     if (devText != null)
                         devText.text = $"{newState}\n{elapsed:F2}\n{duration:F2}  [PAUSED]";
-#endif
+                    // #endif
 
                     await UniTask.Yield(PlayerLoopTiming.Update, token);
                     continue;
                 }
 
-#if DEV
+                // #if DEV
                 // 일시정지 해제 시 다시 재생
                 if (barSequence != null && barSequence.IsActive() && !barSequence.IsPlaying())
                     barSequence.Play();
-#endif
+                // #endif
 
                 elapsed += Time.deltaTime;
 

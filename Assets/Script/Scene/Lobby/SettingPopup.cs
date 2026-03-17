@@ -85,7 +85,7 @@ public class SettingPopup : PopupBase
             dataVersionText.text = $"Data Version - {sb}";
         }
 
-#if DEV
+#if DEV || UNITY_EDITOR
         cheatButton.gameObject.SetActive(true);
 #else
         cheatButton.gameObject.SetActive(false);
@@ -316,7 +316,7 @@ public class SettingPopup : PopupBase
 
     public void OnClickCheatButton()
     {
-#if DEV
+#if DEV || UNITY_EDITOR
         LobbyUIManager.instance.ShowPopup<CheatPopup>();
 #endif
     }

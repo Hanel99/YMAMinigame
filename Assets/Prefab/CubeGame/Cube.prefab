@@ -514,11 +514,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'perfect
-
-    99.99
-
-    99.99'
+  m_Text: 
 --- !u!1 &5788695109743526274
 GameObject:
   m_ObjectHideFlags: 0

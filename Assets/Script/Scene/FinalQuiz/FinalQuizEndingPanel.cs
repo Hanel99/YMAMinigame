@@ -128,7 +128,7 @@ public class FinalQuizEndingPanel : MonoBehaviour
         sb.Append($"프로그래밍 : Hanel\n");
         sb.Append($"리소스 제작 : Hanel + AI\n");
         sb.Append($"YMA Bot 제작 : Hanel\n");
-        sb.Append($"QA : Hanel\n");
+        sb.Append($"QA : Hanel, 매니저들\n");
         sb.Append($"기타 등등 : Hanel");
         await ShowCenterCredit(sb.ToString(), 5f);
 

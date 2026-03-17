@@ -16,6 +16,7 @@ public class PlayerData
     public string playFabLoginPW = "";
     public bool autoLogin = false;
     public bool isNewUser = true;
+    public bool isShowEndRollPopup = false;
 
 
     public string serverDataVersion = "0";

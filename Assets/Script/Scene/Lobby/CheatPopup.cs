@@ -27,7 +27,7 @@ public class CheatPopup : PopupBase
     {
         if (enable)
         {
-#if DEV
+#if DEV || UNITY_EDITOR
             SetCheatData();
             _OpenUI();
             MakeCheatItem();
@@ -83,7 +83,7 @@ public class CheatPopup : PopupBase
     {
         cheatList.Clear();
 
-#if DEV
+#if DEV || UNITY_EDITOR
 
         cheatList.Add(new CheatData()
         {

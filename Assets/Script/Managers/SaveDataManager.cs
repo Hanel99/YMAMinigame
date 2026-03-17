@@ -309,7 +309,7 @@ public class SaveDataManager : MonoBehaviour
     /// </summary>
     /// <param name="value"></param>
 
-#if DEV
+#if DEV || UNITY_EDITOR
     public void SetLevel(int value)
     {
         _playerData.level = value;
