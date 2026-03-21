@@ -50,6 +50,9 @@ public class WingTtoPlayer : MonoBehaviour
     private WingTtoPlayerState playerState;
     private WingTtoGameManager gameManager => WingTtoGameManager.instance;
 
+    /// <summary>현재 플레이어가 벽 충돌(Crash) 상태인지 여부 — 플라이어 반전 이동에 사용</summary>
+    public bool IsCrashing => playerState == WingTtoPlayerState.Crash;
+
 
     void Start()
     {
@@ -211,6 +214,7 @@ public class WingTtoPlayer : MonoBehaviour
     {
         playerState = WingTtoPlayerState.Crash;
         WingTtoGameManager.instance.SetPause(true);
+        WingTtoGameManager.instance.SetFlyerCrashMode(true); // 플라이어 오른쪽 이동 시작
 
         UpdateHPUI(-25);
         SoundManager.instance.PlaySFX(SFXType.Crash);
@@ -240,6 +244,7 @@ public class WingTtoPlayer : MonoBehaviour
         playerIcon.DOColor(originalColor, crashTime).From(alphaColor).SetEase(Ease.InCubic);
         playerState = WingTtoPlayerState.Invincible;
         WingTtoGameManager.instance.SetPause(false);
+        WingTtoGameManager.instance.SetFlyerCrashMode(false); // 플라이어 왼쪽 이동 복귀
         await UniTask.Delay(TimeSpan.FromSeconds(crashTime));
 
         this.gameObject.layer = LayerMask.NameToLayer("Default");

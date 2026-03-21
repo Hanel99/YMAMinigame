@@ -494,6 +494,7 @@ public enum SFXType
     FinalDing2,
     FinalClearFake,
     FinalClear,
+    FinalFail,
     FinalFlip,
     FinalGameOver2,
     FinalCountDown,

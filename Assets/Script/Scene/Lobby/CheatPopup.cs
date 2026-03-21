@@ -111,7 +111,7 @@ public class CheatPopup : PopupBase
             useInputfield = true,
             buttonAction = (value) =>
             {
-                value = Mathf.Clamp(value, 1, 300);
+                value = Mathf.Clamp(value, 1, 1000);
                 SaveDataManager.instance.SetLevel(value);
                 SaveDataManager.instance.SaveUnlockContentDate();
                 GameListView.instance.UpdateUserProfileProcess();

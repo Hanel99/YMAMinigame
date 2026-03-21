@@ -32,12 +32,29 @@ public class WingTtoGameManager : MonoBehaviour
     public bool IsFlyPressed => isFlyPressed;
     public bool IsSpeedPressed => isSpeedPressed;
 
+    /// <summary>플레이어가 현재 벽 충돌(Crash) 상태인지 여부 — 플라이어 이동 방향 결정에 사용</summary>
+    public bool IsPlayerCrashing => player != null && player.IsCrashing;
+
 
     //private
     private WingTtoObjectPool pool => WingTtoObjectPool.instance;
     private List<WingTtoObject> spawnObjectList = new();
     private int tutorialStep = 0;
 
+
+    [Header("플라이어 설정")]
+    public GameObject flyerPrefab;
+    public Transform flyerParent;
+
+    private const int MAX_FLYER_COUNT = 5;
+    private const float FLYER_SPAWN_INTERVAL = 8f;
+    private const float FLYER_SPAWN_X = 14f;
+    private const float FLYER_SPAWN_Y_MIN = -2f;
+    private const float FLYER_SPAWN_Y_MAX = 3f;
+
+    private readonly List<WingTtoFlyer> activeFlyerList = new();
+    private readonly Queue<WingTtoFlyer> flyerPool = new();
+    private float calcFlyerTime = FLYER_SPAWN_INTERVAL;
 
 
 
@@ -299,6 +316,7 @@ public class WingTtoGameManager : MonoBehaviour
         {
             UpdateDistance(Time.deltaTime);
             RandomSpawnObject(Time.deltaTime);
+            UpdateFlyerSpawn(Time.deltaTime);
         }
     }
 
@@ -403,6 +421,7 @@ public class WingTtoGameManager : MonoBehaviour
         {
             bg?.UpdateSpeed(_normalSpeed / _originalSpeed);
         }
+        // 플라이어는 normalSpeed를 직접 참조하므로 별도 업데이트 불필요
 
         WingTtoGameUIManager.instance.UpdateSpeedText(_normalSpeed);
         SoundManager.instance.PlaySFX(SFXType.WingTtoSpeedUp);
@@ -554,6 +573,99 @@ public class WingTtoGameManager : MonoBehaviour
     }
 
 
+    // 스폰 확률: 0~2000m=100%, 2000~4000m=선형 감소, 4000m 이상=0%
+    private void UpdateFlyerSpawn(float deltaTime)
+    {
+        if (flyerPrefab == null) return;
+
+        calcFlyerTime -= deltaTime;
+        if (calcFlyerTime > 0f) return;
+
+        calcFlyerTime = FLYER_SPAWN_INTERVAL;
+
+        if (activeFlyerList.Count >= MAX_FLYER_COUNT) return;
+
+        int spawnChance;
+        if (currentDistance < 2000f)
+        {
+            spawnChance = 100;
+        }
+        else
+        {
+            int distanceStep = Mathf.FloorToInt(currentDistance / 100f);
+            float distanceClamped = Mathf.Clamp(distanceStep * 100f, 2000f, 4000f);
+            spawnChance = Mathf.RoundToInt(Mathf.Lerp(100, 0, (distanceClamped - 2000f) / 2000f));
+        }
+
+        if (!GetRandomBool(spawnChance, 100 - spawnChance)) return;
+
+        SpawnFlyer();
+    }
+
+    private void SpawnFlyer()
+    {
+        WingTtoFlyer flyer;
+
+        if (flyerPool.Count > 0)
+        {
+            flyer = flyerPool.Dequeue();
+        }
+        else
+        {
+            Transform parent = flyerParent != null ? flyerParent : transform;
+            GameObject go = Instantiate(flyerPrefab, parent);
+            flyer = go.GetComponent<WingTtoFlyer>();
+            if (flyer == null)
+                flyer = go.AddComponent<WingTtoFlyer>();
+        }
+
+        float spawnY = GetRandomFloat(FLYER_SPAWN_Y_MIN, FLYER_SPAWN_Y_MAX);
+        flyer.Activate(new Vector3(FLYER_SPAWN_X, spawnY, 0f));
+
+        flyer.SetMasterIcon(PickRandomMasterForFlyer());
+
+        activeFlyerList.Add(flyer);
+    }
+
+    // 플레이어 자신 + Other + 현재 활성 플라이어 마스터 제외 후 랜덤 선택
+    private CardMaster PickRandomMasterForFlyer()
+    {
+        CardMaster playerMaster = SaveDataManager.instance.playerData.master;
+        int totalCount = (int)CardMaster.Count;
+
+        var usedMasters = new System.Collections.Generic.HashSet<CardMaster>();
+        usedMasters.Add(CardMaster.Other);
+        usedMasters.Add(playerMaster);
+
+        foreach (WingTtoFlyer activeFlyer in activeFlyerList)
+        {
+            if (activeFlyer != null && activeFlyer.AssignedMaster != CardMaster.Count)
+                usedMasters.Add(activeFlyer.AssignedMaster);
+        }
+
+        var candidates = new System.Collections.Generic.List<CardMaster>();
+        for (int i = 0; i < totalCount; i++)
+        {
+            CardMaster m = (CardMaster)i;
+            if (!usedMasters.Contains(m))
+                candidates.Add(m);
+        }
+
+        if (candidates.Count == 0)
+            return CardMaster.Other;
+
+        return candidates[randomGenerator.Next(0, candidates.Count)];
+    }
+
+    public void DespawnFlyer(WingTtoFlyer flyer)
+    {
+        if (flyer == null) return;
+        flyer.Despawn();
+        activeFlyerList.Remove(flyer);
+        flyerPool.Enqueue(flyer);
+    }
+
+
 
 
     #endregion
@@ -592,7 +704,22 @@ public class WingTtoGameManager : MonoBehaviour
             bg?.SetPause(isPause);
         }
 
+        // 플라이어는 크래시 여부와 무관하게 일시정지만 전달 (크래시 모드는 SetFlyerCrashMode로 별도 제어)
+        foreach (WingTtoFlyer flyer in activeFlyerList)
+        {
+            flyer?.SetPause(isPause);
+        }
+
         player.SetPause(isPause);
+    }
+
+    // CrashProcess 시작/종료 시 호출 — 플라이어에게 크래시 모드를 직접 전달
+    public void SetFlyerCrashMode(bool crash)
+    {
+        foreach (WingTtoFlyer flyer in activeFlyerList)
+        {
+            flyer?.SetCrashMode(crash);
+        }
     }
 
 
