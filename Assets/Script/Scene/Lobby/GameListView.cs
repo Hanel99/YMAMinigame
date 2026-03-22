@@ -206,7 +206,7 @@ public class GameListView : MonoBehaviour
         {
             SaveDataManager.instance.playerData.isNewUser = false;
             CommonPopup popup = null;
-            popup = LobbyUIManager.instance.ShowCommonPopup("환영합니다!", "연모아 게임에 오신걸 환영합니다!\n게임에서 사용하실 이름과 연모아에서 사용중인 이름을 선택해주세요.", false, true, false, null, () =>
+            popup = LobbyUIManager.instance.ShowCommonPopup("환영합니다!", LocalizeManager.instance.GetString("info.welcome.desc"), false, true, false, null, () =>
             {
                 LobbyUIManager.instance.ShowPopup<PlayerDataSettingPopup>();
                 popup.ShowPopup(false);
@@ -216,10 +216,7 @@ public class GameListView : MonoBehaviour
         else if (playerData.finalQuizPlayData.playEndRoll && playerData.isShowEndRollPopup == false)
         {
             SaveDataManager.instance.playerData.isShowEndRollPopup = true;
-            LobbyUIManager.instance.ShowCommonPopup("안내", "연모아 미니게임 엔딩을 보셨습니다! 축하합니다!"
-                                                            + "\n\n앞으로 획득하는 모든 코인은 50배, 경험치는 10배가 됩니다."
-                                                            + "\n\n또한 꿀밤대회 무기 등급 하락 확률이 영구적으로 0%로 보정됩니다."
-                                                            + "\n\n남은 컨텐츠를 마저 즐겨주세요!", true, true, false);
+            LobbyUIManager.instance.ShowCommonPopup("안내", LocalizeManager.instance.GetString("info.allClear.desc"), true, true, false);
         }
         else if (StaticGameData.introData.isFirstLogin)
         {
