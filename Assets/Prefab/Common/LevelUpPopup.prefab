@@ -247,8 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Michsky.UI.Shift.BlurManager
   blurMaterial: {fileID: 2100000, guid: 016ee15a185914f4f8731c257dbf3650, type: 2}
-  blurValue: 1.5
-  animationSpeed: 25
   customProperty: _Size
 --- !u!1 &2224968155997498965
 GameObject:
@@ -1589,7 +1587,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 157.7}
-  m_SizeDelta: {x: 540, y: 38}
+  m_SizeDelta: {x: 600, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1583506104806370747
 CanvasRenderer:
