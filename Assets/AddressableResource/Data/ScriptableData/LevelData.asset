@@ -1514,1501 +1514,1501 @@ MonoBehaviour:
     exp: 100
     unlock: 5
   - level: 501
-    exp: 100
+    exp: 102
     unlock: 5
   - level: 502
-    exp: 100
+    exp: 104
     unlock: 5
   - level: 503
-    exp: 100
+    exp: 105
     unlock: 5
   - level: 504
-    exp: 100
+    exp: 107
     unlock: 5
   - level: 505
-    exp: 100
+    exp: 109
     unlock: 5
   - level: 506
-    exp: 100
+    exp: 111
     unlock: 5
   - level: 507
-    exp: 100
+    exp: 113
     unlock: 5
   - level: 508
-    exp: 100
+    exp: 114
     unlock: 5
   - level: 509
-    exp: 100
+    exp: 116
     unlock: 5
   - level: 510
-    exp: 100
+    exp: 118
     unlock: 5
   - level: 511
-    exp: 100
+    exp: 120
     unlock: 5
   - level: 512
-    exp: 100
+    exp: 122
     unlock: 5
   - level: 513
-    exp: 100
+    exp: 123
     unlock: 5
   - level: 514
-    exp: 100
+    exp: 125
     unlock: 5
   - level: 515
-    exp: 100
+    exp: 127
     unlock: 5
   - level: 516
-    exp: 100
+    exp: 129
     unlock: 5
   - level: 517
-    exp: 100
+    exp: 131
     unlock: 5
   - level: 518
-    exp: 100
+    exp: 132
     unlock: 5
   - level: 519
-    exp: 100
+    exp: 134
     unlock: 5
   - level: 520
-    exp: 100
+    exp: 136
     unlock: 5
   - level: 521
-    exp: 100
+    exp: 138
     unlock: 5
   - level: 522
-    exp: 100
+    exp: 140
     unlock: 5
   - level: 523
-    exp: 100
+    exp: 141
     unlock: 5
   - level: 524
-    exp: 100
+    exp: 143
     unlock: 5
   - level: 525
-    exp: 100
+    exp: 145
     unlock: 5
   - level: 526
-    exp: 100
+    exp: 147
     unlock: 5
   - level: 527
-    exp: 100
+    exp: 149
     unlock: 5
   - level: 528
-    exp: 100
+    exp: 150
     unlock: 5
   - level: 529
-    exp: 100
+    exp: 152
     unlock: 5
   - level: 530
-    exp: 100
+    exp: 154
     unlock: 5
   - level: 531
-    exp: 100
+    exp: 156
     unlock: 5
   - level: 532
-    exp: 100
+    exp: 158
     unlock: 5
   - level: 533
-    exp: 100
+    exp: 159
     unlock: 5
   - level: 534
-    exp: 100
+    exp: 161
     unlock: 5
   - level: 535
-    exp: 100
+    exp: 163
     unlock: 5
   - level: 536
-    exp: 100
+    exp: 165
     unlock: 5
   - level: 537
-    exp: 100
+    exp: 167
     unlock: 5
   - level: 538
-    exp: 100
+    exp: 168
     unlock: 5
   - level: 539
-    exp: 100
+    exp: 170
     unlock: 5
   - level: 540
-    exp: 100
+    exp: 172
     unlock: 5
   - level: 541
-    exp: 100
+    exp: 174
     unlock: 5
   - level: 542
-    exp: 100
+    exp: 176
     unlock: 5
   - level: 543
-    exp: 100
+    exp: 177
     unlock: 5
   - level: 544
-    exp: 100
+    exp: 179
     unlock: 5
   - level: 545
-    exp: 100
+    exp: 181
     unlock: 5
   - level: 546
-    exp: 100
+    exp: 183
     unlock: 5
   - level: 547
-    exp: 100
+    exp: 185
     unlock: 5
   - level: 548
-    exp: 100
+    exp: 186
     unlock: 5
   - level: 549
-    exp: 100
+    exp: 188
     unlock: 5
   - level: 550
-    exp: 100
+    exp: 190
     unlock: 5
   - level: 551
-    exp: 100
+    exp: 192
     unlock: 5
   - level: 552
-    exp: 100
+    exp: 194
     unlock: 5
   - level: 553
-    exp: 100
+    exp: 195
     unlock: 5
   - level: 554
-    exp: 100
+    exp: 197
     unlock: 5
   - level: 555
-    exp: 100
+    exp: 199
     unlock: 5
   - level: 556
-    exp: 100
+    exp: 201
     unlock: 5
   - level: 557
-    exp: 100
+    exp: 203
     unlock: 5
   - level: 558
-    exp: 100
+    exp: 204
     unlock: 5
   - level: 559
-    exp: 100
+    exp: 206
     unlock: 5
   - level: 560
-    exp: 100
+    exp: 208
     unlock: 5
   - level: 561
-    exp: 100
+    exp: 210
     unlock: 5
   - level: 562
-    exp: 100
+    exp: 212
     unlock: 5
   - level: 563
-    exp: 100
+    exp: 214
     unlock: 5
   - level: 564
-    exp: 100
+    exp: 215
     unlock: 5
   - level: 565
-    exp: 100
+    exp: 217
     unlock: 5
   - level: 566
-    exp: 100
+    exp: 219
     unlock: 5
   - level: 567
-    exp: 100
+    exp: 221
     unlock: 5
   - level: 568
-    exp: 100
+    exp: 223
     unlock: 5
   - level: 569
-    exp: 100
+    exp: 224
     unlock: 5
   - level: 570
-    exp: 100
+    exp: 226
     unlock: 5
   - level: 571
-    exp: 100
+    exp: 228
     unlock: 5
   - level: 572
-    exp: 100
+    exp: 230
     unlock: 5
   - level: 573
-    exp: 100
+    exp: 232
     unlock: 5
   - level: 574
-    exp: 100
+    exp: 233
     unlock: 5
   - level: 575
-    exp: 100
+    exp: 235
     unlock: 5
   - level: 576
-    exp: 100
+    exp: 237
     unlock: 5
   - level: 577
-    exp: 100
+    exp: 239
     unlock: 5
   - level: 578
-    exp: 100
+    exp: 241
     unlock: 5
   - level: 579
-    exp: 100
+    exp: 242
     unlock: 5
   - level: 580
-    exp: 100
+    exp: 244
     unlock: 5
   - level: 581
-    exp: 100
+    exp: 246
     unlock: 5
   - level: 582
-    exp: 100
+    exp: 248
     unlock: 5
   - level: 583
-    exp: 100
+    exp: 250
     unlock: 5
   - level: 584
-    exp: 100
+    exp: 251
     unlock: 5
   - level: 585
-    exp: 100
+    exp: 253
     unlock: 5
   - level: 586
-    exp: 100
+    exp: 255
     unlock: 5
   - level: 587
-    exp: 100
+    exp: 257
     unlock: 5
   - level: 588
-    exp: 100
+    exp: 259
     unlock: 5
   - level: 589
-    exp: 100
+    exp: 260
     unlock: 5
   - level: 590
-    exp: 100
+    exp: 262
     unlock: 5
   - level: 591
-    exp: 100
+    exp: 264
     unlock: 5
   - level: 592
-    exp: 100
+    exp: 266
     unlock: 5
   - level: 593
-    exp: 100
+    exp: 268
     unlock: 5
   - level: 594
-    exp: 100
+    exp: 269
     unlock: 5
   - level: 595
-    exp: 100
+    exp: 271
     unlock: 5
   - level: 596
-    exp: 100
+    exp: 273
     unlock: 5
   - level: 597
-    exp: 100
+    exp: 275
     unlock: 5
   - level: 598
-    exp: 100
+    exp: 277
     unlock: 5
   - level: 599
-    exp: 100
+    exp: 278
     unlock: 5
   - level: 600
-    exp: 100
+    exp: 280
     unlock: 5
   - level: 601
-    exp: 100
+    exp: 282
     unlock: 5
   - level: 602
-    exp: 100
+    exp: 284
     unlock: 5
   - level: 603
-    exp: 100
+    exp: 286
     unlock: 5
   - level: 604
-    exp: 100
+    exp: 287
     unlock: 5
   - level: 605
-    exp: 100
+    exp: 289
     unlock: 5
   - level: 606
-    exp: 100
+    exp: 291
     unlock: 5
   - level: 607
-    exp: 100
+    exp: 293
     unlock: 5
   - level: 608
-    exp: 100
+    exp: 295
     unlock: 5
   - level: 609
-    exp: 100
+    exp: 296
     unlock: 5
   - level: 610
-    exp: 100
+    exp: 298
     unlock: 5
   - level: 611
-    exp: 100
+    exp: 300
     unlock: 5
   - level: 612
-    exp: 100
+    exp: 302
     unlock: 5
   - level: 613
-    exp: 100
+    exp: 304
     unlock: 5
   - level: 614
-    exp: 100
+    exp: 305
     unlock: 5
   - level: 615
-    exp: 100
+    exp: 307
     unlock: 5
   - level: 616
-    exp: 100
+    exp: 309
     unlock: 5
   - level: 617
-    exp: 100
+    exp: 311
     unlock: 5
   - level: 618
-    exp: 100
+    exp: 313
     unlock: 5
   - level: 619
-    exp: 100
+    exp: 314
     unlock: 5
   - level: 620
-    exp: 100
+    exp: 316
     unlock: 5
   - level: 621
-    exp: 100
+    exp: 318
     unlock: 5
   - level: 622
-    exp: 100
+    exp: 320
     unlock: 5
   - level: 623
-    exp: 100
+    exp: 322
     unlock: 5
   - level: 624
-    exp: 100
+    exp: 323
     unlock: 5
   - level: 625
-    exp: 100
+    exp: 325
     unlock: 5
   - level: 626
-    exp: 100
+    exp: 327
     unlock: 5
   - level: 627
-    exp: 100
+    exp: 329
     unlock: 5
   - level: 628
-    exp: 100
+    exp: 331
     unlock: 5
   - level: 629
-    exp: 100
+    exp: 332
     unlock: 5
   - level: 630
-    exp: 100
+    exp: 334
     unlock: 5
   - level: 631
-    exp: 100
+    exp: 336
     unlock: 5
   - level: 632
-    exp: 100
+    exp: 338
     unlock: 5
   - level: 633
-    exp: 100
+    exp: 340
     unlock: 5
   - level: 634
-    exp: 100
+    exp: 341
     unlock: 5
   - level: 635
-    exp: 100
+    exp: 343
     unlock: 5
   - level: 636
-    exp: 100
+    exp: 345
     unlock: 5
   - level: 637
-    exp: 100
+    exp: 347
     unlock: 5
   - level: 638
-    exp: 100
+    exp: 349
     unlock: 5
   - level: 639
-    exp: 100
+    exp: 350
     unlock: 5
   - level: 640
-    exp: 100
+    exp: 352
     unlock: 5
   - level: 641
-    exp: 100
+    exp: 354
     unlock: 5
   - level: 642
-    exp: 100
+    exp: 356
     unlock: 5
   - level: 643
-    exp: 100
+    exp: 358
     unlock: 5
   - level: 644
-    exp: 100
+    exp: 359
     unlock: 5
   - level: 645
-    exp: 100
+    exp: 361
     unlock: 5
   - level: 646
-    exp: 100
+    exp: 363
     unlock: 5
   - level: 647
-    exp: 100
+    exp: 365
     unlock: 5
   - level: 648
-    exp: 100
+    exp: 367
     unlock: 5
   - level: 649
-    exp: 100
+    exp: 368
     unlock: 5
   - level: 650
-    exp: 100
+    exp: 370
     unlock: 5
   - level: 651
-    exp: 100
+    exp: 372
     unlock: 5
   - level: 652
-    exp: 100
+    exp: 374
     unlock: 5
   - level: 653
-    exp: 100
+    exp: 376
     unlock: 5
   - level: 654
-    exp: 100
+    exp: 377
     unlock: 5
   - level: 655
-    exp: 100
+    exp: 379
     unlock: 5
   - level: 656
-    exp: 100
+    exp: 381
     unlock: 5
   - level: 657
-    exp: 100
+    exp: 383
     unlock: 5
   - level: 658
-    exp: 100
+    exp: 385
     unlock: 5
   - level: 659
-    exp: 100
+    exp: 386
     unlock: 5
   - level: 660
-    exp: 100
+    exp: 388
     unlock: 5
   - level: 661
-    exp: 100
+    exp: 390
     unlock: 5
   - level: 662
-    exp: 100
+    exp: 392
     unlock: 5
   - level: 663
-    exp: 100
+    exp: 394
     unlock: 5
   - level: 664
-    exp: 100
+    exp: 395
     unlock: 5
   - level: 665
-    exp: 100
+    exp: 397
     unlock: 5
   - level: 666
-    exp: 100
+    exp: 399
     unlock: 5
   - level: 667
-    exp: 100
+    exp: 401
     unlock: 5
   - level: 668
-    exp: 100
+    exp: 403
     unlock: 5
   - level: 669
-    exp: 100
+    exp: 404
     unlock: 5
   - level: 670
-    exp: 100
+    exp: 406
     unlock: 5
   - level: 671
-    exp: 100
+    exp: 408
     unlock: 5
   - level: 672
-    exp: 100
+    exp: 410
     unlock: 5
   - level: 673
-    exp: 100
+    exp: 412
     unlock: 5
   - level: 674
-    exp: 100
+    exp: 413
     unlock: 5
   - level: 675
-    exp: 100
+    exp: 415
     unlock: 5
   - level: 676
-    exp: 100
+    exp: 417
     unlock: 5
   - level: 677
-    exp: 100
+    exp: 419
     unlock: 5
   - level: 678
-    exp: 100
+    exp: 421
     unlock: 5
   - level: 679
-    exp: 100
+    exp: 422
     unlock: 5
   - level: 680
-    exp: 100
+    exp: 424
     unlock: 5
   - level: 681
-    exp: 100
+    exp: 426
     unlock: 5
   - level: 682
-    exp: 100
+    exp: 428
     unlock: 5
   - level: 683
-    exp: 100
+    exp: 430
     unlock: 5
   - level: 684
-    exp: 100
+    exp: 431
     unlock: 5
   - level: 685
-    exp: 100
+    exp: 433
     unlock: 5
   - level: 686
-    exp: 100
+    exp: 435
     unlock: 5
   - level: 687
-    exp: 100
+    exp: 437
     unlock: 5
   - level: 688
-    exp: 100
+    exp: 439
     unlock: 5
   - level: 689
-    exp: 100
+    exp: 441
     unlock: 5
   - level: 690
-    exp: 100
+    exp: 442
     unlock: 5
   - level: 691
-    exp: 100
+    exp: 444
     unlock: 5
   - level: 692
-    exp: 100
+    exp: 446
     unlock: 5
   - level: 693
-    exp: 100
+    exp: 448
     unlock: 5
   - level: 694
-    exp: 100
+    exp: 450
     unlock: 5
   - level: 695
-    exp: 100
+    exp: 451
     unlock: 5
   - level: 696
-    exp: 100
+    exp: 453
     unlock: 5
   - level: 697
-    exp: 100
+    exp: 455
     unlock: 5
   - level: 698
-    exp: 100
+    exp: 457
     unlock: 5
   - level: 699
-    exp: 100
+    exp: 459
     unlock: 5
   - level: 700
-    exp: 100
+    exp: 460
     unlock: 5
   - level: 701
-    exp: 100
+    exp: 462
     unlock: 5
   - level: 702
-    exp: 100
+    exp: 464
     unlock: 5
   - level: 703
-    exp: 100
+    exp: 466
     unlock: 5
   - level: 704
-    exp: 100
+    exp: 468
     unlock: 5
   - level: 705
-    exp: 100
+    exp: 469
     unlock: 5
   - level: 706
-    exp: 100
+    exp: 471
     unlock: 5
   - level: 707
-    exp: 100
+    exp: 473
     unlock: 5
   - level: 708
-    exp: 100
+    exp: 475
     unlock: 5
   - level: 709
-    exp: 100
+    exp: 477
     unlock: 5
   - level: 710
-    exp: 100
+    exp: 478
     unlock: 5
   - level: 711
-    exp: 100
+    exp: 480
     unlock: 5
   - level: 712
-    exp: 100
+    exp: 482
     unlock: 5
   - level: 713
-    exp: 100
+    exp: 484
     unlock: 5
   - level: 714
-    exp: 100
+    exp: 486
     unlock: 5
   - level: 715
-    exp: 100
+    exp: 487
     unlock: 5
   - level: 716
-    exp: 100
+    exp: 489
     unlock: 5
   - level: 717
-    exp: 100
+    exp: 491
     unlock: 5
   - level: 718
-    exp: 100
+    exp: 493
     unlock: 5
   - level: 719
-    exp: 100
+    exp: 495
     unlock: 5
   - level: 720
-    exp: 100
+    exp: 496
     unlock: 5
   - level: 721
-    exp: 100
+    exp: 498
     unlock: 5
   - level: 722
-    exp: 100
+    exp: 500
     unlock: 5
   - level: 723
-    exp: 100
+    exp: 502
     unlock: 5
   - level: 724
-    exp: 100
+    exp: 504
     unlock: 5
   - level: 725
-    exp: 100
+    exp: 505
     unlock: 5
   - level: 726
-    exp: 100
+    exp: 507
     unlock: 5
   - level: 727
-    exp: 100
+    exp: 509
     unlock: 5
   - level: 728
-    exp: 100
+    exp: 511
     unlock: 5
   - level: 729
-    exp: 100
+    exp: 513
     unlock: 5
   - level: 730
-    exp: 100
+    exp: 514
     unlock: 5
   - level: 731
-    exp: 100
+    exp: 516
     unlock: 5
   - level: 732
-    exp: 100
+    exp: 518
     unlock: 5
   - level: 733
-    exp: 100
+    exp: 520
     unlock: 5
   - level: 734
-    exp: 100
+    exp: 522
     unlock: 5
   - level: 735
-    exp: 100
+    exp: 523
     unlock: 5
   - level: 736
-    exp: 100
+    exp: 525
     unlock: 5
   - level: 737
-    exp: 100
+    exp: 527
     unlock: 5
   - level: 738
-    exp: 100
+    exp: 529
     unlock: 5
   - level: 739
-    exp: 100
+    exp: 531
     unlock: 5
   - level: 740
-    exp: 100
+    exp: 532
     unlock: 5
   - level: 741
-    exp: 100
+    exp: 534
     unlock: 5
   - level: 742
-    exp: 100
+    exp: 536
     unlock: 5
   - level: 743
-    exp: 100
+    exp: 538
     unlock: 5
   - level: 744
-    exp: 100
+    exp: 540
     unlock: 5
   - level: 745
-    exp: 100
+    exp: 541
     unlock: 5
   - level: 746
-    exp: 100
+    exp: 543
     unlock: 5
   - level: 747
-    exp: 100
+    exp: 545
     unlock: 5
   - level: 748
-    exp: 100
+    exp: 547
     unlock: 5
   - level: 749
-    exp: 100
+    exp: 549
     unlock: 5
   - level: 750
-    exp: 100
+    exp: 550
     unlock: 5
   - level: 751
-    exp: 100
+    exp: 552
     unlock: 5
   - level: 752
-    exp: 100
+    exp: 554
     unlock: 5
   - level: 753
-    exp: 100
+    exp: 556
     unlock: 5
   - level: 754
-    exp: 100
+    exp: 558
     unlock: 5
   - level: 755
-    exp: 100
+    exp: 559
     unlock: 5
   - level: 756
-    exp: 100
+    exp: 561
     unlock: 5
   - level: 757
-    exp: 100
+    exp: 563
     unlock: 5
   - level: 758
-    exp: 100
+    exp: 565
     unlock: 5
   - level: 759
-    exp: 100
+    exp: 567
     unlock: 5
   - level: 760
-    exp: 100
+    exp: 568
     unlock: 5
   - level: 761
-    exp: 100
+    exp: 570
     unlock: 5
   - level: 762
-    exp: 100
+    exp: 572
     unlock: 5
   - level: 763
-    exp: 100
+    exp: 574
     unlock: 5
   - level: 764
-    exp: 100
+    exp: 576
     unlock: 5
   - level: 765
-    exp: 100
+    exp: 577
     unlock: 5
   - level: 766
-    exp: 100
+    exp: 579
     unlock: 5
   - level: 767
-    exp: 100
+    exp: 581
     unlock: 5
   - level: 768
-    exp: 100
+    exp: 583
     unlock: 5
   - level: 769
-    exp: 100
+    exp: 585
     unlock: 5
   - level: 770
-    exp: 100
+    exp: 586
     unlock: 5
   - level: 771
-    exp: 100
+    exp: 588
     unlock: 5
   - level: 772
-    exp: 100
+    exp: 590
     unlock: 5
   - level: 773
-    exp: 100
+    exp: 592
     unlock: 5
   - level: 774
-    exp: 100
+    exp: 594
     unlock: 5
   - level: 775
-    exp: 100
+    exp: 595
     unlock: 5
   - level: 776
-    exp: 100
+    exp: 597
     unlock: 5
   - level: 777
-    exp: 100
+    exp: 599
     unlock: 5
   - level: 778
-    exp: 100
+    exp: 601
     unlock: 5
   - level: 779
-    exp: 100
+    exp: 603
     unlock: 5
   - level: 780
-    exp: 100
+    exp: 604
     unlock: 5
   - level: 781
-    exp: 100
+    exp: 606
     unlock: 5
   - level: 782
-    exp: 100
+    exp: 608
     unlock: 5
   - level: 783
-    exp: 100
+    exp: 610
     unlock: 5
   - level: 784
-    exp: 100
+    exp: 612
     unlock: 5
   - level: 785
-    exp: 100
+    exp: 613
     unlock: 5
   - level: 786
-    exp: 100
+    exp: 615
     unlock: 5
   - level: 787
-    exp: 100
+    exp: 617
     unlock: 5
   - level: 788
-    exp: 100
+    exp: 619
     unlock: 5
   - level: 789
-    exp: 100
+    exp: 621
     unlock: 5
   - level: 790
-    exp: 100
+    exp: 622
     unlock: 5
   - level: 791
-    exp: 100
+    exp: 624
     unlock: 5
   - level: 792
-    exp: 100
+    exp: 626
     unlock: 5
   - level: 793
-    exp: 100
+    exp: 628
     unlock: 5
   - level: 794
-    exp: 100
+    exp: 630
     unlock: 5
   - level: 795
-    exp: 100
+    exp: 631
     unlock: 5
   - level: 796
-    exp: 100
+    exp: 633
     unlock: 5
   - level: 797
-    exp: 100
+    exp: 635
     unlock: 5
   - level: 798
-    exp: 100
+    exp: 637
     unlock: 5
   - level: 799
-    exp: 100
+    exp: 639
     unlock: 5
   - level: 800
-    exp: 100
+    exp: 640
     unlock: 5
   - level: 801
-    exp: 100
+    exp: 642
     unlock: 5
   - level: 802
-    exp: 100
+    exp: 644
     unlock: 5
   - level: 803
-    exp: 100
+    exp: 646
     unlock: 5
   - level: 804
-    exp: 100
+    exp: 648
     unlock: 5
   - level: 805
-    exp: 100
+    exp: 649
     unlock: 5
   - level: 806
-    exp: 100
+    exp: 651
     unlock: 5
   - level: 807
-    exp: 100
+    exp: 653
     unlock: 5
   - level: 808
-    exp: 100
+    exp: 655
     unlock: 5
   - level: 809
-    exp: 100
+    exp: 657
     unlock: 5
   - level: 810
-    exp: 100
+    exp: 658
     unlock: 5
   - level: 811
-    exp: 100
+    exp: 660
     unlock: 5
   - level: 812
-    exp: 100
+    exp: 662
     unlock: 5
   - level: 813
-    exp: 100
+    exp: 664
     unlock: 5
   - level: 814
-    exp: 100
+    exp: 666
     unlock: 5
   - level: 815
-    exp: 100
+    exp: 668
     unlock: 5
   - level: 816
-    exp: 100
+    exp: 669
     unlock: 5
   - level: 817
-    exp: 100
+    exp: 671
     unlock: 5
   - level: 818
-    exp: 100
+    exp: 673
     unlock: 5
   - level: 819
-    exp: 100
+    exp: 675
     unlock: 5
   - level: 820
-    exp: 100
+    exp: 677
     unlock: 5
   - level: 821
-    exp: 100
+    exp: 678
     unlock: 5
   - level: 822
-    exp: 100
+    exp: 680
     unlock: 5
   - level: 823
-    exp: 100
+    exp: 682
     unlock: 5
   - level: 824
-    exp: 100
+    exp: 684
     unlock: 5
   - level: 825
-    exp: 100
+    exp: 686
     unlock: 5
   - level: 826
-    exp: 100
+    exp: 687
     unlock: 5
   - level: 827
-    exp: 100
+    exp: 689
     unlock: 5
   - level: 828
-    exp: 100
+    exp: 691
     unlock: 5
   - level: 829
-    exp: 100
+    exp: 693
     unlock: 5
   - level: 830
-    exp: 100
+    exp: 695
     unlock: 5
   - level: 831
-    exp: 100
+    exp: 696
     unlock: 5
   - level: 832
-    exp: 100
+    exp: 698
     unlock: 5
   - level: 833
-    exp: 100
+    exp: 700
     unlock: 5
   - level: 834
-    exp: 100
+    exp: 702
     unlock: 5
   - level: 835
-    exp: 100
+    exp: 704
     unlock: 5
   - level: 836
-    exp: 100
+    exp: 705
     unlock: 5
   - level: 837
-    exp: 100
+    exp: 707
     unlock: 5
   - level: 838
-    exp: 100
+    exp: 709
     unlock: 5
   - level: 839
-    exp: 100
+    exp: 711
     unlock: 5
   - level: 840
-    exp: 100
+    exp: 713
     unlock: 5
   - level: 841
-    exp: 100
+    exp: 714
     unlock: 5
   - level: 842
-    exp: 100
+    exp: 716
     unlock: 5
   - level: 843
-    exp: 100
+    exp: 718
     unlock: 5
   - level: 844
-    exp: 100
+    exp: 720
     unlock: 5
   - level: 845
-    exp: 100
+    exp: 722
     unlock: 5
   - level: 846
-    exp: 100
+    exp: 723
     unlock: 5
   - level: 847
-    exp: 100
+    exp: 725
     unlock: 5
   - level: 848
-    exp: 100
+    exp: 727
     unlock: 5
   - level: 849
-    exp: 100
+    exp: 729
     unlock: 5
   - level: 850
-    exp: 100
+    exp: 731
     unlock: 5
   - level: 851
-    exp: 100
+    exp: 732
     unlock: 5
   - level: 852
-    exp: 100
+    exp: 734
     unlock: 5
   - level: 853
-    exp: 100
+    exp: 736
     unlock: 5
   - level: 854
-    exp: 100
+    exp: 738
     unlock: 5
   - level: 855
-    exp: 100
+    exp: 740
     unlock: 5
   - level: 856
-    exp: 100
+    exp: 741
     unlock: 5
   - level: 857
-    exp: 100
+    exp: 743
     unlock: 5
   - level: 858
-    exp: 100
+    exp: 745
     unlock: 5
   - level: 859
-    exp: 100
+    exp: 747
     unlock: 5
   - level: 860
-    exp: 100
+    exp: 749
     unlock: 5
   - level: 861
-    exp: 100
+    exp: 750
     unlock: 5
   - level: 862
-    exp: 100
+    exp: 752
     unlock: 5
   - level: 863
-    exp: 100
+    exp: 754
     unlock: 5
   - level: 864
-    exp: 100
+    exp: 756
     unlock: 5
   - level: 865
-    exp: 100
+    exp: 758
     unlock: 5
   - level: 866
-    exp: 100
+    exp: 759
     unlock: 5
   - level: 867
-    exp: 100
+    exp: 761
     unlock: 5
   - level: 868
-    exp: 100
+    exp: 763
     unlock: 5
   - level: 869
-    exp: 100
+    exp: 765
     unlock: 5
   - level: 870
-    exp: 100
+    exp: 767
     unlock: 5
   - level: 871
-    exp: 100
+    exp: 768
     unlock: 5
   - level: 872
-    exp: 100
+    exp: 770
     unlock: 5
   - level: 873
-    exp: 100
+    exp: 772
     unlock: 5
   - level: 874
-    exp: 100
+    exp: 774
     unlock: 5
   - level: 875
-    exp: 100
+    exp: 776
     unlock: 5
   - level: 876
-    exp: 100
+    exp: 777
     unlock: 5
   - level: 877
-    exp: 100
+    exp: 779
     unlock: 5
   - level: 878
-    exp: 100
+    exp: 781
     unlock: 5
   - level: 879
-    exp: 100
+    exp: 783
     unlock: 5
   - level: 880
-    exp: 100
+    exp: 785
     unlock: 5
   - level: 881
-    exp: 100
+    exp: 786
     unlock: 5
   - level: 882
-    exp: 100
+    exp: 788
     unlock: 5
   - level: 883
-    exp: 100
+    exp: 790
     unlock: 5
   - level: 884
-    exp: 100
+    exp: 792
     unlock: 5
   - level: 885
-    exp: 100
+    exp: 794
     unlock: 5
   - level: 886
-    exp: 100
+    exp: 795
     unlock: 5
   - level: 887
-    exp: 100
+    exp: 797
     unlock: 5
   - level: 888
-    exp: 100
+    exp: 799
     unlock: 5
   - level: 889
-    exp: 100
+    exp: 801
     unlock: 5
   - level: 890
-    exp: 100
+    exp: 803
     unlock: 5
   - level: 891
-    exp: 100
+    exp: 804
     unlock: 5
   - level: 892
-    exp: 100
+    exp: 806
     unlock: 5
   - level: 893
-    exp: 100
+    exp: 808
     unlock: 5
   - level: 894
-    exp: 100
+    exp: 810
     unlock: 5
   - level: 895
-    exp: 100
+    exp: 812
     unlock: 5
   - level: 896
-    exp: 100
+    exp: 813
     unlock: 5
   - level: 897
-    exp: 100
+    exp: 815
     unlock: 5
   - level: 898
-    exp: 100
+    exp: 817
     unlock: 5
   - level: 899
-    exp: 100
+    exp: 819
     unlock: 5
   - level: 900
-    exp: 100
+    exp: 821
     unlock: 5
   - level: 901
-    exp: 100
+    exp: 822
     unlock: 5
   - level: 902
-    exp: 100
+    exp: 824
     unlock: 5
   - level: 903
-    exp: 100
+    exp: 826
     unlock: 5
   - level: 904
-    exp: 100
+    exp: 828
     unlock: 5
   - level: 905
-    exp: 100
+    exp: 830
     unlock: 5
   - level: 906
-    exp: 100
+    exp: 831
     unlock: 5
   - level: 907
-    exp: 100
+    exp: 833
     unlock: 5
   - level: 908
-    exp: 100
+    exp: 835
     unlock: 5
   - level: 909
-    exp: 100
+    exp: 837
     unlock: 5
   - level: 910
-    exp: 100
+    exp: 839
     unlock: 5
   - level: 911
-    exp: 100
+    exp: 840
     unlock: 5
   - level: 912
-    exp: 100
+    exp: 842
     unlock: 5
   - level: 913
-    exp: 100
+    exp: 844
     unlock: 5
   - level: 914
-    exp: 100
+    exp: 846
     unlock: 5
   - level: 915
-    exp: 100
+    exp: 848
     unlock: 5
   - level: 916
-    exp: 100
+    exp: 849
     unlock: 5
   - level: 917
-    exp: 100
+    exp: 851
     unlock: 5
   - level: 918
-    exp: 100
+    exp: 853
     unlock: 5
   - level: 919
-    exp: 100
+    exp: 855
     unlock: 5
   - level: 920
-    exp: 100
+    exp: 857
     unlock: 5
   - level: 921
-    exp: 100
+    exp: 858
     unlock: 5
   - level: 922
-    exp: 100
+    exp: 860
     unlock: 5
   - level: 923
-    exp: 100
+    exp: 862
     unlock: 5
   - level: 924
-    exp: 100
+    exp: 864
     unlock: 5
   - level: 925
-    exp: 100
+    exp: 866
     unlock: 5
   - level: 926
-    exp: 100
+    exp: 867
     unlock: 5
   - level: 927
-    exp: 100
+    exp: 869
     unlock: 5
   - level: 928
-    exp: 100
+    exp: 871
     unlock: 5
   - level: 929
-    exp: 100
+    exp: 873
     unlock: 5
   - level: 930
-    exp: 100
+    exp: 875
     unlock: 5
   - level: 931
-    exp: 100
+    exp: 876
     unlock: 5
   - level: 932
-    exp: 100
+    exp: 878
     unlock: 5
   - level: 933
-    exp: 100
+    exp: 880
     unlock: 5
   - level: 934
-    exp: 100
+    exp: 882
     unlock: 5
   - level: 935
-    exp: 100
+    exp: 884
     unlock: 5
   - level: 936
-    exp: 100
+    exp: 885
     unlock: 5
   - level: 937
-    exp: 100
+    exp: 887
     unlock: 5
   - level: 938
-    exp: 100
+    exp: 889
     unlock: 5
   - level: 939
-    exp: 100
+    exp: 891
     unlock: 5
   - level: 940
-    exp: 100
+    exp: 893
     unlock: 5
   - level: 941
-    exp: 100
+    exp: 895
     unlock: 5
   - level: 942
-    exp: 100
+    exp: 896
     unlock: 5
   - level: 943
-    exp: 100
+    exp: 898
     unlock: 5
   - level: 944
-    exp: 100
+    exp: 900
     unlock: 5
   - level: 945
-    exp: 100
+    exp: 902
     unlock: 5
   - level: 946
-    exp: 100
+    exp: 904
     unlock: 5
   - level: 947
-    exp: 100
+    exp: 905
     unlock: 5
   - level: 948
-    exp: 100
+    exp: 907
     unlock: 5
   - level: 949
-    exp: 100
+    exp: 909
     unlock: 5
   - level: 950
-    exp: 100
+    exp: 911
     unlock: 5
   - level: 951
-    exp: 100
+    exp: 913
     unlock: 5
   - level: 952
-    exp: 100
+    exp: 914
     unlock: 5
   - level: 953
-    exp: 100
+    exp: 916
     unlock: 5
   - level: 954
-    exp: 100
+    exp: 918
     unlock: 5
   - level: 955
-    exp: 100
+    exp: 920
     unlock: 5
   - level: 956
-    exp: 100
+    exp: 922
     unlock: 5
   - level: 957
-    exp: 100
+    exp: 923
     unlock: 5
   - level: 958
-    exp: 100
+    exp: 925
     unlock: 5
   - level: 959
-    exp: 100
+    exp: 927
     unlock: 5
   - level: 960
-    exp: 100
+    exp: 929
     unlock: 5
   - level: 961
-    exp: 100
+    exp: 931
     unlock: 5
   - level: 962
-    exp: 100
+    exp: 932
     unlock: 5
   - level: 963
-    exp: 100
+    exp: 934
     unlock: 5
   - level: 964
-    exp: 100
+    exp: 936
     unlock: 5
   - level: 965
-    exp: 100
+    exp: 938
     unlock: 5
   - level: 966
-    exp: 100
+    exp: 940
     unlock: 5
   - level: 967
-    exp: 100
+    exp: 941
     unlock: 5
   - level: 968
-    exp: 100
+    exp: 943
     unlock: 5
   - level: 969
-    exp: 100
+    exp: 945
     unlock: 5
   - level: 970
-    exp: 100
+    exp: 947
     unlock: 5
   - level: 971
-    exp: 100
+    exp: 949
     unlock: 5
   - level: 972
-    exp: 100
+    exp: 950
     unlock: 5
   - level: 973
-    exp: 100
+    exp: 952
     unlock: 5
   - level: 974
-    exp: 100
+    exp: 954
     unlock: 5
   - level: 975
-    exp: 100
+    exp: 956
     unlock: 5
   - level: 976
-    exp: 100
+    exp: 958
     unlock: 5
   - level: 977
-    exp: 100
+    exp: 959
     unlock: 5
   - level: 978
-    exp: 100
+    exp: 961
     unlock: 5
   - level: 979
-    exp: 100
+    exp: 963
     unlock: 5
   - level: 980
-    exp: 100
+    exp: 965
     unlock: 5
   - level: 981
-    exp: 100
+    exp: 967
     unlock: 5
   - level: 982
-    exp: 100
+    exp: 968
     unlock: 5
   - level: 983
-    exp: 100
+    exp: 970
     unlock: 5
   - level: 984
-    exp: 100
+    exp: 972
     unlock: 5
   - level: 985
-    exp: 100
+    exp: 974
     unlock: 5
   - level: 986
-    exp: 100
+    exp: 976
     unlock: 5
   - level: 987
-    exp: 100
+    exp: 977
     unlock: 5
   - level: 988
-    exp: 100
+    exp: 979
     unlock: 5
   - level: 989
-    exp: 100
+    exp: 981
     unlock: 5
   - level: 990
-    exp: 100
+    exp: 983
     unlock: 5
   - level: 991
-    exp: 100
+    exp: 985
     unlock: 5
   - level: 992
-    exp: 100
+    exp: 986
     unlock: 5
   - level: 993
-    exp: 100
+    exp: 988
     unlock: 5
   - level: 994
-    exp: 100
+    exp: 990
     unlock: 5
   - level: 995
-    exp: 100
+    exp: 992
     unlock: 5
   - level: 996
-    exp: 100
+    exp: 994
     unlock: 5
   - level: 997
-    exp: 100
+    exp: 995
     unlock: 5
   - level: 998
-    exp: 100
+    exp: 997
     unlock: 5
   - level: 999
-    exp: 100
+    exp: 999
     unlock: 5
   - level: 1000
     exp: -1

@@ -162,7 +162,7 @@ public class GameListView : MonoBehaviour
         userLevel.text = playerData.level.ToString();
         if (playerData.maxExp < 0)
         {
-            userExp.text = $"MAX";
+            userExp.text = $"MAX +{playerData.exp}";
             expSlider.value = 1;
         }
         else

@@ -95,10 +95,11 @@ public class FinalQuizEndingPanel : MonoBehaviour
         // 타워 게임 정보
         sb.Clear();
         sb.Append("<size=60>[ 천하제일 꿀밤대회 ]</size>\n\n");
-        sb.Append($"최고 도달 층수 : {playerData.towerFloor:N0} 층\n");
+        sb.Append($"무찌른 하넬 수 : {playerData.towerFloor:N0} 명\n");
         sb.Append($"무기 강화 레벨 : {playerData.towerGameUserWeaponData.weaponLevel:N0} 강\n");
         sb.Append($"무기 강화 시도 횟수 : {questData.towerGame.playCount:N0} 회\n");
-        sb.Append($"무기가 터진 횟수 : {questData.towerGame.weaponEnchantCount_Down:N0} 회");
+        sb.Append($"무기가 터진 횟수 : {questData.towerGame.weaponEnchantCount_Down:N0} 회\n");
+        sb.Append($"쥬얼 리롤 횟수 : {playerData.towerJewelRollCount:N0} 회");
         await ShowCreditSection(sb.ToString(), 5f);
 
 

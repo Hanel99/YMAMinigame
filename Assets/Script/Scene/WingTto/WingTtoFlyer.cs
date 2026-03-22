@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class WingTtoFlyer : MonoBehaviour
 {
-    private float speedRatio = 0.2f;
+    private float speedRatio; // Activate 시 0.15~0.25 사이 랜덤 할당
     private float speedUpMultiplier = 1.5f;
     private float despawnLeftX = -15f;
     private float despawnRightX = 15f;
     private float smoothFactor = 6f;
 
-    private float verticalSpeed = 1.2f;
-    private float verticalCheckInterval = 3f;
-    private int verticalChance = 60;
-    private float verticalDurationMin = 0.8f;
-    private float verticalDurationMax = 2f;
-    private float yMin = -2f;
-    private float yMax = 3f;
+    private float verticalSpeed = 1.3f;
+    private float verticalCheckInterval = 2.5f;
+    private int verticalChance = 70;
+    private float verticalDurationMin = 1f;
+    private float verticalDurationMax = 2.5f;
+    private float yMin = -2.5f;
+    private float yMax = 5f;
 
     public SpriteRenderer iconRenderer;
 
@@ -31,7 +31,12 @@ public class WingTtoFlyer : MonoBehaviour
     private bool _isCrashMode = false;
 
     private CancellationTokenSource _cts;
-    private WingTtoGameManager GameMgr => WingTtoGameManager.instance;
+    private WingTtoGameManager GameMgr;
+
+    private void Awake()
+    {
+        GameMgr = WingTtoGameManager.instance;
+    }
 
 
     public void Activate(Vector3 spawnPosition)
@@ -42,6 +47,7 @@ public class WingTtoFlyer : MonoBehaviour
         verticalDir = 0f;
         verticalTimer = 0f;
         _isCrashMode = false;
+        speedRatio = Random.Range(0.15f, 0.25f); // 플라이어마다 속도 미세 차이
         gameObject.SetActive(true);
 
         _cts = new CancellationTokenSource();

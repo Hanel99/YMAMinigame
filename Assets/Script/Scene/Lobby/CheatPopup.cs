@@ -180,7 +180,7 @@ public class CheatPopup : PopupBase
 
         cheatList.Add(new CheatData()
         {
-            desc = "꿀밤대회 층 지정",
+            desc = "꿀밤대회 상대 지정",
             useInputfield = true,
             buttonAction = (value) =>
             {

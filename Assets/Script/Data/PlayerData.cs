@@ -41,6 +41,7 @@ public class PlayerData
     public TowerGameUserStatLevelData towerGameUserStatLevelData;
     public TowerGameUserWeaponData towerGameUserWeaponData;
     public List<TowerJewelUserData> towerJewelUserDataList;
+    public int towerJewelRollCount = 0;
 
     //GameHighScore
     public int cubeGameHighScore;

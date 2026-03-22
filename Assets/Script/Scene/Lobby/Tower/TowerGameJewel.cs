@@ -177,6 +177,7 @@ public class TowerGameWeaponJewel : MonoBehaviour
 
         SaveDataManager.instance.AddCoin(-rollCoinCost, false);
         SaveDataManager.instance.SetTowerUserJewelData(currentJewelIndex, targetGrade, selectedMeta.type, finalValue);
+        SaveDataManager.instance.AddTowerJewelRollCount();
         UpdateStatUI();
     }
 

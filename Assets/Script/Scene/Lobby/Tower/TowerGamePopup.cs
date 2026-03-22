@@ -59,7 +59,7 @@ public class TowerGamePopup : PopupBase
 
         if (bossMetaData == null || bossMetaData.atk < 0)
         {
-            bossTitle.text = $"{floor} 층";
+            bossTitle.text = $"빈 경기장";
             bossImage.sprite = null;
             bossImage.gameObject.SetActive(false);
             bossImage.transform.DOKill();
@@ -69,7 +69,7 @@ public class TowerGamePopup : PopupBase
         }
 
         int bossNumber = GetBossNumber(floor);
-        bossTitle.text = $"{floor} 층\n{LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}")}";
+        bossTitle.text = $"{floor} 번째 상대\n{LocalizeManager.instance.GetString($"Tower.Boss.Name.{bossNumber.ToString("D2")}")}";
         bossImage.gameObject.SetActive(true);
         bossImage.sprite = GameResourceManager.instance.GetTowerBossImage(bossNumber, false, false);
         bossImage.SetNativeSize();

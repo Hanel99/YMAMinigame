@@ -36,20 +36,15 @@ public class WingTtoGameBGMove : MonoBehaviour
     {
         if (!isMoving) return;
 
-        // 왼쪽으로 이동
-        transform.position += Vector3.left * calcSpeed * Time.deltaTime;
-        clone.transform.position += Vector3.left * calcSpeed * Time.deltaTime;
+        Vector3 move = Vector3.left * calcSpeed * Time.deltaTime;
+        transform.position += move;
+        clone.transform.position += move;
 
-        // 화면 밖으로 나가면 재배치
         if (transform.position.x <= -spriteWidth)
-        {
             transform.position += Vector3.right * (spriteWidth * 2);
-        }
 
         if (clone.transform.position.x <= -spriteWidth)
-        {
             clone.transform.position += Vector3.right * (spriteWidth * 2);
-        }
     }
 
     public void UpdateSpeed(float value)

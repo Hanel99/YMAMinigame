@@ -47,14 +47,13 @@ public class WingTtoGameManager : MonoBehaviour
     public Transform flyerParent;
 
     private const int MAX_FLYER_COUNT = 5;
-    private const float FLYER_SPAWN_INTERVAL = 8f;
     private const float FLYER_SPAWN_X = 14f;
     private const float FLYER_SPAWN_Y_MIN = -2f;
     private const float FLYER_SPAWN_Y_MAX = 3f;
 
     private readonly List<WingTtoFlyer> activeFlyerList = new();
     private readonly Queue<WingTtoFlyer> flyerPool = new();
-    private float calcFlyerTime = FLYER_SPAWN_INTERVAL;
+    private float calcFlyerTime = 1f; // 게임 시작 직후 1초 뒤 첫 스폰 시도
 
 
 
@@ -573,7 +572,8 @@ public class WingTtoGameManager : MonoBehaviour
     }
 
 
-    // 스폰 확률: 0~2000m=100%, 2000~4000m=선형 감소, 4000m 이상=0%
+    // 스폰 확률: 0~2000m=높음, 2000~4000m=선형 감소, 4000m 이상=0%
+    // 스폰 간격: 1~6초 랜덤 (연속 스폰 느낌을 위해 단축 간격 배율 적용)
     private void UpdateFlyerSpawn(float deltaTime)
     {
         if (flyerPrefab == null) return;
@@ -581,20 +581,34 @@ public class WingTtoGameManager : MonoBehaviour
         calcFlyerTime -= deltaTime;
         if (calcFlyerTime > 0f) return;
 
-        calcFlyerTime = FLYER_SPAWN_INTERVAL;
+        // 다음 스폰 간격 랜덤 결정
+        // 가동성하게 ub290길 수 있도록 1초 단축 / 3~5초 진형 / 6초 지연 세 구간 가중치
+        float roll = (float)randomGenerator.NextDouble();
+        float nextInterval;
+        if (roll < 0.15f)
+            nextInterval = GetRandomFloat(1f, 2f);   // 15% 확률: 단축 연속
+        else if (roll < 0.75f)
+            nextInterval = GetRandomFloat(3f, 5f);   // 60% 확률: 일반
+        else
+            nextInterval = GetRandomFloat(5f, 6.5f); // 25% 확률: 느림
+
+        calcFlyerTime = nextInterval;
 
         if (activeFlyerList.Count >= MAX_FLYER_COUNT) return;
 
+        // 거리 기반 스폰 확률
         int spawnChance;
         if (currentDistance < 2000f)
         {
-            spawnChance = 100;
+            // 초반에는 확률도 맨 앞에선 높게 시작해 점점 낮춰줌
+            // 0m=100%, 2000m=70% 정도로 부드랽게
+            spawnChance = Mathf.RoundToInt(Mathf.Lerp(100, 70, currentDistance / 2000f));
         }
         else
         {
             int distanceStep = Mathf.FloorToInt(currentDistance / 100f);
             float distanceClamped = Mathf.Clamp(distanceStep * 100f, 2000f, 4000f);
-            spawnChance = Mathf.RoundToInt(Mathf.Lerp(100, 0, (distanceClamped - 2000f) / 2000f));
+            spawnChance = Mathf.RoundToInt(Mathf.Lerp(70, 0, (distanceClamped - 2000f) / 2000f));
         }
 
         if (!GetRandomBool(spawnChance, 100 - spawnChance)) return;

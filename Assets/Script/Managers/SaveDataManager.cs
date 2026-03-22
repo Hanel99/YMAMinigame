@@ -264,10 +264,11 @@ public class SaveDataManager : MonoBehaviour
         bool needLevelUp = false;
         _playerData.exp += amount;
 
+        // 만렙 상태: exp를 리셋하지 않고 최대 MAX_OVERFLOW_EXP까지 누적
         if (_playerData.maxExp < 0)
         {
-            //max level
-            _playerData.exp = 0;
+            _playerData.exp = Mathf.Min(_playerData.exp, StaticGameData.MAX_OVERFLOW_EXP);
+            HLLogger.Log($"Max Level. Accumulate Exp -> {_playerData.exp}/{StaticGameData.MAX_OVERFLOW_EXP}");
             if (isSave)
                 SavePlayerData();
             return false;
@@ -285,8 +286,8 @@ public class SaveDataManager : MonoBehaviour
 
             if (_playerData.maxExp < 0)
             {
-                //max level
-                _playerData.exp = 0;
+                // 만렙 도달 — 초과분을 MAX_OVERFLOW_EXP까지만 누적
+                _playerData.exp = Mathf.Min(_playerData.exp, StaticGameData.MAX_OVERFLOW_EXP);
                 needLevelUp = false;
             }
             else
@@ -295,9 +296,6 @@ public class SaveDataManager : MonoBehaviour
                 needLevelUp = _playerData.exp >= _playerData.maxExp;
             }
         }
-
-        if (_playerData.maxExp < 0)
-            _playerData.exp = 0;
 
         if (isSave)
             SavePlayerData();
@@ -481,6 +479,12 @@ public class SaveDataManager : MonoBehaviour
     {
         _playerData.towerGameUserWeaponData.isDown = value;
 
+        ScheduleSavePlayerData();
+    }
+
+    public void AddTowerJewelRollCount()
+    {
+        _playerData.towerJewelRollCount++;
         ScheduleSavePlayerData();
     }
 

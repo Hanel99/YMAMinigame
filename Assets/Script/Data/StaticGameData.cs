@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,6 +77,7 @@ public static class StaticGameData
 
     public static readonly int MAX_COIN_VALUE = 999999999; //9억 9천만
     public static readonly int MAX_MILEAGE_VALUE = 999999;
+    public static readonly int MAX_OVERFLOW_EXP = 9999; // 만렙 이후 누적 가능한 최대 EXP
     public static readonly string SAVE_PLAYER_DATA_KEY = "YMASaveDataAlpha1";
     public static readonly string SAVE_PLAYER_OTHER_DATA_KEY = "YMALocalSaveData";
     public static readonly string SAVE_VERSION_DATA_KEY = "YMAGameVersion";

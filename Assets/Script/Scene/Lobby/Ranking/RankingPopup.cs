@@ -86,7 +86,7 @@ public class RankingPopup : PopupBase
         string statisticName = string.Empty;
         levelText.text = "";
         expText.text = "";
-        singleText.text = "층";
+        singleText.text = "명";
 
 #if DEV
         statisticName = "TowerDev";
