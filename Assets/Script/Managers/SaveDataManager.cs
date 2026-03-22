@@ -62,56 +62,57 @@ public class SaveDataManager : MonoBehaviour
 
 
 
-    #region CollectionWordDataLogic
-
-
+    #region CollectionCardDataLogic
 
     public void AddOwnCardList(int card)
     {
-        List<int> cardList = new List<int>() { card };
-        AddOwnCardList(cardList);
+        AddOwnCardList(new List<int> { card });
     }
 
     public void AddOwnCardList(List<int> cardList)
     {
+        bool isChanged = false;
         foreach (var id in cardList)
         {
-            if (_playerData.ownCardList.Contains(id) == false)
+            // 정렬 상태이므로 BinarySearch가 Contains보다 빠름 (O(log N))
+            if (_playerData.ownCardList.BinarySearch(id) < 0)
+            {
                 _playerData.ownCardList.Add(id);
+                isChanged = true;
+            }
         }
-        _playerData.ownCardList.Sort();
-        SavePlayerData();
+
+        if (isChanged)
+        {
+            _playerData.ownCardList.Sort();
+            ScheduleSavePlayerData();
+        }
     }
-
-
 
     public void RemoveOwnCardList()
     {
 #if DEV
         _playerData.ownCardList.Clear();
-        SavePlayerData();
+        ScheduleSavePlayerData();
 #endif
     }
 
     public void RemoveNotUseCardList()
     {
         var allCardList = GameResourceManager.instance.GetAllCardIds();
-        _playerData.ownCardList.Intersect(allCardList);
-        SavePlayerData();
+        // BUG FIX: Intersect 결과를 할당하여 필터링 적용
+        _playerData.ownCardList = _playerData.ownCardList.Intersect(allCardList).ToList();
+        ScheduleSavePlayerData();
     }
-
-
 
     public bool IsOwnCard(int cardID)
     {
-        return _playerData.ownCardList.Contains(cardID);
+        return _playerData.ownCardList.BinarySearch(cardID) >= 0;
     }
 
     /// <summary>
     /// 해당 등급의 카드 중 획득한 카드 id만 반환
     /// </summary>
-    /// <param name="grade"></param>
-    /// <returns></returns>
     public List<int> GetOwnCardList(CardGrade grade)
     {
         var list = GameResourceManager.instance.GetCardIds(grade);
@@ -121,23 +122,22 @@ public class SaveDataManager : MonoBehaviour
     /// <summary>
     /// 해당 등급의 카드 중 미획득인 카드 id만 반환
     /// </summary>
-    /// <param name="grade"></param>
-    /// <returns></returns>
     public List<int> GetNotOwnCardList(CardGrade grade)
     {
         var list = GameResourceManager.instance.GetCardIds(grade);
         return list.Except(_playerData.ownCardList).ToList();
     }
+
     public List<int> GetNotOwnCardList()
     {
         var list = GameResourceManager.instance.GetAllCardIds();
         return list.Except(_playerData.ownCardList).ToList();
     }
+
     public List<int> GetNotOwnCardList(List<int> list)
     {
         return list.Except(_playerData.ownCardList).ToList();
     }
-
 
     #endregion
 
@@ -146,34 +146,41 @@ public class SaveDataManager : MonoBehaviour
 
     #region CollectionWordDataLogic
 
-    // public void AddOwnWordList(int index)
-    // {
-    //     List<int> wordList = new List<int>() { index };
-    //     AddOwnWordList(wordList);
-    // }
-
-    // public void AddOwnWordList(List<int> wordList)
-    // {
-    //     foreach (var id in wordList)
-    //     {
-    //         if (_playerData.ownWordList.Contains(id) == false)
-    //             _playerData.ownWordList.Add(id);
-    //     }
-    //     _playerData.ownWordList.Sort();
-    //     SavePlayerData();
-    // }
-
     public void AddOwnWord(int index)
     {
-        if (_playerData.ownWordList.Contains(index) == false)
+        if (_playerData.ownWordList.BinarySearch(index) < 0)
+        {
             _playerData.ownWordList.Add(index);
-
-        _playerData.ownWordList.Sort();
-        SavePlayerData();
+            _playerData.ownWordList.Sort();
+            ScheduleSavePlayerData();
+        }
     }
+
+    /// <summary>
+    /// 벌크 추가를 지원하여 루프 내에서 정렬과 저장을 반복하지 않도록 최적화
+    /// </summary>
+    public void AddOwnWordList(List<int> wordList)
+    {
+        bool isChanged = false;
+        foreach (var index in wordList)
+        {
+            if (_playerData.ownWordList.BinarySearch(index) < 0)
+            {
+                _playerData.ownWordList.Add(index);
+                isChanged = true;
+            }
+        }
+
+        if (isChanged)
+        {
+            _playerData.ownWordList.Sort();
+            ScheduleSavePlayerData();
+        }
+    }
+
     public bool IsOwnWord(int index)
     {
-        return _playerData.ownWordList.Contains(index);
+        return _playerData.ownWordList.BinarySearch(index) >= 0;
     }
 
     #endregion

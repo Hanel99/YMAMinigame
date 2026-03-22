@@ -16,6 +16,7 @@ public class CollectionPopup : PopupBase
     [Header("UI Groups")]
     [SerializeField] private GameObject cardGroup;
     [SerializeField] private GameObject wordGroup;
+    [SerializeField] private Text countText;
 
     [Header("Card Collection")]
     [SerializeField] private Dropdown cardFilterDropdown;
@@ -61,7 +62,7 @@ public class CollectionPopup : PopupBase
     {
         cardGroup.SetActive(true);
         wordGroup.SetActive(false);
-        OnCardFilterChanged(); // 현재 필터에 맞춰 뷰를 업데이트합니다.
+        OnCardFilterChanged(); // 현재 필터에 맞춰 뷰를 업데이트하며 카운트도 갱신됩니다.
     }
 
     public void OnClickWordTab()
@@ -132,6 +133,17 @@ public class CollectionPopup : PopupBase
 
     private async UniTask UpdateCardView(List<int> cardIds, CancellationToken token)
     {
+        // 현재 필터링된 카드들 중에서 보유 중인 카드의 수를 계산합니다.
+        int total = cardIds.Count;
+        int owned = 0;
+        foreach (var id in cardIds)
+        {
+            if (SaveDataManager.instance.IsOwnCard(id))
+                owned++;
+        }
+
+        countText.text = $"{owned} / {total}";
+
         await UpdateCollectionViewAsync(
             dataList: cardIds,
             uiItemList: _cardUIItems,
@@ -150,12 +162,17 @@ public class CollectionPopup : PopupBase
     private async UniTask UpdateWordView(CancellationToken token)
     {
         // 단어 "ID"는 지역화된 리스트에서의 인덱스입니다.
-        int wordCount = LocalizeManager.instance.GetAllAIWordString().Count;
+        var words = LocalizeManager.instance.GetAllAIWordString();
+        int wordCount = words.Count;
         var wordIndices = new List<int>(wordCount);
         for (int i = 0; i < wordCount; i++)
         {
             wordIndices.Add(i);
         }
+
+        // 전체 단어 중 보유 중인 단어 수를 표시합니다.
+        int ownedCount = SaveDataManager.instance.playerData.ownWordList.Count;
+        countText.text = $"{ownedCount} / {wordCount}";
 
         await UpdateCollectionViewAsync(
             dataList: wordIndices,

@@ -141,10 +141,10 @@ MonoBehaviour:
     ko: "\uD5E4\uC694"
     jp: H
     en: H
-  - key: master.name.Hyunbin
-    ko: "\uD604\uBE48"
-    jp: Hyunbin
-    en: Hyunbin
+  - key: master.name.Nu
+    ko: "\uB204"
+    jp: Nu
+    en: Nu
   - key: master.name.Other
     ko: "\uAE30\uD0C0"
     jp: Other
@@ -277,10 +277,10 @@ MonoBehaviour:
     ko: "\uD5E4\uC694"
     jp: H
     en: H
-  - key: master.desc.Hyunbin
-    ko: "\uD604\uBE48"
-    jp: Hyunbin
-    en: Hyunbin
+  - key: master.desc.Nu
+    ko: "\uB204"
+    jp: Nu
+    en: Nu
   - key: master.desc.Other
     ko: "\uAE30\uD0C0"
     jp: Other
