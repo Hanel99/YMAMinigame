@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using ChocDino.UIFX;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +32,10 @@ public class IntroUIManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        // 초기 상태에서 비활성화
+        if (titleLogo != null) titleLogo.SetActive(false);
+        if (titleText != null) titleText.SetActive(false);
     }
 
 
@@ -48,6 +54,9 @@ public class IntroUIManager : MonoBehaviour
     {
         versionText.text = "";
         IDText.text = "";
+
+        if (titleLogo != null) titleLogo.SetActive(false);
+        if (titleText != null) titleText.SetActive(false);
     }
 
 
@@ -103,6 +112,70 @@ public class IntroUIManager : MonoBehaviour
     public void UpdateIDText(string id)
     {
         IDText.text = $"ID : {id}";
+    }
+
+    /// <summary>
+    /// 타이틀 로고와 텍스트 애니메이션 재생
+    /// </summary>
+    public void PlayTitleAnimation()
+    {
+        // 로고 연출
+        if (titleLogo != null)
+        {
+            var logoGlow = titleLogo.GetComponent<GlowFilter>();
+            var logoCG = titleLogo.GetComponent<CanvasGroup>();
+            if (logoCG == null) logoCG = titleLogo.AddComponent<CanvasGroup>();
+
+            if (logoGlow != null)
+            {
+                // 1초 뒤에 로고 연출 시작
+                DOVirtual.DelayedCall(1f, () =>
+                {
+                    titleLogo.SetActive(true);
+                    logoGlow.Strength = 0;
+                    logoCG.alpha = 0;
+
+                    Sequence logoSeq = DOTween.Sequence();
+                    // 1초간 페이드 인 추가
+                    logoSeq.Append(logoCG.DOFade(1f, 1f).From(0));
+                    // 0에서 1로 상승 (유저 수정값 2f 유지)
+                    logoSeq.Append(DOTween.To(() => logoGlow.Strength, x => logoGlow.Strength = x, 1f, 2f).SetEase(Ease.InQuad));
+                    // 1에서 0.15로 감소 (유저 수정값 1f 유지)
+                    logoSeq.Append(DOTween.To(() => logoGlow.Strength, x => logoGlow.Strength = x, 0.15f, 1f).SetEase(Ease.InOutSine));
+                });
+            }
+        }
+
+        // 텍스트 연출 (로고 연출 시작 후 2초 뒤, 즉 총 3초 뒤)
+        if (titleText != null)
+        {
+            var textGlow = titleText.GetComponent<GlowFilter>();
+            var textCG = titleText.GetComponent<CanvasGroup>();
+            if (textCG == null) textCG = titleText.AddComponent<CanvasGroup>();
+
+            if (textGlow != null)
+            {
+                // 3초 뒤에 텍스트 연출 시작
+                DOVirtual.DelayedCall(3f, () =>
+                {
+                    titleText.SetActive(true);
+                    textGlow.Strength = 0;
+                    textCG.alpha = 0;
+
+                    Sequence textSeq = DOTween.Sequence();
+                    // 1초간 페이드 인 추가
+                    textSeq.Append(textCG.DOFade(1f, 1f).From(0));
+                    // 0에서 1로 상승 (유저 수정값 1f 유지)
+                    textSeq.Append(DOTween.To(() => textGlow.Strength, x => textGlow.Strength = x, 1f, 1f).SetEase(Ease.InQuad));
+                    // 0.3까지 감소 (유저 수정값 2f 유지)
+                    textSeq.Append(DOTween.To(() => textGlow.Strength, x => textGlow.Strength = x, 0.3f, 2f).SetEase(Ease.OutQuad));
+                    // 0.3 ~ 0.45 반복 이동 (유저 수정값 2f 유지)
+                    textSeq.Append(DOTween.To(() => textGlow.Strength, x => textGlow.Strength = x, 0.45f, 2f)
+                        .SetEase(Ease.InOutSine)
+                        .SetLoops(-1, LoopType.Yoyo));
+                });
+            }
+        }
     }
 
 

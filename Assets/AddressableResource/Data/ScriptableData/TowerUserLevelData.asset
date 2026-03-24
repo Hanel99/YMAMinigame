@@ -251,8 +251,8 @@ MonoBehaviour:
     defRequireCoin: 1854
     hp: 74
     hpRequireCoin: 1854
-    criRate: 0.525
-    criRateRequireCoin: 170000
+    criRate: 0.51
+    criRateRequireCoin: 160000
     criDmg: 0.525
     criDmgRequireCoin: 2228
   - level: 22
@@ -262,8 +262,8 @@ MonoBehaviour:
     defRequireCoin: 1933
     hp: 78
     hpRequireCoin: 1933
-    criRate: 0.55
-    criRateRequireCoin: 190000
+    criRate: 0.52
+    criRateRequireCoin: 173870
     criDmg: 0.55
     criDmgRequireCoin: 2324
   - level: 23
@@ -273,8 +273,8 @@ MonoBehaviour:
     defRequireCoin: 2013
     hp: 82
     hpRequireCoin: 2013
-    criRate: 0.575
-    criRateRequireCoin: 210000
+    criRate: 0.53
+    criRateRequireCoin: 187740
     criDmg: 0.575
     criDmgRequireCoin: 2419
   - level: 24
@@ -284,8 +284,8 @@ MonoBehaviour:
     defRequireCoin: 2091
     hp: 86
     hpRequireCoin: 2091
-    criRate: 0.6
-    criRateRequireCoin: 230000
+    criRate: 0.54
+    criRateRequireCoin: 201610
     criDmg: 0.6
     criDmgRequireCoin: 2513
   - level: 25
@@ -295,8 +295,8 @@ MonoBehaviour:
     defRequireCoin: 2170
     hp: 90
     hpRequireCoin: 2170
-    criRate: 0.625
-    criRateRequireCoin: 250000
+    criRate: 0.55
+    criRateRequireCoin: 215480
     criDmg: 0.625
     criDmgRequireCoin: 2606
   - level: 26
@@ -306,8 +306,8 @@ MonoBehaviour:
     defRequireCoin: 2248
     hp: 94
     hpRequireCoin: 2248
-    criRate: 0.65
-    criRateRequireCoin: 270000
+    criRate: 0.56
+    criRateRequireCoin: 229350
     criDmg: 0.65
     criDmgRequireCoin: 2698
   - level: 27
@@ -317,8 +317,8 @@ MonoBehaviour:
     defRequireCoin: 2325
     hp: 98
     hpRequireCoin: 2325
-    criRate: 0.675
-    criRateRequireCoin: 290000
+    criRate: 0.57
+    criRateRequireCoin: 243220
     criDmg: 0.675
     criDmgRequireCoin: 2790
   - level: 28
@@ -328,8 +328,8 @@ MonoBehaviour:
     defRequireCoin: 2402
     hp: 102
     hpRequireCoin: 2402
-    criRate: 0.7
-    criRateRequireCoin: 310000
+    criRate: 0.58
+    criRateRequireCoin: 257090
     criDmg: 0.7
     criDmgRequireCoin: 2880
   - level: 29
@@ -339,8 +339,8 @@ MonoBehaviour:
     defRequireCoin: 2478
     hp: 106
     hpRequireCoin: 2478
-    criRate: 0.725
-    criRateRequireCoin: 330000
+    criRate: 0.59
+    criRateRequireCoin: 270960
     criDmg: 0.725
     criDmgRequireCoin: 2969
   - level: 30
@@ -350,8 +350,8 @@ MonoBehaviour:
     defRequireCoin: 2554
     hp: 111
     hpRequireCoin: 2554
-    criRate: 0.75
-    criRateRequireCoin: 350000
+    criRate: 0.6
+    criRateRequireCoin: 284830
     criDmg: 0.75
     criDmgRequireCoin: 3057
   - level: 31
@@ -361,8 +361,8 @@ MonoBehaviour:
     defRequireCoin: 2629
     hp: 116
     hpRequireCoin: 2629
-    criRate: 0.775
-    criRateRequireCoin: 370000
+    criRate: 0.61
+    criRateRequireCoin: 298700
     criDmg: 0.775
     criDmgRequireCoin: 3145
   - level: 32
@@ -372,8 +372,8 @@ MonoBehaviour:
     defRequireCoin: 2703
     hp: 121
     hpRequireCoin: 2703
-    criRate: 0.8
-    criRateRequireCoin: 390000
+    criRate: 0.62
+    criRateRequireCoin: 312570
     criDmg: 0.8
     criDmgRequireCoin: 3230
   - level: 33
@@ -383,8 +383,8 @@ MonoBehaviour:
     defRequireCoin: 2777
     hp: 126
     hpRequireCoin: 2777
-    criRate: 0.825
-    criRateRequireCoin: 410000
+    criRate: 0.63
+    criRateRequireCoin: 326440
     criDmg: 0.825
     criDmgRequireCoin: 3315
   - level: 34
@@ -394,8 +394,8 @@ MonoBehaviour:
     defRequireCoin: 2850
     hp: 131
     hpRequireCoin: 2850
-    criRate: 0.85
-    criRateRequireCoin: 430000
+    criRate: 0.64
+    criRateRequireCoin: 340310
     criDmg: 0.85
     criDmgRequireCoin: 3399
   - level: 35
@@ -405,8 +405,8 @@ MonoBehaviour:
     defRequireCoin: 2922
     hp: 136
     hpRequireCoin: 2922
-    criRate: 0.875
-    criRateRequireCoin: 450000
+    criRate: 0.65
+    criRateRequireCoin: 354180
     criDmg: 0.875
     criDmgRequireCoin: 3481
   - level: 36
@@ -416,8 +416,8 @@ MonoBehaviour:
     defRequireCoin: 2994
     hp: 141
     hpRequireCoin: 2994
-    criRate: 0.9
-    criRateRequireCoin: 470000
+    criRate: 0.66
+    criRateRequireCoin: 368050
     criDmg: 0.9
     criDmgRequireCoin: 3562
   - level: 37
@@ -427,8 +427,8 @@ MonoBehaviour:
     defRequireCoin: 3065
     hp: 146
     hpRequireCoin: 3065
-    criRate: 0.925
-    criRateRequireCoin: 490000
+    criRate: 0.67
+    criRateRequireCoin: 381920
     criDmg: 0.925
     criDmgRequireCoin: 3642
   - level: 38
@@ -438,8 +438,8 @@ MonoBehaviour:
     defRequireCoin: 3136
     hp: 151
     hpRequireCoin: 3136
-    criRate: 0.95
-    criRateRequireCoin: 510000
+    criRate: 0.68
+    criRateRequireCoin: 395790
     criDmg: 0.95
     criDmgRequireCoin: 3721
   - level: 39
@@ -449,8 +449,8 @@ MonoBehaviour:
     defRequireCoin: 3205
     hp: 156
     hpRequireCoin: 3205
-    criRate: 0.975
-    criRateRequireCoin: 530000
+    criRate: 0.69
+    criRateRequireCoin: 409660
     criDmg: 0.975
     criDmgRequireCoin: 3798
   - level: 40
@@ -460,8 +460,8 @@ MonoBehaviour:
     defRequireCoin: 3274
     hp: 162
     hpRequireCoin: 3274
-    criRate: 1
-    criRateRequireCoin: -1
+    criRate: 0.7
+    criRateRequireCoin: 423530
     criDmg: 1
     criDmgRequireCoin: 3873
   - level: 41
@@ -471,8 +471,8 @@ MonoBehaviour:
     defRequireCoin: 3342
     hp: 168
     hpRequireCoin: 3342
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.71
+    criRateRequireCoin: 437400
     criDmg: 1.025
     criDmgRequireCoin: 3948
   - level: 42
@@ -482,8 +482,8 @@ MonoBehaviour:
     defRequireCoin: 3410
     hp: 174
     hpRequireCoin: 3410
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.72
+    criRateRequireCoin: 451270
     criDmg: 1.05
     criDmgRequireCoin: 4021
   - level: 43
@@ -493,8 +493,8 @@ MonoBehaviour:
     defRequireCoin: 3476
     hp: 180
     hpRequireCoin: 3476
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.73
+    criRateRequireCoin: 465140
     criDmg: 1.075
     criDmgRequireCoin: 4092
   - level: 44
@@ -504,8 +504,8 @@ MonoBehaviour:
     defRequireCoin: 3542
     hp: 186
     hpRequireCoin: 3542
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.74
+    criRateRequireCoin: 479010
     criDmg: 1.1
     criDmgRequireCoin: 4162
   - level: 45
@@ -515,8 +515,8 @@ MonoBehaviour:
     defRequireCoin: 3607
     hp: 192
     hpRequireCoin: 3607
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.75
+    criRateRequireCoin: 492880
     criDmg: 1.125
     criDmgRequireCoin: 4230
   - level: 46
@@ -526,8 +526,8 @@ MonoBehaviour:
     defRequireCoin: 3671
     hp: 198
     hpRequireCoin: 3671
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.76
+    criRateRequireCoin: 506750
     criDmg: 1.15
     criDmgRequireCoin: 4297
   - level: 47
@@ -537,8 +537,8 @@ MonoBehaviour:
     defRequireCoin: 3734
     hp: 204
     hpRequireCoin: 3734
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.77
+    criRateRequireCoin: 520620
     criDmg: 1.175
     criDmgRequireCoin: 4362
   - level: 48
@@ -548,8 +548,8 @@ MonoBehaviour:
     defRequireCoin: 3796
     hp: 210
     hpRequireCoin: 3796
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.78
+    criRateRequireCoin: 534490
     criDmg: 1.2
     criDmgRequireCoin: 4426
   - level: 49
@@ -559,8 +559,8 @@ MonoBehaviour:
     defRequireCoin: 3857
     hp: 216
     hpRequireCoin: 3857
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.79
+    criRateRequireCoin: 548360
     criDmg: 1.225
     criDmgRequireCoin: 4488
   - level: 50
@@ -570,8 +570,8 @@ MonoBehaviour:
     defRequireCoin: 3918
     hp: 223
     hpRequireCoin: 3918
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.8
+    criRateRequireCoin: 562230
     criDmg: 1.25
     criDmgRequireCoin: 4548
   - level: 51
@@ -581,8 +581,8 @@ MonoBehaviour:
     defRequireCoin: 3977
     hp: 230
     hpRequireCoin: 3977
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.81
+    criRateRequireCoin: 576100
     criDmg: 1.275
     criDmgRequireCoin: 4607
   - level: 52
@@ -592,8 +592,8 @@ MonoBehaviour:
     defRequireCoin: 4036
     hp: 237
     hpRequireCoin: 4036
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.82
+    criRateRequireCoin: 589970
     criDmg: 1.3
     criDmgRequireCoin: 4664
   - level: 53
@@ -603,8 +603,8 @@ MonoBehaviour:
     defRequireCoin: 4093
     hp: 244
     hpRequireCoin: 4093
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.83
+    criRateRequireCoin: 603840
     criDmg: 1.325
     criDmgRequireCoin: 4719
   - level: 54
@@ -614,8 +614,8 @@ MonoBehaviour:
     defRequireCoin: 4150
     hp: 251
     hpRequireCoin: 4150
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.84
+    criRateRequireCoin: 617710
     criDmg: 1.35
     criDmgRequireCoin: 4772
   - level: 55
@@ -625,8 +625,8 @@ MonoBehaviour:
     defRequireCoin: 4205
     hp: 258
     hpRequireCoin: 4205
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.85
+    criRateRequireCoin: 631580
     criDmg: 1.375
     criDmgRequireCoin: 4824
   - level: 56
@@ -636,8 +636,8 @@ MonoBehaviour:
     defRequireCoin: 4260
     hp: 265
     hpRequireCoin: 4260
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.86
+    criRateRequireCoin: 645450
     criDmg: 1.4
     criDmgRequireCoin: 4874
   - level: 57
@@ -647,8 +647,8 @@ MonoBehaviour:
     defRequireCoin: 4314
     hp: 272
     hpRequireCoin: 4314
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.87
+    criRateRequireCoin: 659320
     criDmg: 1.425
     criDmgRequireCoin: 4922
   - level: 58
@@ -658,8 +658,8 @@ MonoBehaviour:
     defRequireCoin: 4366
     hp: 279
     hpRequireCoin: 4366
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.88
+    criRateRequireCoin: 673190
     criDmg: 1.45
     criDmgRequireCoin: 4969
   - level: 59
@@ -669,8 +669,8 @@ MonoBehaviour:
     defRequireCoin: 4418
     hp: 286
     hpRequireCoin: 4418
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.89
+    criRateRequireCoin: 687060
     criDmg: 1.475
     criDmgRequireCoin: 5013
   - level: 60
@@ -680,8 +680,8 @@ MonoBehaviour:
     defRequireCoin: 4468
     hp: 294
     hpRequireCoin: 4468
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.9
+    criRateRequireCoin: 700930
     criDmg: 1.5
     criDmgRequireCoin: 5056
   - level: 61
@@ -691,8 +691,8 @@ MonoBehaviour:
     defRequireCoin: 4517
     hp: 302
     hpRequireCoin: 4517
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.91
+    criRateRequireCoin: 714800
     criDmg: 1.525
     criDmgRequireCoin: 5097
   - level: 62
@@ -702,8 +702,8 @@ MonoBehaviour:
     defRequireCoin: 4565
     hp: 310
     hpRequireCoin: 4565
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.92
+    criRateRequireCoin: 728670
     criDmg: 1.55
     criDmgRequireCoin: 5135
   - level: 63
@@ -713,8 +713,8 @@ MonoBehaviour:
     defRequireCoin: 4613
     hp: 318
     hpRequireCoin: 4613
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.93
+    criRateRequireCoin: 742540
     criDmg: 1.575
     criDmgRequireCoin: 5172
   - level: 64
@@ -724,8 +724,8 @@ MonoBehaviour:
     defRequireCoin: 4659
     hp: 326
     hpRequireCoin: 4659
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.94
+    criRateRequireCoin: 756410
     criDmg: 1.6
     criDmgRequireCoin: 5207
   - level: 65
@@ -735,8 +735,8 @@ MonoBehaviour:
     defRequireCoin: 4704
     hp: 334
     hpRequireCoin: 4704
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.95
+    criRateRequireCoin: 770280
     criDmg: 1.625
     criDmgRequireCoin: 5241
   - level: 66
@@ -746,8 +746,8 @@ MonoBehaviour:
     defRequireCoin: 4747
     hp: 342
     hpRequireCoin: 4747
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.96
+    criRateRequireCoin: 784150
     criDmg: 1.65
     criDmgRequireCoin: 5272
   - level: 67
@@ -757,8 +757,8 @@ MonoBehaviour:
     defRequireCoin: 4790
     hp: 350
     hpRequireCoin: 4790
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.97
+    criRateRequireCoin: 798020
     criDmg: 1.675
     criDmgRequireCoin: 5301
   - level: 68
@@ -768,8 +768,8 @@ MonoBehaviour:
     defRequireCoin: 4831
     hp: 358
     hpRequireCoin: 4831
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.98
+    criRateRequireCoin: 811890
     criDmg: 1.7
     criDmgRequireCoin: 5328
   - level: 69
@@ -779,8 +779,8 @@ MonoBehaviour:
     defRequireCoin: 4872
     hp: 366
     hpRequireCoin: 4872
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 0.99
+    criRateRequireCoin: 825760
     criDmg: 1.725
     criDmgRequireCoin: 5354
   - level: 70
@@ -790,8 +790,8 @@ MonoBehaviour:
     defRequireCoin: 4911
     hp: 375
     hpRequireCoin: 4911
-    criRate: 0
-    criRateRequireCoin: 0
+    criRate: 1
+    criRateRequireCoin: -1
     criDmg: 1.75
     criDmgRequireCoin: 5377
   - level: 71
@@ -5515,12 +5515,5512 @@ MonoBehaviour:
     criDmgRequireCoin: 85110
   - level: 500
     atk: 1050
-    atkRequireCoin: -1
+    atkRequireCoin: 53000
     def: 650
-    defRequireCoin: -1
+    defRequireCoin: 43000
     hp: 1100
-    hpRequireCoin: -1
+    hpRequireCoin: 35000
     criRate: 0
     criRateRequireCoin: 0
     criDmg: 6.2
+    criDmgRequireCoin: 91000
+  - level: 501
+    atk: 1051
+    atkRequireCoin: 54610
+    def: 651
+    defRequireCoin: 43770
+    hp: 1101
+    hpRequireCoin: 35630
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.205
+    criDmgRequireCoin: 94130
+  - level: 502
+    atk: 1052
+    atkRequireCoin: 56220
+    def: 652
+    defRequireCoin: 44540
+    hp: 1102
+    hpRequireCoin: 36260
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.21
+    criDmgRequireCoin: 97260
+  - level: 503
+    atk: 1053
+    atkRequireCoin: 57830
+    def: 653
+    defRequireCoin: 45310
+    hp: 1103
+    hpRequireCoin: 36890
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.215
+    criDmgRequireCoin: 100390
+  - level: 504
+    atk: 1054
+    atkRequireCoin: 59440
+    def: 654
+    defRequireCoin: 46080
+    hp: 1104
+    hpRequireCoin: 37520
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.22
+    criDmgRequireCoin: 103520
+  - level: 505
+    atk: 1055
+    atkRequireCoin: 61050
+    def: 655
+    defRequireCoin: 46850
+    hp: 1105
+    hpRequireCoin: 38150
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.225
+    criDmgRequireCoin: 106650
+  - level: 506
+    atk: 1056
+    atkRequireCoin: 62660
+    def: 656
+    defRequireCoin: 47620
+    hp: 1106
+    hpRequireCoin: 38780
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.23
+    criDmgRequireCoin: 109780
+  - level: 507
+    atk: 1057
+    atkRequireCoin: 64270
+    def: 657
+    defRequireCoin: 48390
+    hp: 1107
+    hpRequireCoin: 39410
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.235
+    criDmgRequireCoin: 112910
+  - level: 508
+    atk: 1058
+    atkRequireCoin: 65880
+    def: 658
+    defRequireCoin: 49160
+    hp: 1108
+    hpRequireCoin: 40040
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.24
+    criDmgRequireCoin: 116040
+  - level: 509
+    atk: 1059
+    atkRequireCoin: 67490
+    def: 659
+    defRequireCoin: 49930
+    hp: 1109
+    hpRequireCoin: 40670
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.245
+    criDmgRequireCoin: 119170
+  - level: 510
+    atk: 1060
+    atkRequireCoin: 69100
+    def: 660
+    defRequireCoin: 50700
+    hp: 1110
+    hpRequireCoin: 41300
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.25
+    criDmgRequireCoin: 122300
+  - level: 511
+    atk: 1061
+    atkRequireCoin: 70710
+    def: 661
+    defRequireCoin: 51470
+    hp: 1111
+    hpRequireCoin: 41930
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.255
+    criDmgRequireCoin: 125430
+  - level: 512
+    atk: 1062
+    atkRequireCoin: 72320
+    def: 662
+    defRequireCoin: 52240
+    hp: 1112
+    hpRequireCoin: 42560
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.26
+    criDmgRequireCoin: 128560
+  - level: 513
+    atk: 1063
+    atkRequireCoin: 73930
+    def: 663
+    defRequireCoin: 53010
+    hp: 1113
+    hpRequireCoin: 43190
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.265
+    criDmgRequireCoin: 131690
+  - level: 514
+    atk: 1064
+    atkRequireCoin: 75540
+    def: 664
+    defRequireCoin: 53780
+    hp: 1114
+    hpRequireCoin: 43820
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.27
+    criDmgRequireCoin: 134820
+  - level: 515
+    atk: 1065
+    atkRequireCoin: 77150
+    def: 665
+    defRequireCoin: 54550
+    hp: 1115
+    hpRequireCoin: 44450
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.275
+    criDmgRequireCoin: 137950
+  - level: 516
+    atk: 1066
+    atkRequireCoin: 78760
+    def: 666
+    defRequireCoin: 55320
+    hp: 1116
+    hpRequireCoin: 45080
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.28
+    criDmgRequireCoin: 141080
+  - level: 517
+    atk: 1067
+    atkRequireCoin: 80370
+    def: 667
+    defRequireCoin: 56090
+    hp: 1117
+    hpRequireCoin: 45710
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.285
+    criDmgRequireCoin: 144210
+  - level: 518
+    atk: 1068
+    atkRequireCoin: 81980
+    def: 668
+    defRequireCoin: 56860
+    hp: 1118
+    hpRequireCoin: 46340
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.29
+    criDmgRequireCoin: 147340
+  - level: 519
+    atk: 1069
+    atkRequireCoin: 83590
+    def: 669
+    defRequireCoin: 57630
+    hp: 1119
+    hpRequireCoin: 46970
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.295
+    criDmgRequireCoin: 150470
+  - level: 520
+    atk: 1070
+    atkRequireCoin: 85200
+    def: 670
+    defRequireCoin: 58400
+    hp: 1120
+    hpRequireCoin: 47600
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.3
+    criDmgRequireCoin: 153600
+  - level: 521
+    atk: 1071
+    atkRequireCoin: 86810
+    def: 671
+    defRequireCoin: 59170
+    hp: 1121
+    hpRequireCoin: 48230
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.305
+    criDmgRequireCoin: 156730
+  - level: 522
+    atk: 1072
+    atkRequireCoin: 88420
+    def: 672
+    defRequireCoin: 59940
+    hp: 1122
+    hpRequireCoin: 48860
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.31
+    criDmgRequireCoin: 159860
+  - level: 523
+    atk: 1073
+    atkRequireCoin: 90030
+    def: 673
+    defRequireCoin: 60710
+    hp: 1123
+    hpRequireCoin: 49490
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.315
+    criDmgRequireCoin: 162990
+  - level: 524
+    atk: 1074
+    atkRequireCoin: 91640
+    def: 674
+    defRequireCoin: 61480
+    hp: 1124
+    hpRequireCoin: 50120
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.32
+    criDmgRequireCoin: 166120
+  - level: 525
+    atk: 1075
+    atkRequireCoin: 93250
+    def: 675
+    defRequireCoin: 62250
+    hp: 1125
+    hpRequireCoin: 50750
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.325
+    criDmgRequireCoin: 169250
+  - level: 526
+    atk: 1076
+    atkRequireCoin: 94860
+    def: 676
+    defRequireCoin: 63020
+    hp: 1126
+    hpRequireCoin: 51380
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.33
+    criDmgRequireCoin: 172380
+  - level: 527
+    atk: 1077
+    atkRequireCoin: 96470
+    def: 677
+    defRequireCoin: 63790
+    hp: 1127
+    hpRequireCoin: 52010
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.335
+    criDmgRequireCoin: 175510
+  - level: 528
+    atk: 1078
+    atkRequireCoin: 98080
+    def: 678
+    defRequireCoin: 64560
+    hp: 1128
+    hpRequireCoin: 52640
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.34
+    criDmgRequireCoin: 178640
+  - level: 529
+    atk: 1079
+    atkRequireCoin: 99690
+    def: 679
+    defRequireCoin: 65330
+    hp: 1129
+    hpRequireCoin: 53270
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.345
+    criDmgRequireCoin: 181770
+  - level: 530
+    atk: 1080
+    atkRequireCoin: 101300
+    def: 680
+    defRequireCoin: 66100
+    hp: 1130
+    hpRequireCoin: 53900
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.35
+    criDmgRequireCoin: 184900
+  - level: 531
+    atk: 1081
+    atkRequireCoin: 102910
+    def: 681
+    defRequireCoin: 66870
+    hp: 1131
+    hpRequireCoin: 54530
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.355
+    criDmgRequireCoin: 188030
+  - level: 532
+    atk: 1082
+    atkRequireCoin: 104520
+    def: 682
+    defRequireCoin: 67640
+    hp: 1132
+    hpRequireCoin: 55160
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.36
+    criDmgRequireCoin: 191160
+  - level: 533
+    atk: 1083
+    atkRequireCoin: 106130
+    def: 683
+    defRequireCoin: 68410
+    hp: 1133
+    hpRequireCoin: 55790
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.365
+    criDmgRequireCoin: 194290
+  - level: 534
+    atk: 1084
+    atkRequireCoin: 107740
+    def: 684
+    defRequireCoin: 69180
+    hp: 1134
+    hpRequireCoin: 56420
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.37
+    criDmgRequireCoin: 197420
+  - level: 535
+    atk: 1085
+    atkRequireCoin: 109350
+    def: 685
+    defRequireCoin: 69950
+    hp: 1135
+    hpRequireCoin: 57050
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.375
+    criDmgRequireCoin: 200550
+  - level: 536
+    atk: 1086
+    atkRequireCoin: 110960
+    def: 686
+    defRequireCoin: 70720
+    hp: 1136
+    hpRequireCoin: 57680
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.38
+    criDmgRequireCoin: 203680
+  - level: 537
+    atk: 1087
+    atkRequireCoin: 112570
+    def: 687
+    defRequireCoin: 71490
+    hp: 1137
+    hpRequireCoin: 58310
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.385
+    criDmgRequireCoin: 206810
+  - level: 538
+    atk: 1088
+    atkRequireCoin: 114180
+    def: 688
+    defRequireCoin: 72260
+    hp: 1138
+    hpRequireCoin: 58940
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.39
+    criDmgRequireCoin: 209940
+  - level: 539
+    atk: 1089
+    atkRequireCoin: 115790
+    def: 689
+    defRequireCoin: 73030
+    hp: 1139
+    hpRequireCoin: 59570
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.395
+    criDmgRequireCoin: 213070
+  - level: 540
+    atk: 1090
+    atkRequireCoin: 117400
+    def: 690
+    defRequireCoin: 73800
+    hp: 1140
+    hpRequireCoin: 60200
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.4
+    criDmgRequireCoin: 216200
+  - level: 541
+    atk: 1091
+    atkRequireCoin: 119010
+    def: 691
+    defRequireCoin: 74570
+    hp: 1141
+    hpRequireCoin: 60830
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.405
+    criDmgRequireCoin: 219330
+  - level: 542
+    atk: 1092
+    atkRequireCoin: 120620
+    def: 692
+    defRequireCoin: 75340
+    hp: 1142
+    hpRequireCoin: 61460
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.41
+    criDmgRequireCoin: 222460
+  - level: 543
+    atk: 1093
+    atkRequireCoin: 122230
+    def: 693
+    defRequireCoin: 76110
+    hp: 1143
+    hpRequireCoin: 62090
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.415
+    criDmgRequireCoin: 225590
+  - level: 544
+    atk: 1094
+    atkRequireCoin: 123840
+    def: 694
+    defRequireCoin: 76880
+    hp: 1144
+    hpRequireCoin: 62720
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.42
+    criDmgRequireCoin: 228720
+  - level: 545
+    atk: 1095
+    atkRequireCoin: 125450
+    def: 695
+    defRequireCoin: 77650
+    hp: 1145
+    hpRequireCoin: 63350
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.425
+    criDmgRequireCoin: 231850
+  - level: 546
+    atk: 1096
+    atkRequireCoin: 127060
+    def: 696
+    defRequireCoin: 78420
+    hp: 1146
+    hpRequireCoin: 63980
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.43
+    criDmgRequireCoin: 234980
+  - level: 547
+    atk: 1097
+    atkRequireCoin: 128670
+    def: 697
+    defRequireCoin: 79190
+    hp: 1147
+    hpRequireCoin: 64610
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.435
+    criDmgRequireCoin: 238110
+  - level: 548
+    atk: 1098
+    atkRequireCoin: 130280
+    def: 698
+    defRequireCoin: 79960
+    hp: 1148
+    hpRequireCoin: 65240
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.44
+    criDmgRequireCoin: 241240
+  - level: 549
+    atk: 1099
+    atkRequireCoin: 131890
+    def: 699
+    defRequireCoin: 80730
+    hp: 1149
+    hpRequireCoin: 65870
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.445
+    criDmgRequireCoin: 244370
+  - level: 550
+    atk: 1100
+    atkRequireCoin: 133500
+    def: 700
+    defRequireCoin: 81500
+    hp: 1150
+    hpRequireCoin: 66500
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.45
+    criDmgRequireCoin: 247500
+  - level: 551
+    atk: 1101
+    atkRequireCoin: 135110
+    def: 701
+    defRequireCoin: 82270
+    hp: 1151
+    hpRequireCoin: 67130
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.455
+    criDmgRequireCoin: 250630
+  - level: 552
+    atk: 1102
+    atkRequireCoin: 136720
+    def: 702
+    defRequireCoin: 83040
+    hp: 1152
+    hpRequireCoin: 67760
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.46
+    criDmgRequireCoin: 253760
+  - level: 553
+    atk: 1103
+    atkRequireCoin: 138330
+    def: 703
+    defRequireCoin: 83810
+    hp: 1153
+    hpRequireCoin: 68390
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.465
+    criDmgRequireCoin: 256890
+  - level: 554
+    atk: 1104
+    atkRequireCoin: 139940
+    def: 704
+    defRequireCoin: 84580
+    hp: 1154
+    hpRequireCoin: 69020
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.47
+    criDmgRequireCoin: 260020
+  - level: 555
+    atk: 1105
+    atkRequireCoin: 141550
+    def: 705
+    defRequireCoin: 85350
+    hp: 1155
+    hpRequireCoin: 69650
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.475
+    criDmgRequireCoin: 263150
+  - level: 556
+    atk: 1106
+    atkRequireCoin: 143160
+    def: 706
+    defRequireCoin: 86120
+    hp: 1156
+    hpRequireCoin: 70280
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.48
+    criDmgRequireCoin: 266280
+  - level: 557
+    atk: 1107
+    atkRequireCoin: 144770
+    def: 707
+    defRequireCoin: 86890
+    hp: 1157
+    hpRequireCoin: 70910
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.485
+    criDmgRequireCoin: 269410
+  - level: 558
+    atk: 1108
+    atkRequireCoin: 146380
+    def: 708
+    defRequireCoin: 87660
+    hp: 1158
+    hpRequireCoin: 71540
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.49
+    criDmgRequireCoin: 272540
+  - level: 559
+    atk: 1109
+    atkRequireCoin: 147990
+    def: 709
+    defRequireCoin: 88430
+    hp: 1159
+    hpRequireCoin: 72170
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.495
+    criDmgRequireCoin: 275670
+  - level: 560
+    atk: 1110
+    atkRequireCoin: 149600
+    def: 710
+    defRequireCoin: 89200
+    hp: 1160
+    hpRequireCoin: 72800
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.5
+    criDmgRequireCoin: 278800
+  - level: 561
+    atk: 1111
+    atkRequireCoin: 151210
+    def: 711
+    defRequireCoin: 89970
+    hp: 1161
+    hpRequireCoin: 73430
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.505
+    criDmgRequireCoin: 281930
+  - level: 562
+    atk: 1112
+    atkRequireCoin: 152820
+    def: 712
+    defRequireCoin: 90740
+    hp: 1162
+    hpRequireCoin: 74060
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.51
+    criDmgRequireCoin: 285060
+  - level: 563
+    atk: 1113
+    atkRequireCoin: 154430
+    def: 713
+    defRequireCoin: 91510
+    hp: 1163
+    hpRequireCoin: 74690
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.515
+    criDmgRequireCoin: 288190
+  - level: 564
+    atk: 1114
+    atkRequireCoin: 156040
+    def: 714
+    defRequireCoin: 92280
+    hp: 1164
+    hpRequireCoin: 75320
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.52
+    criDmgRequireCoin: 291320
+  - level: 565
+    atk: 1115
+    atkRequireCoin: 157650
+    def: 715
+    defRequireCoin: 93050
+    hp: 1165
+    hpRequireCoin: 75950
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.525
+    criDmgRequireCoin: 294450
+  - level: 566
+    atk: 1116
+    atkRequireCoin: 159260
+    def: 716
+    defRequireCoin: 93820
+    hp: 1166
+    hpRequireCoin: 76580
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.53
+    criDmgRequireCoin: 297580
+  - level: 567
+    atk: 1117
+    atkRequireCoin: 160870
+    def: 717
+    defRequireCoin: 94590
+    hp: 1167
+    hpRequireCoin: 77210
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.535
+    criDmgRequireCoin: 300710
+  - level: 568
+    atk: 1118
+    atkRequireCoin: 162480
+    def: 718
+    defRequireCoin: 95360
+    hp: 1168
+    hpRequireCoin: 77840
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.54
+    criDmgRequireCoin: 303840
+  - level: 569
+    atk: 1119
+    atkRequireCoin: 164090
+    def: 719
+    defRequireCoin: 96130
+    hp: 1169
+    hpRequireCoin: 78470
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.545
+    criDmgRequireCoin: 306970
+  - level: 570
+    atk: 1120
+    atkRequireCoin: 165700
+    def: 720
+    defRequireCoin: 96900
+    hp: 1170
+    hpRequireCoin: 79100
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.55
+    criDmgRequireCoin: 310100
+  - level: 571
+    atk: 1121
+    atkRequireCoin: 167310
+    def: 721
+    defRequireCoin: 97670
+    hp: 1171
+    hpRequireCoin: 79730
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.555
+    criDmgRequireCoin: 313230
+  - level: 572
+    atk: 1122
+    atkRequireCoin: 168920
+    def: 722
+    defRequireCoin: 98440
+    hp: 1172
+    hpRequireCoin: 80360
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.56
+    criDmgRequireCoin: 316360
+  - level: 573
+    atk: 1123
+    atkRequireCoin: 170530
+    def: 723
+    defRequireCoin: 99210
+    hp: 1173
+    hpRequireCoin: 80990
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.565
+    criDmgRequireCoin: 319490
+  - level: 574
+    atk: 1124
+    atkRequireCoin: 172140
+    def: 724
+    defRequireCoin: 99980
+    hp: 1174
+    hpRequireCoin: 81620
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.57
+    criDmgRequireCoin: 322620
+  - level: 575
+    atk: 1125
+    atkRequireCoin: 173750
+    def: 725
+    defRequireCoin: 100750
+    hp: 1175
+    hpRequireCoin: 82250
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.575
+    criDmgRequireCoin: 325750
+  - level: 576
+    atk: 1126
+    atkRequireCoin: 175360
+    def: 726
+    defRequireCoin: 101520
+    hp: 1176
+    hpRequireCoin: 82880
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.58
+    criDmgRequireCoin: 328880
+  - level: 577
+    atk: 1127
+    atkRequireCoin: 176970
+    def: 727
+    defRequireCoin: 102290
+    hp: 1177
+    hpRequireCoin: 83510
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.585
+    criDmgRequireCoin: 332010
+  - level: 578
+    atk: 1128
+    atkRequireCoin: 178580
+    def: 728
+    defRequireCoin: 103060
+    hp: 1178
+    hpRequireCoin: 84140
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.59
+    criDmgRequireCoin: 335140
+  - level: 579
+    atk: 1129
+    atkRequireCoin: 180190
+    def: 729
+    defRequireCoin: 103830
+    hp: 1179
+    hpRequireCoin: 84770
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.595
+    criDmgRequireCoin: 338270
+  - level: 580
+    atk: 1130
+    atkRequireCoin: 181800
+    def: 730
+    defRequireCoin: 104600
+    hp: 1180
+    hpRequireCoin: 85400
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.6
+    criDmgRequireCoin: 341400
+  - level: 581
+    atk: 1131
+    atkRequireCoin: 183410
+    def: 731
+    defRequireCoin: 105370
+    hp: 1181
+    hpRequireCoin: 86030
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.605
+    criDmgRequireCoin: 344530
+  - level: 582
+    atk: 1132
+    atkRequireCoin: 185020
+    def: 732
+    defRequireCoin: 106140
+    hp: 1182
+    hpRequireCoin: 86660
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.61
+    criDmgRequireCoin: 347660
+  - level: 583
+    atk: 1133
+    atkRequireCoin: 186630
+    def: 733
+    defRequireCoin: 106910
+    hp: 1183
+    hpRequireCoin: 87290
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.615
+    criDmgRequireCoin: 350790
+  - level: 584
+    atk: 1134
+    atkRequireCoin: 188240
+    def: 734
+    defRequireCoin: 107680
+    hp: 1184
+    hpRequireCoin: 87920
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.62
+    criDmgRequireCoin: 353920
+  - level: 585
+    atk: 1135
+    atkRequireCoin: 189850
+    def: 735
+    defRequireCoin: 108450
+    hp: 1185
+    hpRequireCoin: 88550
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.625
+    criDmgRequireCoin: 357050
+  - level: 586
+    atk: 1136
+    atkRequireCoin: 191460
+    def: 736
+    defRequireCoin: 109220
+    hp: 1186
+    hpRequireCoin: 89180
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.63
+    criDmgRequireCoin: 360180
+  - level: 587
+    atk: 1137
+    atkRequireCoin: 193070
+    def: 737
+    defRequireCoin: 109990
+    hp: 1187
+    hpRequireCoin: 89810
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.635
+    criDmgRequireCoin: 363310
+  - level: 588
+    atk: 1138
+    atkRequireCoin: 194680
+    def: 738
+    defRequireCoin: 110760
+    hp: 1188
+    hpRequireCoin: 90440
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.64
+    criDmgRequireCoin: 366440
+  - level: 589
+    atk: 1139
+    atkRequireCoin: 196290
+    def: 739
+    defRequireCoin: 111530
+    hp: 1189
+    hpRequireCoin: 91070
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.645
+    criDmgRequireCoin: 369570
+  - level: 590
+    atk: 1140
+    atkRequireCoin: 197900
+    def: 740
+    defRequireCoin: 112300
+    hp: 1190
+    hpRequireCoin: 91700
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.65
+    criDmgRequireCoin: 372700
+  - level: 591
+    atk: 1141
+    atkRequireCoin: 199510
+    def: 741
+    defRequireCoin: 113070
+    hp: 1191
+    hpRequireCoin: 92330
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.655
+    criDmgRequireCoin: 375830
+  - level: 592
+    atk: 1142
+    atkRequireCoin: 201120
+    def: 742
+    defRequireCoin: 113840
+    hp: 1192
+    hpRequireCoin: 92960
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.66
+    criDmgRequireCoin: 378960
+  - level: 593
+    atk: 1143
+    atkRequireCoin: 202730
+    def: 743
+    defRequireCoin: 114610
+    hp: 1193
+    hpRequireCoin: 93590
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.665
+    criDmgRequireCoin: 382090
+  - level: 594
+    atk: 1144
+    atkRequireCoin: 204340
+    def: 744
+    defRequireCoin: 115380
+    hp: 1194
+    hpRequireCoin: 94220
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.67
+    criDmgRequireCoin: 385220
+  - level: 595
+    atk: 1145
+    atkRequireCoin: 205950
+    def: 745
+    defRequireCoin: 116150
+    hp: 1195
+    hpRequireCoin: 94850
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.675
+    criDmgRequireCoin: 388350
+  - level: 596
+    atk: 1146
+    atkRequireCoin: 207560
+    def: 746
+    defRequireCoin: 116920
+    hp: 1196
+    hpRequireCoin: 95480
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.68
+    criDmgRequireCoin: 391480
+  - level: 597
+    atk: 1147
+    atkRequireCoin: 209170
+    def: 747
+    defRequireCoin: 117690
+    hp: 1197
+    hpRequireCoin: 96110
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.685
+    criDmgRequireCoin: 394610
+  - level: 598
+    atk: 1148
+    atkRequireCoin: 210780
+    def: 748
+    defRequireCoin: 118460
+    hp: 1198
+    hpRequireCoin: 96740
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.69
+    criDmgRequireCoin: 397740
+  - level: 599
+    atk: 1149
+    atkRequireCoin: 212390
+    def: 749
+    defRequireCoin: 119230
+    hp: 1199
+    hpRequireCoin: 97370
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.695
+    criDmgRequireCoin: 400870
+  - level: 600
+    atk: 1150
+    atkRequireCoin: 214000
+    def: 750
+    defRequireCoin: 120000
+    hp: 1200
+    hpRequireCoin: 98000
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.7
+    criDmgRequireCoin: 404000
+  - level: 601
+    atk: 1151
+    atkRequireCoin: 215610
+    def: 751
+    defRequireCoin: 120770
+    hp: 1201
+    hpRequireCoin: 98630
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.705
+    criDmgRequireCoin: 407130
+  - level: 602
+    atk: 1152
+    atkRequireCoin: 217220
+    def: 752
+    defRequireCoin: 121540
+    hp: 1202
+    hpRequireCoin: 99260
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.71
+    criDmgRequireCoin: 410260
+  - level: 603
+    atk: 1153
+    atkRequireCoin: 218830
+    def: 753
+    defRequireCoin: 122310
+    hp: 1203
+    hpRequireCoin: 99890
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.715
+    criDmgRequireCoin: 413390
+  - level: 604
+    atk: 1154
+    atkRequireCoin: 220440
+    def: 754
+    defRequireCoin: 123080
+    hp: 1204
+    hpRequireCoin: 100520
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.72
+    criDmgRequireCoin: 416520
+  - level: 605
+    atk: 1155
+    atkRequireCoin: 222050
+    def: 755
+    defRequireCoin: 123850
+    hp: 1205
+    hpRequireCoin: 101150
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.725
+    criDmgRequireCoin: 419650
+  - level: 606
+    atk: 1156
+    atkRequireCoin: 223660
+    def: 756
+    defRequireCoin: 124620
+    hp: 1206
+    hpRequireCoin: 101780
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.73
+    criDmgRequireCoin: 422780
+  - level: 607
+    atk: 1157
+    atkRequireCoin: 225270
+    def: 757
+    defRequireCoin: 125390
+    hp: 1207
+    hpRequireCoin: 102410
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.735
+    criDmgRequireCoin: 425910
+  - level: 608
+    atk: 1158
+    atkRequireCoin: 226880
+    def: 758
+    defRequireCoin: 126160
+    hp: 1208
+    hpRequireCoin: 103040
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.74
+    criDmgRequireCoin: 429040
+  - level: 609
+    atk: 1159
+    atkRequireCoin: 228490
+    def: 759
+    defRequireCoin: 126930
+    hp: 1209
+    hpRequireCoin: 103670
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.745
+    criDmgRequireCoin: 432170
+  - level: 610
+    atk: 1160
+    atkRequireCoin: 230100
+    def: 760
+    defRequireCoin: 127700
+    hp: 1210
+    hpRequireCoin: 104300
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.75
+    criDmgRequireCoin: 435300
+  - level: 611
+    atk: 1161
+    atkRequireCoin: 231710
+    def: 761
+    defRequireCoin: 128470
+    hp: 1211
+    hpRequireCoin: 104930
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.755
+    criDmgRequireCoin: 438430
+  - level: 612
+    atk: 1162
+    atkRequireCoin: 233320
+    def: 762
+    defRequireCoin: 129240
+    hp: 1212
+    hpRequireCoin: 105560
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.76
+    criDmgRequireCoin: 441560
+  - level: 613
+    atk: 1163
+    atkRequireCoin: 234930
+    def: 763
+    defRequireCoin: 130010
+    hp: 1213
+    hpRequireCoin: 106190
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.765
+    criDmgRequireCoin: 444690
+  - level: 614
+    atk: 1164
+    atkRequireCoin: 236540
+    def: 764
+    defRequireCoin: 130780
+    hp: 1214
+    hpRequireCoin: 106820
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.77
+    criDmgRequireCoin: 447820
+  - level: 615
+    atk: 1165
+    atkRequireCoin: 238150
+    def: 765
+    defRequireCoin: 131550
+    hp: 1215
+    hpRequireCoin: 107450
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.775
+    criDmgRequireCoin: 450950
+  - level: 616
+    atk: 1166
+    atkRequireCoin: 239760
+    def: 766
+    defRequireCoin: 132320
+    hp: 1216
+    hpRequireCoin: 108080
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.78
+    criDmgRequireCoin: 454080
+  - level: 617
+    atk: 1167
+    atkRequireCoin: 241370
+    def: 767
+    defRequireCoin: 133090
+    hp: 1217
+    hpRequireCoin: 108710
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.785
+    criDmgRequireCoin: 457210
+  - level: 618
+    atk: 1168
+    atkRequireCoin: 242980
+    def: 768
+    defRequireCoin: 133860
+    hp: 1218
+    hpRequireCoin: 109340
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.79
+    criDmgRequireCoin: 460340
+  - level: 619
+    atk: 1169
+    atkRequireCoin: 244590
+    def: 769
+    defRequireCoin: 134630
+    hp: 1219
+    hpRequireCoin: 109970
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.795
+    criDmgRequireCoin: 463470
+  - level: 620
+    atk: 1170
+    atkRequireCoin: 246200
+    def: 770
+    defRequireCoin: 135400
+    hp: 1220
+    hpRequireCoin: 110600
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.8
+    criDmgRequireCoin: 466600
+  - level: 621
+    atk: 1171
+    atkRequireCoin: 247810
+    def: 771
+    defRequireCoin: 136170
+    hp: 1221
+    hpRequireCoin: 111230
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.805
+    criDmgRequireCoin: 469730
+  - level: 622
+    atk: 1172
+    atkRequireCoin: 249420
+    def: 772
+    defRequireCoin: 136940
+    hp: 1222
+    hpRequireCoin: 111860
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.81
+    criDmgRequireCoin: 472860
+  - level: 623
+    atk: 1173
+    atkRequireCoin: 251030
+    def: 773
+    defRequireCoin: 137710
+    hp: 1223
+    hpRequireCoin: 112490
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.815
+    criDmgRequireCoin: 475990
+  - level: 624
+    atk: 1174
+    atkRequireCoin: 252640
+    def: 774
+    defRequireCoin: 138480
+    hp: 1224
+    hpRequireCoin: 113120
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.82
+    criDmgRequireCoin: 479120
+  - level: 625
+    atk: 1175
+    atkRequireCoin: 254250
+    def: 775
+    defRequireCoin: 139250
+    hp: 1225
+    hpRequireCoin: 113750
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.825
+    criDmgRequireCoin: 482250
+  - level: 626
+    atk: 1176
+    atkRequireCoin: 255860
+    def: 776
+    defRequireCoin: 140020
+    hp: 1226
+    hpRequireCoin: 114380
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.83
+    criDmgRequireCoin: 485380
+  - level: 627
+    atk: 1177
+    atkRequireCoin: 257470
+    def: 777
+    defRequireCoin: 140790
+    hp: 1227
+    hpRequireCoin: 115010
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.835
+    criDmgRequireCoin: 488510
+  - level: 628
+    atk: 1178
+    atkRequireCoin: 259080
+    def: 778
+    defRequireCoin: 141560
+    hp: 1228
+    hpRequireCoin: 115640
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.84
+    criDmgRequireCoin: 491640
+  - level: 629
+    atk: 1179
+    atkRequireCoin: 260690
+    def: 779
+    defRequireCoin: 142330
+    hp: 1229
+    hpRequireCoin: 116270
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.845
+    criDmgRequireCoin: 494770
+  - level: 630
+    atk: 1180
+    atkRequireCoin: 262300
+    def: 780
+    defRequireCoin: 143100
+    hp: 1230
+    hpRequireCoin: 116900
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.85
+    criDmgRequireCoin: 497900
+  - level: 631
+    atk: 1181
+    atkRequireCoin: 263910
+    def: 781
+    defRequireCoin: 143870
+    hp: 1231
+    hpRequireCoin: 117530
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.855
+    criDmgRequireCoin: 501030
+  - level: 632
+    atk: 1182
+    atkRequireCoin: 265520
+    def: 782
+    defRequireCoin: 144640
+    hp: 1232
+    hpRequireCoin: 118160
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.86
+    criDmgRequireCoin: 504160
+  - level: 633
+    atk: 1183
+    atkRequireCoin: 267130
+    def: 783
+    defRequireCoin: 145410
+    hp: 1233
+    hpRequireCoin: 118790
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.865
+    criDmgRequireCoin: 507290
+  - level: 634
+    atk: 1184
+    atkRequireCoin: 268740
+    def: 784
+    defRequireCoin: 146180
+    hp: 1234
+    hpRequireCoin: 119420
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.87
+    criDmgRequireCoin: 510420
+  - level: 635
+    atk: 1185
+    atkRequireCoin: 270350
+    def: 785
+    defRequireCoin: 146950
+    hp: 1235
+    hpRequireCoin: 120050
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.875
+    criDmgRequireCoin: 513550
+  - level: 636
+    atk: 1186
+    atkRequireCoin: 271960
+    def: 786
+    defRequireCoin: 147720
+    hp: 1236
+    hpRequireCoin: 120680
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.88
+    criDmgRequireCoin: 516680
+  - level: 637
+    atk: 1187
+    atkRequireCoin: 273570
+    def: 787
+    defRequireCoin: 148490
+    hp: 1237
+    hpRequireCoin: 121310
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.885
+    criDmgRequireCoin: 519810
+  - level: 638
+    atk: 1188
+    atkRequireCoin: 275180
+    def: 788
+    defRequireCoin: 149260
+    hp: 1238
+    hpRequireCoin: 121940
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.89
+    criDmgRequireCoin: 522940
+  - level: 639
+    atk: 1189
+    atkRequireCoin: 276790
+    def: 789
+    defRequireCoin: 150030
+    hp: 1239
+    hpRequireCoin: 122570
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.895
+    criDmgRequireCoin: 526070
+  - level: 640
+    atk: 1190
+    atkRequireCoin: 278400
+    def: 790
+    defRequireCoin: 150800
+    hp: 1240
+    hpRequireCoin: 123200
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.9
+    criDmgRequireCoin: 529200
+  - level: 641
+    atk: 1191
+    atkRequireCoin: 280010
+    def: 791
+    defRequireCoin: 151570
+    hp: 1241
+    hpRequireCoin: 123830
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.905
+    criDmgRequireCoin: 532330
+  - level: 642
+    atk: 1192
+    atkRequireCoin: 281620
+    def: 792
+    defRequireCoin: 152340
+    hp: 1242
+    hpRequireCoin: 124460
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.91
+    criDmgRequireCoin: 535460
+  - level: 643
+    atk: 1193
+    atkRequireCoin: 283230
+    def: 793
+    defRequireCoin: 153110
+    hp: 1243
+    hpRequireCoin: 125090
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.915
+    criDmgRequireCoin: 538590
+  - level: 644
+    atk: 1194
+    atkRequireCoin: 284840
+    def: 794
+    defRequireCoin: 153880
+    hp: 1244
+    hpRequireCoin: 125720
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.92
+    criDmgRequireCoin: 541720
+  - level: 645
+    atk: 1195
+    atkRequireCoin: 286450
+    def: 795
+    defRequireCoin: 154650
+    hp: 1245
+    hpRequireCoin: 126350
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.925
+    criDmgRequireCoin: 544850
+  - level: 646
+    atk: 1196
+    atkRequireCoin: 288060
+    def: 796
+    defRequireCoin: 155420
+    hp: 1246
+    hpRequireCoin: 126980
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.93
+    criDmgRequireCoin: 547980
+  - level: 647
+    atk: 1197
+    atkRequireCoin: 289670
+    def: 797
+    defRequireCoin: 156190
+    hp: 1247
+    hpRequireCoin: 127610
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.935
+    criDmgRequireCoin: 551110
+  - level: 648
+    atk: 1198
+    atkRequireCoin: 291280
+    def: 798
+    defRequireCoin: 156960
+    hp: 1248
+    hpRequireCoin: 128240
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.94
+    criDmgRequireCoin: 554240
+  - level: 649
+    atk: 1199
+    atkRequireCoin: 292890
+    def: 799
+    defRequireCoin: 157730
+    hp: 1249
+    hpRequireCoin: 128870
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.945
+    criDmgRequireCoin: 557370
+  - level: 650
+    atk: 1200
+    atkRequireCoin: 294500
+    def: 800
+    defRequireCoin: 158500
+    hp: 1250
+    hpRequireCoin: 129500
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.95
+    criDmgRequireCoin: 560500
+  - level: 651
+    atk: 1201
+    atkRequireCoin: 296110
+    def: 801
+    defRequireCoin: 159270
+    hp: 1251
+    hpRequireCoin: 130130
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.955
+    criDmgRequireCoin: 563630
+  - level: 652
+    atk: 1202
+    atkRequireCoin: 297720
+    def: 802
+    defRequireCoin: 160040
+    hp: 1252
+    hpRequireCoin: 130760
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.96
+    criDmgRequireCoin: 566760
+  - level: 653
+    atk: 1203
+    atkRequireCoin: 299330
+    def: 803
+    defRequireCoin: 160810
+    hp: 1253
+    hpRequireCoin: 131390
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.965
+    criDmgRequireCoin: 569890
+  - level: 654
+    atk: 1204
+    atkRequireCoin: 300940
+    def: 804
+    defRequireCoin: 161580
+    hp: 1254
+    hpRequireCoin: 132020
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.97
+    criDmgRequireCoin: 573020
+  - level: 655
+    atk: 1205
+    atkRequireCoin: 302550
+    def: 805
+    defRequireCoin: 162350
+    hp: 1255
+    hpRequireCoin: 132650
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.975
+    criDmgRequireCoin: 576150
+  - level: 656
+    atk: 1206
+    atkRequireCoin: 304160
+    def: 806
+    defRequireCoin: 163120
+    hp: 1256
+    hpRequireCoin: 133280
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.98
+    criDmgRequireCoin: 579280
+  - level: 657
+    atk: 1207
+    atkRequireCoin: 305770
+    def: 807
+    defRequireCoin: 163890
+    hp: 1257
+    hpRequireCoin: 133910
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.985
+    criDmgRequireCoin: 582410
+  - level: 658
+    atk: 1208
+    atkRequireCoin: 307380
+    def: 808
+    defRequireCoin: 164660
+    hp: 1258
+    hpRequireCoin: 134540
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.99
+    criDmgRequireCoin: 585540
+  - level: 659
+    atk: 1209
+    atkRequireCoin: 308990
+    def: 809
+    defRequireCoin: 165430
+    hp: 1259
+    hpRequireCoin: 135170
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 6.995
+    criDmgRequireCoin: 588670
+  - level: 660
+    atk: 1210
+    atkRequireCoin: 310600
+    def: 810
+    defRequireCoin: 166200
+    hp: 1260
+    hpRequireCoin: 135800
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7
+    criDmgRequireCoin: 591800
+  - level: 661
+    atk: 1211
+    atkRequireCoin: 312210
+    def: 811
+    defRequireCoin: 166970
+    hp: 1261
+    hpRequireCoin: 136430
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.005
+    criDmgRequireCoin: 594930
+  - level: 662
+    atk: 1212
+    atkRequireCoin: 313820
+    def: 812
+    defRequireCoin: 167740
+    hp: 1262
+    hpRequireCoin: 137060
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.01
+    criDmgRequireCoin: 598060
+  - level: 663
+    atk: 1213
+    atkRequireCoin: 315430
+    def: 813
+    defRequireCoin: 168510
+    hp: 1263
+    hpRequireCoin: 137690
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.015
+    criDmgRequireCoin: 601190
+  - level: 664
+    atk: 1214
+    atkRequireCoin: 317040
+    def: 814
+    defRequireCoin: 169280
+    hp: 1264
+    hpRequireCoin: 138320
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.02
+    criDmgRequireCoin: 604320
+  - level: 665
+    atk: 1215
+    atkRequireCoin: 318650
+    def: 815
+    defRequireCoin: 170050
+    hp: 1265
+    hpRequireCoin: 138950
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.025
+    criDmgRequireCoin: 607450
+  - level: 666
+    atk: 1216
+    atkRequireCoin: 320260
+    def: 816
+    defRequireCoin: 170820
+    hp: 1266
+    hpRequireCoin: 139580
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.03
+    criDmgRequireCoin: 610580
+  - level: 667
+    atk: 1217
+    atkRequireCoin: 321870
+    def: 817
+    defRequireCoin: 171590
+    hp: 1267
+    hpRequireCoin: 140210
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.035
+    criDmgRequireCoin: 613710
+  - level: 668
+    atk: 1218
+    atkRequireCoin: 323480
+    def: 818
+    defRequireCoin: 172360
+    hp: 1268
+    hpRequireCoin: 140840
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.04
+    criDmgRequireCoin: 616840
+  - level: 669
+    atk: 1219
+    atkRequireCoin: 325090
+    def: 819
+    defRequireCoin: 173130
+    hp: 1269
+    hpRequireCoin: 141470
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.045
+    criDmgRequireCoin: 619970
+  - level: 670
+    atk: 1220
+    atkRequireCoin: 326700
+    def: 820
+    defRequireCoin: 173900
+    hp: 1270
+    hpRequireCoin: 142100
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.05
+    criDmgRequireCoin: 623100
+  - level: 671
+    atk: 1221
+    atkRequireCoin: 328310
+    def: 821
+    defRequireCoin: 174670
+    hp: 1271
+    hpRequireCoin: 142730
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.055
+    criDmgRequireCoin: 626230
+  - level: 672
+    atk: 1222
+    atkRequireCoin: 329920
+    def: 822
+    defRequireCoin: 175440
+    hp: 1272
+    hpRequireCoin: 143360
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.06
+    criDmgRequireCoin: 629360
+  - level: 673
+    atk: 1223
+    atkRequireCoin: 331530
+    def: 823
+    defRequireCoin: 176210
+    hp: 1273
+    hpRequireCoin: 143990
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.065
+    criDmgRequireCoin: 632490
+  - level: 674
+    atk: 1224
+    atkRequireCoin: 333140
+    def: 824
+    defRequireCoin: 176980
+    hp: 1274
+    hpRequireCoin: 144620
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.07
+    criDmgRequireCoin: 635620
+  - level: 675
+    atk: 1225
+    atkRequireCoin: 334750
+    def: 825
+    defRequireCoin: 177750
+    hp: 1275
+    hpRequireCoin: 145250
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.075
+    criDmgRequireCoin: 638750
+  - level: 676
+    atk: 1226
+    atkRequireCoin: 336360
+    def: 826
+    defRequireCoin: 178520
+    hp: 1276
+    hpRequireCoin: 145880
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.08
+    criDmgRequireCoin: 641880
+  - level: 677
+    atk: 1227
+    atkRequireCoin: 337970
+    def: 827
+    defRequireCoin: 179290
+    hp: 1277
+    hpRequireCoin: 146510
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.085
+    criDmgRequireCoin: 645010
+  - level: 678
+    atk: 1228
+    atkRequireCoin: 339580
+    def: 828
+    defRequireCoin: 180060
+    hp: 1278
+    hpRequireCoin: 147140
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.09
+    criDmgRequireCoin: 648140
+  - level: 679
+    atk: 1229
+    atkRequireCoin: 341190
+    def: 829
+    defRequireCoin: 180830
+    hp: 1279
+    hpRequireCoin: 147770
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.095
+    criDmgRequireCoin: 651270
+  - level: 680
+    atk: 1230
+    atkRequireCoin: 342800
+    def: 830
+    defRequireCoin: 181600
+    hp: 1280
+    hpRequireCoin: 148400
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.1
+    criDmgRequireCoin: 654400
+  - level: 681
+    atk: 1231
+    atkRequireCoin: 344410
+    def: 831
+    defRequireCoin: 182370
+    hp: 1281
+    hpRequireCoin: 149030
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.105
+    criDmgRequireCoin: 657530
+  - level: 682
+    atk: 1232
+    atkRequireCoin: 346020
+    def: 832
+    defRequireCoin: 183140
+    hp: 1282
+    hpRequireCoin: 149660
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.11
+    criDmgRequireCoin: 660660
+  - level: 683
+    atk: 1233
+    atkRequireCoin: 347630
+    def: 833
+    defRequireCoin: 183910
+    hp: 1283
+    hpRequireCoin: 150290
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.115
+    criDmgRequireCoin: 663790
+  - level: 684
+    atk: 1234
+    atkRequireCoin: 349240
+    def: 834
+    defRequireCoin: 184680
+    hp: 1284
+    hpRequireCoin: 150920
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.12
+    criDmgRequireCoin: 666920
+  - level: 685
+    atk: 1235
+    atkRequireCoin: 350850
+    def: 835
+    defRequireCoin: 185450
+    hp: 1285
+    hpRequireCoin: 151550
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.125
+    criDmgRequireCoin: 670050
+  - level: 686
+    atk: 1236
+    atkRequireCoin: 352460
+    def: 836
+    defRequireCoin: 186220
+    hp: 1286
+    hpRequireCoin: 152180
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.13
+    criDmgRequireCoin: 673180
+  - level: 687
+    atk: 1237
+    atkRequireCoin: 354070
+    def: 837
+    defRequireCoin: 186990
+    hp: 1287
+    hpRequireCoin: 152810
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.135
+    criDmgRequireCoin: 676310
+  - level: 688
+    atk: 1238
+    atkRequireCoin: 355680
+    def: 838
+    defRequireCoin: 187760
+    hp: 1288
+    hpRequireCoin: 153440
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.14
+    criDmgRequireCoin: 679440
+  - level: 689
+    atk: 1239
+    atkRequireCoin: 357290
+    def: 839
+    defRequireCoin: 188530
+    hp: 1289
+    hpRequireCoin: 154070
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.145
+    criDmgRequireCoin: 682570
+  - level: 690
+    atk: 1240
+    atkRequireCoin: 358900
+    def: 840
+    defRequireCoin: 189300
+    hp: 1290
+    hpRequireCoin: 154700
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.15
+    criDmgRequireCoin: 685700
+  - level: 691
+    atk: 1241
+    atkRequireCoin: 360510
+    def: 841
+    defRequireCoin: 190070
+    hp: 1291
+    hpRequireCoin: 155330
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.155
+    criDmgRequireCoin: 688830
+  - level: 692
+    atk: 1242
+    atkRequireCoin: 362120
+    def: 842
+    defRequireCoin: 190840
+    hp: 1292
+    hpRequireCoin: 155960
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.16
+    criDmgRequireCoin: 691960
+  - level: 693
+    atk: 1243
+    atkRequireCoin: 363730
+    def: 843
+    defRequireCoin: 191610
+    hp: 1293
+    hpRequireCoin: 156590
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.165
+    criDmgRequireCoin: 695090
+  - level: 694
+    atk: 1244
+    atkRequireCoin: 365340
+    def: 844
+    defRequireCoin: 192380
+    hp: 1294
+    hpRequireCoin: 157220
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.17
+    criDmgRequireCoin: 698220
+  - level: 695
+    atk: 1245
+    atkRequireCoin: 366950
+    def: 845
+    defRequireCoin: 193150
+    hp: 1295
+    hpRequireCoin: 157850
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.175
+    criDmgRequireCoin: 701350
+  - level: 696
+    atk: 1246
+    atkRequireCoin: 368560
+    def: 846
+    defRequireCoin: 193920
+    hp: 1296
+    hpRequireCoin: 158480
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.18
+    criDmgRequireCoin: 704480
+  - level: 697
+    atk: 1247
+    atkRequireCoin: 370170
+    def: 847
+    defRequireCoin: 194690
+    hp: 1297
+    hpRequireCoin: 159110
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.185
+    criDmgRequireCoin: 707610
+  - level: 698
+    atk: 1248
+    atkRequireCoin: 371780
+    def: 848
+    defRequireCoin: 195460
+    hp: 1298
+    hpRequireCoin: 159740
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.19
+    criDmgRequireCoin: 710740
+  - level: 699
+    atk: 1249
+    atkRequireCoin: 373390
+    def: 849
+    defRequireCoin: 196230
+    hp: 1299
+    hpRequireCoin: 160370
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.195
+    criDmgRequireCoin: 713870
+  - level: 700
+    atk: 1250
+    atkRequireCoin: 375000
+    def: 850
+    defRequireCoin: 197000
+    hp: 1300
+    hpRequireCoin: 161000
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.2
+    criDmgRequireCoin: 717000
+  - level: 701
+    atk: 1251
+    atkRequireCoin: 376610
+    def: 851
+    defRequireCoin: 197770
+    hp: 1301
+    hpRequireCoin: 161630
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.205
+    criDmgRequireCoin: 720130
+  - level: 702
+    atk: 1252
+    atkRequireCoin: 378220
+    def: 852
+    defRequireCoin: 198540
+    hp: 1302
+    hpRequireCoin: 162260
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.21
+    criDmgRequireCoin: 723260
+  - level: 703
+    atk: 1253
+    atkRequireCoin: 379830
+    def: 853
+    defRequireCoin: 199310
+    hp: 1303
+    hpRequireCoin: 162890
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.215
+    criDmgRequireCoin: 726390
+  - level: 704
+    atk: 1254
+    atkRequireCoin: 381440
+    def: 854
+    defRequireCoin: 200080
+    hp: 1304
+    hpRequireCoin: 163520
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.22
+    criDmgRequireCoin: 729520
+  - level: 705
+    atk: 1255
+    atkRequireCoin: 383050
+    def: 855
+    defRequireCoin: 200850
+    hp: 1305
+    hpRequireCoin: 164150
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.225
+    criDmgRequireCoin: 732650
+  - level: 706
+    atk: 1256
+    atkRequireCoin: 384660
+    def: 856
+    defRequireCoin: 201620
+    hp: 1306
+    hpRequireCoin: 164780
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.23
+    criDmgRequireCoin: 735780
+  - level: 707
+    atk: 1257
+    atkRequireCoin: 386270
+    def: 857
+    defRequireCoin: 202390
+    hp: 1307
+    hpRequireCoin: 165410
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.235
+    criDmgRequireCoin: 738910
+  - level: 708
+    atk: 1258
+    atkRequireCoin: 387880
+    def: 858
+    defRequireCoin: 203160
+    hp: 1308
+    hpRequireCoin: 166040
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.24
+    criDmgRequireCoin: 742040
+  - level: 709
+    atk: 1259
+    atkRequireCoin: 389490
+    def: 859
+    defRequireCoin: 203930
+    hp: 1309
+    hpRequireCoin: 166670
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.245
+    criDmgRequireCoin: 745170
+  - level: 710
+    atk: 1260
+    atkRequireCoin: 391100
+    def: 860
+    defRequireCoin: 204700
+    hp: 1310
+    hpRequireCoin: 167300
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.25
+    criDmgRequireCoin: 748300
+  - level: 711
+    atk: 1261
+    atkRequireCoin: 392710
+    def: 861
+    defRequireCoin: 205470
+    hp: 1311
+    hpRequireCoin: 167930
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.255
+    criDmgRequireCoin: 751430
+  - level: 712
+    atk: 1262
+    atkRequireCoin: 394320
+    def: 862
+    defRequireCoin: 206240
+    hp: 1312
+    hpRequireCoin: 168560
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.26
+    criDmgRequireCoin: 754560
+  - level: 713
+    atk: 1263
+    atkRequireCoin: 395930
+    def: 863
+    defRequireCoin: 207010
+    hp: 1313
+    hpRequireCoin: 169190
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.265
+    criDmgRequireCoin: 757690
+  - level: 714
+    atk: 1264
+    atkRequireCoin: 397540
+    def: 864
+    defRequireCoin: 207780
+    hp: 1314
+    hpRequireCoin: 169820
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.27
+    criDmgRequireCoin: 760820
+  - level: 715
+    atk: 1265
+    atkRequireCoin: 399150
+    def: 865
+    defRequireCoin: 208550
+    hp: 1315
+    hpRequireCoin: 170450
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.275
+    criDmgRequireCoin: 763950
+  - level: 716
+    atk: 1266
+    atkRequireCoin: 400760
+    def: 866
+    defRequireCoin: 209320
+    hp: 1316
+    hpRequireCoin: 171080
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.28
+    criDmgRequireCoin: 767080
+  - level: 717
+    atk: 1267
+    atkRequireCoin: 402370
+    def: 867
+    defRequireCoin: 210090
+    hp: 1317
+    hpRequireCoin: 171710
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.285
+    criDmgRequireCoin: 770210
+  - level: 718
+    atk: 1268
+    atkRequireCoin: 403980
+    def: 868
+    defRequireCoin: 210860
+    hp: 1318
+    hpRequireCoin: 172340
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.29
+    criDmgRequireCoin: 773340
+  - level: 719
+    atk: 1269
+    atkRequireCoin: 405590
+    def: 869
+    defRequireCoin: 211630
+    hp: 1319
+    hpRequireCoin: 172970
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.295
+    criDmgRequireCoin: 776470
+  - level: 720
+    atk: 1270
+    atkRequireCoin: 407200
+    def: 870
+    defRequireCoin: 212400
+    hp: 1320
+    hpRequireCoin: 173600
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.3
+    criDmgRequireCoin: 779600
+  - level: 721
+    atk: 1271
+    atkRequireCoin: 408810
+    def: 871
+    defRequireCoin: 213170
+    hp: 1321
+    hpRequireCoin: 174230
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.305
+    criDmgRequireCoin: 782730
+  - level: 722
+    atk: 1272
+    atkRequireCoin: 410420
+    def: 872
+    defRequireCoin: 213940
+    hp: 1322
+    hpRequireCoin: 174860
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.31
+    criDmgRequireCoin: 785860
+  - level: 723
+    atk: 1273
+    atkRequireCoin: 412030
+    def: 873
+    defRequireCoin: 214710
+    hp: 1323
+    hpRequireCoin: 175490
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.315
+    criDmgRequireCoin: 788990
+  - level: 724
+    atk: 1274
+    atkRequireCoin: 413640
+    def: 874
+    defRequireCoin: 215480
+    hp: 1324
+    hpRequireCoin: 176120
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.32
+    criDmgRequireCoin: 792120
+  - level: 725
+    atk: 1275
+    atkRequireCoin: 415250
+    def: 875
+    defRequireCoin: 216250
+    hp: 1325
+    hpRequireCoin: 176750
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.325
+    criDmgRequireCoin: 795250
+  - level: 726
+    atk: 1276
+    atkRequireCoin: 416860
+    def: 876
+    defRequireCoin: 217020
+    hp: 1326
+    hpRequireCoin: 177380
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.33
+    criDmgRequireCoin: 798380
+  - level: 727
+    atk: 1277
+    atkRequireCoin: 418470
+    def: 877
+    defRequireCoin: 217790
+    hp: 1327
+    hpRequireCoin: 178010
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.335
+    criDmgRequireCoin: 801510
+  - level: 728
+    atk: 1278
+    atkRequireCoin: 420080
+    def: 878
+    defRequireCoin: 218560
+    hp: 1328
+    hpRequireCoin: 178640
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.34
+    criDmgRequireCoin: 804640
+  - level: 729
+    atk: 1279
+    atkRequireCoin: 421690
+    def: 879
+    defRequireCoin: 219330
+    hp: 1329
+    hpRequireCoin: 179270
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.345
+    criDmgRequireCoin: 807770
+  - level: 730
+    atk: 1280
+    atkRequireCoin: 423300
+    def: 880
+    defRequireCoin: 220100
+    hp: 1330
+    hpRequireCoin: 179900
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.35
+    criDmgRequireCoin: 810900
+  - level: 731
+    atk: 1281
+    atkRequireCoin: 424910
+    def: 881
+    defRequireCoin: 220870
+    hp: 1331
+    hpRequireCoin: 180530
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.355
+    criDmgRequireCoin: 814030
+  - level: 732
+    atk: 1282
+    atkRequireCoin: 426520
+    def: 882
+    defRequireCoin: 221640
+    hp: 1332
+    hpRequireCoin: 181160
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.36
+    criDmgRequireCoin: 817160
+  - level: 733
+    atk: 1283
+    atkRequireCoin: 428130
+    def: 883
+    defRequireCoin: 222410
+    hp: 1333
+    hpRequireCoin: 181790
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.365
+    criDmgRequireCoin: 820290
+  - level: 734
+    atk: 1284
+    atkRequireCoin: 429740
+    def: 884
+    defRequireCoin: 223180
+    hp: 1334
+    hpRequireCoin: 182420
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.37
+    criDmgRequireCoin: 823420
+  - level: 735
+    atk: 1285
+    atkRequireCoin: 431350
+    def: 885
+    defRequireCoin: 223950
+    hp: 1335
+    hpRequireCoin: 183050
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.375
+    criDmgRequireCoin: 826550
+  - level: 736
+    atk: 1286
+    atkRequireCoin: 432960
+    def: 886
+    defRequireCoin: 224720
+    hp: 1336
+    hpRequireCoin: 183680
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.38
+    criDmgRequireCoin: 829680
+  - level: 737
+    atk: 1287
+    atkRequireCoin: 434570
+    def: 887
+    defRequireCoin: 225490
+    hp: 1337
+    hpRequireCoin: 184310
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.385
+    criDmgRequireCoin: 832810
+  - level: 738
+    atk: 1288
+    atkRequireCoin: 436180
+    def: 888
+    defRequireCoin: 226260
+    hp: 1338
+    hpRequireCoin: 184940
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.39
+    criDmgRequireCoin: 835940
+  - level: 739
+    atk: 1289
+    atkRequireCoin: 437790
+    def: 889
+    defRequireCoin: 227030
+    hp: 1339
+    hpRequireCoin: 185570
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.395
+    criDmgRequireCoin: 839070
+  - level: 740
+    atk: 1290
+    atkRequireCoin: 439400
+    def: 890
+    defRequireCoin: 227800
+    hp: 1340
+    hpRequireCoin: 186200
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.4
+    criDmgRequireCoin: 842200
+  - level: 741
+    atk: 1291
+    atkRequireCoin: 441010
+    def: 891
+    defRequireCoin: 228570
+    hp: 1341
+    hpRequireCoin: 186830
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.405
+    criDmgRequireCoin: 845330
+  - level: 742
+    atk: 1292
+    atkRequireCoin: 442620
+    def: 892
+    defRequireCoin: 229340
+    hp: 1342
+    hpRequireCoin: 187460
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.41
+    criDmgRequireCoin: 848460
+  - level: 743
+    atk: 1293
+    atkRequireCoin: 444230
+    def: 893
+    defRequireCoin: 230110
+    hp: 1343
+    hpRequireCoin: 188090
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.415
+    criDmgRequireCoin: 851590
+  - level: 744
+    atk: 1294
+    atkRequireCoin: 445840
+    def: 894
+    defRequireCoin: 230880
+    hp: 1344
+    hpRequireCoin: 188720
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.42
+    criDmgRequireCoin: 854720
+  - level: 745
+    atk: 1295
+    atkRequireCoin: 447450
+    def: 895
+    defRequireCoin: 231650
+    hp: 1345
+    hpRequireCoin: 189350
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.425
+    criDmgRequireCoin: 857850
+  - level: 746
+    atk: 1296
+    atkRequireCoin: 449060
+    def: 896
+    defRequireCoin: 232420
+    hp: 1346
+    hpRequireCoin: 189980
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.43
+    criDmgRequireCoin: 860980
+  - level: 747
+    atk: 1297
+    atkRequireCoin: 450670
+    def: 897
+    defRequireCoin: 233190
+    hp: 1347
+    hpRequireCoin: 190610
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.435
+    criDmgRequireCoin: 864110
+  - level: 748
+    atk: 1298
+    atkRequireCoin: 452280
+    def: 898
+    defRequireCoin: 233960
+    hp: 1348
+    hpRequireCoin: 191240
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.44
+    criDmgRequireCoin: 867240
+  - level: 749
+    atk: 1299
+    atkRequireCoin: 453890
+    def: 899
+    defRequireCoin: 234730
+    hp: 1349
+    hpRequireCoin: 191870
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.445
+    criDmgRequireCoin: 870370
+  - level: 750
+    atk: 1300
+    atkRequireCoin: 455500
+    def: 900
+    defRequireCoin: 235500
+    hp: 1350
+    hpRequireCoin: 192500
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.45
+    criDmgRequireCoin: 873500
+  - level: 751
+    atk: 1301
+    atkRequireCoin: 457110
+    def: 901
+    defRequireCoin: 236270
+    hp: 1351
+    hpRequireCoin: 193130
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.455
+    criDmgRequireCoin: 876630
+  - level: 752
+    atk: 1302
+    atkRequireCoin: 458720
+    def: 902
+    defRequireCoin: 237040
+    hp: 1352
+    hpRequireCoin: 193760
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.46
+    criDmgRequireCoin: 879760
+  - level: 753
+    atk: 1303
+    atkRequireCoin: 460330
+    def: 903
+    defRequireCoin: 237810
+    hp: 1353
+    hpRequireCoin: 194390
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.465
+    criDmgRequireCoin: 882890
+  - level: 754
+    atk: 1304
+    atkRequireCoin: 461940
+    def: 904
+    defRequireCoin: 238580
+    hp: 1354
+    hpRequireCoin: 195020
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.47
+    criDmgRequireCoin: 886020
+  - level: 755
+    atk: 1305
+    atkRequireCoin: 463550
+    def: 905
+    defRequireCoin: 239350
+    hp: 1355
+    hpRequireCoin: 195650
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.475
+    criDmgRequireCoin: 889150
+  - level: 756
+    atk: 1306
+    atkRequireCoin: 465160
+    def: 906
+    defRequireCoin: 240120
+    hp: 1356
+    hpRequireCoin: 196280
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.48
+    criDmgRequireCoin: 892280
+  - level: 757
+    atk: 1307
+    atkRequireCoin: 466770
+    def: 907
+    defRequireCoin: 240890
+    hp: 1357
+    hpRequireCoin: 196910
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.485
+    criDmgRequireCoin: 895410
+  - level: 758
+    atk: 1308
+    atkRequireCoin: 468380
+    def: 908
+    defRequireCoin: 241660
+    hp: 1358
+    hpRequireCoin: 197540
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.49
+    criDmgRequireCoin: 898540
+  - level: 759
+    atk: 1309
+    atkRequireCoin: 469990
+    def: 909
+    defRequireCoin: 242430
+    hp: 1359
+    hpRequireCoin: 198170
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.495
+    criDmgRequireCoin: 901670
+  - level: 760
+    atk: 1310
+    atkRequireCoin: 471600
+    def: 910
+    defRequireCoin: 243200
+    hp: 1360
+    hpRequireCoin: 198800
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.5
+    criDmgRequireCoin: 904800
+  - level: 761
+    atk: 1311
+    atkRequireCoin: 473210
+    def: 911
+    defRequireCoin: 243970
+    hp: 1361
+    hpRequireCoin: 199430
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.505
+    criDmgRequireCoin: 907930
+  - level: 762
+    atk: 1312
+    atkRequireCoin: 474820
+    def: 912
+    defRequireCoin: 244740
+    hp: 1362
+    hpRequireCoin: 200060
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.51
+    criDmgRequireCoin: 911060
+  - level: 763
+    atk: 1313
+    atkRequireCoin: 476430
+    def: 913
+    defRequireCoin: 245510
+    hp: 1363
+    hpRequireCoin: 200690
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.515
+    criDmgRequireCoin: 914190
+  - level: 764
+    atk: 1314
+    atkRequireCoin: 478040
+    def: 914
+    defRequireCoin: 246280
+    hp: 1364
+    hpRequireCoin: 201320
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.52
+    criDmgRequireCoin: 917320
+  - level: 765
+    atk: 1315
+    atkRequireCoin: 479650
+    def: 915
+    defRequireCoin: 247050
+    hp: 1365
+    hpRequireCoin: 201950
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.525
+    criDmgRequireCoin: 920450
+  - level: 766
+    atk: 1316
+    atkRequireCoin: 481260
+    def: 916
+    defRequireCoin: 247820
+    hp: 1366
+    hpRequireCoin: 202580
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.53
+    criDmgRequireCoin: 923580
+  - level: 767
+    atk: 1317
+    atkRequireCoin: 482870
+    def: 917
+    defRequireCoin: 248590
+    hp: 1367
+    hpRequireCoin: 203210
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.535
+    criDmgRequireCoin: 926710
+  - level: 768
+    atk: 1318
+    atkRequireCoin: 484480
+    def: 918
+    defRequireCoin: 249360
+    hp: 1368
+    hpRequireCoin: 203840
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.54
+    criDmgRequireCoin: 929840
+  - level: 769
+    atk: 1319
+    atkRequireCoin: 486090
+    def: 919
+    defRequireCoin: 250130
+    hp: 1369
+    hpRequireCoin: 204470
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.545
+    criDmgRequireCoin: 932970
+  - level: 770
+    atk: 1320
+    atkRequireCoin: 487700
+    def: 920
+    defRequireCoin: 250900
+    hp: 1370
+    hpRequireCoin: 205100
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.55
+    criDmgRequireCoin: 936100
+  - level: 771
+    atk: 1321
+    atkRequireCoin: 489310
+    def: 921
+    defRequireCoin: 251670
+    hp: 1371
+    hpRequireCoin: 205730
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.555
+    criDmgRequireCoin: 939230
+  - level: 772
+    atk: 1322
+    atkRequireCoin: 490920
+    def: 922
+    defRequireCoin: 252440
+    hp: 1372
+    hpRequireCoin: 206360
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.56
+    criDmgRequireCoin: 942360
+  - level: 773
+    atk: 1323
+    atkRequireCoin: 492530
+    def: 923
+    defRequireCoin: 253210
+    hp: 1373
+    hpRequireCoin: 206990
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.565
+    criDmgRequireCoin: 945490
+  - level: 774
+    atk: 1324
+    atkRequireCoin: 494140
+    def: 924
+    defRequireCoin: 253980
+    hp: 1374
+    hpRequireCoin: 207620
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.57
+    criDmgRequireCoin: 948620
+  - level: 775
+    atk: 1325
+    atkRequireCoin: 495750
+    def: 925
+    defRequireCoin: 254750
+    hp: 1375
+    hpRequireCoin: 208250
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.575
+    criDmgRequireCoin: 951750
+  - level: 776
+    atk: 1326
+    atkRequireCoin: 497360
+    def: 926
+    defRequireCoin: 255520
+    hp: 1376
+    hpRequireCoin: 208880
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.58
+    criDmgRequireCoin: 954880
+  - level: 777
+    atk: 1327
+    atkRequireCoin: 498970
+    def: 927
+    defRequireCoin: 256290
+    hp: 1377
+    hpRequireCoin: 209510
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.585
+    criDmgRequireCoin: 958010
+  - level: 778
+    atk: 1328
+    atkRequireCoin: 500580
+    def: 928
+    defRequireCoin: 257060
+    hp: 1378
+    hpRequireCoin: 210140
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.59
+    criDmgRequireCoin: 961140
+  - level: 779
+    atk: 1329
+    atkRequireCoin: 502190
+    def: 929
+    defRequireCoin: 257830
+    hp: 1379
+    hpRequireCoin: 210770
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.595
+    criDmgRequireCoin: 964270
+  - level: 780
+    atk: 1330
+    atkRequireCoin: 503800
+    def: 930
+    defRequireCoin: 258600
+    hp: 1380
+    hpRequireCoin: 211400
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.6
+    criDmgRequireCoin: 967400
+  - level: 781
+    atk: 1331
+    atkRequireCoin: 505410
+    def: 931
+    defRequireCoin: 259370
+    hp: 1381
+    hpRequireCoin: 212030
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.605
+    criDmgRequireCoin: 970530
+  - level: 782
+    atk: 1332
+    atkRequireCoin: 507020
+    def: 932
+    defRequireCoin: 260140
+    hp: 1382
+    hpRequireCoin: 212660
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.61
+    criDmgRequireCoin: 973660
+  - level: 783
+    atk: 1333
+    atkRequireCoin: 508630
+    def: 933
+    defRequireCoin: 260910
+    hp: 1383
+    hpRequireCoin: 213290
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.615
+    criDmgRequireCoin: 976790
+  - level: 784
+    atk: 1334
+    atkRequireCoin: 510240
+    def: 934
+    defRequireCoin: 261680
+    hp: 1384
+    hpRequireCoin: 213920
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.62
+    criDmgRequireCoin: 979920
+  - level: 785
+    atk: 1335
+    atkRequireCoin: 511850
+    def: 935
+    defRequireCoin: 262450
+    hp: 1385
+    hpRequireCoin: 214550
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.625
+    criDmgRequireCoin: 983050
+  - level: 786
+    atk: 1336
+    atkRequireCoin: 513460
+    def: 936
+    defRequireCoin: 263220
+    hp: 1386
+    hpRequireCoin: 215180
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.63
+    criDmgRequireCoin: 986180
+  - level: 787
+    atk: 1337
+    atkRequireCoin: 515070
+    def: 937
+    defRequireCoin: 263990
+    hp: 1387
+    hpRequireCoin: 215810
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.635
+    criDmgRequireCoin: 989310
+  - level: 788
+    atk: 1338
+    atkRequireCoin: 516680
+    def: 938
+    defRequireCoin: 264760
+    hp: 1388
+    hpRequireCoin: 216440
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.64
+    criDmgRequireCoin: 992440
+  - level: 789
+    atk: 1339
+    atkRequireCoin: 518290
+    def: 939
+    defRequireCoin: 265530
+    hp: 1389
+    hpRequireCoin: 217070
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.645
+    criDmgRequireCoin: 995570
+  - level: 790
+    atk: 1340
+    atkRequireCoin: 519900
+    def: 940
+    defRequireCoin: 266300
+    hp: 1390
+    hpRequireCoin: 217700
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.65
+    criDmgRequireCoin: 998700
+  - level: 791
+    atk: 1341
+    atkRequireCoin: 521510
+    def: 941
+    defRequireCoin: 267070
+    hp: 1391
+    hpRequireCoin: 218330
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.655
+    criDmgRequireCoin: 1001830
+  - level: 792
+    atk: 1342
+    atkRequireCoin: 523120
+    def: 942
+    defRequireCoin: 267840
+    hp: 1392
+    hpRequireCoin: 218960
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.66
+    criDmgRequireCoin: 1004960
+  - level: 793
+    atk: 1343
+    atkRequireCoin: 524730
+    def: 943
+    defRequireCoin: 268610
+    hp: 1393
+    hpRequireCoin: 219590
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.665
+    criDmgRequireCoin: 1008090
+  - level: 794
+    atk: 1344
+    atkRequireCoin: 526340
+    def: 944
+    defRequireCoin: 269380
+    hp: 1394
+    hpRequireCoin: 220220
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.67
+    criDmgRequireCoin: 1011220
+  - level: 795
+    atk: 1345
+    atkRequireCoin: 527950
+    def: 945
+    defRequireCoin: 270150
+    hp: 1395
+    hpRequireCoin: 220850
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.675
+    criDmgRequireCoin: 1014350
+  - level: 796
+    atk: 1346
+    atkRequireCoin: 529560
+    def: 946
+    defRequireCoin: 270920
+    hp: 1396
+    hpRequireCoin: 221480
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.68
+    criDmgRequireCoin: 1017480
+  - level: 797
+    atk: 1347
+    atkRequireCoin: 531170
+    def: 947
+    defRequireCoin: 271690
+    hp: 1397
+    hpRequireCoin: 222110
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.685
+    criDmgRequireCoin: 1020610
+  - level: 798
+    atk: 1348
+    atkRequireCoin: 532780
+    def: 948
+    defRequireCoin: 272460
+    hp: 1398
+    hpRequireCoin: 222740
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.69
+    criDmgRequireCoin: 1023740
+  - level: 799
+    atk: 1349
+    atkRequireCoin: 534390
+    def: 949
+    defRequireCoin: 273230
+    hp: 1399
+    hpRequireCoin: 223370
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.695
+    criDmgRequireCoin: 1026870
+  - level: 800
+    atk: 1350
+    atkRequireCoin: 536000
+    def: 950
+    defRequireCoin: 274000
+    hp: 1400
+    hpRequireCoin: 224000
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.7
+    criDmgRequireCoin: 1030000
+  - level: 801
+    atk: 1351
+    atkRequireCoin: 537610
+    def: 951
+    defRequireCoin: 274770
+    hp: 1401
+    hpRequireCoin: 224630
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.705
+    criDmgRequireCoin: 1033130
+  - level: 802
+    atk: 1352
+    atkRequireCoin: 539220
+    def: 952
+    defRequireCoin: 275540
+    hp: 1402
+    hpRequireCoin: 225260
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.71
+    criDmgRequireCoin: 1036260
+  - level: 803
+    atk: 1353
+    atkRequireCoin: 540830
+    def: 953
+    defRequireCoin: 276310
+    hp: 1403
+    hpRequireCoin: 225890
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.715
+    criDmgRequireCoin: 1039390
+  - level: 804
+    atk: 1354
+    atkRequireCoin: 542440
+    def: 954
+    defRequireCoin: 277080
+    hp: 1404
+    hpRequireCoin: 226520
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.72
+    criDmgRequireCoin: 1042520
+  - level: 805
+    atk: 1355
+    atkRequireCoin: 544050
+    def: 955
+    defRequireCoin: 277850
+    hp: 1405
+    hpRequireCoin: 227150
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.725
+    criDmgRequireCoin: 1045650
+  - level: 806
+    atk: 1356
+    atkRequireCoin: 545660
+    def: 956
+    defRequireCoin: 278620
+    hp: 1406
+    hpRequireCoin: 227780
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.73
+    criDmgRequireCoin: 1048780
+  - level: 807
+    atk: 1357
+    atkRequireCoin: 547270
+    def: 957
+    defRequireCoin: 279390
+    hp: 1407
+    hpRequireCoin: 228410
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.735
+    criDmgRequireCoin: 1051910
+  - level: 808
+    atk: 1358
+    atkRequireCoin: 548880
+    def: 958
+    defRequireCoin: 280160
+    hp: 1408
+    hpRequireCoin: 229040
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.74
+    criDmgRequireCoin: 1055040
+  - level: 809
+    atk: 1359
+    atkRequireCoin: 550490
+    def: 959
+    defRequireCoin: 280930
+    hp: 1409
+    hpRequireCoin: 229670
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.745
+    criDmgRequireCoin: 1058170
+  - level: 810
+    atk: 1360
+    atkRequireCoin: 552100
+    def: 960
+    defRequireCoin: 281700
+    hp: 1410
+    hpRequireCoin: 230300
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.75
+    criDmgRequireCoin: 1061300
+  - level: 811
+    atk: 1361
+    atkRequireCoin: 553710
+    def: 961
+    defRequireCoin: 282470
+    hp: 1411
+    hpRequireCoin: 230930
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.755
+    criDmgRequireCoin: 1064430
+  - level: 812
+    atk: 1362
+    atkRequireCoin: 555320
+    def: 962
+    defRequireCoin: 283240
+    hp: 1412
+    hpRequireCoin: 231560
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.76
+    criDmgRequireCoin: 1067560
+  - level: 813
+    atk: 1363
+    atkRequireCoin: 556930
+    def: 963
+    defRequireCoin: 284010
+    hp: 1413
+    hpRequireCoin: 232190
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.765
+    criDmgRequireCoin: 1070690
+  - level: 814
+    atk: 1364
+    atkRequireCoin: 558540
+    def: 964
+    defRequireCoin: 284780
+    hp: 1414
+    hpRequireCoin: 232820
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.77
+    criDmgRequireCoin: 1073820
+  - level: 815
+    atk: 1365
+    atkRequireCoin: 560150
+    def: 965
+    defRequireCoin: 285550
+    hp: 1415
+    hpRequireCoin: 233450
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.775
+    criDmgRequireCoin: 1076950
+  - level: 816
+    atk: 1366
+    atkRequireCoin: 561760
+    def: 966
+    defRequireCoin: 286320
+    hp: 1416
+    hpRequireCoin: 234080
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.78
+    criDmgRequireCoin: 1080080
+  - level: 817
+    atk: 1367
+    atkRequireCoin: 563370
+    def: 967
+    defRequireCoin: 287090
+    hp: 1417
+    hpRequireCoin: 234710
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.785
+    criDmgRequireCoin: 1083210
+  - level: 818
+    atk: 1368
+    atkRequireCoin: 564980
+    def: 968
+    defRequireCoin: 287860
+    hp: 1418
+    hpRequireCoin: 235340
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.79
+    criDmgRequireCoin: 1086340
+  - level: 819
+    atk: 1369
+    atkRequireCoin: 566590
+    def: 969
+    defRequireCoin: 288630
+    hp: 1419
+    hpRequireCoin: 235970
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.795
+    criDmgRequireCoin: 1089470
+  - level: 820
+    atk: 1370
+    atkRequireCoin: 568200
+    def: 970
+    defRequireCoin: 289400
+    hp: 1420
+    hpRequireCoin: 236600
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.8
+    criDmgRequireCoin: 1092600
+  - level: 821
+    atk: 1371
+    atkRequireCoin: 569810
+    def: 971
+    defRequireCoin: 290170
+    hp: 1421
+    hpRequireCoin: 237230
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.805
+    criDmgRequireCoin: 1095730
+  - level: 822
+    atk: 1372
+    atkRequireCoin: 571420
+    def: 972
+    defRequireCoin: 290940
+    hp: 1422
+    hpRequireCoin: 237860
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.81
+    criDmgRequireCoin: 1098860
+  - level: 823
+    atk: 1373
+    atkRequireCoin: 573030
+    def: 973
+    defRequireCoin: 291710
+    hp: 1423
+    hpRequireCoin: 238490
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.815
+    criDmgRequireCoin: 1101990
+  - level: 824
+    atk: 1374
+    atkRequireCoin: 574640
+    def: 974
+    defRequireCoin: 292480
+    hp: 1424
+    hpRequireCoin: 239120
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.82
+    criDmgRequireCoin: 1105120
+  - level: 825
+    atk: 1375
+    atkRequireCoin: 576250
+    def: 975
+    defRequireCoin: 293250
+    hp: 1425
+    hpRequireCoin: 239750
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.825
+    criDmgRequireCoin: 1108250
+  - level: 826
+    atk: 1376
+    atkRequireCoin: 577860
+    def: 976
+    defRequireCoin: 294020
+    hp: 1426
+    hpRequireCoin: 240380
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.83
+    criDmgRequireCoin: 1111380
+  - level: 827
+    atk: 1377
+    atkRequireCoin: 579470
+    def: 977
+    defRequireCoin: 294790
+    hp: 1427
+    hpRequireCoin: 241010
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.835
+    criDmgRequireCoin: 1114510
+  - level: 828
+    atk: 1378
+    atkRequireCoin: 581080
+    def: 978
+    defRequireCoin: 295560
+    hp: 1428
+    hpRequireCoin: 241640
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.84
+    criDmgRequireCoin: 1117640
+  - level: 829
+    atk: 1379
+    atkRequireCoin: 582690
+    def: 979
+    defRequireCoin: 296330
+    hp: 1429
+    hpRequireCoin: 242270
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.845
+    criDmgRequireCoin: 1120770
+  - level: 830
+    atk: 1380
+    atkRequireCoin: 584300
+    def: 980
+    defRequireCoin: 297100
+    hp: 1430
+    hpRequireCoin: 242900
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.85
+    criDmgRequireCoin: 1123900
+  - level: 831
+    atk: 1381
+    atkRequireCoin: 585910
+    def: 981
+    defRequireCoin: 297870
+    hp: 1431
+    hpRequireCoin: 243530
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.855
+    criDmgRequireCoin: 1127030
+  - level: 832
+    atk: 1382
+    atkRequireCoin: 587520
+    def: 982
+    defRequireCoin: 298640
+    hp: 1432
+    hpRequireCoin: 244160
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.86
+    criDmgRequireCoin: 1130160
+  - level: 833
+    atk: 1383
+    atkRequireCoin: 589130
+    def: 983
+    defRequireCoin: 299410
+    hp: 1433
+    hpRequireCoin: 244790
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.865
+    criDmgRequireCoin: 1133290
+  - level: 834
+    atk: 1384
+    atkRequireCoin: 590740
+    def: 984
+    defRequireCoin: 300180
+    hp: 1434
+    hpRequireCoin: 245420
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.87
+    criDmgRequireCoin: 1136420
+  - level: 835
+    atk: 1385
+    atkRequireCoin: 592350
+    def: 985
+    defRequireCoin: 300950
+    hp: 1435
+    hpRequireCoin: 246050
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.875
+    criDmgRequireCoin: 1139550
+  - level: 836
+    atk: 1386
+    atkRequireCoin: 593960
+    def: 986
+    defRequireCoin: 301720
+    hp: 1436
+    hpRequireCoin: 246680
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.88
+    criDmgRequireCoin: 1142680
+  - level: 837
+    atk: 1387
+    atkRequireCoin: 595570
+    def: 987
+    defRequireCoin: 302490
+    hp: 1437
+    hpRequireCoin: 247310
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.885
+    criDmgRequireCoin: 1145810
+  - level: 838
+    atk: 1388
+    atkRequireCoin: 597180
+    def: 988
+    defRequireCoin: 303260
+    hp: 1438
+    hpRequireCoin: 247940
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.89
+    criDmgRequireCoin: 1148940
+  - level: 839
+    atk: 1389
+    atkRequireCoin: 598790
+    def: 989
+    defRequireCoin: 304030
+    hp: 1439
+    hpRequireCoin: 248570
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.895
+    criDmgRequireCoin: 1152070
+  - level: 840
+    atk: 1390
+    atkRequireCoin: 600400
+    def: 990
+    defRequireCoin: 304800
+    hp: 1440
+    hpRequireCoin: 249200
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.9
+    criDmgRequireCoin: 1155200
+  - level: 841
+    atk: 1391
+    atkRequireCoin: 602010
+    def: 991
+    defRequireCoin: 305570
+    hp: 1441
+    hpRequireCoin: 249830
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.905
+    criDmgRequireCoin: 1158330
+  - level: 842
+    atk: 1392
+    atkRequireCoin: 603620
+    def: 992
+    defRequireCoin: 306340
+    hp: 1442
+    hpRequireCoin: 250460
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.91
+    criDmgRequireCoin: 1161460
+  - level: 843
+    atk: 1393
+    atkRequireCoin: 605230
+    def: 993
+    defRequireCoin: 307110
+    hp: 1443
+    hpRequireCoin: 251090
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.915
+    criDmgRequireCoin: 1164590
+  - level: 844
+    atk: 1394
+    atkRequireCoin: 606840
+    def: 994
+    defRequireCoin: 307880
+    hp: 1444
+    hpRequireCoin: 251720
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.92
+    criDmgRequireCoin: 1167720
+  - level: 845
+    atk: 1395
+    atkRequireCoin: 608450
+    def: 995
+    defRequireCoin: 308650
+    hp: 1445
+    hpRequireCoin: 252350
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.925
+    criDmgRequireCoin: 1170850
+  - level: 846
+    atk: 1396
+    atkRequireCoin: 610060
+    def: 996
+    defRequireCoin: 309420
+    hp: 1446
+    hpRequireCoin: 252980
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.93
+    criDmgRequireCoin: 1173980
+  - level: 847
+    atk: 1397
+    atkRequireCoin: 611670
+    def: 997
+    defRequireCoin: 310190
+    hp: 1447
+    hpRequireCoin: 253610
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.935
+    criDmgRequireCoin: 1177110
+  - level: 848
+    atk: 1398
+    atkRequireCoin: 613280
+    def: 998
+    defRequireCoin: 310960
+    hp: 1448
+    hpRequireCoin: 254240
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.94
+    criDmgRequireCoin: 1180240
+  - level: 849
+    atk: 1399
+    atkRequireCoin: 614890
+    def: 999
+    defRequireCoin: 311730
+    hp: 1449
+    hpRequireCoin: 254870
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.945
+    criDmgRequireCoin: 1183370
+  - level: 850
+    atk: 1400
+    atkRequireCoin: 616500
+    def: 1000
+    defRequireCoin: 312500
+    hp: 1450
+    hpRequireCoin: 255500
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.95
+    criDmgRequireCoin: 1186500
+  - level: 851
+    atk: 1401
+    atkRequireCoin: 618110
+    def: 1001
+    defRequireCoin: 313270
+    hp: 1451
+    hpRequireCoin: 256130
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.955
+    criDmgRequireCoin: 1189630
+  - level: 852
+    atk: 1402
+    atkRequireCoin: 619720
+    def: 1002
+    defRequireCoin: 314040
+    hp: 1452
+    hpRequireCoin: 256760
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.96
+    criDmgRequireCoin: 1192760
+  - level: 853
+    atk: 1403
+    atkRequireCoin: 621330
+    def: 1003
+    defRequireCoin: 314810
+    hp: 1453
+    hpRequireCoin: 257390
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.965
+    criDmgRequireCoin: 1195890
+  - level: 854
+    atk: 1404
+    atkRequireCoin: 622940
+    def: 1004
+    defRequireCoin: 315580
+    hp: 1454
+    hpRequireCoin: 258020
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.97
+    criDmgRequireCoin: 1199020
+  - level: 855
+    atk: 1405
+    atkRequireCoin: 624550
+    def: 1005
+    defRequireCoin: 316350
+    hp: 1455
+    hpRequireCoin: 258650
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.975
+    criDmgRequireCoin: 1202150
+  - level: 856
+    atk: 1406
+    atkRequireCoin: 626160
+    def: 1006
+    defRequireCoin: 317120
+    hp: 1456
+    hpRequireCoin: 259280
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.98
+    criDmgRequireCoin: 1205280
+  - level: 857
+    atk: 1407
+    atkRequireCoin: 627770
+    def: 1007
+    defRequireCoin: 317890
+    hp: 1457
+    hpRequireCoin: 259910
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.985
+    criDmgRequireCoin: 1208410
+  - level: 858
+    atk: 1408
+    atkRequireCoin: 629380
+    def: 1008
+    defRequireCoin: 318660
+    hp: 1458
+    hpRequireCoin: 260540
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.99
+    criDmgRequireCoin: 1211540
+  - level: 859
+    atk: 1409
+    atkRequireCoin: 630990
+    def: 1009
+    defRequireCoin: 319430
+    hp: 1459
+    hpRequireCoin: 261170
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 7.995
+    criDmgRequireCoin: 1214670
+  - level: 860
+    atk: 1410
+    atkRequireCoin: 632600
+    def: 1010
+    defRequireCoin: 320200
+    hp: 1460
+    hpRequireCoin: 261800
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8
+    criDmgRequireCoin: 1217800
+  - level: 861
+    atk: 1411
+    atkRequireCoin: 634210
+    def: 1011
+    defRequireCoin: 320970
+    hp: 1461
+    hpRequireCoin: 262430
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.005
+    criDmgRequireCoin: 1220930
+  - level: 862
+    atk: 1412
+    atkRequireCoin: 635820
+    def: 1012
+    defRequireCoin: 321740
+    hp: 1462
+    hpRequireCoin: 263060
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.01
+    criDmgRequireCoin: 1224060
+  - level: 863
+    atk: 1413
+    atkRequireCoin: 637430
+    def: 1013
+    defRequireCoin: 322510
+    hp: 1463
+    hpRequireCoin: 263690
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.015
+    criDmgRequireCoin: 1227190
+  - level: 864
+    atk: 1414
+    atkRequireCoin: 639040
+    def: 1014
+    defRequireCoin: 323280
+    hp: 1464
+    hpRequireCoin: 264320
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.02
+    criDmgRequireCoin: 1230320
+  - level: 865
+    atk: 1415
+    atkRequireCoin: 640650
+    def: 1015
+    defRequireCoin: 324050
+    hp: 1465
+    hpRequireCoin: 264950
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.025
+    criDmgRequireCoin: 1233450
+  - level: 866
+    atk: 1416
+    atkRequireCoin: 642260
+    def: 1016
+    defRequireCoin: 324820
+    hp: 1466
+    hpRequireCoin: 265580
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.03
+    criDmgRequireCoin: 1236580
+  - level: 867
+    atk: 1417
+    atkRequireCoin: 643870
+    def: 1017
+    defRequireCoin: 325590
+    hp: 1467
+    hpRequireCoin: 266210
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.035
+    criDmgRequireCoin: 1239710
+  - level: 868
+    atk: 1418
+    atkRequireCoin: 645480
+    def: 1018
+    defRequireCoin: 326360
+    hp: 1468
+    hpRequireCoin: 266840
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.04
+    criDmgRequireCoin: 1242840
+  - level: 869
+    atk: 1419
+    atkRequireCoin: 647090
+    def: 1019
+    defRequireCoin: 327130
+    hp: 1469
+    hpRequireCoin: 267470
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.045
+    criDmgRequireCoin: 1245970
+  - level: 870
+    atk: 1420
+    atkRequireCoin: 648700
+    def: 1020
+    defRequireCoin: 327900
+    hp: 1470
+    hpRequireCoin: 268100
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.05
+    criDmgRequireCoin: 1249100
+  - level: 871
+    atk: 1421
+    atkRequireCoin: 650310
+    def: 1021
+    defRequireCoin: 328670
+    hp: 1471
+    hpRequireCoin: 268730
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.055
+    criDmgRequireCoin: 1252230
+  - level: 872
+    atk: 1422
+    atkRequireCoin: 651920
+    def: 1022
+    defRequireCoin: 329440
+    hp: 1472
+    hpRequireCoin: 269360
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.06
+    criDmgRequireCoin: 1255360
+  - level: 873
+    atk: 1423
+    atkRequireCoin: 653530
+    def: 1023
+    defRequireCoin: 330210
+    hp: 1473
+    hpRequireCoin: 269990
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.065
+    criDmgRequireCoin: 1258490
+  - level: 874
+    atk: 1424
+    atkRequireCoin: 655140
+    def: 1024
+    defRequireCoin: 330980
+    hp: 1474
+    hpRequireCoin: 270620
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.07
+    criDmgRequireCoin: 1261620
+  - level: 875
+    atk: 1425
+    atkRequireCoin: 656750
+    def: 1025
+    defRequireCoin: 331750
+    hp: 1475
+    hpRequireCoin: 271250
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.075
+    criDmgRequireCoin: 1264750
+  - level: 876
+    atk: 1426
+    atkRequireCoin: 658360
+    def: 1026
+    defRequireCoin: 332520
+    hp: 1476
+    hpRequireCoin: 271880
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.08
+    criDmgRequireCoin: 1267880
+  - level: 877
+    atk: 1427
+    atkRequireCoin: 659970
+    def: 1027
+    defRequireCoin: 333290
+    hp: 1477
+    hpRequireCoin: 272510
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.085
+    criDmgRequireCoin: 1271010
+  - level: 878
+    atk: 1428
+    atkRequireCoin: 661580
+    def: 1028
+    defRequireCoin: 334060
+    hp: 1478
+    hpRequireCoin: 273140
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.09
+    criDmgRequireCoin: 1274140
+  - level: 879
+    atk: 1429
+    atkRequireCoin: 663190
+    def: 1029
+    defRequireCoin: 334830
+    hp: 1479
+    hpRequireCoin: 273770
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.095
+    criDmgRequireCoin: 1277270
+  - level: 880
+    atk: 1430
+    atkRequireCoin: 664800
+    def: 1030
+    defRequireCoin: 335600
+    hp: 1480
+    hpRequireCoin: 274400
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.1
+    criDmgRequireCoin: 1280400
+  - level: 881
+    atk: 1431
+    atkRequireCoin: 666410
+    def: 1031
+    defRequireCoin: 336370
+    hp: 1481
+    hpRequireCoin: 275030
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.105
+    criDmgRequireCoin: 1283530
+  - level: 882
+    atk: 1432
+    atkRequireCoin: 668020
+    def: 1032
+    defRequireCoin: 337140
+    hp: 1482
+    hpRequireCoin: 275660
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.11
+    criDmgRequireCoin: 1286660
+  - level: 883
+    atk: 1433
+    atkRequireCoin: 669630
+    def: 1033
+    defRequireCoin: 337910
+    hp: 1483
+    hpRequireCoin: 276290
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.115
+    criDmgRequireCoin: 1289790
+  - level: 884
+    atk: 1434
+    atkRequireCoin: 671240
+    def: 1034
+    defRequireCoin: 338680
+    hp: 1484
+    hpRequireCoin: 276920
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.12
+    criDmgRequireCoin: 1292920
+  - level: 885
+    atk: 1435
+    atkRequireCoin: 672850
+    def: 1035
+    defRequireCoin: 339450
+    hp: 1485
+    hpRequireCoin: 277550
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.125
+    criDmgRequireCoin: 1296050
+  - level: 886
+    atk: 1436
+    atkRequireCoin: 674460
+    def: 1036
+    defRequireCoin: 340220
+    hp: 1486
+    hpRequireCoin: 278180
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.13
+    criDmgRequireCoin: 1299180
+  - level: 887
+    atk: 1437
+    atkRequireCoin: 676070
+    def: 1037
+    defRequireCoin: 340990
+    hp: 1487
+    hpRequireCoin: 278810
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.135
+    criDmgRequireCoin: 1302310
+  - level: 888
+    atk: 1438
+    atkRequireCoin: 677680
+    def: 1038
+    defRequireCoin: 341760
+    hp: 1488
+    hpRequireCoin: 279440
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.14
+    criDmgRequireCoin: 1305440
+  - level: 889
+    atk: 1439
+    atkRequireCoin: 679290
+    def: 1039
+    defRequireCoin: 342530
+    hp: 1489
+    hpRequireCoin: 280070
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.145
+    criDmgRequireCoin: 1308570
+  - level: 890
+    atk: 1440
+    atkRequireCoin: 680900
+    def: 1040
+    defRequireCoin: 343300
+    hp: 1490
+    hpRequireCoin: 280700
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.15
+    criDmgRequireCoin: 1311700
+  - level: 891
+    atk: 1441
+    atkRequireCoin: 682510
+    def: 1041
+    defRequireCoin: 344070
+    hp: 1491
+    hpRequireCoin: 281330
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.155
+    criDmgRequireCoin: 1314830
+  - level: 892
+    atk: 1442
+    atkRequireCoin: 684120
+    def: 1042
+    defRequireCoin: 344840
+    hp: 1492
+    hpRequireCoin: 281960
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.16
+    criDmgRequireCoin: 1317960
+  - level: 893
+    atk: 1443
+    atkRequireCoin: 685730
+    def: 1043
+    defRequireCoin: 345610
+    hp: 1493
+    hpRequireCoin: 282590
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.165
+    criDmgRequireCoin: 1321090
+  - level: 894
+    atk: 1444
+    atkRequireCoin: 687340
+    def: 1044
+    defRequireCoin: 346380
+    hp: 1494
+    hpRequireCoin: 283220
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.17
+    criDmgRequireCoin: 1324220
+  - level: 895
+    atk: 1445
+    atkRequireCoin: 688950
+    def: 1045
+    defRequireCoin: 347150
+    hp: 1495
+    hpRequireCoin: 283850
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.175
+    criDmgRequireCoin: 1327350
+  - level: 896
+    atk: 1446
+    atkRequireCoin: 690560
+    def: 1046
+    defRequireCoin: 347920
+    hp: 1496
+    hpRequireCoin: 284480
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.18
+    criDmgRequireCoin: 1330480
+  - level: 897
+    atk: 1447
+    atkRequireCoin: 692170
+    def: 1047
+    defRequireCoin: 348690
+    hp: 1497
+    hpRequireCoin: 285110
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.185
+    criDmgRequireCoin: 1333610
+  - level: 898
+    atk: 1448
+    atkRequireCoin: 693780
+    def: 1048
+    defRequireCoin: 349460
+    hp: 1498
+    hpRequireCoin: 285740
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.19
+    criDmgRequireCoin: 1336740
+  - level: 899
+    atk: 1449
+    atkRequireCoin: 695390
+    def: 1049
+    defRequireCoin: 350230
+    hp: 1499
+    hpRequireCoin: 286370
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.195
+    criDmgRequireCoin: 1339870
+  - level: 900
+    atk: 1450
+    atkRequireCoin: 697000
+    def: 1050
+    defRequireCoin: 351000
+    hp: 1500
+    hpRequireCoin: 287000
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.2
+    criDmgRequireCoin: 1343000
+  - level: 901
+    atk: 1451
+    atkRequireCoin: 698610
+    def: 1051
+    defRequireCoin: 351770
+    hp: 1501
+    hpRequireCoin: 287630
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.205
+    criDmgRequireCoin: 1346130
+  - level: 902
+    atk: 1452
+    atkRequireCoin: 700220
+    def: 1052
+    defRequireCoin: 352540
+    hp: 1502
+    hpRequireCoin: 288260
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.21
+    criDmgRequireCoin: 1349260
+  - level: 903
+    atk: 1453
+    atkRequireCoin: 701830
+    def: 1053
+    defRequireCoin: 353310
+    hp: 1503
+    hpRequireCoin: 288890
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.215
+    criDmgRequireCoin: 1352390
+  - level: 904
+    atk: 1454
+    atkRequireCoin: 703440
+    def: 1054
+    defRequireCoin: 354080
+    hp: 1504
+    hpRequireCoin: 289520
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.22
+    criDmgRequireCoin: 1355520
+  - level: 905
+    atk: 1455
+    atkRequireCoin: 705050
+    def: 1055
+    defRequireCoin: 354850
+    hp: 1505
+    hpRequireCoin: 290150
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.225
+    criDmgRequireCoin: 1358650
+  - level: 906
+    atk: 1456
+    atkRequireCoin: 706660
+    def: 1056
+    defRequireCoin: 355620
+    hp: 1506
+    hpRequireCoin: 290780
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.23
+    criDmgRequireCoin: 1361780
+  - level: 907
+    atk: 1457
+    atkRequireCoin: 708270
+    def: 1057
+    defRequireCoin: 356390
+    hp: 1507
+    hpRequireCoin: 291410
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.235
+    criDmgRequireCoin: 1364910
+  - level: 908
+    atk: 1458
+    atkRequireCoin: 709880
+    def: 1058
+    defRequireCoin: 357160
+    hp: 1508
+    hpRequireCoin: 292040
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.24
+    criDmgRequireCoin: 1368040
+  - level: 909
+    atk: 1459
+    atkRequireCoin: 711490
+    def: 1059
+    defRequireCoin: 357930
+    hp: 1509
+    hpRequireCoin: 292670
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.245
+    criDmgRequireCoin: 1371170
+  - level: 910
+    atk: 1460
+    atkRequireCoin: 713100
+    def: 1060
+    defRequireCoin: 358700
+    hp: 1510
+    hpRequireCoin: 293300
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.25
+    criDmgRequireCoin: 1374300
+  - level: 911
+    atk: 1461
+    atkRequireCoin: 714710
+    def: 1061
+    defRequireCoin: 359470
+    hp: 1511
+    hpRequireCoin: 293930
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.255
+    criDmgRequireCoin: 1377430
+  - level: 912
+    atk: 1462
+    atkRequireCoin: 716320
+    def: 1062
+    defRequireCoin: 360240
+    hp: 1512
+    hpRequireCoin: 294560
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.26
+    criDmgRequireCoin: 1380560
+  - level: 913
+    atk: 1463
+    atkRequireCoin: 717930
+    def: 1063
+    defRequireCoin: 361010
+    hp: 1513
+    hpRequireCoin: 295190
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.265
+    criDmgRequireCoin: 1383690
+  - level: 914
+    atk: 1464
+    atkRequireCoin: 719540
+    def: 1064
+    defRequireCoin: 361780
+    hp: 1514
+    hpRequireCoin: 295820
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.27
+    criDmgRequireCoin: 1386820
+  - level: 915
+    atk: 1465
+    atkRequireCoin: 721150
+    def: 1065
+    defRequireCoin: 362550
+    hp: 1515
+    hpRequireCoin: 296450
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.275
+    criDmgRequireCoin: 1389950
+  - level: 916
+    atk: 1466
+    atkRequireCoin: 722760
+    def: 1066
+    defRequireCoin: 363320
+    hp: 1516
+    hpRequireCoin: 297080
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.28
+    criDmgRequireCoin: 1393080
+  - level: 917
+    atk: 1467
+    atkRequireCoin: 724370
+    def: 1067
+    defRequireCoin: 364090
+    hp: 1517
+    hpRequireCoin: 297710
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.285
+    criDmgRequireCoin: 1396210
+  - level: 918
+    atk: 1468
+    atkRequireCoin: 725980
+    def: 1068
+    defRequireCoin: 364860
+    hp: 1518
+    hpRequireCoin: 298340
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.29
+    criDmgRequireCoin: 1399340
+  - level: 919
+    atk: 1469
+    atkRequireCoin: 727590
+    def: 1069
+    defRequireCoin: 365630
+    hp: 1519
+    hpRequireCoin: 298970
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.295
+    criDmgRequireCoin: 1402470
+  - level: 920
+    atk: 1470
+    atkRequireCoin: 729200
+    def: 1070
+    defRequireCoin: 366400
+    hp: 1520
+    hpRequireCoin: 299600
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.3
+    criDmgRequireCoin: 1405600
+  - level: 921
+    atk: 1471
+    atkRequireCoin: 730810
+    def: 1071
+    defRequireCoin: 367170
+    hp: 1521
+    hpRequireCoin: 300230
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.305
+    criDmgRequireCoin: 1408730
+  - level: 922
+    atk: 1472
+    atkRequireCoin: 732420
+    def: 1072
+    defRequireCoin: 367940
+    hp: 1522
+    hpRequireCoin: 300860
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.31
+    criDmgRequireCoin: 1411860
+  - level: 923
+    atk: 1473
+    atkRequireCoin: 734030
+    def: 1073
+    defRequireCoin: 368710
+    hp: 1523
+    hpRequireCoin: 301490
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.315
+    criDmgRequireCoin: 1414990
+  - level: 924
+    atk: 1474
+    atkRequireCoin: 735640
+    def: 1074
+    defRequireCoin: 369480
+    hp: 1524
+    hpRequireCoin: 302120
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.32
+    criDmgRequireCoin: 1418120
+  - level: 925
+    atk: 1475
+    atkRequireCoin: 737250
+    def: 1075
+    defRequireCoin: 370250
+    hp: 1525
+    hpRequireCoin: 302750
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.325
+    criDmgRequireCoin: 1421250
+  - level: 926
+    atk: 1476
+    atkRequireCoin: 738860
+    def: 1076
+    defRequireCoin: 371020
+    hp: 1526
+    hpRequireCoin: 303380
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.33
+    criDmgRequireCoin: 1424380
+  - level: 927
+    atk: 1477
+    atkRequireCoin: 740470
+    def: 1077
+    defRequireCoin: 371790
+    hp: 1527
+    hpRequireCoin: 304010
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.335
+    criDmgRequireCoin: 1427510
+  - level: 928
+    atk: 1478
+    atkRequireCoin: 742080
+    def: 1078
+    defRequireCoin: 372560
+    hp: 1528
+    hpRequireCoin: 304640
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.34
+    criDmgRequireCoin: 1430640
+  - level: 929
+    atk: 1479
+    atkRequireCoin: 743690
+    def: 1079
+    defRequireCoin: 373330
+    hp: 1529
+    hpRequireCoin: 305270
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.345
+    criDmgRequireCoin: 1433770
+  - level: 930
+    atk: 1480
+    atkRequireCoin: 745300
+    def: 1080
+    defRequireCoin: 374100
+    hp: 1530
+    hpRequireCoin: 305900
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.35
+    criDmgRequireCoin: 1436900
+  - level: 931
+    atk: 1481
+    atkRequireCoin: 746910
+    def: 1081
+    defRequireCoin: 374870
+    hp: 1531
+    hpRequireCoin: 306530
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.355
+    criDmgRequireCoin: 1440030
+  - level: 932
+    atk: 1482
+    atkRequireCoin: 748520
+    def: 1082
+    defRequireCoin: 375640
+    hp: 1532
+    hpRequireCoin: 307160
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.36
+    criDmgRequireCoin: 1443160
+  - level: 933
+    atk: 1483
+    atkRequireCoin: 750130
+    def: 1083
+    defRequireCoin: 376410
+    hp: 1533
+    hpRequireCoin: 307790
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.365
+    criDmgRequireCoin: 1446290
+  - level: 934
+    atk: 1484
+    atkRequireCoin: 751740
+    def: 1084
+    defRequireCoin: 377180
+    hp: 1534
+    hpRequireCoin: 308420
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.37
+    criDmgRequireCoin: 1449420
+  - level: 935
+    atk: 1485
+    atkRequireCoin: 753350
+    def: 1085
+    defRequireCoin: 377950
+    hp: 1535
+    hpRequireCoin: 309050
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.375
+    criDmgRequireCoin: 1452550
+  - level: 936
+    atk: 1486
+    atkRequireCoin: 754960
+    def: 1086
+    defRequireCoin: 378720
+    hp: 1536
+    hpRequireCoin: 309680
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.38
+    criDmgRequireCoin: 1455680
+  - level: 937
+    atk: 1487
+    atkRequireCoin: 756570
+    def: 1087
+    defRequireCoin: 379490
+    hp: 1537
+    hpRequireCoin: 310310
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.385
+    criDmgRequireCoin: 1458810
+  - level: 938
+    atk: 1488
+    atkRequireCoin: 758180
+    def: 1088
+    defRequireCoin: 380260
+    hp: 1538
+    hpRequireCoin: 310940
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.39
+    criDmgRequireCoin: 1461940
+  - level: 939
+    atk: 1489
+    atkRequireCoin: 759790
+    def: 1089
+    defRequireCoin: 381030
+    hp: 1539
+    hpRequireCoin: 311570
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.395
+    criDmgRequireCoin: 1465070
+  - level: 940
+    atk: 1490
+    atkRequireCoin: 761400
+    def: 1090
+    defRequireCoin: 381800
+    hp: 1540
+    hpRequireCoin: 312200
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.4
+    criDmgRequireCoin: 1468200
+  - level: 941
+    atk: 1491
+    atkRequireCoin: 763010
+    def: 1091
+    defRequireCoin: 382570
+    hp: 1541
+    hpRequireCoin: 312830
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.405
+    criDmgRequireCoin: 1471330
+  - level: 942
+    atk: 1492
+    atkRequireCoin: 764620
+    def: 1092
+    defRequireCoin: 383340
+    hp: 1542
+    hpRequireCoin: 313460
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.41
+    criDmgRequireCoin: 1474460
+  - level: 943
+    atk: 1493
+    atkRequireCoin: 766230
+    def: 1093
+    defRequireCoin: 384110
+    hp: 1543
+    hpRequireCoin: 314090
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.415
+    criDmgRequireCoin: 1477590
+  - level: 944
+    atk: 1494
+    atkRequireCoin: 767840
+    def: 1094
+    defRequireCoin: 384880
+    hp: 1544
+    hpRequireCoin: 314720
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.42
+    criDmgRequireCoin: 1480720
+  - level: 945
+    atk: 1495
+    atkRequireCoin: 769450
+    def: 1095
+    defRequireCoin: 385650
+    hp: 1545
+    hpRequireCoin: 315350
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.425
+    criDmgRequireCoin: 1483850
+  - level: 946
+    atk: 1496
+    atkRequireCoin: 771060
+    def: 1096
+    defRequireCoin: 386420
+    hp: 1546
+    hpRequireCoin: 315980
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.43
+    criDmgRequireCoin: 1486980
+  - level: 947
+    atk: 1497
+    atkRequireCoin: 772670
+    def: 1097
+    defRequireCoin: 387190
+    hp: 1547
+    hpRequireCoin: 316610
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.435
+    criDmgRequireCoin: 1490110
+  - level: 948
+    atk: 1498
+    atkRequireCoin: 774280
+    def: 1098
+    defRequireCoin: 387960
+    hp: 1548
+    hpRequireCoin: 317240
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.44
+    criDmgRequireCoin: 1493240
+  - level: 949
+    atk: 1499
+    atkRequireCoin: 775890
+    def: 1099
+    defRequireCoin: 388730
+    hp: 1549
+    hpRequireCoin: 317870
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.445
+    criDmgRequireCoin: 1496370
+  - level: 950
+    atk: 1500
+    atkRequireCoin: 777500
+    def: 1100
+    defRequireCoin: 389500
+    hp: 1550
+    hpRequireCoin: 318500
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.45
+    criDmgRequireCoin: 1499500
+  - level: 951
+    atk: 1501
+    atkRequireCoin: 779110
+    def: 1101
+    defRequireCoin: 390270
+    hp: 1551
+    hpRequireCoin: 319130
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.455
+    criDmgRequireCoin: 1502630
+  - level: 952
+    atk: 1502
+    atkRequireCoin: 780720
+    def: 1102
+    defRequireCoin: 391040
+    hp: 1552
+    hpRequireCoin: 319760
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.46
+    criDmgRequireCoin: 1505760
+  - level: 953
+    atk: 1503
+    atkRequireCoin: 782330
+    def: 1103
+    defRequireCoin: 391810
+    hp: 1553
+    hpRequireCoin: 320390
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.465
+    criDmgRequireCoin: 1508890
+  - level: 954
+    atk: 1504
+    atkRequireCoin: 783940
+    def: 1104
+    defRequireCoin: 392580
+    hp: 1554
+    hpRequireCoin: 321020
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.47
+    criDmgRequireCoin: 1512020
+  - level: 955
+    atk: 1505
+    atkRequireCoin: 785550
+    def: 1105
+    defRequireCoin: 393350
+    hp: 1555
+    hpRequireCoin: 321650
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.475
+    criDmgRequireCoin: 1515150
+  - level: 956
+    atk: 1506
+    atkRequireCoin: 787160
+    def: 1106
+    defRequireCoin: 394120
+    hp: 1556
+    hpRequireCoin: 322280
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.48
+    criDmgRequireCoin: 1518280
+  - level: 957
+    atk: 1507
+    atkRequireCoin: 788770
+    def: 1107
+    defRequireCoin: 394890
+    hp: 1557
+    hpRequireCoin: 322910
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.485
+    criDmgRequireCoin: 1521410
+  - level: 958
+    atk: 1508
+    atkRequireCoin: 790380
+    def: 1108
+    defRequireCoin: 395660
+    hp: 1558
+    hpRequireCoin: 323540
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.49
+    criDmgRequireCoin: 1524540
+  - level: 959
+    atk: 1509
+    atkRequireCoin: 791990
+    def: 1109
+    defRequireCoin: 396430
+    hp: 1559
+    hpRequireCoin: 324170
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.495
+    criDmgRequireCoin: 1527670
+  - level: 960
+    atk: 1510
+    atkRequireCoin: 793600
+    def: 1110
+    defRequireCoin: 397200
+    hp: 1560
+    hpRequireCoin: 324800
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.5
+    criDmgRequireCoin: 1530800
+  - level: 961
+    atk: 1511
+    atkRequireCoin: 795210
+    def: 1111
+    defRequireCoin: 397970
+    hp: 1561
+    hpRequireCoin: 325430
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.505
+    criDmgRequireCoin: 1533930
+  - level: 962
+    atk: 1512
+    atkRequireCoin: 796820
+    def: 1112
+    defRequireCoin: 398740
+    hp: 1562
+    hpRequireCoin: 326060
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.51
+    criDmgRequireCoin: 1537060
+  - level: 963
+    atk: 1513
+    atkRequireCoin: 798430
+    def: 1113
+    defRequireCoin: 399510
+    hp: 1563
+    hpRequireCoin: 326690
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.515
+    criDmgRequireCoin: 1540190
+  - level: 964
+    atk: 1514
+    atkRequireCoin: 800040
+    def: 1114
+    defRequireCoin: 400280
+    hp: 1564
+    hpRequireCoin: 327320
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.52
+    criDmgRequireCoin: 1543320
+  - level: 965
+    atk: 1515
+    atkRequireCoin: 801650
+    def: 1115
+    defRequireCoin: 401050
+    hp: 1565
+    hpRequireCoin: 327950
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.525
+    criDmgRequireCoin: 1546450
+  - level: 966
+    atk: 1516
+    atkRequireCoin: 803260
+    def: 1116
+    defRequireCoin: 401820
+    hp: 1566
+    hpRequireCoin: 328580
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.53
+    criDmgRequireCoin: 1549580
+  - level: 967
+    atk: 1517
+    atkRequireCoin: 804870
+    def: 1117
+    defRequireCoin: 402590
+    hp: 1567
+    hpRequireCoin: 329210
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.535
+    criDmgRequireCoin: 1552710
+  - level: 968
+    atk: 1518
+    atkRequireCoin: 806480
+    def: 1118
+    defRequireCoin: 403360
+    hp: 1568
+    hpRequireCoin: 329840
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.54
+    criDmgRequireCoin: 1555840
+  - level: 969
+    atk: 1519
+    atkRequireCoin: 808090
+    def: 1119
+    defRequireCoin: 404130
+    hp: 1569
+    hpRequireCoin: 330470
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.545
+    criDmgRequireCoin: 1558970
+  - level: 970
+    atk: 1520
+    atkRequireCoin: 809700
+    def: 1120
+    defRequireCoin: 404900
+    hp: 1570
+    hpRequireCoin: 331100
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.55
+    criDmgRequireCoin: 1562100
+  - level: 971
+    atk: 1521
+    atkRequireCoin: 811310
+    def: 1121
+    defRequireCoin: 405670
+    hp: 1571
+    hpRequireCoin: 331730
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.555
+    criDmgRequireCoin: 1565230
+  - level: 972
+    atk: 1522
+    atkRequireCoin: 812920
+    def: 1122
+    defRequireCoin: 406440
+    hp: 1572
+    hpRequireCoin: 332360
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.56
+    criDmgRequireCoin: 1568360
+  - level: 973
+    atk: 1523
+    atkRequireCoin: 814530
+    def: 1123
+    defRequireCoin: 407210
+    hp: 1573
+    hpRequireCoin: 332990
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.565
+    criDmgRequireCoin: 1571490
+  - level: 974
+    atk: 1524
+    atkRequireCoin: 816140
+    def: 1124
+    defRequireCoin: 407980
+    hp: 1574
+    hpRequireCoin: 333620
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.57
+    criDmgRequireCoin: 1574620
+  - level: 975
+    atk: 1525
+    atkRequireCoin: 817750
+    def: 1125
+    defRequireCoin: 408750
+    hp: 1575
+    hpRequireCoin: 334250
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.575
+    criDmgRequireCoin: 1577750
+  - level: 976
+    atk: 1526
+    atkRequireCoin: 819360
+    def: 1126
+    defRequireCoin: 409520
+    hp: 1576
+    hpRequireCoin: 334880
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.58
+    criDmgRequireCoin: 1580880
+  - level: 977
+    atk: 1527
+    atkRequireCoin: 820970
+    def: 1127
+    defRequireCoin: 410290
+    hp: 1577
+    hpRequireCoin: 335510
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.585
+    criDmgRequireCoin: 1584010
+  - level: 978
+    atk: 1528
+    atkRequireCoin: 822580
+    def: 1128
+    defRequireCoin: 411060
+    hp: 1578
+    hpRequireCoin: 336140
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.59
+    criDmgRequireCoin: 1587140
+  - level: 979
+    atk: 1529
+    atkRequireCoin: 824190
+    def: 1129
+    defRequireCoin: 411830
+    hp: 1579
+    hpRequireCoin: 336770
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.595
+    criDmgRequireCoin: 1590270
+  - level: 980
+    atk: 1530
+    atkRequireCoin: 825800
+    def: 1130
+    defRequireCoin: 412600
+    hp: 1580
+    hpRequireCoin: 337400
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.6
+    criDmgRequireCoin: 1593400
+  - level: 981
+    atk: 1531
+    atkRequireCoin: 827410
+    def: 1131
+    defRequireCoin: 413370
+    hp: 1581
+    hpRequireCoin: 338030
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.605
+    criDmgRequireCoin: 1596530
+  - level: 982
+    atk: 1532
+    atkRequireCoin: 829020
+    def: 1132
+    defRequireCoin: 414140
+    hp: 1582
+    hpRequireCoin: 338660
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.61
+    criDmgRequireCoin: 1599660
+  - level: 983
+    atk: 1533
+    atkRequireCoin: 830630
+    def: 1133
+    defRequireCoin: 414910
+    hp: 1583
+    hpRequireCoin: 339290
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.615
+    criDmgRequireCoin: 1602790
+  - level: 984
+    atk: 1534
+    atkRequireCoin: 832240
+    def: 1134
+    defRequireCoin: 415680
+    hp: 1584
+    hpRequireCoin: 339920
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.62
+    criDmgRequireCoin: 1605920
+  - level: 985
+    atk: 1535
+    atkRequireCoin: 833850
+    def: 1135
+    defRequireCoin: 416450
+    hp: 1585
+    hpRequireCoin: 340550
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.625
+    criDmgRequireCoin: 1609050
+  - level: 986
+    atk: 1536
+    atkRequireCoin: 835460
+    def: 1136
+    defRequireCoin: 417220
+    hp: 1586
+    hpRequireCoin: 341180
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.63
+    criDmgRequireCoin: 1612180
+  - level: 987
+    atk: 1537
+    atkRequireCoin: 837070
+    def: 1137
+    defRequireCoin: 417990
+    hp: 1587
+    hpRequireCoin: 341810
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.635
+    criDmgRequireCoin: 1615310
+  - level: 988
+    atk: 1538
+    atkRequireCoin: 838680
+    def: 1138
+    defRequireCoin: 418760
+    hp: 1588
+    hpRequireCoin: 342440
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.64
+    criDmgRequireCoin: 1618440
+  - level: 989
+    atk: 1539
+    atkRequireCoin: 840290
+    def: 1139
+    defRequireCoin: 419530
+    hp: 1589
+    hpRequireCoin: 343070
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.645
+    criDmgRequireCoin: 1621570
+  - level: 990
+    atk: 1540
+    atkRequireCoin: 841900
+    def: 1140
+    defRequireCoin: 420300
+    hp: 1590
+    hpRequireCoin: 343700
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.65
+    criDmgRequireCoin: 1624700
+  - level: 991
+    atk: 1541
+    atkRequireCoin: 843510
+    def: 1141
+    defRequireCoin: 421070
+    hp: 1591
+    hpRequireCoin: 344330
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.655
+    criDmgRequireCoin: 1627830
+  - level: 992
+    atk: 1542
+    atkRequireCoin: 845120
+    def: 1142
+    defRequireCoin: 421840
+    hp: 1592
+    hpRequireCoin: 344960
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.66
+    criDmgRequireCoin: 1630960
+  - level: 993
+    atk: 1543
+    atkRequireCoin: 846730
+    def: 1143
+    defRequireCoin: 422610
+    hp: 1593
+    hpRequireCoin: 345590
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.665
+    criDmgRequireCoin: 1634090
+  - level: 994
+    atk: 1544
+    atkRequireCoin: 848340
+    def: 1144
+    defRequireCoin: 423380
+    hp: 1594
+    hpRequireCoin: 346220
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.67
+    criDmgRequireCoin: 1637220
+  - level: 995
+    atk: 1545
+    atkRequireCoin: 849950
+    def: 1145
+    defRequireCoin: 424150
+    hp: 1595
+    hpRequireCoin: 346850
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.675
+    criDmgRequireCoin: 1640350
+  - level: 996
+    atk: 1546
+    atkRequireCoin: 851560
+    def: 1146
+    defRequireCoin: 424920
+    hp: 1596
+    hpRequireCoin: 347480
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.68
+    criDmgRequireCoin: 1643480
+  - level: 997
+    atk: 1547
+    atkRequireCoin: 853170
+    def: 1147
+    defRequireCoin: 425690
+    hp: 1597
+    hpRequireCoin: 348110
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.685
+    criDmgRequireCoin: 1646610
+  - level: 998
+    atk: 1548
+    atkRequireCoin: 854780
+    def: 1148
+    defRequireCoin: 426460
+    hp: 1598
+    hpRequireCoin: 348740
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.69
+    criDmgRequireCoin: 1649740
+  - level: 999
+    atk: 1549
+    atkRequireCoin: 856390
+    def: 1149
+    defRequireCoin: 427230
+    hp: 1599
+    hpRequireCoin: 349370
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.695
+    criDmgRequireCoin: 1652870
+  - level: 1000
+    atk: 1550
+    atkRequireCoin: -1
+    def: 1150
+    defRequireCoin: -1
+    hp: 1600
+    hpRequireCoin: -1
+    criRate: 0
+    criRateRequireCoin: 0
+    criDmg: 8.7
     criDmgRequireCoin: -1

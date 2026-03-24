@@ -94,6 +94,7 @@ public class IntroController : MonoBehaviour
         // #endif
         IntroUIManager.instance.ShowSceneMoveAnimation(true);
         IntroUIManager.instance.InitIntroText();
+        IntroUIManager.instance.PlayTitleAnimation();
 
         state++;
         StartIntroProcess();

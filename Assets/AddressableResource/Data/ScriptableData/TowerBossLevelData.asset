@@ -8120,8 +8120,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.35666665
-    rewardCoin: 1219070
-    rewardExp: 25
+    rewardCoin: 1954470
+    rewardExp: 30
   - level: 901
     atk: 1251
     def: 21183
@@ -8129,8 +8129,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3571
-    rewardCoin: 1231140
-    rewardExp: 25
+    rewardCoin: 2047540
+    rewardExp: 35
   - level: 902
     atk: 1252
     def: 21224
@@ -8138,8 +8138,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.35753334
-    rewardCoin: 1243210
-    rewardExp: 25
+    rewardCoin: 2140610
+    rewardExp: 40
   - level: 903
     atk: 1253
     def: 21265
@@ -8147,8 +8147,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.35796666
-    rewardCoin: 1255280
-    rewardExp: 25
+    rewardCoin: 2233680
+    rewardExp: 45
   - level: 904
     atk: 1254
     def: 21307
@@ -8156,8 +8156,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3584
-    rewardCoin: 1267350
-    rewardExp: 25
+    rewardCoin: 2326750
+    rewardExp: 50
   - level: 905
     atk: 1255
     def: 21348
@@ -8165,8 +8165,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.35883334
-    rewardCoin: 1279420
-    rewardExp: 25
+    rewardCoin: 2419820
+    rewardExp: 55
   - level: 906
     atk: 1256
     def: 21389
@@ -8174,8 +8174,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.35926667
-    rewardCoin: 1291490
-    rewardExp: 25
+    rewardCoin: 2512890
+    rewardExp: 60
   - level: 907
     atk: 1257
     def: 21430
@@ -8183,8 +8183,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3597
-    rewardCoin: 1303560
-    rewardExp: 25
+    rewardCoin: 2605960
+    rewardExp: 65
   - level: 908
     atk: 1258
     def: 21471
@@ -8192,8 +8192,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36013332
-    rewardCoin: 1315630
-    rewardExp: 25
+    rewardCoin: 2699030
+    rewardExp: 70
   - level: 909
     atk: 1259
     def: 21512
@@ -8201,8 +8201,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36056668
-    rewardCoin: 1327700
-    rewardExp: 25
+    rewardCoin: 2792100
+    rewardExp: 75
   - level: 910
     atk: 1260
     def: 21554
@@ -8210,8 +8210,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.361
-    rewardCoin: 1339770
-    rewardExp: 25
+    rewardCoin: 2885170
+    rewardExp: 80
   - level: 911
     atk: 1261
     def: 21595
@@ -8219,8 +8219,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36143333
-    rewardCoin: 1351840
-    rewardExp: 25
+    rewardCoin: 2978240
+    rewardExp: 85
   - level: 912
     atk: 1262
     def: 21636
@@ -8228,8 +8228,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36186665
-    rewardCoin: 1363910
-    rewardExp: 25
+    rewardCoin: 3071310
+    rewardExp: 90
   - level: 913
     atk: 1263
     def: 21677
@@ -8237,8 +8237,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3623
-    rewardCoin: 1375980
-    rewardExp: 25
+    rewardCoin: 3164380
+    rewardExp: 95
   - level: 914
     atk: 1264
     def: 21719
@@ -8246,8 +8246,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36273333
-    rewardCoin: 1388050
-    rewardExp: 25
+    rewardCoin: 3257450
+    rewardExp: 100
   - level: 915
     atk: 1265
     def: 21760
@@ -8255,8 +8255,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36316666
-    rewardCoin: 1400120
-    rewardExp: 25
+    rewardCoin: 3350520
+    rewardExp: 105
   - level: 916
     atk: 1266
     def: 21801
@@ -8264,8 +8264,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3636
-    rewardCoin: 1412190
-    rewardExp: 25
+    rewardCoin: 3443590
+    rewardExp: 110
   - level: 917
     atk: 1267
     def: 21843
@@ -8273,8 +8273,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36403334
-    rewardCoin: 1424260
-    rewardExp: 25
+    rewardCoin: 3536660
+    rewardExp: 115
   - level: 918
     atk: 1268
     def: 21884
@@ -8282,8 +8282,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.36446667
-    rewardCoin: 1436330
-    rewardExp: 25
+    rewardCoin: 3629730
+    rewardExp: 120
   - level: 919
     atk: 1269
     def: 21925
@@ -8291,8 +8291,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.4
     avoid: 0.3649
-    rewardCoin: 1448400
-    rewardExp: 25
+    rewardCoin: 3722800
+    rewardExp: 125
   - level: 920
     atk: 1270
     def: 21967
@@ -8300,8 +8300,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36533332
-    rewardCoin: 1460470
-    rewardExp: 25
+    rewardCoin: 3815870
+    rewardExp: 130
   - level: 921
     atk: 1271
     def: 22008
@@ -8309,8 +8309,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36576667
-    rewardCoin: 1472540
-    rewardExp: 25
+    rewardCoin: 3908940
+    rewardExp: 135
   - level: 922
     atk: 1272
     def: 22049
@@ -8318,8 +8318,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3662
-    rewardCoin: 1484610
-    rewardExp: 25
+    rewardCoin: 4002010
+    rewardExp: 140
   - level: 923
     atk: 1273
     def: 22091
@@ -8327,8 +8327,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36663333
-    rewardCoin: 1496680
-    rewardExp: 25
+    rewardCoin: 4095080
+    rewardExp: 145
   - level: 924
     atk: 1274
     def: 22132
@@ -8336,8 +8336,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36706668
-    rewardCoin: 1508750
-    rewardExp: 25
+    rewardCoin: 4188150
+    rewardExp: 150
   - level: 925
     atk: 1275
     def: 22174
@@ -8345,8 +8345,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3675
-    rewardCoin: 1520820
-    rewardExp: 25
+    rewardCoin: 4281220
+    rewardExp: 155
   - level: 926
     atk: 1276
     def: 22215
@@ -8354,8 +8354,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36793333
-    rewardCoin: 1532890
-    rewardExp: 25
+    rewardCoin: 4374290
+    rewardExp: 160
   - level: 927
     atk: 1277
     def: 22256
@@ -8363,8 +8363,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36836666
-    rewardCoin: 1544960
-    rewardExp: 25
+    rewardCoin: 4467360
+    rewardExp: 165
   - level: 928
     atk: 1278
     def: 22298
@@ -8372,8 +8372,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3688
-    rewardCoin: 1557030
-    rewardExp: 25
+    rewardCoin: 4560430
+    rewardExp: 170
   - level: 929
     atk: 1279
     def: 22339
@@ -8381,8 +8381,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36923334
-    rewardCoin: 1569100
-    rewardExp: 25
+    rewardCoin: 4653500
+    rewardExp: 175
   - level: 930
     atk: 1280
     def: 22381
@@ -8390,8 +8390,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.36966667
-    rewardCoin: 1581170
-    rewardExp: 25
+    rewardCoin: 4746570
+    rewardExp: 180
   - level: 931
     atk: 1281
     def: 22422
@@ -8399,8 +8399,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3701
-    rewardCoin: 1593240
-    rewardExp: 25
+    rewardCoin: 4839640
+    rewardExp: 185
   - level: 932
     atk: 1282
     def: 22464
@@ -8408,8 +8408,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37053335
-    rewardCoin: 1605310
-    rewardExp: 25
+    rewardCoin: 4932710
+    rewardExp: 190
   - level: 933
     atk: 1283
     def: 22505
@@ -8417,8 +8417,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37096667
-    rewardCoin: 1617380
-    rewardExp: 25
+    rewardCoin: 5025780
+    rewardExp: 195
   - level: 934
     atk: 1284
     def: 22547
@@ -8426,8 +8426,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3714
-    rewardCoin: 1629450
-    rewardExp: 25
+    rewardCoin: 5118850
+    rewardExp: 200
   - level: 935
     atk: 1285
     def: 22588
@@ -8435,8 +8435,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37183332
-    rewardCoin: 1641520
-    rewardExp: 25
+    rewardCoin: 5211920
+    rewardExp: 205
   - level: 936
     atk: 1286
     def: 22630
@@ -8444,8 +8444,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37226668
-    rewardCoin: 1653590
-    rewardExp: 25
+    rewardCoin: 5304990
+    rewardExp: 210
   - level: 937
     atk: 1287
     def: 22672
@@ -8453,8 +8453,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.3727
-    rewardCoin: 1665660
-    rewardExp: 25
+    rewardCoin: 5398060
+    rewardExp: 215
   - level: 938
     atk: 1288
     def: 22713
@@ -8462,8 +8462,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37313333
-    rewardCoin: 1677730
-    rewardExp: 25
+    rewardCoin: 5491130
+    rewardExp: 220
   - level: 939
     atk: 1289
     def: 22755
@@ -8471,8 +8471,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.6
     avoid: 0.37356666
-    rewardCoin: 1689800
-    rewardExp: 25
+    rewardCoin: 5584200
+    rewardExp: 225
   - level: 940
     atk: 1290
     def: 22796
@@ -8480,8 +8480,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.374
-    rewardCoin: 1701870
-    rewardExp: 25
+    rewardCoin: 5677270
+    rewardExp: 230
   - level: 941
     atk: 1291
     def: 22838
@@ -8489,8 +8489,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37443334
-    rewardCoin: 1713940
-    rewardExp: 25
+    rewardCoin: 5770340
+    rewardExp: 235
   - level: 942
     atk: 1292
     def: 22880
@@ -8498,8 +8498,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37486666
-    rewardCoin: 1726010
-    rewardExp: 25
+    rewardCoin: 5863410
+    rewardExp: 240
   - level: 943
     atk: 1293
     def: 22921
@@ -8507,8 +8507,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3753
-    rewardCoin: 1738080
-    rewardExp: 25
+    rewardCoin: 5956480
+    rewardExp: 245
   - level: 944
     atk: 1294
     def: 22963
@@ -8516,8 +8516,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37573335
-    rewardCoin: 1750150
-    rewardExp: 25
+    rewardCoin: 6049550
+    rewardExp: 250
   - level: 945
     atk: 1295
     def: 23005
@@ -8525,8 +8525,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37616667
-    rewardCoin: 1762220
-    rewardExp: 25
+    rewardCoin: 6142620
+    rewardExp: 255
   - level: 946
     atk: 1296
     def: 23046
@@ -8534,8 +8534,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3766
-    rewardCoin: 1774290
-    rewardExp: 25
+    rewardCoin: 6235690
+    rewardExp: 260
   - level: 947
     atk: 1297
     def: 23088
@@ -8543,8 +8543,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37703332
-    rewardCoin: 1786360
-    rewardExp: 25
+    rewardCoin: 6328760
+    rewardExp: 265
   - level: 948
     atk: 1298
     def: 23130
@@ -8552,8 +8552,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37746668
-    rewardCoin: 1798430
-    rewardExp: 25
+    rewardCoin: 6421830
+    rewardExp: 270
   - level: 949
     atk: 1299
     def: 23171
@@ -8561,8 +8561,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3779
-    rewardCoin: 1810500
-    rewardExp: 25
+    rewardCoin: 6514900
+    rewardExp: 275
   - level: 950
     atk: 1300
     def: 23213
@@ -8570,8 +8570,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37833333
-    rewardCoin: 1822570
-    rewardExp: 25
+    rewardCoin: 6607970
+    rewardExp: 280
   - level: 951
     atk: 1301
     def: 23255
@@ -8579,8 +8579,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37876666
-    rewardCoin: 1834640
-    rewardExp: 25
+    rewardCoin: 6701040
+    rewardExp: 285
   - level: 952
     atk: 1302
     def: 23297
@@ -8588,8 +8588,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3792
-    rewardCoin: 1846710
-    rewardExp: 25
+    rewardCoin: 6794110
+    rewardExp: 290
   - level: 953
     atk: 1303
     def: 23338
@@ -8597,8 +8597,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.37963334
-    rewardCoin: 1858780
-    rewardExp: 25
+    rewardCoin: 6887180
+    rewardExp: 295
   - level: 954
     atk: 1304
     def: 23380
@@ -8606,8 +8606,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.38006666
-    rewardCoin: 1870850
-    rewardExp: 25
+    rewardCoin: 6980250
+    rewardExp: 300
   - level: 955
     atk: 1305
     def: 23422
@@ -8615,8 +8615,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3805
-    rewardCoin: 1882920
-    rewardExp: 25
+    rewardCoin: 7073320
+    rewardExp: 305
   - level: 956
     atk: 1306
     def: 23464
@@ -8624,8 +8624,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.38093334
-    rewardCoin: 1894990
-    rewardExp: 25
+    rewardCoin: 7166390
+    rewardExp: 310
   - level: 957
     atk: 1307
     def: 23506
@@ -8633,8 +8633,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.38136667
-    rewardCoin: 1907060
-    rewardExp: 25
+    rewardCoin: 7259460
+    rewardExp: 315
   - level: 958
     atk: 1308
     def: 23548
@@ -8642,8 +8642,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.3818
-    rewardCoin: 1919130
-    rewardExp: 25
+    rewardCoin: 7352530
+    rewardExp: 320
   - level: 959
     atk: 1309
     def: 23589
@@ -8651,8 +8651,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 8.8
     avoid: 0.38223332
-    rewardCoin: 1931200
-    rewardExp: 25
+    rewardCoin: 7445600
+    rewardExp: 325
   - level: 960
     atk: 1310
     def: 23631
@@ -8660,8 +8660,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38266668
-    rewardCoin: 1943270
-    rewardExp: 25
+    rewardCoin: 7538670
+    rewardExp: 330
   - level: 961
     atk: 1311
     def: 23673
@@ -8669,8 +8669,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3831
-    rewardCoin: 1955340
-    rewardExp: 25
+    rewardCoin: 7631740
+    rewardExp: 335
   - level: 962
     atk: 1312
     def: 23715
@@ -8678,8 +8678,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38353333
-    rewardCoin: 1967410
-    rewardExp: 25
+    rewardCoin: 7724810
+    rewardExp: 340
   - level: 963
     atk: 1313
     def: 23757
@@ -8687,8 +8687,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38396665
-    rewardCoin: 1979480
-    rewardExp: 25
+    rewardCoin: 7817880
+    rewardExp: 345
   - level: 964
     atk: 1314
     def: 23799
@@ -8696,8 +8696,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3844
-    rewardCoin: 1991550
-    rewardExp: 25
+    rewardCoin: 7910950
+    rewardExp: 350
   - level: 965
     atk: 1315
     def: 23841
@@ -8705,8 +8705,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38483334
-    rewardCoin: 2003620
-    rewardExp: 25
+    rewardCoin: 8004020
+    rewardExp: 355
   - level: 966
     atk: 1316
     def: 23883
@@ -8714,8 +8714,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38526666
-    rewardCoin: 2015690
-    rewardExp: 25
+    rewardCoin: 8097090
+    rewardExp: 360
   - level: 967
     atk: 1317
     def: 23925
@@ -8723,8 +8723,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3857
-    rewardCoin: 2027760
-    rewardExp: 25
+    rewardCoin: 8190160
+    rewardExp: 365
   - level: 968
     atk: 1318
     def: 23967
@@ -8732,8 +8732,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38613334
-    rewardCoin: 2039830
-    rewardExp: 25
+    rewardCoin: 8283230
+    rewardExp: 370
   - level: 969
     atk: 1319
     def: 24009
@@ -8741,8 +8741,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38656667
-    rewardCoin: 2051900
-    rewardExp: 25
+    rewardCoin: 8376300
+    rewardExp: 375
   - level: 970
     atk: 1320
     def: 24051
@@ -8750,8 +8750,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.387
-    rewardCoin: 2063970
-    rewardExp: 25
+    rewardCoin: 8469370
+    rewardExp: 380
   - level: 971
     atk: 1321
     def: 24093
@@ -8759,8 +8759,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38743332
-    rewardCoin: 2076040
-    rewardExp: 25
+    rewardCoin: 8562440
+    rewardExp: 385
   - level: 972
     atk: 1322
     def: 24135
@@ -8768,8 +8768,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38786668
-    rewardCoin: 2088110
-    rewardExp: 25
+    rewardCoin: 8655510
+    rewardExp: 390
   - level: 973
     atk: 1323
     def: 24177
@@ -8777,8 +8777,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3883
-    rewardCoin: 2100180
-    rewardExp: 25
+    rewardCoin: 8748580
+    rewardExp: 395
   - level: 974
     atk: 1324
     def: 24219
@@ -8786,8 +8786,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38873333
-    rewardCoin: 2112250
-    rewardExp: 25
+    rewardCoin: 8841650
+    rewardExp: 400
   - level: 975
     atk: 1325
     def: 24261
@@ -8795,8 +8795,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.38916665
-    rewardCoin: 2124320
-    rewardExp: 25
+    rewardCoin: 8934720
+    rewardExp: 405
   - level: 976
     atk: 1326
     def: 24303
@@ -8804,8 +8804,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3896
-    rewardCoin: 2136390
-    rewardExp: 25
+    rewardCoin: 9027790
+    rewardExp: 410
   - level: 977
     atk: 1327
     def: 24345
@@ -8813,8 +8813,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.39003333
-    rewardCoin: 2148460
-    rewardExp: 25
+    rewardCoin: 9120860
+    rewardExp: 415
   - level: 978
     atk: 1328
     def: 24387
@@ -8822,8 +8822,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.39046666
-    rewardCoin: 2160530
-    rewardExp: 25
+    rewardCoin: 9213930
+    rewardExp: 420
   - level: 979
     atk: 1329
     def: 24429
@@ -8831,8 +8831,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9
     avoid: 0.3909
-    rewardCoin: 2172600
-    rewardExp: 25
+    rewardCoin: 9307000
+    rewardExp: 425
   - level: 980
     atk: 1330
     def: 24471
@@ -8840,8 +8840,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39133334
-    rewardCoin: 2184670
-    rewardExp: 25
+    rewardCoin: 9400070
+    rewardExp: 430
   - level: 981
     atk: 1331
     def: 24513
@@ -8849,8 +8849,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39176667
-    rewardCoin: 2196740
-    rewardExp: 25
+    rewardCoin: 9493140
+    rewardExp: 435
   - level: 982
     atk: 1332
     def: 24556
@@ -8858,8 +8858,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3922
-    rewardCoin: 2208810
-    rewardExp: 25
+    rewardCoin: 9586210
+    rewardExp: 440
   - level: 983
     atk: 1333
     def: 24598
@@ -8867,8 +8867,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39263332
-    rewardCoin: 2220880
-    rewardExp: 25
+    rewardCoin: 9679280
+    rewardExp: 445
   - level: 984
     atk: 1334
     def: 24640
@@ -8876,8 +8876,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39306667
-    rewardCoin: 2232950
-    rewardExp: 25
+    rewardCoin: 9772350
+    rewardExp: 450
   - level: 985
     atk: 1335
     def: 24682
@@ -8885,8 +8885,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3935
-    rewardCoin: 2245020
-    rewardExp: 25
+    rewardCoin: 9865420
+    rewardExp: 455
   - level: 986
     atk: 1336
     def: 24724
@@ -8894,8 +8894,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39393333
-    rewardCoin: 2257090
-    rewardExp: 25
+    rewardCoin: 9958490
+    rewardExp: 460
   - level: 987
     atk: 1337
     def: 24766
@@ -8903,8 +8903,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39436665
-    rewardCoin: 2269160
-    rewardExp: 25
+    rewardCoin: 10051560
+    rewardExp: 465
   - level: 988
     atk: 1338
     def: 24809
@@ -8912,8 +8912,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3948
-    rewardCoin: 2281230
-    rewardExp: 25
+    rewardCoin: 10144630
+    rewardExp: 470
   - level: 989
     atk: 1339
     def: 24851
@@ -8921,8 +8921,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39523333
-    rewardCoin: 2293300
-    rewardExp: 25
+    rewardCoin: 10237700
+    rewardExp: 475
   - level: 990
     atk: 1340
     def: 24893
@@ -8930,8 +8930,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39566666
-    rewardCoin: 2305370
-    rewardExp: 25
+    rewardCoin: 10330770
+    rewardExp: 480
   - level: 991
     atk: 1341
     def: 24935
@@ -8939,8 +8939,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3961
-    rewardCoin: 2317440
-    rewardExp: 25
+    rewardCoin: 10423840
+    rewardExp: 485
   - level: 992
     atk: 1342
     def: 24978
@@ -8948,8 +8948,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39653334
-    rewardCoin: 2329510
-    rewardExp: 25
+    rewardCoin: 10516910
+    rewardExp: 490
   - level: 993
     atk: 1343
     def: 25020
@@ -8957,8 +8957,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39696667
-    rewardCoin: 2341580
-    rewardExp: 25
+    rewardCoin: 10609980
+    rewardExp: 495
   - level: 994
     atk: 1344
     def: 25062
@@ -8966,8 +8966,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3974
-    rewardCoin: 2353650
-    rewardExp: 25
+    rewardCoin: 10703050
+    rewardExp: 500
   - level: 995
     atk: 1345
     def: 25105
@@ -8975,8 +8975,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39783335
-    rewardCoin: 2365720
-    rewardExp: 25
+    rewardCoin: 10796120
+    rewardExp: 505
   - level: 996
     atk: 1346
     def: 25147
@@ -8984,8 +8984,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39826667
-    rewardCoin: 2377790
-    rewardExp: 25
+    rewardCoin: 10889190
+    rewardExp: 510
   - level: 997
     atk: 1347
     def: 25189
@@ -8993,8 +8993,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.3987
-    rewardCoin: 2389860
-    rewardExp: 25
+    rewardCoin: 10982260
+    rewardExp: 515
   - level: 998
     atk: 1348
     def: 25232
@@ -9002,8 +9002,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39913332
-    rewardCoin: 2401930
-    rewardExp: 25
+    rewardCoin: 11075330
+    rewardExp: 520
   - level: 999
     atk: 1349
     def: 25274
@@ -9011,8 +9011,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.2
     avoid: 0.39956668
-    rewardCoin: 2414000
-    rewardExp: 25
+    rewardCoin: 11168400
+    rewardExp: 525
   - level: 1000
     atk: 1350
     def: 25500
@@ -9020,8 +9020,8 @@ MonoBehaviour:
     criRate: 1
     criDmg: 9.4
     avoid: 0.4
-    rewardCoin: 2426070
-    rewardExp: 25
+    rewardCoin: 11261470
+    rewardExp: 530
   - level: 1001
     atk: -1
     def: -1
