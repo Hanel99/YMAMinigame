@@ -126,7 +126,7 @@ MonoBehaviour:
     jp: Zoey
     en: Zoey
   - key: master.name.Kong
-    ko: "\uCF69"
+    ko: "\uCF69\uB0E5"
     jp: Kong
     en: Kong
   - key: master.name.Kiwi
@@ -262,7 +262,7 @@ MonoBehaviour:
     jp: Zoey
     en: Zoey
   - key: master.desc.Kong
-    ko: "\uCF69"
+    ko: "\uCF69\uB0E5"
     jp: Kong
     en: Kong
   - key: master.desc.Kiwi
@@ -1514,7 +1514,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.name.22
-    ko: "\uCF69"
+    ko: "\uCF69\uB0E5"
     jp: 
     en: 
   - key: card.name.23
@@ -1638,7 +1638,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.name.53
-    ko: "\uC548\uACBD \uC4F4 \uCF69"
+    ko: "\uC548\uACBD \uC4F4 \uCF69\uB0E5"
     jp: 
     en: 
   - key: card.name.54
@@ -1730,7 +1730,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.name.76
-    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uCF69"
+    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uCF69\uB0E5"
     jp: 
     en: 
   - key: card.name.77
@@ -1818,7 +1818,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.name.98
-    ko: "\uB9CC\uD0C0\uAC00 \uADF8\uB9B0 \uCF69"
+    ko: "\uB9CC\uD0C0\uAC00 \uADF8\uB9B0 \uCF69\uB0E5"
     jp: 
     en: 
   - key: card.name.99
@@ -1910,7 +1910,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.desc.16
-    ko: "\uC194\uB77C\uC785\uB2C8\uB2E4.\n\uCF69\uB2D8\uACFC \uAC19\uC774 \uB7AD\uAC9C\uACFC
+    ko: "\uC194\uB77C\uC785\uB2C8\uB2E4.\n\uCF69\uB0E5\uB2D8\uACFC \uAC19\uC774 \uB7AD\uAC9C\uACFC
       \uC5F0\uC5B4 \uB458\uB2E4 \uBB34\uC30D\uC744 \uCC0D\uC2B5\uB2C8\uB2E4."
     jp: 
     en: 
@@ -1938,8 +1938,9 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.desc.22
-    ko: "\uCF69\uC785\uB2C8\uB2E4.\n\uCF69\uCC0C\uB2D8\uC73C\uB85C \uC8FC\uB85C \uBD88\uB9BD\uB2C8\uB2E4.\n\uC194\uB77C\uB2D8\uACFC
-      \uD568\uAED8 \uB7AD\uAC9C \uC5F0\uC5B4 \uBB34\uC30D\uC744 \uCC0D\uC2B5\uB2C8\uB2E4."
+    ko: "\uCF69\uB0E5\uC785\uB2C8\uB2E4.\n\uCF69\uCC0C\uB2D8\uC73C\uB85C \uC8FC\uB85C
+      \uBD88\uB9BD\uB2C8\uB2E4.\n\uC194\uB77C\uB2D8\uACFC \uD568\uAED8 \uB7AD\uAC9C
+      \uC5F0\uC5B4 \uBB34\uC30D\uC744 \uCC0D\uC2B5\uB2C8\uB2E4."
     jp: 
     en: 
   - key: card.desc.23
@@ -2112,8 +2113,8 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.desc.57
-    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uBAA8\uC790\uB97C \uC4F4 \uAF2C\uB2D0\uC785\uB2C8\uB2E4.\n\uBA54\uB9AC
-      \uD06C\uB9AC\uC2A4\uB9C8\uC2A4!"
+    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uBAA8\uC790\uB97C \uC4F4 \uAF2C\uB2D0\u2026
+      \uC774 \uC544\uB2C8\uB124?\n\uC5EC\uD2BC \uBA54\uB9AC \uD06C\uB9AC\uC2A4\uB9C8\uC2A4!"
     jp: 
     en: 
   - key: card.desc.58
@@ -2207,7 +2208,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.desc.76
-    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uBAA8\uC790\uB97C \uC4F4 \uCF69\uC785\uB2C8\uB2E4.\n\uBA54\uB9AC
+    ko: "\uD06C\uB9AC\uC2A4\uB9C8\uC2A4 \uBAA8\uC790\uB97C \uC4F4 \uCF69\uB0E5\uC785\uB2C8\uB2E4.\n\uBA54\uB9AC
       \uD06C\uB9AC\uC2A4\uB9C8\uC2A4!"
     jp: 
     en: 
@@ -2316,7 +2317,7 @@ MonoBehaviour:
     jp: 
     en: 
   - key: card.desc.98
-    ko: "\uB9CC\uD0C0\uB2D8\uC774 \uADF8\uB824\uC900 \uCF69 \uC785\uB2C8\uB2E4.(feat.\uB2C8\uBAA8)\r\n\uB9CC\uD0C0\uB2D8
+    ko: "\uB9CC\uD0C0\uB2D8\uC774 \uADF8\uB824\uC900 \uCF69\uB0E5 \uC785\uB2C8\uB2E4.(feat.\uB2C8\uBAA8)\n\uB9CC\uD0C0\uB2D8
       \uD2B9\uC720\uC758 \uADF8\uB9BC\uCCB4\uAC00 \uC0B4\uC544\uC788\uB124\uC694!"
     jp: 
     en: 
