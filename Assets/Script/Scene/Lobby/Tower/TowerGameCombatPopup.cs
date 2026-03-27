@@ -21,6 +21,13 @@ public class TowerGameCombatPopup : PopupBase
     public Button retryButton;
     public Button confirmButton;
 
+    public Toggle autoCombatToggle;
+    public Text autoCombatText;
+    public GameObject levelUpToast;
+    public Text levelUpToastText;
+
+    private bool isAutoCombat => autoCombatToggle != null && autoCombatToggle.isOn;
+
     //private 
     PlayerData playerData = null;
     private int turnCount = 0;
@@ -56,6 +63,34 @@ public class TowerGameCombatPopup : PopupBase
     protected override void OnAwake()
     {
         instance = this;
+        UpdateAutoCombatTextLoop(this.GetCancellationTokenOnDestroy()).Forget();
+    }
+
+    private async UniTaskVoid UpdateAutoCombatTextLoop(System.Threading.CancellationToken token)
+    {
+        string[] dots = { "▶", "▶▶", "▶▶▶" };
+        int index = 0;
+
+        try
+        {
+            while (!token.IsCancellationRequested)
+            {
+                if (autoCombatText != null)
+                {
+                    if (isAutoCombat)
+                    {
+                        autoCombatText.text = $"자동진행{dots[index]}";
+                        index = (index + 1) % dots.Length;
+                    }
+                    else
+                    {
+                        autoCombatText.text = string.Empty;
+                    }
+                }
+                await UniTask.Delay(500, cancellationToken: token);
+            }
+        }
+        catch (OperationCanceledException) { }
     }
 
 
@@ -143,6 +178,14 @@ public class TowerGameCombatPopup : PopupBase
         retryButton.gameObject.SetActive(false);
         confirmButton.gameObject.SetActive(false);
         UpdateCombatText().Forget();
+
+        // 100층 이상부터 자동전투 토글 활성화
+        if (autoCombatToggle != null)
+        {
+            bool isUnlock = playerData.towerFloor >= 300;
+            autoCombatToggle.gameObject.SetActive(isUnlock);
+            if (!isUnlock) autoCombatToggle.isOn = false;
+        }
     }
 
     public async UniTask CombatProcess()
@@ -210,7 +253,10 @@ public class TowerGameCombatPopup : PopupBase
             var skipOnLine = playerData.towerFloor >= 50 ? 2 : 7;
             if (lineCount >= skipOnLine && isSkip == false)
             {
-                skipButton.gameObject.SetActive(true);
+                if (isAutoCombat)
+                    OnClickSkipButton();
+                else
+                    skipButton.gameObject.SetActive(true);
             }
         }
 
@@ -285,8 +331,15 @@ public class TowerGameCombatPopup : PopupBase
             SaveDataManager.instance.AddCoin(earnCoinAmount, false);
             if (SaveDataManager.instance.AddExp(earnExpAmount, false))
             {
-                await UniTask.Delay(1000);
-                LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
+                if (isAutoCombat)
+                {
+                    ShowLevelUpToast(playerData.level - 1, playerData.level);
+                }
+                else
+                {
+                    await UniTask.Delay(1000);
+                    LobbyUIManager.instance.ShowPopup<LevelUpPopup>();
+                }
             }
             GameListView.instance.UpdateUserProfileProcess();
             SaveDataManager.instance.AddTowerFloor();
@@ -298,6 +351,11 @@ public class TowerGameCombatPopup : PopupBase
             sb.AppendLine("---------------------------------");
             sb.AppendLine("전투에서 패배했습니다...");
             UpdateCombatText().Forget();
+
+            if (isAutoCombat)
+            {
+                StopAutoCombat();
+            }
         }
 
         QuestManager.instance.AddTowerCombatData(1);
@@ -311,6 +369,61 @@ public class TowerGameCombatPopup : PopupBase
         retryButton.gameObject.SetActive(true);
         confirmButton.gameObject.SetActive(true);
         TowerGamePopup.instance.UpdatePopupData();
+
+        AutoCombatProcess().Forget();
+    }
+
+    private async UniTask AutoCombatProcess()
+    {
+        if (isAutoCombat == false || retryButton.interactable == false) return;
+
+        // 자동 갱신 기능
+        await UniTask.Delay(1000);
+        OnClickRetryButton();
+    }
+
+    private void ShowLevelUpToast(int prevLevel, int newLevel)
+    {
+        if (levelUpToast == null) return;
+        levelUpToastText.text = $"{prevLevel} -> {newLevel} 레벨업!";
+
+        levelUpToast.SetActive(true);
+        var cg = levelUpToast.GetComponent<CanvasGroup>();
+        if (cg != null)
+        {
+            levelUpToast.transform.DOKill();
+            cg.DOKill();
+
+            // Y -200에서 0으로 올라가는 연출 (From 사용)
+            levelUpToast.SetActive(true);
+            levelUpToast.transform.DOLocalMoveY(0, 2f).From(-200f).SetEase(Ease.OutCubic);
+            // Alpha 1에서 0으로 줄어드는 연출 (From 사용)
+            cg.DOFade(0, 2f).From(1f).SetEase(Ease.InQuad).OnComplete(() =>
+            {
+                levelUpToast.SetActive(false);
+            });
+        }
+        else
+        {
+            DOVirtual.DelayedCall(2f, () => levelUpToast.SetActive(false)).SetId("LevelUpToast");
+        }
+    }
+
+    private void StopAutoCombat()
+    {
+        if (autoCombatToggle != null) autoCombatToggle.isOn = false;
+        LobbyUIManager.instance.ShowCommonPopup("자동 전투 종료", "자동 전투가 종료되었습니다.", false, true, false);
+    }
+
+    public void OnClickConfirmButton()
+    {
+        if (isAutoCombat)
+        {
+            StopAutoCombat();
+            return;
+        }
+
+        OnClickClose();
     }
 
 
