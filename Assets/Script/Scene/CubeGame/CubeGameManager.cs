@@ -79,17 +79,17 @@ public class CubeGameManager : MonoBehaviour
         {
             countDic.Add(state, 0);
         }
-        cubeList[0].SetKeyCode(KeyCode.Q);
-        cubeList[1].SetKeyCode(KeyCode.W);
-        cubeList[2].SetKeyCode(KeyCode.E);
+        cubeList[0].SetKeyCodes(KeyCode.Q, KeyCode.Keypad7);
+        cubeList[1].SetKeyCodes(KeyCode.W, KeyCode.Keypad8);
+        cubeList[2].SetKeyCodes(KeyCode.E, KeyCode.Keypad9);
 
-        cubeList[3].SetKeyCode(KeyCode.A);
-        cubeList[4].SetKeyCode(KeyCode.S);
-        cubeList[5].SetKeyCode(KeyCode.D);
+        cubeList[3].SetKeyCodes(KeyCode.A, KeyCode.Keypad4);
+        cubeList[4].SetKeyCodes(KeyCode.S, KeyCode.Keypad5);
+        cubeList[5].SetKeyCodes(KeyCode.D, KeyCode.Keypad6);
 
-        cubeList[6].SetKeyCode(KeyCode.Z);
-        cubeList[7].SetKeyCode(KeyCode.X);
-        cubeList[8].SetKeyCode(KeyCode.C);
+        cubeList[6].SetKeyCodes(KeyCode.Z, KeyCode.Keypad1);
+        cubeList[7].SetKeyCodes(KeyCode.X, KeyCode.Keypad2);
+        cubeList[8].SetKeyCodes(KeyCode.C, KeyCode.Keypad3);
 
         StartProcess().Forget();
     }

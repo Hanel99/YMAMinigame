@@ -206,7 +206,9 @@ public class TowerGameCombatPopup : PopupBase
                 await UniTask.Delay(delayTime);
             }
 
-            if (lineCount >= 7 && isSkip == false)
+
+            var skipOnLine = playerData.towerFloor >= 50 ? 2 : 7;
+            if (lineCount >= skipOnLine && isSkip == false)
             {
                 skipButton.gameObject.SetActive(true);
             }

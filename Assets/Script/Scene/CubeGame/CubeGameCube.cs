@@ -9,8 +9,10 @@ public class CubeGameCube : MonoBehaviour
 {
     public Image image;
     public Text devText;
-    public Text keyText;
-    public KeyCode keyCode;
+    public Text keyText1;
+    public Text keyText2;
+    public KeyCode keyCode1;
+    public KeyCode keyCode2;
     public Image guideBarL;
     public Image guideBarR;
     public Image guideBarU;
@@ -33,22 +35,36 @@ public class CubeGameCube : MonoBehaviour
 
 
 
-    public void SetKeyCode(KeyCode code)
+    public void SetKeyCodes(KeyCode code1, KeyCode code2)
     {
         guideBarL.gameObject.SetActive(false);
         guideBarR.gameObject.SetActive(false);
         guideBarU.gameObject.SetActive(false);
         guideBarD.gameObject.SetActive(false);
 
-        keyText.text = string.Empty;
+        if (keyText1 != null) keyText1.text = string.Empty;
+        if (keyText2 != null) keyText2.text = string.Empty;
 
         if (devText != null)
             devText.text = "";
 
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
-        keyCode = code;
-        keyText.text = code.ToString();
+        keyCode1 = code1;
+        keyCode2 = code2;
+        if (keyText1 != null) keyText1.text = GetKeyCodeDisplayName(code1);
+        if (keyText2 != null) keyText2.text = GetKeyCodeDisplayName(code2);
 #endif
+    }
+
+    private string GetKeyCodeDisplayName(KeyCode code)
+    {
+        string codeStr = code.ToString();
+        if (codeStr.StartsWith("Keypad"))
+            return codeStr.Replace("Keypad", "");
+        if (codeStr.StartsWith("Alpha"))
+            return codeStr.Replace("Alpha", "");
+
+        return codeStr;
     }
 
     private void Update()
@@ -56,7 +72,7 @@ public class CubeGameCube : MonoBehaviour
 #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         if (CubeGameManager.instance.inGameState == InGameState.Play)
         {
-            if (Input.GetKeyDown(keyCode))
+            if (Input.GetKeyDown(keyCode1) || Input.GetKeyDown(keyCode2))
             {
                 OnClickCube();
             }

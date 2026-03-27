@@ -65,8 +65,8 @@ MonoBehaviour:
     quiz: "\uD604\uC7AC \uC5F0\uBAA8\uC544\uC5D0 \uB4E4\uC5B4\uC640\uC788\uC9C0 \uC54A\uC740
       \uBD07\uC740?"
     option1: "\uAD6C\uB984\uC774"
-    option2: "\uCE58\uB204"
-    option3: "\uC5F0\uD64D"
+    option2: "\uCE74\uBBF8\uBD07"
+    option3: "\uC54C\uB85C\uD56D"
   - index: 9
     answer: 3
     quiz: "\uC5F0\uBAA8\uC544\uC5D0 \uB4E4\uC5B4\uC640\uC788\uB294 \uB85C\uBB34\uC758

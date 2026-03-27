@@ -63,10 +63,9 @@ public class FindAIWordGameManager : MonoBehaviour
 
     // Consts
     private const int LOADING_DELAY = 500;
-    private const int FAIL_DELAY = 1500;
-    private const int WRONG_DELAY = 1500;
-    private const int FINISH_DELAY = 3000;
-    private const int LEVEL_UP_DELAY = 1500;
+    private const int FAIL_DELAY = 800;
+    private const int WRONG_DELAY = 800;
+    private const int FINISH_DELAY = 1200;
     private const float REFER_POPUP_DELAY = 1.2f;
 
     private const int REWARD_MAX = 30000; // 치트 사용 시
@@ -207,10 +206,10 @@ public class FindAIWordGameManager : MonoBehaviour
 
         // 신규 힌트 타이핑 연출 수행 (기존 힌트들은 그대로 표시)
         await FindAIWordGameInGameView.instance.UpdateHintWithTyping(targetSb.ToString(), newHint);
-        
+
         // 연출 완료 후 StringBuilder에 추가 (다음 호출 시 baseText가 됨)
         targetSb.AppendLine(newHint);
-        
+
         FindAIWordGameInGameView.instance.SetInputFieldFocus();
     }
 
@@ -315,8 +314,8 @@ public class FindAIWordGameManager : MonoBehaviour
         }
 
 
-        // 1.5초 뒤 팝업 큐 실행 시작
-        await UniTask.Delay(1500);
+        // 0.8초 뒤 팝업 큐 실행 시작
+        await UniTask.Delay(800);
         FindAIWordGameUIManager.instance.ShowNextPopup();
     }
 

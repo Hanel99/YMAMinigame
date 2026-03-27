@@ -53,7 +53,7 @@ public class FindAIWordGameInGameView : MonoBehaviour
         await DOTween.To(() => 0, x =>
         {
             hintText.text = baseText + newHint.Substring(0, x);
-        }, targetLength, 0.5f).SetEase(Ease.Linear).AsyncWaitForCompletion();
+        }, targetLength, 0.3f).SetEase(Ease.Linear).AsyncWaitForCompletion();
 
         // 최종 텍스트 설정 (개행 포함)
         hintText.text = baseText + newHint + "\n";
@@ -78,13 +78,13 @@ public class FindAIWordGameInGameView : MonoBehaviour
             DOTween.To(() => startCharCount, x =>
             {
                 hintText.text = hint.Substring(0, x);
-            }, hint.Length, 0.5f).SetEase(Ease.Linear);
+            }, hint.Length, 0.3f).SetEase(Ease.Linear);
         }
         else
         {
             // 3. 텍스트가 완전히 바뀌는 상황
             hintText.text = "";
-            hintText.DOText(hint, 0.5f).SetEase(Ease.Linear);
+            hintText.DOText(hint, 0.3f).SetEase(Ease.Linear);
         }
     }
 
@@ -105,7 +105,7 @@ public class FindAIWordGameInGameView : MonoBehaviour
             hintText.transform.DOShakePosition(0.3f, 5f, 15, 90f);
         }
 
-        await UniTask.Delay(500);
+        await UniTask.Delay(300);
     }
 
     public void GlitchHintText(string text)

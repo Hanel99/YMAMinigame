@@ -464,7 +464,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3551583512363164199}
@@ -735,6 +735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Q_FirstGimbabDistance: 0
   Q_FirstCrashDistance: 0
+  crashCount: 0
   playerIcon: {fileID: 748326509189179511}
   hpText: {fileID: 6911303037406038374}
   hpSlider: {fileID: 7695478533733730044}

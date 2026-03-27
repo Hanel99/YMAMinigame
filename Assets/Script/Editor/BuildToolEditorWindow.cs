@@ -40,11 +40,32 @@ public class BuildToolEditorWindow : OdinEditorWindow
     [ToggleLeft]
     public bool UploadToNAS = false;
 
+    [Title("🔑 Android Signing Settings")]
+    [ShowIf("Platform", PlatformOption.Android)]
+    [Sirenix.OdinInspector.FilePath(AbsolutePath = true), LabelText("키스토어 경로")]
+    public string KeystorePath = "";
+
+    [ShowIf("Platform", PlatformOption.Android)]
+    [LabelText("키스토어 비밀번호")]
+    public string KeystorePassword = "";
+
+    [ShowIf("Platform", PlatformOption.Android)]
+    [LabelText("키 별칭(Alias)")]
+    public string KeyAliasName = "";
+
+    [ShowIf("Platform", PlatformOption.Android)]
+    [LabelText("키 별칭 비밀번호")]
+    public string KeyAliasPassword = "";
+
 
     // private
     private const string BUILD_COUNT_KEY = "BuildCount";
     private const string ASSET_VERSION_KEY = "BuildTool_AssetVersion";
     private const string APP_VERSION_KEY = "BuildTool_AppVersion";
+    private const string KEYSTORE_PATH_KEY = "BuildTool_KeystorePath";
+    private const string KEYSTORE_PASS_KEY = "BuildTool_KeystorePass";
+    private const string KEY_ALIAS_NAME_KEY = "BuildTool_KeyAliasName";
+    private const string KEY_ALIAS_PASS_KEY = "BuildTool_KeyAliasPass";
 
 
     protected override void Initialize()
@@ -52,12 +73,20 @@ public class BuildToolEditorWindow : OdinEditorWindow
         base.Initialize();
         AssetVersion = EditorPrefs.GetString(ASSET_VERSION_KEY, AssetVersion);
         AppVersion = EditorPrefs.GetString(APP_VERSION_KEY, AppVersion);
+        KeystorePath = EditorPrefs.GetString(KEYSTORE_PATH_KEY, KeystorePath);
+        KeystorePassword = EditorPrefs.GetString(KEYSTORE_PASS_KEY, KeystorePassword);
+        KeyAliasName = EditorPrefs.GetString(KEY_ALIAS_NAME_KEY, KeyAliasName);
+        KeyAliasPassword = EditorPrefs.GetString(KEY_ALIAS_PASS_KEY, KeyAliasPassword);
     }
 
     protected override void OnDisable()
     {
         EditorPrefs.SetString(ASSET_VERSION_KEY, AssetVersion);
         EditorPrefs.SetString(APP_VERSION_KEY, AppVersion);
+        EditorPrefs.SetString(KEYSTORE_PATH_KEY, KeystorePath);
+        EditorPrefs.SetString(KEYSTORE_PASS_KEY, KeystorePassword);
+        EditorPrefs.SetString(KEY_ALIAS_NAME_KEY, KeyAliasName);
+        EditorPrefs.SetString(KEY_ALIAS_PASS_KEY, KeyAliasPassword);
         base.OnDisable();
     }
 
@@ -254,6 +283,21 @@ public class BuildToolEditorWindow : OdinEditorWindow
         // Android API 레벨 설정
         PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel25; // API 25 (Android 7.1)
         PlayerSettings.Android.targetSdkVersion = AndroidSdkVersions.AndroidApiLevelAuto; // 최신 API 자동
+
+        // 키스토어 설정 적용
+        if (!string.IsNullOrEmpty(KeystorePath))
+        {
+            PlayerSettings.Android.useCustomKeystore = true;
+            PlayerSettings.Android.keystoreName = KeystorePath;
+            PlayerSettings.Android.keystorePass = KeystorePassword;
+            PlayerSettings.Android.keyaliasName = KeyAliasName;
+            PlayerSettings.Android.keyaliasPass = KeyAliasPassword;
+            Debug.Log("🔑 Android Keystore settings applied");
+        }
+        else
+        {
+            PlayerSettings.Android.useCustomKeystore = false;
+        }
 
         // 그래픽 설정
         PlayerSettings.colorSpace = ColorSpace.Linear;
