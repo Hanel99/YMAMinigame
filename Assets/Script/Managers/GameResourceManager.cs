@@ -32,6 +32,7 @@ public class GameResourceManager : MonoBehaviour
     public QuestData questData;
     public FinalQuizData finalQuizData;
     public TowerWeaponJewelData towerWeaponJewelData;
+    public SecretCodeData secretCodeData;
 
 
     public List<Sprite> cardImages = new();
@@ -90,6 +91,9 @@ public class GameResourceManager : MonoBehaviour
                     break;
                 case TowerWeaponJewelData data:
                     towerWeaponJewelData = data;
+                    break;
+                case SecretCodeData data:
+                    secretCodeData = data;
                     break;
                 default:
                     Debug.LogWarning($"Unknown config type: {sData.name}");
@@ -404,6 +408,13 @@ public class GameResourceManager : MonoBehaviour
     public List<FinalQuizMetaData> GetAllFinalQuizMetaData()
     {
         return finalQuizData.Data;
+    }
+
+    // SecretCodeData
+    public string GetSecretCodeText(string code)
+    {
+        var metaData = secretCodeData?.Data.Find(x => x.code.Equals(code, System.StringComparison.OrdinalIgnoreCase));
+        return metaData != null ? metaData.text : string.Empty;
     }
 
     #endregion

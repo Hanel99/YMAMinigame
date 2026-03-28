@@ -158,6 +158,7 @@ public class CheatPopup : PopupBase
             useInputfield = true,
             buttonAction = (value) =>
             {
+                SaveDataManager.instance.playerData.ownCardList.Clear();
                 for (int i = 0; i < value; i++)
                 {
                     SaveDataManager.instance.playerData.ownCardList.Add(i);
@@ -171,6 +172,7 @@ public class CheatPopup : PopupBase
             useInputfield = true,
             buttonAction = (value) =>
             {
+                SaveDataManager.instance.playerData.ownWordList.Clear();
                 for (int i = 0; i < value; i++)
                 {
                     SaveDataManager.instance.playerData.ownWordList.Add(i);

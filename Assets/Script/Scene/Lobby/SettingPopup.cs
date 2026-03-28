@@ -216,47 +216,35 @@ public class SettingPopup : PopupBase
         }
     }
 
+    private readonly string[] secretHints = new string[]
+    {
+        "비밀은 퀘스트에 있다",
+        "물음표를 ■■ 눌러라",
+        "■■■를 3번 눌러라"
+    };
+
     public void OnClickRedeemCheck()
     {
         if (isOpenCloseAnimationActing) return;
 
-        string code = inputRedeem.text.ToUpper();
+        string code = inputRedeem.text.Trim();
+        if (string.IsNullOrEmpty(code)) return;
 
-        // 코드에 들어있는지 확인
-        if (StaticGameData.RedeemCodes.Contains(code) == false)
+        // SecretCodeData 테이블에서 일치하는 코드 확인
+        string secretText = GameResourceManager.instance.GetSecretCodeText(code);
+
+        if (string.IsNullOrEmpty(secretText))
         {
-            LobbyUIManager.instance.ShowCommonPopup("실패", "잘못된 리딤 코드입니다.", true, true, false);
+            string randomHint = secretHints[UnityEngine.Random.Range(0, secretHints.Length)];
+            string failMsg = $"일치하는 코드가 없습니다.\n\n<size=30><color=#A0A0A0>{randomHint}</color></size>";
+
+            LobbyUIManager.instance.ShowCommonPopup("실패", failMsg, true, true, false);
             return;
         }
 
-        // 쓴 리딤인지 우선 확인
-        if (SaveDataManager.instance.IsUseRedeemCode(code))
-        {
-            LobbyUIManager.instance.ShowCommonPopup("실패", $"이미 사용된 리딤 코드입니다.\n{inputRedeem.text}", true, true, false);
-            return;
-        }
+        // 해당 텍스트를 공용 팝업으로 노출
+        LobbyUIManager.instance.ShowCommonPopup("코드 해독 내용", secretText, true, true, false);
 
-        // 리딤코드에 맞춰 수행
-
-        //TODO @@@ 왜 이따구로 만들었을까 추후수정필요
-        // switch (code)
-        // {
-        // case "getmile":
-        //     SaveDataManager.instance.AddMilage(3000);
-        //     break;
-        // case "getgold":
-        //     SaveDataManager.instance.AddCoin(140000);
-        //     break;
-        // case "getallcard":
-        //     SaveDataManager.instance.AddOwnCardList(GameResourceManager.instance.GetAllCardIds());
-        //     break;
-        // case "devtestopen":
-        //     StaticGameData.showDevTestText = true;
-        //     break;
-        // }
-
-        SaveDataManager.instance.AddUsingRedeemCode(code);
-        LobbyUIManager.instance.ShowCommonPopup("성공", $"{inputRedeem.text}\n리딤 코드 입력이 완료되었습니다.", true, true, false);
         inputRedeem.text = "";
     }
 

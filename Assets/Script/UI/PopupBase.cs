@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
 using DG.Tweening;
-using UnityEngine.UI;
 using Michsky.UI.Shift;
+using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PopupBase : MonoBehaviour
@@ -167,6 +167,7 @@ public class PopupBase : MonoBehaviour
     private float scaleOpenAniDuration = 0.15f;
     private float scaleCloseAniDuration = 0.1f;
     private float borderAniDuration = 2f;
+    protected float dimAlphaValue = 0.7f;
     private Ease dimAniEase = Ease.OutCubic;
     private Ease scaleAniEase = Ease.OutCubic;
     private Ease borderAniEase = Ease.InQuad;
@@ -188,7 +189,7 @@ public class PopupBase : MonoBehaviour
             }
 
             //팝업 열림 애니메이션
-            dim.DOFade(0.7f, dimAniDuration).SetEase(dimAniEase).From(0);
+            dim.DOFade(dimAlphaValue, dimAniDuration).SetEase(dimAniEase).From(0);
             blurManager?.BlurInAnim();
 
             Sequence sequence = DOTween.Sequence();
@@ -213,7 +214,7 @@ public class PopupBase : MonoBehaviour
             }
 
             //팝업 닫힘 애니메이션
-            dim.DOFade(0f, dimAniDuration).SetEase(dimAniEase).From(0.7f);
+            dim.DOFade(0f, dimAniDuration).SetEase(dimAniEase).From(dimAlphaValue);
             blurManager?.BlurOutAnim();
 
             Sequence sequence = DOTween.Sequence();

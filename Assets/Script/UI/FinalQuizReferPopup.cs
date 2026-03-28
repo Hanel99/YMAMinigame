@@ -24,6 +24,7 @@ public class FinalQuizReferPopup : PopupBase
     {
         if (enable)
         {
+            dimAlphaValue = 0.9f;
             _OpenUI();
         }
         else

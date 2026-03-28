@@ -224,7 +224,7 @@ MonoBehaviour:
   - Id: 52
     Master: 22
     Grade: 3
-    ImageNumber: 2203
+    ImageNumber: 2202
   - Id: 53
     Master: 23
     Grade: 1
@@ -316,7 +316,7 @@ MonoBehaviour:
   - Id: 75
     Master: 22
     Grade: 0
-    ImageNumber: 2204
+    ImageNumber: 2203
   - Id: 76
     Master: 23
     Grade: 0
@@ -380,7 +380,7 @@ MonoBehaviour:
   - Id: 91
     Master: 22
     Grade: 1
-    ImageNumber: 2202
+    ImageNumber: 2204
   - Id: 92
     Master: 24
     Grade: 1

@@ -33,9 +33,6 @@ public class GachaPopup : PopupBase
     private const int PRICE_PICK_10 = 1;
     private const int PRICE_MILEAGE = 2;
 
-    private const string MSG_COMPLETE_TITLE = "컴플리트!";
-    private const string MSG_COMPLETE_DESC = "축하합니다!\n모든 카드를 획득하셨습니다.\n추가 카드 업데이트를 기다려주세요.";
-
     private const float DELAY_PROCESS_FINISH = 1f;
 
 
@@ -84,7 +81,13 @@ public class GachaPopup : PopupBase
 
         if (SaveDataManager.instance.GetNotOwnCardList().Count == 0)
         {
-            LobbyUIManager.instance.ShowCommonPopup(MSG_COMPLETE_TITLE, MSG_COMPLETE_DESC, true, true, false);
+            int coinReward = StaticGameData.GachaPrice[PRICE_PICK_1] * StaticGameData.GachaPrice[PRICE_MILEAGE];
+            SaveDataManager.instance.AddCoin(coinReward);
+            SaveDataManager.instance.AddMilage(-StaticGameData.GachaPrice[PRICE_MILEAGE]);
+            QuestManager.instance.AddGachaData(true, 1);
+
+            UpdateUI();
+            LobbyUIManager.instance.ShowCommonPopup("가챠", $"모든 카드를 획득하셨습니다.\n대신 {coinReward:N0} 코인을 지급해 드립니다.", true, true, false);
             return;
         }
 
