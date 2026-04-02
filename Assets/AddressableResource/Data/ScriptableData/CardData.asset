@@ -415,209 +415,209 @@ MonoBehaviour:
     ImageNumber: 2501
   - Id: 100
     Master: 8
-    Grade: 3
+    Grade: 0
     ImageNumber: 804
   - Id: 101
     Master: 18
-    Grade: 3
+    Grade: 0
     ImageNumber: 1802
   - Id: 102
     Master: 11
-    Grade: 3
+    Grade: 0
     ImageNumber: 1102
   - Id: 103
     Master: 22
-    Grade: 3
+    Grade: 0
     ImageNumber: 2206
   - Id: 104
     Master: 12
-    Grade: 3
+    Grade: 0
     ImageNumber: 1203
   - Id: 105
     Master: 1
-    Grade: 3
+    Grade: 0
     ImageNumber: 113
   - Id: 106
     Master: 7
-    Grade: 3
+    Grade: 0
     ImageNumber: 702
   - Id: 107
     Master: 5
-    Grade: 3
+    Grade: 0
     ImageNumber: 503
   - Id: 108
     Master: 26
-    Grade: 3
+    Grade: 0
     ImageNumber: 2602
   - Id: 109
     Master: 3
-    Grade: 3
+    Grade: 0
     ImageNumber: 306
   - Id: 110
     Master: 24
-    Grade: 3
+    Grade: 0
     ImageNumber: 2405
   - Id: 111
     Master: 9
-    Grade: 3
+    Grade: 0
     ImageNumber: 902
   - Id: 112
     Master: 16
-    Grade: 3
+    Grade: 0
     ImageNumber: 1605
   - Id: 113
     Master: 25
-    Grade: 3
+    Grade: 0
     ImageNumber: 2502
   - Id: 114
     Master: 21
-    Grade: 3
+    Grade: 0
     ImageNumber: 2104
   - Id: 115
     Master: 23
-    Grade: 3
+    Grade: 0
     ImageNumber: 2305
   - Id: 116
     Master: 10
-    Grade: 3
+    Grade: 0
     ImageNumber: 1004
   - Id: 117
     Master: 17
-    Grade: 3
+    Grade: 0
     ImageNumber: 1703
   - Id: 118
     Master: 2
-    Grade: 3
+    Grade: 0
     ImageNumber: 202
   - Id: 119
     Master: 15
-    Grade: 3
+    Grade: 0
     ImageNumber: 1506
   - Id: 120
     Master: 20
-    Grade: 3
+    Grade: 0
     ImageNumber: 2001
   - Id: 121
     Master: 14
-    Grade: 3
+    Grade: 0
     ImageNumber: 1403
   - Id: 122
     Master: 4
-    Grade: 3
+    Grade: 0
     ImageNumber: 403
   - Id: 123
     Master: 6
-    Grade: 3
+    Grade: 0
     ImageNumber: 602
   - Id: 124
     Master: 13
-    Grade: 3
+    Grade: 0
     ImageNumber: 1305
   - Id: 125
     Master: 19
-    Grade: 3
+    Grade: 0
     ImageNumber: 1903
   - Id: 126
     Master: 8
-    Grade: 4
+    Grade: 3
     ImageNumber: 805
   - Id: 127
     Master: 18
-    Grade: 4
+    Grade: 3
     ImageNumber: 1803
   - Id: 128
     Master: 11
-    Grade: 4
+    Grade: 3
     ImageNumber: 1103
   - Id: 129
     Master: 22
-    Grade: 4
+    Grade: 3
     ImageNumber: 2207
   - Id: 130
     Master: 12
-    Grade: 4
+    Grade: 3
     ImageNumber: 1204
   - Id: 131
     Master: 1
-    Grade: 4
+    Grade: 3
     ImageNumber: 114
   - Id: 132
     Master: 7
-    Grade: 4
+    Grade: 3
     ImageNumber: 703
   - Id: 133
     Master: 5
-    Grade: 4
+    Grade: 3
     ImageNumber: 504
   - Id: 134
     Master: 26
-    Grade: 4
+    Grade: 3
     ImageNumber: 2603
   - Id: 135
     Master: 3
-    Grade: 4
+    Grade: 3
     ImageNumber: 307
   - Id: 136
     Master: 24
-    Grade: 4
+    Grade: 3
     ImageNumber: 2406
   - Id: 137
     Master: 9
-    Grade: 4
+    Grade: 3
     ImageNumber: 903
   - Id: 138
     Master: 16
-    Grade: 4
+    Grade: 3
     ImageNumber: 1606
   - Id: 139
     Master: 25
-    Grade: 4
+    Grade: 3
     ImageNumber: 2503
   - Id: 140
     Master: 21
-    Grade: 4
+    Grade: 3
     ImageNumber: 2105
   - Id: 141
     Master: 23
-    Grade: 4
+    Grade: 3
     ImageNumber: 2306
   - Id: 142
     Master: 10
-    Grade: 4
+    Grade: 3
     ImageNumber: 1005
   - Id: 143
     Master: 17
-    Grade: 4
+    Grade: 3
     ImageNumber: 1704
   - Id: 144
     Master: 2
-    Grade: 4
+    Grade: 3
     ImageNumber: 203
   - Id: 145
     Master: 15
-    Grade: 4
+    Grade: 3
     ImageNumber: 1507
   - Id: 146
     Master: 20
-    Grade: 4
+    Grade: 3
     ImageNumber: 2002
   - Id: 147
     Master: 14
-    Grade: 4
+    Grade: 3
     ImageNumber: 1404
   - Id: 148
     Master: 4
-    Grade: 4
+    Grade: 3
     ImageNumber: 404
   - Id: 149
     Master: 6
-    Grade: 4
+    Grade: 3
     ImageNumber: 603
   - Id: 150
     Master: 13
-    Grade: 4
+    Grade: 3
     ImageNumber: 1306
   - Id: 151
     Master: 19
-    Grade: 4
+    Grade: 3
     ImageNumber: 1904
